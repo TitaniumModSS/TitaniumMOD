@@ -1,0 +1,1420 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;MUSIC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+DEFAULT: priority 9999 randomdelay 0 pan .5 volume 0
+DEFAULT: dry_level 1.0 wet_level 0.0 fadeout 1
+DEFAULT: pref MUSIC STREAMED
+
+required_samples_cutoff 3
+
+;; music events timeout in seconds
+;; music state will change to the previous one if no events occured within the time out
+music_timeout   60
+music_retrigger 5
+
+;; music events fade time in seconds
+;; fading is used when the music changes from one state to another
+music_fade_in 0
+music_fade_out 3
+music_fade_out_timeout 10
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Hastings Tutorial Custom Music
+
+	
+event Hastings_Tutorial_Tension
+	folder data/sounds/music
+	(Euro_Tension_1)_BladeGrass.mp3
+end
+
+event Hastings_Tutorial_Mobilize
+	folder data/sounds/music
+	(Euro_Mobilize_1)_Sister_Davul.mp3
+end
+
+event Hastings_Tutorial_Battle
+	folder data/sounds/music
+	(Euro_Battle_1)_Duke_of_Death.mp3
+
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Historical Battle Music
+
+
+event  Arabic_Tension
+		folder data/sounds/music
+			(Arabic_Tension_1)_Kebabka.mp3
+			(Arabic_Tension_2)_Starsand.mp3
+			(Arabic_Tension_3).mp3
+			(Arabic_Tension_4).mp3
+			(Arabic_Tension_5).mp3	  
+			(Crusades_Tension)_Parched.mp3
+end
+
+
+
+event Mediterranean_Tension
+		folder data/sounds/music
+			(Mediterranean_Tension_1)_By_The_Marmara.mp3
+			(Mediterranean_Tension_2)_Secret_Sandals.mp3
+           
+end
+
+
+event  Euro_Tension
+		folder data/sounds/music
+			(Euro_Tension_1)_BladeGrass.mp3
+			(Euro_Tension_2)_Call_Of_The_Sheep.mp3
+			(Euro_Tension_3)_Fear_Frozen.mp3
+			(Euro_Tension_4).mp3
+			(Euro_Tension_5).mp3
+			(Euro_Tension_6)_Chase.mp3
+			(Euro_Tension_7)_The_Reveal.mp3
+			(Euro_Tension_8)_Ignosi.mp3
+			(Euro_Tension_9)_Grave_Blow.mp3
+			(Brittania_Tension)_Ghosts_Of_Loch.mp3
+end
+
+
+event  Aztec_Tension
+		folder data/sounds/music
+			(Aztec_Tension_1)_Octli.mp3
+			(Aztec_Tension_2)_Memories_of_Mictlan.mp3
+end
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DEFAULT: streamed
+
+
+BANK: music_bank
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;; NORTHERN MUSIC ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+			
+	music_type northern_european
+
+
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;;;;;;;;;;;;;;;;;;;;  FRONTEND  ;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+		state MUSIC_FRONTEND
+			event 
+				folder data/sounds/music
+				(Frontend).mp3
+			end
+
+	
+					
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+			
+			
+			
+			
+;;; BAttlE MAP			
+			
+			
+		state MUSIC_BATTLE_TENSION
+			event 
+				folder data/sounds/music
+			(Euro_Tension_1)_BladeGrass.mp3
+			(Euro_Tension_2)_Call_Of_The_Sheep.mp3
+			(Euro_Tension_3)_Fear_Frozen.mp3
+			(Euro_Tension_4).mp3
+			(Euro_Tension_5).mp3
+			(Euro_Tension_6)_Chase.mp3
+			(Euro_Tension_7)_The_Reveal.mp3
+			(Euro_Tension_8)_Ignosi.mp3
+			(Euro_Tension_9)_Grave_Blow.mp3
+			(Brittania_Tension)_Ghosts_Of_Loch.mp3
+			end
+			
+		state MUSIC_BATTLE_MOBILIZE
+			event
+				folder data/sounds/music
+			(Euro_Mobilize_1)_Sister_Davul.mp3
+			(Euro_Mobilize_2)_Solenka.mp3
+			(Euro_Mobilize_3)_This_is_it.mp3
+			(Euro_Mobilize_4)_New_Arc_Ascending.mp3
+			(Euro_Mobilize_5)_Action.mp3
+			(Euro_Mobilize_6).mp3
+			(Euro_Mobilize_7).mp3
+			(Euro_Mobilize_8).mp3
+			(Euro_Mobilize_9)_Feral_Chase.mp3
+			(Euro_Mobilize_10)_Tectonic.mp3
+			(Euro_Mobilize_11)_We_Got_Trouble.mp3
+			end
+			
+		state MUSIC_BATTLE_BATTLE
+			event
+				folder data/sounds/music
+			(Euro_Battle_1)_Duke_of_Death.mp3
+			(Euro_Battle_2)_Nothing_Left.mp3
+			(Euro_Battle_3)_Crusaders.mp3
+			(Euro_Battle_4)_War_of_Kings.mp3
+			(Euro_Battle_5).mp3
+			(Euro_Battle_6).mp3
+			(Euro_Battle_7).mp3
+			(Euro_Battle_8)_Vortex.mp3
+			(Euro_Battle_9)_Dangerous.mp3
+            end     
+
+
+;;; BATTLE MAP RESULT			
+			
+					
+		state MUSIC_RESULT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Brittania_Win)_Harvest.mp3
+			end
+		state MUSIC_RESULT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Brittania_Win)_Harvest.mp3
+			end
+		state MUSIC_RESULT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Brittania_Win)_Harvest.mp3
+			end
+		state MUSIC_RESULT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Brittania_Lose)_Black_Garden.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				;(Brittania_Lose)_Black_Garden.mp3
+				(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Brittania_Lose)_Black_Garden.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_DRAW
+			event 
+				folder data/sounds/music
+				;Brittania_Lose)_Black_Garden.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+			
+;;; CAMPMAP			
+			
+			
+			
+		state MUSIC_STRATMAP_SUMMER
+			event delay 5 
+				folder data/sounds/music			
+			(Euro_Strat_Map_1)_Field_Of_Blood_01.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_02.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_03.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_04.mp3
+			(Euro_Strat_Map_10)_Lone_Harvest.mp3
+			(Euro_Strat_Map_11)_Skye_Cuillin.mp3
+			(Euro_Strat_Map_12)_Juniper.mp3
+			(Euro_Strat_Map_13)_The_Chamber.mp3
+			(Euro_Strat_Map_14)_Noble_Race.mp3
+			(Euro_Strat_Map_15)_Quinns_Song_-_The_Dance_Begins.mp3
+			(Euro_Strat_Map_16)_Time_Passes.mp3
+			(Euro_Strat_Map_17)_Touching_Story.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_01.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_02.mp3
+			(Euro_Strat_Map_3)_Lilly_01.mp3
+			(Euro_Strat_Map_3)_Lilly_02.mp3
+			(Euro_Strat_Map_4)_Peter_The_Piper.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_01.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_02.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_03.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_04.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_05.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_06.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_07.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_08.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_09.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_10.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_11.mp3
+			(Euro_Strat_Map_6).mp3
+			(Euro_Strat_Map_7).mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Harp.mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Piano.mp3
+			(Campaign_Map)_Bagpipe_Chant_01.mp3
+			(Campaign_Map)_Bagpipe_Chant_02.mp3
+			(Campaign_Map)_Bagpipe_Chant_03.mp3
+			(Campaign_Map)_Bagpipe_Chant_04.mp3
+			(Campaign_Map)_Bagpipe_Chant_05.mp3
+			(Campaign_Map)_Banjooie.mp3
+			(Campaign_Map)_Celtic_Tears.mp3
+			(Campaign_Map)_Cummin.mp3
+			(Campaign_Map)_Erin_01.mp3
+			(Campaign_Map)_Erin_02.mp3
+			(Campaign_Map)_Erin_03.mp3
+			(Campaign_Map)_Erin_04.mp3
+			(Campaign_Map)_Erin_05.mp3
+			(Campaign_Map)_Erin_06.mp3
+			(Campaign_Map)_Erin_07.mp3
+			(Campaign_Map)_Erin_08.mp3
+			(Campaign_Map)_Erin_09.mp3
+			(Campaign_Map)_Erin_10.mp3
+			(Campaign_Map)_Erin_11.mp3
+			(Campaign_Map)_Fiddle_Me_This.mp3
+			(Campaign_Map)_Green_Eyes.mp3
+			(Campaign_Map)_Lavender_Rosemary.mp3
+			(Campaign_Map)_Madocello_Whistle_01.mp3
+			(Campaign_Map)_Madocello_Whistle_02.mp3
+			(Campaign_Map)_Madocello_Whistle_03.mp3
+			(Campaign_Map)_Madocello_Whistle_04.mp3
+			(Campaign_Map)_Mandy_01.mp3
+			(Campaign_Map)_Mandy_02.mp3
+			(Campaign_Map)_Parsley_Sage.mp3
+			(Campaign_Map)_Pasture.mp3
+			(Campaign_Map)_Peppermint_Thyme.mp3
+			(Campaign_Map)_Uille_an_Me_01.mp3
+			(Campaign_Map)_Uille_an_Me_02.mp3
+			(Brittania_Map)kate.mp3
+			(Brittania_Map)romp.mp3
+			(Campaign_Map)3kings.mp3
+			(Campaign_Map)4hands.mp3
+			(Campaign_Map)andante.mp3
+			(Campaign_Map)cay.mp3
+			(Campaign_Map)mistr.mp3
+			(Campaign_Map)myst.mp3
+			(Campaign_Map)nite.mp3
+			(Campaign_Map)nolo.mp3
+			(Campaign_Map)patapan.mp3
+			(Campaign_Map)si.mp3
+			(Campaign_Map)stund.mp3
+			(Campaign_Map)tan.mp3
+			(Campaign_Map)terre.mp3
+			end	
+		
+		state MUSIC_STRATMAP_WINTER
+			event delay 5 
+				folder data/sounds/music			
+			(Euro_Strat_Map_1)_Field_Of_Blood_01.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_02.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_03.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_04.mp3
+			(Euro_Strat_Map_10)_Lone_Harvest.mp3
+			(Euro_Strat_Map_11)_Skye_Cuillin.mp3
+			(Euro_Strat_Map_12)_Juniper.mp3
+			(Euro_Strat_Map_13)_The_Chamber.mp3
+			(Euro_Strat_Map_14)_Noble_Race.mp3
+			(Euro_Strat_Map_15)_Quinns_Song_-_The_Dance_Begins.mp3
+			(Euro_Strat_Map_16)_Time_Passes.mp3
+			(Euro_Strat_Map_17)_Touching_Story.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_01.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_02.mp3
+			(Euro_Strat_Map_3)_Lilly_01.mp3
+			(Euro_Strat_Map_3)_Lilly_02.mp3
+			(Euro_Strat_Map_4)_Peter_The_Piper.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_01.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_02.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_03.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_04.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_05.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_06.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_07.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_08.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_09.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_10.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_11.mp3
+			(Euro_Strat_Map_8).mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Harp.mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Piano.mp3
+			(Campaign_Map)_Bagpipe_Chant_01.mp3
+			(Campaign_Map)_Bagpipe_Chant_02.mp3
+			(Campaign_Map)_Bagpipe_Chant_03.mp3
+			(Campaign_Map)_Bagpipe_Chant_04.mp3
+			(Campaign_Map)_Bagpipe_Chant_05.mp3
+			(Campaign_Map)_Banjooie.mp3
+			(Campaign_Map)_Celtic_Tears.mp3
+			(Campaign_Map)_Cummin.mp3
+			(Campaign_Map)_Erin_01.mp3
+			(Campaign_Map)_Erin_02.mp3
+			(Campaign_Map)_Erin_03.mp3
+			(Campaign_Map)_Erin_04.mp3
+			(Campaign_Map)_Erin_05.mp3
+			(Campaign_Map)_Erin_06.mp3
+			(Campaign_Map)_Erin_07.mp3
+			(Campaign_Map)_Erin_08.mp3
+			(Campaign_Map)_Erin_09.mp3
+			(Campaign_Map)_Erin_10.mp3
+			(Campaign_Map)_Erin_11.mp3
+			(Campaign_Map)_Fiddle_Me_This.mp3
+			(Campaign_Map)_Green_Eyes.mp3
+			(Campaign_Map)_Lavender_Rosemary.mp3
+			(Campaign_Map)_Madocello_Whistle_01.mp3
+			(Campaign_Map)_Madocello_Whistle_02.mp3
+			(Campaign_Map)_Madocello_Whistle_03.mp3
+			(Campaign_Map)_Madocello_Whistle_04.mp3
+			(Campaign_Map)_Mandy_01.mp3
+			(Campaign_Map)_Mandy_02.mp3
+			(Campaign_Map)_Parsley_Sage.mp3
+			(Campaign_Map)_Pasture.mp3
+			(Campaign_Map)_Peppermint_Thyme.mp3
+			(Campaign_Map)_Uille_an_Me_01.mp3
+			(Campaign_Map)_Uille_an_Me_02.mp3
+			(Brittania_Map)kate.mp3
+			(Brittania_Map)romp.mp3
+			(Campaign_Map)3kings.mp3
+			(Campaign_Map)4hands.mp3
+			(Campaign_Map)andante.mp3
+			(Campaign_Map)cay.mp3
+			(Campaign_Map)mistr.mp3
+			(Campaign_Map)myst.mp3
+			(Campaign_Map)nite.mp3
+			(Campaign_Map)nolo.mp3
+			(Campaign_Map)patapan.mp3
+			(Campaign_Map)si.mp3
+			(Campaign_Map)stund.mp3
+			(Campaign_Map)tan.mp3
+			(Campaign_Map)terre.mp3
+			end		
+				
+		state MUSIC_CAMPAIGN_LOADING
+			event 
+				folder data/sounds/music
+				(Euro_Loading_1)_Time_and_Again.mp3
+				(Euro_Loading_2)_The_Widow.mp3
+				(Campaign_Loading)_Wandering_Hills.mp3 
+				(Teutonic_Campaign_Loading)_Brothers_Together.mp3
+				(Euro_Loading_3)_Epic_Unease.mp3
+			end	
+			
+		
+		state MUSIC_PREBATTLE_SCROLL
+			event  
+				folder data/sounds/music
+				(Britannia_Camp_Battle)_Tally-ho.mp3
+				(Euro_Camp_Battle_1)_Destiny.mp3
+				
+			end
+			
+			
+			
+			
+		state MUSIC_RESULT_STRAT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Brittania_Win)_Harvest.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Brittania_Win)_Harvest.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Brittania_Win)_Harvest.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Brittania_Lose)_Black_Garden.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3	
+			end
+		state MUSIC_RESULT_STRAT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				;(Brittania_Lose)_Black_Garden.mp3
+				(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3		
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Brittania_Lose)_Black_Garden.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3		
+			end
+		state MUSIC_RESULT_STRAT_DRAW
+			event 
+				folder data/sounds/music
+				;(Brittania_Lose)_Black_Garden.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				(Euro_Lose_3)_Did_they_have_to_die_today.mp3		
+			end	
+
+			
+;;; CAMPAIGN RESULT				
+			
+			
+		state MUSIC_CAMPAIGN_VICTORY
+			event looped 
+				folder data/sounds/music
+							
+			end	
+			
+		state MUSIC_CAMPAIGN_DEFEAT
+			event looped 
+				folder data/sounds/music
+		
+			end	
+			
+
+;;; CREDITS
+
+	state MUSIC_CREDITS1 delay 3
+			event 
+				folder data/sounds/music
+				(Credits)_Canon_in_D_Major.mp3
+			end	
+			
+	state MUSIC_CREDITS2
+			event 
+				folder data/sounds/music
+				(Credits)_Canon_in_D_Major.mp3
+			end
+
+			
+						
+			
+;;;;;;;;;;;;;;;;;;;;; EASTERN MUSIC ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+			
+	music_type eastern_european
+
+
+	
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;;;;;;;;;;;;;;;;;;;;  FRONTEND  ;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+		state MUSIC_FRONTEND
+			event 
+				folder data/sounds/music
+				(Frontend).mp3
+			end
+
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+			
+			
+			
+					
+;;; BAttlE MAP			
+			
+			
+		state MUSIC_BATTLE_TENSION
+			event 
+				folder data/sounds/music
+			(Euro_Tension_1)_BladeGrass.mp3
+			(Euro_Tension_2)_Call_Of_The_Sheep.mp3
+			(Euro_Tension_3)_Fear_Frozen.mp3
+			(Euro_Tension_4).mp3
+			(Euro_Tension_5).mp3
+			(Euro_Tension_6)_Chase.mp3
+			(Euro_Tension_7)_The_Reveal.mp3
+			(Euro_Tension_8)_Ignosi.mp3
+			(Euro_Tension_9)_Grave_Blow.mp3
+			(Teutonic_Tension)_Forest_Haze.mp3
+			end
+			
+		state MUSIC_BATTLE_MOBILIZE
+			event
+				folder data/sounds/music
+			(Euro_Mobilize_1)_Sister_Davul.mp3
+			(Euro_Mobilize_2)_Solenka.mp3
+			(Euro_Mobilize_3)_This_is_it.mp3
+			(Euro_Mobilize_4)_New_Arc_Ascending.mp3
+			(Euro_Mobilize_5)_Action.mp3
+			(Euro_Mobilize_6).mp3
+			(Euro_Mobilize_7).mp3
+			(Euro_Mobilize_8).mp3
+			(Euro_Mobilize_9)_Feral_Chase.mp3
+			(Teutonic_Mobilize)_Hymn_Of_War.mp3
+			(Euro_Mobilize_10)_Tectonic.mp3
+			(Euro_Mobilize_11)_We_Got_Trouble.mp3
+			end
+			
+		state MUSIC_BATTLE_BATTLE
+			event
+				folder data/sounds/music
+			(Euro_Battle_1)_Duke_of_Death.mp3
+			(Euro_Battle_2)_Nothing_Left.mp3
+			(Euro_Battle_3)_Crusaders.mp3
+			(Euro_Battle_4)_War_of_Kings.mp3
+			(Euro_Battle_5).mp3
+			(Euro_Battle_6).mp3
+			(Euro_Battle_7).mp3
+			(Euro_Battle_8)_Vortex.mp3
+			(Euro_Battle_9)_Dangerous.mp3
+			(Teutonic_Battle)_Darker_Skies_Ahead.mp3
+            end     
+
+
+;;; BATTLE MAP RESULT			
+			
+					
+		state MUSIC_RESULT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Teutonic_Win)_Chaos_Victorious.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Teutonic_Win)_Chaos_Victorious.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Teutonic_Win)_Chaos_Victorious.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Teutonic_Lose)_Warrior's_Tomb.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				;(Teutonic_Lose)_Warrior's_Tomb.mp3
+				(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Teutonic_Lose)_Warrior's_Tomb.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_DRAW
+			event 
+				folder data/sounds/music
+				;(Teutonic_Lose)_Warrior's_Tomb.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+
+
+						
+;;; CAMPMAP			
+				
+			
+		state MUSIC_STRATMAP_SUMMER
+			event delay 5 
+				folder data/sounds/music			
+			(Teutonic_Campaign)_Besieged.mp3
+			(Teutonic_Campaign)_Hearty_Horn.mp3
+			(Teutonic_Campaign)_Hope_Needed.mp3
+			(Teutonic_Campaign)_Iron_Wolf_01.mp3
+			(Teutonic_Campaign)_Iron_Wolf_02.mp3
+			(Teutonic_Campaign)_Iron_Wolf_03.mp3
+			(Teutonic_Campaign)_Iron_Wolf_04.mp3
+			(Teutonic_Campaign)_Man_Camp.mp3
+			(Teutonic_Campaign)_Signal_Ahead.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_01.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_02.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_03.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_04.mp3
+			(Euro_Strat_Map_10)_Lone_Harvest.mp3
+			(Euro_Strat_Map_12)_Juniper.mp3
+			(Euro_Strat_Map_13)_The_Chamber.mp3
+			(Euro_Strat_Map_14)_Noble_Race.mp3
+			(Euro_Strat_Map_15)_Quinns_Song_-_The_Dance_Begins.mp3
+			(Euro_Strat_Map_16)_Time_Passes.mp3
+			(Euro_Strat_Map_17)_Touching_Story.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_01.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_02.mp3
+			(Euro_Strat_Map_3)_Lilly_01.mp3
+			(Euro_Strat_Map_3)_Lilly_02.mp3
+			(Euro_Strat_Map_4)_Peter_The_Piper.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_01.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_02.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_03.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_04.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_05.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_06.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_07.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_08.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_09.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_10.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_11.mp3
+			(Euro_Strat_Map_6).mp3
+			(Euro_Strat_Map_7).mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Harp.mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Piano.mp3	
+			(Campaign_Map)_Cummin.mp3
+			(Campaign_Map)_Erin_01.mp3
+			(Campaign_Map)_Erin_02.mp3
+			(Campaign_Map)_Erin_03.mp3
+			(Campaign_Map)_Erin_04.mp3
+			(Campaign_Map)_Erin_05.mp3
+			(Campaign_Map)_Erin_06.mp3
+			(Campaign_Map)_Erin_07.mp3
+			(Campaign_Map)_Erin_08.mp3
+			(Campaign_Map)_Erin_09.mp3
+			(Campaign_Map)_Erin_10.mp3
+			(Campaign_Map)_Erin_11.mp3
+			(Campaign_Map)_Fiddle_Me_This.mp3
+			(Campaign_Map)_Green_Eyes.mp3
+			(Campaign_Map)_Lavender_Rosemary.mp3
+			(Campaign_Map)_Madocello_Whistle_01.mp3
+			(Campaign_Map)_Madocello_Whistle_02.mp3
+			(Campaign_Map)_Madocello_Whistle_03.mp3
+			(Campaign_Map)_Madocello_Whistle_04.mp3
+			(Campaign_Map)_Mandy_01.mp3
+			(Campaign_Map)_Mandy_02.mp3
+			(Campaign_Map)_Parsley_Sage.mp3
+			(Campaign_Map)_Pasture.mp3
+			(Campaign_Map)_Peppermint_Thyme.mp3
+			(Campaign_Map)_Uille_an_Me_01.mp3
+			(Campaign_Map)_Uille_an_Me_02.mp3
+			(Campaign_Map)3kings.mp3
+			(Campaign_Map)4hands.mp3
+			(Campaign_Map)andante.mp3
+			(Campaign_Map)cay.mp3
+			(Campaign_Map)mistr.mp3
+			(Campaign_Map)myst.mp3
+			(Campaign_Map)nite.mp3
+			(Campaign_Map)nolo.mp3
+			(Campaign_Map)patapan.mp3
+			(Campaign_Map)si.mp3
+			(Campaign_Map)stund.mp3
+			(Campaign_Map)tan.mp3
+			(Campaign_Map)terre.mp3
+				
+			end	
+		
+		state MUSIC_STRATMAP_WINTER
+			event delay 5 
+				folder data/sounds/music			
+			(Teutonic_Campaign)_Besieged.mp3
+			(Teutonic_Campaign)_Hearty_Horn.mp3
+			(Teutonic_Campaign)_Hope_Needed.mp3
+			(Teutonic_Campaign)_Iron_Wolf_01.mp3
+			(Teutonic_Campaign)_Iron_Wolf_02.mp3
+			(Teutonic_Campaign)_Iron_Wolf_03.mp3
+			(Teutonic_Campaign)_Iron_Wolf_04.mp3
+			(Teutonic_Campaign)_Man_Camp.mp3
+			(Teutonic_Campaign)_Signal_Ahead.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_01.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_02.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_03.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_04.mp3
+			(Euro_Strat_Map_10)_Lone_Harvest.mp3
+			(Euro_Strat_Map_12)_Juniper.mp3
+			(Euro_Strat_Map_13)_The_Chamber.mp3
+			(Euro_Strat_Map_14)_Noble_Race.mp3
+			(Euro_Strat_Map_15)_Quinns_Song_-_The_Dance_Begins.mp3
+			(Euro_Strat_Map_16)_Time_Passes.mp3
+			(Euro_Strat_Map_17)_Touching_Story.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_01.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_02.mp3
+			(Euro_Strat_Map_3)_Lilly_01.mp3
+			(Euro_Strat_Map_3)_Lilly_02.mp3
+			(Euro_Strat_Map_4)_Peter_The_Piper.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_01.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_02.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_03.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_04.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_05.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_06.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_07.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_08.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_09.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_10.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_11.mp3
+			(Euro_Strat_Map_8).mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Harp.mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Piano.mp3	   
+			(Campaign_Map)_Cummin.mp3
+			(Campaign_Map)_Erin_01.mp3
+			(Campaign_Map)_Erin_02.mp3
+			(Campaign_Map)_Erin_03.mp3
+			(Campaign_Map)_Erin_04.mp3
+			(Campaign_Map)_Erin_05.mp3
+			(Campaign_Map)_Erin_06.mp3
+			(Campaign_Map)_Erin_07.mp3
+			(Campaign_Map)_Erin_08.mp3
+			(Campaign_Map)_Erin_09.mp3
+			(Campaign_Map)_Erin_10.mp3
+			(Campaign_Map)_Erin_11.mp3
+			(Campaign_Map)_Fiddle_Me_This.mp3
+			(Campaign_Map)_Green_Eyes.mp3
+			(Campaign_Map)_Lavender_Rosemary.mp3
+			(Campaign_Map)_Madocello_Whistle_01.mp3
+			(Campaign_Map)_Madocello_Whistle_02.mp3
+			(Campaign_Map)_Madocello_Whistle_03.mp3
+			(Campaign_Map)_Madocello_Whistle_04.mp3
+			(Campaign_Map)_Mandy_01.mp3
+			(Campaign_Map)_Mandy_02.mp3
+			(Campaign_Map)_Parsley_Sage.mp3
+			(Campaign_Map)_Pasture.mp3
+			(Campaign_Map)_Peppermint_Thyme.mp3
+			(Campaign_Map)_Uille_an_Me_01.mp3
+			(Campaign_Map)_Uille_an_Me_02.mp3
+			(Campaign_Map)3kings.mp3
+			(Campaign_Map)4hands.mp3
+			(Campaign_Map)andante.mp3
+			(Campaign_Map)cay.mp3
+			(Campaign_Map)mistr.mp3
+			(Campaign_Map)myst.mp3
+			(Campaign_Map)nite.mp3
+			(Campaign_Map)nolo.mp3
+			(Campaign_Map)patapan.mp3
+			(Campaign_Map)si.mp3
+			(Campaign_Map)stund.mp3
+			(Campaign_Map)tan.mp3
+			(Campaign_Map)terre.mp3
+
+			end		
+				
+		state MUSIC_CAMPAIGN_LOADING
+			event 
+				folder data/sounds/music
+				(Euro_Loading_1)_Time_and_Again.mp3
+				(Euro_Loading_2)_The_Widow.mp3
+				(Campaign_Loading)_Wandering_Hills.mp3 
+				(Teutonic_Campaign_Loading)_Brothers_Together.mp3
+				(Euro_Loading_3)_Epic_Unease.mp3
+			end	
+			
+		
+		state MUSIC_PREBATTLE_SCROLL
+			event  
+				folder data/sounds/music
+				(Teutonic_Campaign_Battle)_Hungry_Sword.mp3
+				(Euro_Camp_Battle_1)_Destiny.mp3
+				
+			end
+			
+			
+			
+			
+		state MUSIC_RESULT_STRAT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Teutonic_Win)_Chaos_Victorious.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Teutonic_Win)_Chaos_Victorious.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Teutonic_Win)_Chaos_Victorious.mp3
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Teutonic_Lose)_Warrior's_Tomb.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3	
+			end
+		state MUSIC_RESULT_STRAT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				;(Teutonic_Lose)_Warrior's_Tomb.mp3
+				(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3		
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Teutonic_Lose)_Warrior's_Tomb.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				(Euro_Lose_2)_Spirit_Fingers.mp3
+				;(Euro_Lose_3)_Did_they_have_to_die_today.mp3	
+			end
+		state MUSIC_RESULT_STRAT_DRAW
+			event 
+				folder data/sounds/music
+				;(Teutonic_Lose)_Warrior's_Tomb.mp3
+				;(Euro_Lose_1)_Duty.mp3
+				;(Euro_Lose_2)_Spirit_Fingers.mp3
+				(Euro_Lose_3)_Did_they_have_to_die_today.mp3		
+			end	
+
+			
+;;; CAMPAIGN RESULT				
+			
+			
+		state MUSIC_CAMPAIGN_VICTORY
+			event looped 
+				folder data/sounds/music
+							
+			end	
+			
+		state MUSIC_CAMPAIGN_DEFEAT
+			event looped 
+				folder data/sounds/music
+		
+			end	
+			
+
+;;; CREDITS
+
+	state MUSIC_CREDITS1 delay 3
+			event 
+				folder data/sounds/music
+				(Credits)_Canon_in_D_Major.mp3
+			end	
+			
+	state MUSIC_CREDITS2
+			event 
+				folder data/sounds/music
+				(Credits)_Canon_in_D_Major.mp3
+			end
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;; SOUTHERN EUROPEAN MUSIC (MEDITERREANEAN) ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+	music_type southern_european
+
+
+;;; BAttlE MAP			
+			
+			
+		state MUSIC_BATTLE_TENSION
+			event 
+				folder data/sounds/music
+				(Mediterranean_Tension_1)_By_The_Marmara.mp3
+				(Mediterranean_Tension_2)_Secret_Sandals.mp3  
+			(Euro_Tension_1)_BladeGrass.mp3
+			(Euro_Tension_2)_Call_Of_The_Sheep.mp3
+			(Euro_Tension_3)_Fear_Frozen.mp3
+			(Euro_Tension_4).mp3
+			(Euro_Tension_5).mp3
+			(Euro_Tension_6)_Chase.mp3
+			(Euro_Tension_7)_The_Reveal.mp3
+			(Euro_Tension_8)_Ignosi.mp3
+			(Euro_Tension_9)_Grave_Blow.mp3
+              
+			end
+			
+		state MUSIC_BATTLE_MOBILIZE
+			event 
+				folder data/sounds/music
+				(Mediterranean_Mobilize_1)_Mare_Nostrum.mp3
+				(Mediterranean_Mobilize_2)_Song_For_Toomba.mp3
+                (Mediterranean_Mobilize_2)_Death_Lullaby.mp3   
+			(Euro_Mobilize_1)_Sister_Davul.mp3
+			(Euro_Mobilize_2)_Solenka.mp3
+			(Euro_Mobilize_3)_This_is_it.mp3
+			(Euro_Mobilize_4)_New_Arc_Ascending.mp3
+			(Euro_Mobilize_5)_Action.mp3
+			(Euro_Mobilize_6).mp3
+			(Euro_Mobilize_7).mp3
+			(Euro_Mobilize_8).mp3
+			(Euro_Mobilize_9)_Feral_Chase.mp3
+			(Euro_Mobilize_10)_Tectonic.mp3
+			(Euro_Mobilize_11)_We_Got_Trouble.mp3
+			end
+			
+		state MUSIC_BATTLE_BATTLE
+			event 
+				folder data/sounds/music
+                (Mediterranean_Battle_1)_Lifted_To_The_Hotplate.mp3
+			(Euro_Battle_1)_Duke_of_Death.mp3
+			(Euro_Battle_2)_Nothing_Left.mp3
+			(Euro_Battle_3)_Crusaders.mp3
+			(Euro_Battle_4)_War_of_Kings.mp3
+			(Euro_Battle_5).mp3
+			(Euro_Battle_6).mp3
+			(Euro_Battle_7).mp3
+			(Euro_Battle_8)_Vortex.mp3
+			(Euro_Battle_9)_Dangerous.mp3
+			end
+
+
+;;; BATTLE MAP RESULT			
+			
+					
+		state MUSIC_RESULT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Mediterranean_Win_1)_Grab_Your_Castanets.mp3  
+			(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Mediterranean_Win_1)_Grab_Your_Castanets.mp3 
+			(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Mediterranean_Win_1)_Grab_Your_Castanets.mp3  
+			(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Mediterranean_Lose_1)_Cordone.mp3 
+			;(Euro_Lose_1)_Duty.mp3
+			;(Euro_Lose_2)_Spirit_Fingers.mp3
+			;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				;(Mediterranean_Lose_1)_Cordone.mp3 
+			(Euro_Lose_1)_Duty.mp3
+			;(Euro_Lose_2)_Spirit_Fingers.mp3
+			;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Mediterranean_Lose_1)_Cordone.mp3 
+			;(Euro_Lose_1)_Duty.mp3
+			(Euro_Lose_2)_Spirit_Fingers.mp3
+			;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_DRAW
+			event 
+				folder data/sounds/music
+				;(Mediterranean_Lose_1)_Cordone.mp3	
+			;(Euro_Lose_1)_Duty.mp3
+			;(Euro_Lose_2)_Spirit_Fingers.mp3
+			(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+
+			
+;;; CAMPMAP			
+			
+			
+			
+		state MUSIC_STRATMAP_SUMMER
+			event delay 5 
+				folder data/sounds/music
+				(Mediterranean_Strat_Map_1)_Olivia_01.mp3
+				(Mediterranean_Strat_Map_1)_Olivia_02.mp3
+				(Mediterranean_Strat_Map_2)_Vineyard_01.mp3
+				(Mediterranean_Strat_Map_2)_Vineyard_02.mp3
+				(Mediterranean_Strat_Map_3)_Whispers_In_The_Grove_01.mp3
+				(Mediterranean_Strat_Map_3)_Whispers_In_The_Grove_02.mp3
+				(Mediterranean_Strat_Map_4)_Pennsylvania_Rose.mp3
+			(Campaign_Map)_Cummin.mp3
+			(Campaign_Map)_Erin_01.mp3
+			(Campaign_Map)_Erin_02.mp3
+			(Campaign_Map)_Erin_03.mp3
+			(Campaign_Map)_Erin_04.mp3
+			(Campaign_Map)_Erin_05.mp3
+			(Campaign_Map)_Erin_06.mp3
+			(Campaign_Map)_Erin_07.mp3
+			(Campaign_Map)_Erin_08.mp3
+			(Campaign_Map)_Erin_09.mp3
+			(Campaign_Map)_Erin_10.mp3
+			(Campaign_Map)_Erin_11.mp3
+			(Campaign_Map)_Madocello_Whistle_01.mp3
+			(Campaign_Map)_Madocello_Whistle_02.mp3
+			(Campaign_Map)_Madocello_Whistle_03.mp3
+			(Campaign_Map)_Madocello_Whistle_04.mp3
+			(Campaign_Map)_Parsley_Sage.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_01.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_02.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_03.mp3
+			(Euro_Strat_Map_1)_Field_Of_Blood_04.mp3
+			(Euro_Strat_Map_10)_Lone_Harvest.mp3
+			(Euro_Strat_Map_12)_Juniper.mp3
+			(Euro_Strat_Map_13)_The_Chamber.mp3
+			(Euro_Strat_Map_14)_Noble_Race.mp3
+			(Euro_Strat_Map_15)_Quinns_Song_-_The_Dance_Begins.mp3
+			(Euro_Strat_Map_16)_Time_Passes.mp3
+			(Euro_Strat_Map_17)_Touching_Story.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_01.mp3
+			(Euro_Strat_Map_2)_Grey_Meadow_02.mp3
+			(Euro_Strat_Map_3)_Lilly_01.mp3
+			(Euro_Strat_Map_3)_Lilly_02.mp3
+			(Euro_Strat_Map_4)_Peter_The_Piper.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_01.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_02.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_03.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_04.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_05.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_06.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_07.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_08.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_09.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_10.mp3
+			(Euro_Strat_Map_5)_Devil's_Harp_11.mp3
+			(Euro_Strat_Map_6).mp3
+			(Euro_Strat_Map_7).mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Harp.mp3
+			(Euro_Strat_Map_9)_Evening_Fall_-_Piano.mp3
+			(Campaign_Map)3kings.mp3
+			(Campaign_Map)4hands.mp3
+			(Campaign_Map)andante.mp3
+			(Campaign_Map)cay.mp3
+			(Campaign_Map)mistr.mp3
+			(Campaign_Map)myst.mp3
+			(Campaign_Map)nite.mp3
+			(Campaign_Map)nolo.mp3
+			(Campaign_Map)patapan.mp3
+			(Campaign_Map)si.mp3
+			(Campaign_Map)stund.mp3
+			(Campaign_Map)tan.mp3
+			(Campaign_Map)terre.mp3
+			end	
+			
+		state MUSIC_CAMPAIGN_LOADING
+			event 
+				folder data/sounds/music
+				(Euro_Loading_1)_Time_and_Again.mp3
+				(Euro_Loading_2)_The_Widow.mp3
+				(Campaign_Loading)_Wandering_Hills.mp3 
+				(Euro_Loading_3)_Epic_Unease.mp3
+			end	
+			
+		
+		state MUSIC_PREBATTLE_SCROLL
+			event  
+				folder data/sounds/music
+				(Euro_Camp_Battle_1)_Destiny.mp3
+			(Teutonic_Campaign_Battle)_Hungry_Sword.mp3
+			end
+			
+			
+			
+			
+		state MUSIC_RESULT_STRAT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Mediterranean_Win_1)_Grab_Your_Castanets.mp3	
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Mediterranean_Win_1)_Grab_Your_Castanets.mp3		
+				(Euro_Win_1)_Going_Home.mp3
+			end
+		state MUSIC_RESULT_STRAT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Mediterranean_Win_1)_Grab_Your_Castanets.mp3	
+				(Euro_Win_1)_Going_Home.mp3	
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Mediterranean_Lose_1)_Cordone.mp3	
+			;(Euro_Lose_1)_Duty.mp3
+			;(Euro_Lose_2)_Spirit_Fingers.mp3
+			;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_STRAT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				;(Mediterranean_Lose_1)_Cordone.mp3	
+			(Euro_Lose_1)_Duty.mp3
+			;(Euro_Lose_2)_Spirit_Fingers.mp3
+			;(Euro_Lose_3)_Did_they_have_to_die_today.mp3	
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Mediterranean_Lose_1)_Cordone.mp3	
+			;(Euro_Lose_1)_Duty.mp3
+			(Euro_Lose_2)_Spirit_Fingers.mp3
+			;(Euro_Lose_3)_Did_they_have_to_die_today.mp3
+			end
+		state MUSIC_RESULT_STRAT_DRAW
+			event 
+				folder data/sounds/music
+				;(Mediterranean_Lose_1)_Cordone.mp3	
+			;(Euro_Lose_1)_Duty.mp3
+			;(Euro_Lose_2)_Spirit_Fingers.mp3
+			(Euro_Lose_3)_Did_they_have_to_die_today.mp3	
+			end	
+
+			
+;;; CAMPAIGN RESULT				
+			
+			
+		state MUSIC_CAMPAIGN_VICTORY
+			event  looped
+				folder data/sounds/music
+				
+							
+			end	
+		state MUSIC_CAMPAIGN_DEFEAT
+			event  looped
+				folder data/sounds/music
+		
+			end	
+			
+	
+			
+
+	
+
+
+
+			
+;;;;;;;;;;;;;;;;;;;;; ARABIC MUSIC ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+	
+					
+	music_type middle_eastern
+			
+			
+;;; BATTLE MAP			
+			
+			
+		state MUSIC_BATTLE_TENSION
+			event 
+				folder data/sounds/music
+			(Arabic_Tension_1)_Kebabka.mp3
+			(Arabic_Tension_2)_Starsand.mp3
+			(Arabic_Tension_3).mp3
+			(Arabic_Tension_4).mp3
+			(Arabic_Tension_5).mp3
+			(Crusades_Tension)_Parched.mp3
+			end
+			
+		state MUSIC_BATTLE_MOBILIZE
+			event 
+				folder data/sounds/music
+			(Crusades_Mobilize)_Honour_Moment.mp3
+							(Arabic_Mobilize_1)_High_Winds.mp3
+			(Arabic_Mobilize_2).mp3
+			(Arabic_Mobilize_3).mp3
+			(Arabic_Mobilize_4).mp3
+			end
+			
+		state MUSIC_BATTLE_BATTLE
+			event 
+				folder data/sounds/music
+			(Arabic_Battle_1)_Crack_your_head_with_a_Tabla.mp3
+			(Arabic_Battle_2)_Wind_Cuts.mp3
+			(Arabic_Battle_3).mp3
+			(Arabic_Battle_4).mp3
+			(Crusades_Battle)_Valley_Of_Death.mp3
+			end
+
+			
+;;;; BATTLE MAP RESULT			
+			
+		
+		state MUSIC_RESULT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Crusades_Win)_Hands_High.mp3
+				(Arabic_Win_1)_Balalip.mp3
+				
+			end
+		state MUSIC_RESULT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Crusades_Win)_Hands_High.mp3
+				(Arabic_Win_1)_Balalip.mp3
+				
+			end
+		state MUSIC_RESULT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Crusades_Win)_Hands_High.mp3
+				(Arabic_Win_1)_Balalip.mp3
+				
+			end
+		state MUSIC_RESULT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Crusades_Lose)_Blood_Blisters.mp3
+				;(Arabic_Lose_1)_Fly_Away.mp3
+				
+			end
+		state MUSIC_RESULT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				(Crusades_Lose)_Blood_Blisters.mp3
+				;(Arabic_Lose_1)_Fly_Away.mp3
+			end
+		state MUSIC_RESULT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Crusades_Lose)_Blood_Blisters.mp3
+				(Arabic_Lose_1)_Fly_Away.mp3
+			end
+		state MUSIC_RESULT_DRAW
+			event 
+				folder data/sounds/music
+				;(Crusades_Lose)_Blood_Blisters.mp3
+				(Arabic_Lose_1)_Fly_Away.mp3
+			end
+
+			
+			
+;;; CAMPMAP
+						
+			
+			
+		state MUSIC_STRATMAP_SUMMER
+			event delay 5 
+				folder data/sounds/music
+			(Crusades_Campaign)_Dunes_01.mp3
+			(Crusades_Campaign)_Dunes_02.mp3
+			(Crusades_Campaign)_Dunes_03.mp3
+			(Crusades_Campaign)_Dunes_04.mp3
+			(Crusades_Campaign)_Nay_01.mp3
+			(Crusades_Campaign)_Nay_02.mp3
+			(Crusades_Campaign)_Nay_03.mp3
+			(Crusades_Campaign)_Zither_Shimmer_01.mp3
+			(Crusades_Campaign)_Zither_Shimmer_02.mp3
+			(Crusades_Campaign)_Zither_Shimmer_03.mp3
+			(Crusades_Campaign)_Zither_Shimmer_04.mp3
+			(Crusades_Campaign)_Zither_Shimmer_05.mp3
+			(Crusades_Campaign)_Zither_Shimmer_06.mp3
+			(Crusades_Campaign)_Zither_Shimmer_07.mp3
+			(Arabic_Strat_Map_1)_Persian_Pyjamas_01.mp3
+			(Arabic_Strat_Map_1)_Persian_Pyjamas_02.mp3
+			(Arabic_Strat_Map_2)_Sacred_Oud_01.mp3
+			(Arabic_Strat_Map_2)_Sacred_Oud_02.mp3
+			(Arabic_Strat_Map_2)_Sacred_Oud_03.mp3
+			(Arabic_Strat_Map_2)_Sacred_Oud_04.mp3
+			(Arabic_Strat_Map_3).mp3
+			(Arabic_Strat_Map_4).mp3
+			end			
+
+
+		state MUSIC_CAMPAIGN_LOADING
+			event 
+				folder data/sounds/music
+				(Crusades_Loading)_Against_The_Rock.mp3
+			end							
+						
+			
+		state MUSIC_PREBATTLE_SCROLL
+			event  
+				folder data/sounds/music
+				(Crusades_Campaign_Battle)_Sun_Eyes.mp3
+				(Arabic_Camp_Battle_1)_Honour_Of_Sultan.mp3		
+			end
+			
+			
+			
+			
+		state MUSIC_RESULT_STRAT_WIN_CLOSE
+			event 
+				folder data/sounds/music
+				(Crusades_Win)_Hands_High.mp3
+				(Arabic_Win_1)_Balalip.mp3
+							
+			end
+		state MUSIC_RESULT_STRAT_WIN_AVERAGE
+			event 
+				folder data/sounds/music
+				(Crusades_Win)_Hands_High.mp3
+				(Arabic_Win_1)_Balalip.mp3
+							
+			end
+		state MUSIC_RESULT_STRAT_WIN_CRUSHING
+			event 
+				folder data/sounds/music
+				(Crusades_Win)_Hands_High.mp3
+				(Arabic_Win_1)_Balalip.mp3
+							
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CLOSE
+			event 
+				folder data/sounds/music
+				(Crusades_Lose)_Blood_Blisters.mp3
+				;(Arabic_Lose_1)_Fly_Away.mp3
+			end
+		state MUSIC_RESULT_STRAT_LOSE_AVERAGE
+			event 
+				folder data/sounds/music
+				(Crusades_Lose)_Blood_Blisters.mp3
+				;(Arabic_Lose_1)_Fly_Away.mp3
+						
+			end
+		state MUSIC_RESULT_STRAT_LOSE_CRUSHING
+			event 
+				folder data/sounds/music
+				;(Crusades_Lose)_Blood_Blisters.mp3
+				(Arabic_Lose_1)_Fly_Away.mp3
+						
+			end
+		state MUSIC_RESULT_STRAT_DRAW
+			event 
+				folder data/sounds/music
+				;(Crusades_Lose)_Blood_Blisters.mp3
+				(Arabic_Lose_1)_Fly_Away.mp3
+						
+			end					
+
+			
+;;; CAMPAIGN RESULT			
+			
+			
+			
+		state MUSIC_CAMPAIGN_VICTORY
+			event  looped
+				folder data/sounds/music
+							
+			end	
+		state MUSIC_CAMPAIGN_DEFEAT
+			event  looped
+				folder data/sounds/music
+						
+			end	
