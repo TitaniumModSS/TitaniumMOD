@@ -5862,6 +5862,28 @@ monitor_event PreFactionTurnStart FactionIsLocal
 				unit	Turkish Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
+		;---- Seljuk Reinforcement if Player is Byzantium
+		if I_LocalFaction byzantium
+			spawn_army 
+				faction turks
+				character	Kasim, general, age 28, x 293, y 135
+				unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
+				unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+				unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
+				unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
+				unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+				unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+				unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+				unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+				unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
+				unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
+				unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+				unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+			end
+			add_money turks, 18000
+		end_if
 	end_if
 
 	if I_IsFactionAIControlled egypt
@@ -6573,6 +6595,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled england
 	and I_NumberOfHeirs england < 4
 	and I_CompareCounter heir_england < 3
+	and I_NumberOfSettlements england >= 1
 		spawn_army
 			faction england
 			character	random_name, named character, age 20, x 83, y 220, family
@@ -6585,6 +6608,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled scotland
 	and I_NumberOfHeirs scotland < 4
 	and I_CompareCounter heir_scotland < 3
+	and I_NumberOfSettlements scotland >= 1
 		spawn_army
 			faction scotland
 			character	random_name, named character, age 20, x 53, y 253, family
@@ -6597,6 +6621,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled denmark
 	and I_NumberOfHeirs denmark < 4
 	and I_CompareCounter heir_denmark < 3
+	and I_NumberOfSettlements denmark >= 1
 		spawn_army
 			faction denmark
 			character	random_name, named character, age 20, x 146, y 253, family
@@ -6609,6 +6634,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled norway
 	and I_NumberOfHeirs norway < 4
 	and I_CompareCounter heir_norway < 3
+	and I_NumberOfSettlements norway >= 1
 		spawn_army
 			faction norway
 			character	random_name, named character, age 20, x 114, y 280, family
@@ -6621,6 +6647,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled france
 	and I_NumberOfHeirs france < 4
 	and I_CompareCounter heir_france < 3
+	and I_NumberOfSettlements france >= 1
 		spawn_army
 			faction france
 			character	random_name, named character, age 20, x 92, y 202, family
@@ -6633,6 +6660,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled hre
 	and I_NumberOfHeirs hre < 4
 	and I_CompareCounter heir_hre < 3
+	and I_NumberOfSettlements hre >= 1
 		spawn_army
 			faction hre
 			character	random_name, named character, age 20, x 143, y 207, family
@@ -6645,6 +6673,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled milan
 	and I_NumberOfHeirs milan < 4
 	and I_CompareCounter heir_milan < 3
+	and I_NumberOfSettlements milan >= 1
 		spawn_army
 			faction milan
 			character	random_name, named character, age 20, x 137, y 168, family
@@ -6657,6 +6686,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled aragon
 	and I_NumberOfHeirs aragon < 4
 	and I_CompareCounter heir_aragon < 3
+	and I_NumberOfSettlements aragon >= 1
 		spawn_army
 			faction aragon
 			character	random_name, named character, age 20, x 83, y 150, family
@@ -6669,6 +6699,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled spain
 	and I_NumberOfHeirs spain < 4
 	and I_CompareCounter heir_spain < 3
+	and I_NumberOfSettlements spain >= 1
 		spawn_army
 			faction spain
 			character	random_name, named character, age 20, x 32, y 148, family
@@ -6681,6 +6712,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled portugal
 	and I_NumberOfHeirs portugal < 4
 	and I_CompareCounter heir_portugal < 3
+	and I_NumberOfSettlements portugal >= 1
 		spawn_army
 			faction portugal
 			character	random_name, named character, age 20, x 17, y 123, family
@@ -6693,6 +6725,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled venice
 	and I_NumberOfHeirs venice < 4
 	and I_CompareCounter heir_venice < 3
+	and I_NumberOfSettlements venice >= 1
 		spawn_army
 			faction venice
 			character	random_name, named character, age 20, x 161, y 173, family
@@ -6705,6 +6738,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled sicily
 	and I_NumberOfHeirs sicily < 4
 	and I_CompareCounter heir_sicily < 3
+	and I_NumberOfSettlements sicily >= 1
 		spawn_army
 			faction sicily
 			character	random_name, named character, age 20, x 177, y 114, family
@@ -6717,6 +6751,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled poland
 	and I_NumberOfHeirs poland < 4
 	and I_CompareCounter heir_poland < 3
+	and I_NumberOfSettlements poland >= 1
 		spawn_army
 			faction poland
 			character	random_name, named character, age 20, x 222, y 213, family
@@ -6729,6 +6764,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled hungary
 	and I_NumberOfHeirs hungary < 4
 	and I_CompareCounter heir_hungary < 3
+	and I_NumberOfSettlements hungary >= 1
 		spawn_army
 			faction hungary
 			character	random_name, named character, age 20, x 206, y 179, family
@@ -6741,6 +6777,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled kievan_rus
 	and I_NumberOfHeirs kievan_rus < 4
 	and I_CompareCounter heir_kievan_rus < 3
+	and I_NumberOfSettlements kievan_rus >= 1
 		spawn_army
 			faction kievan_rus
 			character	random_name, named character, age 20, x 292, y 214, family
@@ -6753,6 +6790,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled russia
 	and I_NumberOfHeirs russia < 4
 	and I_CompareCounter heir_russia < 3
+	and I_NumberOfSettlements russia >= 1
 		spawn_army
 			faction russia
 			character	random_name, named character, age 20, x 301, y 275, family
@@ -6765,6 +6803,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled byzantium
 	and I_NumberOfHeirs byzantium < 4
 	and I_CompareCounter heir_byzantium < 3
+	and I_NumberOfSettlements byzantium >= 1
 		spawn_army
 			faction byzantium
 			character	random_name, named character, age 20, x 278, y 148, family
@@ -6777,6 +6816,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled lithuania
 	and I_NumberOfHeirs lithuania < 4
 	and I_CompareCounter heir_lithuania < 3
+	and I_NumberOfSettlements lithuania >= 1
 		spawn_army
 			faction lithuania
 			character	random_name, named character, age 20, x 262, y 240, family
@@ -6790,6 +6830,7 @@ monitor_event FactionTurnStart FactionType slave
 	and I_NumberOfHeirs teutonic_order < 4
 	and I_CompareCounter heir_teutonic_order < 3
 	and I_EventCounter inquisition > 0
+	and I_FactionLeaderAttribute teutonic_order Command < 1000
 		spawn_army
 			faction teutonic_order
 			character	random_name, named character, age 20, x 232, y 237, family
@@ -6802,6 +6843,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled jerusalem
 	and I_NumberOfHeirs jerusalem < 4
 	and I_CompareCounter heir_jerusalem < 3
+	and I_NumberOfSettlements jerusalem >= 1
 		spawn_army
 			faction jerusalem
 			character	random_name, named character, age 20, x 329, y 78, family
@@ -6814,6 +6856,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled turks
 	and I_NumberOfHeirs turks < 4
 	and I_CompareCounter heir_turks < 3
+	and I_NumberOfSettlements turks >= 1
 		spawn_army
 			faction turks
 			character	random_name, named character, age 20, x 339, y 133, family
@@ -6826,6 +6869,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled egypt
 	and I_NumberOfHeirs egypt < 4
 	and I_CompareCounter heir_egypt < 3
+	and I_NumberOfSettlements egypt >= 1
 		spawn_army
 			faction egypt
 			character	random_name, named character, age 20, x 309, y 60, family
@@ -6838,6 +6882,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled moors
 	and I_NumberOfHeirs moors < 4
 	and I_CompareCounter heir_moors < 3
+	and I_NumberOfSettlements moors >= 1
 		spawn_army
 			faction moors
 			character	random_name, named character, age 20, x 40, y 113, family
@@ -6850,6 +6895,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled kwarezm
 	and I_NumberOfHeirs kwarezm < 4
 	and I_CompareCounter heir_kwarezm < 3
+	and I_NumberOfSettlements kwarezm >= 1
 		spawn_army
 			faction kwarezm
 			character	random_name, named character, age 20, x 449, y 93, family
@@ -6862,6 +6908,7 @@ monitor_event FactionTurnStart FactionType slave
 	if I_IsFactionAIControlled cumans
 	and I_NumberOfHeirs cumans < 4
 	and I_CompareCounter heir_cumans < 3
+	and I_NumberOfSettlements cumans >= 1
 		spawn_army
 			faction cumans
 			character	random_name, named character, age 20, x 440, y 250, family
@@ -6875,6 +6922,7 @@ monitor_event FactionTurnStart FactionType slave
 	and I_NumberOfHeirs mongols < 4
 	and I_CompareCounter heir_mongols < 3
 	and I_EventCounter mongols_invasion > 0
+	and I_FactionLeaderAttribute mongols Command < 1000
 		spawn_army
 			faction mongols
 			character	random_name, named character, age 20, x 502, y 160, family
@@ -6888,6 +6936,7 @@ monitor_event FactionTurnStart FactionType slave
 	and I_NumberOfHeirs timurids < 4
 	and I_CompareCounter heir_timurids < 3
 	and I_EventCounter timurids_invasion > 0
+	and I_FactionLeaderAttribute timurids Command < 1000
 		spawn_army
 			faction timurids
 			character	random_name, named character, age 20, x 502, y 161, family
@@ -6897,34 +6946,6 @@ monitor_event FactionTurnStart FactionType slave
 		inc_counter heir_timurids 1
 	end_if
 
-end_monitor
-
-;---- Seljuk Reinforcement
-monitor_event FactionTurnStart FactionIsLocal
-	and I_LocalFaction byzantium
-	and I_IsFactionAIControlled turks
-
-	spawn_army 
-		faction turks
-		character	Kasim, general, age 28, x 293, y 135
-		unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
-		unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
-		unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
-		unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
-		unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
-		unit		Turkomans				exp 1 armour 0 weapon_lvl 0
-		unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
-		unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
-		unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
-		unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
-		unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
-		unit		ME Spear Militia				exp 0 armour 0 weapon_lvl 0
-		unit		Turkomans				exp 1 armour 0 weapon_lvl 0
-		unit		Turkomans				exp 1 armour 0 weapon_lvl 0
-	end
-
-	add_money turks, 18000
-	terminate_monitor
 end_monitor
 
 ;---- Constantinople JIHAD garrison script
