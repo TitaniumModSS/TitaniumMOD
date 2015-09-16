@@ -1744,7 +1744,8 @@ Trait IAmPrincess
    EffectsDescription Royal_Princess_effects_desc
    Threshold 1 
 
-   Effect Level 1
+;   Effect Level 1; Commented out for RLC mod. Leave it if you don't know better
+
 
 ;------------------------------------------
 Trait NaturalPrincess
@@ -4595,11 +4596,13 @@ Trait VendettaKwarezm
 ;========================================================
 ; VANILLA TRAITS 
 ;========================================================
+
 ;********* FACTION LEADER/FACTION HEIR TRAITS *********
 ;------------------------------------------
 Trait Factionleader
  Characters family
- AntiTraits Factionheir
+ NoGoingBackLevel 1
+ AntiTraits Factionheir, FactionUsurper, FactionFutureUsurper
 
  Level Faction_Leader
    Description Faction_Leader_desc
@@ -4628,7 +4631,7 @@ Trait Factionheir
 ;------------------------------------------
 Trait Exheir
  Characters family
- AntiTraits Factionheir, FactionFutureRegent
+ AntiTraits Factionheir, FactionFutureRegent, FactionFutureUsurper, FactionUsurper
 
  Level Former_Successor
    Description Former_Successor_desc
@@ -4636,6 +4639,7 @@ Trait Exheir
    Threshold 1 
 
    Effect Loyalty -1
+
 
 ;********* VANILLA MILITARISTIC TRAITS *********
 ;------------------------------------------
@@ -12880,6 +12884,361 @@ Trait MajorCount
    Effect TroopMorale 2
    Effect HitPoints 1
 
+;===== ROYAL LADY OF THE COURT TRAITS =====
+;------------------------------------------
+Trait RoyalLady
+ Characters princess
+ Hidden
+
+ Level Royal_lady
+   Description Royal_lady_desc
+   EffectsDescription Royal_lady_effects_desc
+;   Epithet Royal_lady_epithet_desc
+   Threshold 1
+
+   ;Effect Charm 1; they already get too much charm
+   Effect Fertility  3
+   Effect Level 1
+
+;------------------------------------------
+Trait RoyalLadyC
+ Characters princess
+
+ Level Royal_ladyc
+   Description Royal_ladyc_desc
+   EffectsDescription Royal_ladyc_effects_desc
+   Threshold 1
+
+   Effect Charm 1
+;------------------------------------------
+;------------------------------------------
+Trait PretentiousWomanRLC
+ Characters princess
+ NoGoingBackLevel 2 
+ AntiTraits HumbleWomanRLC
+
+ Level Pretentious
+   Description Pretentious_desc
+   EffectsDescription Pretentious_effects_desc
+   Threshold 1 
+
+   Effect Charm -1 
+
+ Level Utter_Snob
+   Description Utter_Snob_desc
+   EffectsDescription Utter_Snob_effects_desc
+;   Epithet Utter_Snob_epithet_desc
+   Threshold 2 
+
+   Effect Charm -2 
+
+;------------------------------------------
+Trait HumbleWomanRLC
+ Characters princess
+ AntiTraits PretentiousWomanRLC
+
+ Level Humble
+   Description Humble_desc
+   EffectsDescription Humble_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Respectful
+   Description Respectful_desc
+   EffectsDescription Respectful_effects_desc
+   Threshold 2 
+
+   Effect Charm 2 
+
+;------------------------------------------
+Trait PrettyWomanRLC
+ Characters princess
+ NoGoingBackLevel 1 
+ AntiTraits UglyWomanRLC
+
+ Level Attractive
+   Description Attractive_desc
+   EffectsDescription Attractive_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Head_Turner
+   Description Head_Turner_desc
+   EffectsDescription Head_Turner_effects_desc
+   Threshold 2 
+
+   Effect Charm 2 
+
+ Level Vision_of_Beauty
+   Description Vision_of_Beauty_desc
+   EffectsDescription Vision_of_Beauty_effects_desc
+;   Epithet Vision_of_Beauty_epithet_desc
+   Threshold 3 
+
+   Effect Charm 3 
+   Effect Fertility 1 
+
+;------------------------------------------
+Trait UglyWomanRLC
+ Characters princess
+ NoGoingBackLevel 1 
+ AntiTraits PrettyWomanRLC
+
+ Level Flawed_Features
+   Description Flawed_Features_desc
+   EffectsDescription Flawed_Features_effects_desc
+   Threshold 1 
+
+   Effect Charm -1 
+
+ Level Hideous
+   Description Hideous_desc
+   EffectsDescription Hideous_effects_desc
+;   Epithet Hideous_epithet_desc
+   Threshold 2 
+
+   Effect Charm -2 
+   Effect Fertility -1 
+
+;------------------------------------------
+Trait DesperateWomanRLC
+ Characters princess
+ AntiTraits PrettyWomanRLC, SpiritedWomanRLC
+
+ Level Bruised_Confidence
+   Description Bruised_Confidence_desc
+   EffectsDescription Bruised_Confidence_effects_desc
+   Threshold 2 
+
+   Effect Charm 1 
+
+ Level Insecure
+   Description Insecure_desc
+   EffectsDescription Insecure_effects_desc
+   Threshold 3 
+
+   Effect Charm -2 
+
+ Level Desperate
+   Description Desperate_desc
+   EffectsDescription Desperate_effects_desc
+;   Epithet Desperate_epithet_desc
+   Threshold 4 
+
+   Effect Charm -3 
+
+;------------------------------------------
+Trait SpiritedWomanRLC
+ Characters princess
+ AntiTraits DesperateWomanRLC
+
+ Level Spirited
+   Description Spirited_desc
+   EffectsDescription Spirited_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Engaging
+   Description Engaging_desc
+   EffectsDescription Engaging_effects_desc
+   Threshold 2 
+
+   Effect Charm 2 
+
+ Level Self-serving
+   Description Self-serving_desc
+   EffectsDescription Self-serving_effects_desc
+   Threshold 3 
+
+   Effect Charm -1 
+
+;------------------------------------------
+Trait FaithfulWomanRLC
+ Characters princess
+ AntiTraits UnchasteWomanRLC
+
+ Level Reliable
+   Description Reliable_desc
+   EffectsDescription Reliable_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Faithful
+   Description Faithful_desc
+   EffectsDescription Faithful_effects_desc
+   Threshold 2 
+
+   Effect Charm 2 
+
+ Level Unquestionably_Loyal
+   Description Unquestionably_Loyal_desc
+   EffectsDescription Unquestionably_Loyal_effects_desc
+   Threshold 4 
+
+   Effect Loyalty 1 
+   Effect Charm 2 
+
+;------------------------------------------
+Trait UnchasteWomanRLC
+ Characters princess
+ AntiTraits FaithfulWomanRLC, PassionateWomanRLC
+
+ Level Suggestive
+   Description Suggestive_desc
+   EffectsDescription Suggestive_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Scarlet_Woman
+   Description Scarlet_Woman_desc
+   EffectsDescription Scarlet_Woman_effects_desc
+   Threshold 2 
+
+   Effect Charm 2 
+
+ Level Brazen_Hussy
+   Description Brazen_Hussy_desc
+   EffectsDescription Brazen_Hussy_effects_desc
+   Threshold 3 
+
+   Effect Charm -2 
+
+;------------------------------------------
+Trait VapidWomanRLC
+ Characters princess
+ AntiTraits EducatedWomanRLC
+
+ Level Simplistic
+   Description Simplistic_desc
+   EffectsDescription Simplistic_effects_desc
+   Threshold 1 
+
+   Effect Charm -1 
+
+ Level Vapid
+   Description Vapid_desc
+   EffectsDescription Vapid_effects_desc
+   Threshold 2 
+
+   Effect Charm -2 
+
+ Level Total_Bimbo
+   Description Total_Bimbo_desc
+   EffectsDescription Total_Bimbo_effects_desc
+;   Epithet Total_Bimbo_epithet_desc
+   Threshold 3 
+
+   Effect Charm -2 
+
+;------------------------------------------
+Trait EducatedWomanRLC
+ Characters princess
+ AntiTraits VapidWomanRLC
+
+ Level Intelligent
+   Description Intelligent_desc
+   EffectsDescription Intelligent_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Educated
+   Description Educated_desc
+   EffectsDescription Educated_effects_desc
+   Threshold 2 
+
+   Effect Charm 2 
+
+ Level Scholarly
+   Description Scholarly_desc
+   EffectsDescription Scholarly_effects_desc
+   Threshold 3 
+
+   Effect Charm 2 
+
+;------------------------------------------
+Trait PassionateWomanRLC
+ Characters princess
+ AntiTraits ColdWomanRLC, UnchasteWomanRLC
+
+ Level Warm
+   Description Warm_desc
+   EffectsDescription Warm_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Passionate
+   Description Passionate_desc
+   EffectsDescription Passionate_effects_desc
+;   Epithet Passionate_epithet_desc
+   Threshold 2 
+
+   Effect Charm 1
+   Effect Fertility 1 
+
+ Level Insatiable
+   Description Insatiable_desc
+   EffectsDescription Insatiable_effects_desc
+   Threshold 3 
+
+   Effect Charm 2 
+   Effect Fertility -1 
+
+;------------------------------------------
+Trait ColdWomanRLC
+ Characters princess
+ AntiTraits PassionateWomanRLC, UglyWomanRLC
+
+ Level Prudish
+   Description Prudish_desc
+   EffectsDescription Prudish_effects_desc
+   Threshold 1 
+
+   Effect Charm -1 
+
+ Level Cold
+   Description Cold_desc
+   EffectsDescription Cold_effects_desc
+   Threshold 2 
+
+   Effect Charm -2 
+
+ Level Ice_Queen
+   Description Ice_Queen_desc
+   EffectsDescription Ice_Queen_effects_desc
+   Threshold 3 
+
+   Effect Charm 1 
+   Effect Fertility -1 
+
+;------------------------------------------
+Trait DykeWomanRLC
+ Characters princess
+ NoGoingBackLevel 2 
+ AntiTraits PassionateWomanRLC
+
+ Level Potentially_Confused
+   Description Potentially_Confused_desc
+   EffectsDescription Potentially_Confused_effects_desc
+   Threshold 1 
+
+   Effect Charm 1 
+
+ Level Prefers_Women
+   Description Prefers_Women_desc
+   EffectsDescription Prefers_Women_effects_desc
+   Threshold 2 
+
+   Effect Charm -1 
+   Effect Fertility -5 
+
+;------------------------------------------
 ;==========================================
 ;===========Adoption traits================
 ;==========================================
@@ -13741,6 +14100,7 @@ Trait Byzantium_Triumph
 ;------------------------------------------
 Trait FactionFutureUsurper
  Characters family
+ AntiTraits ExHeir
 
  Level ThroneClaimant
    Description ThroneClaimant_desc
@@ -13752,7 +14112,8 @@ Trait FactionFutureUsurper
 ;------------------------------------------
 Trait FactionUsurper
  Characters family
- AntiTraits FactionFutureUsurper
+ NoGoingBackLevel 1
+ AntiTraits FactionFutureUsurper, FactionFutureRegent
 
  Level Usurper
    Description Usurper_desc
@@ -14031,6 +14392,7 @@ Trait Stripped_HRE
 
 Trait Venice_Factionleader
  Characters family
+ NoGoingBackLevel 1
  AntiTraits Venice_Factionheir
 
  Level Venice_Doge
@@ -14248,6 +14610,7 @@ Trait Venice_Signoria_Approval
 
 Trait Genoa_Factionleader
  Characters family
+ NoGoingBackLevel 1
  AntiTraits Genoa_Factionheir
 
  Level Genoa_Doge
@@ -14457,7 +14820,8 @@ Trait Genoa_Comune_Approval
 
 Trait Novgorod_Factionleader
  Characters family
- AntiTraits Venice_Factionheir
+ NoGoingBackLevel 1
+ AntiTraits Novgorod_Factionheir
 
  Level Novgorod_Knyaz
    Description Novgorod_Knyaz_desc
@@ -14935,7 +15299,7 @@ Effect Authority 9
 ;**************************************************
 ;******** CIVIL UNREST TRAITS  ********
 
-Trait Civil_Unrest1
+Trait Civil_Unrest
  Characters family
  Hidden
 
@@ -14944,31 +15308,16 @@ Trait Civil_Unrest1
    EffectsDescription Anarchy1_effects_desc
    Threshold 1
 
-;----------------------------------------------
-Trait Civil_Unrest2
- Characters family
- Hidden
-
  Level Anarchy2
    Description Anarchy2_desc
    EffectsDescription Anarchy2_effects_desc
-   Threshold 1
-
-;----------------------------------------------
-Trait Civil_Unrest3
- Characters family
- Hidden
+   Threshold 2
 
  Level Anarchy3
    Description Anarchy3_desc
    EffectsDescription Anarchy3_effects_desc
-   Threshold 1
+   Threshold 3
 
-;----------------------------------------------
-;Trait Civil_Unrest4
-; Characters family
-; Hidden
-;
 ; Level Anarchy4
 ;   Description Anarchy4_desc
 ;   EffectsDescription Anarchy4_effects_desc
@@ -15132,6 +15481,111 @@ Trait Unpopularly_Loyal
    Effect LocalPopularity -8
    Effect MovementPoints -45
 
+;**************************************************
+;******* KER FACTION LEADER FINANCES TRAITS *******
+;------------------------------------------
+Trait FactionLeaderInDebt
+ Characters family
+ ;Hidden
+
+ Level InDebt1
+   Description InDebt1_desc
+   EffectsDescription InDebt1_effects_desc
+   Threshold 1
+ 
+   Effect Authority -1
+
+ Level InDebt2
+   Description InDebt2_desc
+   EffectsDescription InDebt2_effects_desc
+   Threshold 2
+ 
+   Effect Authority -2
+
+ Level InDebt3
+   Description InDebt3_desc
+   EffectsDescription InDebt3_effects_desc
+   Threshold 3
+ 
+   Effect Authority -3
+
+ Level InDebt4
+   Description InDebt4_desc
+   EffectsDescription InDebt3_effects_desc
+   Threshold 4
+ 
+   Effect Authority -3
+
+ Level InDebt5
+   Description InDebt5_desc
+   EffectsDescription InDebt3_effects_desc
+   Threshold 5
+ 
+   Effect Authority -3
+
+;------------------------------------------
+Trait DoesNotMindDebt
+ Characters family
+ ;Hidden
+
+ Level DoesNotMindDebt1
+   Description DoesNotMindDebt_desc
+   EffectsDescription DoesNotMindDebt_effects_desc
+   Threshold 1
+
+ Level DoesNotMindDebt2
+   Description DoesNotMindDebt2_desc
+   EffectsDescription DoesNotMindDebt_effects_desc
+   Threshold 5
+
+ Level DoesNotMindDebt3
+   Description DoesNotMindDebt3_desc
+   EffectsDescription DoesNotMindDebt3_effects_desc
+   Threshold 10
+ 
+   Effect Authority -1
+
+ Level DoesNotMindDebt4
+   Description DoesNotMindDebt3_desc
+   EffectsDescription DoesNotMindDebt4_effects_desc
+   Threshold 15
+ 
+   Effect Authority -2
+
+ Level DoesNotMindDebt5
+   Description DoesNotMindDebt3_desc
+   EffectsDescription DoesNotMindDebt5_effects_desc
+   Threshold 20
+ 
+   Effect Authority -3
+
+;------------------------------------------
+Trait LoanDread
+ Characters family
+ Hidden
+
+ Level LoanDread1
+   Description LoanDread_desc
+   EffectsDescription LoanDread_effects_desc
+   Threshold 1
+ 
+   Effect Chivalry -2
+
+ Level LoanDread2
+   Description LoanDread_desc
+   EffectsDescription LoanDread_effects_desc
+   Threshold 2
+ 
+   Effect Chivalry -4
+
+ Level LoanDread3
+   Description LoanDread_desc
+   EffectsDescription LoanDread_effects_desc
+   Threshold 3
+ 
+   Effect Chivalry -7
+
+;------------------------------------------
 ;**************************************************
 ;=========================================;
 ;======== VNV TRIGGERS START HERE ========;
@@ -19103,7 +19557,6 @@ Trigger civil_war_or_not3
 
 ;------------------------------------------
 ;usurper or asserting newly blue hued blood.
-
 Trigger Usurper1
  WhenToTest BecomesFactionLeader
 
@@ -19115,8 +19568,6 @@ Trigger Usurper1
        and not FactionType venice
        and not FactionType milan
        and not FactionType russia
-
-
 
  Affects Offensive_To_Nobles 1 Chance 15
 
@@ -19629,10 +20080,14 @@ Trigger family_generalmarries_1
  Affects Cuckold 2 Chance 85
 
 ;------------------------------------------
+
 Trigger family_generalmarries_royalty
  WhenToTest CharacterMarriesPrincess
 
+ Condition not SpouseTrait RoyalLady > 0; Marrying a Courtesan should not give Royal Family Ties
+
  Affects MarriedAPrincess 1 Chance 100 
+
 
 ;------------------------------------------
 Trigger family_generalmarries_charming_1
@@ -27390,257 +27845,44 @@ Trigger prisoners_payer2
  Affects RansomDread 1 Chance 85 
 
 ;------------------------------------------
-Trigger TriumphsOverFaction_venice
+;NEW Faction Killer Triggers by gsthoed
+;------------------------------------------
+Trigger TriumphsOverFaction_a
  WhenToTest CharacterTurnEnd
 
  Condition IsFactionLeader
-       and I_EventCounter Ceased_venice = 1
+       and I_EventCounter killed_factions_count = 1
 
  Affects FactionKiller 10 Chance 100
 
 ;------------------------------------------
-Trigger TriumphsOverFaction_sicily
+Trigger TriumphsOverFaction_b
  WhenToTest CharacterTurnEnd
 
  Condition IsFactionLeader
-       and I_EventCounter Ceased_sicily = 1
+       and I_EventCounter killed_factions_count = 2
 
- Affects FactionKiller 10 Chance 100
+ Affects FactionKiller 20 Chance 100
 
 ;------------------------------------------
-Trigger TriumphsOverFaction_milan
+Trigger TriumphsOverFaction_c
  WhenToTest CharacterTurnEnd
 
  Condition IsFactionLeader
-       and I_EventCounter Ceased_milan = 1
+       and I_EventCounter killed_factions_count = 3
 
- Affects FactionKiller 10 Chance 100
+ Affects FactionKiller 30 Chance 100
 
 ;------------------------------------------
-Trigger TriumphsOverFaction_papal_states
+Trigger TriumphsOverFaction_d
  WhenToTest CharacterTurnEnd
 
  Condition IsFactionLeader
-       and I_EventCounter Ceased_papal_states = 1
+       and I_EventCounter killed_factions_count > 3
 
- Affects FactionKiller 10 Chance 100
+ Affects FactionKiller 40 Chance 100
 
 ;------------------------------------------
-Trigger TriumphsOverFaction_denmark
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_denmark = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_egypt
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_egypt = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_scotland
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_scotland = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_cumans
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_cumans = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_mongols
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_mongols = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_turks
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_turks = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_france
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_france = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_hre
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_hre = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_england
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_england = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_portugal
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_portugal = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_poland
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_poland = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_byzantium
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_byzantium = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_moors
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_moors = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_russia
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_russia = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_spain
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_spain = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_hungary
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_hungary = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_aragon
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_aragon = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_lithuania
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_lithuania = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_kievan_rus
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_kievan_rus = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_teutonic_order
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_teutonic_order = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_timurids
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_timurids = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_norway
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_norway = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_jerusalem
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_jerusalem = 1
-
- Affects FactionKiller 10 Chance 100
-
-;------------------------------------------
-Trigger TriumphsOverFaction_kwarezm
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and I_EventCounter Ceased_kwarezm = 1
-
- Affects FactionKiller 10 Chance 100
-
 ;------------------------------------------
 ;VictorVirtue   Thresholds 10, 20, 30
 ;if this is to fast edit   Thresholds
@@ -27849,10 +28091,11 @@ Trigger Battle_Berserker_Actions_lithuania
 Trigger battle1
  WhenToTest PostBattle
 
- Condition GeneralHPLostRatioinBattle > 0.3
+ Condition GeneralFoughtInCombat
+       and GeneralHPLostRatioinBattle <= 0.3
+       and GeneralNumKillsInBattle <= 6
 
- Affects BattleScarred 1 Chance 17 
- Affects Brave 1 Chance 15 
+ Affects Brave 1 Chance 10 
 
 ;------------------------------------------
 Trigger battle2
@@ -28024,23 +28267,34 @@ Trigger battle_coward1
  Condition not WonBattle
        and not GeneralFoughtInCombat
        and PercentageEnemyKilled < 20
+       and PercentageEnemyKilled > 0
 
- Affects Coward 1 Chance 70 
+ Affects Coward 1 Chance 70
 
 ;------------------------------------------
 Trigger battle_coward2
  WhenToTest PostBattle
 
- Condition not GeneralFoughtInCombat
+ Condition not WonBattle
+       and not GeneralFoughtInCombat
        and PercentageEnemyKilled = 0
+       and BattleOdds > 0.5
+       and BattleOdds < 1.2
 
- Affects Coward 1 Chance 10 
+ Affects Coward 1 Chance 10
+ Affects Coward 1 Chance 70 
 
 ;------------------------------------------
 Trigger battle_coward3
- WhenToTest BattleGeneralRouted
+ WhenToTest PostBattle
+
+ Condition not WonBattle
+       and not GeneralFoughtInCombat
+       and PercentageEnemyKilled = 0
+       and BattleOdds >= 1.2
 
  Affects Coward 1 Chance 25
+ Affects Coward 1 Chance 70
 
 ;------------------------------------------
 Trigger battle5
@@ -33171,17 +33425,10 @@ Trigger family15
 
 ;********* PRINCESS TRAITS TRIGGERS *********
 ;------------------------------------------
-Trigger princess_base
- WhenToTest CharacterComesOfAge
 
- Condition AgentType = princess
+;MOVED
+;Trigger princess_base
 
- Affects IAmPrincess 1 Chance 100 
- Affects AgentPiety 1 Chance 100
- Affects NaturalPrincess 1 Chance 33
- Affects PassionateWoman 1 Chance 15
- Affects PrettyWoman 1 Chance 5
- Affects BraveWoman 1 Chance 3
 
 ;------------------------------------------
 Trigger princess_dad_was_ugly
@@ -33404,10 +33651,40 @@ Trigger princess_dad_was_nonauthoritarian
  Affects HarshWoman 1 Chance 25
 
 ;------------------------------------------
+
+;------------------------------------------
+;------------------------------------------
+;PRINCESS TRIGGERS ARE NOW HERE
+;------------------------------------------
+;------------------------------------------
+Trigger princess_base
+ WhenToTest CharacterComesOfAge
+
+ Condition AgentType = princess
+ 	and Trait RoyalLadyC < 1
+
+ Affects IAmPrincess 1 Chance 100 
+ Affects AgentPiety 1 Chance 100
+
+;------------------------------------------
+Trigger princess_base1
+ WhenToTest CharacterComesOfAge
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 1
+
+ Affects NaturalPrincess 1 Chance 33
+ Affects PassionateWoman 1 Chance 15
+ Affects PrettyWoman 1 Chance 5
+ Affects BraveWoman 1 Chance 3
+
+;------------------------------------------
+;------------------------------------------
 Trigger princess_base2
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects NaturalPrincess 1 Chance 75
 Affects PassionateWoman 1 Chance 50
@@ -33420,6 +33697,7 @@ Trigger princess_base3
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects NaturalPrincess 1 Chance 66
 Affects PassionateWoman 1 Chance 33
@@ -33432,6 +33710,7 @@ Trigger princess_base4
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects NaturalPrincess 1 Chance 33
 Affects PassionateWoman 1 Chance 15
@@ -33443,6 +33722,7 @@ Trigger princess_base5
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 and not Trait PrettyWoman > 0
 
 Affects HumbleWoman 1 Chance 50
@@ -33455,6 +33735,7 @@ Trigger princess_base5a
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 and Trait PrettyWoman > 0
 
 Affects PretentiousWoman 1 Chance 33
@@ -33467,6 +33748,7 @@ Trigger princess_base6
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects PretentiousWoman 1 Chance 33
 Affects UglyWoman 1 Chance 15
@@ -33479,6 +33761,7 @@ Trigger princess_base9
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects FaithfulWoman 1 Chance 5
 Affects FaithfulWoman 1 Chance 5
@@ -33490,6 +33773,7 @@ Trigger princess_base10
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects UnchasteWoman 1 Chance 5
 Affects UnchasteWoman 1 Chance 5
@@ -33501,6 +33785,7 @@ Trigger princess_base11
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects ColdWoman 1 Chance 5
 Affects ColdWoman 1 Chance 5
@@ -33512,6 +33797,7 @@ Trigger princess_base12
 WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
+and Trait IAmPrincess = 1
 
 Affects BigotWoman 1 Chance 5
 Affects TolerantWoman 1 Chance 5
@@ -33520,19 +33806,11 @@ Affects VapidWoman 1 Chance 10
 Affects FairWoman 1 Chance 5
 
 ;------------------------------------------
-Trigger princess_Buildings_Castle
-WhenToTest CharacterComesOfAge
+;------------------------------------------
 
-Condition AgentType = princess
-and FactionBuildingExists >= wooden_castle
-
-Affects BraveWoman 1 Chance 10
-Affects SpiritedWoman 1 Chance 10
-Affects UnchasteWoman 1 Chance 10
-Affects ColdWoman 1 Chance 5
-Affects FairWoman 1 Chance 5
-Affects HarshWoman 1 Chance 5
-
+;------------------------------------------
+;Trigger princess_Buildings_Castle
+;MOVED AFTER RLC TRIGGERS
 ;------------------------------------------
 Trigger sitting_around_town_vnv_trigger2
 WhenToTest CharacterTurnEnd
@@ -33540,6 +33818,7 @@ WhenToTest CharacterTurnEnd
 Condition EndedInSettlement
 and Treasury > 25000
 and AgentType = princess
+and Trait IAmPrincess = 1
 and SettlementBuildingExists >= pleasure_palace
 and RemainingMPPercentage = 100
 
@@ -33551,6 +33830,7 @@ WhenToTest CharacterTurnEnd
 
 Condition EndedInSettlement
 and AgentType = princess
+and Trait IAmPrincess = 1
 and SettlementBuildingExists >= church
 and RemainingMPPercentage = 100
 
@@ -33562,6 +33842,7 @@ WhenToTest CharacterTurnEnd
 
 Condition EndedInSettlement
 and AgentType = princess
+and Trait IAmPrincess = 1
 and SettlementBuildingExists >= inn
 and RemainingMPPercentage = 100
 
@@ -33573,10 +33854,14 @@ WhenToTest CharacterTurnEnd
 
 Condition EndedInSettlement
 and AgentType = princess
+and Trait IAmPrincess = 1
 and SettlementBuildingExists >= cathedral
 and RemainingMPPercentage = 100
 
 Affects FaithfulWoman 1 Chance 20 
+
+;------------------------------------------
+
 
 ;------------------------------------------
 Trigger princess_mom_was_charming_1
@@ -34287,7 +34572,7 @@ Trigger cardinalinit3
 
  Affects Warmonger 1 Chance 33 
  Affects Peaceful 1 Chance 33 
- Affects Corrupt 1 Chance 33 
+ Affects Corrupted 1 Chance 33 
  Affects Righteous 1 Chance 33 
 
 ;------------------------------------------
@@ -34326,9 +34611,9 @@ Trigger cardinalinit7
 Trigger cardinalinit8
  WhenToTest CardinalPromoted
 
- Condition Trait Corrupt >= 1
+ Condition Trait Corrupted >= 1
 
- Affects Corrupt 1 Chance 33 
+ Affects Corrupted 1 Chance 33 
 
 ;------------------------------------------
 Trigger cardinalinit9
@@ -34336,7 +34621,7 @@ Trigger cardinalinit9
 
  Condition Trait Corrupt >= 2
 
- Affects Corrupt 1 Chance 33 
+ Affects Corrupted 1 Chance 33 
 
 ;------------------------------------------
 Trigger cardinalinit10
@@ -34760,7 +35045,7 @@ Trigger MerchantCreatedReligiousMerchantIncrease
  Condition AgentType = merchant
        and Trait ReligiousMerchant = 1
 
- Affects ReligiousMerchant 1 Chance 33
+ Affects ReligiousMerchant 3 Chance 15
 
 ;------------------------------------------
 Trigger MerchantCreatedWorldlyMerchantIncrease
@@ -35004,11 +35289,15 @@ Trigger Merchant_Trading8
  WhenToTest CharacterTurnEnd
 
  Condition AgentType = merchant
-       and CharacterNumTurnsIdle = 15
+       ;and CharacterNumTurnsIdle = 15
+       and CharacterNumTurnsIdle > 9
+       and CharacterNumTurnsIdle < 15
+       and Trait Merchantfamily < 1 
        and OnResource 
        and TradingExotic
 
- Affects Merchantfamily 1 Chance 100
+ ;Affects Merchantfamily 1 Chance 100
+ Affects Merchantfamily 1 Chance 10
 
 ;------------------------------------------
 Trigger Merchant_Trading9
@@ -36109,7 +36398,7 @@ Trigger great_fair_accepted
 
  Condition CharacterIsLocal
        and DistanceCapital <= 50
-       and I_EventCounter great_fair_accepted > 0
+       and I_EventCounter great_fair_true = 2
 
  Affects GoodTrader 12 Chance 50
  Affects GoodMerchant 1 Chance 50
@@ -36120,7 +36409,7 @@ Trigger great_fair_refused
 
  Condition CharacterIsLocal
        and DistanceCapital <= 50
-       and I_EventCounter great_fair_declined > 0
+       and I_EventCounter great_fair_true = 1
 
  Affects BadTrader 1 Chance 75
  Affects ServesSelfMerchant 1 Chance 75
@@ -36131,7 +36420,7 @@ Trigger great_tourney_accepted_leader
 
  Condition CharacterIsLocal
        and IsFactionLeader
-       and I_EventCounter great_tourney_accepted > 0
+       and I_EventCounter great_tourney_true = 2
 
  Affects StrategyChivalry 1 Chance 50
  Affects Energetic 1 Chance 50
@@ -36144,7 +36433,7 @@ Trigger great_tourney_accepted_general
        and IsGeneral
        and not IsFactionLeader
        and DistanceCapital <= 50
-       and I_EventCounter great_tourney_accepted > 0
+       and I_EventCounter great_tourney_true = 2
 
  Affects HaleAndHearty 3 Chance 50
  Affects ContentGeneral 1 Chance 100
@@ -36157,7 +36446,7 @@ Trigger great_tourney_accepted_princess
  Condition CharacterIsLocal
        and AgentType = princess
        and DistanceCapital <= 50
-       and I_EventCounter great_tourney_accepted > 0
+       and I_EventCounter great_tourney_true = 2
 
  Affects FairWoman 1 Chance 50
 
@@ -36167,7 +36456,7 @@ Trigger great_tourney_refused_leader
 
  Condition CharacterIsLocal
        and IsFactionLeader
-       and I_EventCounter great_tourney_declined > 0
+       and I_EventCounter great_tourney_true = 1
 
  Affects Slothful 1 Chance 50
 
@@ -36179,7 +36468,7 @@ Trigger great_tourney_refused_general
        and IsGeneral
        and not IsFactionLeader
        and Attribute Chivalry > 3
-       and I_EventCounter great_tourney_declined > 0
+       and I_EventCounter great_tourney_true = 1
 
  Affects DiscontentGeneral 1 Chance 50
 
@@ -36189,7 +36478,7 @@ Trigger great_council_accepted_leader
 
  Condition CharacterIsLocal
        and IsFactionLeader
-       and I_EventCounter great_council_accepted > 0
+       and I_EventCounter great_council_true = 2
 
  Affects ReligiousActivity 1 Chance 50
 
@@ -36200,7 +36489,7 @@ Trigger great_council_accepted_priest
  Condition CharacterIsLocal
        and AgentType = priest
        and DistanceCapital <= 60
-       and I_EventCounter great_council_accepted > 0
+       and I_EventCounter great_council_true = 2
 
  Affects Dogmatic 1 Chance 100
  Affects StrongFaith 1 Chance 25
@@ -36211,20 +36500,23 @@ Trigger troubadours_accepted_leader
 
  Condition CharacterIsLocal
        and IsFactionLeader
-       and I_EventCounter troubadours_event_accepted > 0
+       and I_EventCounter troubadours_event_true = 2
 
  Affects StrategyChivalry 1 Chance 50
  Affects Poet 1 Chance 25
  Affects Cultured 1 Chance 25
 
 ;------------------------------------------
+
 Trigger troubadours_accepted_princess
  WhenToTest CharacterTurnEnd
 
  Condition CharacterIsLocal
        and AgentType = princess
+       and Trait IAmPrincess = 1
        and DistanceCapital <= 50
-       and I_EventCounter troubadours_event_accepted > 0
+
+       and I_EventCounter troubadours_event_true = 2
 
  Affects FairWoman 1 Chance 50
  Affects FaithfulWoman 1 Chance 50
@@ -36235,19 +36527,22 @@ Trigger troubadours_refused_leader
 
  Condition CharacterIsLocal
        and IsFactionLeader
-       and I_EventCounter troubadours_event_declined > 0
+       and I_EventCounter troubadours_event_true = 1
 
  Affects StrategyDread 1 Chance 50
  Affects Miserly 1 Chance 50
 
 ;------------------------------------------
+
 Trigger troubadours_refused_princess
  WhenToTest CharacterTurnEnd
 
  Condition CharacterIsLocal
        and AgentType = princess
+       and Trait IAmPrincess = 1
        and DistanceCapital <= 50
-       and I_EventCounter troubadours_event_declined > 0
+
+       and I_EventCounter troubadours_event_true = 1
 
  Affects VapidWoman 1 Chance 50
  Affects BadPrincess 1 Chance 50
@@ -36646,7 +36941,7 @@ Trigger ai_bad_traits_vapidwo
 Trigger ai_bad_traits_barrenwo
  WhenToTest CharacterTurnEnd
 
- Condition AgentType = princess
+ Condition IsGeneral
        and not FactionIsLocal
        and Trait WifeIsBarren > 0
 
@@ -36656,7 +36951,7 @@ Trigger ai_bad_traits_barrenwo
 Trigger ai_bad_traits_horridwo
  WhenToTest CharacterTurnEnd
 
- Condition AgentType = princess
+ Condition IsGeneral
        and not FactionIsLocal
        and Trait WifeIsHorrid > 0
 
@@ -36675,7 +36970,7 @@ Trigger ai_bad_traits_xenoph
 Trigger ai_bad_traits_bitchwo
  WhenToTest CharacterTurnEnd
 
- Condition AgentType = princess
+ Condition IsGeneral
        and not FactionIsLocal
        and Trait WifeIsBitch > 0
 
@@ -37221,6 +37516,184 @@ Condition IsGeneral
  
 Affects Senile 1 Chance 2
 
+;******************************************************
+;**********************RLC TRIGGERS*********************
+;******************************************************
+;------------------------------------------
+Trigger royal_lady_trigger
+ WhenToTest CharacterTurnStart
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 0
+ 	and Trait RoyalLadyC = 0
+
+ Affects RoyalLadyC 1 Chance 100 
+ Affects RoyalLady 1 Chance 100 
+ Affects AgentPiety 1 Chance 100
+;
+ Affects NaturalPrincess 1 Chance 5 
+ Affects GoodPrincess 1 Chance 7 
+ Affects UnchasteWomanRLC 1 Chance 3 
+ Affects SpiritedWomanRLC 1 Chance 16 
+ Affects HumbleWomanRLC 1 Chance 2 
+
+;------------------------------------------
+Trigger royal_lady_brave_trigger
+ WhenToTest CharacterTurnStart
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 0
+ 	and Trait BraveWoman = 0
+
+ Affects BraveWoman 1 Chance 39 
+ Affects BraveWoman 2 Chance 75 
+
+;------------------------------------------
+Trigger royal_lady_pretty_trigger
+ WhenToTest CharacterTurnStart
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 0
+ 	and Trait PrettyWomanRLC = 0
+
+ Affects PrettyWomanRLC 1 Chance 100 
+ Affects PrettyWomanRLC 2 Chance 29 
+
+;------------------------------------------
+Trigger RLC_sitting_around_town_vnv_trigger2
+WhenToTest CharacterTurnEnd
+
+Condition EndedInSettlement
+and Treasury > 25000
+and AgentType = princess
+and Trait RoyalLadyC = 1
+and SettlementBuildingExists >= pleasure_palace
+and RemainingMPPercentage = 100
+
+Affects DykeWomanRLC 1 Chance 10
+
+;------------------------------------------
+Trigger RLC_sitting_around_town_vnv_trigger3
+WhenToTest CharacterTurnEnd
+
+Condition EndedInSettlement
+and AgentType = princess
+and Trait RoyalLadyC = 1
+and SettlementBuildingExists >= church
+and RemainingMPPercentage = 100
+
+Affects EducatedWomanRLC 1 Chance 15
+
+;------------------------------------------
+Trigger RLC_sitting_around_town_vnv_trigger4
+WhenToTest CharacterTurnEnd
+
+Condition EndedInSettlement
+and AgentType = princess
+and Trait RoyalLadyC = 1
+and SettlementBuildingExists >= inn
+and RemainingMPPercentage = 100
+
+Affects UnchasteWomanRLC 1 Chance 5
+
+;------------------------------------------
+Trigger RLC_sitting_around_town_vnv_trigger5
+WhenToTest CharacterTurnEnd
+
+Condition EndedInSettlement
+and AgentType = princess
+and Trait RoyalLadyC = 1
+and SettlementBuildingExists >= cathedral
+and RemainingMPPercentage = 100
+
+Affects FaithfulWomanRLC 1 Chance 20 
+
+;------------------------------------------
+;------------------------------------------
+Trigger RLC_troubadours_accepted_princess
+ WhenToTest CharacterTurnEnd
+
+ Condition CharacterIsLocal
+       and AgentType = princess
+       and Trait RoyalLadyC = 1
+       and DistanceCapital <= 50
+       and I_EventCounter troubadours_event_true = 2
+
+ Affects FairWoman 1 Chance 50
+ Affects FaithfulWomanRLC 1 Chance 50
+
+;------------------------------------------
+Trigger RLC_troubadours_refused_princess
+ WhenToTest CharacterTurnEnd
+
+ Condition CharacterIsLocal
+       and AgentType = princess
+       and Trait RoyalLadyC = 1
+       and DistanceCapital <= 50
+       and I_EventCounter troubadours_event_true = 1
+
+ Affects VapidWomanRLC 1 Chance 50
+ 
+;------------------------------------------
+;------------------------------------------
+Trigger RLC_selfperpetuating54
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait PassionateWomanRLC >= 1
+
+ Affects PassionateWomanRLC 1 Chance 4 
+
+;------------------------------------------
+Trigger RLC_selfperpetuating55
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait ColdWomanRLC >= 1
+
+ Affects ColdWomanRLC 1 Chance 4 
+
+;------------------------------------------
+;------------------------------------------
+Trigger RLC_selfperpetuating60
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait DesperateWomanRLC >= 1
+
+ Affects DesperateWomanRLC 1 Chance 4 
+
+;------------------------------------------
+Trigger RLC_selfperpetuating61
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait SpiritedWomanRLC >= 1
+
+ Affects SpiritedWomanRLC 1 Chance 4 
+
+
+;------------------------------------------
+Trigger RLC_selfperpetuating62
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait FaithfulWomanRLC >= 1
+
+ Affects FaithfulWomanRLC 1 Chance 4 
+
+;------------------------------------------
+Trigger RLC_selfperpetuating63
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait UnchasteWomanRLC >= 1
+
+ Affects UnchasteWomanRLC 1 Chance 4 
+
+;------------------------------------------
+Trigger RLC_selfperpetuating64
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait EducatedWomanRLC >= 1
+
+ Affects EducatedWomanRLC 1 Chance 4 
+
+;------------------------------------------
 ;==========================================
 ;===========Adoption triggers==============
 ;==========================================
@@ -37393,6 +37866,19 @@ and AgentType = princess
 Affects Princess_Catholic 1 Chance 100
 
 ;------------------------------------------
+Trigger Princess_Catholic_ComesOfAge_Catch2
+WhenToTest CharacterTurnStart
+
+Condition FactionReligion catholic
+and not Trait Princess_Catholic > 0
+and not Trait Princess_Orthodox > 0
+and not Trait Princess_Pagan > 0
+and not Trait Princess_Muslim > 0
+and AgentType = princess
+
+Affects Princess_Catholic 1 Chance 100
+
+;------------------------------------------
 Trigger Princess_Catholic_Faith_Show
 WhenToTest CharacterTurnEnd
 
@@ -37444,6 +37930,19 @@ Affects Princess_Orthodox 1 Chance 20
 ;------------------------------------------
 Trigger Princess_Orthodox_ComesOfAge_Catch
 WhenToTest CharacterTurnEnd
+
+Condition FactionReligion orthodox
+and not Trait Princess_Catholic > 0
+and not Trait Princess_Orthodox > 0
+and not Trait Princess_Pagan > 0
+and not Trait Princess_Muslim > 0
+and AgentType = princess
+
+Affects Princess_Orthodox 1 Chance 100
+
+;------------------------------------------
+Trigger Princess_Orthodox_ComesOfAge_Catch2
+WhenToTest CharacterTurnStart
 
 Condition FactionReligion orthodox
 and not Trait Princess_Catholic > 0
@@ -37517,6 +38016,19 @@ and AgentType = princess
 Affects Princess_Pagan 1 Chance 100
 
 ;------------------------------------------
+Trigger Princess_Pagan_ComesOfAge_Catch2
+WhenToTest CharacterTurnStart
+
+Condition FactionReligion pagan
+and not Trait Princess_Catholic > 0
+and not Trait Princess_Orthodox > 0
+and not Trait Princess_Pagan > 0
+and not Trait Princess_Muslim > 0
+and AgentType = princess
+
+Affects Princess_Pagan 1 Chance 100
+
+;------------------------------------------
 Trigger Princess_Pagan_Faith_Show
 WhenToTest CharacterTurnEnd
 
@@ -37568,6 +38080,19 @@ Affects Princess_Muslim 1 Chance 20
 ;------------------------------------------
 Trigger Princess_Muslim_ComesOfAge_Catch
 WhenToTest CharacterTurnEnd
+
+Condition FactionReligion islam
+and not Trait Princess_Catholic > 0
+and not Trait Princess_Orthodox > 0
+and not Trait Princess_Pagan > 0
+and not Trait Princess_Muslim > 0
+and AgentType = princess
+
+Affects Princess_Muslim 1 Chance 100
+
+;------------------------------------------
+Trigger Princess_Muslim_ComesOfAge_Catch2
+WhenToTest CharacterTurnStart
 
 Condition FactionReligion islam
 and not Trait Princess_Catholic > 0
@@ -38015,6 +38540,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Muslim = 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
+and Trait Muslim = 0
 	   
 Affects LeaderGodNotMine 1 Chance 30
  
@@ -38027,6 +38553,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Muslim = 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
+and Trait Muslim = 0
 	   
 Affects LeaderGodIMine 1 Chance 80
  
@@ -38039,6 +38566,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Catholic = 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
+and Trait Catholic = 0
 
 Affects LeaderGodNotMine 1 Chance 30
  
@@ -38051,6 +38579,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Catholic = 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
+and Trait Catholic = 0
 
 Affects LeaderGodNotMine 1 Chance 80
  
@@ -38063,6 +38592,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Pagan = 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
+and Trait Pagan = 0
 
 Affects LeaderGodNotMine 1 Chance 30
  
@@ -38075,6 +38605,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Pagan = 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
+and Trait Pagan = 0
 
 Affects LeaderGodNotMine 1 Chance 80
  
@@ -38087,6 +38618,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Orthodox = 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
+and Trait Orthodox = 0
 
 Affects LeaderGodNotMine 1 Chance 30
  
@@ -38099,6 +38631,7 @@ and not IsFactionLeader
 and FactionLeaderTrait Orthodox = 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
+and Trait Orthodox = 0
 
 Affects LeaderGodNotMine 1 Chance 80
  
@@ -38111,6 +38644,54 @@ and FactionLeaderTrait Orthodox = 0
 and FactionLeaderTrait Muslim = 0
 and FactionLeaderTrait Catholic = 0
 and FactionLeaderTrait Pagan = 0
+and Trait Muslim = 0
+and Trait Catholic = 0
+and Trait Pagan = 0
+and Trait Orthodox = 0
+and Trait LeaderGodNotMine = 1
+
+Affects LeaderGodNotMine -1 Chance 100
+
+;------------------------------------------
+Trigger LeaderGodNotMine_Remove_Muslim
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and FactionLeaderTrait Muslim = 1
+and Trait Muslim = 1
+and Trait LeaderGodNotMine = 1
+
+Affects LeaderGodNotMine -1 Chance 100
+
+;------------------------------------------
+Trigger LeaderGodNotMine_Remove_Catholic
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and FactionLeaderTrait Catholic = 1
+and Trait Catholic = 1
+and Trait LeaderGodNotMine = 1
+
+Affects LeaderGodNotMine -1 Chance 100
+
+;------------------------------------------
+Trigger LeaderGodNotMine_Remove_Pagan
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and FactionLeaderTrait Pagan = 1
+and Trait Pagan = 1
+and Trait LeaderGodNotMine = 1
+
+Affects LeaderGodNotMine -1 Chance 100
+
+;------------------------------------------
+Trigger LeaderGodNotMine_Remove_Orthodox
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and FactionLeaderTrait Orthodox = 1
+and Trait Orthodox = 1
 and Trait LeaderGodNotMine = 1
 
 Affects LeaderGodNotMine -1 Chance 100
@@ -40817,6 +41398,7 @@ Trigger archbishop_trait_remove2
 ;------------------------------------------
 ;CRUSADER STATES HEREDITARY TITLES
 ;------------------------------------------
+;------------------------------------------
 Trigger jerusalem_ruler_trigger
  WhenToTest CharacterTurnStart
 
@@ -42043,6 +42625,30 @@ Trigger Venice_FactionHeir_Trigger
  Affects Venice_Public_Person -2 Chance 100 
 
 ;------------------------------------------
+Trigger Venice_Factionleader_Trigger_Turn0
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+ and I_TurnNumber < 1
+ and FactionType venice
+ and Trait FactionLeader >= 1
+
+ Affects Venice_Factionleader 1 Chance 100
+ Affects Factionleader -1 Chance 100
+
+;------------------------------------------
+Trigger Venice_FactionHeir_Trigger_Turn0
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionHeir
+ and I_TurnNumber < 1
+ and FactionType venice
+ and Trait Factionheir >= 1
+
+ Affects Venice_Factionheir 1 Chance 100
+ Affects Factionheir -1 Chance 100
+
+;------------------------------------------
 Trigger Venice_MinorCouncil_Factionheir_catch
  WhenToTest CharacterTurnStart
 
@@ -42704,6 +43310,30 @@ Trigger Genoa_FactionHeir_Trigger
  Affects Genoa_Public_Person -2 Chance 100 
 
 ;------------------------------------------
+Trigger Genoa_Factionleader_Trigger_Turn0
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+ and I_TurnNumber < 1
+ and FactionType milan
+ and Trait FactionLeader >= 1
+
+ Affects Genoa_Factionleader 1 Chance 100
+ Affects Factionleader -1 Chance 100
+
+;------------------------------------------
+Trigger Genoa_FactionHeir_Trigger_Turn0
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionHeir
+ and I_TurnNumber < 1
+ and FactionType milan
+ and Trait Factionheir >= 1
+
+ Affects Genoa_Factionheir 1 Chance 100
+ Affects Factionheir -1 Chance 100
+
+;------------------------------------------
 Trigger Genoa_Consul_Trigger
  WhenToTest CharacterTurnEnd
 
@@ -43279,6 +43909,30 @@ Trigger Novgorod_FactionHeir_Trigger
  Affects Novgorod_Factionheir 1 Chance 100
 
 ;------------------------------------------
+Trigger Novgorod_Factionleader_Trigger_Turn0
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+ and I_TurnNumber < 1
+ and FactionType russia
+ and Trait FactionLeader >= 1
+
+ Affects Novgorod_Factionleader 1 Chance 100
+ Affects Factionleader -1 Chance 100
+
+;------------------------------------------
+Trigger Novgorod_FactionHeir_Trigger_Turn0
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionHeir
+ and I_TurnNumber < 1
+ and FactionType russia
+ and Trait Factionheir >= 1
+
+ Affects Novgorod_Factionheir 1 Chance 100
+ Affects Factionheir -1 Chance 100
+
+;------------------------------------------
 ;------------------------------------------
 Trigger Novgorod_Posadnik_Trigger
  WhenToTest CharacterTurnEnd
@@ -43654,6 +44308,1096 @@ Condition Trait Desinherited_Trait >= 1
 
 Affects Desinherited_Trait -2 Chance 100
 
+;------------------------------------------
+Trigger Next_Heir_Trait_Ancillary_FactionHeir_Cleaup
+WhenToTest CharacterTurnEnd
+
+Condition IsFactionHeir
+and Trait Next_Heir_Trait >= 1
+
+Affects Next_Heir_Trait -2 Chance 100
+
+;------------------------------------------
+Trigger Next_Heir_Trait_Ancillary_FactionLeader_Cleaup
+WhenToTest CharacterTurnEnd
+
+Condition IsFactionLeader
+and Trait Next_Heir_Trait >= 1
+
+Affects Next_Heir_Trait -2 Chance 100
+
+;------------------------------------------
+Trigger Desinherited_Trait_FactionHeir_Cleaup
+WhenToTest CharacterTurnEnd
+
+Condition IsFactionHeir
+and Trait Desinherited_Trait >= 1
+
+Affects Desinherited_Trait -2 Chance 100
+
+;------------------------------------------
+Trigger Desinherited_Trait_FactionLeader_Cleaup
+WhenToTest CharacterTurnEnd
+
+Condition IsFactionLeader
+and Trait Desinherited_Trait >= 1
+
+Affects Desinherited_Trait -2 Chance 100
+
+;===============================================================
+;== CIVIL UNREST TRIGGERS START HERE ==
+;===============================================================
+
+Trigger Civil_Unrest_trigger1
+WhenToTest BecomesFactionLeader
+
+Condition Attribute Authority < 7
+and Attribute Authority > 3
+and not Trait Civil_Unrest > 0
+and not Trait FactionUsurper > 0
+and not Trait FactionFutureUsurper > 0
+and I_TurnNumber > 0
+and SettlementsTaken >= 2
+and not FactionType slave
+and not FactionType teutonic_order
+and not FactionType venice
+and not FactionType milan
+and not FactionType russia
+and not FactionType byzantium
+
+Affects Civil_Unrest 1 Chance 25
+
+;----------------------------------------------------
+Trigger Civil_Unrest_trigger2
+WhenToTest BecomesFactionLeader
+
+Condition Attribute Authority < 4
+and Attribute Authority > 0
+and not Trait Civil_Unrest > 0
+and not Trait FactionUsurper > 0
+and not Trait FactionFutureUsurper > 0
+and I_TurnNumber > 0
+and SettlementsTaken >= 4
+and not FactionType slave
+and not FactionType teutonic_order
+and not FactionType venice
+and not FactionType milan
+and not FactionType russia
+and not FactionType byzantium
+
+Affects Civil_Unrest 2 Chance 50
+
+;----------------------------------------------------
+Trigger Civil_Unrest_trigger3
+WhenToTest BecomesFactionLeader
+
+Condition Attribute Authority < 1
+and not Trait Civil_Unrest > 0
+and not Trait FactionUsurper > 0
+and not Trait FactionFutureUsurper > 0
+and I_TurnNumber > 0
+and SettlementsTaken >= 6
+and not FactionType slave
+and not FactionType teutonic_order
+and not FactionType venice
+and not FactionType milan
+and not FactionType russia
+and not FactionType byzantium
+
+Affects Civil_Unrest 3 Chance 75
+
+;----------------------------------------------------
+;BYZ SPECIAL
+;----------------------------------------------------
+Trigger Byz_Civil_Unrest_trigger1
+WhenToTest BecomesFactionLeader
+
+Condition Attribute Authority < 7
+and Attribute Authority > 3
+and not Trait Civil_Unrest > 0
+and I_TurnNumber > 0
+and SettlementsTaken >= 2
+and FactionType byzantium
+
+Affects Civil_Unrest 1 Chance 25
+
+;----------------------------------------------------
+Trigger Byz_Civil_Unrest_trigger2
+WhenToTest BecomesFactionLeader
+
+Condition Attribute Authority < 4
+and Attribute Authority > 0
+and not Trait Civil_Unrest > 0
+and I_TurnNumber > 0
+and SettlementsTaken >= 4
+and FactionType byzantium
+
+Affects Civil_Unrest 2 Chance 50
+
+;----------------------------------------------------
+Trigger Byz_Civil_Unrest_trigger3
+WhenToTest BecomesFactionLeader
+
+Condition Attribute Authority < 1
+and not Trait Civil_Unrest > 0
+and I_TurnNumber > 0
+and SettlementsTaken >= 6
+and FactionType byzantium
+
+Affects Civil_Unrest 3 Chance 75
+
+;----------------------------------------------------
+;----------------------------------------------------
+Trigger Civil_Unrest_recover1
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 3
+and IsFactionLeader
+and not Attribute Authority > 2
+and I_TurnNumber > 0
+and FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 55
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover2
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 2
+and IsFactionLeader
+and not Attribute Authority > 5
+and I_TurnNumber > 0
+and FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 70
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover3
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 1
+and IsFactionLeader
+and not Attribute Authority > 8
+and I_TurnNumber > 0
+and FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 85
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover4
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 3
+and IsFactionLeader
+and Attribute Authority > 2
+and I_TurnNumber > 0
+and FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 100
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover5
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 2
+and IsFactionLeader
+and Attribute Authority > 5
+and I_TurnNumber > 0
+and FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 100
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover6
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 1
+and IsFactionLeader
+and Attribute Authority > 8
+and I_TurnNumber > 0
+and FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 100
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover7
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 3
+and IsFactionLeader
+and I_TurnNumber > 0
+and not FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 85
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover8
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 2
+and IsFactionLeader
+and I_TurnNumber > 0
+and not FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 85
+
+;----------------------------------------------------
+Trigger Civil_Unrest_recover9
+WhenToTest CharacterTurnEnd
+
+Condition Trait Civil_Unrest = 1
+and IsFactionLeader
+and I_TurnNumber > 0
+and not FactionIsLocal
+
+Affects Civil_Unrest -1 Chance 85
+
+;----------------------------------------------------
+; FACTION LEADER TRAITS TRIGGERS
+;----------------------------------------------------
+Trigger Magnanimus_trigger1
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 60
+
+;------------------------------------------
+Trigger Magnanimus_trigger2
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 75
+
+;------------------------------------------
+Trigger Magnanimus_trigger3
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Magnanimus_trigger4
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Magnanimus_trigger5
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 60
+
+;------------------------------------------
+Trigger Magnanimus_trigger6
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 75
+
+;------------------------------------------
+Trigger Magnanimus_trigger7
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Magnanimus_trigger8
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Magnanimus_trigger9
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 60
+
+;------------------------------------------
+Trigger Magnanimus_trigger10
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 75
+
+;------------------------------------------
+Trigger Magnanimus_trigger11
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Magnanimus_trigger12
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType release
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Magnanimus_Ruler 1 Chance 100 
+
+;------------------------------------------
+;------------------------------------------
+;Trigger Magnanimus_remove_trigger1
+;WhenToTest CharacterTurnEnd
+;
+;Condition IsFactionLeader
+;and Trait Magnanimus_Ruler >= 1
+;and not Trait Civil_Unrest > 0
+;and FactionIsLocal
+;
+;Affects Magnanimus_Ruler -15 Chance 100 
+;
+;------------------------------------------
+;------------------------------------------
+Trigger Unforgiving_trigger1
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 60
+
+;------------------------------------------
+Trigger Unforgiving_trigger2
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 75
+
+;------------------------------------------
+Trigger Unforgiving_trigger3
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Unforgiving_trigger4
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 1
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Unforgiving_trigger5
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 60
+Affects Offensive_To_Nobles 1 Chance 7
+
+;------------------------------------------
+Trigger Unforgiving_trigger6
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 75
+Affects Offensive_To_Nobles 1 Chance 7
+
+;------------------------------------------
+Trigger Unforgiving_trigger7
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Unforgiving_trigger8
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 2
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Unforgiving_trigger9
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 60
+Affects Offensive_To_Nobles 1 Chance 15
+
+;------------------------------------------
+Trigger Unforgiving_trigger10
+WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 75
+Affects Offensive_To_Nobles 1 Chance 15
+
+;------------------------------------------
+Trigger Unforgiving_trigger11
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedSoldiers > 50
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 100 
+
+;------------------------------------------
+Trigger Unforgiving_trigger12
+WhenToTest GeneralPrisonersRansomedCaptor
+
+Condition RansomType execute
+and NumCapturedCharacters >= 1
+and TargetFactionType slave
+and IsFactionLeader
+and FactionLeaderTrait Civil_Unrest = 3
+and FactionIsLocal
+
+Affects Unforgiving_Ruler 1 Chance 100 
+
+;------------------------------------------
+;------------------------------------------
+;Trigger Unforgiving_remove_trigger
+;WhenToTest CharacterTurnEnd
+;
+;Condition IsFactionLeader
+;and Trait Unforgiving_Ruler >= 1
+;and not Trait Civil_Unrest > 0
+;and FactionIsLocal
+;
+;Affects Unforgiving_Ruler -15 Chance 100 
+;
+;----------------------------------------------------
+; GENERALS TRAITS TRIGGERS
+;----------------------------------------------------
+Trigger Generals_Unrest1_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Generals_Unrest 1 Chance 50
+
+;------------------------------------------
+Trigger Generals_Unrest1_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Generals_Unrest 1 Chance 65
+
+;------------------------------------------
+Trigger Generals_Unrest1_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 1 Chance 80
+
+;------------------------------------------
+Trigger Generals_Unrest2_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Generals_Unrest 2 Chance 10
+
+;------------------------------------------
+Trigger Generals_Unrest2_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Generals_Unrest 2 Chance 15
+
+;------------------------------------------
+Trigger Generals_Unrest2_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 2 Chance 20
+
+;------------------------------------------
+Trigger Generals_Unrest3_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Generals_Unrest 3 Chance 5
+
+;------------------------------------------
+Trigger Generals_Unrest3_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Generals_Unrest 3 Chance 10
+
+;------------------------------------------
+Trigger Generals_Unrest3_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 3 Chance 15
+
+;------------------------------------------
+Trigger Generals_Unrest4_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Generals_Unrest 4 Chance 3
+
+;------------------------------------------
+Trigger Generals_Unrest4_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Generals_Unrest 4 Chance 6
+
+;------------------------------------------
+Trigger Generals_Unrest4_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 4 Chance 10
+
+;------------------------------------------
+;Generals Unrest Advance
+;------------------------------------------
+Trigger Generals_UnrestAdv_trigger1
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest = 1
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Generals_Unrest 1 Chance 50
+
+;------------------------------------------
+Trigger Generals_UnrestAdv_trigger2
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest = 2
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Generals_Unrest 1 Chance 40
+
+;------------------------------------------
+Trigger Generals_UnrestAdv_trigger3
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest = 3
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 1 Chance 30
+
+;------------------------------------------
+Trigger Generals_UnrestAdv_trigger4
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest = 1
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 1 Chance 50
+
+;------------------------------------------
+Trigger Generals_UnrestAdv_trigger5
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest = 2
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 1 Chance 40
+
+;------------------------------------------
+Trigger Generals_UnrestAdv_trigger6
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest = 3
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Generals_Unrest 1 Chance 30
+
+;------------------------------------------
+;------------------------------------------
+Trigger Generals_Unrest_remove_trigger
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest >= 1
+and not Trait Generals_Unrest = 4
+and not FactionLeaderTrait Civil_Unrest > 0
+
+Affects Generals_Unrest -10 Chance 100
+
+;------------------------------------------
+Trigger Rebellious_Civil_Unrest_End_trigger
+WhenToTest CharacterTurnStart
+
+Condition Trait Generals_Unrest = 4
+and not FactionLeaderTrait Civil_Unrest > 0
+
+Affects Generals_Unrest -10 Chance 100
+Affects Disobedient 1 Chance 50
+Affects Disobedient 1 Chance 10
+
+;------------------------------------------
+Trigger Generals_Unrest_remove_trigger2
+WhenToTest CharacterTurnEnd
+
+Condition FactionType slave
+and Trait Generals_Unrest >= 1
+
+Affects Generals_Unrest -10 Chance 100
+
+;------------------------------------------
+Trigger Civil_Unrest_Conspirator_Lock
+ WhenToTest CharacterTurnEnd
+
+ Condition IsGeneral
+       and EndedInSettlement
+       and Trait Generals_Unrest = 3
+       and Trait Locked = 0
+
+ Affects Locked 1 Chance 25
+
+;------------------------------------------
+Trigger Civil_Unrest_Rebellious_Lock
+ WhenToTest CharacterTurnEnd
+
+ Condition IsGeneral
+       and EndedInSettlement
+       and Trait Generals_Unrest = 4
+       and Trait Locked = 0
+
+ Affects Locked 1 Chance 75
+
+;------------------------------------------
+; Unpopularly Loyal Triggers
+;------------------------------------------
+Trigger Unpopularly_Loyal1_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Unpopularly_Loyal 1 Chance 50
+
+;------------------------------------------
+Trigger Unpopularly_Loyal1_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Unpopularly_Loyal 1 Chance 65
+
+;------------------------------------------
+Trigger Unpopularly_Loyal1_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal 1 Chance 80
+
+;------------------------------------------
+Trigger Unpopularly_Loyal2_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Unpopularly_Loyal 2 Chance 10
+
+;------------------------------------------
+Trigger Unpopularly_Loyal2_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Unpopularly_Loyal 2 Chance 15
+
+;------------------------------------------
+Trigger Unpopularly_Loyal2_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal 2 Chance 20
+
+;------------------------------------------
+Trigger Unpopularly_Loyal3_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Unpopularly_Loyal 3 Chance 5
+
+;------------------------------------------
+Trigger Unpopularly_Loyal3_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Unpopularly_Loyal 3 Chance 10
+
+;------------------------------------------
+Trigger Unpopularly_Loyal3_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal 3 Chance 15
+
+;------------------------------------------
+Trigger Unpopularly_Loyal4_trigger1
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 1
+
+Affects Unpopularly_Loyal 4 Chance 3
+
+;------------------------------------------
+Trigger Unpopularly_Loyal4_trigger2
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Unpopularly_Loyal 4 Chance 6
+
+;------------------------------------------
+Trigger Unpopularly_Loyal4_trigger3
+WhenToTest CharacterTurnStart
+
+Condition not IsFactionLeader
+;and FactionIsLocal
+and not FactionType slave
+and not Trait Generals_Unrest > 0
+and not Trait Unpopularly_Loyal > 0
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal 4 Chance 10
+
+;------------------------------------------
+;Unpopularly Loyal Decrease
+;------------------------------------------
+Trigger Unpopularly_LoyalAdv_trigger1
+WhenToTest CharacterTurnStart
+
+Condition Trait Unpopularly_Loyal = 2
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Unpopularly_Loyal -1 Chance 50
+
+;------------------------------------------
+Trigger Unpopularly_LoyalAdv_trigger2
+WhenToTest CharacterTurnStart
+
+Condition Trait Unpopularly_Loyal = 2
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 2
+
+Affects Unpopularly_Loyal -1 Chance 40
+
+;------------------------------------------
+Trigger Unpopularly_LoyalAdv_trigger3
+WhenToTest CharacterTurnStart
+
+Condition Trait Unpopularly_Loyal = 4
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal -1 Chance 30
+
+;------------------------------------------
+Trigger Unpopularly_LoyalAdv_trigger4
+WhenToTest CharacterTurnStart
+
+Condition Trait Unpopularly_Loyal = 2
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal -1 Chance 50
+
+;------------------------------------------
+Trigger Unpopularly_LoyalAdv_trigger5
+WhenToTest CharacterTurnStart
+
+Condition Trait Unpopularly_Loyal = 3
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal -1 Chance 40
+
+;------------------------------------------
+Trigger Unpopularly_LoyalAdv_trigger6
+WhenToTest CharacterTurnStart
+
+Condition Trait Unpopularly_Loyal = 4
+and FactionIsLocal
+and FactionLeaderTrait Civil_Unrest = 3
+
+Affects Unpopularly_Loyal -1 Chance 30
+
+;------------------------------------------
+;------------------------------------------
+Trigger Unpopularly_Loyal_remove_trigger
+WhenToTest CharacterTurnStart
+
+Condition Trait Unpopularly_Loyal >= 1
+and not FactionLeaderTrait Civil_Unrest > 0
+
+Affects Unpopularly_Loyal -10 Chance 100
+
+;------------------------------------------
+Trigger Unpopularly_Loyal_remove_trigger2
+WhenToTest CharacterTurnEnd
+
+Condition FactionType slave
+and Trait Unpopularly_Loyal >= 1
+
+Affects Unpopularly_Loyal -10 Chance 100
+
+;===============================================================
+;== CIVIL UNREST TRIGGERS TRIGGERS ENDS ==
+;===============================================================
 ;------------------------------------------
 ;*********AUTHORITY FIX TRIGGERS***********
 ;------------------------------------------
@@ -44094,1091 +45838,477 @@ Affects Fix_Authority_Trait4 -1 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
-;===============================================================
-;== CIVIL UNREST TRIGGERS START HERE ==
-;===============================================================
+;--------------KER CLEAN UP----------------
+;------------------------------------------
+Trigger KER_cleanup_1a
+WhenToTest CharacterTurnEnd
 
-Trigger Civil_Unrest_trigger1
-WhenToTest BecomesFactionLeader
+Condition Trait Royal_Blood_Milanese > 0
+;and I_TurnNumber < 1
 
-Condition Attribute Authority < 7
-and Attribute Authority > 3
-and not Trait Civil_Unrest1 > 0
-and not Trait Civil_Unrest2 > 0
-and not Trait Civil_Unrest3 > 0
-and not Trait FactionUsurper > 0
-and not Trait FactionFutureUsurper > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 2
-and not FactionType slave
-and not FactionType teutonic_order
+Affects Royal_Blood_Milanese -1 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_1b
+WhenToTest CharacterTurnEnd
+
+Condition Trait Royal_Relation_Milanese > 0
+;and I_TurnNumber < 1
+
+Affects Royal_Relation_Milanese -1 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_2a
+WhenToTest CharacterTurnEnd
+
+Condition Trait Royal_Blood_Venetian > 0
+;and I_TurnNumber < 1
+
+Affects Royal_Blood_Venetian -1 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_2b
+WhenToTest CharacterTurnEnd
+
+Condition Trait Royal_Relation_Venetian > 0
+;and I_TurnNumber < 1
+
+Affects Royal_Relation_Venetian -1 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_3a
+WhenToTest CharacterTurnEnd
+
+Condition Trait Royal_Blood_Russian > 0
+;and I_TurnNumber < 1
+
+Affects Royal_Blood_Russian -1 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_3b
+WhenToTest CharacterTurnEnd
+
+Condition Trait Royal_Relation_Russian > 0
+;and I_TurnNumber < 1
+
+Affects Royal_Relation_Russian -1 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_4
+WhenToTest CharacterTurnEnd
+
+Condition Trait Venice_Signoria_Approval > 0
 and not FactionType venice
+
+Affects Venice_Signoria_Approval -76 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_5
+WhenToTest CharacterTurnEnd
+
+Condition Trait Genoa_Comune_Approval > 0
 and not FactionType milan
+
+Affects Genoa_Comune_Approval -76 Chance 100
+
+;------------------------------------------
+Trigger KER_cleanup_6
+WhenToTest CharacterTurnEnd
+
+Condition Trait Novgorod_Veche_Approval > 0
 and not FactionType russia
-and not FactionType byzantium
 
-Affects Civil_Unrest1 1 Chance 25
-
-;----------------------------------------------------
-Trigger Civil_Unrest_trigger2
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 4
-and Attribute Authority > 0
-and not Trait Civil_Unrest1 > 0
-and not Trait Civil_Unrest2 > 0
-and not Trait Civil_Unrest3 > 0
-and not Trait FactionUsurper > 0
-and not Trait FactionFutureUsurper > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 4
-and not FactionType slave
-and not FactionType teutonic_order
-and not FactionType venice
-and not FactionType milan
-and not FactionType russia
-and not FactionType byzantium
-
-Affects Civil_Unrest2 1 Chance 50
-
-;----------------------------------------------------
-Trigger Civil_Unrest_trigger3
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 1
-and not Trait Civil_Unrest1 > 0
-and not Trait Civil_Unrest2 > 0
-and not Trait Civil_Unrest3 > 0
-and not Trait FactionUsurper > 0
-and not Trait FactionFutureUsurper > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 6
-and not FactionType slave
-and not FactionType teutonic_order
-and not FactionType venice
-and not FactionType milan
-and not FactionType russia
-and not FactionType byzantium
-
-Affects Civil_Unrest3 1 Chance 75
-
-;----------------------------------------------------
-;BYZ SPECIAL
-;----------------------------------------------------
-Trigger Byz_Civil_Unrest_trigger1
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 7
-and Attribute Authority > 3
-and not Trait Civil_Unrest1 > 0
-and not Trait Civil_Unrest2 > 0
-and not Trait Civil_Unrest3 > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 2
-and FactionType byzantium
-
-Affects Civil_Unrest1 1 Chance 25
-
-;----------------------------------------------------
-Trigger Byz_Civil_Unrest_trigger2
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 4
-and Attribute Authority > 0
-and not Trait Civil_Unrest1 > 0
-and not Trait Civil_Unrest2 > 0
-and not Trait Civil_Unrest3 > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 4
-and FactionType byzantium
-
-Affects Civil_Unrest2 1 Chance 50
-
-;----------------------------------------------------
-Trigger Byz_Civil_Unrest_trigger3
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 1
-and not Trait Civil_Unrest1 > 0
-and not Trait Civil_Unrest2 > 0
-and not Trait Civil_Unrest3 > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 6
-and FactionType byzantium
-
-Affects Civil_Unrest3 1 Chance 75
-
-;----------------------------------------------------
-;----------------------------------------------------
-Trigger Civil_Unrest_recover1
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest3 = 1
-and IsFactionLeader
-and not Attribute Authority > 2
-and RandomPercent > 45
-and I_TurnNumber > 0
-and FactionIsLocal
-
-Affects Civil_Unrest3 -1 Chance 100
-Affects Civil_Unrest2 1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover2
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest2 = 1
-and IsFactionLeader
-and not Attribute Authority > 5
-and RandomPercent > 30
-and I_TurnNumber > 0
-and FactionIsLocal
-
-Affects Civil_Unrest2 -1 Chance 100
-Affects Civil_Unrest1 1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover3
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest1 = 1
-and IsFactionLeader
-and not Attribute Authority > 8
-and RandomPercent > 15
-and I_TurnNumber > 0
-and FactionIsLocal
-
-Affects Civil_Unrest1 -1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover4
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest3 = 1
-and IsFactionLeader
-and Attribute Authority > 2
-and I_TurnNumber > 0
-and FactionIsLocal
-
-Affects Civil_Unrest3 -1 Chance 100
-Affects Civil_Unrest2 1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover5
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest2 = 1
-and IsFactionLeader
-and Attribute Authority > 5
-and I_TurnNumber > 0
-and FactionIsLocal
-
-Affects Civil_Unrest2 -1 Chance 100
-Affects Civil_Unrest1 1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover6
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest1 = 1
-and IsFactionLeader
-and Attribute Authority > 8
-and I_TurnNumber > 0
-and FactionIsLocal
-
-Affects Civil_Unrest1 -1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover7
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest3 = 1
-and IsFactionLeader
-and RandomPercent > 15
-and I_TurnNumber > 0
-and not FactionIsLocal
-
-Affects Civil_Unrest3 -1 Chance 100
-Affects Civil_Unrest2 1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover8
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest2 = 1
-and IsFactionLeader
-and RandomPercent > 15
-and I_TurnNumber > 0
-and not FactionIsLocal
-
-Affects Civil_Unrest2 -1 Chance 100
-Affects Civil_Unrest1 1 Chance 100
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover9
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest1 = 1
-and IsFactionLeader
-and RandomPercent > 15
-and I_TurnNumber > 0
-and not FactionIsLocal
-
-Affects Civil_Unrest1 -1 Chance 100
-
-;----------------------------------------------------
-; FACTION LEADER TRAITS TRIGGERS
-;----------------------------------------------------
-Trigger Magnanimus_trigger1
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 60
-
-;------------------------------------------
-Trigger Magnanimus_trigger2
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 75
-
-;------------------------------------------
-Trigger Magnanimus_trigger3
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Magnanimus_trigger4
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Magnanimus_trigger5
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 60
-
-;------------------------------------------
-Trigger Magnanimus_trigger6
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 75
-
-;------------------------------------------
-Trigger Magnanimus_trigger7
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Magnanimus_trigger8
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Magnanimus_trigger9
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 60
-
-;------------------------------------------
-Trigger Magnanimus_trigger10
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 75
-
-;------------------------------------------
-Trigger Magnanimus_trigger11
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Magnanimus_trigger12
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType release
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Magnanimus_Ruler 1 Chance 100 
+Affects Novgorod_Veche_Approval -76 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
-;Trigger Magnanimus_remove_trigger1
-;WhenToTest CharacterTurnEnd
-;
-;Condition IsFactionLeader
-;and Trait Magnanimus_Ruler >= 1
-;and not Trait Civil_Unrest1 > 0
-;and not Trait Civil_Unrest2 > 0
-;and not Trait Civil_Unrest3 > 0
-;and FactionIsLocal
-;
-;Affects Magnanimus_Ruler -15 Chance 100 
-;
 ;------------------------------------------
+; Additional Civil War Triggers
 ;------------------------------------------
-Trigger Unforgiving_trigger1
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 60
-
-;------------------------------------------
-Trigger Unforgiving_trigger2
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 75
-
-;------------------------------------------
-Trigger Unforgiving_trigger3
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Unforgiving_trigger4
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest1 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Unforgiving_trigger5
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 60
-Affects Offensive_To_Nobles 1 Chance 7
-
-;------------------------------------------
-Trigger Unforgiving_trigger6
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 75
-Affects Offensive_To_Nobles 1 Chance 7
-
-;------------------------------------------
-Trigger Unforgiving_trigger7
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Unforgiving_trigger8
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest2 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Unforgiving_trigger9
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 60
-Affects Offensive_To_Nobles 1 Chance 15
-
-;------------------------------------------
-Trigger Unforgiving_trigger10
-WhenToTest FactionLeaderPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 75
-Affects Offensive_To_Nobles 1 Chance 15
-
-;------------------------------------------
-Trigger Unforgiving_trigger11
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedSoldiers > 50
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 100 
-
-;------------------------------------------
-Trigger Unforgiving_trigger12
-WhenToTest GeneralPrisonersRansomedCaptor
-
-Condition RansomType execute
-and NumCapturedCharacters >= 1
-and TargetFactionType slave
-and IsFactionLeader
-and FactionLeaderTrait Civil_Unrest3 = 1
-and FactionIsLocal
-
-Affects Unforgiving_Ruler 1 Chance 100 
-
-;------------------------------------------
-;------------------------------------------
-;Trigger Unforgiving_remove_trigger
-;WhenToTest CharacterTurnEnd
-;
-;Condition IsFactionLeader
-;and Trait Unforgiving_Ruler >= 1
-;and not Trait Civil_Unrest1 > 0
-;and not Trait Civil_Unrest2 > 0
-;and not Trait Civil_Unrest3 > 0
-;and FactionIsLocal
-;
-;Affects Unforgiving_Ruler -15 Chance 100 
-;
-;----------------------------------------------------
-; GENERALS TRAITS TRIGGERS
-;----------------------------------------------------
-Trigger Generals_Unrest1_trigger1
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
-
-Affects Generals_Unrest 1 Chance 50
-
-;------------------------------------------
-Trigger Generals_Unrest1_trigger2
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Generals_Unrest 1 Chance 65
-
-;------------------------------------------
-Trigger Generals_Unrest1_trigger3
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 1 Chance 80
-
-;------------------------------------------
-Trigger Generals_Unrest2_trigger1
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
-
-Affects Generals_Unrest 2 Chance 10
-
-;------------------------------------------
-Trigger Generals_Unrest2_trigger2
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Generals_Unrest 2 Chance 15
-
-;------------------------------------------
-Trigger Generals_Unrest2_trigger3
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 2 Chance 20
-
-;------------------------------------------
-Trigger Generals_Unrest3_trigger1
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
-
-Affects Generals_Unrest 3 Chance 5
-
-;------------------------------------------
-Trigger Generals_Unrest3_trigger2
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Generals_Unrest 3 Chance 10
-
-;------------------------------------------
-Trigger Generals_Unrest3_trigger3
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 3 Chance 15
-
-;------------------------------------------
-Trigger Generals_Unrest4_trigger1
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
-
-Affects Generals_Unrest 4 Chance 3
-
-;------------------------------------------
-Trigger Generals_Unrest4_trigger2
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Generals_Unrest 4 Chance 6
-
-;------------------------------------------
-Trigger Generals_Unrest4_trigger3
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 4 Chance 10
-
-;------------------------------------------
-;Generals Unrest Advance
-;------------------------------------------
-Trigger Generals_UnrestAdv_trigger1
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest = 1
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Generals_Unrest 1 Chance 50
-
-;------------------------------------------
-Trigger Generals_UnrestAdv_trigger2
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest = 2
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Generals_Unrest 1 Chance 40
-
-;------------------------------------------
-Trigger Generals_UnrestAdv_trigger3
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest = 3
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 1 Chance 30
-
-;------------------------------------------
-Trigger Generals_UnrestAdv_trigger4
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest = 1
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 1 Chance 50
-
-;------------------------------------------
-Trigger Generals_UnrestAdv_trigger5
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest = 2
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 1 Chance 40
-
-;------------------------------------------
-Trigger Generals_UnrestAdv_trigger6
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest = 3
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Generals_Unrest 1 Chance 30
-
-;------------------------------------------
-;------------------------------------------
-Trigger Generals_Unrest_remove_trigger
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest >= 1
-and not Trait Generals_Unrest = 4
-and not FactionLeaderTrait Civil_Unrest1 > 0
-and not FactionLeaderTrait Civil_Unrest2 > 0
-and not FactionLeaderTrait Civil_Unrest2 > 0
-
-Affects Generals_Unrest -10 Chance 100
-
-;------------------------------------------
-Trigger Rebellious_Civil_Unrest_End_trigger
-WhenToTest CharacterTurnStart
-
-Condition Trait Generals_Unrest = 4
-and not FactionLeaderTrait Civil_Unrest1 > 0
-and not FactionLeaderTrait Civil_Unrest2 > 0
-and not FactionLeaderTrait Civil_Unrest2 > 0
-
-Affects Generals_Unrest -10 Chance 100
-Affects Disobedient 1 Chance 50
-Affects Disobedient 1 Chance 10
-
-;------------------------------------------
-Trigger Generals_Unrest_remove_trigger2
-WhenToTest CharacterTurnEnd
-
-Condition FactionType slave
-and Trait Generals_Unrest >= 1
-
-Affects Generals_Unrest -10 Chance 100
-
-;------------------------------------------
-Trigger Civil_Unrest_Conspirator_Lock
+;Nation in debt: too Many Loans!
+Trigger Disgust_with_King's_Unreasonable_Finances2
  WhenToTest CharacterTurnEnd
 
- Condition IsGeneral
-       and EndedInSettlement
-       and Trait Generals_Unrest = 3
-       and Trait Locked = 0
+ Condition Trait Offensive_To_Nobles = 0
+       and IsFactionLeader
+       and FactionIsLocal
+       and Trait FactionLeaderInDebt >= 3; +30000f in loan debt
 
- Affects Locked 1 Chance 25
+ Affects Offensive_To_Nobles 1 Chance 25
 
 ;------------------------------------------
-Trigger Civil_Unrest_Rebellious_Lock
+;Nation in debt: Interests don't trouble teh king?!
+Trigger Disgust_with_King's_Unreasonable_Finances3
  WhenToTest CharacterTurnEnd
 
- Condition IsGeneral
-       and EndedInSettlement
-       and Trait Generals_Unrest = 4
-       and Trait Locked = 0
+ Condition Trait Offensive_To_Nobles = 0
+       and IsFactionLeader
+       and FactionIsLocal
+       and Trait DoesNotMindDebt = 3; 10 turns in loan debt
 
- Affects Locked 1 Chance 75
-
-;------------------------------------------
-; Unpopularly Loyal Triggers
-;------------------------------------------
-Trigger Unpopularly_Loyal1_trigger1
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
-
-Affects Unpopularly_Loyal 1 Chance 50
+ Affects Offensive_To_Nobles 1 Chance 10
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal1_trigger2
-WhenToTest CharacterTurnStart
+;Nation in debt: Interests don't trouble teh king?!
+Trigger Disgust_with_King's_Unreasonable_Finances4
+ WhenToTest CharacterTurnEnd
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
+ Condition Trait Offensive_To_Nobles = 0
+       and IsFactionLeader
+       and FactionIsLocal
+       and Trait DoesNotMindDebt = 4; 15 turns in loan debt
 
-Affects Unpopularly_Loyal 1 Chance 65
-
-;------------------------------------------
-Trigger Unpopularly_Loyal1_trigger3
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Unpopularly_Loyal 1 Chance 80
+ Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal2_trigger1
-WhenToTest CharacterTurnStart
+;Nation in debt: Interests don't trouble teh king?!
+Trigger Disgust_with_King's_Unreasonable_Finances5
+ WhenToTest CharacterTurnEnd
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
+ Condition Trait Offensive_To_Nobles = 0
+       and IsFactionLeader
+       and FactionIsLocal
+       and Trait DoesNotMindDebt = 5; 20 turns in loan debt
 
-Affects Unpopularly_Loyal 2 Chance 10
-
-;------------------------------------------
-Trigger Unpopularly_Loyal2_trigger2
-WhenToTest CharacterTurnStart
-
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Unpopularly_Loyal 2 Chance 15
+ Affects Offensive_To_Nobles 1 Chance 20
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal2_trigger3
-WhenToTest CharacterTurnStart
+; King Finances Standings Triggers
+;------------------------------------------
+Trigger King_Finances_interest
+ WhenToTest CharacterTurnStart
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund >= 1
+	and Trait DoesNotMindDebt < 5
 
-Affects Unpopularly_Loyal 2 Chance 20
+ Affects DoesNotMindDebt 1 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal3_trigger1
-WhenToTest CharacterTurnStart
+Trigger King_Finances_interest_remove
+ WhenToTest CharacterTurnStart
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund < 1
+	and Trait DoesNotMindDebt >= 1
 
-Affects Unpopularly_Loyal 3 Chance 5
+ Affects DoesNotMindDebt -25 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal3_trigger2
-WhenToTest CharacterTurnStart
+Trigger King_Finances1
+ WhenToTest CharacterTurnStart
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 1
+	and Trait FactionLeaderInDebt < 1
 
-Affects Unpopularly_Loyal 3 Chance 10
+ Affects FactionLeaderInDebt 1 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal3_trigger3
-WhenToTest CharacterTurnStart
+Trigger King_Finances2
+ WhenToTest CharacterTurnStart
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 2
+	and Trait FactionLeaderInDebt < 1
 
-Affects Unpopularly_Loyal 3 Chance 15
+ Affects FactionLeaderInDebt 2 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal4_trigger1
-WhenToTest CharacterTurnStart
+Trigger King_Finances3
+ WhenToTest CharacterTurnStart
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest1 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 3
+	and Trait FactionLeaderInDebt < 1
 
-Affects Unpopularly_Loyal 4 Chance 3
+ Affects FactionLeaderInDebt 3 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal4_trigger2
-WhenToTest CharacterTurnStart
+Trigger King_Finances4
+ WhenToTest CharacterTurnStart
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest2 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 4
+	and Trait FactionLeaderInDebt < 1
 
-Affects Unpopularly_Loyal 4 Chance 6
+ Affects FactionLeaderInDebt 4 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal4_trigger3
-WhenToTest CharacterTurnStart
+Trigger King_Finances5
+ WhenToTest CharacterTurnStart
 
-Condition not IsFactionLeader
-;and FactionIsLocal
-and not FactionType slave
-and not Trait Generals_Unrest > 0
-and not Trait Unpopularly_Loyal > 0
-and FactionLeaderTrait Civil_Unrest3 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 5
+	and Trait FactionLeaderInDebt < 1
 
-Affects Unpopularly_Loyal 4 Chance 10
+ Affects FactionLeaderInDebt 5 Chance 100
 
 ;------------------------------------------
-;Unpopularly Loyal Decrease
-;------------------------------------------
-Trigger Unpopularly_LoyalAdv_trigger1
-WhenToTest CharacterTurnStart
+Trigger King_Finances6
+ WhenToTest CharacterTurnStart
 
-Condition Trait Unpopularly_Loyal = 2
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest2 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 2
+	and Trait FactionLeaderInDebt = 1
 
-Affects Unpopularly_Loyal -1 Chance 50
-
-;------------------------------------------
-Trigger Unpopularly_LoyalAdv_trigger2
-WhenToTest CharacterTurnStart
-
-Condition Trait Unpopularly_Loyal = 2
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest2 = 1
-
-Affects Unpopularly_Loyal -1 Chance 40
+ Affects FactionLeaderInDebt 1 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_LoyalAdv_trigger3
-WhenToTest CharacterTurnStart
+Trigger King_Finances7
+ WhenToTest CharacterTurnStart
 
-Condition Trait Unpopularly_Loyal = 4
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 3
+	and Trait FactionLeaderInDebt = 1
 
-Affects Unpopularly_Loyal -1 Chance 30
-
-;------------------------------------------
-Trigger Unpopularly_LoyalAdv_trigger4
-WhenToTest CharacterTurnStart
-
-Condition Trait Unpopularly_Loyal = 2
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Unpopularly_Loyal -1 Chance 50
+ Affects FactionLeaderInDebt 2 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_LoyalAdv_trigger5
-WhenToTest CharacterTurnStart
+Trigger King_Finances8
+ WhenToTest CharacterTurnStart
 
-Condition Trait Unpopularly_Loyal = 3
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 3
+	and Trait FactionLeaderInDebt = 2
 
-Affects Unpopularly_Loyal -1 Chance 40
-
-;------------------------------------------
-Trigger Unpopularly_LoyalAdv_trigger6
-WhenToTest CharacterTurnStart
-
-Condition Trait Unpopularly_Loyal = 4
-and FactionIsLocal
-and FactionLeaderTrait Civil_Unrest3 = 1
-
-Affects Unpopularly_Loyal -1 Chance 30
+ Affects FactionLeaderInDebt 1 Chance 100
 
 ;------------------------------------------
+Trigger King_Finances9
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 4
+	and Trait FactionLeaderInDebt = 1
+
+ Affects FactionLeaderInDebt 3 Chance 100
+
 ;------------------------------------------
-Trigger Unpopularly_Loyal_remove_trigger
-WhenToTest CharacterTurnStart
+Trigger King_Finances10
+ WhenToTest CharacterTurnStart
 
-Condition Trait Unpopularly_Loyal >= 1
-and not FactionLeaderTrait Civil_Unrest1 > 0
-and not FactionLeaderTrait Civil_Unrest2 > 0
-and not FactionLeaderTrait Civil_Unrest3 > 0
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 4
+	and Trait FactionLeaderInDebt = 2
 
-Affects Unpopularly_Loyal -10 Chance 100
+ Affects FactionLeaderInDebt 2 Chance 100
 
 ;------------------------------------------
-Trigger Unpopularly_Loyal_remove_trigger2
-WhenToTest CharacterTurnEnd
+Trigger King_Finances11
+ WhenToTest CharacterTurnStart
 
-Condition FactionType slave
-and Trait Unpopularly_Loyal >= 1
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 4
+	and Trait FactionLeaderInDebt = 3
 
-Affects Unpopularly_Loyal -10 Chance 100
+ Affects FactionLeaderInDebt 1 Chance 100
 
-;===============================================================
-;== CIVIL UNREST TRIGGERS TRIGGERS ENDS ==
-;===============================================================
+;------------------------------------------
+Trigger King_Finances12
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 5
+	and Trait FactionLeaderInDebt < 5
+
+ Affects FactionLeaderInDebt 5 Chance 100
+
+;------------------------------------------
+Trigger King_Finances1BFL
+ WhenToTest BecomesFactionLeader
+
+ Condition Trait FactionLeaderInDebt < 1
+	and I_EventCounter loan_refund = 1
+	and FactionIsLocal
+
+ Affects FactionLeaderInDebt 1 Chance 100
+
+;------------------------------------------
+Trigger King_Finances2BFL
+ WhenToTest BecomesFactionLeader
+
+ Condition Trait FactionLeaderInDebt < 1
+	and I_EventCounter loan_refund = 2
+	and FactionIsLocal
+
+ Affects FactionLeaderInDebt 2 Chance 100
+
+;------------------------------------------
+Trigger King_Finances3BFL
+ WhenToTest BecomesFactionLeader
+
+ Condition Trait FactionLeaderInDebt = 0
+	and I_EventCounter loan_refund = 3
+	and FactionIsLocal
+
+ Affects FactionLeaderInDebt 3 Chance 100
+
+;------------------------------------------
+Trigger King_Finances4BFL
+ WhenToTest BecomesFactionLeader
+
+ Condition Trait FactionLeaderInDebt = 0
+	and I_EventCounter loan_refund = 4
+	and FactionIsLocal
+
+ Affects FactionLeaderInDebt 4 Chance 100
+
+;------------------------------------------
+Trigger King_Finances5BFL
+ WhenToTest BecomesFactionLeader
+
+ Condition Trait FactionLeaderInDebt = 0
+	and I_EventCounter loan_refund = 5
+	and FactionIsLocal
+
+ Affects FactionLeaderInDebt 5 Chance 100
+
+;------------------------------------------
+;------------------------------------------
+Trigger King_Finances_recover_debt1
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 0
+	and Trait FactionLeaderInDebt >= 1
+
+ Affects FactionLeaderInDebt -5 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt2
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 1
+	and Trait FactionLeaderInDebt = 2
+
+ Affects FactionLeaderInDebt -1 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt3
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 1
+	and Trait FactionLeaderInDebt = 3
+
+ Affects FactionLeaderInDebt -2 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt4
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 1
+	and Trait FactionLeaderInDebt = 4
+
+ Affects FactionLeaderInDebt -3 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt5
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 1
+	and Trait FactionLeaderInDebt = 5
+
+ Affects FactionLeaderInDebt -4 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt6
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 2
+	and Trait FactionLeaderInDebt = 3
+
+ Affects FactionLeaderInDebt -1 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt7
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 2
+	and Trait FactionLeaderInDebt = 4
+
+ Affects FactionLeaderInDebt -2 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt8
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 2
+	and Trait FactionLeaderInDebt = 5
+
+ Affects FactionLeaderInDebt -3 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt9
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 3
+	and Trait FactionLeaderInDebt = 4
+
+ Affects FactionLeaderInDebt -1 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt10
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 3
+	and Trait FactionLeaderInDebt = 5
+
+ Affects FactionLeaderInDebt -2 Chance 100
+
+;------------------------------------------
+Trigger King_Finances_recover_debt11
+ WhenToTest CharacterTurnStart
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_refund = 4
+	and Trait FactionLeaderInDebt = 5
+
+ Affects FactionLeaderInDebt -1 Chance 100
+
+;------------------------------------------
+Trigger Dreadful_King_doesnt_like_Bankers
+ WhenToTest CharacterTurnEnd
+
+ Condition IsFactionLeader
+	and FactionIsLocal
+	and I_EventCounter loan_dread = 1
+	and Trait LoanDread < 3
+
+ Affects LoanDread 1 Chance 100
+
+;------------------------------------------

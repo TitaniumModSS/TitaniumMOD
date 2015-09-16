@@ -928,6 +928,7 @@ faction			slave
 dictionary		2
 strat_model		slave_admiral
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 type			princess
@@ -939,39 +940,42 @@ starting_action_points	160
 faction			lithuania
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady2
 
 faction			jerusalem
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady
 
 faction			teutonic_order
 dictionary		2
 strat_model		northern_princess
-
+strat_model		royal_lady
 
 faction			norway
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady
 
 faction			venice
 dictionary		15
 strat_model		southern_princess
+strat_model		royal_lady
 
 faction			sicily
 dictionary		15
 strat_model		southern_princess
+strat_model		royal_lady
 
 faction			milan
 dictionary		15
 strat_model		southern_princess
-
-faction			papal_states
-dictionary		15
-strat_model		southern_princess
+strat_model		royal_lady
 
 faction			denmark
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady
 
 
 faction			egypt
@@ -992,6 +996,7 @@ strat_model		princess
 faction			scotland
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady
 
 faction			cumans
 dictionary		1
@@ -1010,26 +1015,32 @@ strat_model		islamic_princess
 faction			france
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady
 
 faction			hre
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady
 
 faction			england
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady
 
 faction			portugal
 dictionary		2
 strat_model		southern_princess
+strat_model		royal_lady
 
 faction			poland
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady2
 
 faction			byzantium
 dictionary		2
 strat_model		southern_princess
+strat_model		royal_lady
 
 
 faction			moors
@@ -1040,28 +1051,34 @@ strat_model		islamic_princess
 faction			russia
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady2
 
 faction			kievan_rus
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady2
 
 faction			spain
 dictionary		2
 strat_model		southern_princess
+strat_model		royal_lady
 
 faction			aragon
 dictionary		2
 strat_model		southern_princess
+strat_model		royal_lady
 
 faction			hungary
 dictionary		2
 strat_model		northern_princess
+strat_model		royal_lady2
 
 ;faction			slave
 ;dictionary		2
 ;strat_model		princess
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 type			merchant
 

@@ -63,11 +63,13 @@
 			<pip_min value="0"/>
 			<pip_max value="25"/>
 		</factor>
+
 		<factor name="SOF_BUILDINGS_FUN">
 			<pip_modifier value="1.0"/>
 			<pip_min value="0"/>
-			<pip_max value="25"/>
+			<pip_max value="30"/>	<!-- Increased 20% -->
 		</factor>
+
 		<factor name="SOF_GOVERNORS_INFLUENCE">
 			<pip_modifier value="1.0"/>
 			<pip_min value="0"/>
@@ -117,12 +119,14 @@
 		<factor name="SOF_TAX_PENALTY">
 			<pip_modifier value="1.0"/>
 		</factor>
+
 		<factor name="SOF_TURMOIL">
 			<pip_modifier value="1.0"/>
 			<castle_modifier value="0.5"/>
 			<pip_min value="0"/>
-			<pip_max value="16"/>
+			<pip_max value="30"/>	<!-- Increased 87.5% -->
 		</factor>
+
 		<factor name="SOF_BESIEGED">
 			<pip_modifier value="1.0"/>
 		</factor>
@@ -142,17 +146,21 @@
 		<factor name="SIF_FARMS">
 			<pip_modifier value="1.0"/>
 		</factor>
+
 		<factor name="SIF_TAXES">
-			<pip_modifier value="0.8"/>
-			<castle_modifier value="0.75"/>
+			<pip_modifier value="0.48"/>	<!-- reduced 40% -->
+			<castle_modifier value="0.45"/>	<!-- reduced 40% -->
 		</factor>
+
 		<factor name="SIF_MINING">
 			<pip_modifier value="1.25"/>
 		</factor>
+
 		<factor name="SIF_TRADE">
-			<pip_modifier value="1.2"/>
-			<castle_modifier value="0.8"/>
+			<pip_modifier value="0.72"/>	<!-- reduced 40% -->
+			<castle_modifier value="0.48"/>	<!-- reduced 40% -->
 		</factor>
+
 		<factor name="SIF_BUILDINGS">
 			<pip_modifier value="1.0"/>
 		</factor>

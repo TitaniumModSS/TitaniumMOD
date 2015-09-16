@@ -17,39 +17,42 @@
 		<percentage_pool_reduction_exterminate uint="100"/>
 		<max_agents_per_turn uint="1"/>
 	</recruitment>
+
+	<!-- KER Conversion rates at 0.5x, it takes twice as much time than normal -->
 	<religion>
-		<max_witches_per_region uint="1"/>
-		<max_witches uint="25"/>
-		<max_heretics_per_region uint="1"/>
-		<max_heretics uint="50"/>
-		<max_heretics_conversion_modifier float="3.0"/>
-		<max_inquisitors_per_region uint="1"/>
-		<max_inquisitors uint="15"/>
-		<heretic_conversion_rate_modifier float="0.0175"/>
-		<heretic_conversion_rate_offset float="0.025"/>
-		<witch_conversion_rate_modifier float="0.03"/>
-		<witch_conversion_rate_offset float="0.025"/>
-		<inquisitor_conversion_rate_modifier float="0.010"/>
-		<inquisitor_conversion_rate_offset float="0.04"/>
-		<priest_conversion_rate_modifier float="0.004"/>
-		<priest_conversion_rate_offset float="0.015"/>
+		<max_witches_per_region uint="2"/>
+		<max_witches uint="30"/>
+		<max_heretics_per_region uint="3"/>
+		<max_heretics uint="70"/>
+		<max_heretics_conversion_modifier float="1.5"/>
+		<max_inquisitors_per_region uint="2"/>
+		<max_inquisitors uint="17"/>
+		<heretic_conversion_rate_modifier float="0.00875"/>
+		<heretic_conversion_rate_offset float="0.0125"/>
+		<witch_conversion_rate_modifier float="0.015"/>
+		<witch_conversion_rate_offset float="0.0125"/>
+		<inquisitor_conversion_rate_modifier float="0.005"/>
+		<inquisitor_conversion_rate_offset float="0.02"/>
+		<priest_conversion_rate_modifier float="0.002"/>
+		<priest_conversion_rate_offset float="0.0075"/>
 		<witch_creation_modifier float="20.0"/>
 		<heretic_creation_modifier float="9.0"/>
 		<inquisitor_creation_modifier float="0.3"/>
 		<min_cardinal_piety uint="5"/>
-		<convert_to_heretic_base_modifier float="8.0"/>
-		<convert_to_heretic_unorthodox_modifier float="0.35"/>
+		<convert_to_heretic_base_modifier float="4.0"/>
+		<convert_to_heretic_unorthodox_modifier float="0.175"/>
 		<inquisitor_turn_start uint="0"/>
 		<inquisitor_target_crusades bool="false"/>
 		<founding_conversion_default_rate float="0.0"/>
 		<neighbour_normalise_weight float="0.02"/>
-		<governor_conversion_rate_offset float="0.02"/>
-		<governor_conversion_rate_modifier float="0.025"/>
-		<spy_conversion_rate_offset float="0.001"/>
-		<spy_conversion_rate_modifier float="0.002"/>
-		<owner_conversion_default_rate float="0.02"/>
+		<governor_conversion_rate_offset float="0.01"/>
+		<governor_conversion_rate_modifier float="0.0125"/>
+		<spy_conversion_rate_offset float="0.0005"/>
+		<spy_conversion_rate_modifier float="0.001"/>
+		<owner_conversion_default_rate float="0.01"/>
 		<spy_conversion_rate_foreign_modifier float="0.0"/>
 	</religion>
+
 	<bribery>
 		<bribe_to_family_tree bool="false"/>
 		<base_character_chance float="0.4"/>

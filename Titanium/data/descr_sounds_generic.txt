@@ -4343,3 +4343,40 @@ end
 
 
 
+
+;;;; LOAN SCRIPT EVENT SOUNDS
+
+DEFAULT: 1d fadein 0 fadeout .5 volume -35 randomdelay 0
+DEFAULT: probability 1 priority 999
+DEFAULT: streamed
+DEFAULT: pref INTERFACE
+
+	event loan_success
+		folder data/sounds/SFX/Campaign_Map
+		mission_acquire_arrived.mp3
+	end
+	event loan_success2
+		folder data/sounds/SFX/Campaign_Map
+		mission_acquire.mp3
+	end
+	event loan_failure
+		folder data/sounds/SFX/Campaign_Map
+		mission_failed_arrived.mp3
+	end
+	event loan_repaid
+		folder data/sounds/SFX/Campaign_Map
+		character_bribed.mp3
+	end
+	event loan_popup
+		folder data/sounds/SFX/Campaign_Map
+		mission_issued_arrived.mp3
+	end
+	event loan_dread_sfx
+		folder data/sounds/SFX/Campaign_Map
+		general_killed_enemy.mp3
+	end
+	event loan_dread_fail_sfx
+		folder data/sounds/SFX/Campaign_Map
+		mission_failed_arrived.mp3
+	end
+

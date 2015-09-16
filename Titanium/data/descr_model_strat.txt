@@ -162,7 +162,7 @@ indiv_range			40
 texture				milan, models_strat/textures/southern_spy_milan.tga
 texture				papal_states, models_strat/textures/southern_spy_papacy.tga
 texture				spain, models_strat/textures/southern_spy_castile.tga
-texture				aragon, models_strat/textures/southern_spy_castile.tga
+texture				aragon, models_strat/textures/southern_spy_aragon.tga
 texture				portugal, models_strat/textures/southern_spy_portugal.tga
 texture				venice, models_strat/textures/southern_spy_venice.tga
 texture				sicily, models_strat/textures/southern_spy_sicily.tga
@@ -230,22 +230,14 @@ type				islamic_assassin
 skeleton			strat_assassin
 scale				0.7
 indiv_range			40
-texture				kwarezm, models_strat/textures/assassin_southern_portugal.tga
-texture				turks, models_strat/textures/assassin_southern_milan.tga
-texture				moors, models_strat/textures/assassin_southern_papacy.tga
-texture				mongols, models_strat/textures/assassin_southern_castile.tga
-texture				egypt, models_strat/textures/assassin_southern_portugal.tga
-texture				timurids, models_strat/textures/assassin_southern_venice.tga
-model_flexi			models_strat/southern_assasin.cas, max
+texture				kwarezm, models_strat/textures/muslim_assassin_kwarezm.tga
+texture				turks, models_strat/textures/muslim_assassin_turk.tga
+texture				moors, models_strat/textures/muslim_assassin_moors.tga
+texture				mongols, models_strat/textures/muslim_assassin_mongal.tga
+texture				egypt, models_strat/textures/muslim_assassin_egypt.tga
+texture				timurids, models_strat/textures/muslim_assassin.tga
+model_flexi			models_strat/muslim_assassin.cas, max
 shadow_model_flexi		models_strat/shadow_hand.CAS, max
-;texture				turks, models_strat/textures/muslim_assassin_turk.tga
-;texture				moors, models_strat/textures/muslim_assassin_moors.tga
-;texture				mongols, models_strat/textures/muslim_assassin_mongal.tga
-;texture				egypt, models_strat/textures/muslim_assassin_egypt.tga
-;texture				timurids, models_strat/textures/muslim_assassin_spec.tga
-; timurids
-;model_flexi			models_strat/muslim_assassin.cas, max
-;shadow_model_flexi		models_strat/shadow_hand.CAS, max
 
 
 ;;;;;;;;;;;;
@@ -287,7 +279,38 @@ texture				byzantium, models_strat/textures/SouthernPrincess_byzantium.tga
 model_flexi_m			models_strat/southern_princess.cas, max
 shadow_model_flexi		models_strat/shadow_model_princess_southern.cas, max
 
+type				royal_lady
+skeleton			princess
+scale				0.7
+indiv_range			40
+texture				byzantium, models_strat/textures/royal_lady_byzantium.tga
+texture				england, models_strat/textures/royal_lady_england.tga
+texture				scotland, models_strat/textures/royal_lady_scotland.tga
+texture				france, models_strat/textures/royal_lady_france.tga
+texture				hre, models_strat/textures/royal_lady_hre.tga
+texture				denmark, models_strat/textures/royal_lady_denmark.tga
+texture				norway, models_strat/textures/royal_lady_norway.tga
+texture				spain, models_strat/textures/royal_lady_spain.tga
+texture				aragon, models_strat/textures/royal_lady_aragon.tga
+texture				portugal, models_strat/textures/royal_lady_portugal.tga
+texture				sicily, models_strat/textures/royal_lady_sicily.tga
+texture				milan, models_strat/textures/royal_lady_milan.tga
+texture				venice, models_strat/textures/royal_lady_venice.tga
+texture				jerusalem, models_strat/textures/royal_lady_jerusalem.tga
+model_flexi_m			models_strat/royal_lady.cas, max
+shadow_model_flexi		models_strat/shadow_model_princess_northern.cas, max
 
+type				royal_lady2
+skeleton			princess
+scale				0.7
+indiv_range			40
+texture				russia, models_strat/textures/royal_lady_russia.tga
+texture				poland, models_strat/textures/royal_lady_poland.tga
+texture				hungary, models_strat/textures/royal_lady_hungary.tga
+texture				kievan_rus, models_strat/textures/royal_lady_kievan_rus.tga
+texture				lithuania, models_strat/textures/royal_lady_lithuania.tga
+model_flexi_m			models_strat/royal_lady2.cas, max
+shadow_model_flexi		models_strat/shadow_model_princess_northern.cas, max
 
 type				islamic_princess
 skeleton			princess

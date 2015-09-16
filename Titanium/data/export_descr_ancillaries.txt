@@ -8564,6 +8564,15 @@ Ancillary sword_of_Nikephoros_Phokas
  Effect Authority 1 
  Effect Defence 1
  
+;------------------------------------------
+Ancillary rl_envoy
+	Type court
+	Transferable 0
+	Image rlc_envoy.tga
+	Description rl_envoy_desc
+	EffectsDescription rl_envoy_effects_desc
+
+;------------------------------------------
 ;*********  CONQUERED CROWNS ANCILLARIES  *********
 ;------------------------------------------
 Ancillary crown_jerusalem
@@ -8773,11 +8782,12 @@ Ancillary Heir_Crown
 ;------------------------------------------ 
 Ancillary crusader_jerusalem 
  Type crusader_fief1
- Transferable 1
+ Transferable 0
  Image tokus_jerusalem.tga
  Description crusader_jerusalem_desc
  EffectsDescription crusader_jerusalem_effects_desc
- Effect TaxCollection 15
+ Effect TaxCollection 25
+ Effect Trading 15
  Effect Loyalty -3
  Effect Command 3 
  Effect Piety 3 
@@ -8785,14 +8795,15 @@ Ancillary crusader_jerusalem
 ;------------------------------------------ 
 Ancillary crusader_antioch 
  Type crusader_fief2
- Transferable 1
+ Transferable 0
  Image tokus_antioch.tga
  Description crusader_antioch_desc
  EffectsDescription crusader_antioch_effects_desc
- Effect TaxCollection 10
+ Effect TaxCollection 15
+ Effect Trading 10
  Effect TroopMorale 1
  Effect Piety 1
- Effect Loyalty -1
+ Effect Loyalty -2
  Effect Authority 1
 ;------------------------------------------ 
 Ancillary crusader_edessa 
@@ -8801,7 +8812,8 @@ Ancillary crusader_edessa
  Image tokus_edessa.tga
  Description crusader_edessa_desc
  EffectsDescription crusader_edessa_effects_desc
- Effect TaxCollection 5 
+ Effect TaxCollection 10
+ Effect Trading 5
  Effect Command 1
  Effect Loyalty -1
  Effect Piety 2 
@@ -8812,7 +8824,8 @@ Ancillary crusader_tortosa
  Image king_tortosa.tga
  Description crusader_tortosa_desc
  EffectsDescription crusader_tortosa_effects_desc
- Effect TaxCollection 5
+ Effect TaxCollection 10
+ Effect Trading 5
  Effect Piety 1
  Effect Loyalty 3
 ;------------------------------------------ 
@@ -8822,7 +8835,7 @@ Ancillary crusader_nicosia
  Image tokus_nicosia.tga
  Description crusader_nicosia_desc
  EffectsDescription crusader_nicosia_effects_desc
- Effect TaxCollection 10 
+ Effect TaxCollection 15
  Effect Loyalty -1
  Effect SiegeDefence 2
 ;------------------------------------------ 
@@ -8838,11 +8851,11 @@ Ancillary crusader_rhodes
 ;------------------------------------------ 
 Ancillary crusader_constantinople 
  Type crusader_fief7
- Transferable 1
+ Transferable 0
  Image crusader_constantinople.tga
  Description crusader_constantinople_desc
  EffectsDescription crusader_constantinople_effects_desc
- Effect TaxCollection 15
+ Effect TaxCollection 20
  Effect Trading 15
  Effect Loyalty -5 
  Effect Authority 3
@@ -8853,7 +8866,7 @@ Ancillary crusader_athens
  Image crusader_athens.tga
  Description crusader_athens_desc
  EffectsDescription crusader_athens_effects_desc
- Effect TaxCollection 10
+ Effect TaxCollection 15
  Effect Loyalty 2
  Effect LocalPopularity 1
 ;------------------------------------------ 
@@ -8863,8 +8876,8 @@ Ancillary crusader_corinth
  Image crusader_corinth.tga
  Description crusader_corinth_desc
  EffectsDescription crusader_corinth_effects_desc
- Effect TaxCollection 5 
- Effect Trading 5
+ Effect TaxCollection 10
+ Effect Trading 7
  Effect Loyalty -1 
 ;------------------------------------------ 
 Ancillary crusader_thessalonica 
@@ -8873,7 +8886,7 @@ Ancillary crusader_thessalonica
  Image crusader_thessalonica.tga
  Description crusader_thessalonica_desc
  EffectsDescription crusader_thessalonica_effects_desc
- Effect TaxCollection 10 
+ Effect TaxCollection 15
  Effect Trading 5 
 ;------------------------------------------ 
 ;=========================================;
@@ -10164,23 +10177,76 @@ Trigger black_stallion_for_princess
  
  AcquireAncillary black_stallion chance 50 
  
+
+;================ RLC triggers ================
+;------------------------------------------
+Trigger rl_envoy_trigger
+    WhenToTest CharacterTurnStart
+
+    Condition AgentType = princess
+       and Trait RoyalLady > 0
+
+ AcquireAncillary rl_envoy chance 100
+;------------------------------------------
+Trigger rl_cosmetics_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and SettlementBuildingExists >= market 
+		and AgentType = princess
+        and Trait RoyalLady > 0
+
+ AcquireAncillary fine_cosmetics chance 15
 ;------------------------------------------ 
-Trigger royal_escort_far_away 
- WhenToTest CharacterTurnEnd 
- Condition DistanceCapital > 25 
- and AgentType = princess 
- and Trait GoodPrincess > 2 
+Trigger rl_faithful_servant_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and AgentType = princess
+		and RemainingMPPercentage = 100 
+		and Trait RoyalLady > 0
  
- AcquireAncillary royal_escort chance 15 
+ AcquireAncillary faithful_servant chance 6
+;------------------------------------------
+Trigger rl_black_stallion_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and SettlementBuildingExists >= dockyard 
+ 		and AgentType = princess
+        and Trait RoyalLady > 0
+
+ AcquireAncillary black_stallion chance 4
+ ;------------------------------------------
+ Trigger rl_smothering_bodyguard_trigger
+	WhenToTest CharacterTurnEnd 
  
-;------------------------------------------ 
-Trigger royal_escort_assassination 
- WhenToTest SufferAssassinationAttempt 
- Condition AgentType = princess 
+	Condition DistanceCapital > 25 
+		and AgentType = princess 
+        and Trait RoyalLady > 0
  
- AcquireAncillary royal_escort chance 50 
+ AcquireAncillary smothering_bodyguard chance 3
+  ;------------------------------------------
+Trigger rl_delicate_blade_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and SettlementBuildingExists >= coaching_house 
+ 		and AgentType = princess
+        and Trait RoyalLady > 0
  
-;------------------------------------------ 
+ AcquireAncillary delicate_blade chance 9
+;------------------------------------------
+ Trigger rl_strapping_stallion_trigger
+    WhenToTest CharacterTurnEnd 
+	
+	Condition AgentType = princess 
+		and Trait RoyalLady > 0
+		and FactionBuildingExists >= barons_stables 
+ 
+ AcquireAncillary strapping_stallion chance 11 
+;=============end of RLC anc triggers =============
+
 Trigger swift_steed_vnv_trigger 
  WhenToTest AgentCreated 
  Condition AgentType = diplomat 
@@ -21701,7 +21767,7 @@ Trigger sword_of_Basil_Bulgaroctonos
 Trigger Banner_of_Herakleios
  WhenToTest PostBattle
  Condition WonBattle
- and FactionReligion catholic
+; and FactionReligion catholic
  and GeneralFoughtCulture middle_eastern
  and BattleSuccess = crushing
  and FactionType byzantium 
@@ -21919,6 +21985,74 @@ Trigger emperors_seal_ai
  and CharFactionType byzantium
 
  AcquireAncillary emperors_seal chance 33
+;================ RLC triggers ================
+;------------------------------------------
+Trigger rl_envoy_trigger
+    WhenToTest CharacterTurnStart
+
+    Condition AgentType = princess
+       and Trait RoyalLady > 0
+
+ AcquireAncillary rl_envoy chance 100
+;------------------------------------------
+Trigger rl_cosmetics_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and SettlementBuildingExists >= market 
+		and AgentType = princess
+        and Trait RoyalLady > 0
+
+ AcquireAncillary fine_cosmetics chance 15
+;------------------------------------------ 
+Trigger rl_faithful_servant_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and AgentType = princess
+		and RemainingMPPercentage = 100 
+		and Trait RoyalLady > 0
+ 
+ AcquireAncillary faithful_servant chance 6
+;------------------------------------------
+Trigger rl_black_stallion_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and SettlementBuildingExists >= dockyard 
+ 		and AgentType = princess
+        and Trait RoyalLady > 0
+
+ AcquireAncillary black_stallion chance 4
+ ;------------------------------------------
+ Trigger rl_smothering_bodyguard_trigger
+	WhenToTest CharacterTurnEnd 
+ 
+	Condition DistanceCapital > 25 
+		and AgentType = princess 
+        and Trait RoyalLady > 0
+ 
+ AcquireAncillary smothering_bodyguard chance 3
+  ;------------------------------------------
+Trigger rl_delicate_blade_trigger
+    WhenToTest CharacterTurnEnd 
+
+	Condition EndedInSettlement 
+		and SettlementBuildingExists >= coaching_house 
+ 		and AgentType = princess
+        and Trait RoyalLady > 0
+ 
+ AcquireAncillary delicate_blade chance 9
+;------------------------------------------
+ Trigger rl_strapping_stallion_trigger
+    WhenToTest CharacterTurnEnd 
+	
+	Condition AgentType = princess 
+		and Trait RoyalLady > 0
+		and FactionBuildingExists >= barons_stables 
+ 
+ AcquireAncillary strapping_stallion chance 11 
+;=============end of RLC anc triggers =============
 ;===============================================================
 ;== CONQUERED CROWNS TRIGGERS START HERE ==
 ;===============================================================

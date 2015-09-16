@@ -382,7 +382,14 @@ building core_castle_building
         recruit_pool "Dismounted Chivalric Knights"  1   0.15   1  0  requires factions { denmark, } and event_counter FULL_PLATE_ARMOR 1
         
         recruit_pool "Christ Knights"  1   0.15   1  0  requires factions { teutonic_order, } and not event_counter FULL_PLATE_ARMOR 1              
+
         recruit_pool "Halbbruder"  1   0.15   1  0  requires factions { teutonic_order, } and event_counter FULL_PLATE_ARMOR 1
+
+        recruit_pool "Templar Confrere Knights"  1   0.0575   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
+        recruit_pool "Templar Confrere Knights"  1   0.04   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and not hidden_resource crusader
+
+        recruit_pool "Knights of Antioch"  1   0.0575   1  0  requires factions { jerusalem, }
+
         recruit_pool "Norman Knights"  1   0.1   1  0  requires factions { sicily, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter FULL_PLATE_ARMOR 1
         recruit_pool "Chivalric Knights"  1   0.15   1  0  requires factions { spain, sicily, } and event_counter FULL_PLATE_ARMOR 1 and not event_counter first_watch 1
         recruit_pool "French Chivalric Knights"  1   0.1   1  0  requires factions { france, } and event_counter FULL_PLATE_ARMOR 1 and not event_counter first_watch 1
@@ -494,7 +501,14 @@ building core_castle_building
         ;early and high before new era
         recruit_pool "Christ Knights"  1   0.15   1  0  requires factions { teutonic_order, } and not event_counter new_era_begins 1
         ;after new era
+
         recruit_pool "Halbbruder"  1   0.15   1  0  requires factions { teutonic_order, } and event_counter new_era_begins 1
+
+        recruit_pool "Templar Confrere Knights"  1   0.085   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
+        recruit_pool "Templar Confrere Knights"  1   0.0575   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and not hidden_resource crusader
+
+        recruit_pool "Dismounted Knights of Antioch"  1   0.0575   1  0  requires factions { jerusalem, }
+
         
         ;early
         recruit_pool "Mailed Knights"  1   0.1   1  0  requires factions { hre, spain, aragon, portugal, papal_states, } and not event_counter HEAVY_MAIL_ARMOR 1
@@ -721,7 +735,12 @@ building core_castle_building
         ;early and high before new era
         recruit_pool "Christ Knights"  1   0.2   2  0  requires factions { teutonic_order, } and not event_counter new_era_begins 1
         ;after new era
+
         recruit_pool "Halbbruder"  1   0.2   2  0  requires factions { teutonic_order, } and event_counter new_era_begins 1
+
+        recruit_pool "Templar Confrere Knights"  1   0.085   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
+        recruit_pool "Templar Confrere Knights"  1   0.0575   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and not hidden_resource crusader
+
         
         ;early
         recruit_pool "Mailed Knights"  1   0.1   1  0  requires factions { spain, aragon, portugal, papal_states, }  and not event_counter HEAVY_MAIL_ARMOR 1
@@ -1967,11 +1986,9 @@ building equestrian
         recruit_pool "Italian MAA"  1   0.17   2  0  requires factions { hre, } and hidden_resource hre and event_counter new_era_begins 1 and not event_counter pike_and_shot 1
         recruit_pool "Italian MAA"  0   0.13   1  0  requires factions { hre, } and not hidden_resource hre and event_counter new_era_begins 1 and not event_counter pike_and_shot 1
         
+
         ;**********************************
-        
-        recruit_pool "Templar Confrere Knights"  1   0.085   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
-        recruit_pool "Templar Confrere Knights"  1   0.0575   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and not hidden_resource crusader
-        
+
         recruit_pool "Lancers"  1   0.5   2  0  requires factions { france, } and event_counter GOTHIC_ARMOR 1
         
         recruit_pool "Reiters"  1   0.67   3  0  requires factions { hre, }  and event_counter ADV_MATCHLOCK 1
@@ -8538,11 +8555,15 @@ building castle_taverns
 }
 building city_hall
 {
+
+  convert_to castle_academic
   levels town_hall council_chambers city_hall mayors_palace
   {
     town_hall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
+      convert_to 0
       capability
+
       {
         agent diplomat  0  requires factions { northern_european, }
         agent diplomat  0  requires factions { middle_eastern, }
@@ -8562,9 +8583,12 @@ building city_hall
         council_chambers
       }
     }
+
     council_chambers city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
+      convert_to 1
       capability
+
       {
         agent diplomat  0  requires factions { northern_european, }
         agent diplomat  0  requires factions { middle_eastern, }
@@ -8585,9 +8609,12 @@ building city_hall
         city_hall
       }
     }
+
     city_hall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
+      convert_to 1
       capability
+
       {
         agent diplomat  0  requires factions { northern_european, }
         agent diplomat  0  requires factions { middle_eastern, }
@@ -8611,9 +8638,12 @@ building city_hall
         mayors_palace
       }
     }
+
     mayors_palace city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
+      convert_to 1
       capability
+
       {
         agent diplomat  0  requires factions { northern_european, }
         agent diplomat  0  requires factions { middle_eastern, }
@@ -8970,15 +9000,25 @@ building tourney
 }
 building castle_academic
 {
+
+  convert_to city_hall
   levels castle_library academy
   {
-    castle_library castle requires factions { denmark, teutonic_order, norway, scotland, hungary, poland, }
+    castle_library castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
+      convert_to 0
       capability
+
       {
         agent diplomat  0  requires factions { northern_european, }
+
+        agent diplomat  0  requires factions { middle_eastern, }
         agent diplomat  0  requires factions { eastern_european, }
+        agent diplomat  0  requires factions { greek, }
+        agent diplomat  0  requires factions { southern_european, }
+
         agent_limit diplomat 1
+
       }
       material wooden
       construction  4
@@ -8989,16 +9029,29 @@ building castle_academic
         academy
       }
     }
-    academy castle requires factions { denmark, teutonic_order, norway, scotland, hungary, poland, }
+
+    academy castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
+      convert_to 1
       capability
+
       {
         agent diplomat  0  requires factions { northern_european, }
-        agent assassin  0  requires factions { northern_european, }
+
+        agent diplomat  0  requires factions { middle_eastern, }
         agent diplomat  0  requires factions { eastern_european, }
+        agent diplomat  0  requires factions { greek, }
+        agent diplomat  0  requires factions { southern_european, }
+
+        agent assassin  0  requires factions { northern_european, }
+        agent assassin  0  requires factions { middle_eastern, }
         agent assassin  0  requires factions { eastern_european, }
+        agent assassin  0  requires factions { greek, }
+        agent assassin  0  requires factions { southern_european, }
+
         agent_limit diplomat 1
         agent_limit assassin 1
+
       }
       material stone
       construction  8
@@ -9127,7 +9180,7 @@ building templars_chapter_house
   levels templars_minor_ch templars_major_ch templars_hq 
   {
     ;templars_minor_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1
-    templars_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1
+    templars_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1
     {
       convert_to 0
       capability
@@ -9159,7 +9212,7 @@ building templars_chapter_house
       }
     }
     ;templars_major_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1
-    templars_major_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1
+    templars_major_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1
     {
       convert_to 1
       capability
@@ -9177,6 +9230,8 @@ building templars_chapter_house
         recruit_pool "Dismounted Knights Templar"  1   0.075   1  1  requires factions { jerusalem, } and not hidden_resource crusader and event_counter worms_concordat 1
         recruit_pool "Dismounted Knights Templar"  1   0.10   1  1  requires factions { jerusalem, } and hidden_resource crusader and event_counter worms_concordat 1
 
+        recruit_pool "Templar Confrere Knights"  0.5   0.085   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
+
         trade_base_income_bonus bonus 1
         free_upkeep bonus 1
       }
@@ -9190,7 +9245,7 @@ building templars_chapter_house
       }
     }
     ;templars_hq  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1 and hidden_resource chapter_hq
-    templars_hq  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1 and hidden_resource chapter_hq
+    templars_hq  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource templars_chapter_house and event_counter worms_concordat 1 and hidden_resource chapter_hq
     {
       convert_to 2
       capability
@@ -9207,6 +9262,8 @@ building templars_chapter_house
         recruit_pool "Knights Templar"  2   0.25   3  2 requires factions { jerusalem, } and hidden_resource crusader and event_counter worms_concordat 1
         recruit_pool "Dismounted Knights Templar"  1   0.10   2  2  requires factions { jerusalem, } and not hidden_resource crusader and event_counter worms_concordat 1
         recruit_pool "Dismounted Knights Templar"  1   0.15   2  2  requires factions { jerusalem, } and hidden_resource crusader and event_counter worms_concordat 1
+
+        recruit_pool "Templar Confrere Knights"  1   0.085   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
  
        population_health_bonus bonus 1
         free_upkeep bonus 2
@@ -9230,7 +9287,7 @@ building st_johns_chapter_house
   levels st_johns_minor_ch st_johns_major_ch st_johns_hq 
   {
     ;st_johns_minor_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house
-    st_johns_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house
+    st_johns_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house
     {
       convert_to 0
       capability
@@ -9262,7 +9319,7 @@ building st_johns_chapter_house
       }
     }
     ;st_johns_major_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house
-    st_johns_major_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house
+    st_johns_major_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house
     {
       convert_to 1
       capability
@@ -9293,7 +9350,7 @@ building st_johns_chapter_house
       }
     }
     ;st_johns_hq  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house and hidden_resource chapter_hq
-    st_johns_hq  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house and hidden_resource chapter_hq
+    st_johns_hq  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource st_johns_chapter_house and hidden_resource chapter_hq
     {
       convert_to 2
       capability
@@ -9437,7 +9494,7 @@ building knights_of_santiago_chapter_house
   levels knights_of_santiago_minor_ch knights_of_santiago_major_ch knights_of_santiago_hq 
   {
     ;knights_of_santiago_minor_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1
-    knights_of_santiago_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1
+    knights_of_santiago_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1
     {
       convert_to 0
       capability
@@ -9465,7 +9522,7 @@ building knights_of_santiago_chapter_house
       }
     }
     ;knights_of_santiago_major_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1
-    knights_of_santiago_major_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1
+    knights_of_santiago_major_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1
     {
       convert_to 1
       capability
@@ -9494,7 +9551,7 @@ building knights_of_santiago_chapter_house
       }
     }
     ;knights_of_santiago_hq  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1 and hidden_resource chapter_hq
-    knights_of_santiago_hq  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1 and hidden_resource chapter_hq
+    knights_of_santiago_hq  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource knights_of_santiago_chapter_house and event_counter the_book_of_sentences 1 and hidden_resource chapter_hq
     {
       convert_to 2
       capability
@@ -9532,7 +9589,7 @@ building montesa_chapter_house
   levels montesa_minor_ch montesa_major_ch montesa_hq 
   {
     ;montesa_minor_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1
-    montesa_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1
+    montesa_minor_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1
     {
       convert_to 0
       capability
@@ -9560,7 +9617,7 @@ building montesa_chapter_house
       }
     }
     ;montesa_major_ch  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1
-    montesa_major_ch  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1
+    montesa_major_ch  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1
     {
       convert_to 1
       capability
@@ -9589,7 +9646,7 @@ building montesa_chapter_house
       }
     }
     ;montesa_hq  requires factions { northern_european, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1 and hidden_resource chapter_hq
-    montesa_hq  requires factions { england, scotland, france, hre, denmark, norway, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1 and hidden_resource chapter_hq
+    montesa_hq  requires factions { england, scotland, france, hre, denmark, norway, jerusalem, southern_european, poland, hungary, } and hidden_resource montesa_chapter_house and event_counter the_book_of_sentences 1 and hidden_resource chapter_hq
     {
       convert_to 2
       capability
@@ -10853,6 +10910,33 @@ building convert_to_city
   {
   }
 } 
+; Royal court building version 6.4
+building hinterland_royal_court
+{
+  convert_to hinterland_royal_court
+  levels royal_court
+  {
+    royal_court requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, } and not event_counter rlc_event 1
+    {
+      convert_to 0
+      capability
+      {
+        ;**replishment not needed as each time the unit is destroyed by the script the unit pool is reset**
+        recruit_pool "Royal Envoy"  1   0.0001   1  0  requires factions { byzantium, england, scotland, france, hre, denmark, norway, spain, aragon, portugal, sicily, milan, venice, jerusalem, poland, hungary, lithuania, russia, kievan_rus, } and not event_counter is_the_ai 1
+      }
+      material wooden
+      construction  10 
+      cost  12000 
+      settlement_min city
+      upgrades
+      {
+      }
+    }
+  }
+  plugins 
+  {
+  }
+}
 ;
 building ros_temp_buildings
 {

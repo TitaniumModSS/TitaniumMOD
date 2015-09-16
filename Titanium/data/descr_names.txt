@@ -3,21 +3,29 @@
 ;;
 ;; Holds non-localised Latin names for settlements and characters.  These are arranged on a per faction basis.
 ;;
-;; This file was modified by the CHARACTER NAMES PROJECT members of the Total War Center (www.twcenter.net)
-;; Further modified for Stainless Steel 6.x versions
-;; bugfree by gracul on 22-12-08
+;;This file modified by the CHARACTER NAMES PROJECT
+;;members of the Total War Center (www.twcenter.net)
+;;futher modified for Stainless Steel 6.x versions
+;;bugfree by gracul on 22-12-08
 ;;
 ;; Further modified by the STAINLESS STEEL NAMES OVERHAUL PROJECT by Fair Prince and the SSNOP contributors
 ;; Version 1.1 (2012-Feb-25)
 ;; http://www.twcenter.net/forums/showthread.php?t=369007
 ;;
-;;  Even Further modified by Melooo182 for SS6.4 Bugfix Compilation
+;;  Modified by Melooo182 for SS6.4 Bugfix Compilation
 ;;  Version 1.2 (2014-Apr-30)
+;;
+;;if a name is different with only a special character, put a # after the special character.
+;;example:
+;;
+;;{A#gnes}	Ágnes
+;;{Agnes}	Agnes
+;;
+;;Remember to put the right internal name in the strat file!
 
+faction: england
 
-faction: england		
-		
-	characters	
+	characters
 		Adelelm
 		Ailred
 		Ailward
@@ -111,7 +119,6 @@ faction: england
 		Lionel
 		Matthew
 		Miles
-		Nicholas
 		Nigel
 		Odo
 		Oeric
@@ -169,15 +176,15 @@ faction: england
 		William
 		William
 		Wulfric
-		
-	surnames	
+	;england add more names
+
+	surnames
 		Adlard
 		Almer
 		Alred
 		Alston
 		Alwin
 		Arundel
-		Astley
 		Aton
 		Aubigny
 		Audley
@@ -192,7 +199,6 @@ faction: england
 		Baunne
 		Beauchamp
 		Beauclerc
-		Beauclerk
 		Beaufort
 		Becket
 		Berkeley
@@ -238,7 +244,6 @@ faction: england
 		Daubney
 		Daunt
 		Devereux
-		Dispenser
 		Douglas
 		Dudley
 		Dunbar
@@ -276,7 +281,6 @@ faction: england
 		Glemham
 		Godbert
 		Goodwin
-		Godwinson
 		Goushill
 		Granville
 		Greene
@@ -329,7 +333,6 @@ faction: england
 		Manny
 		Marment
 		Marshal
-		Marshall
 		Mather
 		Maulever
 		Medwin
@@ -369,7 +372,6 @@ faction: england
 		Roos
 		Rouet
 		Russell
-		Sacheverall
 		Savile
 		Scrope
 		Seavers
@@ -423,11 +425,9 @@ faction: england
 		Wolnoth
 		Woodstock
 		Woodville
-		Wrottesly
 		Wyard
 		Wyberg
-;;;bynames		
-		d_Adelburgh
+;;;bynames
 		de_Angouleme
 		de_Badlesmere
 		de_Beaumont
@@ -465,9 +465,6 @@ faction: england
 		de_Vere
 		de_Warrenne
 		de_Windsor
-		la_Zouche
-		le_Bigod
-		le_Strange
 		of_Abingdon
 		of_Albrighton
 		of_Alcester
@@ -581,8 +578,9 @@ faction: england
 		of_Winchester
 		of_Worcester
 		of_York
-		
-	women	
+	;england add more surnames
+
+	women
 		Adela
 		Adelicia
 		Adeliza
@@ -670,11 +668,11 @@ faction: england
 		Ursula
 		Ybelote
 		Ysabelle
-		
-		
-faction: france		
-		
-	characters	
+	;england add more female names
+
+faction: france
+
+	characters
 		Alain
 		Alphonse
 		Amaury
@@ -713,20 +711,18 @@ faction: france
 		Evrart
 		Ferrecot
 		Fleury
-		Foucaud
 		Foucauld
 		Foulque
 		Foulques
+		Fulkes
 		Francois
 		Frederic
-		Fulkes
 		Galeran
 		Gaston
 		Gautier
-		Ge#rard
 		Geoffroy
 		Georges
-		Gerard
+		Ge#rard
 		Geraud
 		Germain
 		Gibaud
@@ -735,21 +731,19 @@ faction: france
 		Godefroy
 		Guichard
 		Guigues
-		Guillaume
-		Guillaume
-		Guillaume
 		Guillem
+		Guillaume
+		Guillaume
+		Guillaume
 		Guion
 		Guy
 		Henri
 		Henri
 		Henri
 		Hubert
-		Hugo
 		Hugues
 		Hugues
 		Hugues
-		Jacob
 		Jacques
 		Jaume
 		Jean
@@ -757,32 +751,30 @@ faction: france
 		Jean
 		Jehan
 		Jehanin
-		Joscelin
 		Josselin
 		Junien
 		Lanfranc
 		Lanfrank
-		Laugier
 		Laurent
+		Laugier
 		Louis
 		Louis
 		Louis
 		Louis
 		Louis
 		Malon
-		Marc
 		Marcel
 		Michel
 		Nicolas
 		Odo
 		Olivier
 		Pepin
+		Philippe
+		Philippe
+		Philippe
+		Philippe
+		Philippe
 		Philip
-		Philippe
-		Philippe
-		Philippe
-		Philippe
-		Philippe
 		Pierre
 		Pierre
 		Pierre
@@ -792,10 +784,9 @@ faction: france
 		Raymond
 		Raymond
 		Raynald
-		Regnault
 		Reinald
-		Remon
 		Renaud
+		Regnault
 		Rene
 		Renier
 		Reynaud
@@ -807,7 +798,6 @@ faction: france
 		Roland
 		Romain
 		Simon
-		Tancred
 		Tancrede
 		Thibaut
 		Thierry
@@ -817,13 +807,12 @@ faction: france
 		Ugues
 		Wale#ran
 		Yves
-		
-	surnames	
+	;france add more names
+
+	surnames
 		Aimeric
 		Alziari
 		Amyot
-		Bauge
-		Berard
 		Beraud
 		Berenger
 		Bermond
@@ -837,40 +826,31 @@ faction: france
 		Corbet
 		Courteheuse
 		Crespin
-		Cul_de_Louf
 		Dupuy
-		Erail
 		Ermengaud
-		Espec
 		Febre
 		Flambard
 		Flote
-		Fossard
 		Gaudin
 		Gonzague
-		Greslet
 		Grisegonelle
-		Grisgonelle
-		Guernon
 		Guinard
-		Hogolin
 		Horal
+		Hogolin
 		Hurepel
 		Itier
 		Jourdain
 		Laugier
 		Lebrun
+		Maquereau
 		Maminot
 		Mantel
-		Maquereau
 		Mathias
 		Mauclerc
-		Modave
 		Morin
 		Murdac
 		Othon
 		Panet
-		Pastforeire
 		Piron
 		Pot
 		Poton
@@ -878,23 +858,22 @@ faction: france
 		Saisset
 		Seguis
 		Sorel
+		Talvas
 		Taillebois
 		Taillefer
-		Talvas
 		Tanlay
 		Tirel
 		Tristan
-		Vis-de-Loup
-;;bynames		
-				d_Acier
+;;;bynames
+		d_Acier
 		d_Aguilers
+		d_Aquitaine
 		d_Albon
 		d_Albret
 		d_Alencon
 		d_Alsace
 		d_Angouleme
 		d_Anjou
-		d_Aquitaine
 		d_Aquitaine
 		d_Arc
 		d_Arcy
@@ -915,10 +894,12 @@ faction: france
 		d_Auxonne
 		d_Avaugour
 		d_Avesnes
-		d_Epaigni
 		d_Etampes
+		d_Epaigni
 		d_Eu
 		d_Évreux
+		de_Hainault
+		de_Harcourt
 		d_Houdetot
 		d_Ivry
 		d_Oiselet
@@ -971,11 +952,11 @@ faction: france
 		de_Chandos
 		de_Chargny
 		de_Chartres
+		de_Chatelmorant
+		de_Chatillon
 		de_Chateaudun
 		de_Chateaugiron
 		de_Chateauneuf
-		de_Chatelmorant
-		de_Chatillon
 		de_Chaumont
 		de_Chauvigny
 		de_Clairvaux
@@ -993,15 +974,15 @@ faction: france
 		de_Courtenay
 		de_Craon
 		de_Crepi
-		de_Crespy
 		de_Cressonsacq
+		de_Crespy
 		de_Crotoy
 		de_Croy
 		de_Cusance
 		de_Dammartin
 		de_Dampierre
-		de_Donzy
 		de_Dreux
+		de_Donzy
 		de_Fezensac
 		de_Flament
 		de_Flandre
@@ -1022,14 +1003,12 @@ faction: france
 		de_Guines
 		de_Guise
 		de_Guyenne
-		de_Hainault
-		de_Harcourt
 		de_Joinville
 		de_Juliac
 		de_Juliers
-		de_l_Etang
 		de_la_Chapelle
 		de_La_Chaussade
+		de_l_Etang
 		de_la_Jaille
 		de_la_Marche
 		de_la_Porte
@@ -1078,8 +1057,8 @@ faction: france
 		de_Montfaucon
 		de_Montferrat
 		de_Montfort
-		de_Montlezun
 		de_Montlhery
+		de_Montlezun
 		de_Montmorency
 		de_Montpierre
 		de_Montreuil
@@ -1125,23 +1104,20 @@ faction: france
 		de_Roquesseis
 		de_Ros
 		de_Roucy
-		de_Rouergue
 		de_Rouge
+		de_Rouergue
 		de_Sable
 		de_Sade
+		de_Saint-Amand
+		de_Saint-Benoit
 		de_Saint_Clair
 		de_Saint_Germein
+		de_Sainte_Helene
 		de_Saint_Hilaire
 		de_Saint_Michel
 		de_Saint_Omer
 		de_Saint_Paul
 		de_Saint_Pol
-		de_Saint-Amand
-		de_Saint-Benoit
-		de_Saint-Michel
-		de_Saint-Omer
-		de_Saint-Pol
-		de_Sainte_Helene
 		de_Sainte_Suzanne
 		de_Salis
 		de_Sancerre
@@ -1158,9 +1134,9 @@ faction: france
 		de_Thibouville
 		de_Thiers
 		de_Thouars
+		de_Tournai
 		de_Toroge
 		de_Toulouse
-		de_Tournai
 		de_Tremelay
 		de_Trie
 		de_Troyes
@@ -1184,8 +1160,8 @@ faction: france
 		de_Villeneuve
 		de_Wavrin
 		de_Xaintrailles
-		des_Barres
 		des_Baux
+		des_Barres
 		des_Vaux
 		du_Fay
 		du_Gi
@@ -1195,56 +1171,48 @@ faction: france
 		du_Quesnai
 		du_Terrail
 		du_Vernet
-		la_Chevre
-		la_Cleve
-		la_Hire
 		le_Breton
 		le_Despensier
 		le_Flamand
 		le_Germanique
 		le_Roy
-		
-	women	
-		Ade#laide
+	;france add more surnames
+
+	women
 		Adele
+		Ade#laide
 		Aenor
 		Agne#s
-		Agnes
+		Amicie
+		Anne
 		Alienor
 		Alix
 		Almodis
-		Amicie
-		Anne
 		Azalais
 		Be#atrice
 		Be#atrix
-		Beatrice
-		Beatrix
 		Berthe
-		Bertrada
 		Bertrade
+		Bertrada
 		Blanche
 		Catherine
 		Cecile
 		Claire
-		Clare
 		Clemence
 		Constance
 		Denise
 		Douce
-		E#meline
 		Edette
 		Eleonore
-		Emeline
+		E#meline
 		Eustachie
 		Francoise
+		Fresende
 		Genevieve
 		Gerberge
-		Gisela
 		Giselle
 		Guillemette
 		Ingeborg
-		Ingeburge
 		Isabeau
 		Isabelle
 		Jaquelinne
@@ -1269,11 +1237,11 @@ faction: france
 		Sophie
 		Stephanie
 		Yolande
+	;france add more female names
+
+faction: denmark
 		
-		
-faction: denmark		
-		
-	characters	
+	characters
 		Abel
 		Agge
 		Agnar
@@ -1281,7 +1249,6 @@ faction: denmark
 		Angel
 		Asbjorn
 		Asgeir
-		Asger
 		Ask
 		Asmund
 		Bernhard
@@ -1297,7 +1264,6 @@ faction: denmark
 		Ditlev
 		Ebbe
 		Edmund
-		Egil
 		Eigil
 		Einar
 		Ejsten
@@ -1327,8 +1293,8 @@ faction: denmark
 		Gotfred
 		Gunnar
 		Gustaf
-		Haakon
 		Hakon
+		Haakon
 		Halfdan
 		Halvdan
 		Hans
@@ -1337,8 +1303,8 @@ faction: denmark
 		Harald
 		Harald
 		Harald
-		Hardeknut
 		Hardknut
+		Hardeknut
 		Helge
 		Henrik
 		Herbert
@@ -1368,7 +1334,6 @@ faction: denmark
 		Kristian
 		Kristjern
 		Kristoffer
-		Lau
 		Ler
 		Magnus
 		Magnus
@@ -1383,9 +1348,8 @@ faction: denmark
 		Oluf
 		Oluf
 		Oluf
-		Pal
 		Peder
-		Poul
+		Pal
 		Ragnar
 		Ralf
 		Ro
@@ -1418,16 +1382,18 @@ faction: denmark
 		Valdemar
 		Valdemar
 		Valdemar
+		ValdemarI
 		Verner
 		Vig
 		Vilhelm
-		
-	surnames	
+	;denmark add more names
+
+	surnames
 		Adeler
-		Arneborg
 		Asbjornsen
 		Asgersen
 		Asmundsen
+		Arneborg
 		Bard
 		Benediktsen
 		Berg
@@ -1436,7 +1402,6 @@ faction: denmark
 		Birgersen
 		Birk
 		Bjaelke
-		Bjarkesen
 		Bjarksen
 		Bjornsen
 		Bolt
@@ -1521,9 +1486,8 @@ faction: denmark
 		Olufsen
 		Ostby
 		Oxe
-		Palsen
 		Pedersen
-		Poulsen
+		Palsen
 		Ragnarsen
 		Ravn
 		Roarsen
@@ -1553,17 +1517,15 @@ faction: denmark
 		Valdemarsen
 		Vermundsen
 		Vilhelmsen
-;;;bynames		
-		af_Aalborg
-		af_Aarhus
+;;;bynames
 		af_Agder
 		af_Akershus
-		af_Akirkeby
-		af_Al
-		af_Aland
+		af_Kirkeby
 		af_Alborg
+		af_Aland
 		af_Angermanland
 		af_Arhus
+		af_Aarhus
 		af_Asmild
 		af_Bastrup
 		af_Bergenhus
@@ -1573,7 +1535,6 @@ faction: denmark
 		af_Borglum
 		af_Bornholm
 		af_Borre
-		af_Brahetrolleborg
 		af_Brahettrolleborg
 		af_Brons
 		af_Brundlund
@@ -1598,13 +1559,12 @@ faction: denmark
 		af_Haderslev
 		af_Hald
 		af_Halland
-		af_Halogaland
+		af_Helgoland
 		af_Halsingland
 		af_Haraldsted
 		af_Heddinge
 		af_Hedmark
 		af_Hee
-		af_Helgoland
 		af_Helsingor
 		af_Herjedalen
 		af_Hindsgavl
@@ -1615,13 +1575,11 @@ faction: denmark
 		af_Jelling
 		af_Jorlunde
 		af_Jylland
-		af_Kalmar_Lan
 		af_Kalmar_Len
 		af_Kalo
 		af_Kalundborg
 		af_Keldby
 		af_Kippinge
-		af_Kirkeby
 		af_Klejtrup
 		af_Kliplev
 		af_Kobenhavn
@@ -1655,7 +1613,6 @@ faction: denmark
 		af_Om
 		af_Oppland
 		af_Orridselv
-		af_Orridslev
 		af_Orslev
 		af_Ostergotland
 		af_Pedersborg
@@ -1673,7 +1630,6 @@ faction: denmark
 		af_Saeby
 		af_Sjaelland
 		af_Sjorring_Volde
-		af_Skaane
 		af_Skane
 		af_Skara
 		af_Skarreborg
@@ -1719,8 +1675,9 @@ faction: denmark
 		af_Volsted
 		af_Vordingborg
 		af_Vrejlev
-		
-	women	
+	;denmark add more surnames
+
+	women
 		Adela
 		Agnes
 		Alvida
@@ -1750,9 +1707,8 @@ faction: denmark
 		Freya
 		Frida
 		Gerut
-		Gra
-		Grete
 		Gro
+		Grete
 		Gudrun
 		Gunhild
 		Gunna
@@ -1766,7 +1722,6 @@ faction: denmark
 		Hildegard
 		Hulda
 		Ingeborg
-		Ingeburge
 		Ingegerd
 		Ingrid
 		Jutta
@@ -1805,31 +1760,24 @@ faction: denmark
 		Ulrika
 		Ulvhild
 		Yrsa
-		
-		
-faction: hre		
-		
-	characters	
+	;denmark add more female names
+
+faction: hre
+
+	characters
 		Adalbert
 		Adam
-		Adolf
 		Alba
 		Alberich
-		Albert
 		Albrecht
 		Albrecht
 		Albrecht
 		Alexander
-		Andreas
 		Andres
-		Anno
-		Anselm
 		Anthonius
 		Antoni
 		Arnold
 		Arnoldt
-		Arnulf
-		Athalwolf
 		Auberlin
 		Augustin
 		Balthasar
@@ -1839,19 +1787,11 @@ faction: hre
 		Bentz
 		Berchtold
 		Bernhard
-		Bernhart
-		Bernt
-		Berthold
 		Bertholdt
-		Bertram
 		Bestlin
 		Bruno
 		Burckhart
-		Burkart
-		Carl
 		Caspar
-		Casper
-		Christian
 		Claus
 		Clewin
 		Conntz
@@ -1860,6 +1800,7 @@ faction: hre
 		Conrad
 		Conrad
 		Conrad
+		Konrad
 		Conrat
 		Craft
 		Cristan
@@ -1870,50 +1811,35 @@ faction: hre
 		Cunradus
 		Cuntz
 		Cuntze
-		Dieter
 		Diether
-		Dietmar
 		Dietrich
 		Dietz
-		Dirk
-		Eberhard
 		Eberhart
 		Eberlein
 		Eckhart
-		Edmund
-		Egbart
-		Ehrhart
 		Ekarius
-		Elberhard
 		Endres
-		Engelbert
 		Engelhart
 		Erasmus
 		Erhardt
-		Ernst
-		Eusebius
 		Ewalt
 		Felix
 		Franck
-		Franke
 		Frantz
-		Frederick
 		Fridel
+		Friedrich
+		Friedrich
+		Friedrich
+		Friedrich
+		Friedrich
 		Friderich
-		Friedrich
-		Friedrich
-		Friedrich
-		Friedrich
-		Friedrich
-		Fritsche
+		Frederick
 		Fritz
 		Frytz
 		Gabriel
 		Gallus
-		Gebhard
 		Georg
 		Georig
-		Gerhard
 		Gilg
 		Gottfried
 		Gunther
@@ -1928,13 +1854,8 @@ faction: hre
 		Hansman
 		Hanss
 		Hansz
-		Harold
 		Hartman
-		Hartmann
-		Hartmut
-		Heidenrich
 		Hein
-		Heinke
 		Heinrich
 		Heinrich
 		Heinrich
@@ -1944,11 +1865,8 @@ faction: hre
 		Heinz
 		Heinz
 		Heinz
-		Helmeric
-		Helmut
 		Helwig
 		Henrich
-		Hensel
 		Henselman
 		Herbert
 		Heribert
@@ -1956,24 +1874,17 @@ faction: hre
 		Herman
 		Herman
 		Hermann
-		Herrmann
 		Heynrich
-		Hildebrand
 		Honn
 		Hug
-		Hugo
 		Jacob
-		Jan
 		Jecklin
-		Jens
 		Jeronimus
-		Joachim
 		Jobst
 		Johann
 		Johann
 		Johann
 		Johannes
-		Jonas
 		Jorg
 		Jorg
 		Jorg
@@ -1986,12 +1897,9 @@ faction: hre
 		Kilian
 		Klasz
 		Klaus
-		Kolman
-		Konrad
 		Kuntz
 		Kuntz
 		Kuntz
-		Kunz
 		Kurt
 		Lenhart
 		Lentz
@@ -2000,6 +1908,7 @@ faction: hre
 		Leopold
 		Leopold
 		Leuthold
+		Lutold
 		Linhart
 		Lorentz
 		Lothar
@@ -2008,33 +1917,24 @@ faction: hre
 		Ludwig
 		Ludwig
 		Ludwig
-		Luitold
-		Lukas
-		Lutold
-		Manfred
 		Markus
 		Marthes
 		Martin
 		Marx
 		Mathes
 		Mathias
-		Matthias
 		Matthis
 		Mauricius
 		Max
 		Maximilian
-		Meinhard
 		Melchior
 		Merckel
 		Merten
-		Mertin
 		Michel
 		Mickel
 		Moritz
 		Nicklas
 		Niclaus
-		Nikolaus
-		Ortwin
 		Oswald
 		Ott
 		Otto
@@ -2047,16 +1947,10 @@ faction: hre
 		Peter
 		Peter
 		Peter
-		Petermann
 		Philip
-		Philipp
 		Rainald
-		Reimar
 		Rein
-		Reinhard
 		Reinhart
-		Reinold
-		Rudeger
 		Rudolf
 		Rudolf
 		Rudolf
@@ -2069,19 +1963,12 @@ faction: hre
 		Sewolt
 		Seyfrid
 		Seytz
-		Siegfried
-		Sieghard
-		Sifrid
-		Sigismund
 		Sigmund
 		Simon
 		Sixt
 		Steffan
 		Steffen
-		Tancred
-		Theoderich
 		Thomas
-		Thorsten
 		Tillman
 		Tilman
 		Toman
@@ -2091,18 +1978,13 @@ faction: hre
 		Urschel
 		Utz
 		Vallentin
-		Vecellin
 		Veit
 		Veyd
 		Volckel
-		Volkmar
 		Walther
 		Welf
 		Wendel
-		Wennemar
 		Wentzel
-		Wenzel
-		Werener
 		Wernhart
 		Wernher
 		Wernher
@@ -2111,16 +1993,12 @@ faction: hre
 		Wilhelm
 		Wilhelm
 		Wilhem
-		Willekin
-		Winrich
 		Wolff
 		Wolfgang
-		Wolfhart
-		Wolfram
-		Wolter
 		Zacharias
-		
-	surnames	
+	;hre add more names
+
+	surnames
 		Ahrens
 		Ansbach
 		Babenberg
@@ -2133,7 +2011,6 @@ faction: hre
 		Brant
 		Braun
 		Bresch
-		Bruegel
 		Brugel
 		Dassel
 		Dedekind
@@ -2141,7 +2018,6 @@ faction: hre
 		Dumpershagen
 		Durer
 		Dusmer
-		Ebner
 		Echter
 		Eck
 		Eltz
@@ -2154,8 +2030,6 @@ faction: hre
 		Feuchtwangen
 		Fischart
 		Folz
-		Franck
-		Franz
 		Frauenlob
 		Freitag
 		Gattersleben
@@ -2164,7 +2038,6 @@ faction: hre
 		Grunbach
 		Grunewald
 		Gruningen
-		Guiskard
 		Gutenberg
 		Hane
 		Hasenkamp
@@ -2174,13 +2047,11 @@ faction: hre
 		Herden
 		Herse
 		Hesselloher
-		Holbein
 		Holhbein
 		Holtzwart
 		Hummel
 		Hundt
 		Jocke
-		Josef
 		Karolinger
 		Kasper
 		Kassel
@@ -2188,7 +2059,6 @@ faction: hre
 		Kempf
 		Kersdorf
 		Kniess
-		Konig
 		Krause
 		Kuchmeister
 		Laib
@@ -2208,16 +2078,12 @@ faction: hre
 		Merowinger
 		Meyer
 		Monheim
-		Multscher
 		Munster
-		Muntzer
 		Murner
 		Mutschler
 		Mutzenbacher
 		Neumann
 		Nordeck
-		Ockeghem
-		Orseln
 		Osternach
 		Osthof
 		Otterbach
@@ -2229,11 +2095,9 @@ faction: hre
 		Plotzke
 		Probst
 		Puschmann
-		Querfurt
 		Raabe
 		Radtke
 		Raspe
-		Ratzeburg
 		Rechberg
 		Recke
 		Reffle
@@ -2242,7 +2106,6 @@ faction: hre
 		Reusz
 		Richtenberg
 		Riemenschneider
-		Ritter
 		Rogga
 		Roht
 		Ruesdorf
@@ -2253,11 +2116,9 @@ faction: hre
 		Scherer
 		Schertlin
 		Schildberger
-		Schiltberger
 		Schippen
 		Schlungel
 		Schongauer
-		Schreiner
 		Schulte
 		Schurburg
 		Schutzbar
@@ -2269,7 +2130,6 @@ faction: hre
 		Spanheim
 		Spreng
 		Stagel
-		Steffen
 		Steinhowel
 		Stoss
 		Talhofer
@@ -2279,7 +2139,6 @@ faction: hre
 		Thierberg
 		Tiefen
 		Tork
-		Truchsesz
 		Tunger
 		Ungenade
 		Uttenheim
@@ -2305,21 +2164,7 @@ faction: hre
 		Zo#llner
 		Zollner
 		Zwingli
-;;;bynames		
-		der_Bar
-		der_Bartige
-		der_Bose
-		der_Einaugige
-		der_Eiserne
-		der_Fromme
-		der_Grossmutige
-		der_Heilige
-		der_Lowe
-		der_Rote
-		der_Schone
-		der_Schwarze
-		der_Stolze
-		der_Weisse
+;;;bynames
 		von_Aachen
 		von_Anjou
 		von_Aragon
@@ -2334,13 +2179,10 @@ faction: hre
 		von_Bohmen
 		von_Brandenburg
 		von_Braunschweig
-		von_Breisgau
 		von_Bremen
 		von_Burgund
-		von_Calw
 		von_Darmstadt
 		von_der_Breisgau
-		von_Duisberg
 		von_Duisburg
 		von_Dusseldorf
 		von_Eichstatt
@@ -2380,7 +2222,6 @@ faction: hre
 		von_Mahren
 		von_Mecklenburg
 		von_Meissen
-		von_Meiszen
 		von_Munchen
 		von_Nassau
 		von_Nordheim
@@ -2406,7 +2247,6 @@ faction: hre
 		von_Staufen
 		von_Steiermark
 		von_Strassburg
-		von_Straszburg
 		von_Supplinburg
 		von_Thuringen
 		von_Tirol
@@ -2421,157 +2261,95 @@ faction: hre
 		von_Wurzburg
 		von_Zahringen
 		von_Zollern
-		
-	women	
-		Ada
+	;hre add more surnames
+
+	women
 		Adelhaid
-		Adelheid
 		Affra
 		Agatha
 		Agnes
 		Agth
-		Aleid
-		Alfgarda
 		Alhayt
 		Alheit
 		Allin
 		Anna
 		Annlin
-		Apollonia
 		Applonia
 		Barbara
 		Barbel
 		Barbelin
-		Beatrix
 		Berblin
-		Bertha
-		Berthlenda
 		Bertrada
 		Beth
 		Brid
 		Brigitta
-		Brunhild
 		Clara
-		Clare
-		Contzel
 		Cristin
 		Cristina
-		Demuth
 		Dorethin
 		Dorothea
 		Duretta
-		Eilika
 		Elisabeth
 		Ella
 		Els
 		Elsbeth
-		Emeludt
 		Endlein
 		Engel
 		Engelin
 		Enndlin
-		Ethelgard
-		Ethelinda
-		Eue
 		Eva
-		Fridewiga
 		Fronicka
 		Genefe
 		Geras
-		Gerburg
 		Gerdrud
 		Gerlin
-		Gersenda
-		Gertruda
-		Gisela
-		Grede
-		Gredechin
 		Gret
 		Greth
 		Grethlin
-		Guda
-		Hedewig
-		Heidindrudis
-		Heilewif
-		Heilwig
 		Helena
-		Hette
-		Hildegard
-		Hunfried
-		Ida
-		Ingela
 		Irmel
-		Irmgard
 		Jonata
-		Judith
 		Juliana
-		Jutte
 		Katherin
 		Katherina
 		Ketlin
 		Konstanze
-		Kordula
-		Kriemhild
 		Kristen
 		Kungundt
-		Kunigunde
 		Kunigundt
 		Kwnn
-		Liutgard
-		Machteld
 		Magdalen
 		Margarethea
 		Margeth
-		Margret
 		Margret+
 		Margrett
-		Maria
 		Marlein
 		Martha
 		Martsch
-		Matilde
 		Mechthilt
-		Mechtild
-		Meckil
 		Mergelein
 		Mergelin
-		Methilda
 		Metze
 		Nes
 		Neslin
-		Niesenn
 		Nopricht
 		Nopurg
-		Olga
-		Othilda
 		Otilia
 		Peternella
-		Rainilda
 		Reusin
-		Siburg
-		Sophie
-		Tietwindis
-		Trutilda
-		Ulgarda
 		Ursel
 		Ursula
-		Uta
-		Vuifken
 		Walburg
-		Willelda
-		Wulfhild
-		
-		
-faction: hungary		
-		
-	characters	
+	;hre add more female names
+
+faction: hungary
+
+	characters
 		Aba
 		Akos
-		Akus
 		Almos
 		Almos
 		Almos
-		Almus
 		Amade
 		Ampod
 		Andras
@@ -2592,38 +2370,26 @@ faction: hungary
 		Belos
 		Benedek
 		Bertalan
-		Bese
-		Betlehem
 		Bod
 		Bodomer
-		Bogat
-		Bojta
 		Bokeny
-		Bokony
 		Boldizsar
 		Bors
-		Bot
-		Bulcsu
 		Compold
-		Da#vid
 		Damjan
 		Dancs
+		Da#vid
 		Demeter
 		Denes
-		Des
 		Dezso
 		Domokos
 		Don
-		Donat
 		Dozsa
-		E#lia#s
 		Elek
-		Elias
+		E#lia#s
 		Endre
 		Endre
 		Endre
-		Fabian
-		Farkas
 		Felician
 		Ferenc
 		Fulop
@@ -2633,21 +2399,18 @@ faction: hungary
 		Geza
 		Geza
 		Geza
-		Gyeicsa
 		Gyorgy
 		Gyula
-		Gyurk
 		Henning
 		Henrik
 		Herbord
-		Heteny
-		Hollus
 		Imre
 		Istvan
 		Istvan
 		Istvan
 		Istvan
 		Istvan
+		Stephen
 		Iva#n
 		Izsak
 		Jakab
@@ -2659,25 +2422,17 @@ faction: hungary
 		Kalman
 		Kalman
 		Kalman
-		Kaplony
-		Karad
 		Karoly
-		Kartal
-		Katapan
 		Keled
 		Kenez
-		Kerecse
 		Kilia#n
-		Kolpeny
 		Koppany
 		Kozma
 		Kund
-		Kuppany
 		Ladomer
 		Lajos
 		Lajos
 		Lajos
-		Lambert
 		Lampert
 		Lampert
 		Lampert
@@ -2689,7 +2444,6 @@ faction: hungary
 		Levente
 		Lorinc
 		Lukacs
-		Mako
 		Mark
 		Markus
 		Marton
@@ -2697,44 +2451,30 @@ faction: hungary
 		Matyas
 		Menyhart
 		Mihaly
-		Mikan
+		Miklos
+		Miklos
+		Miklos
 		Mike
-		Miklos
-		Miklos
-		Miklos
-		Mog
 		Moric
 		Nehemias
 		Opos
-		Otmar
 		Pa#l
 		Pa#l
 		Pa#l
-		Pal
 		Pe#ter
 		Pe#ter
 		Pe#ter
 		Peter
 		Petur
-		Pozsony
 		Renold
 		Rikolf
 		Roland
 		Salamon
-		Samson
 		Sandor
 		Saul
 		Sebo
 		Simon
-		Smaragd
-		Stephen
 		Tamas
-		Tiburc
-		Turda
-		Ugrin
-		Uros
-		Vajk
-		Vata
 		Vazul
 		Vid
 		Vilmos
@@ -2742,85 +2482,114 @@ faction: hungary
 		Zombor
 		Zotmund
 		Zsigmond
-		
-	surnames	
+	;hungary add more names
+
+	surnames
 		Aba
-		Aradi
 		Arpadhazi
 		Atyusz
-		Babocsai
 		Babonics
-		Bacsi
 		Balassa
 		Balogsemjen
-		Banfi
 		Bathory
 		Besenyo
-		Bihari
 		Borkalan
 		Borsa
+		a_Borsa_nembol
 		Brankovics
-		Buki
 		Buzad
 		Csak
-		Csanadi
-		Csatadi
 		Cseh
 		Cseke
-		Cseszneki
 		Csik
-		Debreceni
 		Dobor
 		Drugeth
-		Ebedi
-		Erdelyi
-		Esztergomi
 		Farkas
-		Fegyverneki
 		Feher
-		Fehervari
 		Fekete
-		Feketehalmi
-		Felvideki
 		Fodor
 		Forgach
 		Frangepan
 		Fule
-		Fuleki
-		Garai
 		Geregye
-		Gorgei
 		Guthkeled
 		Guti
-		Gyornembeli
 		Hahot
 		Hajdu
-		Hedervari
 		Hodos
-		Homonnai
 		Hontpazman
 		Horvath
 		Jak
+		a_Jak_nembol
 		Jakab
-		Jarodi
 		Joo
 		Kacsics
-		Kalocsai
+		a_Kacsics_nembol
 		Kan
-		Kanizsai
 		Kaplony
+		Kis
+		Kont
+		Kun
+		Lengyel
+		Nagy
+		Nemeth
+		Orszagh
+		Osli
+		Pec
+		Petenye
+		Pok
+		Racz
+		Ratot
+		Rede
+		Sipos
+		Subics
+		a_Subic_nembol
+		Szak
+		Szekely
+		Szentmagocs
+		Tar
+		Tomaj
+		Tot
+		Turje
+		Vajda
+		Wernerfia
+		Zach
+		Zador
+;;;bynames
+		Aradi
+		Babocsai
+		Bacsi
+		Banfi
+		Bihari
+		Buki
+		Csanadi
+		Csatadi
+		Cseszneki
+		Debreceni
+		Ebedi
+		Erdelyi
+		Esztergomi
+		Fegyverneki
+		Fehervari
+		Feketehalmi
+		Felvideki
+		Fuleki
+		Garai
+		Gorgei
+		Gyornembeli
+		Hedervari
+		Homonnai
+		Jarodi
+		Kalocsai
+		Kanizsai
 		Kassai
 		Kaszadi
 		Kesedi
 		Kinizsi
-		Kis
 		Kolozsnemasi
-		Kont
 		Korosi
 		Korpadi
 		Koszegi
-		Kun
-		Lengyel
 		Levedi
 		Losonczi
 		Maradi
@@ -2828,109 +2597,52 @@ faction: hungary
 		Martonfalvi
 		Medgyesi
 		Miskolci
-		Nagy
 		Nagylaki
 		Nagyszombati
-		Nemeth
 		Nogradi
 		Nyitrai
-		Orszagh
-		Osli
-		Pec
 		Pecsi
 		Pelencei
 		Perenyi
-		Petenye
-		Pok
 		Pozsonyi
-		Racz
 		Radi
-		Ratot
-		Rede
 		Rozgonyi
 		Sarlodi
-		Sipos
 		Solymosi
 		Spalatoi
-		Subics
-		Szak
 		Szamodi
 		Szatmari
 		Szebeni
 		Szegedi
-		Szekely
-		Szentmagocs
 		Szepesi
 		Szilagyi
 		Szobolcsi
 		Szolgagyori
 		Szolosi
-		Tar
 		Taskadi
 		Temesvari
 		Tolnai
-		Tomaj
-		Tot
 		Trencseni
 		Trogiri
-		Turje
 		Turoci
 		Vagdi
-		Vajda
 		Valkovari
 		Vandi
 		Varadi
 		Vasardi
 		Vasvari
 		Vejtehi
-		Wernerfia
-		Zach
-		Zador
 		Zalavari
 		Zarai
 		Zolyomi
 		Zsolnai
-;;;bynames		
-		a_Babonic_nembol
-		a_Balug_nembol
-		a_Bancsa_nembol
-		a_Bogatradvany_nembol
-		a_Bor_nembol
-		a_Borsa_nembol
-		a_Buzad_nembol
-		a_Csak_nembol
-		a_Geregye_nembol
-		a_Gutkeled_nembol
-		a_Gyor_nembol
-		a_Hahold_nembol
-		a_Heidrih_nembol
-		a_Herman_nembol
-		a_Huntpaznan_nembol
-		a_Jak_nembol
-		a_Kacsics_nembol
-		a_Kan_nembol
-		a_Monoszlo_nembol
-		a_Pec_nembol
-		a_Pok_nembol
-		a_Ratolt_nembol
-		a_Subic_nembol
-		a_Szak_nembol
-		a_Szentemagucs_nembol
-		a_Tomaj_nembol
-		a_Turje_nembol
-		a_Zah_nembol
-		az_Aba_nembol
-		az_Akus_nembol
-		az_Oguz_nembol
-		az_Opor_nembol
-		az_Osl_nembol
-		
-	women	
-		A#gnes
-		Adelaide
+	;hungary add more surnames
+
+	women
 		Adelhaid
+		Adelaide
 		Aga#ta
-		Agota
+		A#gnes
 		Ancilla
 		Anna
 		Barbara
@@ -2938,35 +2650,31 @@ faction: hungary
 		Beatrix
 		Borbala
 		Dora
-		E#va
 		Erzsebet
 		Eufemia
+		E#va
 		Gertrud
 		Gizella
-		Hedvig
 		Ibolya
 		Ildiko
 		Ilona
 		Izabella
 		Jolanta
-		Ju#lia
 		Judit
+		Ju#lia
 		Katalin
 		Kinga
 		Kla#ra
-		Konstancia
 		Krisztina
-		Kunigunda
 		Lea
 		Luca
-		Ma#ria
 		Magdolna
 		Margit
+		Ma#ria
 		Orsolya
-		Piriska
 		Piroska
-		Predslava
 		Predszlava
+		Predslava
 		Rozsa
 		Sarolta
 		Szabina
@@ -2975,11 +2683,11 @@ faction: hungary
 		Virag
 		Zsofia
 		Zsuzsanna
-		
-		
-faction: papal_states		
-		
-	characters	
+	;hungary add more female names
+
+faction: papal_states
+
+	characters
 		Adeodatus
 		Agapetus
 		Alexander
@@ -3072,8 +2780,9 @@ faction: papal_states
 		Xystus
 		Zacharias
 		Zosimus
-		
-	surnames	
+	;papal_states add more names
+
+	surnames
 		Accorsi
 		Alberti
 		Albizi
@@ -3143,7 +2852,7 @@ faction: papal_states
 		Specialis
 		Vicini
 		Vinarius
-;;bynames		
+;;;bynames
 		de_Alario
 		de_Arizio
 		de_Avena
@@ -3190,60 +2899,24 @@ faction: papal_states
 		de_Verde
 		de_Vico
 		de_Volta
-		
-	women	
-		Adelasia
+	;papal_states add more surnames
+
+	women
 		Adriana
-		Aiguana
 		Alexandra
-		Altadonna
 		Amanda
-		Amata
-		Angela
 		Aurelia
-		Beldina
-		Bella
-		Benedacta
-		Benvenuta
-		Berta
-		Bona
-		Bruna
-		Clara
-		Complita
-		Conciata
-		Dialta
-		Divitia
-		Druda
-		Flore
-		Gilia
-		Iacoba
 		Julia
-		Letitia
-		Lucia
-		Margarita
 		Maria
-		Massaria
 		Olivia
-		Palmeria
-		Pera
 		Petra
-		Pleneria
-		Riccha
-		Rosana
-		Santesa
-		Savia
-		Sibilia
 		Sophia
-		Stefania
-		Verde
-		Verdiana
 		Victoria
-		Ysa
-		
-		
-faction: portugal		
-		
-	characters	
+	;papal_states add more female names
+
+faction: portugal
+
+	characters
 		Adriano
 		Afonso
 		Afonso
@@ -3258,7 +2931,6 @@ faction: portugal
 		Andre
 		Antao
 		Anto#nio
-		Antonio
 		Artur
 		Baltazar
 		Bartolomeu
@@ -3302,7 +2974,6 @@ faction: portugal
 		Gonc#alo
 		Gonc#alo
 		Gonc#alo
-		Goncalo
 		Guilherme
 		Gustavo
 		Guterre
@@ -3344,11 +3015,10 @@ faction: portugal
 		Nuno
 		Paio
 		Paulo
+		Pedro
+		Pedro
+		Pedro
 		Pe#ro
-		Pedro
-		Pedro
-		Pedro
-		Pero
 		Rafael
 		Raimundo
 		Ramalho
@@ -3370,7 +3040,6 @@ faction: portugal
 		Soeiro
 		Telmo
 		Toma#s
-		Tomas
 		Tome
 		Tristao
 		Vasco
@@ -3378,8 +3047,9 @@ faction: portugal
 		Viriato
 		Vitor
 		Xavier
-		
-	surnames	
+	;portugal add more names
+
+	surnames
 		Aboim
 		Abrantes
 		Albuquerque
@@ -3388,7 +3058,6 @@ faction: portugal
 		Alvares
 		Amaral
 		Andrade
-		Antao
 		Antunes
 		Azevedo
 		Bandeira
@@ -3470,13 +3139,12 @@ faction: portugal
 		Pinheiro
 		Pires
 		Portela
-		Portugal
 		Quaresma
 		Queiros
 		Ramalho
 		Raposo
-		Re#go
 		Rego
+		Re#go
 		Reis
 		Resende
 		Ribeiro
@@ -3511,7 +3179,7 @@ faction: portugal
 		Vilhena
 		Viviaes
 		Zarco
-;;bynames		
+;;;bynames
 		da_Anunciada
 		da_Costa
 		da_Cunha
@@ -3549,10 +3217,10 @@ faction: portugal
 		de_Lopes
 		de_Matos
 		de_Melgaco
-		de_Mello
 		de_Melo
 		de_Meneses
 		de_Noronha
+		de_Ulhoa
 		de_Paiva
 		de_Portugal
 		de_Sa
@@ -3561,25 +3229,21 @@ faction: portugal
 		de_Seabra
 		de_Sousa
 		de_Taveira
-		de_Ulhoa
 		de_Valadares
 		de_Vide
 		de_Vinhal
 		do_Castelo
 		do_Crato
 		do_Vale
-		do_Vale
-		dos_Anjos
-		
-	women	
+	;portugal add more surnames
+
+	women
 		Ana
 		Angelina
 		Anto#nia
-		Antonia
 		Beatriz
 		Branca
 		Brigi#da
-		Brigida
 		Brites
 		Carla
 		Catarina
@@ -3587,29 +3251,25 @@ faction: portugal
 		Clara
 		Costanca
 		Cristina
-		E#va
 		Elvira
 		Ester
-		Eva
+		E#va
 		Filipa
 		Francisca
 		Gabriela
 		Guiomar
 		Imaculada
 		Ine#s
-		Ines
 		Isabel
 		Jacinta
 		Joana
-		Ju#lia
 		Judite
+		Ju#lia
 		Leonor
 		Lucia
 		Lui#sa
-		Luisa
 		Lurdes
 		Luzia
-		Ma#ria
 		Madalena
 		Magda
 		Maior
@@ -3629,11 +3289,11 @@ faction: portugal
 		Urraca
 		Vera
 		Violante
-		
-		
-faction: scotland		
-		
-	characters	
+	;portugal add more female names
+
+faction: scotland
+
+	characters
 		Aed
 		Aed
 		Aed
@@ -3656,7 +3316,6 @@ faction: scotland
 		Brogan
 		Caerell
 		Cailean
-		Cainneach
 		Cainnech
 		Cathal
 		Causantin
@@ -3675,7 +3334,6 @@ faction: scotland
 		Ciniod
 		Colban
 		Comgell
-		Constantin
 		Cormac
 		Crinan
 		Cuilen
@@ -3718,7 +3376,6 @@ faction: scotland
 		Fothad
 		Gartnait
 		Gille_Aindreis
-		Gille_Aireis
 		Gille_Brigte
 		Gille_Calline
 		Gille_Coemgain
@@ -3727,8 +3384,7 @@ faction: scotland
 		Gille_Crist
 		Gille_Eogan
 		Gille_Escoib
-		Gille_Miche#il
-		Gille_Micheil
+		Gille_Mícheil
 		Gille_Patraic
 		Gille_Petair
 		Giric
@@ -3743,7 +3399,6 @@ faction: scotland
 		Mac_Dobarchon
 		Mac_Dubbacin
 		Mael_Bricin
-		Mael_Brigde
 		Mael_Brigte
 		Mael_Coluim
 		Mael_Coluim
@@ -3753,7 +3408,6 @@ faction: scotland
 		Mael_Domnaich
 		Mael_Fechin
 		Mael_Giric
-		Mael_Isu
 		Mael_Micheil
 		Mael_Muire
 		Mael_Pátraic
@@ -3789,10 +3443,9 @@ faction: scotland
 		Uilliam
 		Uilliam
 		Uilliam
-		William
-		
-	surnames	
-		mac_Aed
+	;scotland add more names
+
+	surnames
 		mac_Aeda
 		mac_Aengus
 		mac_Alaxandair
@@ -3808,18 +3461,8 @@ faction: scotland
 		mac_Cathail
 		mac_Causantín
 		mac_Cennedig
-		mac_Chaerill
-		mac_Chailean
-		mac_Chainneach
-		mac_Chainnech
-		mac_Chathail
-		mac_Chennedig
-		mac_Chinaed
 		mac_Cholbain
-		mac_Chomgell
-		mac_Chonstantin
 		mac_Chormaic
-		mac_Chuilen
 		mac_Cinaeda
 		mac_Comgell
 		mac_Crinain
@@ -3832,7 +3475,6 @@ faction: scotland
 		mac_Donnachaic
 		mac_Donnchada
 		mac_Donnchaid
-		mac_Dubne
 		mac_Duib
 		mac_Duibne
 		mac_Dun_Chailleann
@@ -3840,16 +3482,11 @@ faction: scotland
 		mac_Eanric
 		mac_Eogain
 		mac_Fearchair
-		mac_Fearchiar
 		mac_Feradaich
-		mac_Ferdomnaich
 		mac_Ferdomnaig
 		mac_Fergusa
-		mac_Findlaech
 		mac_Findlaich
-		mac_Finguine
 		mac_Finguni
-		mac_Fothad
 		mac_Fothaid
 		mac_Gartnait
 		mac_Gille_Brigte
@@ -3867,7 +3504,6 @@ faction: scotland
 		mac_Idid
 		mac_Ilduilb
 		mac_Leod
-		mac_Leoid
 		mac_Lulaich
 		mac_Mail
 		mac_Mail_Bricin
@@ -3881,39 +3517,31 @@ faction: scotland
 		mac_Mail_Snechta
 		mac_Matadin
 		mac_Matain
-		mac_Matne
 		mac_Matni
 		mac_Morgainn
 		mac_Muiredaich
 		mac_Muredig
 		mac_Nechtain
 		mac_Ruadri
-		mac_Sithech
 		mac_Sithig
 		mac_Somairle
-		mac_Thralin
 		mac_Tralin
 		mac_Uilliam
 		of_Atholl
 		Wallace
-		
-	women	
-		Affraic
+	;scotland add more names
+
+	women
 		Afraig
-		Agais
 		Aileas
 		Annag
 		Bethoc
 		Cairistine
-		Caitrina
 		Caitriona
-		Cristina
 		Dearbhail
-		Dearbhorgaill
 		Deirdre
 		Doileag
 		Ealasaid
-		Ealusaid
 		Eilidh
 		Eithne
 		Eithrig
@@ -3921,58 +3549,48 @@ faction: scotland
 		Ete
 		Eua
 		Eubha
-		Finnghuala
 		Forbhlaith
 		Gormlaith
-		Gruoch
 		Issobell
-		Joan
 		Maighread
-		Mairead
 		Mairghreid
+		Mairead
 		Mairi
 		Marsaili
 		Maud
 		Mor
 		Muireall
-		Muirgheal
 		Murron
 		Paislig
 		Raghnaid
-		Raghnailt
 		Senga
 		Seonag
 		Seonaid
 		Sibeal
 		Sine
 		Siobhan
+		Joan
 		Slaine
 		Suthen
-		Suthen
 		Una
-		
-		
-faction: sicily		
-		
-	characters	
+	;scotland add more female names
+
+faction: sicily
+
+	characters
 		Abbilardu
 		Abbontiu
 		Abbramu
-		Ademaro
 		Adolfu
 		Adrianu
-		Alberto
 		Albertu
+		Alberto
 		Alessiu
-		Alfonso
 		Alfonzu
 		Alfredu
 		Alissandru
 		Ambroggiu
 		Ancilu
-		Andrea
-		Anselmo
-		Antonio
 		Antoniu
 		Antuninu
 		Anuratu
@@ -3980,17 +3598,13 @@ faction: sicily
 		Arbinu
 		Ardu
 		Arricu
-		Atenolfo
 		Austinu
 		Barnabba
-		Bartolomeo
 		Basileu
 		Battista
 		Beniaminu
-		Bernardo
 		Binidittu
 		Birnardu
-		Boemundo
 		Bonifazziu
 		Brasi
 		Brunu
@@ -4007,7 +3621,6 @@ faction: sicily
 		Claudiu
 		Concetto
 		Corneliu
-		Corrado
 		Cosimu
 		Cunzaga
 		Curiuni
@@ -4021,7 +3634,6 @@ faction: sicily
 		Diegu
 		Disidderiu
 		Ditimu
-		Drogo
 		Druguni
 		Duminicu
 		Dunatu
@@ -4031,13 +3643,10 @@ faction: sicily
 		Eliciu
 		Eliggiu
 		Elpidiu
-		Enrico
 		Enricu
 		Enricu
 		Enricu
 		Eramu
-		Ercole
-		Ermanno
 		Ermannu
 		Ermiti
 		Ermoggini
@@ -4048,66 +3657,47 @@ faction: sicily
 		Evaristu
 		Fabbianu
 		Faustu
-		Federico
-		Ferrante
 		Fidiricu
 		Filici
-		Filippo
 		Filippu
 		Firdinannu
 		Firmu
 		Firrucciu
 		Fiurenziu
-		Francesco
 		Franciscu
 		Fravianu
 		Fraviu
 		Furtunatu
-		Gaspare
 		Gesu
-		Gherardo
 		Giacintu
-		Giacomo
 		Giacumu
 		Gilbertu
 		Gilormi
 		Ginnaru
-		Giordano
 		Giordanu
-		Giorgio
 		Giorgu
 		Giorgu
 		Giorgu
-		Giosue
-		Giovanni
 		Girardu
 		Girmanu
 		Gironziu
 		Girvasiu
-		Gisulfo
 		Giuacchinu
-		Giuffre
 		Giulianu
-		Giulio
 		Giuliu
 		Giuseppi
 		Giustinu
 		Giuvanni
 		Gnazziu
-		Goffredo
 		Grazzianu
-		Gregorio
 		Grigoriu
-		Guaimario
 		Guaimariu
-		Gualtiero
+		Guaimario
 		Guarinu
 		Guffredu
 		Gugghiermu
 		Gugghiermu
 		Gugghiermu
-		Guglielmo
-		Guido
 		Guidu
 		Igginu
 		Ilariu
@@ -4115,10 +3705,9 @@ faction: sicily
 		Isidoru
 		Ivu
 		Jacupu
-		Lamberto
 		Lambertu
-		Landolfo
 		Laudanu
+		Landolfo
 		Lazzaru
 		Leupoldu
 		Liantru
@@ -4126,24 +3715,22 @@ faction: sicily
 		Linu
 		Liunardu
 		Liuni
-		Lorenzo
 		Luca
 		Luciu
 		Luduvicu
 		Luiggi
 		Lurenzu
+		Lorenzo
 		Macariu
 		Manfredi
 		Marceddu
 		Marciddinu
 		Marianu
 		Mariu
-		Martino
 		Martinu
 		Marziali
 		Massimilianu
 		Massimu
-		Matteo
 		Matteu
 		Mattia
 		Maurizziu
@@ -4153,15 +3740,12 @@ faction: sicily
 		Mitiddi
 		Natali
 		Nazzariu
-		Niccolo
 		Nicola
+		Niccolo
 		Nicudemu
 		Oresti
-		Orlando
 		Ottaviu
 		Pacificu
-		Pandolfo
-		Paolo
 		Pasquali
 		Patrizziu
 		Paulinu
@@ -4174,9 +3758,6 @@ faction: sicily
 		Protasiu
 		Quirinu
 		Raffaeli
-		Raimondo
-		Rainaldo
-		Rainulfo
 		Rainulfu
 		Ranieri
 		Renatu
@@ -4184,37 +3765,33 @@ faction: sicily
 		Riccardu
 		Ricu
 		Rinardu
-		Roberto
-		Romano
-		Romoaldo
 		Romulu
 		Rubbertu
 		Rubbertu
 		Rubbertu
 		Rudolfu
 		Rudrigu
+		Ruggeru
+		Ruggeru
+		Ruggeru
+		Ruggeru
+		Ruggeru
 		Ruggero
-		Ruggeru
-		Ruggeru
-		Ruggeru
-		Ruggeru
-		Ruggeru
-		Ruggiero
 		Rumanu
 		Rumeu
 		Rusariu
 		Samueli
 		Sarluni
+		Serlo
 		Sarvaturi
 		Sarvinianu
 		Saveriu
 		Sergiu
-		Serlo
 		Simmacu
+		Simuni
+		Simuni
+		Simuni
 		Simone
-		Simuni
-		Simuni
-		Simuni
 		Siriu
 		Sirvanu
 		Sirvestru
@@ -4223,20 +3800,15 @@ faction: sicily
 		Tancredi
 		Tancredi
 		Tancredi
-		Teobaldo
 		Timuteu
 		Tiofilu
 		Tirenziu
 		Titu
 		Tumasi
 		Tuveu
-		Ubaldo
 		Ubbardu
-		Ubertino
-		Uberto
 		Ugu
 		Umbertu
-		Umfredo
 		Unfredu
 		Usvardu
 		Uttuni
@@ -4253,8 +3825,9 @@ faction: sicily
 		Vitturinu
 		Zaccaria
 		Zenu
-		
-	surnames	
+	;sicily add more names
+
+	surnames
 		Abbate
 		Aleramici
 		Antiochia
@@ -4264,7 +3837,6 @@ faction: sicily
 		Barba
 		Barresi
 		Biuso
-		Braccia-de-ferro
 		Branciforte
 		Callari
 		Calvelli
@@ -4275,7 +3847,6 @@ faction: sicily
 		Crisafi
 		Cristaldi
 		Cutelli
-		Doria
 		Drengotto
 		Falcone
 		Ferro
@@ -4305,161 +3876,13 @@ faction: sicily
 		Saglinpepe
 		Sciacca
 		Siracusa
-		Spinola
 		Stagno
 		Tagliavia
 		Tavelli
 		Trincanocte
 		Vallano
-		Ventimiglia
 		Vitale
-;;;bynames		
-		d_Acerenza
-		d_Acerra
-		d_Aci
-		d_Aidone
-		d_Ajello
-		d_Alago
-		d_Alagona
-		d_Alife
-		d_Altavilla
-		d_Ancona
-		d_Andria
-		d_Apulia
-		d_Aragona
-		d_Argo
-		d_Ariano
-		d_Ascoli
-		d_Avellino
-		d_Aversa
-		d_Eboli
-		d_Enna
-		d_Epiro
-		d_Iato
-		d_Iesi
-		d_Irno
-		d_Isernia
-		d_Olevano
-		d_Oria
-		d_Ottaviano
-		de_Bagnara
-		de_Balvano
-		de_Bari
-		de_Bassunvilla
-		de_Battalaro
-		de_Biccari
-		de_Bisaccia
-		de_Bisceglie
-		de_Bisignano
-		de_Bitonto
-		de_Bova
-		de_Brindisi
-		de_Buonalbergo
-		de_Caccamo
-		de_Caiazzo
-		de_Calabria
-		de_Calatrasi
-		de_Caltagirone
-		de_Campolieto
-		de_Canne
-		de_Canosa
-		de_Capaccio
-		de_Capitanate
-		de_Capizzi
-		de_Capua
-		de_Casamari
-		de_Casauria
-		de_Catania
-		de_Catanzaro
-		de_Civitate
-		de_Comino
-		de_Conversano
-		de_Conza
-		de_Corato
-		de_Corleone
-		de_Corleto
-		de_Ferentino
-		de_Fiore
-		de_Flumeri
-		de_Gaeta
-		de_Galluccio
-		de_Gerace
-		de_Gesualdo
-		de_Giovinazzo
-		de_Gravina
-		de_Laino
-		de_Larino
-		de_Lecce
-		de_Lentini
-		de_Lesina
-		de_Licata
-		de_Loreto
-		de_Loritello
-		de_Malta
-		de_Mandra
-		de_Marsala
-		de_Massafra
-		de_Mazara
-		de_Melfi
-		de_Mesagne
-		de_Messina
-		de_Mignano
-		de_Mileto
-		de_Minervino
-		de_Minori
-		de_Misilmeri
-		de_Modugno
-		de_Mohac
-		de_Molfetta
-		de_Monopoli
-		de_Monreale
-		de_Monte_Gargano
-		de_Monte_Marano
-		de_Monte_Sant_Angelo
-		de_Montefusco
-		de_Montepeloso
-		de_Montescaglioso
-		de_Morcone
-		de_Mottola
-		de_Muxaro
-		de_Napoli
-		de_Nicotera
-		de_Nocera
-		de_Normandia
-		de_Noto
-		de_Paduli
-		de_Palermo
-		de_Petralia
-		de_Policastro
-		de_Puliano
-		de_Ragusa
-		de_Rupecanina
-		de_Salerno
-		de_Sarno
-		de_Savona
-		de_Sessa
-		de_Sicignano
-		de_Sinagra
-		de_Siponto
-		de_Siracusa
-		de_Sorrento
-		de_Stridula
-		de_Svevia
-		de_Tagliacozzo
-		de_Taormina
-		de_Taranto
-		de_Taverna
-		de_Telese
-		de_Teramo
-		de_Toritto
-		de_Trani
-		de_Tricala
-		de_Troia
-		de_Troina
-		de_Valenzano
-		de_Venosa
-		de_Veroli
-		de_Vieste
+;;;bynames
 		di_Acerenza
 		di_Acerra
 		di_Aci
@@ -4468,6 +3891,8 @@ faction: sicily
 		di_Alago
 		di_Alagona
 		di_Alife
+		di_Autavilla
+		d_Altavilla
 		di_Ancona
 		di_Andria
 		di_Antiochia
@@ -4475,7 +3900,6 @@ faction: sicily
 		di_Argo
 		di_Ariano
 		di_Ascoli
-		di_Autavilla
 		di_Avellino
 		di_Aversa
 		di_Bagnara
@@ -4525,14 +3949,12 @@ faction: sicily
 		di_Gerace
 		di_Gesualdo
 		di_Giovinazzo
-		di_Girgenti
 		di_Gravina
 		di_Iato
 		di_Iesi
 		di_Irno
 		di_Isernia
 		di_Laino
-		di_Lampedusa
 		di_Larino
 		di_Lecce
 		di_Lentini
@@ -4573,8 +3995,10 @@ faction: sicily
 		di_Noto
 		di_Olevano
 		di_Ottaviano
+		d_Ottaviano
 		di_Paduli
 		di_Palermo
+		de_Palermo
 		di_Petralia
 		di_Policastro
 		di_Puliano
@@ -4606,77 +4030,49 @@ faction: sicily
 		di_Venosa
 		di_Veroli
 		di_Vieste
-		ie_Buono
-		il_Malo
-		
-	women	
+	;sicily add more surnames
+
+	women
 		A#gata
 		Adalina
-		Adelaisa
 		Adelisa
-		Agata
+		Adelaisa
 		Agnesa
-		Agnese
-		Alaine
-		Alberada
-		Alicia
-		Altruda
 		Amalia
 		Amata
 		Amelia
 		Ancila
-		Anna
 		Barbara
-		Be#atrice
-		Bianca
 		Biata
 		Biniditta
 		Bomminuta
 		Bonavintura
 		Bricita
-		Carlotta
 		Catarina
-		Caterina
 		Cecilia
 		Cettina
 		Chiara
-		Clementia
 		Clotirdi
 		Concetta
-		Constanza
 		Cristina
 		Culetta
 		Delia
 		Derfina
-		Elena
 		Elina
-		Elisabetta
-		Elvira
 		Emma
-		Eremburga
 		Euggenia
 		Eulalia
 		Faustina
-		Felicia
 		Filicita
-		Flandina
 		Flora
-		FranciscaFilippa
-		Fressenda
-		Gaitelgrima
+		Francisca
 		Gemma
 		Ginueffa
-		Giovanna
 		Giuda
 		Giuditta
-		Guida
-		Iolanda
-		Irene
-		Ireni+
-		Isabella
 		Judith
+		Ireni+
 		Lanfranca
-		Leonora
 		Lia
 		Libbirata
 		Lidia
@@ -4692,18 +4088,15 @@ faction: sicily
 		Maddalena
 		Manuela
 		Margarita
-		Margherita
 		Maria
 		Marianna
 		Martina
 		Matilda
 		Maura
 		Maximilla
-		Melisende
 		Mirinziana
 		Mmaculata
 		Monica
-		Muriella
 		Paula
 		Pulchera
 		Rita
@@ -4711,11 +4104,8 @@ faction: sicily
 		Rosanna
 		Rusulia
 		Serafina
-		Sibilla
-		Sichelgaita
 		Sirvia
 		Sufia
-		Teodora
 		Tiresa
 		Urrica
 		Ursula
@@ -4723,16 +4113,15 @@ faction: sicily
 		Valintina
 		Vicenza
 		Vilariana
-		Violante
 		Virdiana
 		Virginia
 		Vittoria
 		Viviana
-		
-		
-faction: spain		
-		
-	characters	
+	;sicily add more female names
+
+faction: spain
+
+	characters
 		Abel
 		Alfonso
 		Alfonso
@@ -4752,11 +4141,11 @@ faction: spain
 		Beltran
 		Beltran
 		Beltran
-		Berenguel
 		Berenguer
 		Bermudo
 		Bermudo
 		Bermudo
+		Vermudo
 		Bernaldo
 		Bernardo
 		Blas
@@ -4771,12 +4160,10 @@ faction: spain
 		Diego
 		Diego
 		Domingo
-		Dominico
 		El_Cid
 		Enrique
 		Enrique
 		Enrique
-		Ermenegildo
 		Esteban
 		Eugenio
 		Eusebio
@@ -4804,18 +4191,17 @@ faction: spain
 		Garcia
 		Garcia
 		German
+		Gonzalo
+		Gonzalo
+		Gonzalo
+		Gonzalo
+		Gonzalo
 		Goncalo
-		Gonzalo
-		Gonzalo
-		Gonzalo
-		Gonzalo
-		Gonzalo
 		Gregorio
 		Guillen
 		Guzman
 		Hermenegildo
 		Hernan
-		Hernando
 		Higinio
 		Horacio
 		Humberto
@@ -4831,7 +4217,6 @@ faction: spain
 		Jorge
 		Juan
 		Julia#n
-		Julian
 		Lope
 		Lope
 		Lope
@@ -4845,23 +4230,18 @@ faction: spain
 		Mateo
 		Mauricio
 		Maximiliano
-		Mendo
 		Miguel
 		Millan
-		Munio
 		Natalio
 		Nicola#s
-		Nicolas
 		Nun#o
 		Nun#o
 		Nun#o
-		Nuno
 		Ordono
 		Ordono
 		Ordono
 		Orti
 		Oscar
-		Osorio
 		Osvaldo
 		Pablo
 		Pacheco
@@ -4870,10 +4250,8 @@ faction: spain
 		Pedro
 		Pedro
 		Pelayo
-		Pero
 		Ponce
 		Raimundo
-		Ramiro
 		Ramiro+
 		Ramiro+
 		Ramiro+
@@ -4888,7 +4266,6 @@ faction: spain
 		Rodrigo
 		Rodrigo
 		Rogelio
-		Ruy
 		Salvador
 		Sancho
 		Sancho
@@ -4898,19 +4275,15 @@ faction: spain
 		Santiago
 		Sebastia#n
 		Silvestre
-		Suero
 		Tenorio
 		Teodosio
 		Tomas
-		Toribio
 		Trista#n
-		Tristan
 		Velasco
-		Vermudo
 		Vi#ctor
-		Ynigo
-		
-	surnames	
+	;spain add more names
+
+	surnames
 		Abad
 		Acuna
 		Aguado
@@ -4950,7 +4323,6 @@ faction: spain
 		Espinosa
 		Feijoo
 		Fernandez
-		Ferrandez
 		Fierro
 		Fonseca
 		Frade
@@ -4966,17 +4338,13 @@ faction: spain
 		Hermosilla
 		Herreros
 		Hidalgo
-		Hontanon
-		Hortuno
 		Hurtado
-		Infante
 		Jimenez
 		Loarre
 		Lopez
 		Maderuelo
 		Maldonado
 		Manrique
-		Manrrique
 		Maranon
 		Medina
 		Medinaceli
@@ -4994,6 +4362,7 @@ faction: spain
 		Onate
 		Orejon
 		Orozco
+		Hortuno
 		Paniagua
 		Pedraza
 		Pellicer
@@ -5030,18 +4399,13 @@ faction: spain
 		Velez
 		Vera
 		Verdejo
-		Vermudez
 		Villalobos
 		Villaseca
 		Villegas
 		Villena
 		Vizcaino
-		Vizcayno
-		Ximenez
 		Yanez
-		Yanez
-		Ynfante
-;;;bynames		
+;;;bynames
 		de_Ahumada
 		de_Alarcon
 		de_Alba
@@ -5192,8 +4556,9 @@ faction: spain
 		del_Olmo
 		del_Rey
 		del_Tiemblo
-		
-	women	
+	;spain add more surnames
+
+	women
 		Agueda
 		Agustina
 		Aldara
@@ -5207,7 +4572,6 @@ faction: spain
 		Castellana
 		Celestina
 		Clara
-		Clarencia
 		Constanza
 		Elena
 		Elvira
@@ -5217,7 +4581,6 @@ faction: spain
 		Filomena
 		Florinda
 		Francisca
-		Genoveba
 		Genoveva
 		Gracia
 		Gregoria
@@ -5243,14 +4606,11 @@ faction: spain
 		Urraca
 		Veronica
 		Victoria
-		Violante
-		Ynes
-		Ysabel
-		
-		
-faction: aragon		
-		
-	characters	
+	;spain add more female names
+
+faction: aragon
+
+	characters
 		Alexandro
 		Alfred
 		Alifonso
@@ -5310,7 +4670,7 @@ faction: aragon
 		Jorge
 		Josep
 		Justo
-		Lorenzu
+		Lorenzo
 		Manel
 		Marti#n
 		Masimiliano
@@ -5367,8 +4727,9 @@ faction: aragon
 		Xofre
 		Zelipe
 		Zeno#n
-		
-	surnames	
+	;aragon add more names
+
+	surnames
 		Abarca
 		Aleu
 		Alfor
@@ -5532,7 +4893,7 @@ faction: aragon
 		Villarroya
 		Yague
 		Yagut
-;;;bynames		
+;;;bynames
 		d_Abargues
 		d_Alagon
 		d_Alascun
@@ -5588,8 +4949,9 @@ faction: aragon
 		de_Vilamur
 		del_Pallars
 		del_Rossello
-		
-	women	
+	;aragon add more surnames
+
+	women
 		Adela
 		Aldinicia
 		Alodia
@@ -5649,11 +5011,11 @@ faction: aragon
 		Violan
 		Ximena
 		Zoraida
-		
-		
-faction: russia		
-		
-	characters	
+	;aragon add more female names
+
+faction: russia
+
+	characters
 		Aleksandr
 		Aleksei
 		Andrei
@@ -5670,9 +5032,8 @@ faction: russia
 		Danislav
 		Derzhislav
 		Dmitrii
-		Dob#romysl
 		Dobrogost
-		Dobromysl
+		Dob#romysl
 		Dobroslav
 		Dobrozhir
 		Dolgoslav
@@ -5687,398 +5048,6 @@ faction: russia
 		Gremislav
 		Grigorii
 		Gudimir
-		Iaroslav
-		Igor
-		Igor
-		Igor
-		Ivan
-		Izyaslav
-		Izyaslav
-		Izyaslav
-		Izyaslav
-		Izyaslav
-		Khotimir
-		Khotislav
-		Kirill
-		Konstantin
-		Lyutobor
-		Lyutoslav
-		Mezhamir
-		Mikhail
-		Milogost
-		Miloslav
-		Mirognev
-		Miroslav
-		Moimir
-		Mstibor
-		Mstidrug
-		Mstislav
-		Mstislav
-		Mstislav
-		Mstislav
-		Mstislav
-		Mstivoi
-		Negoslav
-		Nikifor
-		Oleg
-		Ostromir
-		Pereneg
-		Petr
-		Pirogost
-		Predislav
-		Pribyslav
-		Putimir
-		Putislav
-		Radimir
-		Radognev
-		Radogost
-		Radoneg
-		Radoslav
-		Ratibor
-		Ratimir
-		Ratislav
-		Rodoslav
-		Rogvolod
-		Roman
-		Rostislav
-		Rostislav
-		Rostislav
-		Rostislav
-		Rostislav
-		Ryurik
-		Sbyslav
-		Semen
-		Semislav
-		Stepan
-		Strezhislav
-		Stroislav
-		Sudimir
-		Sudislav
-		Sudivoi
-		Svyatopolk
-		Svyatopolk
-		Svyatopolk
-		Svyatopolk
-		Svyatopolk
-		Svyatoslav
-		Svyatoslav
-		Svyatoslav
-		Teshislav
-		Tikhomir
-		Tverdislav
-		Tvorimir
-		Vadislav
-		Vasilii
-		Verchoslav
-		Verislav
-		Vladimir
-		Vladimir
-		Vladimir
-		Vladimir
-		Vladimir
-		Voislav
-		Volodar
-		Volodislav
-		Volostislav
-		Vorotislav
-		Vselovod
-		Vseslav
-		Vsevolod
-		Vsevolod
-		Vsevolod
-		Vsevolod
-		Vsevolod
-		Vyacheneg
-		Vyacheslav
-		Vyacheslav
-		Vyacheslav
-		Vyshemir
-		Vysheslav
-		Yaropolk
-		Yaropolk
-		Yaropolk
-		Yaropolk
-		Yaropolk
-		Yaroslav
-		Yaroslav
-		Yaroslav
-		Yaroslav
-		Yaroslav
-		Yurii
-		Yurii
-		Yurii
-		Zhidislav
-		Zhironeg
-		Zhiroslav
-		Zhirovit
-		Zhiznomir
-		
-	surnames	
-		Basenok
-		Beda
-		Beleut
-		Bestuzhev
-		Bobr
-		Bobrok_Volynets
-		Brenok
-		Buturlin
-		Buy_Tur
-		Byakont
-		Chelyadnya
-		Chepenok
-		Cheshko
-		Dashkov
-		Dei
-		Dmitriev
-		Dobroi
-		Dolgorukii
-		Domozhirov
-		Dyudenev
-		Epanchin
-		Fedorov
-		Glebov
-		Gluchoi
-		Gorbatyi
-		Gorstkin
-		Grebenka
-		Istoma
-		Kalita
-		Khorobrit
-		Khvost
-		Kirdyapa
-		Kobylin
-		Kolychev
-		Konstantinov
-		Koshkin
-		Kotov
-		Kuchkov
-		Kvashnya
-		Likharev
-		Lugvitsa
-		Lykov
-		Mamon
-		Matveev
-		Miloslavov
-		Minin
-		Miroslavov
-		Monastyrev
-		Monomakh
-		Monomakhovich
-		More
-		Morozov
-		Nemoi
-		Netshin
-		Nikitin
-		Novosiltsev
-		Obrazets
-		Odinets
-		Odnook
-		Oshchera
-		Oslyabya
-		Ostey
-		Ovin
-		Patrikeev
-		Peresvet
-		Peshko
-		Pestroy
-		Posakhno
-		Redegin
-		Reut
-		Runo
-		Rurikovich
-		Saburov
-		Shein
-		Shemet
-		Shemyaka
-		Shonur
-		Smirnoi
-		Smolin
-		Sobakin
-		Sorokoum
-		Starkov
-		Striga
-		Sudok
-		Sviblo
-		Tucha
-		Turena
-		Tushin
-		Valuev
-		Velyaminov
-		Veprev
-		Volk
-		Vorontsov
-		Yaroslavich
-		Zakhar_in
-		Zernov
-		Zherebtsov
-		Zver
-		Zverev
-;;;bynames		
-		Belevskii
-		Belozerskii
-		Bogolyubskii
-		Boretskii
-		Bryanskii
-		Chernigovskii
-		Dmitrovskii
-		Dobrynskii
-		Dorogobuzhskii
-		Drutskii
-		Fominskii
-		Galitskii
-		Glukhovskii
-		Gorodetskii
-		Izborskii
-		Kaluzhskii
-		Kashinskii
-		Kievskii
-		Kozelskii
-		Kubenskii
-		Kurskiy
-		Lyubechskii
-		Menskii
-		Mikulinskii
-		Molozhskii
-		Moskovskii
-		Mozhayskii
-		Mstislavskii
-		Muromskii
-		Musorskii
-		Nizhegorodskii
-		Novgorod-Severskii
-		Novgorodskii
-		Novotorskii
-		Obolenskii
-		Odoevskii
-		Pereyaslavskii
-		Pinskii
-		Polotskii
-		Pronskii
-		Pskovskii
-		Putivlskii
-		Radonezhskii
-		Rimovskii
-		Rostovskii
-		Ryazanskii
-		Serpukhovskoi
-		Shakhovskoi
-		Smolenskii
-		Staritskii
-		Starodubskii
-		Suzdalskii
-		Tarusskii
-		Telyatevskii
-		Terebovlskii
-		Trubetskoi
-		Turovskii
-		Tverskoi
-		Uglitskii
-		Vereiskii
-		Vladimirskii
-		Volotskii
-		Volynskii
-		Vorotynskii
-		Vsevolozhskii
-		Vyazemskii
-		Vyshgorodskii
-		Yuryevskii
-		Zaozerskii
-		Zvenigorodskii
-		
-	women	
-		Agafia
-		Agnia
-		Agrafena
-		Akulina
-		Anastasia
-		Anna
-		Daria
-		Dobrogneva
-		Dobroslava
-		Ekaterina
-		Elena
-		Elizaveta
-		Eupraxia
-		Evdokia
-		Evfimia
-		Evfrosinia
-		Evpraksia
-		Feodora
-		Feodosia
-		Feofania
-		Fevronia
-		Glikeria
-		Gordislava
-		Gorislava
-		Irina
-		Iuliania
-		Izyaslava
-		Ksenia
-		Kupava
-		Lyubava
-		Lyudmila
-		Marfa
-		Maria
-		Matrona
-		Melania
-		Nadezhda
-		Natalia
-		Pelagia
-		Praskovia
-		Predeslava
-		Predslava
-		Radogneva
-		Radoslava
-		Rostislava
-		Sbyslava
-		Zbyslava
-		Sofia
-		Svyatoslava
-		Tatiana
-		Varvara
-		Vasilisa
-		Verchoslava
-		Vseslava
-		Vysheslava
-		Zoya
-		
-		
-faction: kievan_rus		
-		
-	characters	
-		Aleksandr
-		Aleksei
-		Andrei
-		Andrei
-		Andrei
-		Boris
-		Borislav
-		Borivoi
-		Bratoneg
-		Bryachislav
-		Budimir
-		Budislav
-		Daniil
-		Danislav
-		Derzhislav
-		Dmitrii
-		Dob#romysl
-		Dobrogost
-		Dobroslav
-		Dobrozhir
-		Dolgoslav
-		Domaslav
-		Domazhir
-		Fedor
-		Gavriil
-		Georgii
-		Gorislav
-		Gorodislav
-		Gostislav
-		Gremislav
-		Grigorii
-		Gudimir
-		Iaroslav
 		Igor
 		Igor
 		Igor
@@ -6194,6 +5163,7 @@ faction: kievan_rus
 		Yaroslav
 		Yaroslav
 		Yaroslav
+		Iaroslav
 		Yurii
 		Yurii
 		Yurii
@@ -6202,8 +5172,9 @@ faction: kievan_rus
 		Zhiroslav
 		Zhirovit
 		Zhiznomir
-		
-	surnames	
+	;russia add more names
+
+	surnames
 		Basenok
 		Beda
 		Beleut
@@ -6298,12 +5269,11 @@ faction: kievan_rus
 		Volk
 		Vorontsov
 		Yaroslavich
-		Zakhar_in
 		Zernov
 		Zherebtsov
 		Zver
 		Zverev
-;;;bynames		
+;;;bynames
 		Belevskii
 		Belozerskii
 		Bogolyubskii
@@ -6374,8 +5344,9 @@ faction: kievan_rus
 		Yuryevskii
 		Zaozerskii
 		Zvenigorodskii
-		
-	women	
+	;russia add more surnames
+
+	women
 		Agafia
 		Agnia
 		Agrafena
@@ -6431,41 +5402,429 @@ faction: kievan_rus
 		Vseslava
 		Vysheslava
 		Zoya
-		
-		
-faction: turks		
-		
-	characters	
+	;russia add more female names
+
+faction: kievan_rus
+
+	characters
+		Aleksandr
+		Aleksei
+		Andrei
+		Andrei
+		Andrei
+		Boris
+		Borislav
+		Borivoi
+		Bratoneg
+		Bryachislav
+		Budimir
+		Budislav
+		Daniil
+		Danislav
+		Derzhislav
+		Dmitrii
+		Dobrogost
+		Dob#romysl
+		Dobroslav
+		Dobrozhir
+		Dolgoslav
+		Domaslav
+		Domazhir
+		Fedor
+		Gavriil
+		Georgii
+		Gorislav
+		Gorodislav
+		Gostislav
+		Gremislav
+		Grigorii
+		Gudimir
+		Igor
+		Igor
+		Igor
+		Ivan
+		Izyaslav
+		Izyaslav
+		Izyaslav
+		Izyaslav
+		Izyaslav
+		Khotimir
+		Khotislav
+		Kirill
+		Konstantin
+		Lyutobor
+		Lyutoslav
+		Mezhamir
+		Mikhail
+		Milogost
+		Miloslav
+		Mirognev
+		Miroslav
+		Moimir
+		Mstibor
+		Mstidrug
+		Mstislav
+		Mstislav
+		Mstislav
+		Mstislav
+		Mstislav
+		Mstivoi
+		Negoslav
+		Nikifor
+		Oleg
+		Ostromir
+		Pereneg
+		Petr
+		Pirogost
+		Predislav
+		Pribyslav
+		Putimir
+		Putislav
+		Radimir
+		Radognev
+		Radogost
+		Radoneg
+		Radoslav
+		Ratibor
+		Ratimir
+		Ratislav
+		Rodoslav
+		Rogvolod
+		Roman
+		Rostislav
+		Rostislav
+		Rostislav
+		Rostislav
+		Rostislav
+		Ryurik
+		Sbyslav
+		Semen
+		Semislav
+		Stepan
+		Strezhislav
+		Stroislav
+		Sudimir
+		Sudislav
+		Sudivoi
+		Svyatopolk
+		Svyatopolk
+		Svyatopolk
+		Svyatopolk
+		Svyatopolk
+		Svyatoslav
+		Svyatoslav
+		Svyatoslav
+		Teshislav
+		Tikhomir
+		Tverdislav
+		Tvorimir
+		Vadislav
+		Vasilii
+		Verchoslav
+		Verislav
+		Vladimir
+		Vladimir
+		Vladimir
+		Vladimir
+		Vladimir
+		Voislav
+		Volodar
+		Volodislav
+		Volostislav
+		Vorotislav
+		Vseslav
+		Vsevolod
+		Vsevolod
+		Vsevolod
+		Vsevolod
+		Vsevolod
+		Vyacheneg
+		Vyacheslav
+		Vyacheslav
+		Vyacheslav
+		Vyshemir
+		Vysheslav
+		Yaropolk
+		Yaropolk
+		Yaropolk
+		Yaropolk
+		Yaropolk
+		Yaroslav
+		Yaroslav
+		Yaroslav
+		Yaroslav
+		Yaroslav
+		Iaroslav
+		Yurii
+		Yurii
+		Yurii
+		Zhidislav
+		Zhironeg
+		Zhiroslav
+		Zhirovit
+		Zhiznomir
+	;kievan_rus add more names
+
+	surnames
+		Basenok
+		Beda
+		Beleut
+		Bestuzhev
+		Bobr
+		Bobrok_Volynets
+		Brenok
+		Buturlin
+		Buy_Tur
+		Byakont
+		Chelyadnya
+		Chepenok
+		Cheshko
+		Dashkov
+		Dei
+		Dmitriev
+		Dobroi
+		Dolgorukii
+		Domozhirov
+		Dyudenev
+		Epanchin
+		Fedorov
+		Glebov
+		Gluchoi
+		Gorbatyi
+		Gorstkin
+		Grebenka
+		Istoma
+		Kalita
+		Khorobrit
+		Khvost
+		Kirdyapa
+		Kobylin
+		Kolychev
+		Konstantinov
+		Koshkin
+		Kotov
+		Kuchkov
+		Kvashnya
+		Likharev
+		Lugvitsa
+		Lykov
+		Mamon
+		Matveev
+		Miloslavov
+		Minin
+		Miroslavov
+		Monastyrev
+		Monomakh
+		Monomakhovich
+		More
+		Morozov
+		Nemoi
+		Netshin
+		Nikitin
+		Novosiltsev
+		Obrazets
+		Odinets
+		Odnook
+		Oshchera
+		Oslyabya
+		Ostey
+		Ovin
+		Patrikeev
+		Peresvet
+		Peshko
+		Pestroy
+		Posakhno
+		Redegin
+		Reut
+		Runo
+		Rurikovich
+		Saburov
+		Shein
+		Shemet
+		Shemyaka
+		Shonur
+		Smirnoi
+		Smolin
+		Sobakin
+		Sorokoum
+		Starkov
+		Striga
+		Sudok
+		Sviblo
+		Tucha
+		Turena
+		Tushin
+		Valuev
+		Velyaminov
+		Veprev
+		Volk
+		Vorontsov
+		Yaroslavich
+		Zernov
+		Zherebtsov
+		Zver
+		Zverev
+;;;bynames
+		Belevskii
+		Belozerskii
+		Bogolyubskii
+		Boretskii
+		Bryanskii
+		Chernigovskii
+		Dmitrovskii
+		Dobrynskii
+		Dorogobuzhskii
+		Drutskii
+		Fominskii
+		Galitskii
+		Glukhovskii
+		Gorodetskii
+		Izborskii
+		Kaluzhskii
+		Kashinskii
+		Kievskii
+		Kozelskii
+		Kubenskii
+		Kurskiy
+		Lyubechskii
+		Menskii
+		Mikulinskii
+		Molozhskii
+		Moskovskii
+		Mozhayskii
+		Mstislavskii
+		Muromskii
+		Musorskii
+		Nizhegorodskii
+		Novgorod-Severskii
+		Novgorodskii
+		Novotorskii
+		Obolenskii
+		Odoevskii
+		Pereyaslavskii
+		Pinskii
+		Polotskii
+		Pronskii
+		Pskovskii
+		Putivlskii
+		Radonezhskii
+		Rimovskii
+		Rostovskii
+		Ryazanskii
+		Serpukhovskoi
+		Shakhovskoi
+		Smolenskii
+		Staritskii
+		Starodubskii
+		Suzdalskii
+		Tarusskii
+		Telyatevskii
+		Terebovlskii
+		Trubetskoi
+		Turovskii
+		Tverskoi
+		Uglitskii
+		Vereiskii
+		Vladimirskii
+		Volotskii
+		Volynskii
+		Vorotynskii
+		Vsevolozhskii
+		Vyazemskii
+		Vyshgorodskii
+		Yuryevskii
+		Zaozerskii
+		Zvenigorodskii
+	;kievan_rus add more surnames
+
+	women
+		Agafia
+		Agnia
+		Agrafena
+		Akulina
+		Anastasia
+		Anna
+		Daria
+		Dobrogneva
+		Dobroslava
+		Ekaterina
+		Elena
+		Elizaveta
+		Eupraxia
+		Evdokia
+		Evfimia
+		Evfrosinia
+		Evpraksia
+		Feodora
+		Feodosia
+		Feofania
+		Fevronia
+		Glikeria
+		Gordislava
+		Gorislava
+		Irina
+		Iuliania
+		Izyaslava
+		Ksenia
+		Kupava
+		Lyubava
+		Lyudmila
+		Marfa
+		Maria
+		Matrona
+		Melania
+		Nadezhda
+		Natalia
+		Pelagia
+		Praskovia
+		Predeslava
+		Predslava
+		Radogneva
+		Radoslava
+		Rostislava
+		Sbyslava
+		Zbyslava
+		Sofia
+		Svyatoslava
+		Tatiana
+		Varvara
+		Vasilisa
+		Verchoslava
+		Vseslava
+		Vysheslava
+		Zoya
+	;kievan_rus add more female names
+
+faction: turks
+
+	characters
 		Abd_al_Hamid
 		Abd_al_Malik
 		Abd_al_Rahman
+		Abu_al_Muzzafar
+		Abdullaah
 		Abdulaziz
-		Abdulhamid
 		Abdulhamit
 		Abdulkadir
 		Abdulkerim
-		Abdullaah
-		Abdullah
 		Abdullatif
-		Abdulmecid
 		Abdulmecit
 		Abdulmelik
 		Abdussamed
 		Abidin
 		Abil_Askar
-		Abu_al_Muzzafar
 		Abu_Bakr
 		Abu_Hamid
 		Abu_Kalijar
+		Abul_Asvar
+		Abul_Fadl
+		Abul_Harith
+		Abul_Mahasin
+		Abul_Ghanaim
 		Abu_Nasr
 		Abu_Sad
 		Abu_Sai#d
 		Abu_Shuja
-		Abul_Asvar
-		Abul_Fadl
-		Abul_Ghanaim
-		Abul_Harith
-		Abul_Mahasin
 		Abul_Qasim
 		Ahmadili
 		Ahmed
@@ -6474,11 +5833,9 @@ faction: turks
 		Ai_Aba_Juyush
 		Ai_Taq
 		Ai_Toghmish
-		Akin
-		Aktimur
 		Al-Maqtadi
-		Ala_addin
 		Alaeddin
+		Ala_addin
 		Alemsah
 		Ali
 		Ali_Catri
@@ -6491,52 +5848,44 @@ faction: turks
 		Antara
 		Anush
 		Anushirvan
-		Aq_Bori
 		Arslan
 		Arslan_Arghun
 		Arslan_Sah
 		Arslan_Tash
 		Artoqos
 		Artuk
-		As_Salih
-		Asim
-		Atilla
-		Atsiz
 		Attash
+		Atsiz
+		Asim
+		As_Salih
+		Aq_Bori
 		Bahadir
 		Bahram_Sah
 		Bakhtiyar
 		Baltu
-		Battal
-		Batu
 		Baybars
-		Bayezid
 		Bayram
 		Bekir
-		Berk_Yaruk
 		Berke
+		Berk_Yaruk
 		Berkyaruk
 		Beyazit
 		Beyhan
 		Bila#l
-		Bilal
 		Bori
 		Bori_Bars
 		Boz_Aba
+		Bozkurt
 		Boz_Qush
 		Bozan
 		Bozgus
-		Bozkurd
-		Bozkurt
-		Burak
 		Burhanettin
-		Burhanuddin
 		Bursuq
-		C#akmak
+		Burak
 		Cagri
-		Cahid
-		Cahit
 		Caka
+		Cahit
+		Cahid
 		Cakmak
 		Canbulut
 		Capan
@@ -6546,52 +5895,46 @@ faction: turks
 		Celebi
 		Cem
 		Cemalettin
-		Cemaluddin
 		Cemil
 		Cenab
 		Chavli
 		Chokermish
 		Cigalazade
 		Cihangir
-		Cihangirhan
-		Cuneyd
 		Cupan
+		Cuneyd
 		Danismend
+		Davud
 		Daulab
 		Daulat_Sah
-		Davud
 		Dawud
 		Derya
 		Dinar
 		Dubais
-		Duqaq
 		Dursun
-		Ebu_Muzzffer
+		Duqaq
 		Ebul_Kasim
+		Ebu_Muzzffer
 		Ebuzer
 		Edhem
 		Ekinchi
 		Eldiguz
 		Enes
 		Enver
+		Erbuz
 		Er_Ghush
 		Er_Tash
-		Erbuz
 		Ertugrul
-		Es_ad
 		Evrenos
-		Eyup
 		Fadl
 		Fahreddin
 		Fakih
 		Faramarz
-		Faridun
 		Farrukh
 		Farrukh_Sah
-		Faruk
+		Faridun
 		Fatih
 		Fehmi
-		Ferhad
 		Ferhat
 		Feyzullah
 		Fikret
@@ -6604,6 +5947,7 @@ faction: turks
 		Gumush
 		Gunduz
 		Haci
+		Hayreddin
 		Hakan
 		Hakki
 		Halil
@@ -6614,13 +5958,11 @@ faction: turks
 		Hasan
 		Hayati
 		Haydar
-		Hayreddin
 		Hizir
 		Hudavendigar
 		Huseyin
 		Husrev
 		I#brahim
-		Ibrahim
 		Il_Arslan
 		Il_Begi
 		Il_Ghazi
@@ -6634,21 +5976,21 @@ faction: turks
 		Ishak
 		Iskender
 		Ismail
-		Israfil
 		Izzeddin
+		Israfil
 		Jalal
 		Jandar
 		Jemri
 		Jovayni
-		Kanuni
 		Kaptan
+		Kanuni
 		Kasim
-		Kaygubat
-		Kaykhusraw
 		Kemal
-		Keyhusrev
 		Keykavus
+		Keyhusrev
+		Kaykhusraw
 		Keykubat
+		Kaygubat
 		Khalid
 		Khalifa
 		Khass
@@ -6664,54 +6006,48 @@ faction: turks
 		Kursad
 		Kutalmis
 		Lutfi
-		Mahmud
 		Mahmut
+		Mahmud
 		Malik
-		Mans#ur
 		Manuchihr
+		Mans#ur
 		Maudud
-		Mehmed
 		Mehmet
+		Mehmed
 		Melik
 		Meliksah
-		Mengli_Giray
 		Mengu_Bars
 		Mengubirti
 		Mengujek
-		Mes_ud
 		Mesud
 		Mihal
 		Mikail
-		Mostawfi
 		Motazz
-		Mu_min
+		Mostawfi
 		Muammer
 		Muezzinzade
 		Muhammed
 		Muizzeddin
 		Mumin
 		Munir
-		Murad
 		Murat
 		Musa
-		Muslihuddin
 		Mustafa
+		Muslihuddin
 		Nail
 		Nasreddin
 		Nazim
 		Nezami
 		Niyazi
-		Nizameddin
 		Nizamuddin
 		Nizamulmulk
-		Nu_man
 		Nuh
 		Numan
 		Nureddin
 		Oguz
-		Omer
 		Orhan
 		Osman
+		Omer
 		Ozan
 		Ozbek
 		Pahlavan
@@ -6719,8 +6055,8 @@ faction: turks
 		Pertev
 		Piyale
 		Qara_Arslan
-		Qara_Sonqur
 		Qaratay
+		Qara_Sonqur
 		Qavurt
 		Qazvini
 		Qiz_Oghlu
@@ -6729,58 +6065,49 @@ faction: turks
 		Qumach
 		Qutlugh
 		Qutlugh_Inanch
-		Ragib
 		Rakip
 		Ramazan
-		Rasul
 		Rauf
+		Rasul
 		Recep
-		Resad
 		Resat
 		Ridvan
 		Rifat
 		Riza
-		Rukn
 		Rukneddin
+		Rukn
 		Rusdi
 		Rustem
-		Sa_dettin
-		Saban
-		Sabri
-		Sadettin
 		Said
 		Saim
+		Sadettin
 		Salih
 		Saltuq
 		Sami
 		Savci
-		Sebahaddin
 		Sebahettin
-		Selahaddin
 		Selahettin
+		Semseddin
+		Seyfeddin
 		Selcuk
 		Selcuk_Sah
 		Selim
-		Semseddin
 		Sevket
-		Seyfeddin
 		Shirgir
 		Siavos
 		Sibt
 		Sinan
-		Su#leyman
 		Suat
 		Sukman
-		Sulemis
-		Suleyman
+		Su#leyman
 		Suleymansah
-		T#ahir
-		Taceddin
+		Sulemis
 		Tacuddevle
 		Tagacar
+		T#ahir
 		Tahsin
-		Tal_at
 		Talat
+		Tal_at
 		Tarkan
 		Tastan
 		Tekis
@@ -6790,18 +6117,16 @@ faction: turks
 		Toghan_Arslan
 		Toghan_Sah
 		Toghan_Yurek
+		Tugh
 		Tug#rul
-		Tugh
-		Tugh
-		Tugrul
 		Tugrul_Sah
 		Turgut
+		Tugh
 		Tutus
 		Uvak
 		Vahideddin
 		Vatvat
 		Walad
-		Ya_kub
 		Yagi_Basan
 		Yagisiyan
 		Yahsi
@@ -6811,84 +6136,57 @@ faction: turks
 		Yaquti
 		Yaruq_Tash
 		Yasin
-		Yavuz
 		Yavuz+
 		Yildirim
-		Yunus
-		Yunus_Emre
 		Yurun_Qush
+		Yunus
 		Yusuf
 		Zafer
-		Zekeriya
 		Zengi
+		Zekeriya
 		Ziya
 		Zulfikar
 		Zunnun
-		
-	surnames	
+	;turks add more names
+
+	surnames
 		Afshar
-		Aga
-		Akalay
-		Akinci
-		al-Din
 		Alayuntlu
 		Alkaevli
-		Alp
-		Altayli
-		Arif
 		Arslan
-		Ata
-		Aydinoglu
-		Baltaci
+		al-Din
 		Baltaoglu
-		Basrai
 		Bayat
+		Basrai
 		Bayindir
 		Begdili
-		Bey
-		bin_Maruf
 		Bugduz
-		Bulent
 		Candaroglu
 		Cavuldur
-		Cavus
-		Celaluddevle
-		Celebi
 		Cepni
 		Cobanoglu
-		Denktas
-		Dilmacoglu
+		Celaluddevle
 		Dodurga
+		Denktas
 		Doger
 		Dulkadiroglu
-		Ebu_Bekir
-		Ebusuud
-		Efendi
-		el_Abbas
-		el_Aziz
-		el_Rasit
-		Ersoy
+		Dilmacoglu
 		Esrefoglu
+		el_Aziz
 		Evrenosoglu
+		el_Rasit
 		Eymu#r
-		Gazali
-		Gazi
 		Germiyanoglu
-		Gokturk
-		Gokyay
 		Hamidoglu
-		Han
 		I#gdir
 		Ihsanoglu
 		Ihsioglu
 		Ildenizli
-		Ilhanoglu
 		Ilker
+		Ilhanoglu
 		Inalog#lu
-		Inaloglu
 		Inancoglu
 		Isfendiyaroglu
-		Kagan
 		Karabekiroglu
 		Karaevli
 		Karamanoglu
@@ -6896,55 +6194,36 @@ faction: turks
 		Karasioglu
 		Kargin
 		Kayi
-		Kececizade
 		Ki#nik
 		Kizik
-		Koprulu
-		Kurdoglu
 		Kurtoglu
 		Kutalmisoglu
 		Lallikoglu
 		Malkocoglu
+		Muzaffer
 		Meliksah
 		Menteseoglu
-		Mihaloglu
-		Muallim-zade
-		Muzaffer
-		Oguzhan
-		Okcu-zade
 		Osmanli
-		Ozbek
 		Ozdemiroglu
-		Pasa
 		Pecenek
 		Pervaneoglu
-		Reis
 		Resat
-		Rustem
 		Sabanoglu
-		Salur
 		Sancakbeyi
+		Salur
 		Sanjar
-		Saruhanoglu
 		Selcuki
+		Saruhanoglu
 		Sogut
-		Solak-zade
-		Tatar
 		Tekeoglu
 		Tulunoglu
-		Turk
-		Turkmen
-		Turkmenbeyi
-		Ulusoy
-		Uygur
-		Yalcin
 		Yaparli
 		Yazir
 		Yiva
 		Yuregir
 		Zangi
 		Zulkadiroglu
-;;;bynames		
+;;;bynames
 		Aqsarai
 		Bagdatli
 		Balasani
@@ -6999,7 +6278,6 @@ faction: turks
 		Safevi
 		Salgurlu
 		Sami
-		Semerkandi
 		Semerkantli
 		Shaibani
 		Sharabi
@@ -7008,19 +6286,19 @@ faction: turks
 		Sivasi
 		Taskentli
 		Tebrizi
-		Tigin
 		Tughrai
 		Tusi
+		Tigin
 		Ulubatli
 		Urgencli
-		Vani
 		Vanli
 		Yabghu
 		Yarkentli
 		Yemeni
 		Yinal
-		
-	women	
+	;turks add more surnames
+
+	women
 		Adile
 		Afife
 		Alime
@@ -7028,7 +6306,6 @@ faction: turks
 		Arzu
 		Atiyye
 		Ayse
-		Bedi_a
 		Bedia
 		Behiye
 		Binnaz
@@ -7090,11 +6367,9 @@ faction: turks
 		Mihrisah
 		Muazzez
 		Mucgen
-		Mujgen
 		Munire
 		Naime
 		Nalan
-		Naz-perver
 		Nazife
 		Nefise
 		Nergis
@@ -7106,7 +6381,6 @@ faction: turks
 		Nurbanu
 		Nuriye
 		Oruz
-		Rabi_a
 		Rabia
 		Raziye
 		Ruhsar
@@ -7116,7 +6390,6 @@ faction: turks
 		Safiye
 		Saliha
 		Sekerpare
-		Servet-seza
 		Sirin
 		Sirri
 		Siyavus
@@ -7128,11 +6401,11 @@ faction: turks
 		Yeni
 		Zeynep
 		Zubeyde
-		
-		
-faction: venice		
-		
-	characters	
+	;turks add more female names
+
+faction: venice
+
+	characters
 		Agnolo
 		Agostino
 		Albano
@@ -7226,8 +6499,8 @@ faction: venice
 		Naimero
 		Niccolo#
 		Nicolo
-		Oliverio
 		Oliviero
+		Oliverio
 		Ordelafo
 		Orio
 		Palmerio
@@ -7268,16 +6541,17 @@ faction: venice
 		Tommaso
 		Tusco
 		Uberto
-		Victor
 		Vincenzo
 		Vitale
 		Vitale
 		Vitale
 		Vito
 		Vittore
+		Victor
 		Zuane
-		
-	surnames	
+	;venice add more names
+
+	surnames
 		Alberenghi
 		Alberti
 		Arimondo
@@ -7286,9 +6560,7 @@ faction: venice
 		Balbi
 		Barbarigo
 		Barbaro
-		Barbo
 		Barozzi
-		Baseggio
 		Basilio
 		Bassadonna
 		Belegno
@@ -7321,7 +6593,6 @@ faction: venice
 		Donato
 		Erizzo
 		Falier
-		Faliero
 		Favero
 		Ferro
 		Foscari
@@ -7398,7 +6669,7 @@ faction: venice
 		Ziani
 		Zorzi
 		Zusto
-;;;bynames		
+;;;bynames
 		d_Alviano
 		d_Aquileia
 		d_Este
@@ -7451,8 +6722,9 @@ faction: venice
 		da_Vicenza
 		da_Vilandino
 		da_Zara
-		
-	women	
+	;venice add more surnames
+
+	women
 		Adriana
 		Agnese
 		Agnesina
@@ -7474,6 +6746,7 @@ faction: venice
 		Cristina
 		Donata
 		Elena
+		Helena
 		Elisabetta
 		Enrica
 		Filippa
@@ -7487,7 +6760,6 @@ faction: venice
 		Ginevra
 		Giovanna
 		Guglielmina
-		Helena
 		Iacobetta
 		Luca
 		Lucia
@@ -7497,8 +6769,8 @@ faction: venice
 		Maria
 		Marzia
 		Micole
-		Nicola
 		Nicole
+		Nicola
 		Nicoletta
 		Pasqualina
 		Pencina
@@ -7511,11 +6783,11 @@ faction: venice
 		Teodora
 		Tomasina
 		Zaneta
-		
-		
-faction: milan		
-		
-	characters	
+	;venice add more female names
+
+faction: milan
+
+	characters
 		Adalberto
 		Adelmo
 		Agostino
@@ -7634,8 +6906,9 @@ faction: milan
 		Ugo
 		Vico
 		Vincenzo
-		
-	surnames	
+	;milan add more names
+
+	surnames
 		Adorno
 		Aliprandi
 		Allegretti
@@ -7707,7 +6980,7 @@ faction: milan
 		Ventimiglia
 		Vespucci
 		Visconti
-;;bynames		
+;;;bynames
 		da_Bagnone
 		da_Bologna
 		da_Camogli
@@ -7770,8 +7043,9 @@ faction: milan
 		di_Torriglia
 		di_Tursi
 		di_Zoagli
-		
-	women	
+	;milan add more surnames
+
+	women
 		Alessandra
 		Ambra
 		Anastasia
@@ -7841,184 +7115,105 @@ faction: milan
 		Tea
 		Teodora
 		Valentina
-		
-		
-faction: egypt		
-		
-	characters	
-		A#bu_Bakr
-		A#hmad
-		A#li
-		A#mir
-		A#nas
-		A#sad
-		A#ta
-		A#yyub
+	;milan add more female names
+
+faction: egypt
+
+	characters
 		Abbad
 		Abbas
-		Abdan
 		Abdul_Aziz
+		Abu_Ahmad
 		Abdul_Hamid
-		Abdul_Haqq
 		Abdul_Hemid
+		Abdul_Haqq
 		Abdul_Jabbar
 		Abdul_Jalil
 		Abdul_Karim
 		Abdul_Latif
 		Abdul_Malik
+		Abdul-Malik
 		Abdul_Mumin
 		Abdul_Qadir
 		Abdul_Rahim
 		Abdul_Rahman
 		Abdul_Salam
+		Abu_Shu_ayb
 		Abdul_Wahab
 		Abdul_Wahid
-		Abdul-Aziz
-		Abdul-Hamid
-		Abdul-Jalil
-		Abdul-Karim
-		Abdul-Malik
-		Abdul-Rahman
-		Abdul-Razzaq
-		Abdul-Wahid
-		Abdul-Yaqzan
-		Abdullah
-		Abdun
-		Abdus
-		Abu_Abdullah
-		Abu_Ahmad
-		Abu_Ali
-		Abu_Amr
-		Abu_Bakr
-		Abu_Bashir
-		Abu_Dawud
-		Abu_Habib
-		Abu_Hamzah
-		Abu_Hassan
-		Abu_Hazim
-		Abu_Hurayrah
-		Abu_Idris
-		Abu_Ishaq
-		Abu_Ja_far
-		Abu_Jurayj
-		Abu_Kathir
-		Abu_Muhammad
-		Abu_Nasr
-		Abu_Ndrah
-		Abu_Rifa_ah
-		Abu_Sa_id
-		Abu_Sahl
-		Abu_Shaybah
-		Abu_Shu_ayb
-		Abu_Tayyib
-		Abu_Ubaydah
-		Abu_Umayr_Isa
-		Abu_Uthman
-		Abu_Yazid
-		Abul-Abbas
-		Abul-Asshab
-		Abul-Aswad
-		Abul-Darda_Hashim
-		Abul-Dunya
-		Abul-Fadl
-		Abul-Fadl_Nadr
-		Abul-Faraj
-		Abul-Fath
-		Abul-Hasan
-		Abul-Hawari
-		Abul-Husayn
-		Abul-Juwayriyyah
-		Abul-Khayr
-		Abul-Mughayyis
-		Abul-Musawir
-		Abul-Qasim
-		Abul-Tayyib
-		Abul-Ward
 		Abul-Zinad
+		Abdullah
+		Abu_Bakr
+		Abul-Hawari
 		Adil
 		Affan
 		Afif
-		Ahmad
-		Ahyad
+		A#hmad
 		Al_Adil
 		Al_Afdal
 		Al_Hadi
+		Al_Hafiz
 		Al_Hajjaj
 		Al_Hasan
+		Al-Kamir
 		Al_Husayn
-		Al_Maliki
 		Al_Mustali
+		Al-Musta_li
 		Al_Mustansir
+		Al-Mustansir
 		Al_Mutasim
 		Al_Mutawakkil
-		Al_Nasir
 		Al_Watiq
-		Al-Amir
-		Al-Kamir
-		Al-Musta_li
-		Al-Mustansir
 		Ala
 		Alaudin
-		Alawiyyah
+		A#li
 		Ali
-		Amgad
 		Amin
-		Amir
+		A#mir
+		Al-Amir
 		Amjad
+		Amgad
 		Amr
-		Anas
+		A#nas
 		Anwar
-		Arafah
 		Arwa
-		Ata
+		Arafah
+		A#sad
+		A#ta
+		Atta
 		Ataullah
 		Atiyya
-		Atiyyah
-		Atta
-		Aws
 		Ayman
 		Ayyub
-		Ayyub
-		Baaya
 		Badis
 		Badr
 		Bakr
 		Baqi
-		Baqiyyah
 		Bashar
-		Bashhar
-		Bashir
 		Basil
 		Basim
 		Bassam
-		Battah
 		Bilal
-		Bishr
-		Buwayh
 		Dawud
-		Dhu_Nun
 		Dinar
 		Fadl
 		Fahd
-		Farag
 		Faraj
+		Farraj
+		Farag
 		Farid
 		Faris
-		Farqad
-		Farraj
 		Faruq
 		Faysal
 		Fu#ad
 		Furat
-		Ha#mid
-		Habushun
 		Hafs
 		Hajib
 		Hajjaj
-		Hakam
 		Hakim
-		Hamdan
+		Hakam
 		Hamdun
+		Ha#mid
 		Hamid
 		Hammad
 		Hamza
@@ -8027,83 +7222,53 @@ faction: egypt
 		Harit
 		Harun
 		Hasan
-		Hashim
-		Hassan
 		Hatim
 		Haydar
 		Haytam
 		Hayyan
 		Hazim
-		Hilal
 		Hisham
-		Hurmuz
 		Husain
 		Husam
-		Husayn
-		I#lyas
 		Ibrahim
 		Idris
 		Ikrima
+		Krema
+		I#lyas
 		Imad
-		Imad_al_din
 		Imran
-		Isa
-		Isfandiyar
-		Ishandiyar
+		Imad_al_din
 		Ishaq
 		Iskandar
-		Isma_il
 		Ismail
-		Ja_far
+		Isma_il
 		Jabala
 		Jabir
 		Jafar
 		Jala#l
 		Jamal
-		Jarir
 		Jawhar
-		Jawsa
 		Karim
 		Kathir
-		Kaysan
-		Khalaf
 		Khaldun
-		Khali#l
 		Khalid
-		Khalidi
-		Khashram
-		Khayr
-		Khuzaymah
-		Krema
-		Kulayb
+		Khali#l
 		Latif
-		Ma_mar
-		Ma#hmu#d
 		Mahdi
 		Mahir
+		Ma#hmu#d
 		Majid
-		Makhid
 		Makki
 		Malik
 		Mansu#r
-		Mansur
 		Marwan
 		Marzuq
-		Mas#ud
 		Maslama
-		Masruq
-		Matar
+		Mas#ud
 		Maymun
 		Midhat
-		Mihran
-		Miqsam
 		Miswar
-		Mu_ammar
-		Mu_awiyah
-		Mu_in
-		Mu#sa
 		Muawiya
-		Muaz
 		Mufarrij
 		Mufawwid
 		Muhammad
@@ -8111,139 +7276,102 @@ faction: egypt
 		Muharib
 		Muhsin
 		Muiz
+		Muaz
 		Mujahid
-		Mukhallad
 		Mundir
 		Mura#d
-		Musa
+		Mu#sa
 		Musab
-		Musaddid
-		Musqsim
 		Nabil
 		Nadim
 		Nadir
-		Nafi
 		Nahar
 		Naji
 		Najib
 		Najih
-		Naser
 		Nasir
+		Al_Nasir
+		Naser
 		Nasr
 		Nizar
-		Nusayr
-		Qabisah
 		Qasim
-		Qatn
 		Qays
-		Qtatdah
-		Quraysh
-		Qutaybah
-		Rabi
-		Raja
 		Rashid
 		Ridwan
 		Riyad
-		Rumh
 		Rushd
-		Sa_d
-		Sa_id
-		Sa#id
-		Sa#lih
-		Sa#lim
-		Sa#mi
 		Sabah
-		Sabih
 		Sad
 		Sadan
 		Sadun
 		Safwan
 		Sahl
+		Sa#id
 		Saif
-		Saker
 		Sakhr
+		Saker
 		Salah
 		Salah_al_din
 		Salama
-		Salih
-		Salim
-		Salm
+		Sa#lih
+		Sa#lim
+		Sa#mi
 		Samir
 		Sayyid
-		Shaawiyyah
-		Shadhan
-		Shahqawiyyah
 		Shakir
 		Sharif
-		Shayban
-		Shiruyah
-		Shu_bah
 		Shuayb
-		Shumayl
 		Siraj
 		Sufyan
 		Suhail
 		Sulaima#n
-		Sulaym
-		Sulayman
-		Surahbil
-		Suwayd
 		Tabit
-		Taher
 		Tahir
+		Taher
 		Talha
-		Talq
 		Tamim
 		Tammam
 		Tariq
-		Tasfin
 		Tashfin
+		Tasfin
 		Tasufin
 		Tawfiq
 		Tayyib
-		Thabit
-		Thawr
 		Ubaydallah
 		Ubaydullah
-		Ukrumah
 		Umar
-		Umaya
-		Umayr
 		Umayya
+		Umaya
 		Umayyah
 		Uqba
-		Uqbah
 		Urwa
-		Urwah
+		Ukrumah
 		Usama
 		Uthman
 		Uways
 		Wadhah
-		Wadih
 		Wael
 		Wahib
 		Wahid
+		Wadih
 		Walid
 		Wasil
 		Wasim
-		Wathilah
-		Ya_la
-		Ya_qub
 		Yahya
 		Yaqub
-		Yazdan
 		Yazid
-		Yunes
 		Yunis
+		Yunes
 		Yunus
-		Yusef
 		Yusuf
+		Yusef
 		Zakariyya
 		Zayd
 		Ziyad
 		Zuhayr
-		
-	surnames	
+	;egypt add more names
+
+	surnames
 		Al_Abbasi
 		al-Abbasi
 		Al_Aglabi
@@ -8287,7 +7415,6 @@ faction: egypt
 		Al_Gazali
 		Al_Habib
 		Al_Haddad
-		Al_Hadi
 		Al_Hadrami
 		Al_Hafid
 		Al_Hajj
@@ -8382,7 +7509,7 @@ faction: egypt
 		Al_Zahrawi
 		Al_Zuhri
 		Shahansha
-;;;bynames		
+;;;bynames
 		ibn_Abbad
 		ibn_Abbas
 		ibn_Abdillah
@@ -8422,6 +7549,7 @@ faction: egypt
 		ibn_Ata
 		ibn_Atiyya
 		ibn_Badis
+		ibn_Badr
 		ibn_Battuta
 		ibn_Dinar
 		ibn_Faraj
@@ -8481,8 +7609,9 @@ faction: egypt
 		ibn_Zakariyya
 		ibn_Ziyad
 		ibn_Zuhr
-		
-	women	
+	;egypt add more surnames
+
+	women
 		Abla
 		Afaf
 		A#ida
@@ -8592,11 +7721,11 @@ faction: egypt
 		Zubayda
 		Zumurruda
 		Zarru
-		
-		
-faction: cumans		
-		
-	characters	
+	;egypt add more female names
+
+faction: cumans
+
+	characters
 		Abaka
 		Abangis
 		Abcyk
@@ -8907,9 +8036,10 @@ faction: cumans
 		Yurgi
 		Zeyhan
 		Ziebil
-		
-	surnames	
-;;;bynames		
+	;cumans add more names
+
+	surnames
+;;;bynames
 		of_Altai
 		of_Bashkir
 		of_Bozkir
@@ -8935,8 +8065,9 @@ faction: cumans
 		of_Uighur
 		of_Ural
 		of_Xazar
-		
-	women	
+	;cumans add more surnames
+
+	women
 		Afina
 		Akgul
 		Almila
@@ -9059,7 +8190,7 @@ faction: cumans
 		Zaryana
 		Zoya
 		Zuhal
-		
+	;cumans add more female names
 
 faction: byzantium
 
@@ -9262,6 +8393,7 @@ faction: byzantium
 		Zakarias
 		Zigavinos
 		Zinonas
+	;byzantium add more names
 
 	surnames
 		Chotzas
@@ -9276,7 +8408,6 @@ faction: byzantium
 		Ampelas
 		Anargiros
 		Anemas
-		Animas
 		Angelos
 		Antiochios
 		Apionas
@@ -9331,7 +8462,6 @@ faction: byzantium
 		Goudelis
 		Iagaris
 		Imerios
-		Emerios
 		Indikoplefstis
 		Kaiphalas
 		Kallinikos
@@ -9379,7 +8509,6 @@ faction: byzantium
 		Malalas
 		Maliasinos
 		Malinos
-		Mallinos
 		Mamalis
 		Manatios
 		Manasses
@@ -9495,7 +8624,7 @@ faction: byzantium
 		Zaridis
 		Zonaras
 
-;;;locative bynames
+;;;bynames
 		ek_Avidou
 		ek_Athinon
 		ek_Alikarnassou
@@ -9549,6 +8678,7 @@ faction: byzantium
 		ek_Trapezous
 		ek_Tpilisi
 		ek_Armenia
+	;byzantium add more surnames
 
 	women
 		Anna
@@ -9609,11 +8739,11 @@ faction: byzantium
 		Xeni
 		Xenia
 		Zoi
+	;byzantium add more female names
 
-		
-faction: mongols		
-		
-	characters	
+faction: mongols
+
+	characters
 		Abadai
 		Abadhun
 		Abangis
@@ -9847,9 +8977,10 @@ faction: mongols
 		Yesugis
 		Yesuk
 		Zhen_Jin
-		
-	surnames	
-;;;bynames		
+	;mongols add more names
+
+	surnames
+;;;bynames
 		of_the_Arulad
 		of_the_Bagarin
 		of_the_Bashkirs
@@ -9877,8 +9008,9 @@ faction: mongols
 		of_the_Uighurs
 		of_the_Ungirad
 		of_the_Uriangkhai
-		
-	women	
+	;mongols add more surnames
+
+	women
 		Agafia
 		Aigiarn
 		Baichu
@@ -9956,11 +9088,11 @@ faction: mongols
 		Yaba
 		Yesukai
 		Yisun
-		
-		
-faction: poland		
-		
-	characters	
+	;mongols add more female names
+
+faction: poland
+
+	characters
 		Adam
 		Adrian
 		Albert
@@ -10149,8 +9281,9 @@ faction: poland
 		Ziemowit
 		Zygmunt
 		Zyroslaw
-		
-	surnames	
+	;poland add more names
+
+	surnames
 		Adamiec
 		Badura
 		Baranowski
@@ -10240,7 +9373,7 @@ faction: poland
 		Zawada
 		Zebrowski
 		Zmuda
-;;bynames		
+;;;bynames
 		z_Bedkowic
 		z_Bielan
 		z_Biskupic
@@ -10293,8 +9426,9 @@ faction: poland
 		ze_Slawska
 		ze_Zbojna
 		ze_Zdroju
-		
-	women	
+	;poland add more surnames
+
+	women
 		Adelajda
 		Agata
 		Agnieszka
@@ -10357,11 +9491,11 @@ faction: poland
 		Wieslawa
 		Zbyslawa
 		Zofia
-		
-		
-faction: moors		
-		
-	characters	
+	;poland add more female names
+
+faction: moors
+
+	characters
 		Abbad
 		Abbas
 		Abdul_Aziz
@@ -10424,7 +9558,6 @@ faction: moors
 		Atiyya
 		Ayman
 		Ayyub
-		A#yyub
 		Badis
 		Badr
 		Bakr
@@ -10609,8 +9742,9 @@ faction: moors
 		Zayd
 		Ziyad
 		Zuhayr
-		
-	surnames	
+	;moors add more names
+
+	surnames
 		Al_Abbasi
 		al-Abbasi
 		Al_Aglabi
@@ -10747,7 +9881,7 @@ faction: moors
 		Al_Yaqubi
 		Al_Zahrawi
 		Al_Zuhri
-;;;bynames		
+;;;bynames
 		ibn_Abbad
 		ibn_Abbas
 		ibn_Abdillah
@@ -10845,8 +9979,9 @@ faction: moors
 		ibn_Zakariyya
 		ibn_Ziyad
 		ibn_Zuhr
-		
-	women	
+	;moors add more surnames
+
+	women
 		Abla
 		Afaf
 		A#ida
@@ -10956,11 +10091,11 @@ faction: moors
 		Zubayda
 		Zumurruda
 		Zarru
-		
-		
-faction: norway		
-		
-	characters	
+	;moors add more female names
+
+faction: norway
+
+	characters
 		Adam
 		Adrian
 		Age
@@ -11258,8 +10393,9 @@ faction: norway
 		Vigleik
 		Viktor
 		Vilhelm
-		
-	surnames	
+	;norway add more names
+
+	surnames
 		Abrahamsen
 		Aby
 		Agard
@@ -11464,7 +10600,7 @@ faction: norway
 		Vik
 		Vilhelmsen
 		
-;;;bynames		
+;;;bynames
 		av_Agder
 		av_Akershus
 		av_Alesund
@@ -11585,8 +10721,9 @@ faction: norway
 		av_Vestisland
 		av_Viken
 		av_Voss
-		
-	women	
+	;norway add more surnames
+
+	women
 		Ada
 		Agnes
 		Agnete
@@ -11666,7 +10803,6 @@ faction: norway
 		Inge
 		Ingebjorg
 		Ingeborg
-		Ingeburge
 		Inger
 		Ingjerd
 		Ingrid
@@ -11775,11 +10911,11 @@ faction: norway
 		Unni
 		Valdis
 		Yrsa
-		
-		
-faction: teutonic_order		
-		
-	characters	
+	;norway add more female names
+
+faction: teutonic_order
+
+	characters
 		Adolf
 		Alberich
 		Albert
@@ -11986,8 +11122,9 @@ faction: teutonic_order
 		Wolfhart
 		Wolfram
 		Wolter
-		
-	surnames	
+	;teutonic_order add more names
+
+	surnames
 		Albe
 		Becker
 		Beckow
@@ -12155,7 +11292,7 @@ faction: teutonic_order
 		Zevelt
 		Zollner
 		Zo#llner
-;;;bynames		
+;;;bynames
 		vom_Felde
 		vom_Thawer
 		vom_Walde
@@ -12393,8 +11530,9 @@ faction: teutonic_order
 		von_Zahringen
 		von_Ziegenberg
 		von_Zollern
-		
-	women	
+	;teutonic_order add more surnames
+
+	women
 		Ada
 		Adelheid
 		Agnes
@@ -12470,11 +11608,11 @@ faction: teutonic_order
 		Vuifken
 		Willelda
 		Wulfhild
-		
-		
-faction: jerusalem		
-		
-	characters	
+	;teutonic_order add more female names
+
+faction: jerusalem
+
+	characters
 		Adhemar
 		Aicard
 		Aimaro
@@ -12621,7 +11759,6 @@ faction: jerusalem
 		Matthieu
 		Michel
 		Nicolas
-		Odo
 		Olivier
 		Onfroy
 		Opizo
@@ -12667,8 +11804,9 @@ faction: jerusalem
 		Walchelin
 		Wale#ran
 		Yves
-		
-	surnames	
+	;jerusalem add more names
+
+	surnames
 		Aleramici
 		Berard
 		Brus
@@ -12690,7 +11828,7 @@ faction: jerusalem
 		Roupen
 		Sans_Avoir
 		Talvas
-;;bynames		
+;;;bynames
 		d_Acre
 		d_Agoult
 		d_Agrain
@@ -12942,11 +12080,13 @@ faction: jerusalem
 		du_Puiset
 		du_Puiset_Jaffa
 		du_Puy
-		
-	women	
+	;jerusalem add more surnames
+
+	women
 		Ade#laide
 		Adele
 		Agne#s
+		Alberada
 		Alienor
 		Alice
 		Alix
@@ -12962,10 +12102,10 @@ faction: jerusalem
 		Elisabeth
 		Elvire
 		Emma
-		Emeline
 		Eschive
 		Etiennette
 		Euphemie
+		Fresende
 		Doleta
 		Godehilde
 		Helvis
@@ -12975,6 +12115,7 @@ faction: jerusalem
 		Isabeau
 		Isabelle
 		Jeanne
+		Judith
 		Lucie
 		Lucienne
 		Marguerite
@@ -12992,14 +12133,13 @@ faction: jerusalem
 		Orgueilleuse
 		Plaisance
 		Sibylle
-		Sophie
 		Yolande
 		Yvette
-		
-		
-faction: lithuania		
-		
-	characters	
+	;jerusalem add more female names
+
+faction: lithuania
+
+	characters
 		Aidas
 		Algimantas
 		Algirdas
@@ -13102,8 +12242,9 @@ faction: lithuania
 		Zadvydas
 		Zilvinas
 		Zygimantas
-		
-	surnames	
+	;lithuania add more names
+
+	surnames
 		Aukstaitis
 		Dzukas
 		Jotvingis
@@ -13116,7 +12257,7 @@ faction: lithuania
 		Suduvis
 		Zematitis
 		Ziemgalis
-;;;bynames		
+;;;bynames
 		nuo_Alytaus
 		nuo_Eisikiu
 		nuo_Jubarko
@@ -13141,8 +12282,9 @@ faction: lithuania
 		nuo_Vilniaus
 		nuo_Zagares
 		nuo_Ziezmariu
-		
-	women	
+	;lithuania add more surnames
+
+	women
 		Aiste
 		Aldona
 		Alvyda
@@ -13211,11 +12353,11 @@ faction: lithuania
 		Zemyna
 		Zivile
 		Zydre
-		
-		
-faction: kwarezm		
-		
-	characters	
+	;lithuania add more female names
+
+faction: kwarezm
+
+	characters
 		Abdulla#h
 		Abtin
 		Aktimur
@@ -13237,7 +12379,6 @@ faction: kwarezm
 		Atsiz
 		Avardin
 		Ayyub
-		A#yyub
 		Azad
 		Aziz
 		Babak
@@ -13259,7 +12400,6 @@ faction: kwarezm
 		Burzin
 		Burzu
 		Cakmak
-		C#akmak
 		Darab
 		Darman
 		Da#vud
@@ -13426,8 +12566,9 @@ faction: kwarezm
 		Zafar
 		Zakariya
 		Zulfaqar
-		
-	surnames	
+	;kwarezm add more names
+
+	surnames
 		Abubakr
 		Abusaid
 		Adib
@@ -13532,7 +12673,7 @@ faction: kwarezm
 		Zulkadiroglu
 		Zuhdi
 		Zuzani
-;;;bynames		
+;;;bynames
 		Abushahri
 		Araki
 		Arbili
@@ -13582,8 +12723,9 @@ faction: kwarezm
 		Yamani
 		Zandi
 		Zangi#
-		
-	women	
+	;kwarezm add more surnames
+
+	women
 		A#fife
 		Ahu
 		Aida
@@ -13694,11 +12836,11 @@ faction: kwarezm
 		Yasaman
 		Zahra
 		Zeynab
-		
-		
-faction: timurids		
-		
-	characters	
+	;kwarezm add more female names
+
+faction: timurids
+
+	characters
 		Abdul
 		Abdur
 		Abu_Said
@@ -13762,8 +12904,9 @@ faction: timurids
 		Walad
 		Yadgar
 		Zahiruddin
-		
-	surnames	
+	;timurids add more names
+
+	surnames
 		of_the_Arulad
 		of_the_Bagarin
 		of_the_Borjigin
@@ -13788,8 +12931,9 @@ faction: timurids
 		of_the_Bashkirs
 		of_the_Mordvins
 		of_the_Oirat
-		
-	women	
+	;timurids add more surnames
+
+	women
 		Agafia
 		Aigiarn
 		Baichu
@@ -13817,11 +12961,11 @@ faction: timurids
 		Toregene
 		Yaba
 		Yesukai
-		
-		
-faction: slave		
-		
-	characters	
+	;timurids add more female names
+
+faction: slave
+
+	characters
 		Abu_Jurayj
 		Abul-Fath
 		Al-Maqtadi
@@ -13921,8 +13065,9 @@ faction: slave
 		Zahur
 		Zeno
 		Zoilo
-		
-	surnames	
+	;slave add more names
+
+	surnames
 		al_Shafi_i
 		al-Qasim
 		al-Uthmani
@@ -13938,8 +13083,9 @@ faction: slave
 		ek_Tpilisi
 		ek_Armenia
 		of_Denmark
+	;slave add more surnames
 		
-	women	
+	women
 		Ada
 		Adaire
 		Adara
@@ -14037,3 +13183,4 @@ faction: slave
 		Victoria
 		Vigdis
 		Vyri
+	;slave add more female names

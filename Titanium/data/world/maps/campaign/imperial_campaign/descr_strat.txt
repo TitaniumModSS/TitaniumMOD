@@ -54,7 +54,7 @@ rebelling_characters_active
 gladiator_uprising_disabled
 night_battles_enabled
 show_date_as_turns
-brigand_spawn_value 40
+brigand_spawn_value 30
 pirate_spawn_value 80
 free_upkeep_forts 2
 
@@ -869,17 +869,18 @@ settlement castle
 	}
 }
 
-
-character	Vitale Michele, named character, male, leader, age 47, x 168, y 173 
-traits Venice_Factionleader 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , GoodAdministrator 2 , GoodTrader 2 , ReligionStarter 1 
+;Venice
+character	Vitale Michele, named character, male, leader, age 57, x 168, y 173 
+traits Factionleader 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , GoodAdministrator 2 , GoodTrader 2 , ReligionStarter 1 
 ancillaries apothecary
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 
-character	Ordelafo Faliero, named character, male, heir, age 40, x 205, y 155 
-traits Venice_Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodAdministrator 2 , Energetic 2 , ReligionStarter 1 
+;Ragusa
+character	Ordelafo Falier, named character, male, heir, age 40, x 205, y 155 
+traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodAdministrator 2 , Energetic 2 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -922,6 +923,12 @@ traits NaturalPriestSkill 1 , StrongFaith 3 , PriestLevel 1
 character	Nicolo Gritti, diplomat, male, age 23, x 168, y 173 
 traits NaturalDiplomatSkill 2 , GoodDiplomat 1 
 
+character_record		Helena, 	female, age 48, alive, never_a_leader
+character_record		Nicola, 	female, age 24, alive, never_a_leader
+character_record		Vitale, 	male, age 13, alive, never_a_leader
+
+relative 	Ordelafo Falier,	Nicola,	end
+relative 	Vitale Michele,	Helena,	Nicola,	Vitale,	end
 
 faction	sicily, balanced smith
 ai_label		catholic
@@ -1028,10 +1035,10 @@ settlement
 	}
 }
 
-;*Palermo Castle
-character	Ruggero Guiskard, named character, male, leader, age 61, x 174, y 118 
+;Palermo
+character	Ruggero d_Altavilla, named character, male, leader, age 61, x 174, y 118 
 traits Factionleader 1 , MilitaryInclination 1 , Military_Edu 1 , NaturalMilitarySkill 2 , Handsome 1 , AdoredByPope 1 , GoodCommander 2 , Intelligent 1 , ReligionStarter 1 
-ancillaries drillmaster
+ancillaries drillmaster , academic_advisor 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
@@ -1040,16 +1047,25 @@ unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		S Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
-;*Naples City
-character	Ruggero, named character, male, heir, age 15, x 182, y 139 
-traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Handsome 2  , Energetic 3 , GoodCommander 2 , ReligionStarter 1 
-ancillaries academic_advisor
+;Naples
+character	Rudolfu di_Montescaglioso, named character, male, age 49, x 182, y 139 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Infertile 3 , GoodCommander 2 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		S Peasant Archers			exp 1 armour 0 weapon_lvl 0
+
+;Reggio
+character	Roberto di_Conversano, named character, male, age 28, x 192, y 120 
+traits LoyaltyStarter 1 , GovernorInclination 1 , GoodAdministrator 1 , Rabblerouser 2 , Handsome 2  , Energetic 3 , Just 1 , ReligionStarter 1 
+army
+unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		Mounted Sergeants			exp 1 armour 0 weapon_lvl 0
+unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Sicilian Muslim Archers			exp 1 armour 0 weapon_lvl 0
 
 character	Serlo, admiral, male, age 29, x 170, y 120 
 army
@@ -1064,23 +1080,16 @@ traits NaturalSpySkill 1
 character	Niccolo di_Palermo, priest, male, age 28, x 172, y 119 
 traits NaturalPriestSkill 2 , StrongFaith 2 , PriestLevel 1 
 
-;*Reggio City
-character	Simone, named character, male, age 23, x 192, y 120 
-traits LoyaltyStarter 1 , GovernorInclination 1 , GoodAdministrator 1 , Rabblerouser 2 , Just 1 , ReligionStarter 1 
-army
-unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Mounted Sergeants			exp 1 armour 0 weapon_lvl 0
-unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
-unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
-unit		Sicilian Muslim Archers			exp 1 armour 0 weapon_lvl 0
-
-character	Matilda, princess, female, age 18, x 174, y 118 
+character	Judith, princess, female, age 24, x 186, y 113 
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 
 
 character_record		Adelaisa, 	female, age 53, alive, never_a_leader
-character_record		Maximilla, 	female, age 13, alive, never_a_leader
+character_record		Emma, 	female, age 30, alive, never_a_leader
+character_record		Simone, 	male, age 7, alive, current_heir
+character_record		Ruggero, 	male, age 5, alive, never_a_leader
 
-relative 	Ruggero Guiskard,	Adelaisa,	Simone,	Matilda,	Ruggero,	Maximilla,	end
+relative 	Ruggero d_Altavilla,	Adelaisa,	Emma,	Judith,	Simone,	Ruggero,	end
+relative 	Rudolfu di_Montescaglioso,	Emma d_Altavilla,	end
 
 faction	milan, fortified smith
 ai_label		catholic
@@ -1163,9 +1172,9 @@ settlement castle
 	}
 }
 
-
+;Genoa
 character	Martino di_Oria, named character, male, leader, age 67, x 142, y 166 
-traits Genoa_Factionleader 1 , GovernorInclination 1 , Western_Edu 1 , GoodAdministrator 2 , Austere 1 , ReligionStarter 1 
+traits Factionleader 1 , GovernorInclination 1 , Western_Edu 1 , GoodAdministrator 2 , Austere 1 , ReligionStarter 1 
 ancillaries apothecary
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -1176,13 +1185,15 @@ unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Crossbow Militia			exp 1 armour 0 weapon_lvl 0
 
+;Pisa
 character	Ansaldo di_Oria, named character, male, heir, age 36, x 153, y 160 
-traits Genoa_Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 2 , ReligiousActivity 1 , ReligionStarter 1 
+traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 2 , ReligiousActivity 1 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 
+;Ajaccio
 character	Oberto Spinola, named character, male, age 32, x 141, y 148 
 traits LoyaltyStarter 1 , GovernorInclination 1 , Intelligent 1 , StrategyChivalry 1 , Generous 1 , GoodTrader 1 , ReligionStarter 1 
 army
@@ -1216,6 +1227,12 @@ army
 unit		galley					exp 1 armour 0 weapon_lvl 0
 unit		galley					exp 0 armour 0 weapon_lvl 0
 
+character_record		Gianetta, 	female, age 61, dead 2, never_a_leader
+character_record		Elisa, 	female, age 31, alive, never_a_leader
+character_record		Simone di_Oria, 	male, age 12, alive, never_a_leader
+
+relative 	Martino di_Oria,	Gianetta,	Ansaldo di_Oria,	end
+relative 	Ansaldo di_Oria,	Elisa,	Simone di_Oria,	end
 
 faction	papal_states, comfortable smith
 ai_label		papal_faction
@@ -1372,6 +1389,7 @@ settlement
 	}
 }
 
+;Arhus
 character	Erik Svendsen, named character, male, leader, age 40, x 150, y 250 
 traits Factionleader 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , Just 2 , Upright 1 , PublicFaith 3 , GoodAdministrator 1 , ReligiousActivity 2, ReligionStarter 1 , WifeIsBarren 3 
 ancillaries shieldbearer
@@ -1382,6 +1400,7 @@ unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Norse Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Lund
 character	Harald, named character, male, age 20, x 172, y 247 
 traits BastardSon 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , StrategyChivalry 3 , Upright 2 , Intelligent 1 , Generous 1 , ReligionStarter 1 
 ancillaries tutor
@@ -1392,6 +1411,7 @@ unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Norse Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Roskilde
 character	Niels Estridsen, named character, male, heir, age 36, x 164, y 246 
 traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 2 , KindRuler 2 , Gregarious 2 , Royal_Blood_Danish 1 , ReligionStarter 1 
 army
@@ -1417,7 +1437,7 @@ traits NaturalMerchantSkill 2 , GoodMerchant 1
 character	Ragnhild, princess, female, age 14, x 150, y 250 
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 , BastardDaughter 1 
 
-character_record		Svend, 	male, age 57, dead 24, never_a_leader
+character_record		Svend, 	male, age 57, dead 24, past_leader
 character_record		Gunhild, 	female, age 52, dead 35, never_a_leader
 character_record		Bodil, 	female, age 38, alive, never_a_leader
 character_record		Margrethe, 	female, age 31, alive, never_a_leader
@@ -1644,6 +1664,7 @@ settlement
 	}
 }
 
+;Cairo
 character	Al-Musta_li al-Fatimiyyun, named character, male, leader, age 52, x 302, y 61 
 traits Factionleader 1 , GovernorInclination 1 , Eastern_Edu 1 , PublicFaith 2 , BadTrader 1 , BadAdministrator 1 , ReligionStarter 1 
 ancillaries librarian
@@ -1652,13 +1673,15 @@ unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Al_Afdal Shahansha, named character, male, heir, age 34, x 323, y 69 
-traits FactionFutureRegent 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , Eastern_Edu 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
+;Gaza
+character	Al_Afdal Shahansha, named character, male, age 34, x 323, y 69 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , Eastern_Edu 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Alexandria
 character	Wadih al-Hajjaj, named character, male, age 33, x 294, y 69 
 traits LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 2 , MathematicsSkill 1 , Embezzler 1 , ReligionStarter 1 
 ancillaries mathematician
@@ -1667,18 +1690,21 @@ unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Al Aqaba
 character	Isma_il al-Ra_is, general, male, age 23, x 331, y 59 
 army
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 
+;Luxor
 character	Abul-Hawari, general, male, age 28, x 312, y 31 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 
-character	Harun al-Sa_igh, named character, male, age 27, x 306, y 72 
+;Damietta
+character	Al_Hafiz, named character, male, age 24, x 306, y 72 
 traits LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 2 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -1699,6 +1725,7 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
 unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
+;Tayma
 character	Kathir al-Abbasi, named character, male, age 30, x 350, y 44 
 traits LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 2 , MathematicsSkill 1 , ReligionStarter 1 
 army
@@ -1715,20 +1742,26 @@ traits NaturalPriestSkill 2 , GoodDenouncer 1
 character		Fatimah, princess, female, age 20, x 302, y 61 
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 , Princess_Royal_Blood_Egyptian 1 
 
-;Vizier Parents
-character_record		Badr, 	male, age 85, dead 6, never_a_leader
-character_record		Hafza al-Fatimiyyun, 	female, age 50, dead 12, never_a_leader
+;Vizier's wife
+character_record		Hafza, 	female, age 31, alive, never_a_leader
 ;
 ;Famtimids
-character_record		Al-Mustansir al-Fatimiyyun, 	male, age 71, dead 6, never_a_leader
+character_record		Al-Mustansir al-Fatimiyyun, 	male, age 71, dead 6, past_leader
 character_record		Zaynab, 	female, age 69, dead 9, never_a_leader
-character_record		Nizar, 	male, age 53, dead 4, never_a_leader
-character_record		Safiya, 	female, age 47, alive, never_a_leader
-character_record		Al-Amir al-Fatimiyyun, 	male, age 4, alive, never_a_leader
+character_record		Nizar, 	male, age 54, dead 4, never_a_leader
+character_record		Muhammad al-Fatimiyyun, 	male, age 53, dead 0, never_a_leader
+character_record		Fayruz, 	female, age 39, alive, never_a_leader
+;Al-Musta_li Family
+character_record		Safiya Shahansha, 	female, age 19, alive, never_a_leader
+character_record		Al-Amir al-Fatimiyyun, 	male, age 4, alive, current_heir
 
-relative 	Al-Musta_li al-Fatimiyyun,	Safiya,	Fatimah,	Al-Amir al-Fatimiyyun,	end
-relative 	Al-Mustansir al-Fatimiyyun,	Zaynab,	Nizar,	Al-Musta_li al-Fatimiyyun,	Hafza al-Fatimiyyun,	end
-relative 	Badr,	Hafza al-Fatimiyyun,	Al_Afdal Shahansha,	end
+;Viziers
+relative 	Al_Afdal Shahansha,	Hafza,	Safiya Shahansha,	end
+;
+;Caliphs
+relative 	Al-Mustansir al-Fatimiyyun,	Zaynab,	Nizar,	Muhammad al-Fatimiyyun,	Al-Musta_li al-Fatimiyyun,	Fatimah,	end
+relative 	Muhammad al-Fatimiyyun,	Fayruz,	Al_Hafiz,	end
+relative 	Al-Musta_li al-Fatimiyyun,	Safiya Shahansha,	Al-Amir al-Fatimiyyun,	end
 
 faction	scotland, fortified smith
 ai_label		catholic
@@ -1815,6 +1848,7 @@ settlement
 	}
 }
 
+;Edinburgh
 character	Etgar mac_Donnchada, named character, male, leader, age 26, x 59, y 248 
 traits LoyaltyStarter 1 , Factionleader 1 , GovernorInclination 1 , GoodAdministrator 2 , Infertile 3 , StrategyChivalry 1 , Just 1 , HaleAndHearty 1 , ReligionStarter 1 
 ancillaries mentor
@@ -1826,6 +1860,7 @@ unit		Highlanders				exp 1 armour 0 weapon_lvl 0
 unit		Highland Archers			exp 0 armour 0 weapon_lvl 0
 unit		Highland Archers			exp 0 armour 0 weapon_lvl 0
 
+;Aberdeen
 character	Alaxandair mac_Donnchada, named character, male, heir, age 22, x 62, y 257 
 traits LoyaltyStarter 1 , Factionheir 1 , MilitaryInclination 1 , Military_Edu 1 , Anger 1 , Bloodthirsty 2 , GoodCommander 2 , Intelligent 2 , Royal_Blood_Scottish 1 , ReligionStarter 1 
 ancillaries biographer
@@ -1834,6 +1869,7 @@ unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Highlanders				exp 1 armour 0 weapon_lvl 0
 unit		Highland Archers			exp 0 armour 0 weapon_lvl 0
 
+;Inverness
 character	Dabid mac_Donnchada, named character, male, age 17, x 49, y 258 
 traits LoyaltyStarter 1 , GovernorInclination 1 , GoodAdministrator 2 , GoodCommander 1 , PublicFaith 3 , Royal_Blood_Scottish 1 , ReligionStarter 1 
 army
@@ -1855,7 +1891,7 @@ character	Mairi mac_Donnchada, princess, female, age 18, x 59, y 248
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 , Princess_Royal_Blood_Scottish 1 
 
 character_record		Mairghreid mac_Donnchada, 	female, age 55, dead 7, never_a_leader
-character_record		Mael_Coluim mac_Donnchada, 	male, age 69, dead 7, never_a_leader
+character_record		Mael_Coluim mac_Donnchada, 	male, age 69, dead 7, past_leader
 
 relative 	Mael_Coluim mac_Donnchada,	Mairghreid mac_Donnchada,	Etgar mac_Donnchada,	Alaxandair mac_Donnchada,	Mairi mac_Donnchada,	Dabid mac_Donnchada,	end
 
@@ -2039,6 +2075,7 @@ settlement
 	}
 }
 
+;Bulgar
 character	Bonyak of_the_Oghuz, named character, male, leader, age 43, x 419, y 221 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 2 , GoodCommander 2 , StrategyDread 2 , PublicFaith 1 , GoodAdministrator 2 , ReligionStarter 1 
 ancillaries spymaster
@@ -2051,6 +2088,7 @@ unit		Kasogi					exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 0 armour 0 weapon_lvl 0
 
+;Jaiksk
 character	Sotan of_the_Oghuz, named character, male, heir, age 20, x 453, y 207 
 traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , Pagan_Edu 1 , ContentGeneral 1 , Energetic 1 , ReligionStarter 1 
 army
@@ -2062,6 +2100,7 @@ unit		Kasogi					exp 0 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 0 armour 0 weapon_lvl 0
 
+;Yelabuga Fort/Kazan Province
 character	Skal, named character, male, age 41, x 460, y 247 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 1 , ContentGeneral 1 , PublicFaith 1 , ReligionStarter 1 
 army
@@ -2072,6 +2111,7 @@ unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 
+;Azaq
 character	Otrak of_the_Oghuz, named character, male, age 40, x 361, y 185 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , PublicFaith 2 , ReligionStarter 1 
 army
@@ -2082,6 +2122,7 @@ unit		Kasogi					exp 0 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 0 armour 0 weapon_lvl 0
 
+;Embi
 character	Avsar, named character, male, age 22, x 495, y 198 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , Scout 2 , ReligionStarter 1 
 army
@@ -2092,6 +2133,7 @@ unit		Kasogi					exp 0 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 
+;Baia
 character	Bulgay, general, male, age 28, x 277, y 187 
 army
 unit		Kasogi					exp 1 armour 0 weapon_lvl 0
@@ -2099,6 +2141,7 @@ unit		Dismounted Cuman Militia		exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 
+;Targoviste
 character	Aepak of_the_Oghuz, named character, male, age 38, x 266, y 168 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , Scout 2 , Royal_Blood_Cumans 1 , ReligionStarter 1 
 army
@@ -2108,6 +2151,7 @@ unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 
+;Sarkel
 character	Faruk, general, male, age 29, x 391, y 188 
 army
 unit		Kasogi					exp 1 armour 0 weapon_lvl 0
@@ -2117,6 +2161,7 @@ unit		Dismounted Cuman Militia		exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 unit		Cuman Horse Militia			exp 1 armour 0 weapon_lvl 0
 
+;Oleshe
 character	Althabarz, general, male, age 26, x 314, y 183 
 army
 unit		EE Archer Militia			exp 1 armour 0 weapon_lvl 0
@@ -2125,6 +2170,7 @@ unit		Dismounted Cuman Militia		exp 0 armour 0 weapon_lvl 0
 unit		Dismounted Cuman Militia		exp 0 armour 0 weapon_lvl 0
 unit		Pechenegs				exp 1 armour 0 weapon_lvl 0
 
+;Embi Province
 character	Turgut, general, male, age 29, x 475, y 185 
 army
 unit		Pechenegs				exp 1 armour 0 weapon_lvl 0
@@ -2141,7 +2187,7 @@ traits NaturalPriestSkill 3
 
 character_record		Aysu, 	female, age 29, alive, never_a_leader
 character_record		Checheg, 	female, age 61, dead 3, never_a_leader
-character_record		Tugor of_the_Oghuz, 	male, age 64, dead 4, never_a_leader
+character_record		Tugor of_the_Oghuz, 	male, age 64, dead 4, past_leader
 
 relative 	Bonyak of_the_Oghuz,	Aysu,	Sotan of_the_Oghuz,	end
 relative 	Tugor of_the_Oghuz,	Checheg,	Bonyak of_the_Oghuz,	Otrak of_the_Oghuz,	Aepak of_the_Oghuz,	end
@@ -2497,6 +2543,7 @@ settlement
 	}
 }
 
+;Baghdad
 character	Berkyaruk Meliksah, named character, male, leader, age 21, x 396, y 88 
 traits Factionleader 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
 ancillaries apothecary
@@ -2507,6 +2554,7 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
+;Iconium
 character	Kilic_Arslan, named character, male, age 21, x 310, y 118 
 traits LoyaltyStarter 1 , DeceiverVirtue 2 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 2 , Intelligent 1 , Royal_Blood_Turkish 1 , ReligionStarter 1 
 army
@@ -2519,6 +2567,7 @@ unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
+;Tabriz
 character	Mehmed, named character, male, heir, age 14, x 411, y 118 
 traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Royal_Blood_Turkish 1 , ReligionStarter 1 , Offensive_To_Nobles 1
 army
@@ -2527,6 +2576,7 @@ unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
+;Isfahan
 character	Ahmed_Sanjar, named character, male, age 15, x 453, y 81 
 traits LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 2 , Coward 2 , Royal_Blood_Turkish 1 , ReligionStarter 1 
 ancillaries foodtaster
@@ -2536,8 +2586,9 @@ unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 
+;Mosul
 character	Zengi, named character, male, age 15, x 387, y 108 
-traits LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 2 , ReligionStarter 1 
+traits LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 2 , ReligionStarter 1 , NaturalMilitarySkill 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -2548,44 +2599,51 @@ unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
+;Diyarbakir
 character	Selim Kutalmisoglu, named character, male, age 32, x 365, y 119 
-traits Disloyal 1 , Disobedient 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
+traits LoyaltyStarter 1 , Disloyal 2 , Disobedient 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
+;Kermanshah
 character	Al-Maqtadi, named character, male, age 24, x 416, y 94 
-traits Disloyal 1 , Disobedient 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 1 , ReligionStarter 1 
+traits LoyaltyStarter 1 , Disloyal 2 , Disobedient 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 1 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
+;Ankara
 character	Ramazan, general, male, age 29, x 313, y 131 
 army
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 
+;Qarisiya
 character	Artuk, general, male, age 31, x 372, y 97 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 
+;Ahvaz
 character	Burak, general, male, age 23, x 432, y 76 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 
+;Basra
 character	Nizamuddin, general, male, age 44, x 420, y 65 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
+;Shiraz
 character	Abul_Fadl, general, male, age 34, x 457, y 58 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -2604,41 +2662,43 @@ character		Leyla, princess, female, age 29, x 396, y 88
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 , Princess_Royal_Blood_Turkish 1 
 
 ;SELJUK FAMILY MEMBERS
-;character_record		Selcuk, 	male, age 146, dead 64, never_a_leader
-;character_record		Muazzez, 	female, age 144, dead 94, never_a_leader
-;character_record		Israfil, 	male, age 129, dead 55, never_a_leader
-;character_record		Gulnus, 	female, age 126, dead 66, never_a_leader
-;character_record		Mikail, 	male, age 128, dead 57, never_a_leader
-;character_record		Nigar, 	female, age 127, dead 70, never_a_leader
+character_record		Selcuk, 	male, age 83, dead 64, never_a_leader; (age 146)
+character_record		Muazzez, 	female, age 83, dead 94, never_a_leader; (age 144)
+character_record		Israfil, 	male, age 71, dead 55, never_a_leader; (age 129)
+character_record		Gulnus, 	female, age 71, dead 66, never_a_leader; (age 126)
+character_record		Mikail, 	male, age 70, dead 57, never_a_leader; (age 128)
+character_record		Nigar, 	female, age 71, dead 70, never_a_leader; (age 127)
 ;
 ;RUM SELJUK BRANCH MEMBERS
-;character_record		Kutalmis, 	male, age 110, dead 37, never_a_leader
-;character_record		Habbabe, 	female, age 87, dead 29, never_a_leader
-character_record		Su#leyman, 	male, age 50, dead 14, never_a_leader
-character_record		Meryem, 	female, age 37, alive, never_a_leader
+character_record		Kutalmis, 	male, age 46, dead 37, never_a_leader; (age 110)
+character_record		Habbabe, 	female, age 46, dead 29, never_a_leader; (age 87)
+character_record		Su#leyman, 	male, age 34, dead 14, never_a_leader; (age 50)
+character_record		Meryem, 	female, age 34, alive, never_a_leader; (age 37)
 ;
 ;GREAT SELJUK BRANCH MEMBERS
-;character_record		Dawud, 	male, age 111, dead 40, never_a_leader
-;character_record		Nazife, 	female, age 98, dead 42, never_a_leader
-character_record		Alp_Arslan, 	male, age 71, dead 28, never_a_leader
-character_record		Kumru, 	female, age 68, dead 23, never_a_leader
-character_record		Jalal, 	male, age 45, dead 8, never_a_leader
-character_record		Fatma, 	female, age 49, dead 11, never_a_leader
+character_record		Cagri, 	male, age 58, dead 40, never_a_leader; (age 111)
+character_record		Nazife, 	female, age 58, dead 42, never_a_leader; (age 98)
+character_record		Tug#rul, 	male, age 57, dead 37, past_leader; (age 110)
+character_record		Alp_Arslan, 	male, age 46, dead 28, past_leader; (age 71)
+character_record		Kumru, 	female, age 46, dead 23, never_a_leader; (age 68)
+character_record		Jalal, 	male, age 34, dead 8, past_leader; (age 45)
+character_record		Fatma, 	female, age 34, dead 11, never_a_leader; (age 49)
+character_record		Mahmud, 	male, age 22, dead 6, past_leader; (age 30)
 character_record		Terken, 	female, age 21, alive, never_a_leader
 character_record		Melik, 	male, age 3, alive, never_a_leader
 
 ;GREAT SELJUK FAMILY
 relative 	Berkyaruk Meliksah,	Terken,	Melik,	end
-relative 	Jalal,	Fatma,	Berkyaruk Meliksah,	Ahmed_Sanjar,	Mehmed,	end
-relative 	Alp_Arslan,	Kumru,	Jalal,	Meryem,	Leyla,	end
-;relative 	Dawud,	Nazife,	Alp_Arslan,	end
+relative 	Jalal,	Fatma,	Mahmud,	Berkyaruk Meliksah,	Ahmed_Sanjar,	Mehmed,	end
+relative 	Alp_Arslan,	Kumru,	Jalal,	Leyla,	end
+relative 	Cagri,	Nazife,	Alp_Arslan,	end
 ;RUM SELJUK FAMILY
 relative 	Su#leyman,	Meryem,	Kilic_Arslan,	end
-;relative 	Kutalmis,	Habbabe,	Su#leyman,	end
+relative 	Kutalmis,	Habbabe,	Su#leyman,	end
 ;SELJUK FAMILY
-;relative 	Mikail,	Nigar,	Dawud,	end
-;relative 	Israfil,	Gulnus,	Kutalmis,	end
-;relative 	Selcuk,	Muazzez,	Israfil,	Mikail,	end
+relative 	Mikail,	Nigar,	Cagri,	Tug#rul,	end
+relative 	Israfil,	Gulnus,	Kutalmis,	end
+relative 	Selcuk,	Muazzez,	Israfil,	Mikail,	end
 
 faction	france, balanced smith
 ai_label		catholic
@@ -2861,7 +2921,8 @@ settlement
 	}
 }
 
-character	Philip Capet, named character, male, leader, age 48, x 93, y 197 
+;Paris
+character	Philip Capet, named character, male, leader, age 48, x 93, y 197, label france4leader 
 traits Factionleader 1 , GoodCommander 2 , Intelligent 2 , Austere 1 , GovernorInclination 1 , Western_Edu 1 , BattleChivalry 1 , StrategyChivalry 3 , ReligionStarter 1 , Girls 3 
 ancillaries adultress
 army
@@ -2872,7 +2933,8 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
-character	Louis, named character, male, heir, age 19, x 105, y 201 
+;Rheims
+character	Louis, named character, male, heir, age 19, x 105, y 201, label france4heir 
 traits Factionheir 1 , NaturalMilitarySkill 2 , Intelligent 2 , Slothful 2 , GoodAdministrator 2 , GovernorInclination 1 , Western_Edu 1 , LoyaltyStarter 1 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -2882,7 +2944,8 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
-character	Raymond de_Beauvais, named character, male, age 35, x 75, y 185 
+;Angers
+character	Raymond de_Beauvais, named character, male, age 35, x 75, y 185, label france4general1 
 traits NaturalMilitarySkill 1 , GovernorInclination 1 , Western_Edu 1 , GoodTaxman 1 , LoyaltyStarter 1 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -2891,7 +2954,8 @@ unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Guillaume de_Clermont, named character, male, age 32, x 98, y 176 
+;Clermont
+character	Guillaume de_Clermont, named character, male, age 32, x 98, y 176, label france4general2 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , GovernorInclination 1 , Authoritarian 1 , Drink 1 , Bloodthirsty 1 , PublicFaith 2 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -2900,8 +2964,9 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Guillaume de_Poitiers, named character, male, age 29, x 74, y 168 
-traits Disloyal 1 , Disobedient 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodCommander 1 , LogisticalSkill 1 , Energetic 1 , BattleDread 1 , ReligionStarter 1 
+;Bordeaux
+character	Guillaume de_Poitiers, named character, male, age 29, x 74, y 168, label france4general3 
+traits LoyaltyStarter 1 , Disloyal 2 , Disobedient 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodCommander 1 , LogisticalSkill 1 , Energetic 1 , BattleDread 1 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
@@ -2910,12 +2975,14 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 
+;Poitiers
 character	Bertrand de_Poitou, general, male, age 24, x 80, y 179 
 army
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
+;Orleans
 character	Frederic d_Orleans, general, male, age 30, x 90, y 187 
 army
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
@@ -3229,7 +3296,8 @@ settlement
 	}
 }
 
-character	Heinrich von_Hohenstaufen, named character, male, leader, age 50, x 133, y 191 
+;Staufen
+character	Heinrich von_Hohenstaufen, named character, male, leader, age 50, x 133, y 191, label hre4leader 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 2 , BattleDread 1 , HighPersonalSecurity 1 , HarshJustice 2 , Girls 1 , Liar 1 , HatesPapal_States 1 , ReligionStarter 1 
 ancillaries adultress
 army
@@ -3245,6 +3313,7 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
+;Frankfurt
 character	Dietrich, general, male, age 35, x 140, y 206 
 army
 unit		Mailed Knights				exp 2 armour 0 weapon_lvl 0
@@ -3252,6 +3321,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Nuremburg
 character	Maximilian von_Nurnberg, named character, male, age 30, x 156, y 202 
 traits LoyaltyStarter 1 , GovernorInclination 1 , Intelligent 2 , Austere 1 , ReligionStarter 1 
 army
@@ -3260,6 +3330,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Innsbruck
 character	Otto von_Tirol, named character, male, age 23, x 160, y 185 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Energetic 1 , ReligionStarter 1 
 army
@@ -3268,7 +3339,8 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Heinrich, named character, male, heir, age 14, x 161, y 165, label hre4heinrich 
+;Bologna
+character	Heinrich, named character, male, heir, age 14, x 161, y 165, label hre4heir 
 traits Factionheir 1 , LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , GoodCommander 1 , HaleAndHearty 1 , Infertile 1 , Disloyal 1 , Hates_Father 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -3276,6 +3348,7 @@ unit		Mailed Knights				exp 2 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
+;Vienna
 character	Leopold Babenberg, named character, male, age 27, x 195, y 196 
 traits LoyaltyStarter 1 , ReligionStarter 1 , NaturalMilitarySkill 2 , MilitaryInclination 1 , ReligiousActivity 2 , PublicFaith 3 , Energetic 1 , WifeIsHRE 1 , MarriedAPrincess 1 
 army
@@ -3284,6 +3357,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Salzburg
 character	Markus, general, male, age 24, x 171, y 192 
 army
 unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
@@ -3294,6 +3368,7 @@ unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Cologne
 character	Helwig Felben, named character, male, age 29, x 129, y 214 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , HaleAndHearty 1 , ReligionStarter 1 
 army
@@ -3302,6 +3377,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
+;Hamburg
 character	Conrad, named character, male, age 26, x 146, y 230 
 traits LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , Exheir 1 , PublicFaith 1 
 army
@@ -3311,6 +3387,7 @@ unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
+;Magdeburg
 character	Kurt, general, male, age 29, x 162, y 218 
 army
 unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
@@ -3488,7 +3565,8 @@ settlement castle
 	}
 }
 
-character	Henry Beauclerc, named character, male, leader, age 31, x 80, y 217 
+;London
+character	Henry Beauclerc, named character, male, leader, age 31, x 80, y 217, label england4leader 
 traits Factionleader 1 , MilitaryInclination 1 , Western_Edu 1, GoodCommander 1 , GoodAdministrator 2 , Fertile 3 , FathersLegacy 2 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
@@ -3496,19 +3574,22 @@ unit		Norman Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
+;York
 character	Robert, general, male, age 42, x 70, y 235  
 army
 unit		Norman Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Fyrd Spearmen				exp 0 armour 0 weapon_lvl 0
 
+;Nottingham
 character	Alfred, general, male, age 22, x 69, y 226  
 army
 unit		Fyrd Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Fyrd Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Robert de_Vere, named character, male, age 20, x 68, y 213 
+;Winchester
+character	Robert de_Vere, named character, male, age 20, x 68, y 213, label england4general1 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodCommander 2 , DiscontentGeneral 2 , ReligionStarter 1
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -3516,6 +3597,7 @@ unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Fyrd Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Caen Province
 character	Stephen de_Blois, named character, male, age 55, x 78, y 194 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , GovernorInclination 1 , Western_Edu 1 , ReligiousActivity 2 , CrusaderHistory 1 , GoodCommander 1 , WifeIsEnglish 1 , MarriedAPrincess 1 , ReligionStarter 1 
 army
@@ -3525,8 +3607,9 @@ unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
-character	Robert Curthose, named character, male, heir, age 49, x 76, y 199 
-traits Factionheir 1 , Disloyal 2 , Disobedient 2 , NaturalMilitarySkill 2 , MilitaryInclination 1 , CrusaderHistory 1 , FathersLegacy 2 , Royal_Blood_English 1 , ReligionStarter 1 
+;Caen
+character	Robert Curthose, named character, male, heir, age 49, x 76, y 199, label england4heir 
+traits Factionheir 1 , LoyaltyStarter 1 , Disloyal 3 , Disobedient 2 , NaturalMilitarySkill 2 , MilitaryInclination 1 , CrusaderHistory 1 , FathersLegacy 2 , Royal_Blood_English 1 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
 unit		Norman Cavalry				exp 1 armour 0 weapon_lvl 0
@@ -3552,9 +3635,9 @@ traits NaturalDiplomatSkill 1 , GoodDiplomat 1
 character	Anselm of_Canterbury, priest, male, age 40, x 61, y 224 
 traits NaturalPriestSkill 3 , StrongFaith 2 , Dogmatic 1 , PriestLevel 1 
 
-character_record		William, 	male, age 73, dead 13, never_a_leader
+character_record		William, 	male, age 73, dead 13, past_leader
 character_record		Matilda, 	female, age 61, dead 10, never_a_leader
-character_record		Rufus, 	male, age 44, dead 0, never_a_leader
+character_record		Rufus, 	male, age 44, dead 0, past_leader
 character_record		Adela, 	female, age 46, alive, never_a_leader
 character_record		Edyth, 	female, age 27, alive, never_a_leader
 character_record		Stephen, 	male, age 4, alive, never_a_leader
@@ -3586,14 +3669,16 @@ settlement castle
 	}
 }
 
+;Oporto
 character	Henrique de_Portugal, named character, male, leader, age 34, x 16, y 143 
 traits Factionleader 1 , MilitaryInclination 1 , GoodCommander 2 , Energetic 1 , PublicFaith 2 , Intelligent 1 , Bloodthirsty 1 , WifeIsSpanish 1 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
-character	Pedro de_Santiago, named character, male, heir, age 25, x 17, y 139 
-traits FactionFutureRegent 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
+;Coimbra Province
+character	Pedro de_Santiago, named character, male, age 25, x 17, y 139 
+traits LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
@@ -3614,17 +3699,12 @@ traits NaturalMerchantSkill 2 , GoodMerchant 1
 character	Manuel, priest, male, age 40, x 20, y 138 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
-character_record		Henrique, 	male, age 66, dead 26, never_a_leader
-character_record		Si#lvia, 	female, age 57, dead 2, never_a_leader
-character_record		Brigi#da, 	female, age 27, alive, never_a_leader
 character_record		Teresa, 	female, age 35, alive, never_a_leader
-character_record		Afonso, 	male, age 6, alive, never_a_leader
+character_record		Afonso, 	male, age 6, alive, current_heir
 character_record		Urraca, 	female, age 5, alive, never_a_leader
 character_record		Sancha de_Portugal, 	female, age 3, alive, never_a_leader
 
 relative 	Henrique de_Portugal,	Teresa,	Afonso,	Urraca,	Sancha de_Portugal,	end
-relative 	Henrique,	Si#lvia,	Henrique de_Portugal,	Brigi#da,	end
-relative 	Pedro de_Santiago,	Brigi#da,	end
 
 faction	poland, balanced smith
 ai_label		catholic
@@ -3715,6 +3795,7 @@ settlement
 	}
 }
 
+;Krakow
 character	Wladyslaw Piast, named character, male, leader, age 56, x 217, y 208 
 traits Factionleader 1 , GovernorInclination 1 , PublicFaith 3 , Intelligent 1 , Sickly 1 , KindRuler 1 , WifeIsHRE 1 , ReligionStarter 1 
 army
@@ -3723,6 +3804,7 @@ unit		EE Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Polish Nobles				exp 0 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
+;Halych
 character	Zbigniew Piast, named character, male, age 27, x 253, y 206 
 traits LoyaltyStarter 1 , GovernorInclination 1 , Intelligent 1 , Bloodthirsty 1 , Energetic 1 , Drink 1 , ReligionStarter 1 
 army
@@ -3731,6 +3813,7 @@ unit		EE Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
+;Plock
 character	Boleslaw Piast, named character, male, heir, age 14, x 226, y 224 
 traits LoyaltyStarter 1 , Factionheir 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Intelligent 2 , HarshJustice 2 , StrategyDread 1 , Bloodthirsty 1 , ReligionStarter 1 
 army
@@ -4123,6 +4206,7 @@ settlement castle
 	}
 }
 
+;Constantinople
 character	Alexios Komnenos, named character, male, leader, age 52, x 284, y 142, battle_model byzantine_emperor 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Greek_Edu 2 , GoodCommander 2 , Intelligent 2 , ReligionStarter 1 
 ancillaries taticius
@@ -4134,6 +4218,7 @@ unit		Varangian Guard				exp 0 armour 0 weapon_lvl 0
 unit		Spartharii tou Vasileos			exp 1 armour 0 weapon_lvl 0
 unit		Siphonatores				exp 1 armour 0 weapon_lvl 0
 
+;Nicaea
 character	Manouil Voutoumitis, named character, male, age 39, x 291, y 137 
 traits LoyaltyStarter 1 , GovernorInclination 1 , Greek_Edu 1 , GoodCommander 1 , Intelligent 1 , GoodAdministrator 2 , ReligionStarter 1, Military_Career_In_Byzantium 3 
 army
@@ -4141,11 +4226,13 @@ unit		Greek Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Scoutatoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
-character	Stephanos Agapitos, general, male, age 31, x 238, y 114 
+;Corinth
+character	Stephanos Agapitos, general, male, age 31, x 242, y 118 
 army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
+;Rhodes
 character	Theodosios Opsaras, named character, male, age 31, x 279, y 107 
 traits Intelligent 1 , GovernorInclination 1 , GoodAdministrator 3 , ReligionStarter 1 , LoyaltyStarter 1, Military_Career_In_Byzantium 1 
 army
@@ -4153,6 +4240,7 @@ unit		Greek Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Scoutatoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
+;Thessalonica
 character	Ioannis Komnenos, named character, male, heir, age 14, x 242, y 139, battle_model byzantine_heir 
 traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Greek_Edu 2 , Ugly 1 , Just 2 , PublicFaith 2 , Upright 1 , Intelligent 1 , Brave 2 , Energetic 1 , ReligionStarter 1 
 ancillaries mentor
@@ -4166,6 +4254,7 @@ unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
+;Adrianople
 character	Nikiphoros Vryennios, named character, male, age 38, x 269, y 146 
 traits LoyaltyStarter 1 , WifeIsGreek 1, GovernorInclination 1 , Greek_Edu 1 , GoodCommander 1 , Intelligent 1 , GoodAdministrator 2 , ReligionStarter 1, Military_Career_In_Byzantium 4 
 ancillaries brilliant_inventor
@@ -4174,27 +4263,32 @@ unit		Greek Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
+;Athens
 character	Georgios Iagaris, general, male, age 29, x 249, y 119 
 army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 
+;Canakkale
 character	Aetios Tourkopoulos, general, male, age 29, x 268, y 134 
 army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 0 armour 0 weapon_lvl 0
 
+;Smyrna
 character	Ioannis Chotzas, general, male, age 29, x 275, y 118 
 army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 0 armour 0 weapon_lvl 0
 
+;Trebizond
 character	Ioannis Argyros, general, male, age 29, x 362, y 141 
 army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 0 armour 0 weapon_lvl 0
 
+;Nicosia
 character	Efstathios Lampinos, named character, male, age 38, x 318, y 99 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , GoodAdministrator 1 , ReligionStarter 1, Military_Career_In_Byzantium 1 
 army
@@ -4202,21 +4296,25 @@ unit		Greek Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
+;Isparta
 character	Hypatios, general, male, age 22, x 294, y 116 
 army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 
+;Iraklion
 character	Romanos, general, male, age 22, x 258, y 99 
 army
 unit		Scoutatoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 1 armour 0 weapon_lvl 0
 
+;Durazzo
 character	Phokas, general, male, age 28, x 221, y 143 
 army
 unit		Contaratoi				exp 1 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 
+;Caffa
 character	Georgios, general, male, age 26, x 329, y 170 
 army
 unit		Contaratoi				exp 1 armour 0 weapon_lvl 0
@@ -4540,6 +4638,7 @@ settlement castle
 	}
 }
 
+;Cordoba
 character	Yusuf, named character, male, leader, age 64, x 42, y 117 
 traits Factionleader 1 , GovernorInclination 1 , Eastern_Edu 1 , Poet 1 , PublicFaith 3 , GoodCommander 3 , Energetic 2 , ReligionStarter 1 , HaleAndHearty 7 
 ancillaries apothecary
@@ -4550,6 +4649,7 @@ unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Marrakesh
 character	Ali, named character, male, heir, age 35, x 17, y 76 
 traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , Eastern_Edu 1 , PublicFaith 3 , Intelligent 1 , ReligionStarter 1 
 army
@@ -4558,6 +4658,7 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Granada
 character	Tasufin ibn_Ali, named character, male, age 17, x 54, y 112 
 traits LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 1 , Intelligent 1 , Royal_Blood_Moorish 1 , ReligionStarter 1 
 army
@@ -4567,12 +4668,14 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Seville
 character	Ridwan, general, male, age 20, x 36, y 113 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Algiers
 character	Tabit ibn_Mufawwiz, named character, male, age 30, x 100, y 110 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 2 , PublicFaith 2 , ReligionStarter 1 
 army
@@ -4581,12 +4684,14 @@ unit		Desert Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Fes
 character	Yazid, general, male, age 31, x 41, y 95 
 army
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Melilla
 character	Tamim ibn_Yusuf, named character, male, age 23, x 56, y 99 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , ReligionStarter 1 
 army
@@ -4595,6 +4700,7 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 
+;Silves
 character	Shakir, general, male, age 25, x 19, y 114 
 army
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
@@ -4602,6 +4708,7 @@ unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Murcia
 character	Nizar, general, male, age 23, x 70, y 119 
 army
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
@@ -4609,6 +4716,7 @@ unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Badajoz
 character	Amjad, general, male, age 26, x 30, y 126 
 army
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
@@ -4723,9 +4831,9 @@ settlement
 	}
 }
 
-
+;Novgorod
 character	Svyatopolk Novgorodskii, named character, male, leader, age 50, x 303, y 267 
-traits Novgorod_Factionleader 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 1 , Energetic 2 , Intelligent 1 , Bloodthirsty 2 , WifeIsHRE 1 , ReligionStarter 1 
+traits Factionleader 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 1 , Energetic 2 , Intelligent 1 , Bloodthirsty 2 , WifeIsHRE 1 , ReligionStarter 1 
 army
 unit		EE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
@@ -4734,8 +4842,9 @@ unit		Woodsmen				exp 0 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 0 armour 0 weapon_lvl 0
 unit		Pechenegs				exp 0 armour 0 weapon_lvl 0
 
+;Yaroslavl
 character	Iaroslav Novgorodskii, named character, male, heir, age 28, x 365, y 258 
-traits Novgorod_Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , Energetic 1 , Intelligent 1 , Drink 1 , ReligiousActivity 2 , ReligionStarter 1 
+traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , Energetic 1 , Intelligent 1 , Drink 1 , ReligiousActivity 2 , ReligionStarter 1 
 army
 unit		EE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Junior Militia				exp 0 armour 0 weapon_lvl 0
@@ -4743,6 +4852,7 @@ unit		Junior Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 
+;Moscow
 character	Sudimir Grebenka, named character, male, age 25, x 350, y 247 
 traits ReligionStarter 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCavalryGeneral 1 , Trusting 1 
 army
@@ -4754,6 +4864,7 @@ unit		Junior Militia				exp 0 armour 0 weapon_lvl 0
 unit		Junior Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 
+;Novgorod Province
 character	Voislav Istoma, named character, male, age 20, x 300, y 271 
 traits ReligionStarter 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCavalryGeneral 1 
 army
@@ -4768,12 +4879,15 @@ traits NaturalSpySkill 1
 character	Aleksei, priest, male, age 29, x 305, y 268 
 traits NaturalPriestSkill 2 , GoodDenouncer 1 , PriestLevel 1 
 
-character	Zhidislav Novgorodskii, diplomat, male, age 23, x 303, y 267 
-traits NaturalDiplomatSkill 1, GoodDiplomat 1 
+character	Zbyslava Novgorodskii, princess, female, age 20, x 303, y 267 
+traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 
 
-character	Predislav Novgorodskii, diplomat, male, age 37, x 303, y 267 
-traits NaturalDiplomatSkill 2, GoodDiplomat 1 
+character	Predslava Novgorodskii, princess, female, age 18, x 303, y 267 
+traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 
 
+character_record		Irina, 	female, age 46, alive, never_a_leader
+
+relative 	Svyatopolk Novgorodskii,	Irina,	Iaroslav Novgorodskii,	Zbyslava Novgorodskii,	Predslava Novgorodskii,	end
 
 faction	spain, fortified smith
 ai_label		catholic
@@ -4891,6 +5005,7 @@ settlement castle
 	}
 }
 
+;Leon
 character	Alfonso Jimenez, named character, male, leader, age 53, x 37, y 152 
 traits Factionleader 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , Brave 4 , Xenophilia 1 , Upright 2 , StrategyChivalry 1 , ReligionStarter 1 
 ancillaries bard
@@ -4900,6 +5015,7 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Toledo
 character	Goncalo Quijada, named character, male, age 28, x 49, y 134 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Loyal 2 , ReligionStarter 1 
 army
@@ -4908,13 +5024,15 @@ unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Raimundo de_Borgona, named character, male, heir, age 30, x 37, y 141 
-traits FactionFutureRegent 1 , LoyaltyStarter 1 , WifeIsSpanish 1 , WifeIsDaughterofKingPrince 1 , MarriedAPrincess 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
+;Salamanca
+character	Raimundo de_Borgona, named character, male, age 30, x 37, y 141 
+traits LoyaltyStarter 1 , WifeIsSpanish 1 , WifeIsDaughterofKingPrince 1 , MarriedAPrincess 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Burgos
 character	Silvestre, general, male, age 32, x 51, y 150 
 army
 unit		Jinetes					exp 1 armour 0 weapon_lvl 0
@@ -4932,7 +5050,7 @@ traits NaturalSpySkill 1 , GoodSpy 2
 
 character_record		Constanza, 	female, age 38, alive, never_a_leader
 character_record		Urraca Jimenez, 	female, age 19, alive, never_a_leader
-character_record		Sancho, 	male, age 10, alive, never_a_leader
+character_record		Sancho, 	male, age 10, alive, current_heir
 character_record		Elvira, 	female, age 9, alive, never_a_leader
 
 relative 	Alfonso Jimenez,	Constanza,	Urraca Jimenez,	Sancho,	Elvira,	end
@@ -5046,6 +5164,7 @@ settlement castle
 	}
 }
 
+;Esztergom
 character	Kalman Arpadhazi, named character, male, leader, age 30, x 213, y 191 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Intelligent 2 , WantsHigherEd 1 , Western_Edu 2 , KindRuler 1 , PublicFaith 2 , ReligionStarter 1 
 ancillaries apothecary
@@ -5056,6 +5175,7 @@ unit		S Peasant Archers			exp 0 armour 0 weapon_lvl 0
 unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Bosnian Archers				exp 0 armour 0 weapon_lvl 0
 
+;Brasov
 character	Bodomer, named character, male, age 20, x 262, y 176 
 traits LoyaltyStarter 1 , GovernorInclination 1 , Western_Edu 2 , BattleChivalry 2 , GoodCommander 2 , ReligionStarter 1 
 army
@@ -5067,6 +5187,7 @@ unit		S Peasant Archers			exp 0 armour 0 weapon_lvl 0
 character	Fulop, spy, male, age 20, x 257, y 178 
 traits NaturalSpySkill 2 , GoodSpy 1 
 
+;Kassa
 character	Kozma, named character, male, age 20, x 230, y 196 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Intelligent 2 , Drink 1 , ReligionStarter 1 
 army
@@ -5074,6 +5195,7 @@ unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		EE Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Bosnian Archers				exp 0 armour 0 weapon_lvl 0
 
+;Varad
 character	Almos Arpadhazi, named character, male, heir, age 29, x 236, y 183 
 traits Factionheir 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Western_Edu 1 , Royal_Blood_Hungarian 1 , DiscontentGeneral 3 , WifeIsKievan 1 , ReligionStarter 1 
 army
@@ -5085,7 +5207,7 @@ unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 character	Nehemias, priest, male, age 34, x 217, y 192 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
-character_record		Geza, 	male, age 60, dead 23, never_a_leader
+character_record		Geza, 	male, age 60, dead 23, past_leader
 character_record		Zsofia, 	female, age 58, dead 12, never_a_leader
 character_record		Predslava, 	female, age 24, alive, never_a_leader
 character_record		Eufemia, 	female, age 30, alive, never_a_leader
@@ -5132,6 +5254,7 @@ settlement castle
 	}
 }
 
+;Pamplona
 character	Pedro Ramirez, named character, male, leader, age 32, x 66, y 153 
 traits Factionleader 1 , MilitaryInclination 1 , StrategyChivalry 1 , LoyaltyStarter 1 , GoodCommander 1 , Energetic 1 , Intelligent 1 , ReligionStarter 1 
 ancillaries bard
@@ -5142,6 +5265,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Pamplona Province
 character	Alfonso Ramirez, named character, male, heir, age 27, x 74, y 150 
 traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Military_Edu 1 , GoodCommander 1 , Brave 1 , Royal_Blood_Aragonese 1 , ReligionStarter 1 
 army
@@ -5151,6 +5275,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
+;Pamplona Province
 character	Ramiro Ramirez, named character, male, age 25, x 72, y 149 
 traits LoyaltyStarter 1 , GovernorInclination 1 , Western_Edu 1 , PublicFaith 3 , Royal_Blood_Aragonese 1 , ReligionStarter 1 
 army
@@ -5209,6 +5334,7 @@ settlement castle
 	}
 }
 
+;Vilnius
 character	Butigeidis, named character, male, leader, age 62, x 260, y 239 
 traits Factionleader 1 , LoyaltyStarter 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 1 , BattleChivalry 1 , ReligionStarter 1 
 army
@@ -5224,6 +5350,7 @@ unit		Lithuanian Axemen			exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
+;Vilnius Province
 character	Algimantas, named character, male, heir, age 31, x 264, y 234 
 traits Factionheir 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 1 , ReligionStarter 1 , LoyaltyStarter 1 
 army
@@ -5349,6 +5476,7 @@ settlement
 	}
 }
 
+;Kiev
 character	Vladimir Yaroslavich, named character, male, leader, age 47, x 297, y 209 
 traits Factionleader 1 , MilitaryInclination 1 , GoodCommander 2 , Energetic 2 , Drink 1 , Bloodthirsty 2 , WifeIsGreek 1 , ReligionStarter 1 
 army
@@ -5359,6 +5487,7 @@ unit		EE Archer Militia			exp 1 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 unit		Pechenegs				exp 0 armour 0 weapon_lvl 0
 
+;Pereyaslav
 character	Mstislav Yaroslavich, named character, male, heir, age 24, x 326, y 202 
 traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , Energetic 1 , Intelligent 1 , ReligiousActivity 1 , WifeIsNorwegian 1 , ReligionStarter 1 
 army
@@ -5368,6 +5497,7 @@ unit		Junior Militia				exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 
+;Timutarakan
 character	Georgii Patrikeev, named character, male, age 30, x 346, y 171 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , Energetic 1 , ReligionStarter 1 , GoodCavalryGeneral 1 
 army
@@ -5378,6 +5508,7 @@ unit		EE Peasant Archers			exp 2 armour 0 weapon_lvl 0
 unit		Pechenegs				exp 0 armour 0 weapon_lvl 0
 unit		Pechenegs				exp 1 armour 0 weapon_lvl 0
 
+;Bryansk
 character	Yaropolk, named character, male, age 18, x 326, y 229 
 traits ReligionStarter 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Just 1 
 army
@@ -5465,6 +5596,7 @@ settlement
 	}
 }
 
+;Bergen
 character	Magnus Haakonsson, named character, male, leader, age 34, x 116, y 281 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 2 , BattleDread 3 , VictorVirtue 1 , WifeIsNorwegian 1 , Intelligent 1 , ReligionStarter 1 
 army
@@ -5474,6 +5606,7 @@ unit		Drengjar				exp 0 armour 0 weapon_lvl 0
 unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
+;Eikundarsund
 character	Sigurd, named character, male, heir, age 14, x 120, y 269 
 traits Factionheir 1 , MilitaryInclination 1 , GoodCommander 1 , NaturalMilitarySkill 2 , LoyaltyStarter 1 , Loyal 2 , PublicFaith 3 , ReligionStarter 1 
 army
@@ -5483,6 +5616,7 @@ unit		Viking Raiders				exp 0 armour 0 weapon_lvl 0
 unit		Drengjar				exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 
+;Eikundarsund Province
 character	Eystein, named character, male, age 15, x 130, y 269 
 traits GoodCommander 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , LoyaltyStarter 1 , Loyal 2 , GoodBuilder 2 , ReligionStarter 1 
 army
@@ -5609,6 +5743,7 @@ settlement
 	}
 }
 
+;Jerusalem
 character	Baudouin de_Boulogne, named character, male, leader, age 47, x 330, y 74 
 traits Factionleader 1 , MilitaryInclination 1 , GoodCommander 3 , Intelligent 2 , TourneyKnight 3 , StrategyChivalry 4 , CrusaderHistory 2 , Infertile 3 , PublicFaith 2 , HatesIslam 2 , HatesTurks 1 , HatesEgypt 1 , ReligionStarter 1 
 army
@@ -5619,16 +5754,18 @@ unit		Crusader Sergeants			exp 3 armour 0 weapon_lvl 0
 unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
 unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
 
+;Edessa
 character	Joscelin d_Edesse, named character, male, age 38, x 356, y 114 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligiousActivity 1 , CrusaderHistory 1 , ReligionStarter 1 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligiousActivity 1 , CrusaderHistory 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 army
 unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
 unit		Crusader Knights			exp 3 armour 0 weapon_lvl 0
 unit		Armenians of Celicia			exp 0 armour 0 weapon_lvl 0
 unit		Armenians of Celicia			exp 0 armour 0 weapon_lvl 0
 
-character	Bohemond di_Taranto, named character, male, age 40, x 338, y 106 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, StrategyDread 1 , CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 
+;Antioch
+character	Bohemond d_Antioche, named character, male, age 40, x 338, y 106 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, StrategyDread 1 , CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 ancillaries holy_lance 
 army
 unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
@@ -5637,16 +5774,18 @@ unit		Crusader Sergeants			exp 3 armour 0 weapon_lvl 0
 unit		Pisan and Geonese sailors		exp 1 armour 0 weapon_lvl 0
 unit		Armenians of Celicia			exp 1 armour 0 weapon_lvl 0
 
-character	Tancred d_Antioche, named character, male, age 25, x 340, y 106 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, StrategyDread 1 , CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 
+;Antioch Province
+character	Tancred de_Galilee, named character, male, age 25, x 340, y 106 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 army
 unit		NE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Norman Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Armenian Infantry			exp 1 armour 0 weapon_lvl 0
 unit		Armenians of Celicia			exp 1 armour 0 weapon_lvl 0
 
+;Acre Province
 character	Baudouini de_Bourcq, named character, male, heir, age 33, x 329, y 80 
-traits LoyaltyStarter 1 , Factionheir 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , CrusaderHistory 1 , PublicFaith 1 , Royal_Blood_Jerusalem 1 , HatesIslam 1 , ReligionStarter 1 
+traits LoyaltyStarter 1 , Factionheir 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , CrusaderHistory 1 , PublicFaith 1 , HatesIslam 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 army
 unit		NE Bodyguard				exp 3 armour 0 weapon_lvl 0
 unit		Crusader Sergeants			exp 3 armour 0 weapon_lvl 0
@@ -5655,8 +5794,9 @@ unit		Syrian Auxilliaries			exp 1 armour 0 weapon_lvl 0
 unit		Pisan and Geonese sailors		exp 1 armour 0 weapon_lvl 0
 unit		Pisan and Geonese sailors		exp 0 armour 0 weapon_lvl 0
 
+;Adana Province
 character	Raymond de_Toulouse, named character, male, age 58, x 333, y 110 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , CrusaderHistory 2 , PublicFaith 1 , HatesIslam 1 , ReligionStarter 1 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 3 , CrusaderHistory 2 , PublicFaith 1 , HatesIslam 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 ancillaries mercenary_captain 
 army
 unit		NE Bodyguard				exp 3 armour 0 weapon_lvl 0
@@ -5664,8 +5804,9 @@ unit		Crusader Sergeants			exp 3 armour 0 weapon_lvl 0
 unit		Pilgrims				exp 2 armour 0 weapon_lvl 0
 unit		Pilgrims				exp 2 armour 0 weapon_lvl 0
 
+;Toulouse Coast
 character	Bertrand de_Toulouse, named character, male, age 33, x 100, y 157 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BastardSon 1 , ReligionStarter 1 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 3 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 army
 unit		NE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Crusader Knights			exp 1 armour 0 weapon_lvl 0
@@ -5700,41 +5841,63 @@ traits NaturalDiplomatSkill 1 , GoodDiplomat 1
 character	Reynaud d_Aubusson, priest, male, age 34, x 342, y 103 
 traits NaturalPriestSkill 2 , GoodDenouncer 1 , PriestLevel 2 
 
-
-;EDESSA FAMILY MEMBERS
-character_record		Joscelin de_Courtenay, 	male, age 66, dead 0, never_a_leader
-character_record		Isabelle, 	female, age 57, alive, never_a_leader
 ;ANTIOCH FAMILY MEMBERS
+character_record		Roger de_Sicile, 	male, age 57, dead 0, never_a_leader; (age 69)
+character_record		Judith, 	female, age 57, dead 34, never_a_leader; (age 104)
+character_record		Robert di_Taranto, 	male, age 58, dead 15, never_a_leader; (age 85)
+character_record		Alberada, 	female, age 58, dead 5, never_a_leader; (age 64)
+character_record		Tancred de_Hauteville, 	male, age 70, dead 59, never_a_leader; (age 120)
+character_record		Fresende, 	female, age 70, dead 43, never_a_leader; (age 104)
+;
 character_record		Eudes, 	male, age 53, dead 0, never_a_leader
-character_record		Emma di_Taranto, 	female, age 47, alive, never_a_leader
-character_record		Robert di_Taranto, 	male, age 85, dead 15, never_a_leader
-character_record		Jeanne, 	female, age 64, dead 5, never_a_leader
+character_record		Emma di_Taranto, 	female, age 46, alive, never_a_leader
+;
 ;TRIPOLI FAMILY MEMBERS
-character_record		Matilde di_Taranto, 	female, age 48, alive, never_a_leader
+character_record		Matilde de_Sicile, 	female, age 45, dead 6, never_a_leader
+;
+;EDESSA FAMILY MEMBERS
+character_record		Joscelin de_Courtenay, 	male, age 66, dead 0, never_a_leader; (age 66)
+character_record		Isabelle de_Montlhery, 	female, age 62, dead 28, never_a_leader; (age 65)
+;
 ;JERUSALEM FAMILY MEMBERS
-character_record		Eustache, 	male, age 81, dead 38, never_a_leader
-character_record		Mathilde, 	female, age 84, dead 31, never_a_leader
-character_record		Hugh de_Bourcq, 	male, age 65, dead 15, never_a_leader
-character_record		Melisende, 	female, age 64, dead 9, never_a_leader
-character_record		Eustachei de_Boulogne, 	male, age 66, dead 16, never_a_leader
-character_record		Ida de_Lorraine, 	female, age 67, dead 12, never_a_leader
-character_record		Godefroi de_Boulogne, 	male, age 48, dead 0, never_a_leader
+character_record		Hugh de_Bourcq, 	male, age 45, dead 15, never_a_leader; (age 65)
+character_record		Melisende de_Montlhery, 	female, age 63, alive, never_a_leader; (age 63)
+;
+character_record		Eustachei de_Boulogne, 	male, age 60, dead 16, never_a_leader; (age 66)
+character_record		Ida de_Lorraine, 	female, age 60, alive, never_a_leader; (age ~65)
+;
+character_record		Godefroi de_Boulogne, 	male, age 48, dead 0, past_leader
 character_record		Arda, 	female, age 43, dead 1, never_a_leader
 character_record		Morphia, 	female, age 29, alive, never_a_leader
+;
+character_record		Godefroi de_Lorraine, 	male, age 72, dead 31, never_a_leader; (age 103)
+character_record		Be#atrice, 	female, age 72, dead 24, never_a_leader; (age 83)
+character_record		Guy de_Montlhery, 	male, age 75, dead 38, never_a_leader; (age 81)
+character_record		Hodierne, 	female, age 75, dead 31, never_a_leader; (age 84)
+;
+;APEX-Bogus Relation
+character_record		Richard de_Normandie, 	male, age 87, dead 104, never_a_leader; (age 167, dead 104)
+character_record		Emma de_France, 	female, age 87, dead 103, never_a_leader; (age ~145, dead ~130)
 
-;Edessa Families
-relative 	Joscelin de_Courtenay,	Isabelle,	Joscelin d_Edesse,	end
 ;Antioch Families
-relative 	Eudes,	Emma di_Taranto,	Tancred d_Antioche,	end
-relative 	Robert di_Taranto,	Jeanne,	Matilde di_Taranto,	Emma di_Taranto,	Bohemond di_Taranto,	end
+relative 	Roger de_Sicile,	Judith,	Matilde de_Sicile,	end
+relative 	Robert di_Taranto,	Alberada,	Emma di_Taranto,	Bohemond d_Antioche,	end
+relative 	Tancred de_Hauteville,	Fresende,	Robert di_Taranto,	Roger de_Sicile,	end
+;
+relative 	Eudes,	Emma di_Taranto,	Tancred de_Galilee,	end
 ;Tripoli Families
-relative 	Raymond de_Toulouse,	Matilde di_Taranto,	Bertrand de_Toulouse,	end
+relative 	Raymond de_Toulouse,	Matilde de_Sicile,	Bertrand de_Toulouse,	end
+;Edessa Families
+relative 	Joscelin de_Courtenay,	Isabelle de_Montlhery,	Joscelin d_Edesse,	end
 ;Jerusalem Families
 relative 	Baudouin de_Boulogne,	Arda,	end
 relative 	Baudouini de_Bourcq,	Morphia,	end
 relative 	Eustachei de_Boulogne,	Ida de_Lorraine,	Godefroi de_Boulogne,	Baudouin de_Boulogne,	end
-relative 	Hugh de_Bourcq,	Melisende,	Baudouini de_Bourcq,	end
-relative 	Eustache,	Mathilde,	Eustachei de_Boulogne,	Hugh de_Bourcq,	Jeanne,	Isabelle,	end
+relative 	Hugh de_Bourcq,	Melisende de_Montlhery,	Baudouini de_Bourcq,	end
+;Unknown
+relative 	Guy de_Montlhery,	Hodierne,	Melisende de_Montlhery,	Isabelle de_Montlhery,	end
+relative 	Godefroi de_Lorraine,	Be#atrice,	Ida de_Lorraine,	end
+relative 	Richard de_Normandie,	Emma de_France,	Hodierne,	Be#atrice,	Fresende,	end
 
 faction	kwarezm, balanced smith
 ai_label		islam
@@ -5907,7 +6070,8 @@ settlement castle
 	}
 }
 
-character	Qudbaddin Mohammed, named character, male, leader, age 49, x 505, y 147 
+;Khiva
+character	Qudbaddin Mohammed, named character, male, leader, age 49, x 505, y 147, label kwarezm4leader 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 1 , ReligionStarter 1 
 ancillaries foodtaster
 army
@@ -5916,6 +6080,7 @@ unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Archer Militia			exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 2 armour 0 weapon_lvl 0
 
+;Urgench
 character	Atsiz Mohammed, named character, male, heir, age 22, x 500, y 154 
 traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , NaturalMilitarySkill 1 , PublicFaith 2 , Intelligent 1 , ReligionStarter 1 
 army
@@ -5923,6 +6088,7 @@ unit		ME Bodyguard				exp 2 armour 0 weapon_lvl 0
 unit		ME Archer Militia			exp 2 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 
+;Ray
 character	Derya Mihaloglu, named character, male, age 32, x 449, y 101 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
 army
@@ -5932,6 +6098,7 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		ME Archer Militia			exp 1 armour 0 weapon_lvl 0
 unit		Daylami Light Infantry			exp 1 armour 0 weapon_lvl 0
 
+;Gorgan
 character	Inal-Tegin Mohammed, named character, male, age 14, x 470, y 113 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , PublicFaith 2 , NaturalMilitarySkill 1 , Intelligent 1 , GoodCavalryGeneral 1 , ReligionStarter 1 
 army
@@ -5941,6 +6108,7 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Daylami Light Infantry			exp 1 armour 0 weapon_lvl 0
 unit		Afghan Javelinmen			exp 1 armour 0 weapon_lvl 0
 
+;Konjikala
 character	Hayati Gazali, named character, male, age 31, x 490, y 126 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , ReligionStarter 1 
 army
@@ -5968,7 +6136,7 @@ traits NaturalPriestSkill 2 , GoodDenouncer 2
 character	Aktimur, priest, male, age 34, x 500, y 151 
 traits NaturalPriestSkill 1 , StrongFaith 2 , GoodDenouncer 1 
 
-character		Anahita, princess, female, age 18, x 505, y 147 
+character	Anahita, princess, female, age 18, x 505, y 147 
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 , Princess_Royal_Blood_Kwarezm 1 
 
 character_record		Melek, 	female, age 43, dead 2, never_a_leader
@@ -7971,7 +8139,7 @@ unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
-;Iconium
+;Caesarea
 character	sub_faction turks, Danismend Bey, named character, male, age 30, x 333, y 125 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 2 , Intelligent 1 , ReligionStarter 1 
 army
