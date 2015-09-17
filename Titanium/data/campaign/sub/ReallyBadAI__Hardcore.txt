@@ -1,0 +1,19 @@
+[name]G5 ReallyBadAI Hardcore addon 
+[works for] all
+[description] Addon for G5 ReallyBadAI v5.x \n\n
+Aimed at players seeking more challenging battles, it creates more realistic command chain which locks possibility of constantly changing given out orders.\n
+It also limits time available for army deployment.\n
+More info can be obtained at:\n
+http://www.twcenter.net/forums/showthread.php?t=253132
+
+[files]
+append data\world\maps\campaign\imperial_campaign\campaign_script.txt with ReallyBadAI_Hardcore.txt before: 
+;=======================================================;
+;================= ADDITIONAL SCRIPTS ==================;
+;=======================================================;
+<end>
+append data\scripts\show_me\G5Script2.txt with ReallyBadAI_Hardcore_Custom.txt after: 
+;=======================================================;
+;================= ADDITIONAL SCRIPTS ==================;
+;=======================================================;
+<end>

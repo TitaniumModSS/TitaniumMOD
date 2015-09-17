@@ -1,0 +1,21 @@
+[name] G5 Emergency Battle CTD Fix
+[works for] all
+[description] ONLY USE IF NOTHING ELSE WORKS!\n\nAn attempt on fixing persistent battle-related CTDs caused by text files.\n\nAfter you successfully go through a previously crashing battle it needs to be uninstalled.\n
+More info can be obtained at:\n
+http://www.twcenter.net/forums/showthread.php?t=253132
+
+[files]
+append data\text\historic_events.txt with text\historic_events.txt after:
+¬
+append data\text\export_advice.txt with text\export_advice.txt after:
+¬
+append data\export_descr_advice.txt with export_descr_advice.txt before:
+;===============================================================
+;== TRIGGER DATA STARTS HERE ==
+;===============================================================
+append data\export_descr_advice.txt with export_descr_advice_trigger.txt after:
+    AdviceThread G5Script2_Thread  1
+append data\export_descr_advice_enums.txt with export_descr_advice_enums.txt
+append data\export_descr_sounds_advice.txt with export_descr_sounds_advice.txt after:
+  ;; exporting Campaign Advice
+overwrite data\scripts\show_me\G5Script_fix.txt with \scripts\show_me\G5Script_fix.txt

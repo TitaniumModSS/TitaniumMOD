@@ -1,0 +1,9 @@
+
+;------------------------------------------
+Trigger 02_G5Script_fix_Trigger
+    WhenToTest Transgression
+
+    Condition TransgressionName = TC_BATTLE_ENGAGEMENT
+          and not I_EventCounter advice_fix_launched = 1
+
+    AdviceThread G5Script_fix_Thread  1

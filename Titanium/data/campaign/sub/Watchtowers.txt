@@ -1,0 +1,11 @@
+[name] Permanent Watchtowers
+[works for] early
+[description] This modification places permanent watchtowers on the campaign map, so that the player doesn't have to place them himself.\n
+The watchtowers grant vision over the whole region, and also over every road or sea path leading to the settlement.
+[files] 
+replace data\world\maps\campaign\imperial_campaign\descr_strat.txt with watchtowers.txt from:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; >>>> start of regions section <<<< Forts
+to:
+script
+campaign_script.txt

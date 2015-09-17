@@ -1,0 +1,2784 @@
+monitor_event SettlementSelected SettlementName Inverness
+and not GovernorInResidence
+
+	filter_settlement_commands off Inverness
+end_monitor
+
+monitor_event SettlementSelected SettlementName Inverness
+and GovernorInResidence
+and not I_EventCounter Inverness_filter = 1
+
+	filter_settlement_commands on Inverness
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Oslo
+and not GovernorInResidence
+
+	filter_settlement_commands off Oslo
+end_monitor
+
+monitor_event SettlementSelected SettlementName Oslo
+and GovernorInResidence
+and not I_EventCounter Oslo_filter = 1
+
+	filter_settlement_commands on Oslo
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Nykoeping
+and not GovernorInResidence
+
+	filter_settlement_commands off Nykoeping
+end_monitor
+
+monitor_event SettlementSelected SettlementName Nykoeping
+and GovernorInResidence
+and not I_EventCounter Nykoeping_filter = 1
+
+	filter_settlement_commands on Nykoeping
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Novgorod
+and not GovernorInResidence
+
+	filter_settlement_commands off Novgorod
+end_monitor
+
+monitor_event SettlementSelected SettlementName Novgorod
+and GovernorInResidence
+and not I_EventCounter Novgorod_filter = 1
+
+	filter_settlement_commands on Novgorod
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Moscow
+and not GovernorInResidence
+
+	filter_settlement_commands off Moscow
+end_monitor
+
+monitor_event SettlementSelected SettlementName Moscow
+and GovernorInResidence
+and not I_EventCounter Moscow_filter = 1
+
+	filter_settlement_commands on Moscow
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bulgar
+and not GovernorInResidence
+
+	filter_settlement_commands off Bulgar
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bulgar
+and GovernorInResidence
+and not I_EventCounter Bulgar_filter = 1
+
+	filter_settlement_commands on Bulgar
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Riga
+and not GovernorInResidence
+
+	filter_settlement_commands off Riga
+end_monitor
+
+monitor_event SettlementSelected SettlementName Riga
+and GovernorInResidence
+and not I_EventCounter Riga_filter = 1
+
+	filter_settlement_commands on Riga
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Arhus
+and not GovernorInResidence
+
+	filter_settlement_commands off Arhus
+end_monitor
+
+monitor_event SettlementSelected SettlementName Arhus
+and GovernorInResidence
+and not I_EventCounter Arhus_filter = 1
+
+	filter_settlement_commands on Arhus
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Edinburgh
+and not GovernorInResidence
+
+	filter_settlement_commands off Edinburgh
+end_monitor
+
+monitor_event SettlementSelected SettlementName Edinburgh
+and GovernorInResidence
+and not I_EventCounter Edinburgh_filter = 1
+
+	filter_settlement_commands on Edinburgh
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Smolensk
+and not GovernorInResidence
+
+	filter_settlement_commands off Smolensk
+end_monitor
+
+monitor_event SettlementSelected SettlementName Smolensk
+and GovernorInResidence
+and not I_EventCounter Smolensk_filter = 1
+
+	filter_settlement_commands on Smolensk
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Dublin
+and not GovernorInResidence
+
+	filter_settlement_commands off Dublin
+end_monitor
+
+monitor_event SettlementSelected SettlementName Dublin
+and GovernorInResidence
+and not I_EventCounter Dublin_filter = 1
+
+	filter_settlement_commands on Dublin
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Oleshe
+and not GovernorInResidence
+
+	filter_settlement_commands off Oleshe
+end_monitor
+
+monitor_event SettlementSelected SettlementName Oleshe
+and GovernorInResidence
+and not I_EventCounter Oleshe_filter = 1
+
+	filter_settlement_commands on Oleshe
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Vilnius
+and not GovernorInResidence
+
+	filter_settlement_commands off Vilnius
+end_monitor
+
+monitor_event SettlementSelected SettlementName Vilnius
+and GovernorInResidence
+and not I_EventCounter Vilnius_filter = 1
+
+	filter_settlement_commands on Vilnius
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName York
+and not GovernorInResidence
+
+	filter_settlement_commands off York
+end_monitor
+
+monitor_event SettlementSelected SettlementName York
+and GovernorInResidence
+and not I_EventCounter York_filter = 1
+
+	filter_settlement_commands on York
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Ryazan
+and not GovernorInResidence
+
+	filter_settlement_commands off Ryazan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Ryazan
+and GovernorInResidence
+and not I_EventCounter Ryazan_filter = 1
+
+	filter_settlement_commands on Ryazan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Caernarvon
+and not GovernorInResidence
+
+	filter_settlement_commands off Caernarvon
+end_monitor
+
+monitor_event SettlementSelected SettlementName Caernarvon
+and GovernorInResidence
+and not I_EventCounter Caernarvon_filter = 1
+
+	filter_settlement_commands on Caernarvon
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Thorn
+and not GovernorInResidence
+
+	filter_settlement_commands off Thorn
+end_monitor
+
+monitor_event SettlementSelected SettlementName Thorn
+and GovernorInResidence
+and not I_EventCounter Thorn_filter = 1
+
+	filter_settlement_commands on Thorn
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Nottingham
+and not GovernorInResidence
+
+	filter_settlement_commands off Nottingham
+end_monitor
+
+monitor_event SettlementSelected SettlementName Nottingham
+and GovernorInResidence
+and not I_EventCounter Nottingham_filter = 1
+
+	filter_settlement_commands on Nottingham
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Stettin
+and not GovernorInResidence
+
+	filter_settlement_commands off Stettin
+end_monitor
+
+monitor_event SettlementSelected SettlementName Stettin
+and GovernorInResidence
+and not I_EventCounter Stettin_filter = 1
+
+	filter_settlement_commands on Stettin
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Hamburg
+and not GovernorInResidence
+
+	filter_settlement_commands off Hamburg
+end_monitor
+
+monitor_event SettlementSelected SettlementName Hamburg
+and GovernorInResidence
+and not I_EventCounter Hamburg_filter = 1
+
+	filter_settlement_commands on Hamburg
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Sarkel
+and not GovernorInResidence
+
+	filter_settlement_commands off Sarkel
+end_monitor
+
+monitor_event SettlementSelected SettlementName Sarkel
+and GovernorInResidence
+and not I_EventCounter Sarkel_filter = 1
+
+	filter_settlement_commands on Sarkel
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Antwerp
+and not GovernorInResidence
+
+	filter_settlement_commands off Antwerp
+end_monitor
+
+monitor_event SettlementSelected SettlementName Antwerp
+and GovernorInResidence
+and not I_EventCounter Antwerp_filter = 1
+
+	filter_settlement_commands on Antwerp
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Magdeburg
+and not GovernorInResidence
+
+	filter_settlement_commands off Magdeburg
+end_monitor
+
+monitor_event SettlementSelected SettlementName Magdeburg
+and GovernorInResidence
+and not I_EventCounter Magdeburg_filter = 1
+
+	filter_settlement_commands on Magdeburg
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Halych
+and not GovernorInResidence
+
+	filter_settlement_commands off Halych
+end_monitor
+
+monitor_event SettlementSelected SettlementName Halych
+and GovernorInResidence
+and not I_EventCounter Halych_filter = 1
+
+	filter_settlement_commands on Halych
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Krakow
+and not GovernorInResidence
+
+	filter_settlement_commands off Krakow
+end_monitor
+
+monitor_event SettlementSelected SettlementName Krakow
+and GovernorInResidence
+and not I_EventCounter Krakow_filter = 1
+
+	filter_settlement_commands on Krakow
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName London
+and not GovernorInResidence
+
+	filter_settlement_commands off London
+end_monitor
+
+monitor_event SettlementSelected SettlementName London
+and GovernorInResidence
+and not I_EventCounter London_filter = 1
+
+	filter_settlement_commands on London
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Wroclaw
+and not GovernorInResidence
+
+	filter_settlement_commands off Wroclaw
+end_monitor
+
+monitor_event SettlementSelected SettlementName Wroclaw
+and GovernorInResidence
+and not I_EventCounter Wroclaw_filter = 1
+
+	filter_settlement_commands on Wroclaw
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kiev
+and not GovernorInResidence
+
+	filter_settlement_commands off Kiev
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kiev
+and GovernorInResidence
+and not I_EventCounter Kiev_filter = 1
+
+	filter_settlement_commands on Kiev
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bruges
+and not GovernorInResidence
+
+	filter_settlement_commands off Bruges
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bruges
+and GovernorInResidence
+and not I_EventCounter Bruges_filter = 1
+
+	filter_settlement_commands on Bruges
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Frankfurt
+and not GovernorInResidence
+
+	filter_settlement_commands off Frankfurt
+end_monitor
+
+monitor_event SettlementSelected SettlementName Frankfurt
+and GovernorInResidence
+and not I_EventCounter Frankfurt_filter = 1
+
+	filter_settlement_commands on Frankfurt
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Metz
+and not GovernorInResidence
+
+	filter_settlement_commands off Metz
+end_monitor
+
+monitor_event SettlementSelected SettlementName Metz
+and GovernorInResidence
+and not I_EventCounter Metz_filter = 1
+
+	filter_settlement_commands on Metz
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Caen
+and not GovernorInResidence
+
+	filter_settlement_commands off Caen
+end_monitor
+
+monitor_event SettlementSelected SettlementName Caen
+and GovernorInResidence
+and not I_EventCounter Caen_filter = 1
+
+	filter_settlement_commands on Caen
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Prague
+and not GovernorInResidence
+
+	filter_settlement_commands off Prague
+end_monitor
+
+monitor_event SettlementSelected SettlementName Prague
+and GovernorInResidence
+and not I_EventCounter Prague_filter = 1
+
+	filter_settlement_commands on Prague
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Rheims
+and not GovernorInResidence
+
+	filter_settlement_commands off Rheims
+end_monitor
+
+monitor_event SettlementSelected SettlementName Rheims
+and GovernorInResidence
+and not I_EventCounter Rheims_filter = 1
+
+	filter_settlement_commands on Rheims
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Rennes
+and not GovernorInResidence
+
+	filter_settlement_commands off Rennes
+end_monitor
+
+monitor_event SettlementSelected SettlementName Rennes
+and GovernorInResidence
+and not I_EventCounter Rennes_filter = 1
+
+	filter_settlement_commands on Rennes
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Nuremburg
+and not GovernorInResidence
+
+	filter_settlement_commands off Nuremburg
+end_monitor
+
+monitor_event SettlementSelected SettlementName Nuremburg
+and GovernorInResidence
+and not I_EventCounter Nuremburg_filter = 1
+
+	filter_settlement_commands on Nuremburg
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Paris
+and not GovernorInResidence
+
+	filter_settlement_commands off Paris
+end_monitor
+
+monitor_event SettlementSelected SettlementName Paris
+and GovernorInResidence
+and not I_EventCounter Paris_filter = 1
+
+	filter_settlement_commands on Paris
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Staufen
+and not GovernorInResidence
+
+	filter_settlement_commands off Staufen
+end_monitor
+
+monitor_event SettlementSelected SettlementName Staufen
+and GovernorInResidence
+and not I_EventCounter Staufen_filter = 1
+
+	filter_settlement_commands on Staufen
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Baia
+and not GovernorInResidence
+
+	filter_settlement_commands off Baia
+end_monitor
+
+monitor_event SettlementSelected SettlementName Baia
+and GovernorInResidence
+and not I_EventCounter Baia_filter = 1
+
+	filter_settlement_commands on Baia
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Esztergom
+and not GovernorInResidence
+
+	filter_settlement_commands off Esztergom
+end_monitor
+
+monitor_event SettlementSelected SettlementName Esztergom
+and GovernorInResidence
+and not I_EventCounter Esztergom_filter = 1
+
+	filter_settlement_commands on Esztergom
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Angers
+and not GovernorInResidence
+
+	filter_settlement_commands off Angers
+end_monitor
+
+monitor_event SettlementSelected SettlementName Angers
+and GovernorInResidence
+and not I_EventCounter Angers_filter = 1
+
+	filter_settlement_commands on Angers
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Brasov
+and not GovernorInResidence
+
+	filter_settlement_commands off Brasov
+end_monitor
+
+monitor_event SettlementSelected SettlementName Brasov
+and GovernorInResidence
+and not I_EventCounter Brasov_filter = 1
+
+	filter_settlement_commands on Brasov
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Caffa
+and not GovernorInResidence
+
+	filter_settlement_commands off Caffa
+end_monitor
+
+monitor_event SettlementSelected SettlementName Caffa
+and GovernorInResidence
+and not I_EventCounter Caffa_filter = 1
+
+	filter_settlement_commands on Caffa
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Vienna
+and not GovernorInResidence
+
+	filter_settlement_commands off Vienna
+end_monitor
+
+monitor_event SettlementSelected SettlementName Vienna
+and GovernorInResidence
+and not I_EventCounter Vienna_filter = 1
+
+	filter_settlement_commands on Vienna
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Dijon
+and not GovernorInResidence
+
+	filter_settlement_commands off Dijon
+end_monitor
+
+monitor_event SettlementSelected SettlementName Dijon
+and GovernorInResidence
+and not I_EventCounter Dijon_filter = 1
+
+	filter_settlement_commands on Dijon
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bern
+and not GovernorInResidence
+
+	filter_settlement_commands off Bern
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bern
+and GovernorInResidence
+and not I_EventCounter Bern_filter = 1
+
+	filter_settlement_commands on Bern
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Innsbruck
+and not GovernorInResidence
+
+	filter_settlement_commands off Innsbruck
+end_monitor
+
+monitor_event SettlementSelected SettlementName Innsbruck
+and GovernorInResidence
+and not I_EventCounter Innsbruck_filter = 1
+
+	filter_settlement_commands on Innsbruck
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bordeaux
+and not GovernorInResidence
+
+	filter_settlement_commands off Bordeaux
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bordeaux
+and GovernorInResidence
+and not I_EventCounter Bordeaux_filter = 1
+
+	filter_settlement_commands on Bordeaux
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Tbilisi
+and not GovernorInResidence
+
+	filter_settlement_commands off Tbilisi
+end_monitor
+
+monitor_event SettlementSelected SettlementName Tbilisi
+and GovernorInResidence
+and not I_EventCounter Tbilisi_filter = 1
+
+	filter_settlement_commands on Tbilisi
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Targoviste
+and not GovernorInResidence
+
+	filter_settlement_commands off Targoviste
+end_monitor
+
+monitor_event SettlementSelected SettlementName Targoviste
+and GovernorInResidence
+and not I_EventCounter Targoviste_filter = 1
+
+	filter_settlement_commands on Targoviste
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Milan
+and not GovernorInResidence
+
+	filter_settlement_commands off Milan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Milan
+and GovernorInResidence
+and not I_EventCounter Milan_filter = 1
+
+	filter_settlement_commands on Milan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Venice
+and not GovernorInResidence
+
+	filter_settlement_commands off Venice
+end_monitor
+
+monitor_event SettlementSelected SettlementName Venice
+and GovernorInResidence
+and not I_EventCounter Venice_filter = 1
+
+	filter_settlement_commands on Venice
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Toulouse
+and not GovernorInResidence
+
+	filter_settlement_commands off Toulouse
+end_monitor
+
+monitor_event SettlementSelected SettlementName Toulouse
+and GovernorInResidence
+and not I_EventCounter Toulouse_filter = 1
+
+	filter_settlement_commands on Toulouse
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Leon
+and not GovernorInResidence
+
+	filter_settlement_commands off Leon
+end_monitor
+
+monitor_event SettlementSelected SettlementName Leon
+and GovernorInResidence
+and not I_EventCounter Leon_filter = 1
+
+	filter_settlement_commands on Leon
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Zagreb
+and not GovernorInResidence
+
+	filter_settlement_commands off Zagreb
+end_monitor
+
+monitor_event SettlementSelected SettlementName Zagreb
+and GovernorInResidence
+and not I_EventCounter Zagreb_filter = 1
+
+	filter_settlement_commands on Zagreb
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Sofia
+and not GovernorInResidence
+
+	filter_settlement_commands off Sofia
+end_monitor
+
+monitor_event SettlementSelected SettlementName Sofia
+and GovernorInResidence
+and not I_EventCounter Sofia_filter = 1
+
+	filter_settlement_commands on Sofia
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Ragusa
+and not GovernorInResidence
+
+	filter_settlement_commands off Ragusa
+end_monitor
+
+monitor_event SettlementSelected SettlementName Ragusa
+and GovernorInResidence
+and not I_EventCounter Ragusa_filter = 1
+
+	filter_settlement_commands on Ragusa
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Toledo
+and not GovernorInResidence
+
+	filter_settlement_commands off Toledo
+end_monitor
+
+monitor_event SettlementSelected SettlementName Toledo
+and GovernorInResidence
+and not I_EventCounter Toledo_filter = 1
+
+	filter_settlement_commands on Toledo
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bologna
+and not GovernorInResidence
+
+	filter_settlement_commands off Bologna
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bologna
+and GovernorInResidence
+and not I_EventCounter Bologna_filter = 1
+
+	filter_settlement_commands on Bologna
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Pamplona
+and not GovernorInResidence
+
+	filter_settlement_commands off Pamplona
+end_monitor
+
+monitor_event SettlementSelected SettlementName Pamplona
+and GovernorInResidence
+and not I_EventCounter Pamplona_filter = 1
+
+	filter_settlement_commands on Pamplona
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Genoa
+and not GovernorInResidence
+
+	filter_settlement_commands off Genoa
+end_monitor
+
+monitor_event SettlementSelected SettlementName Genoa
+and GovernorInResidence
+and not I_EventCounter Genoa_filter = 1
+
+	filter_settlement_commands on Genoa
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Pisa
+and not GovernorInResidence
+
+	filter_settlement_commands off Pisa
+end_monitor
+
+monitor_event SettlementSelected SettlementName Pisa
+and GovernorInResidence
+and not I_EventCounter Pisa_filter = 1
+
+	filter_settlement_commands on Pisa
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Trebizond
+and not GovernorInResidence
+
+	filter_settlement_commands off Trebizond
+end_monitor
+
+monitor_event SettlementSelected SettlementName Trebizond
+and GovernorInResidence
+and not I_EventCounter Trebizond_filter = 1
+
+	filter_settlement_commands on Trebizond
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Marseille
+and not GovernorInResidence
+
+	filter_settlement_commands off Marseille
+end_monitor
+
+monitor_event SettlementSelected SettlementName Marseille
+and GovernorInResidence
+and not I_EventCounter Marseille_filter = 1
+
+	filter_settlement_commands on Marseille
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Yerevan
+and not GovernorInResidence
+
+	filter_settlement_commands off Yerevan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Yerevan
+and GovernorInResidence
+and not I_EventCounter Yerevan_filter = 1
+
+	filter_settlement_commands on Yerevan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Zaragoza
+and not GovernorInResidence
+
+	filter_settlement_commands off Zaragoza
+end_monitor
+
+monitor_event SettlementSelected SettlementName Zaragoza
+and GovernorInResidence
+and not I_EventCounter Zaragoza_filter = 1
+
+	filter_settlement_commands on Zaragoza
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Constantinople
+and not GovernorInResidence
+
+	filter_settlement_commands off Constantinople
+end_monitor
+
+monitor_event SettlementSelected SettlementName Constantinople
+and GovernorInResidence
+and not I_EventCounter Constantinople_filter = 1
+
+	filter_settlement_commands on Constantinople
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Lisbon
+and not GovernorInResidence
+
+	filter_settlement_commands off Lisbon
+end_monitor
+
+monitor_event SettlementSelected SettlementName Lisbon
+and GovernorInResidence
+and not I_EventCounter Lisbon_filter = 1
+
+	filter_settlement_commands on Lisbon
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Thessalonica
+and not GovernorInResidence
+
+	filter_settlement_commands off Thessalonica
+end_monitor
+
+monitor_event SettlementSelected SettlementName Thessalonica
+and GovernorInResidence
+and not I_EventCounter Thessalonica_filter = 1
+
+	filter_settlement_commands on Thessalonica
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Arta
+and not GovernorInResidence
+
+	filter_settlement_commands off Arta
+end_monitor
+
+monitor_event SettlementSelected SettlementName Arta
+and GovernorInResidence
+and not I_EventCounter Arta_filter = 1
+
+	filter_settlement_commands on Arta
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Ajaccio
+and not GovernorInResidence
+
+	filter_settlement_commands off Ajaccio
+end_monitor
+
+monitor_event SettlementSelected SettlementName Ajaccio
+and GovernorInResidence
+and not I_EventCounter Ajaccio_filter = 1
+
+	filter_settlement_commands on Ajaccio
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Nicaea
+and not GovernorInResidence
+
+	filter_settlement_commands off Nicaea
+end_monitor
+
+monitor_event SettlementSelected SettlementName Nicaea
+and GovernorInResidence
+and not I_EventCounter Nicaea_filter = 1
+
+	filter_settlement_commands on Nicaea
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Rome
+and not GovernorInResidence
+
+	filter_settlement_commands off Rome
+end_monitor
+
+monitor_event SettlementSelected SettlementName Rome
+and GovernorInResidence
+and not I_EventCounter Rome_filter = 1
+
+	filter_settlement_commands on Rome
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Naples
+and not GovernorInResidence
+
+	filter_settlement_commands off Naples
+end_monitor
+
+monitor_event SettlementSelected SettlementName Naples
+and GovernorInResidence
+and not I_EventCounter Naples_filter = 1
+
+	filter_settlement_commands on Naples
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Caesarea
+and not GovernorInResidence
+
+	filter_settlement_commands off Caesarea
+end_monitor
+
+monitor_event SettlementSelected SettlementName Caesarea
+and GovernorInResidence
+and not I_EventCounter Caesarea_filter = 1
+
+	filter_settlement_commands on Caesarea
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Baghdad
+and not GovernorInResidence
+
+	filter_settlement_commands off Baghdad
+end_monitor
+
+monitor_event SettlementSelected SettlementName Baghdad
+and GovernorInResidence
+and not I_EventCounter Baghdad_filter = 1
+
+	filter_settlement_commands on Baghdad
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Cordoba
+and not GovernorInResidence
+
+	filter_settlement_commands off Cordoba
+end_monitor
+
+monitor_event SettlementSelected SettlementName Cordoba
+and GovernorInResidence
+and not I_EventCounter Cordoba_filter = 1
+
+	filter_settlement_commands on Cordoba
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Durazzo
+and not GovernorInResidence
+
+	filter_settlement_commands off Durazzo
+end_monitor
+
+monitor_event SettlementSelected SettlementName Durazzo
+and GovernorInResidence
+and not I_EventCounter Durazzo_filter = 1
+
+	filter_settlement_commands on Durazzo
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Valencia
+and not GovernorInResidence
+
+	filter_settlement_commands off Valencia
+end_monitor
+
+monitor_event SettlementSelected SettlementName Valencia
+and GovernorInResidence
+and not I_EventCounter Valencia_filter = 1
+
+	filter_settlement_commands on Valencia
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Iconium
+and not GovernorInResidence
+
+	filter_settlement_commands off Iconium
+end_monitor
+
+monitor_event SettlementSelected SettlementName Iconium
+and GovernorInResidence
+and not I_EventCounter Iconium_filter = 1
+
+	filter_settlement_commands on Iconium
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Adana
+and not GovernorInResidence
+
+	filter_settlement_commands off Adana
+end_monitor
+
+monitor_event SettlementSelected SettlementName Adana
+and GovernorInResidence
+and not I_EventCounter Adana_filter = 1
+
+	filter_settlement_commands on Adana
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Mosul
+and not GovernorInResidence
+
+	filter_settlement_commands off Mosul
+end_monitor
+
+monitor_event SettlementSelected SettlementName Mosul
+and GovernorInResidence
+and not I_EventCounter Mosul_filter = 1
+
+	filter_settlement_commands on Mosul
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Cagliari
+and not GovernorInResidence
+
+	filter_settlement_commands off Cagliari
+end_monitor
+
+monitor_event SettlementSelected SettlementName Cagliari
+and GovernorInResidence
+and not I_EventCounter Cagliari_filter = 1
+
+	filter_settlement_commands on Cagliari
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Edessa
+and not GovernorInResidence
+
+	filter_settlement_commands off Edessa
+end_monitor
+
+monitor_event SettlementSelected SettlementName Edessa
+and GovernorInResidence
+and not I_EventCounter Edessa_filter = 1
+
+	filter_settlement_commands on Edessa
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Smyrna
+and not GovernorInResidence
+
+	filter_settlement_commands off Smyrna
+end_monitor
+
+monitor_event SettlementSelected SettlementName Smyrna
+and GovernorInResidence
+and not I_EventCounter Smyrna_filter = 1
+
+	filter_settlement_commands on Smyrna
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Antioch
+and not GovernorInResidence
+
+	filter_settlement_commands off Antioch
+end_monitor
+
+monitor_event SettlementSelected SettlementName Antioch
+and GovernorInResidence
+and not I_EventCounter Antioch_filter = 1
+
+	filter_settlement_commands on Antioch
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Granada
+and not GovernorInResidence
+
+	filter_settlement_commands off Granada
+end_monitor
+
+monitor_event SettlementSelected SettlementName Granada
+and GovernorInResidence
+and not I_EventCounter Granada_filter = 1
+
+	filter_settlement_commands on Granada
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Aleppo
+and not GovernorInResidence
+
+	filter_settlement_commands off Aleppo
+end_monitor
+
+monitor_event SettlementSelected SettlementName Aleppo
+and GovernorInResidence
+and not I_EventCounter Aleppo_filter = 1
+
+	filter_settlement_commands on Aleppo
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Medina
+and not GovernorInResidence
+
+	filter_settlement_commands off Medina
+end_monitor
+
+monitor_event SettlementSelected SettlementName Medina
+and GovernorInResidence
+and not I_EventCounter Medina_filter = 1
+
+	filter_settlement_commands on Medina
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Palermo
+and not GovernorInResidence
+
+	filter_settlement_commands off Palermo
+end_monitor
+
+monitor_event SettlementSelected SettlementName Palermo
+and GovernorInResidence
+and not I_EventCounter Palermo_filter = 1
+
+	filter_settlement_commands on Palermo
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Corinth
+and not GovernorInResidence
+
+	filter_settlement_commands off Corinth
+end_monitor
+
+monitor_event SettlementSelected SettlementName Corinth
+and GovernorInResidence
+and not I_EventCounter Corinth_filter = 1
+
+	filter_settlement_commands on Corinth
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Marrakesh
+and not GovernorInResidence
+
+	filter_settlement_commands off Marrakesh
+end_monitor
+
+monitor_event SettlementSelected SettlementName Marrakesh
+and GovernorInResidence
+and not I_EventCounter Marrakesh_filter = 1
+
+	filter_settlement_commands on Marrakesh
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Nicosia
+and not GovernorInResidence
+
+	filter_settlement_commands off Nicosia
+end_monitor
+
+monitor_event SettlementSelected SettlementName Nicosia
+and GovernorInResidence
+and not I_EventCounter Nicosia_filter = 1
+
+	filter_settlement_commands on Nicosia
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Damascus
+and not GovernorInResidence
+
+	filter_settlement_commands off Damascus
+end_monitor
+
+monitor_event SettlementSelected SettlementName Damascus
+and GovernorInResidence
+and not I_EventCounter Damascus_filter = 1
+
+	filter_settlement_commands on Damascus
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Algiers
+and not GovernorInResidence
+
+	filter_settlement_commands off Algiers
+end_monitor
+
+monitor_event SettlementSelected SettlementName Algiers
+and GovernorInResidence
+and not I_EventCounter Algiers_filter = 1
+
+	filter_settlement_commands on Algiers
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Tunis
+and not GovernorInResidence
+
+	filter_settlement_commands off Tunis
+end_monitor
+
+monitor_event SettlementSelected SettlementName Tunis
+and GovernorInResidence
+and not I_EventCounter Tunis_filter = 1
+
+	filter_settlement_commands on Tunis
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Acre
+and not GovernorInResidence
+
+	filter_settlement_commands off Acre
+end_monitor
+
+monitor_event SettlementSelected SettlementName Acre
+and GovernorInResidence
+and not I_EventCounter Acre_filter = 1
+
+	filter_settlement_commands on Acre
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Iraklion
+and not GovernorInResidence
+
+	filter_settlement_commands off Iraklion
+end_monitor
+
+monitor_event SettlementSelected SettlementName Iraklion
+and GovernorInResidence
+and not I_EventCounter Iraklion_filter = 1
+
+	filter_settlement_commands on Iraklion
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Jerusalem
+and not GovernorInResidence
+
+	filter_settlement_commands off Jerusalem
+end_monitor
+
+monitor_event SettlementSelected SettlementName Jerusalem
+and GovernorInResidence
+and not I_EventCounter Jerusalem_filter = 1
+
+	filter_settlement_commands on Jerusalem
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Gaza
+and not GovernorInResidence
+
+	filter_settlement_commands off Gaza
+end_monitor
+
+monitor_event SettlementSelected SettlementName Gaza
+and GovernorInResidence
+and not I_EventCounter Gaza_filter = 1
+
+	filter_settlement_commands on Gaza
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Tripoli
+and not GovernorInResidence
+
+	filter_settlement_commands off Tripoli
+end_monitor
+
+monitor_event SettlementSelected SettlementName Tripoli
+and GovernorInResidence
+and not I_EventCounter Tripoli_filter = 1
+
+	filter_settlement_commands on Tripoli
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Alexandria
+and not GovernorInResidence
+
+	filter_settlement_commands off Alexandria
+end_monitor
+
+monitor_event SettlementSelected SettlementName Alexandria
+and GovernorInResidence
+and not I_EventCounter Alexandria_filter = 1
+
+	filter_settlement_commands on Alexandria
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Damietta
+and not GovernorInResidence
+
+	filter_settlement_commands off Damietta
+end_monitor
+
+monitor_event SettlementSelected SettlementName Damietta
+and GovernorInResidence
+and not I_EventCounter Damietta_filter = 1
+
+	filter_settlement_commands on Damietta
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Cairo
+and not GovernorInResidence
+
+	filter_settlement_commands off Cairo
+end_monitor
+
+monitor_event SettlementSelected SettlementName Cairo
+and GovernorInResidence
+and not I_EventCounter Cairo_filter = 1
+
+	filter_settlement_commands on Cairo
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Qarisiya
+and not GovernorInResidence
+
+	filter_settlement_commands off Qarisiya
+end_monitor
+
+monitor_event SettlementSelected SettlementName Qarisiya
+and GovernorInResidence
+and not I_EventCounter Qarisiya_filter = 1
+
+	filter_settlement_commands on Qarisiya
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Basra
+and not GovernorInResidence
+
+	filter_settlement_commands off Basra
+end_monitor
+
+monitor_event SettlementSelected SettlementName Basra
+and GovernorInResidence
+and not I_EventCounter Basra_filter = 1
+
+	filter_settlement_commands on Basra
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Benghazi
+and not GovernorInResidence
+
+	filter_settlement_commands off Benghazi
+end_monitor
+
+monitor_event SettlementSelected SettlementName Benghazi
+and GovernorInResidence
+and not I_EventCounter Benghazi_filter = 1
+
+	filter_settlement_commands on Benghazi
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bryansk
+and not GovernorInResidence
+
+	filter_settlement_commands off Bryansk
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bryansk
+and GovernorInResidence
+and not I_EventCounter Bryansk_filter = 1
+
+	filter_settlement_commands on Bryansk
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Lyon
+and not GovernorInResidence
+
+	filter_settlement_commands off Lyon
+end_monitor
+
+monitor_event SettlementSelected SettlementName Lyon
+and GovernorInResidence
+and not I_EventCounter Lyon_filter = 1
+
+	filter_settlement_commands on Lyon
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Sinop
+and not GovernorInResidence
+
+	filter_settlement_commands off Sinop
+end_monitor
+
+monitor_event SettlementSelected SettlementName Sinop
+and GovernorInResidence
+and not I_EventCounter Sinop_filter = 1
+
+	filter_settlement_commands on Sinop
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Belgrade
+and not GovernorInResidence
+
+	filter_settlement_commands off Belgrade
+end_monitor
+
+monitor_event SettlementSelected SettlementName Belgrade
+and GovernorInResidence
+and not I_EventCounter Belgrade_filter = 1
+
+	filter_settlement_commands on Belgrade
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Barcelona
+and not GovernorInResidence
+
+	filter_settlement_commands off Barcelona
+end_monitor
+
+monitor_event SettlementSelected SettlementName Barcelona
+and GovernorInResidence
+and not I_EventCounter Barcelona_filter = 1
+
+	filter_settlement_commands on Barcelona
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Palma
+and not GovernorInResidence
+
+	filter_settlement_commands off Palma
+end_monitor
+
+monitor_event SettlementSelected SettlementName Palma
+and GovernorInResidence
+and not I_EventCounter Palma_filter = 1
+
+	filter_settlement_commands on Palma
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bari
+and not GovernorInResidence
+
+	filter_settlement_commands off Bari
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bari
+and GovernorInResidence
+and not I_EventCounter Bari_filter = 1
+
+	filter_settlement_commands on Bari
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Skara
+and not GovernorInResidence
+
+	filter_settlement_commands off Skara
+end_monitor
+
+monitor_event SettlementSelected SettlementName Skara
+and GovernorInResidence
+and not I_EventCounter Skara_filter = 1
+
+	filter_settlement_commands on Skara
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Exeter
+and not GovernorInResidence
+
+	filter_settlement_commands off Exeter
+end_monitor
+
+monitor_event SettlementSelected SettlementName Exeter
+and GovernorInResidence
+and not I_EventCounter Exeter_filter = 1
+
+	filter_settlement_commands on Exeter
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Oporto
+and not GovernorInResidence
+
+	filter_settlement_commands off Oporto
+end_monitor
+
+monitor_event SettlementSelected SettlementName Oporto
+and GovernorInResidence
+and not I_EventCounter Oporto_filter = 1
+
+	filter_settlement_commands on Oporto
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Mecca
+and not GovernorInResidence
+
+	filter_settlement_commands off Mecca
+end_monitor
+
+monitor_event SettlementSelected SettlementName Mecca
+and GovernorInResidence
+and not I_EventCounter Mecca_filter = 1
+
+	filter_settlement_commands on Mecca
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Beleb_el_Anab
+and not GovernorInResidence
+
+	filter_settlement_commands off Beleb_el_Anab
+end_monitor
+
+monitor_event SettlementSelected SettlementName Beleb_el_Anab
+and GovernorInResidence
+and not I_EventCounter Beleb_el_Anab_filter = 1
+
+	filter_settlement_commands on Beleb_el_Anab
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Tortosa
+and not GovernorInResidence
+
+	filter_settlement_commands off Tortosa
+end_monitor
+
+monitor_event SettlementSelected SettlementName Tortosa
+and GovernorInResidence
+and not I_EventCounter Tortosa_filter = 1
+
+	filter_settlement_commands on Tortosa
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Astrakhan
+and not GovernorInResidence
+
+	filter_settlement_commands off Astrakhan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Astrakhan
+and GovernorInResidence
+and not I_EventCounter Astrakhan_filter = 1
+
+	filter_settlement_commands on Astrakhan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Luxor
+and not GovernorInResidence
+
+	filter_settlement_commands off Luxor
+end_monitor
+
+monitor_event SettlementSelected SettlementName Luxor
+and GovernorInResidence
+and not I_EventCounter Luxor_filter = 1
+
+	filter_settlement_commands on Luxor
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Clermont
+and not GovernorInResidence
+
+	filter_settlement_commands off Clermont
+end_monitor
+
+monitor_event SettlementSelected SettlementName Clermont
+and GovernorInResidence
+and not I_EventCounter Clermont_filter = 1
+
+	filter_settlement_commands on Clermont
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Groningen
+and not GovernorInResidence
+
+	filter_settlement_commands off Groningen
+end_monitor
+
+monitor_event SettlementSelected SettlementName Groningen
+and GovernorInResidence
+and not I_EventCounter Groningen_filter = 1
+
+	filter_settlement_commands on Groningen
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Salamanca
+and not GovernorInResidence
+
+	filter_settlement_commands off Salamanca
+end_monitor
+
+monitor_event SettlementSelected SettlementName Salamanca
+and GovernorInResidence
+and not I_EventCounter Salamanca_filter = 1
+
+	filter_settlement_commands on Salamanca
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Melilla
+and not GovernorInResidence
+
+	filter_settlement_commands off Melilla
+end_monitor
+
+monitor_event SettlementSelected SettlementName Melilla
+and GovernorInResidence
+and not I_EventCounter Melilla_filter = 1
+
+	filter_settlement_commands on Melilla
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Khlynov
+and not GovernorInResidence
+
+	filter_settlement_commands off Khlynov
+end_monitor
+
+monitor_event SettlementSelected SettlementName Khlynov
+and GovernorInResidence
+and not I_EventCounter Khlynov_filter = 1
+
+	filter_settlement_commands on Khlynov
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Salzburg
+and not GovernorInResidence
+
+	filter_settlement_commands off Salzburg
+end_monitor
+
+monitor_event SettlementSelected SettlementName Salzburg
+and GovernorInResidence
+and not I_EventCounter Salzburg_filter = 1
+
+	filter_settlement_commands on Salzburg
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Diyarbakir
+and not GovernorInResidence
+
+	filter_settlement_commands off Diyarbakir
+end_monitor
+
+monitor_event SettlementSelected SettlementName Diyarbakir
+and GovernorInResidence
+and not I_EventCounter Diyarbakir_filter = 1
+
+	filter_settlement_commands on Diyarbakir
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Plock
+and not GovernorInResidence
+
+	filter_settlement_commands off Plock
+end_monitor
+
+monitor_event SettlementSelected SettlementName Plock
+and GovernorInResidence
+and not I_EventCounter Plock_filter = 1
+
+	filter_settlement_commands on Plock
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Ancona
+and not GovernorInResidence
+
+	filter_settlement_commands off Ancona
+end_monitor
+
+monitor_event SettlementSelected SettlementName Ancona
+and GovernorInResidence
+and not I_EventCounter Ancona_filter = 1
+
+	filter_settlement_commands on Ancona
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Athens
+and not GovernorInResidence
+
+	filter_settlement_commands off Athens
+end_monitor
+
+monitor_event SettlementSelected SettlementName Athens
+and GovernorInResidence
+and not I_EventCounter Athens_filter = 1
+
+	filter_settlement_commands on Athens
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Canakkale
+and not GovernorInResidence
+
+	filter_settlement_commands off Canakkale
+end_monitor
+
+monitor_event SettlementSelected SettlementName Canakkale
+and GovernorInResidence
+and not I_EventCounter Canakkale_filter = 1
+
+	filter_settlement_commands on Canakkale
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Bergen
+and not GovernorInResidence
+
+	filter_settlement_commands off Bergen
+end_monitor
+
+monitor_event SettlementSelected SettlementName Bergen
+and GovernorInResidence
+and not I_EventCounter Bergen_filter = 1
+
+	filter_settlement_commands on Bergen
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Tmutarakan
+and not GovernorInResidence
+
+	filter_settlement_commands off Tmutarakan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Tmutarakan
+and GovernorInResidence
+and not I_EventCounter Tmutarakan_filter = 1
+
+	filter_settlement_commands on Tmutarakan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Uppsala
+and not GovernorInResidence
+
+	filter_settlement_commands off Uppsala
+end_monitor
+
+monitor_event SettlementSelected SettlementName Uppsala
+and GovernorInResidence
+and not I_EventCounter Uppsala_filter = 1
+
+	filter_settlement_commands on Uppsala
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kassa
+and not GovernorInResidence
+
+	filter_settlement_commands off Kassa
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kassa
+and GovernorInResidence
+and not I_EventCounter Kassa_filter = 1
+
+	filter_settlement_commands on Kassa
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Silves
+and not GovernorInResidence
+
+	filter_settlement_commands off Silves
+end_monitor
+
+monitor_event SettlementSelected SettlementName Silves
+and GovernorInResidence
+and not I_EventCounter Silves_filter = 1
+
+	filter_settlement_commands on Silves
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Scopia
+and not GovernorInResidence
+
+	filter_settlement_commands off Scopia
+end_monitor
+
+monitor_event SettlementSelected SettlementName Scopia
+and GovernorInResidence
+and not I_EventCounter Scopia_filter = 1
+
+	filter_settlement_commands on Scopia
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Winchester
+and not GovernorInResidence
+
+	filter_settlement_commands off Winchester
+end_monitor
+
+monitor_event SettlementSelected SettlementName Winchester
+and GovernorInResidence
+and not I_EventCounter Winchester_filter = 1
+
+	filter_settlement_commands on Winchester
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Baku
+and not GovernorInResidence
+
+	filter_settlement_commands off Baku
+end_monitor
+
+monitor_event SettlementSelected SettlementName Baku
+and GovernorInResidence
+and not I_EventCounter Baku_filter = 1
+
+	filter_settlement_commands on Baku
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Murcia
+and not GovernorInResidence
+
+	filter_settlement_commands off Murcia
+end_monitor
+
+monitor_event SettlementSelected SettlementName Murcia
+and GovernorInResidence
+and not I_EventCounter Murcia_filter = 1
+
+	filter_settlement_commands on Murcia
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Syracuse
+and not GovernorInResidence
+
+	filter_settlement_commands off Syracuse
+end_monitor
+
+monitor_event SettlementSelected SettlementName Syracuse
+and GovernorInResidence
+and not I_EventCounter Syracuse_filter = 1
+
+	filter_settlement_commands on Syracuse
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Al-Mu'miniya
+and not GovernorInResidence
+
+	filter_settlement_commands off Al-Mu'miniya
+end_monitor
+
+monitor_event SettlementSelected SettlementName Al-Mu'miniya
+and GovernorInResidence
+and not I_EventCounter Al-Mu'miniya_filter = 1
+
+	filter_settlement_commands on Al-Mu'miniya
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Burgos
+and not GovernorInResidence
+
+	filter_settlement_commands off Burgos
+end_monitor
+
+monitor_event SettlementSelected SettlementName Burgos
+and GovernorInResidence
+and not I_EventCounter Burgos_filter = 1
+
+	filter_settlement_commands on Burgos
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Mensk
+and not GovernorInResidence
+
+	filter_settlement_commands off Mensk
+end_monitor
+
+monitor_event SettlementSelected SettlementName Mensk
+and GovernorInResidence
+and not I_EventCounter Mensk_filter = 1
+
+	filter_settlement_commands on Mensk
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Cologne
+and not GovernorInResidence
+
+	filter_settlement_commands off Cologne
+end_monitor
+
+monitor_event SettlementSelected SettlementName Cologne
+and GovernorInResidence
+and not I_EventCounter Cologne_filter = 1
+
+	filter_settlement_commands on Cologne
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Al_Aqaba
+and not GovernorInResidence
+
+	filter_settlement_commands off Al_Aqaba
+end_monitor
+
+monitor_event SettlementSelected SettlementName Al_Aqaba
+and GovernorInResidence
+and not I_EventCounter Al_Aqaba_filter = 1
+
+	filter_settlement_commands on Al_Aqaba
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Ankara
+and not GovernorInResidence
+
+	filter_settlement_commands off Ankara
+end_monitor
+
+monitor_event SettlementSelected SettlementName Ankara
+and GovernorInResidence
+and not I_EventCounter Ankara_filter = 1
+
+	filter_settlement_commands on Ankara
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Yaroslavl
+and not GovernorInResidence
+
+	filter_settlement_commands off Yaroslavl
+end_monitor
+
+monitor_event SettlementSelected SettlementName Yaroslavl
+and GovernorInResidence
+and not I_EventCounter Yaroslavl_filter = 1
+
+	filter_settlement_commands on Yaroslavl
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kerak
+and not GovernorInResidence
+
+	filter_settlement_commands off Kerak
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kerak
+and GovernorInResidence
+and not I_EventCounter Kerak_filter = 1
+
+	filter_settlement_commands on Kerak
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Eikundarsund
+and not GovernorInResidence
+
+	filter_settlement_commands off Eikundarsund
+end_monitor
+
+monitor_event SettlementSelected SettlementName Eikundarsund
+and GovernorInResidence
+and not I_EventCounter Eikundarsund_filter = 1
+
+	filter_settlement_commands on Eikundarsund
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Galway
+and not GovernorInResidence
+
+	filter_settlement_commands off Galway
+end_monitor
+
+monitor_event SettlementSelected SettlementName Galway
+and GovernorInResidence
+and not I_EventCounter Galway_filter = 1
+
+	filter_settlement_commands on Galway
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Palanga
+and not GovernorInResidence
+
+	filter_settlement_commands off Palanga
+end_monitor
+
+monitor_event SettlementSelected SettlementName Palanga
+and GovernorInResidence
+and not I_EventCounter Palanga_filter = 1
+
+	filter_settlement_commands on Palanga
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Pskov
+and not GovernorInResidence
+
+	filter_settlement_commands off Pskov
+end_monitor
+
+monitor_event SettlementSelected SettlementName Pskov
+and GovernorInResidence
+and not I_EventCounter Pskov_filter = 1
+
+	filter_settlement_commands on Pskov
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Visby
+and not GovernorInResidence
+
+	filter_settlement_commands off Visby
+end_monitor
+
+monitor_event SettlementSelected SettlementName Visby
+and GovernorInResidence
+and not I_EventCounter Visby_filter = 1
+
+	filter_settlement_commands on Visby
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Roskilde
+and not GovernorInResidence
+
+	filter_settlement_commands off Roskilde
+end_monitor
+
+monitor_event SettlementSelected SettlementName Roskilde
+and GovernorInResidence
+and not I_EventCounter Roskilde_filter = 1
+
+	filter_settlement_commands on Roskilde
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Lund
+and not GovernorInResidence
+
+	filter_settlement_commands off Lund
+end_monitor
+
+monitor_event SettlementSelected SettlementName Lund
+and GovernorInResidence
+and not I_EventCounter Lund_filter = 1
+
+	filter_settlement_commands on Lund
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Mashhad
+and not GovernorInResidence
+
+	filter_settlement_commands off Mashhad
+end_monitor
+
+monitor_event SettlementSelected SettlementName Mashhad
+and GovernorInResidence
+and not I_EventCounter Mashhad_filter = 1
+
+	filter_settlement_commands on Mashhad
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kerman
+and not GovernorInResidence
+
+	filter_settlement_commands off Kerman
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kerman
+and GovernorInResidence
+and not I_EventCounter Kerman_filter = 1
+
+	filter_settlement_commands on Kerman
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Urgench
+and not GovernorInResidence
+
+	filter_settlement_commands off Urgench
+end_monitor
+
+monitor_event SettlementSelected SettlementName Urgench
+and GovernorInResidence
+and not I_EventCounter Urgench_filter = 1
+
+	filter_settlement_commands on Urgench
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Ray
+and not GovernorInResidence
+
+	filter_settlement_commands off Ray
+end_monitor
+
+monitor_event SettlementSelected SettlementName Ray
+and GovernorInResidence
+and not I_EventCounter Ray_filter = 1
+
+	filter_settlement_commands on Ray
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Isfahan
+and not GovernorInResidence
+
+	filter_settlement_commands off Isfahan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Isfahan
+and GovernorInResidence
+and not I_EventCounter Isfahan_filter = 1
+
+	filter_settlement_commands on Isfahan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Shiraz
+and not GovernorInResidence
+
+	filter_settlement_commands off Shiraz
+end_monitor
+
+monitor_event SettlementSelected SettlementName Shiraz
+and GovernorInResidence
+and not I_EventCounter Shiraz_filter = 1
+
+	filter_settlement_commands on Shiraz
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Sharjah
+and not GovernorInResidence
+
+	filter_settlement_commands off Sharjah
+end_monitor
+
+monitor_event SettlementSelected SettlementName Sharjah
+and GovernorInResidence
+and not I_EventCounter Sharjah_filter = 1
+
+	filter_settlement_commands on Sharjah
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Gorgan
+and not GovernorInResidence
+
+	filter_settlement_commands off Gorgan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Gorgan
+and GovernorInResidence
+and not I_EventCounter Gorgan_filter = 1
+
+	filter_settlement_commands on Gorgan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Khiva
+and not GovernorInResidence
+
+	filter_settlement_commands off Khiva
+end_monitor
+
+monitor_event SettlementSelected SettlementName Khiva
+and GovernorInResidence
+and not I_EventCounter Khiva_filter = 1
+
+	filter_settlement_commands on Khiva
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kazan
+and not GovernorInResidence
+
+	filter_settlement_commands off Kazan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kazan
+and GovernorInResidence
+and not I_EventCounter Kazan_filter = 1
+
+	filter_settlement_commands on Kazan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Tayma
+and not GovernorInResidence
+
+	filter_settlement_commands off Tayma
+end_monitor
+
+monitor_event SettlementSelected SettlementName Tayma
+and GovernorInResidence
+and not I_EventCounter Tayma_filter = 1
+
+	filter_settlement_commands on Tayma
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Jaiksk
+and not GovernorInResidence
+
+	filter_settlement_commands off Jaiksk
+end_monitor
+
+monitor_event SettlementSelected SettlementName Jaiksk
+and GovernorInResidence
+and not I_EventCounter Jaiksk_filter = 1
+
+	filter_settlement_commands on Jaiksk
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Konjikala
+and not GovernorInResidence
+
+	filter_settlement_commands off Konjikala
+end_monitor
+
+monitor_event SettlementSelected SettlementName Konjikala
+and GovernorInResidence
+and not I_EventCounter Konjikala_filter = 1
+
+	filter_settlement_commands on Konjikala
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Yazd
+and not GovernorInResidence
+
+	filter_settlement_commands off Yazd
+end_monitor
+
+monitor_event SettlementSelected SettlementName Yazd
+and GovernorInResidence
+and not I_EventCounter Yazd_filter = 1
+
+	filter_settlement_commands on Yazd
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Al-Mahdiya
+and not GovernorInResidence
+
+	filter_settlement_commands off Al-Mahdiya
+end_monitor
+
+monitor_event SettlementSelected SettlementName Al-Mahdiya
+and GovernorInResidence
+and not I_EventCounter Al-Mahdiya_filter = 1
+
+	filter_settlement_commands on Al-Mahdiya
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Zhytomyr
+and not GovernorInResidence
+
+	filter_settlement_commands off Zhytomyr
+end_monitor
+
+monitor_event SettlementSelected SettlementName Zhytomyr
+and GovernorInResidence
+and not I_EventCounter Zhytomyr_filter = 1
+
+	filter_settlement_commands on Zhytomyr
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Polotsk
+and not GovernorInResidence
+
+	filter_settlement_commands off Polotsk
+end_monitor
+
+monitor_event SettlementSelected SettlementName Polotsk
+and GovernorInResidence
+and not I_EventCounter Polotsk_filter = 1
+
+	filter_settlement_commands on Polotsk
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Embi
+and not GovernorInResidence
+
+	filter_settlement_commands off Embi
+end_monitor
+
+monitor_event SettlementSelected SettlementName Embi
+and GovernorInResidence
+and not I_EventCounter Embi_filter = 1
+
+	filter_settlement_commands on Embi
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Damghan
+and not GovernorInResidence
+
+	filter_settlement_commands off Damghan
+end_monitor
+
+monitor_event SettlementSelected SettlementName Damghan
+and GovernorInResidence
+and not I_EventCounter Damghan_filter = 1
+
+	filter_settlement_commands on Damghan
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Turku
+and not GovernorInResidence
+
+	filter_settlement_commands off Turku
+end_monitor
+
+monitor_event SettlementSelected SettlementName Turku
+and GovernorInResidence
+and not I_EventCounter Turku_filter = 1
+
+	filter_settlement_commands on Turku
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Fes
+and not GovernorInResidence
+
+	filter_settlement_commands off Fes
+end_monitor
+
+monitor_event SettlementSelected SettlementName Fes
+and GovernorInResidence
+and not I_EventCounter Fes_filter = 1
+
+	filter_settlement_commands on Fes
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Rhodes
+and not GovernorInResidence
+
+	filter_settlement_commands off Rhodes
+end_monitor
+
+monitor_event SettlementSelected SettlementName Rhodes
+and GovernorInResidence
+and not I_EventCounter Rhodes_filter = 1
+
+	filter_settlement_commands on Rhodes
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kermanshah
+and not GovernorInResidence
+
+	filter_settlement_commands off Kermanshah
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kermanshah
+and GovernorInResidence
+and not I_EventCounter Kermanshah_filter = 1
+
+	filter_settlement_commands on Kermanshah
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Tabriz
+and not GovernorInResidence
+
+	filter_settlement_commands off Tabriz
+end_monitor
+
+monitor_event SettlementSelected SettlementName Tabriz
+and GovernorInResidence
+and not I_EventCounter Tabriz_filter = 1
+
+	filter_settlement_commands on Tabriz
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Pereyaslav
+and not GovernorInResidence
+
+	filter_settlement_commands off Pereyaslav
+end_monitor
+
+monitor_event SettlementSelected SettlementName Pereyaslav
+and GovernorInResidence
+and not I_EventCounter Pereyaslav_filter = 1
+
+	filter_settlement_commands on Pereyaslav
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Adrianople
+and not GovernorInResidence
+
+	filter_settlement_commands off Adrianople
+end_monitor
+
+monitor_event SettlementSelected SettlementName Adrianople
+and GovernorInResidence
+and not I_EventCounter Adrianople_filter = 1
+
+	filter_settlement_commands on Adrianople
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Seville
+and not GovernorInResidence
+
+	filter_settlement_commands off Seville
+end_monitor
+
+monitor_event SettlementSelected SettlementName Seville
+and GovernorInResidence
+and not I_EventCounter Seville_filter = 1
+
+	filter_settlement_commands on Seville
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Aberdeen
+and not GovernorInResidence
+
+	filter_settlement_commands off Aberdeen
+end_monitor
+
+monitor_event SettlementSelected SettlementName Aberdeen
+and GovernorInResidence
+and not I_EventCounter Aberdeen_filter = 1
+
+	filter_settlement_commands on Aberdeen
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Oran
+and not GovernorInResidence
+
+	filter_settlement_commands off Oran
+end_monitor
+
+monitor_event SettlementSelected SettlementName Oran
+and GovernorInResidence
+and not I_EventCounter Oran_filter = 1
+
+	filter_settlement_commands on Oran
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Hrodna
+and not GovernorInResidence
+
+	filter_settlement_commands off Hrodna
+end_monitor
+
+monitor_event SettlementSelected SettlementName Hrodna
+and GovernorInResidence
+and not I_EventCounter Hrodna_filter = 1
+
+	filter_settlement_commands on Hrodna
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Azaq
+and not GovernorInResidence
+
+	filter_settlement_commands off Azaq
+end_monitor
+
+monitor_event SettlementSelected SettlementName Azaq
+and GovernorInResidence
+and not I_EventCounter Azaq_filter = 1
+
+	filter_settlement_commands on Azaq
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Reval
+and not GovernorInResidence
+
+	filter_settlement_commands off Reval
+end_monitor
+
+monitor_event SettlementSelected SettlementName Reval
+and GovernorInResidence
+and not I_EventCounter Reval_filter = 1
+
+	filter_settlement_commands on Reval
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Varad
+and not GovernorInResidence
+
+	filter_settlement_commands off Varad
+end_monitor
+
+monitor_event SettlementSelected SettlementName Varad
+and GovernorInResidence
+and not I_EventCounter Varad_filter = 1
+
+	filter_settlement_commands on Varad
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kalmar
+and not GovernorInResidence
+
+	filter_settlement_commands off Kalmar
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kalmar
+and GovernorInResidence
+and not I_EventCounter Kalmar_filter = 1
+
+	filter_settlement_commands on Kalmar
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Yelabuga
+and not GovernorInResidence
+
+	filter_settlement_commands off Yelabuga
+end_monitor
+
+monitor_event SettlementSelected SettlementName Yelabuga
+and GovernorInResidence
+and not I_EventCounter Yelabuga_filter = 1
+
+	filter_settlement_commands on Yelabuga
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Alamut
+and not GovernorInResidence
+
+	filter_settlement_commands off Alamut
+end_monitor
+
+monitor_event SettlementSelected SettlementName Alamut
+and GovernorInResidence
+and not I_EventCounter Alamut_filter = 1
+
+	filter_settlement_commands on Alamut
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Murom
+and not GovernorInResidence
+
+	filter_settlement_commands off Murom
+end_monitor
+
+monitor_event SettlementSelected SettlementName Murom
+and GovernorInResidence
+and not I_EventCounter Murom_filter = 1
+
+	filter_settlement_commands on Murom
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Isparta
+and not GovernorInResidence
+
+	filter_settlement_commands off Isparta
+end_monitor
+
+monitor_event SettlementSelected SettlementName Isparta
+and GovernorInResidence
+and not I_EventCounter Isparta_filter = 1
+
+	filter_settlement_commands on Isparta
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Kutaisi
+and not GovernorInResidence
+
+	filter_settlement_commands off Kutaisi
+end_monitor
+
+monitor_event SettlementSelected SettlementName Kutaisi
+and GovernorInResidence
+and not I_EventCounter Kutaisi_filter = 1
+
+	filter_settlement_commands on Kutaisi
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Ahvaz
+and not GovernorInResidence
+
+	filter_settlement_commands off Ahvaz
+end_monitor
+
+monitor_event SettlementSelected SettlementName Ahvaz
+and GovernorInResidence
+and not I_EventCounter Ahvaz_filter = 1
+
+	filter_settlement_commands on Ahvaz
+end_monitor
+
+
+monitor_event SettlementSelected SettlementName Serdobinskaya
+and not GovernorInResidence
+
+	filter_settlement_commands off Serdobinskaya
+end_monitor
+
+monitor_event SettlementSelected SettlementName Serdobinskaya
+and GovernorInResidence
+and not I_EventCounter Serdobinskaya_filter = 1
+
+	filter_settlement_commands on Serdobinskaya
+end_monitor

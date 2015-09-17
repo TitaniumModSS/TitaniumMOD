@@ -1,0 +1,363 @@
+;*********  BYG'S REALITY & SUPPLY TRAITS  *********
+
+Trait Healing
+    Characters family
+
+    Level Battle_Hardened
+        Description Battle_Hardened_desc
+        EffectsDescription Battle_Hardened_effects_desc
+        Threshold  1
+
+        Effect BattleSurgery  70 
+        Effect Command  3
+        Effect TroopMorale  3
+        Effect Attack  3 
+        Effect Defence  3 
+        Effect LineOfSight  5 
+
+
+    Level Battle_Weakened
+        Description Battle_Weakened_desc
+        EffectsDescription Battle_Weakened_effects_desc
+        Threshold  2
+
+
+;------------------------------------------
+Trait MVC
+    Characters family
+
+    Level First_Major_New_Victory
+        Description First_Major_New_Victory_desc
+        EffectsDescription First_Major_New_Victory_effects_desc
+        GainMessage First_Major_New_Victory_gain_desc
+        Threshold  1 
+
+
+    Level Second_Major_New_Victory
+        Description Second_Major_New_Victory_desc
+        EffectsDescription Second_Major_New_Victory_effects_desc
+        GainMessage Second_Major_New_Victory_gain_desc
+        Threshold  2 
+
+
+    Level Third_Major_New_Victory
+        Description Third_Major_New_Victory_desc
+        EffectsDescription Third_Major_New_Victory_effects_desc
+        GainMessage Third_Major_New_Victory_gain_desc
+        Threshold  3 
+
+
+    Level Fourth_Major_New_Victory
+        Description Fourth_Major_New_Victory_desc
+        EffectsDescription Fourth_Major_New_Victory_effects_desc
+        GainMessage Fourth_Major_New_Victory_gain_desc
+        Threshold  4 
+
+
+    Level Fifth_Major_New_Victory
+        Description Fifth_Major_New_Victory_desc
+        EffectsDescription Fifth_Major_New_Victory_effects_desc
+        Threshold  5 
+
+;------------------------------------------
+Trait FMVC
+    Characters family
+
+    Level One_Great_Monument
+        Description One_Great_Monument_desc
+        EffectsDescription One_Great_Monument_effects_desc
+        GainMessage One_Great_Monument_gain_desc
+        Threshold  1 
+
+
+    Level Two_Great_Monuments
+        Description Two_Great_Monuments_desc
+        EffectsDescription Two_Great_Monuments_effects_desc
+        Threshold  2 
+
+
+    Level Three_Great_Monuments
+        Description Three_Great_Monuments_desc
+        EffectsDescription Three_Great_Monuments_effects_desc
+        Threshold  3 
+
+
+    Level Four_Great_Monuments
+        Description Four_Great_Monuments_desc
+        EffectsDescription Four_Great_Monuments_effects_desc
+        Threshold  4 
+
+
+    Level Five_Great_Monuments
+        Description Five_Great_Monuments_desc
+        EffectsDescription Five_Great_Monuments_effects_desc
+        Threshold  5 
+
+;------------------------------------------
+Trait TMVC
+    Characters family
+
+    Level One_Spectacular_Monument
+        Description One_Spectacular_Monument_desc
+        EffectsDescription One_Spectacular_Monument_effects_desc
+        GainMessage One_Spectacular_Monument_gain_desc
+        Threshold  1 
+
+
+    Level Two_Spectacular_Monuments
+        Description Two_Spectacular_Monuments_desc
+        EffectsDescription Two_Spectacular_Monuments_effects_desc
+        Threshold  2 
+
+
+    Level Three_Spectacular_Monuments
+        Description Three_Spectacular_Monuments_desc
+        EffectsDescription Three_Spectacular_Monuments_effects_desc
+        Threshold  3 
+
+
+    Level Four_Spectacular_Monuments
+        Description Four_Spectacular_Monuments_desc
+        EffectsDescription Four_Spectacular_Monuments_effects_desc
+        Threshold  4 
+
+        Effect TroopMorale  3
+
+    Level Five_Spectacular_Monuments
+        Description Five_Spectacular_Monuments_desc
+        EffectsDescription Five_Spectacular_Monuments_effects_desc
+        Threshold  5 
+
+        Effect TroopMorale  3
+
+;------------------------------------------
+Trait SB
+        Characters family
+
+        Level Complacent
+        Description Complacent_desc
+        EffectsDescription Complacent_effects_desc
+        Threshold 2
+
+        Effect Command  -1
+        Effect TroopMorale  -2
+
+        Level Slack
+        Description Slack_desc
+        EffectsDescription Slack_effects_desc
+        Threshold 3
+
+        Effect Command  -2
+        Effect TroopMorale  -4
+
+;------------------------------------------
+Trait Away
+    Characters family
+    Hidden
+
+    Level Away
+        Description Away_desc
+        EffectsDescription Away_effects_desc
+        Threshold  1 
+
+
+;------------------------------------------
+Trait Turnsaway
+    Characters family
+    AntiTraits Turnshome
+
+    Level Bent_On_Glory
+        Description Bent_On_Glory_desc
+        EffectsDescription Bent_On_Glory_effects_desc
+        GainMessage Bent_On_Glory_gain_desc
+        Threshold  4 
+
+        Effect Loyalty  -2 
+        Effect TroopMorale  3 
+
+    Level Eager_To_Fight
+        Description Eager_To_Fight_desc
+        EffectsDescription Eager_To_Fight_effects_desc
+        Threshold  8 
+
+        Effect TroopMorale  2 
+
+    Level Ready_For_Action
+        Description Ready_For_Action_desc
+        EffectsDescription Ready_For_Action_effects_desc
+        Threshold  12 
+
+    Level Troops_Weary
+        Description Troops_Weary_desc
+        EffectsDescription Troops_Weary_effects_desc
+        Threshold  16 
+
+        Effect TroopMorale  -2 
+
+    Level Troops_Despondent
+        Description Troops_Despondent_desc
+        EffectsDescription Troops_Despondent_effects_desc
+        Threshold  20 
+
+        Effect TroopMorale  -4 
+
+    Level Troops_Undisciplined
+        Description Troops_Undisciplined_desc
+        EffectsDescription Troops_Undisciplined_effects_desc
+        GainMessage Troops_Undisciplined_gain_desc
+        Threshold  24 
+
+        Effect Command -1 
+        Effect TroopMorale  -6 
+        Effect Unrest  1 
+        Effect Loyalty  -1 
+
+    Level Troops_Desperate
+        Description Troops_Desperate_desc
+        EffectsDescription Troops_Desperate_effects_desc
+        GainMessage Troops_Desperate_gain_desc
+        Threshold  28
+
+        Effect Command -2 
+        Effect TroopMorale  -8 
+        Effect Unrest  2 
+        Effect Loyalty  -2 
+ 
+    Level Troops_Mutinous
+        Description Troops_Mutinous_desc
+        EffectsDescription Troops_Mutinous_effects_desc
+        GainMessage Troops_Mutinous_gain_desc
+        Threshold  32
+ 
+        Effect Command -3 
+        Effect TroopMorale  -10 
+        Effect Unrest  5 
+        Effect Loyalty  -5 
+
+    Level Too_Many_Years_Away
+        Description Too_Many_Years_Away_desc
+        EffectsDescription Too_Many_Years_Away_effects_desc
+        Threshold  36
+
+        Effect Command -5 
+        Effect TroopMorale  -10 
+        Effect Unrest  5 
+        Effect Loyalty  -5 
+
+;------------------------------------------
+Trait Turnshome
+    Characters family
+    AntiTraits Turnsaway
+
+    Level Settled
+        Description Settled_desc
+        EffectsDescription Settled_effects_desc
+        Threshold  4
+
+;------------------------------------------
+Trait Supplies
+    Characters family
+    AntiTraits SuppliesAdded
+
+    Level Army_Fully_Supplied
+        Description Army_Fully_Supplied_desc
+        EffectsDescription Army_Fully_Supplied_effects_desc
+        Threshold  1 
+ 
+    Level Army_Supplies_75_Percent
+        Description Army_Supplies_75_Percent_desc
+        EffectsDescription Army_Supplies_75_Percent_effects_desc
+        Threshold  2 
+
+    Level Army_Supplies_50_Percent
+        Description Army_Supplies_50_Percent_desc
+        EffectsDescription Army_Supplies_50_Percent_effects_desc
+        Threshold  3 
+ 
+        Effect Unrest  1 
+
+    Level Army_Supplies_25_Percent
+        Description Army_Supplies_25_Percent_desc
+        EffectsDescription Army_Supplies_25_Percent_effects_desc
+        Threshold  4 
+
+        Effect TroopMorale  -3 
+        Effect Unrest  2 
+
+    Level Out_Of_Supplies
+        Description Out_Of_Supplies_desc
+        EffectsDescription Out_Of_Supplies_effects_desc
+        Threshold  5 
+
+        Effect Command -2 
+        Effect TroopMorale  -6 
+        Effect Unrest  3 
+        Effect MovementPoints -5
+
+;unrest here represent when u enter a settlement you take more supplies from population
+;------------------------------------------
+Trait SuppliesAdded
+    Characters family
+    AntiTraits Supplies
+
+    Level Supplies_Added
+        Description Supplies_Added_desc
+        EffectsDescription Supplies_Added_effects_desc
+        Threshold  1 
+
+;------------------------------------------
+Trait TimeInField
+    Characters family
+    AntiTraits TIFReset
+
+    Level TIF1
+        Description TIF1_desc
+        EffectsDescription TIF1_effects_desc
+        Threshold  1 
+
+
+    Level TIF2
+        Description TIF2_desc
+        EffectsDescription TIF2_effects_desc
+        Threshold  2 
+
+
+    Level TIF3
+        Description TIF3_desc
+        EffectsDescription TIF3_effects_desc
+        Threshold  3 
+
+
+    Level TIF4
+        Description TIF4_desc
+        EffectsDescription TIF4_effects_desc
+        Threshold  4 
+
+;Checks time in home region outdoors to compare with timein region, so time in settlement doesn't confuse trait
+;------------------------------------------
+Trait TIFReset
+    Characters family
+    AntiTraits TimeInField
+
+    Level TIFR
+        Description TIFR_desc
+        EffectsDescription TIFR_effects_desc
+        Threshold  4
+
+;------------------------------------------
+Trait SuppliedBySea
+    Characters family
+
+    Level On_Supply_Ship
+        Description On_Supply_Ship_desc
+        EffectsDescription On_Supply_Ship_effects_desc
+        Threshold  1 
+
+;------------------------------------------
+Trait PoorLogistics
+    Characters family
+
+    Level Poor_Logistician
+        Description Poor_Logistician_desc
+        EffectsDescription Poor_Logistician_effects_desc
+        Threshold  1

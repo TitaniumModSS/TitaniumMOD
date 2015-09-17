@@ -1,0 +1,40 @@
+[name] Byg's Grim Reality IV
+[works for] early late
+[grouped in] BGR
+[description] Byg's Grim Reality, Depth and Realism Mod ver. IV-E\n\n
+This mod is aimed at expert players - before activating this mod, be sure to visit:\n
+www.twcenter.net/forums/showthread.php?t=106060\n
+www.nerazzurri.net/bgr-forum/viewtopic.php?t=97\n\n
+Featuring:\n
+-Supply System, Field Morale, Command System\n
+-Feudal to Centralised Army Progression\n
+-Nobles' Personal Wealth and Property, 3 Way Economic Management, Crime and Punishment Systems\n
+-Dynamic Religious Area of Recruitment, Recruitment by Rank, Factionwide Zeal Effects\n
+Due to increased complexity and difficulty this mod is not recommended for newcomers to SS.\n\n
+Be aware that playing with BGR will affect the turn time!
+[files]
+append data\export_descr_character_traits.txt with traits.txt before:
+;=========================================;
+;======== VNV TRIGGERS START HERE ========;
+;=========================================;
+<end>
+append data\export_descr_character_traits.txt with triggers.txt
+append data\export_descr_ancillaries.txt with anc.txt before:
+;=========================================;
+;======== ANC TRIGGERS START HERE ========;
+;=========================================;
+<end>
+append data\export_descr_ancillaries.txt with anc_triggers.txt
+append data\world\maps\campaign\imperial_campaign\campaign_script.txt with script.txt after:
+;=======================================================;
+;================= ADDITIONAL SCRIPTS ==================;
+;=======================================================;
+<end>
+append data\text\historic_events.txt with historic_events.txt
+append data\text\export_ancillaries.txt with export_ancillaries.txt
+append data\text\export_vnvs.txt with export_vnvs.txt
+append data\text\export_ancillaries.txt with export_ancillaries.txt
+overwrite data\descr_campaign_db.xml
+overwrite data\ui\ancillaries\item_sword.tga
+overwrite data\ui\ancillaries\Professional_Trainers.tga
+overwrite data\ui\ancillaries\resupply_train.tga

@@ -1,0 +1,35 @@
+script
+set_counter panel_check 0
+set_event_counter advice_fix_launched 1
+
+monitor_conditions I_InBattle
+    and I_CompareCounter panel_check = 1
+
+    set_counter panel_check -1
+end_monitor
+
+monitor_event BattleDeploymentPhaseCommenced FactionIsLocal
+    and ! I_EventCounter ctd_advice_fix = 1
+    set_event_counter ctd_advice_fix 1
+end_monitor
+
+monitor_event FactionTurnStart FactionIsLocal
+and I_EventCounter ctd_advice_fix = 1
+    set_event_counter ctd_advice_fix 0
+	historic_event advice_fix true
+end_monitor
+
+monitor_event EventCounter EventCounterType advice_fix_accepted
+    and I_EventCounter advice_fix_accepted = 1
+
+    set_event_counter advice_fix_launched 0
+    terminate_script
+end_monitor
+
+wait 3
+if I_AdvisorVisible
+	call_object_shortcut advisor_dismiss_button dismiss_advice
+end_if
+
+wait_monitors
+end_script

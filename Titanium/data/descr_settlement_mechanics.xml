@@ -63,13 +63,11 @@
 			<pip_min value="0"/>
 			<pip_max value="25"/>
 		</factor>
-
 		<factor name="SOF_BUILDINGS_FUN">
 			<pip_modifier value="1.0"/>
 			<pip_min value="0"/>
-			<pip_max value="30"/>	<!-- Increased 20% -->
+			<pip_max value="30"/>	<!-- Increased 20% KER -->
 		</factor>
-
 		<factor name="SOF_GOVERNORS_INFLUENCE">
 			<pip_modifier value="1.0"/>
 			<pip_min value="0"/>
@@ -119,14 +117,12 @@
 		<factor name="SOF_TAX_PENALTY">
 			<pip_modifier value="1.0"/>
 		</factor>
-
 		<factor name="SOF_TURMOIL">
 			<pip_modifier value="1.0"/>
 			<castle_modifier value="0.5"/>
 			<pip_min value="0"/>
-			<pip_max value="30"/>	<!-- Increased 87.5% -->
+			<pip_max value="30"/>	<!-- Increased 87.5% KER -->
 		</factor>
-
 		<factor name="SOF_BESIEGED">
 			<pip_modifier value="1.0"/>
 		</factor>
@@ -144,43 +140,39 @@
 			<city_modifier value="1.2"/>
 		</factor>
 		<factor name="SIF_FARMS">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.5"/>	<!-- reduced 50% 2TPY -->
 		</factor>
-
 		<factor name="SIF_TAXES">
-			<pip_modifier value="0.48"/>	<!-- reduced 40% -->
-			<castle_modifier value="0.45"/>	<!-- reduced 40% -->
+			<pip_modifier value="0.4"/>	<!-- reduced 50% 2TPY -->
+			<castle_modifier value="0.75"/>
 		</factor>
-
 		<factor name="SIF_MINING">
-			<pip_modifier value="1.25"/>
+			<pip_modifier value="0.625"/>	<!-- reduced 50% 2TPY -->
 		</factor>
-
 		<factor name="SIF_TRADE">
-			<pip_modifier value="0.72"/>	<!-- reduced 40% -->
-			<castle_modifier value="0.48"/>	<!-- reduced 40% -->
+			<pip_modifier value="0.6"/>	<!-- reduced 50% 2TPY -->
+			<castle_modifier value="0.8"/>
 		</factor>
-
 		<factor name="SIF_BUILDINGS">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.5"/>	<!-- reduced 50% 2TPY -->
 		</factor>
 		<factor name="SIF_ADMIN">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.5"/>	<!-- reduced 50% 2TPY -->
 		</factor>
 		<factor name="SIF_WAGES">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.5"/>	<!-- reduced 50% 2TPY -->
 		</factor>
 		<factor name="SIF_UPKEEP">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.5"/>	<!-- reduced 50% 2TPY -->
 		</factor>
 		<factor name="SIF_CORRUPTION">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.5"/>	<!-- reduced 50% 2TPY -->
 		</factor>
 		<factor name="SIF_ENTERTAINMENT">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.5"/>	<!-- reduced 50% 2TPY -->
 		</factor>
 		<factor name="SIF_DEVASTATION">
-			<pip_modifier value="1.5"/>
+			<pip_modifier value="0.75"/>	<!-- reduced 50% 2TPY -->
 		</factor>
 	</factor_modifiers>
 	<population_levels>

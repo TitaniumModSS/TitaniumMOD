@@ -21521,7 +21521,7 @@ Trigger SonOfKing_Adult
 Trigger GrandsonOfKing_Adult
  WhenToTest CharacterTurnEnd
 
- Condition FatherTrait FactionHeir = 1
+ Condition FatherTrait Factionheir = 1
        and Trait BiologicalSon = 1
        and not Trait SonofKingPrince > 0
        and I_TurnNumber < 1
@@ -37501,6 +37501,30 @@ Affects Senile 1 Chance 2
 ;**********************RLC TRIGGERS*********************
 ;******************************************************
 ;------------------------------------------
+Trigger royal_lady_humble_trigger
+ WhenToTest CharacterTurnStart
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 0
+ 	and Trait RoyalLadyC = 0
+
+ Affects HumbleWomanRLC 1 Chance 2 
+ Affects PretentiousWomanRLC 1 Chance 1
+
+;------------------------------------------
+Trigger royal_lady_pretty_trigger
+ WhenToTest CharacterTurnStart
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 0
+ 	and Trait RoyalLadyC = 0
+
+ Affects PrettyWomanRLC 1 Chance 100 
+ Affects PrettyWomanRLC 2 Chance 29 
+ Affects UglyWomanRLC 1 Chance 15 
+ Affects UglyWomanRLC 1 Chance 3 
+
+;------------------------------------------
 Trigger royal_lady_trigger
  WhenToTest CharacterTurnStart
 
@@ -37516,7 +37540,6 @@ Trigger royal_lady_trigger
  Affects GoodPrincess 1 Chance 7 
  Affects UnchasteWomanRLC 1 Chance 3 
  Affects SpiritedWomanRLC 1 Chance 16 
- Affects HumbleWomanRLC 1 Chance 2 
 
 ;------------------------------------------
 Trigger royal_lady_brave_trigger
@@ -37530,16 +37553,6 @@ Trigger royal_lady_brave_trigger
  Affects BraveWoman 2 Chance 75 
 
 ;------------------------------------------
-Trigger royal_lady_pretty_trigger
- WhenToTest CharacterTurnStart
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 0
- 	and Trait PrettyWomanRLC = 0
-
- Affects PrettyWomanRLC 1 Chance 100 
- Affects PrettyWomanRLC 2 Chance 29 
-
 ;------------------------------------------
 Trigger RLC_sitting_around_town_vnv_trigger2
 WhenToTest CharacterTurnEnd
@@ -38536,7 +38549,7 @@ and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
 and Trait Muslim = 0
 	   
-Affects LeaderGodIMine 1 Chance 80
+Affects LeaderGodNotMine 1 Chance 80
  
 ;------------------------------------------
 Trigger FactionLeaderIsCatholic1
@@ -40493,7 +40506,7 @@ Trigger UsurperbecomesFactionLeader_BYZ
  Condition Trait FactionFutureUsurper = 1
        and FactionType byzantium
 
- Affects FactionLeader 1 Chance 100 
+ Affects Factionleader 1 Chance 100 
  Affects FactionFutureUsurper -1 Chance 100 
  Affects Offensive_To_Nobles 1 Chance 50
 
@@ -40554,7 +40567,7 @@ Trigger anobody_electorbecomesheir_HRE
        and not Trait SonofKingPrince = 1
        and FactionType hre; no regents for empires
 
- Affects FactionHeir 1 Chance 100
+ Affects Factionheir 1 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
@@ -40577,7 +40590,7 @@ Trigger UsurperElectorbecomesfactionleader_HRE
        and Trait HRE_Elector_Prince >= 1
        and FactionType hre
 
- Affects FactionLeader 1 Chance 100 
+ Affects Factionleader 1 Chance 100 
  Affects FactionFutureUsurper -1 Chance 100 
  Affects Offensive_To_Nobles 1 Chance 15
 
@@ -42612,7 +42625,7 @@ Trigger Venice_Factionleader_Trigger_Turn0
  Condition IsFactionLeader
  and I_TurnNumber < 1
  and FactionType venice
- and Trait FactionLeader >= 1
+ and Trait Factionleader >= 1
 
  Affects Venice_Factionleader 1 Chance 100
  Affects Factionleader -1 Chance 100
@@ -43089,28 +43102,10 @@ Trigger Venice_Authority_Loss_Over_Time
  Affects Venice_Signoria_Approval -1 Chance 15         
 
 ;------------------------------------------ 
-Trigger Venice_carrack_built
+Trigger Venice_war_galley_built
     WhenToTest GovernorUnitTrained
 
-    Condition UnitType carrack
-       and FactionType venice
-    
-    Affects Venice_Signoria_Approval 1  Chance  8      
-    
-;------------------------------------------ 
-Trigger Venice_galleass_built
-    WhenToTest GovernorUnitTrained
-
-    Condition UnitType galleass
-       and FactionType venice
-    
-    Affects Venice_Signoria_Approval 1  Chance  8            
-    
-;------------------------------------------ 
-Trigger Venice_galley_built
-    WhenToTest GovernorUnitTrained
-
-    Condition UnitType galley
+    Condition UnitType war galley
        and FactionType venice
     
     Affects Venice_Signoria_Approval 1  Chance  8 
@@ -43293,7 +43288,7 @@ Trigger Genoa_Factionleader_Trigger_Turn0
  Condition IsFactionLeader
  and I_TurnNumber < 1
  and FactionType milan
- and Trait FactionLeader >= 1
+ and Trait Factionleader >= 1
 
  Affects Genoa_Factionleader 1 Chance 100
  Affects Factionleader -1 Chance 100
@@ -43693,28 +43688,10 @@ Trigger Genoa_Authority_Loss_Over_Time
  Affects Genoa_Comune_Approval -1 Chance 15         
 
 ;------------------------------------------ 
-Trigger Genoa_carrack_built
+Trigger Genoa_war_galley_built
     WhenToTest GovernorUnitTrained
 
-    Condition UnitType carrack
-       and FactionType milan
-    
-    Affects Genoa_Comune_Approval 1  Chance  8      
-    
-;------------------------------------------ 
-Trigger Genoa_galleass_built
-    WhenToTest GovernorUnitTrained
-
-    Condition UnitType galleass
-       and FactionType milan
-    
-    Affects Genoa_Comune_Approval 1  Chance  8            
-    
-;------------------------------------------ 
-Trigger Genoa_galley_built
-    WhenToTest GovernorUnitTrained
-
-    Condition UnitType galley
+    Condition UnitType war galley
        and FactionType milan
     
     Affects Genoa_Comune_Approval 1  Chance  8 
@@ -43890,7 +43867,7 @@ Trigger Novgorod_Factionleader_Trigger_Turn0
  Condition IsFactionLeader
  and I_TurnNumber < 1
  and FactionType russia
- and Trait FactionLeader >= 1
+ and Trait Factionleader >= 1
 
  Affects Novgorod_Factionleader 1 Chance 100
  Affects Factionleader -1 Chance 100

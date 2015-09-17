@@ -1,0 +1,675 @@
+;===============================================================
+;== BYG TRIGGERS START HERE ==
+;===============================================================
+;Edited 150310 by Byg
+;------------------------------------------
+Trigger TurnsawayBattle2
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait Turnsaway < 1
+
+Affects Turnsaway 12 Chance 100
+
+;------------------------------------------
+Trigger SupplyBattle2
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait Supplies < 1
+
+    Affects Supplies  1  Chance  100
+
+;------------------------------------------
+Trigger SetGensReadyStartSupply
+    WhenToTest CharacterTurnStart
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait Supplies < 1
+
+Affects Supplies 1 Chance 100
+
+;------------------------------------------
+Trigger SetGensReadyStartTurnsaway
+    WhenToTest CharacterTurnStart
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait Turnsaway < 1
+
+Affects Turnsaway 12 Chance 100
+
+;------------------------------------------
+Trigger SetGensReadyEndSupply
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait Supplies < 1
+
+Affects Supplies 1 Chance 100
+
+;------------------------------------------
+Trigger SetGensReadyEndTurnsaway
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait Turnsaway < 1
+
+Affects Turnsaway 12 Chance 100
+
+;------------------------------------------
+Trigger Poor_Logistics
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not EndedInSettlement
+          and InEnemyLands
+          and not Trait LogisticalSkill > 0
+          and Trait Supplies = 5
+          and Trait PoorLogistics < 1
+
+    Affects PoorLogistics  1  Chance  100
+
+;only adds this if currently does not have and allowed supplies to run out last turn
+;------------------------------------------
+Trigger CapturedSupplies
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and WonBattle
+          and PercentageEnemyKilled > 50
+          and Trait Supplies > 1
+
+    Affects SuppliesAdded  2  Chance  100
+    Affects Supplies  1  Chance  100
+
+;supplies won if 50% enemy killed after battle, plus 1/4 if room plus
+;------------------------------------------
+Trigger CapturedSupplies2
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and WonBattle
+          and PercentageEnemyKilled > 50
+          and Trait Supplies > 1
+
+    Affects SuppliesAdded  2  Chance  100
+    Affects Supplies  1  Chance  100
+
+;supplies won after a battle adds another 1/4 back to stock if room and 50% enemy killed. 
+;------------------------------------------
+Trigger EnemyCapturesSupplies
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not WonBattle
+          and PercentageOfArmyKilled > 50
+          and Trait Supplies <= 4
+
+    Affects Supplies  1  Chance  100
+
+;supplies 1/4 lost if 50% army lost after a battle, 25%
+;------------------------------------------
+Trigger EnemyCapturesSupplies2
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not WonBattle
+          and PercentageOfArmyKilled > 50
+          and Trait Supplies <= 4
+
+    Affects Supplies  1  Chance  50
+
+;supplies 1/4 lost if 50% army lost after a battle, 50%
+;------------------------------------------
+Trigger EnemyCapturesSupplies3
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not WonBattle
+          and PercentageOfArmyKilled > 50
+          and Trait Supplies <= 4
+
+    Affects Supplies  1  Chance  50
+
+;supplies 1/4 lost if 50% army lost after a battle, 75%
+;------------------------------------------
+Trigger EnemyCapturesSupplies4
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not WonBattle
+          and PercentageOfArmyKilled > 50
+          and Trait Supplies <= 4
+
+    Affects Supplies  1  Chance  50
+
+;supplies 1/4 lost if 50% army lost after a battle, 100%
+;------------------------------------------
+Trigger CountResetNewRegion1
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and TimeInRegion = 1
+          and Trait TimeInField = 1
+
+    Affects TIFReset 10  Chance  100
+    Affects TimeInField  9  Chance  100
+
+;reset TIF from values of 1-3 (4 resets itself) to Zero.
+;If MOVED TO NEW REGION May need "timeinregion=0"
+;------------------------------------------
+Trigger CountResetNewRegion2
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and TimeInRegion = 1
+          and Trait TimeInField = 3
+
+    Affects TIFReset 10  Chance  100
+    Affects TimeInField  7  Chance  100
+
+;reset TIF from values of 1-3 (4 resets itself) to Zero.
+;If MOVED TO NEW REGION May need "timeinregion=0"
+;------------------------------------------
+Trigger CountResetNewRegion3
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and TimeInRegion = 1
+          and Trait TimeInField = 2
+
+    Affects TIFReset 10  Chance  100
+    Affects TimeInField  8  Chance  100
+
+;reset TIF=2 in ownland then move to enemyland, else goes to 3 next turn.
+;------------------------------------------
+Trigger CountResetAnyRegion4
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait TimeInField = 4
+          and not EndedInEnemyZOC
+
+    Affects TIFReset 10  Chance  100
+    Affects TimeInField  6  Chance  100
+
+;reset TIF=4 because both enemy and home region army were set to 4 when they trigger
+;their supply decrease.OLD, NEW Region Reset.ZOC triggers only on 1st contact
+;------------------------------------------
+Trigger FieldCount
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and Trait TimeInField <= 3
+
+    Affects TimeInField  1  Chance  100
+
+;Can only be 1 to 4. Increments each turn. Tried changing < 4 to <= 3
+;------------------------------------------
+Trigger FieldCount2
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and Trait TimeInField <= 3
+          and EndedInEnemyZOC
+
+    Affects TimeInField  1  Chance  100
+
+;increases fieldcount to 4 when in Enemy ZOC. part2
+;------------------------------------------
+Trigger FieldCount3
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and Trait TimeInField <= 3
+          and EndedInEnemyZOC
+
+    Affects TimeInField  1  Chance  100
+
+;increases fieldcount to 4 when in Enemy ZOC. part3
+;------------------------------------------
+Trigger FieldCount4
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and Trait TimeInField <= 3
+          and EndedInEnemyZOC
+
+    Affects TimeInField  1  Chance  100
+
+; increases fieldcount to 4 when in Enemy ZOC. part3
+;------------------------------------------
+Trigger SupplyGet
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and EndedInSettlement
+          and PopulationOwnReligion > 50
+          and CharacterIsLocal
+          and Trait Supplies > 1
+
+    Affects SuppliesAdded  2  Chance  100
+    Affects Supplies  1  Chance  100
+
+;In settlement, with own 50% religious land and with supplies reduced. Resupply 1/4
+;------------------------------------------
+Trigger SupplyGet2
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and EndedInSettlement
+          and PopulationOwnReligion > 50
+          and CharacterIsLocal
+          and Trait Supplies > 1
+
+    Affects SuppliesAdded  2  Chance  100
+    Affects Supplies  1  Chance  100
+
+;In settlement, 50% own religion, supplies reduced. Resupply 1/4 if needed
+;------------------------------------------
+Trigger SupplyShipReset
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and Trait SuppliedBySea > 0
+
+    Affects SuppliedBySea  -1  Chance  100
+
+;keeps this trait set at 0 unless it fulfills trigger each turn
+;------------------------------------------
+Trigger SupplyShip1
+WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and AtSea
+          and CharacterIsLocal
+          and Trait Supplies > 1
+
+    Affects SuppliesAdded 2 Chance 100
+    Affects Supplies 1 Chance 100
+    Affects SuppliedBySea 1 Chance 100
+
+;In a ship for 1 turn. Resupply 1/4
+;------------------------------------------
+Trigger SupplyShip2
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and AtSea
+          and CharacterIsLocal
+          and Trait Supplies > 1
+          and Trait PoorLogistics < 1
+
+    Affects SuppliesAdded  2  Chance  100
+    Affects Supplies  1  Chance  100
+
+;In ship 1 turn. Resupply 1/4 if needed. Replenish 1/2 in total
+;------------------------------------------
+Trigger TIFReset
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and EndedInSettlement
+          and CharacterIsLocal
+          and Trait TimeInField > 2
+
+    Affects TIFReset 10  Chance  100
+    Affects TimeInField  8  Chance  100
+
+;In settlement. Chipaway 2xTIF if >2 then -2. Non religious settlement gets field time reset
+;too but no resupply.
+;------------------------------------------
+Trigger TIFReset2
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and EndedInSettlement
+          and CharacterIsLocal
+          and Trait TimeInField > 1
+
+    Affects TIFReset  10  Chance  100
+    Affects TimeInField  9  Chance  100
+
+; In settlement. Chipaway 1x TIF if >1 then -1 should make all tif values to 1
+;------------------------------------------
+Trigger TIFReset3
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and EndedInSettlement
+          and CharacterIsLocal
+          and Trait TimeInField = 1
+
+    Affects TIFReset  10  Chance  100
+    Affects TimeInField  9  Chance  100
+
+;In settlement. Chipaway 1x TIF if >1 then -1 should make all tif values to 1
+;------------------------------------------
+Trigger SupplyUsedEnemyZOC
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and InEnemyLands
+          and Trait TimeInField = 4
+          and Trait Supplies <= 4
+
+    Affects Supplies  1  Chance  100
+
+;In Enemy ZOC, 1/4 Supplies used in enemy land. Enemy land uses 1/4 per 2 turns
+;but Timeinfield set to 4 to show 4th level
+;------------------------------------------
+Trigger SupplyUsedEnemy1
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and InEnemyLands
+          and Trait TimeInField = 2
+          and Trait Supplies = 5
+
+    Affects TimeInField  2  Chance  100
+
+;1/4 Supplies used in enemy land. Enemy land uses 1/4 per 2 turns.
+;Set TIF to 4 if supply = out, therefore can be reduced no further.
+;Timeinfield set to 4 to show 4th level.
+;------------------------------------------
+Trigger SupplyUsedEnemy2
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and InEnemyLands
+          and Trait TimeInField = 2
+          and Trait Supplies <= 4
+
+    Affects Supplies  1  Chance  100
+    Affects TimeInField  2  Chance  100
+
+;1/4 Supplies used in enemy land. Enemy land uses 1/4 per 2 turns.
+;Sets timein field to 4 if supplies not out and reduces supplies.
+;Timeinfield set to 4 to show 4th level
+;------------------------------------------
+Trigger SupplyUsedFriendly
+    WhenToTest CharacterTurnEnd
+
+    Condition IsGeneral
+          and CharacterIsLocal
+          and not AtSea
+          and not EndedInSettlement
+          and not InEnemyLands
+          and Trait TimeInField = 4
+          and Trait Supplies <= 4
+
+    Affects Supplies  1  Chance  100
+
+;1/4 Supplies used in friendly land. Uses 1/4 per 4 turns. Now TIF resets before count
+;------------------------------------------
+Trigger Major_Victories_Count
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and WonBattle
+          and BattleSuccess >= clear
+          and PercentageEnemyKilled > 50
+          and BattleOdds < 1
+
+    Affects MVC 1 Chance 100
+
+;------------------------------------------
+Trigger Turnsaway_Victories
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and WonBattle
+          and BattleSuccess >= clear
+          and PercentageEnemyKilled > 50
+          and BattleOdds < 1
+          and Trait Turnsaway > 1
+          and CharacterIsLocal
+
+    Affects Turnshome  40  Chance  100
+    Affects Turnsaway  36  Chance  100
+
+;improves/reduces turnsaway levels by 4 points on major victory
+;------------------------------------------
+Trigger Turnsaway_Victories2
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and WonBattle
+          and BattleSuccess >= clear
+          and PercentageEnemyKilled > 50
+          and BattleOdds < 1
+          and Trait Turnsaway > 1
+          and CharacterIsLocal
+
+    Affects Turnshome  40  Chance  100
+    Affects Turnsaway  36  Chance  100
+
+;improves/reduces turnsaway levels by 4 more points on major victory, staying within trait levels
+;------------------------------------------
+Trigger Turnsaway_Victories3
+    WhenToTest GeneralCaptureSettlement
+
+    Condition CharacterIsLocal
+          and Trait Turnsaway > 1
+
+    Affects Turnshome  40  Chance  100
+    Affects Turnsaway  36  Chance  100
+
+;as above, but for capturing settlement
+;------------------------------------------
+Trigger Turnsaway_Victories4
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and WonBattle
+          and not BattleOdds < 1
+          and PercentageEnemyKilled > 50
+          and Trait Turnsaway > 1
+          and CharacterIsLocal
+
+    Affects Turnshome  40  Chance  100
+    Affects Turnsaway  38  Chance  100
+
+;any victory reduces turnsaway by a bit: 2 points
+;------------------------------------------
+Trigger Five_Major_Victories_Count
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and Trait MVC > 4
+
+    Affects FMVC 1 Chance 100
+    Affects MVC -5 Chance 100
+
+;------------------------------------------
+Trigger Twenty_Five_Major_Victories_Count
+    WhenToTest PostBattle
+
+    Condition IsGeneral
+          and Trait FMVC > 4
+
+    Affects TMVC 1 Chance 100
+    Affects FMVC -5 Chance 100
+
+;------------------------------------------
+Trigger Turns_Away
+    WhenToTest CharacterTurnEnd
+
+    Condition EndedInSettlement
+          and PopulationOwnReligion < 50
+          and CharacterIsLocal
+
+    Affects Away  1  Chance  100
+
+;In settlement, but in low religion home territory
+;------------------------------------------
+Trigger Turns_Away2
+    WhenToTest CharacterTurnEnd
+
+    Condition not EndedInSettlement
+          and CharacterIsLocal
+
+    Affects Away  1  Chance  100
+
+; if you aren't in a settlement then you are away
+;------------------------------------------
+Trigger Turns_Away3
+    WhenToTest CharacterTurnEnd
+
+    Condition EndedInSettlement
+          and Trait Away > 0
+          and CharacterIsLocal
+          and SettlementBuildingExists >= wooden_pallisade
+
+    Affects Away  -1  Chance  100
+
+;if settlement has no military buildings then you are NOT away (old method)
+;general and army recuperates if in city, even if <50 religion.
+;in summary, armies recover in any settlement except castles below 50% own religion.
+;CHANGED GOVERNORBUILDING TO SETTLEMENT >=wooden etc
+;because was only affecting the governor, not other general in town
+;------------------------------------------
+Trigger Home_decrease1
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away < 1
+          and CharacterIsLocal
+          and Trait Turnsaway > 2
+
+    Affects Turnshome 40  Chance  100
+    Affects Turnsaway 36  Chance  100
+
+;reduces levels ready to mutinous by 1 level
+;------------------------------------------
+Trigger Home_decrease2
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away < 1
+          and CharacterIsLocal
+          and Trait Turnsaway = 3
+
+    Affects Turnshome  40  Chance  100
+    Affects Turnsaway  36  Chance  100
+
+;ready and what was originally weary now go down to eager
+;------------------------------------------
+Trigger Home_Increase1
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away < 1
+          and CharacterIsLocal
+          and Trait Turnsaway = 2
+
+    Affects Turnshome  39  Chance  100
+    Affects Turnsaway  40  Chance  100
+
+;Next 4 triggers add 1 to eager until ready, at 12 points now.
+;original eager, ready and weary all at 12 points on ready.
+;------------------------------------------
+Trigger Home_Increase2
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away < 1
+          and CharacterIsLocal
+          and Trait Turnsaway = 2
+
+    Affects Turnshome  39  Chance  100
+    Affects Turnsaway  40  Chance  100
+
+;------------------------------------------
+Trigger Home_Increase3
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away < 1
+          and CharacterIsLocal
+          and Trait Turnsaway = 2
+
+    Affects Turnshome  39  Chance  100
+    Affects Turnsaway  40  Chance  100
+
+;------------------------------------------
+Trigger Home_Increase4
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away < 1
+          and CharacterIsLocal
+          and Trait Turnsaway = 2
+
+    Affects Turnshome  39  Chance  100
+    Affects Turnsaway  40  Chance  100
+
+;NOTE could just put Turnsaway  1 Chance  100, Turnshome only needed if reducing turnsaway!
+;------------------------------------------
+Trigger Home_Increase5
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away < 1
+          and CharacterIsLocal
+          and Trait Turnsaway < 2
+
+    Affects Turnshome  20  Chance  100
+    Affects Turnsaway  21  Chance  100
+
+;adds 1 points (not level) to anything below eager. So Bent takes 4x longer to lose
+;than eager in a native city.
+
+;------------------------------------------
+Trigger Turns_Away_Limit
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away > 0
+           and Trait Turnsaway = 8
+          and CharacterIsLocal
+
+    Affects Turnshome  40  Chance  100
+    Affects Turnsaway  39  Chance  100
+
+;Mutinous, from previous turn, reduce one point, so mutinous never > 32 points
+;------------------------------------------
+Trigger Turns_Away_Increment
+    WhenToTest CharacterTurnEnd
+
+    Condition Trait Away > 0
+          and CharacterIsLocal
+
+    Affects Turnsaway  1  Chance  100
+    Affects Away -1  Chance  100

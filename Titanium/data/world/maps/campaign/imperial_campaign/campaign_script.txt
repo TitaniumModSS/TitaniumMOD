@@ -25,7 +25,7 @@
 ;---- Besiege Upkeep
 ;---- City Reveal
 ;---- Major Events
-;---- Player notifications
+;---- Player notification
 ;---- Interactive Events
 ;* 5)EMERGENT FACTIONS/NATIONAL UPRISINGS
 ;---- William Wallace Uprising
@@ -34,12 +34,13 @@
 ;---- Bulgarian Uprising
 ;---- Timurids Invasion
 ;* 6) G5 BAI STUFF
-;* 7) ADDITIONAL SCRIPTS
+;* 7) TITANIUM ADDITIONAL SCRIPTS
 ;---- Loan Script
 ;---- KINGDOM EMPIRE AND REPUBLICS SCRIPTS
 ;---- Istanople
 ;---- Re-emerging Factions
 ;---- Royal Ladies of the Court
+;* 8) ADDITIONAL SCRIPTS
 ;---- Hotseat Treasurer
 
 
@@ -4016,7 +4017,7 @@ monitor_event CeasedFactionLeader FactionType moors
 end_monitor
 monitor_event CeasedFactionLeader FactionType moors
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter moors_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType moors
@@ -4034,7 +4035,7 @@ monitor_event CeasedFactionLeader FactionType turks
 end_monitor
 monitor_event CeasedFactionLeader FactionType turks
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter turks_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType turks
@@ -4052,7 +4053,7 @@ monitor_event CeasedFactionLeader FactionType egypt
 end_monitor
 monitor_event CeasedFactionLeader FactionType egypt
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter egypt_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType egypt
@@ -4070,7 +4071,7 @@ monitor_event CeasedFactionLeader FactionType kwarezm
 end_monitor
 monitor_event CeasedFactionLeader FactionType kwarezm
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter kwarezm_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType kwarezm
@@ -4088,7 +4089,7 @@ monitor_event CeasedFactionLeader FactionType spain
 end_monitor
 monitor_event CeasedFactionLeader FactionType spain
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter spain_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType spain
@@ -4106,7 +4107,7 @@ monitor_event CeasedFactionLeader FactionType aragon
 end_monitor
 monitor_event CeasedFactionLeader FactionType aragon
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter aragon_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType aragon
@@ -4124,7 +4125,7 @@ monitor_event CeasedFactionLeader FactionType portugal
 end_monitor
 monitor_event CeasedFactionLeader FactionType portugal
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter portugal_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType portugal
@@ -4168,7 +4169,7 @@ monitor_event CeasedFactionLeader FactionType sicily
 end_monitor
 monitor_event CeasedFactionLeader FactionType sicily
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter sicily_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType sicily
@@ -4186,7 +4187,7 @@ monitor_event CeasedFactionLeader FactionType byzantium
 end_monitor
 monitor_event CeasedFactionLeader FactionType byzantium
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter byzantium_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType byzantium
@@ -4204,7 +4205,7 @@ monitor_event CeasedFactionLeader FactionType hre
 end_monitor
 monitor_event CeasedFactionLeader FactionType hre
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter hre_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType hre
@@ -4222,7 +4223,7 @@ monitor_event CeasedFactionLeader FactionType france
 end_monitor
 monitor_event CeasedFactionLeader FactionType france
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter france_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType france
@@ -4240,7 +4241,7 @@ monitor_event CeasedFactionLeader FactionType england
 end_monitor
 monitor_event CeasedFactionLeader FactionType england
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter england_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType england
@@ -4258,7 +4259,7 @@ monitor_event CeasedFactionLeader FactionType scotland
 end_monitor
 monitor_event CeasedFactionLeader FactionType scotland
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter scotland_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType scotland
@@ -4276,7 +4277,7 @@ monitor_event CeasedFactionLeader FactionType denmark
 end_monitor
 monitor_event CeasedFactionLeader FactionType denmark
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter denmark_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType denmark
@@ -4294,7 +4295,7 @@ monitor_event CeasedFactionLeader FactionType norway
 end_monitor
 monitor_event CeasedFactionLeader FactionType norway
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter norway_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType norway
@@ -4312,7 +4313,7 @@ monitor_event CeasedFactionLeader FactionType jerusalem
 end_monitor
 monitor_event CeasedFactionLeader FactionType jerusalem
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter jerusalem_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType jerusalem
@@ -4343,7 +4344,7 @@ monitor_event CeasedFactionLeader FactionType poland
 end_monitor
 monitor_event CeasedFactionLeader FactionType poland
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter poland_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType poland
@@ -4361,7 +4362,7 @@ monitor_event CeasedFactionLeader FactionType hungary
 end_monitor
 monitor_event CeasedFactionLeader FactionType hungary
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter hungary_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType hungary
@@ -4392,7 +4393,7 @@ monitor_event CeasedFactionLeader FactionType kievan_rus
 end_monitor
 monitor_event CeasedFactionLeader FactionType kievan_rus
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter kievan_rus_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType kievan_rus
@@ -4410,7 +4411,7 @@ monitor_event CeasedFactionLeader FactionType lithuania
 end_monitor
 monitor_event CeasedFactionLeader FactionType lithuania
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter lithuania_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType lithuania
@@ -4428,7 +4429,7 @@ monitor_event CeasedFactionLeader FactionType cumans
 end_monitor
 monitor_event CeasedFactionLeader FactionType cumans
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter cumans_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType cumans
@@ -4447,7 +4448,7 @@ monitor_event CeasedFactionLeader FactionType timurids
 end_monitor
 monitor_event CeasedFactionLeader FactionType timurids
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter timurids_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType timurids
@@ -4466,7 +4467,7 @@ monitor_event CeasedFactionLeader FactionType mongols
 end_monitor
 monitor_event CeasedFactionLeader FactionType mongols
 	and IsFactionAIControlled
-	and Trait FactionLeader < 1
+	and Trait Factionleader < 1
 		set_counter mongols_king 2
 end_monitor
 monitor_event BecomesFactionLeader FactionType mongols
@@ -6200,7 +6201,7 @@ end_monitor
 ;--- hotseat game only
 monitor_event EventCounter EventCounterType HS_Great_Council
 
-	if I_EventCounter GCouncil = 10
+	if I_EventCounter L_Council = 10
 	 terminate_monitor
 	end_if
 
@@ -6299,7 +6300,7 @@ if I_EventCounter L_Council = 0
 end_if
 
 ;--- Great Councils main
-monitor_event FactionTurnStart I_EventCounter GCouncil > 0
+monitor_event FactionTurnStart I_EventCounter L_Council > 0
 
 	set_event_counter great_council_accepted 0
 	;set_event_counter great_council_declined 0
@@ -6528,28 +6529,40 @@ end_monitor
 ;========================================================
 
 ;============== William Wallace Uprising ================
+add_events
+	event	counter	WilliamWallaceSet
+	date	60
+	event	counter	WilliamWallaceSet
+	date	131
+	event	counter	WilliamWallaceSet
+	date	180
+end_add_events
 
 declare_counter wallace_spawned
 set_counter wallace_spawned 0
 
 monitor_event FactionTurnStart FactionType scotland
 	;and I_TurnNumber = 180
-	and I_EventCounter Campaign_Year = 180
-	and I_NumberOfSettlements scotland < 4
-	and I_CompareCounter wallace_spawned = 0
+	;and I_EventCounter Campaign_Year = 180
+	and I_EventCounter WilliamWallaceSet = 3
 
-	set_counter wallace_spawned 1
+	if I_CompareCounter wallace_spawned = 0
+	and I_NumberOfSettlements scotland < 4
+		set_counter wallace_spawned 1
+	end_if
 	
 terminate_monitor
 end_monitor
 
 monitor_event FactionTurnStart FactionType scotland	
 	;and I_TurnNumber > 60
-	and I_EventCounter Campaign_Year > 60
+	;and I_EventCounter Campaign_Year > 60
+	and I_EventCounter WilliamWallaceSet >= 1
 	and I_NumberOfSettlements scotland < 2
-	and I_CompareCounter wallace_spawned = 0
 
+	if I_CompareCounter wallace_spawned = 0
 	set_counter wallace_spawned 1
+	end_if
 
 terminate_monitor
 end_monitor
@@ -6557,10 +6570,12 @@ end_monitor
 monitor_event GeneralCaptureSettlement FactionType england
 	and TargetFactionType scotland
 	;and I_TurnNumber > 130
-	and I_EventCounter Campaign_Year > 130
-	and I_CompareCounter wallace_spawned = 0
+	;and I_EventCounter Campaign_Year > 130
+	and I_EventCounter WilliamWallaceSet >= 2
 
+	if I_CompareCounter wallace_spawned = 0
 	set_counter wallace_spawned 1
+	end_if
 
 terminate_monitor
 end_monitor
@@ -6660,13 +6675,13 @@ end_monitor
 
 ;============== Teutonic Order Emergent =================
 
-;---- Teutonic Order Faction Destroyed Workaround ----
+;---- Teutonic Order Faction Destroyed Workaround ---- Might be obsolete
 monitor_event CeasedFactionLeader FactionType teutonic_order
-	set_event_counter status_teutonic_order 1
+	set_event_counter status_teutonic_order 1; used in Re-emerging factions script
 end_monitor
 
 monitor_event BecomesFactionLeader FactionType teutonic_order
-	set_event_counter status_teutonic_order 2
+	set_event_counter status_teutonic_order 2; used in Re-emerging factions script
 end_monitor
 
 monitor_event FactionTurnEnd FactionType slave
@@ -6841,10 +6856,22 @@ monitor_event CharacterTurnStart CharFactionType teutonic_order
 	end_if
 end_monitor
 
+add_events
+	event	counter	Teutonic2Order
+	date	165
+	event	counter	Teutonic2Order
+	date	166
+	event	counter	Teutonic2Order
+	date	170
+	event	counter	Teutonic2Order
+	date	171
+end_add_events
+
 monitor_event FactionTurnStart FactionType teutonic_order
 	and I_IsFactionAIControlled lithuania
 	;and I_TurnNumber < 170
-	and I_EventCounter Campaign_Year < 170
+	;and I_EventCounter Campaign_Year < 170
+	and I_EventCounter Teutonic2Order < 3
 
 	console_command diplomatic_stance teutonic_order lithuania war
 
@@ -6852,7 +6879,8 @@ end_monitor
 
 monitor_event FactionTurnStart FactionType teutonic_order
 	;and I_TurnNumber = 165
-	and I_EventCounter Campaign_Year = 165
+	;and I_EventCounter Campaign_Year = 165
+	and I_EventCounter Teutonic2Order = 1
 
 	spawn_army 
 		faction teutonic_order
@@ -6886,7 +6914,8 @@ end_monitor
 
 monitor_event FactionTurnStart FactionType teutonic_order
 	;and I_TurnNumber = 170
-	and I_EventCounter Campaign_Year = 170
+	;and I_EventCounter Campaign_Year = 170
+	and I_EventCounter Teutonic2Order = 3
 	and not I_SettlementOwner Palanga = teutonic_order
 	and not I_SettlementOwner Riga = teutonic_order
 
@@ -8186,9 +8215,15 @@ end_monitor
 
 ;================= BULGARIAN UPRISING ===================
 declare_counter bulgarian_uprising
+add_events
+		event	counter	BulgarianUprisingSet
+		date	50
+end_add_events
+
 monitor_event PreFactionTurnStart FactionType slave
 	;and I_TurnNumber = 50
-	and I_EventCounter Campaign_Year = 50
+	;and I_EventCounter Campaign_Year = 50
+	and I_EventCounter BulgarianUprisingSet = 1
 
 	if not I_SettlementOwner Sofia = slave
 		spawn_army 
@@ -32380,7 +32415,7 @@ end_monitor
 ;============== REPUBLICS DEATH SCRIPT WORKAROUND =============;
 ;==============================================================;
 
-	monitor_event FactionTurnEnd FactionType slave
+	monitor_event FactionTurnEnd FactionType slave; Might be obsolete
 ;---- Venice ----
 		if I_NumberOfSettlements venice < 1
 			console_command kill_faction venice
@@ -37939,19 +37974,6 @@ end_monitor
 	declare_counter faction_emerge_id
 	set_counter faction_emerge_id 0
 
-	declare_counter military_era
-	set_counter military_era 0
-	monitor_event EventCounter EventCounterType HEAVY_MAIL_ARMOR
-		and EventCounter > 0
-			set_counter military_era 1
-	terminate_monitor
-	end_monitor
-	monitor_event EventCounter EventCounterType HALF_PLATE_ARMOR
-		and EventCounter > 0
-			set_counter military_era 2
-	terminate_monitor
-	end_monitor
-
 ;Scotland
 	declare_counter edinburgh_riot
 	set_counter edinburgh_riot 0
@@ -38823,14 +38845,6 @@ end_monitor
 
 ;Teutonic Order
 
-	;Check 1st if Teutonic Order is really destroyed
-		;these monitors can be removed if have the bugfix compilation 1.25 or newer
-		monitor_event CeasedFactionLeader FactionType teutonic_order
-			set_event_counter status_teutonic_order 1
-		end_monitor
-		monitor_event BecomesFactionLeader FactionType teutonic_order
-			set_event_counter status_teutonic_order 2
-		end_monitor
 	;Check for Northern Europe Crusades in Progress
 	monitor_event CrusadeCalled TargetSettlementName Riga
 	    set_event_counter eu_crusader 1
@@ -39104,7 +39118,7 @@ end_monitor
 	end_if
 	if I_CompareCounter edinburgh_riot = 1
 		console_command create_building Edinburgh ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 59, y 248, family
@@ -39122,7 +39136,8 @@ end_monitor
 			unit   Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 59, y 248, family
@@ -39140,7 +39155,7 @@ end_monitor
 			unit   Highland Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 59, y 248, family
@@ -39245,7 +39260,7 @@ end_monitor
 	end_if
 	if I_CompareCounter aberdeen_riot = 1
 		console_command create_building Aberdeen ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 62, y 257, family
@@ -39263,7 +39278,8 @@ end_monitor
 			unit   Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 62, y 257, family
@@ -39281,7 +39297,7 @@ end_monitor
 			unit   Highland Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 62, y 257, family
@@ -39386,7 +39402,7 @@ end_monitor
 	end_if
 	if I_CompareCounter inverness_riot = 1
 		console_command create_building Inverness ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 49, y 258, family
@@ -39404,7 +39420,8 @@ end_monitor
 			unit   Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 49, y 258, family
@@ -39422,7 +39439,7 @@ end_monitor
 			unit   Highland Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction scotland
 			character random_name, named character, age 30, x 49, y 258, family
@@ -39608,7 +39625,7 @@ end_monitor
 	end_if
 	if I_CompareCounter venice_riot = 1
 		console_command create_building Venice ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction venice
 			character random_name, named character, age 30, x 168, y 173, family
@@ -39626,7 +39643,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction venice
 			character random_name, named character, age 30, x 168, y 173, family
@@ -39644,7 +39662,7 @@ end_monitor
 			unit   Venetian Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction venice
 			character random_name, named character, age 30, x 168, y 173, family
@@ -39832,7 +39850,7 @@ end_monitor
 	end_if
 	if I_CompareCounter palermo_riot = 1
 		console_command create_building Palermo ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 174, y 118, family
@@ -39850,7 +39868,8 @@ end_monitor
 			unit   S Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 174, y 118, family
@@ -39868,7 +39887,7 @@ end_monitor
 			unit   Sicilian Muslim Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 174, y 118, family
@@ -39973,7 +39992,7 @@ end_monitor
 	end_if
 	if I_CompareCounter syracuse_riot = 1
 		console_command create_building Syracuse ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 186, y 113, family
@@ -39991,7 +40010,8 @@ end_monitor
 			unit   S Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 186, y 113, family
@@ -40009,7 +40029,7 @@ end_monitor
 			unit   Sicilian Muslim Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 186, y 113, family
@@ -40114,7 +40134,7 @@ end_monitor
 	end_if
 	if I_CompareCounter naples_riot = 1
 		console_command create_building Naples ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 182, y 139, family
@@ -40132,7 +40152,8 @@ end_monitor
 			unit   S Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 182, y 139, family
@@ -40150,7 +40171,7 @@ end_monitor
 			unit   Sicilian Muslim Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction sicily
 			character random_name, named character, age 30, x 182, y 139, family
@@ -40336,7 +40357,7 @@ end_monitor
 	end_if
 	if I_CompareCounter genoa_riot = 1
 		console_command create_building Genoa ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction milan
 			character random_name, named character, age 30, x 142, y 166, family
@@ -40354,7 +40375,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction milan
 			character random_name, named character, age 30, x 142, y 166, family
@@ -40372,7 +40394,7 @@ end_monitor
 			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction milan
 			character random_name, named character, age 30, x 142, y 166, family
@@ -40558,7 +40580,7 @@ end_monitor
 	end_if
 	if I_CompareCounter arhus_riot = 1
 		console_command create_building Arhus ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction denmark
 			character random_name, named character, age 30, x 150, y 250, family
@@ -40576,7 +40598,8 @@ end_monitor
 			unit   Norse Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction denmark
 			character random_name, named character, age 30, x 150, y 250, family
@@ -40594,7 +40617,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction denmark
 			character random_name, named character, age 30, x 150, y 250, family
@@ -40699,7 +40722,7 @@ end_monitor
 	end_if
 	if I_CompareCounter roskilde_riot = 1
 		console_command create_building Roskilde ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction denmark
 			character random_name, named character, age 30, x 164, y 246, family
@@ -40717,7 +40740,8 @@ end_monitor
 			unit   Norse Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction denmark
 			character random_name, named character, age 30, x 164, y 246, family
@@ -40735,7 +40759,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction denmark
 			character random_name, named character, age 30, x 164, y 246, family
@@ -40924,7 +40948,7 @@ end_monitor
 	end_if
 	if I_CompareCounter jaiksk_riot = 1
 		console_command create_building Jaiksk ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -40942,7 +40966,8 @@ end_monitor
 			unit   Cuman Horse Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -40960,7 +40985,7 @@ end_monitor
 			unit   Cuman Horse Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -41065,7 +41090,7 @@ end_monitor
 	end_if
 	if I_CompareCounter azaq_riot = 1
 		console_command create_building Azaq ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -41083,7 +41108,8 @@ end_monitor
 			unit   Cuman Horse Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -41101,7 +41127,7 @@ end_monitor
 			unit   Cuman Horse Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -41206,7 +41232,7 @@ end_monitor
 	end_if
 	if I_CompareCounter baia_riot = 1
 		console_command create_building Baia ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -41224,7 +41250,8 @@ end_monitor
 			unit   Cuman Horse Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -41242,7 +41269,7 @@ end_monitor
 			unit   Cuman Horse Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction cumans
 			character random_name, named character, age 30, x 432, y 248, family
@@ -41434,7 +41461,7 @@ end_monitor
 	end_if
 	if I_CompareCounter caesarea_riot = 1
 		console_command create_building Caesarea ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 333, y 125, family
@@ -41452,7 +41479,8 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 333, y 125, family
@@ -41470,7 +41498,7 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 333, y 125, family
@@ -41575,7 +41603,7 @@ end_monitor
 	end_if
 	if I_CompareCounter ankara_riot = 1
 		console_command create_building Ankara ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 313, y 131, family
@@ -41593,7 +41621,8 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 313, y 131, family
@@ -41611,7 +41640,7 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 313, y 131, family
@@ -41716,7 +41745,7 @@ end_monitor
 	end_if
 	if I_CompareCounter iconium_riot = 1
 		console_command create_building Iconium ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 310, y 118, family
@@ -41734,7 +41763,8 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 310, y 118, family
@@ -41752,7 +41782,7 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 310, y 118, family
@@ -41857,7 +41887,7 @@ end_monitor
 	end_if
 	if I_CompareCounter diyarbakir_riot = 1
 		console_command create_building Diyarbakir ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 365, y 120, family
@@ -41875,7 +41905,8 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 365, y 120, family
@@ -41893,7 +41924,7 @@ end_monitor
 			unit   Turkish Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction turks
 			character random_name, named character, age 30, x 365, y 120, family
@@ -42086,7 +42117,7 @@ end_monitor
 	end_if
 	if I_CompareCounter paris_riot = 1
 		console_command create_building Paris ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 93, y 197, family
@@ -42104,7 +42135,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 93, y 197, family
@@ -42122,7 +42154,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 93, y 197, family
@@ -42227,7 +42259,7 @@ end_monitor
 	end_if
 	if I_CompareCounter rheims_riot = 1
 		console_command create_building Rheims ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 105, y 201, family
@@ -42245,7 +42277,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 105, y 201, family
@@ -42263,7 +42296,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 105, y 201, family
@@ -42368,7 +42401,7 @@ end_monitor
 	end_if
 	if I_CompareCounter clermont_riot = 1
 		console_command create_building Clermont ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 98, y 176, family
@@ -42386,7 +42419,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 98, y 176, family
@@ -42404,7 +42438,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 98, y 176, family
@@ -42509,7 +42543,7 @@ end_monitor
 	end_if
 	if I_CompareCounter angers_riot = 1
 		console_command create_building Angers ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 75, y 185, family
@@ -42527,7 +42561,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 75, y 185, family
@@ -42545,7 +42580,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction france
 			character random_name, named character, age 30, x 75, y 185, family
@@ -42740,7 +42775,7 @@ end_monitor
 	end_if
 	if I_CompareCounter frankfurt_riot = 1
 		console_command create_building Frankfurt ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 140, y 206, family
@@ -42758,7 +42793,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 140, y 206, family
@@ -42776,7 +42812,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 140, y 206, family
@@ -42881,7 +42917,7 @@ end_monitor
 	end_if
 	if I_CompareCounter vienna_riot = 1
 		console_command create_building Vienna ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 195, y 196, family
@@ -42899,7 +42935,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 195, y 196, family
@@ -42917,7 +42954,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 195, y 196, family
@@ -43022,7 +43059,7 @@ end_monitor
 	end_if
 	if I_CompareCounter prague_riot = 1
 		console_command create_building Prague ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 181, y 206, family
@@ -43040,7 +43077,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 181, y 206, family
@@ -43058,7 +43096,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 181, y 206, family
@@ -43163,7 +43201,7 @@ end_monitor
 	end_if
 	if I_CompareCounter staufen_riot = 1
 		console_command create_building Staufen ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 133, y 191, family
@@ -43181,7 +43219,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 133, y 191, family
@@ -43199,7 +43238,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 133, y 191, family
@@ -43304,7 +43343,7 @@ end_monitor
 	end_if
 	if I_CompareCounter nuremburg_riot = 1
 		console_command create_building Nuremburg ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 156, y 202, family
@@ -43322,7 +43361,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 156, y 202, family
@@ -43340,7 +43380,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hre
 			character random_name, named character, age 30, x 156, y 202, family
@@ -43533,7 +43573,7 @@ end_monitor
 	end_if
 	if I_CompareCounter london_riot = 1
 		console_command create_building London ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 80, y 217, family
@@ -43551,7 +43591,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 80, y 217, family
@@ -43569,7 +43610,7 @@ end_monitor
 			unit   Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 80, y 217, family
@@ -43583,8 +43624,8 @@ end_monitor
 			unit   Dismounted Armats		exp 0 armour 0 weapon_lvl 0
 			unit   Billmen				exp 0 armour 0 weapon_lvl 0
 			unit   Militia Serjeants			exp 0 armour 0 weapon_lvl 0
-			unit   Yeoman				exp 0 armour 0 weapon_lvl 0
-			unit   Yeoman				exp 0 armour 0 weapon_lvl 0
+			unit   Archer Militia			exp 0 armour 2 weapon_lvl 0
+			unit   Archer Militia			exp 0 armour 2 weapon_lvl 0
 			end
 		end_if
 		if I_SettlementOwner London = venice
@@ -43674,7 +43715,7 @@ end_monitor
 	end_if
 	if I_CompareCounter nottingham_riot = 1
 		console_command create_building Nottingham ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 69, y 226, family
@@ -43692,7 +43733,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 69, y 226, family
@@ -43710,7 +43752,7 @@ end_monitor
 			unit   Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 69, y 226, family
@@ -43724,8 +43766,8 @@ end_monitor
 			unit   Dismounted Armats		exp 0 armour 0 weapon_lvl 0
 			unit   Billmen				exp 0 armour 0 weapon_lvl 0
 			unit   Militia Serjeants			exp 0 armour 0 weapon_lvl 0
-			unit   Yeoman				exp 0 armour 0 weapon_lvl 0
-			unit   Yeoman				exp 0 armour 0 weapon_lvl 0
+			unit   Archer Militia			exp 0 armour 2 weapon_lvl 0
+			unit   Archer Militia			exp 0 armour 2 weapon_lvl 0
 			end
 		end_if
 		if I_SettlementOwner Nottingham = venice
@@ -43815,7 +43857,7 @@ end_monitor
 	end_if
 	if I_CompareCounter winchester_riot = 1
 		console_command create_building Winchester ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 68, y 213, family
@@ -43833,7 +43875,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 68, y 213, family
@@ -43851,7 +43894,7 @@ end_monitor
 			unit   Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction england
 			character random_name, named character, age 30, x 68, y 213, family
@@ -43865,8 +43908,8 @@ end_monitor
 			unit   Dismounted Armats		exp 0 armour 0 weapon_lvl 0
 			unit   Billmen				exp 0 armour 0 weapon_lvl 0
 			unit   Militia Serjeants			exp 0 armour 0 weapon_lvl 0
-			unit   Yeoman				exp 0 armour 0 weapon_lvl 0
-			unit   Yeoman				exp 0 armour 0 weapon_lvl 0
+			unit   Archer Militia			exp 0 armour 2 weapon_lvl 0
+			unit   Archer Militia			exp 0 armour 2 weapon_lvl 0
 			end
 		end_if
 		if I_SettlementOwner Winchester = venice
@@ -44039,7 +44082,7 @@ end_monitor
 	end_if
 	if I_CompareCounter oporto_riot = 1
 		console_command create_building Oporto ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction portugal
 			character random_name, named character, age 30, x 16, y 143, family
@@ -44057,7 +44100,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction portugal
 			character random_name, named character, age 30, x 16, y 143, family
@@ -44075,7 +44119,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction portugal
 			character random_name, named character, age 30, x 16, y 143, family
@@ -44180,7 +44224,7 @@ end_monitor
 	end_if
 	if I_CompareCounter lisbon_riot = 1
 		console_command create_building Lisbon ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction portugal
 			character random_name, named character, age 30, x 11, y 126, family
@@ -44198,7 +44242,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction portugal
 			character random_name, named character, age 30, x 11, y 126, family
@@ -44216,7 +44261,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction portugal
 			character random_name, named character, age 30, x 11, y 126, family
@@ -44405,7 +44450,7 @@ end_monitor
 	end_if
 	if I_CompareCounter krakow_riot = 1
 		console_command create_building Krakow ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 217, y 208, family
@@ -44423,7 +44468,8 @@ end_monitor
 			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 217, y 208, family
@@ -44441,7 +44487,7 @@ end_monitor
 			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 217, y 208, family
@@ -44546,7 +44592,7 @@ end_monitor
 	end_if
 	if I_CompareCounter halych_riot = 1
 		console_command create_building Halych ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 253, y 206, family
@@ -44564,7 +44610,8 @@ end_monitor
 			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 253, y 206, family
@@ -44582,7 +44629,7 @@ end_monitor
 			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 253, y 206, family
@@ -44687,7 +44734,7 @@ end_monitor
 	end_if
 	if I_CompareCounter plock_riot = 1
 		console_command create_building Plock ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 224, y 208, family
@@ -44705,7 +44752,8 @@ end_monitor
 			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 224, y 208, family
@@ -44723,7 +44771,7 @@ end_monitor
 			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction poland
 			character random_name, named character, age 30, x 224, y 208, family
@@ -44917,7 +44965,7 @@ end_monitor
 	end_if
 	if I_CompareCounter constantinople_riot = 1
 		console_command create_building Constantinople ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 284, y 142, family
@@ -44925,7 +44973,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Contaratoi				exp 1 armour 0 weapon_lvl 0
@@ -44935,7 +44983,8 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 284, y 142, family
@@ -44943,7 +44992,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -44953,7 +45002,7 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 284, y 142, family
@@ -44961,7 +45010,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45058,7 +45107,7 @@ end_monitor
 	end_if
 	if I_CompareCounter nicaea_riot = 1
 		console_command create_building Nicaea ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 291, y 137, family
@@ -45066,7 +45115,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Contaratoi				exp 1 armour 0 weapon_lvl 0
@@ -45076,7 +45125,8 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 291, y 137, family
@@ -45084,7 +45134,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45094,7 +45144,7 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 291, y 137, family
@@ -45102,7 +45152,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45199,7 +45249,7 @@ end_monitor
 	end_if
 	if I_CompareCounter athens_riot = 1
 		console_command create_building Athens ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 249, y 119, family
@@ -45207,7 +45257,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Contaratoi				exp 1 armour 0 weapon_lvl 0
@@ -45217,7 +45267,8 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 249, y 119, family
@@ -45225,7 +45276,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45235,7 +45286,7 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 249, y 119, family
@@ -45243,7 +45294,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45340,7 +45391,7 @@ end_monitor
 	end_if
 	if I_CompareCounter arta_riot = 1
 		console_command create_building Arta ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 229, y 126, family
@@ -45348,7 +45399,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Contaratoi				exp 1 armour 0 weapon_lvl 0
@@ -45358,7 +45409,8 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 229, y 126, family
@@ -45366,7 +45418,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45376,7 +45428,7 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 229, y 126, family
@@ -45384,7 +45436,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45481,7 +45533,7 @@ end_monitor
 	end_if
 	if I_CompareCounter trebizond_riot = 1
 		console_command create_building Trebizond ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 362, y 141, family
@@ -45489,7 +45541,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
 			unit   Archontopoulai			exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Contaratoi				exp 1 armour 0 weapon_lvl 0
@@ -45499,7 +45551,8 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 362, y 141, family
@@ -45507,7 +45560,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
 			unit   Scholarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 1 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45517,7 +45570,7 @@ end_monitor
 			unit   Toxotae				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction byzantium
 			character random_name, named character, age 30, x 362, y 141, family
@@ -45525,7 +45578,7 @@ end_monitor
 			unit   Greek Bodyguard			exp 2 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
 			unit   Pronoiarii				exp 1 armour 0 weapon_lvl 0
-			unit   Spathatoi				exp 1 armour 0 weapon_lvl 0
+			unit   Scoutatoi Swordsmen		exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Castrophilakae			exp 1 armour 0 weapon_lvl 0
 			unit   Scoutatoi				exp 1 armour 0 weapon_lvl 0
@@ -45709,7 +45762,7 @@ end_monitor
 	end_if
 	if I_CompareCounter marrakesh_riot = 1
 		console_command create_building Marrakesh ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 17, y 76, family
@@ -45727,7 +45780,8 @@ end_monitor
 			unit   Desert Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 17, y 76, family
@@ -45745,7 +45799,7 @@ end_monitor
 			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 17, y 76, family
@@ -45850,7 +45904,7 @@ end_monitor
 	end_if
 	if I_CompareCounter fes_riot = 1
 		console_command create_building Fes ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 41, y 95, family
@@ -45868,7 +45922,8 @@ end_monitor
 			unit   Desert Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 41, y 95, family
@@ -45886,7 +45941,7 @@ end_monitor
 			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 41, y 95, family
@@ -45991,7 +46046,7 @@ end_monitor
 	end_if
 	if I_CompareCounter melilla_riot = 1
 		console_command create_building Melilla ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 56, y 99, family
@@ -46009,7 +46064,8 @@ end_monitor
 			unit   Desert Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 56, y 99, family
@@ -46027,7 +46083,7 @@ end_monitor
 			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction moors
 			character random_name, named character, age 30, x 56, y 99, family
@@ -46213,7 +46269,7 @@ end_monitor
 	end_if
 	if I_CompareCounter novgorod_riot = 1
 		console_command create_building Novgorod ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction russia
 			character random_name, named character, age 30, x 303, y 267, family
@@ -46231,7 +46287,8 @@ end_monitor
 			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction russia
 			character random_name, named character, age 30, x 303, y 267, family
@@ -46249,7 +46306,7 @@ end_monitor
 			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction russia
 			character random_name, named character, age 30, x 303, y 267, family
@@ -46439,7 +46496,7 @@ end_monitor
 	end_if
 	if I_CompareCounter leon_riot = 1
 		console_command create_building Leon ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 37, y 152, family
@@ -46457,7 +46514,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 37, y 152, family
@@ -46475,7 +46533,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 37, y 152, family
@@ -46580,7 +46638,7 @@ end_monitor
 	end_if
 	if I_CompareCounter toledo_riot = 1
 		console_command create_building Toledo ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 49, y 134, family
@@ -46598,7 +46656,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 49, y 134, family
@@ -46616,7 +46675,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 49, y 134, family
@@ -46721,7 +46780,7 @@ end_monitor
 	end_if
 	if I_CompareCounter salamanca_riot = 1
 		console_command create_building Salamanca ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 37, y 141, family
@@ -46739,7 +46798,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 37, y 141, family
@@ -46757,7 +46817,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 37, y 141, family
@@ -46862,7 +46922,7 @@ end_monitor
 	end_if
 	if I_CompareCounter burgos_riot = 1
 		console_command create_building Burgos ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 51, y 150, family
@@ -46880,7 +46940,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 51, y 150, family
@@ -46898,7 +46959,7 @@ end_monitor
 			unit   Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction spain
 			character random_name, named character, age 30, x 51, y 150, family
@@ -47086,7 +47147,7 @@ end_monitor
 	end_if
 	if I_CompareCounter varad_riot = 1
 		console_command create_building Varad ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 236, y 183, family
@@ -47104,7 +47165,8 @@ end_monitor
 			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 236, y 183, family
@@ -47122,7 +47184,7 @@ end_monitor
 			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 236, y 183, family
@@ -47227,7 +47289,7 @@ end_monitor
 	end_if
 	if I_CompareCounter esztergom_riot = 1
 		console_command create_building Esztergom ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 213, y 191, family
@@ -47245,7 +47307,8 @@ end_monitor
 			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 213, y 191, family
@@ -47263,7 +47326,7 @@ end_monitor
 			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 213, y 191, family
@@ -47368,7 +47431,7 @@ end_monitor
 	end_if
 	if I_CompareCounter kassa_riot = 1
 		console_command create_building Kassa ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 230, y 196, family
@@ -47386,7 +47449,8 @@ end_monitor
 			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 230, y 196, family
@@ -47404,7 +47468,7 @@ end_monitor
 			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction hungary
 			character random_name, named character, age 30, x 230, y 196, family
@@ -47595,7 +47659,7 @@ end_monitor
 	end_if
 	if I_CompareCounter zaragoza_riot = 1
 		console_command create_building Zaragoza ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 78, y 147, family
@@ -47613,7 +47677,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 78, y 147, family
@@ -47631,7 +47696,7 @@ end_monitor
 			unit   Basque Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 78, y 147, family
@@ -47736,7 +47801,7 @@ end_monitor
 	end_if
 	if I_CompareCounter pamplona_riot = 1
 		console_command create_building Pamplona ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 66, y 153, family
@@ -47754,7 +47819,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 66, y 153, family
@@ -47772,7 +47838,7 @@ end_monitor
 			unit   Basque Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 66, y 153, family
@@ -47874,7 +47940,7 @@ end_monitor
 	end_if
 	if I_CompareCounter barcelona_riot = 1
 		console_command create_building Barcelona ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 96, y 146, family
@@ -47892,7 +47958,8 @@ end_monitor
 			unit   Peasant Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 96, y 146, family
@@ -47910,7 +47977,7 @@ end_monitor
 			unit   Basque Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction aragon
 			character random_name, named character, age 30, x 96, y 146, family
@@ -48093,7 +48160,7 @@ end_monitor
 	end_if
 	if I_CompareCounter vilnius_riot = 1
 		console_command create_building Vilnius ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction lithuania
 			character random_name, named character, age 30, x 260, y 239, family
@@ -48111,7 +48178,8 @@ end_monitor
 			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction lithuania
 			character random_name, named character, age 30, x 260, y 239, family
@@ -48129,7 +48197,7 @@ end_monitor
 			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction lithuania
 			character random_name, named character, age 30, x 260, y 239, family
@@ -48313,7 +48381,7 @@ end_monitor
 	end_if
 	if I_CompareCounter kiev_riot = 1
 		console_command create_building Kiev ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction kievan_rus
 			character random_name, named character, age 30, x 297, y 209, family
@@ -48331,7 +48399,8 @@ end_monitor
 			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction kievan_rus
 			character random_name, named character, age 30, x 297, y 209, family
@@ -48349,7 +48418,7 @@ end_monitor
 			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction kievan_rus
 			character random_name, named character, age 30, x 297, y 209, family
@@ -48536,7 +48605,7 @@ end_monitor
 	end_if
 	if I_CompareCounter bergen_riot = 1
 		console_command create_building Bergen ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction norway
 			character random_name, named character, age 30, x 116, y 281, family
@@ -48554,7 +48623,8 @@ end_monitor
 			unit   Norse Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction norway
 			character random_name, named character, age 30, x 116, y 281, family
@@ -48572,7 +48642,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction norway
 			character random_name, named character, age 30, x 116, y 281, family
@@ -48677,7 +48747,7 @@ end_monitor
 	end_if
 	if I_CompareCounter eikundarsund_riot = 1
 		console_command create_building Eikundarsund ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction norway
 			character random_name, named character, age 30, x 120, y 269, family
@@ -48695,7 +48765,8 @@ end_monitor
 			unit   Norse Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction norway
 			character random_name, named character, age 30, x 120, y 269, family
@@ -48713,7 +48784,7 @@ end_monitor
 			unit   Crossbowmen			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction norway
 			character random_name, named character, age 30, x 120, y 269, family
@@ -48902,7 +48973,7 @@ end_monitor
 	end_if
 	if I_CompareCounter urgench_riot = 1
 		console_command create_building Urgench ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 500, y 154, family
@@ -48920,7 +48991,8 @@ end_monitor
 			unit   ME Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 500, y 154, family
@@ -48938,7 +49010,7 @@ end_monitor
 			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 500, y 154, family
@@ -49043,7 +49115,7 @@ end_monitor
 	end_if
 	if I_CompareCounter khiva_riot = 1
 		console_command create_building Khiva ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 505, y 148, family
@@ -49061,7 +49133,8 @@ end_monitor
 			unit   ME Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 505, y 148, family
@@ -49079,7 +49152,7 @@ end_monitor
 			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 505, y 148, family
@@ -49184,7 +49257,7 @@ end_monitor
 	end_if
 	if I_CompareCounter konjikala_riot = 1
 		console_command create_building Konjikala ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 490, y 127, family
@@ -49202,7 +49275,8 @@ end_monitor
 			unit   ME Peasant Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 490, y 127, family
@@ -49220,7 +49294,7 @@ end_monitor
 			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction kwarezm
 			character random_name, named character, age 30, x 490, y 127, family
@@ -49410,7 +49484,7 @@ end_monitor
 	end_if
 	if I_CompareCounter cairo_riot = 1
 		console_command create_building Cairo ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 302, y 61, family
@@ -49428,7 +49502,8 @@ end_monitor
 			unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 302, y 61, family
@@ -49446,7 +49521,7 @@ end_monitor
 			unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 302, y 61, family
@@ -49551,7 +49626,7 @@ end_monitor
 	end_if
 	if I_CompareCounter alexandria_riot = 1
 		console_command create_building Alexandria ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 294, y 69, family
@@ -49569,7 +49644,8 @@ end_monitor
 			unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 294, y 69, family
@@ -49587,7 +49663,7 @@ end_monitor
 			unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 294, y 69, family
@@ -49692,7 +49768,7 @@ end_monitor
 	end_if
 	if I_CompareCounter damietta_riot = 1
 		console_command create_building Damietta ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 306, y 72, family
@@ -49710,7 +49786,8 @@ end_monitor
 			unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 306, y 72, family
@@ -49728,7 +49805,7 @@ end_monitor
 			unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction egypt
 			character random_name, named character, age 30, x 306, y 72, family
@@ -49916,7 +49993,7 @@ end_monitor
 	end_if
 	if I_CompareCounter rhodes_riot = 1
 		console_command create_building Rhodes ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction jerusalem
 			character random_name, named character, age 30, x 279, y 107, family
@@ -49967,7 +50044,8 @@ end_monitor
 			unit   merc galley				exp 2 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction jerusalem
 			character random_name, named character, age 30, x 279, y 107, family
@@ -50018,7 +50096,7 @@ end_monitor
 			unit   merc galley				exp 2 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction jerusalem
 			character random_name, named character, age 30, x 279, y 107, family
@@ -50029,9 +50107,9 @@ end_monitor
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			end
@@ -50046,9 +50124,9 @@ end_monitor
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			end
@@ -50157,7 +50235,7 @@ end_monitor
 	end_if
 	if I_CompareCounter nicosia_riot = 1
 		console_command create_building Nicosia ros_target
-		if I_CompareCounter military_era = 0
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army
 			faction jerusalem
 			character random_name, named character, age 30, x 318, y 99, family
@@ -50208,7 +50286,8 @@ end_monitor
 			unit   merc galley				exp 2 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction jerusalem
 			character random_name, named character, age 30, x 318, y 99, family
@@ -50259,7 +50338,7 @@ end_monitor
 			unit   merc galley				exp 2 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction jerusalem
 			character random_name, named character, age 30, x 318, y 99, family
@@ -50270,9 +50349,9 @@ end_monitor
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			end
@@ -50287,9 +50366,9 @@ end_monitor
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
 			unit   Dismounted Knights Hospitaller	exp 1 armour 2 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
-			unit   Pike Militia					exp 0 armour 1 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
+			unit   Free Company Men at Arms		exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			end
@@ -50482,7 +50561,8 @@ end_monitor
 	end_if
 	if I_CompareCounter thorn_riot = 1
 		console_command create_building Thorn ros_target
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction teutonic_order
 			character random_name, named character, age 30, x 211, y 228, family
@@ -50517,7 +50597,7 @@ end_monitor
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction teutonic_order
 			character random_name, named character, age 30, x 211, y 228, family
@@ -50643,7 +50723,8 @@ end_monitor
 	end_if
 	if I_CompareCounter palanga_riot = 1
 		console_command create_building Palanga ros_target
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction teutonic_order
 			character random_name, named character, age 30, x 226, y 239, family
@@ -50678,7 +50759,7 @@ end_monitor
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction teutonic_order
 			character random_name, named character, age 30, x 226, y 239, family
@@ -50804,7 +50885,8 @@ end_monitor
 	end_if
 	if I_CompareCounter riga_riot = 1
 		console_command create_building Riga ros_target
-		if I_CompareCounter military_era = 1; Heavy Mail 1200
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army
 			faction teutonic_order
 			character random_name, named character, age 30, x 250, y 255, family
@@ -50839,7 +50921,7 @@ end_monitor
 			unit   Crossbow Militia				exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
-		if I_CompareCounter military_era = 2; Partial Plate 1300
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army
 			faction teutonic_order
 			character random_name, named character, age 30, x 250, y 255, family

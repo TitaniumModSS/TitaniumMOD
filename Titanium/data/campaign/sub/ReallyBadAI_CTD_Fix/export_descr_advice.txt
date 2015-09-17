@@ -1,0 +1,21 @@
+
+;------------------------------------------
+AdviceThread G5Script_fix_Thread
+    GameArea Campaign
+
+    Item G5Script_fix_01
+        Uninhibitable
+        Verbosity  0
+        Priority  6
+        Threshold  1
+        MaxRepeats  0
+        RepeatInterval  1
+        Attitude Normal
+        Presentation Default
+        Title G5Script_fix_01_Title
+        On_display scripts/show_me/G5Script_fix.txt
+        Text G5Script_fix_01_Text
+      
+
+
+

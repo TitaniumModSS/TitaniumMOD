@@ -1,0 +1,342 @@
+;Byg's Grim Reality ancillaries
+;------------------------------------------
+Trigger supplywagon_faction_leader_starter
+    WhenToTest CharacterTurnStart
+    Condition FactionIsLocal
+          and not FactionwideAncillaryExists supplywagon1
+          and not HasAncType supplywagon
+          and IsFactionLeader
+
+    AcquireAncillary supplywagon1 chance  100
+
+;supplywagon to FL
+;------------------------------------------
+Trigger warcouncil_faction_Heir_starter
+    WhenToTest CharacterTurnStart
+    Condition FactionIsLocal
+          and not FactionwideAncillaryExists warcouncil1
+          and not HasAncType warcouncil
+          and IsFactionHeir
+          and I_TurnNumber = 0
+
+    AcquireAncillary warcouncil1 chance  100
+
+;heir getting priority
+;------------------------------------------
+Trigger warcouncil1_not_heldheir1
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil1
+          and not HasAncType warcouncil
+          and IsFactionHeir
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil1 chance  100
+
+;heir
+;------------------------------------------
+Trigger warcouncil2_not_heldheir2
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil2
+          and not HasAncType warcouncil
+          and IsFactionHeir
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil2 chance  100
+
+;heir
+;------------------------------------------
+;4WC*Trigger warcouncil3_not_heldheir3
+;4WC*    WhenToTest CharacterTurnStart
+;4WC*    Condition not FactionwideAncillaryExists warcouncil3
+;4WC*          and not HasAncType warcouncil
+;4WC*          and IsFactionHeir
+;4WC*          and not IsFactionLeader
+;4WC*          and not Trait Dishonor >= 1
+;4WC*          and FactionIsLocal
+;4WC*          and Trait DefiedOrders <= 2
+;4WC*
+;4WC*    AcquireAncillary warcouncil3 chance  100
+;4WC*
+;heir
+;------------------------------------------
+Trigger warcouncil1_not_held_JrWC1
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil1
+          and not HasAncType warcouncil
+          and Trait JrWarCouncillor >= 1
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil1 chance  100
+
+;jrwc
+;------------------------------------------
+Trigger warcouncil2_not_held_JrWC2
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil2
+          and not HasAncType warcouncil
+          and Trait JrWarCouncillor >= 1
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil2 chance  100
+
+;jrwc
+;------------------------------------------
+;4WC*Trigger warcouncil3_not_held_JrWC3
+;4WC*    WhenToTest CharacterTurnStart
+;4WC*    Condition not FactionwideAncillaryExists warcouncil3
+;4WC*          and not HasAncType warcouncil
+;4WC*          and Trait JrWarCouncillor >= 1
+;4WC*          and not IsFactionLeader
+;4WC*          and not Trait Dishonor >= 1
+;4WC*          and FactionIsLocal
+;4WC*          and Trait DefiedOrders <= 2
+;4WC*
+;4WC*    AcquireAncillary warcouncil3 chance  100
+;4WC*
+;jrwc
+;------------------------------------------
+Trigger warcouncil1_not_held_PTS1
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil1
+          and IsGeneral
+          and not HasAncType warcouncil
+          and HasAncType warchest
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil1 chance  50
+
+;pts
+;------------------------------------------
+Trigger warcouncil2_not_held_PTS2
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil2
+          and IsGeneral
+          and not HasAncType warcouncil
+          and HasAncType warchest
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil2 chance  50
+
+;pts
+;------------------------------------------
+;4WC*Trigger warcouncil3_not_held_PTS3
+;4WC*    WhenToTest CharacterTurnStart
+;4WC*    Condition not FactionwideAncillaryExists warcouncil3
+;4WC*          and IsGeneral
+;4WC*          and not HasAncType warcouncil
+;4WC*          and HasAncType warchest
+;4WC*          and not IsFactionLeader
+;4WC*          and not Trait Dishonor >= 1
+;4WC*          and FactionIsLocal
+;4WC*          and Trait DefiedOrders <= 2
+;4WC*
+;4WC*    AcquireAncillary warcouncil3 chance  50
+;4WC*
+;pts
+;------------------------------------------
+Trigger warcouncil1_not_held_army1
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil1
+          and IsGeneral
+          and not HasAncType warcouncil
+          and Trait ArmySize >= 3
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil1 chance  30
+
+;pts
+;------------------------------------------
+Trigger warcouncil2_not_held_army2
+    WhenToTest CharacterTurnEnd
+    Condition not FactionwideAncillaryExists warcouncil2
+          and IsGeneral
+          and not HasAncType warcouncil
+          and Trait ArmySize >= 3
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil2 chance  30
+
+;pts
+;------------------------------------------
+;4WC*Trigger warcouncil3_not_held_army3
+;4WC*    WhenToTest CharacterTurnEnd
+;4WC*    Condition not FactionwideAncillaryExists warcouncil3
+;4WC*          and not HasAncType warcouncil
+;4WC*          and Trait ArmySize >= 3
+;4WC*          and not IsFactionLeader
+;4WC*          and not Trait Dishonor >= 1
+;4WC*          and FactionIsLocal
+;4WC*          and Trait DefiedOrders <= 2
+;4WC*
+;4WC*    AcquireAncillary warcouncil3 chance  30
+;4WC*
+;pts
+;------------------------------------------
+Trigger warcouncil1_not_held_InEnemyLands1
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warcouncil1
+          and IsGeneral
+          and not HasAncType warcouncil
+          and InEnemyLands
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil1 chance  20
+
+;pts
+;------------------------------------------
+Trigger warcouncil2_not_held_InEnemyLands2
+    WhenToTest CharacterTurnEnd
+    Condition not FactionwideAncillaryExists warcouncil2
+          and IsGeneral
+          and not HasAncType warcouncil
+          and InEnemyLands
+          and not IsFactionLeader
+          and not Trait Dishonor >= 1
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warcouncil2 chance  20
+
+;pts
+;------------------------------------------
+;4WC*Trigger warcouncil3_not_held_InEnemyLands3
+;4WC*    WhenToTest CharacterTurnEnd
+;4WC*    Condition not FactionwideAncillaryExists warcouncil3
+;4WC*          and IsGeneral
+;4WC*          and not HasAncType warcouncil
+;4WC*          and InEnemyLands
+;4WC*          and not IsFactionLeader
+;4WC*          and not Trait Dishonor >= 1
+;4WC*          and FactionIsLocal
+;4WC*          and Trait DefiedOrders <= 2
+;4WC*
+;4WC*    AcquireAncillary warcouncil3 chance  20
+;4WC*
+;pts
+;------------------------------------------
+; War Chest
+;------------------------------------------
+Trigger warchest1_not_held1
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warchest1
+          and IsFactionLeader
+          and not HasAncType warchest
+          and FactionIsLocal
+
+    AcquireAncillary warchest1 chance  100
+
+;FL
+;------------------------------------------
+Trigger warchest2_not_held2
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warchest2
+          and IsFactionLeader
+          and not HasAncType warchest
+          and FactionIsLocal
+
+    AcquireAncillary warchest2 chance  100
+
+;FL
+;------------------------------------------
+Trigger warchest3_not_held3
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warchest3
+          and IsFactionLeader
+          and not HasAncType warchest
+          and FactionIsLocal
+
+    AcquireAncillary warchest3 chance  100
+
+;FL
+;------------------------------------------
+;4WC*Trigger warchest4_not_held4
+;4WC*    WhenToTest CharacterTurnStart
+;4WC*    Condition not FactionwideAncillaryExists warchest4
+;4WC*          and IsFactionLeader
+;4WC*          and not HasAncType warchest
+;4WC*          and FactionIsLocal
+
+;4WC*    AcquireAncillary warchest4 chance  100
+
+;FL
+;------------------------------------------
+Trigger warchest1_not_heldwc1
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warchest1
+          and not IsFactionLeader
+          and HasAncType warcouncil
+          and not HasAncType warchest
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warchest1 chance  100
+
+;WC
+;------------------------------------------
+Trigger warchest2_not_heldwc2
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warchest2
+          and not IsFactionLeader
+          and HasAncType warcouncil
+          and not HasAncType warchest
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warchest2 chance  100
+
+;WC
+;------------------------------------------
+Trigger warchest3_not_heldwc3
+    WhenToTest CharacterTurnStart
+    Condition not FactionwideAncillaryExists warchest3
+          and not IsFactionLeader
+          and HasAncType warcouncil
+          and not HasAncType warchest
+          and FactionIsLocal
+          and Trait DefiedOrders <= 2
+
+    AcquireAncillary warchest3 chance  100
+
+;WC
+;------------------------------------------
+;4WC*Trigger warchest4_not_heldwc4
+;4WC*    WhenToTest CharacterTurnStart
+;4WC*    Condition not FactionwideAncillaryExists warchest4
+;4WC*          and not IsFactionLeader
+;4WC*          and HasAncType warcouncil
+;4WC*          and not HasAncType warchest
+;4WC*          and FactionIsLocal
+;4WC*          and Trait DefiedOrders <= 2
+
+;4WC*    AcquireAncillary warchest4 chance  100
+
+;WC
+;------------------------------------------
+;end of Byg anc triggers

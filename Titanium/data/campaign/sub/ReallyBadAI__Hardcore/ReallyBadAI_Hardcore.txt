@@ -1,0 +1,2179 @@
+;### Germanicu5 ReallyBadAI Hardcore
+;### This file contains manually programmed AI behaviour introducing command chain and deployment limitations.
+;### Support available at http://www.twcenter.net/forums/showthread.php?t=257970 and http://www.twcenter.net/forums/showthread.php?t=253132
+;### Non-private use of code only by permission,
+;### coded by Germanicu5
+
+declare_counter deployment_timer
+declare_counter pu1_selected
+declare_counter pu2_selected
+declare_counter pu3_selected
+declare_counter pu4_selected
+declare_counter pu5_selected
+declare_counter pu6_selected
+declare_counter pu7_selected
+declare_counter pu8_selected
+declare_counter pu9_selected
+declare_counter pu10_selected
+declare_counter pu11_selected
+declare_counter pu12_selected
+declare_counter pu13_selected
+declare_counter pu14_selected
+declare_counter pu15_selected
+declare_counter pu16_selected
+declare_counter pu17_selected
+declare_counter pu18_selected
+declare_counter pu19_selected
+declare_counter pu20_selected
+declare_counter pu1_lock_now
+declare_counter pu2_lock_now
+declare_counter pu3_lock_now
+declare_counter pu4_lock_now
+declare_counter pu5_lock_now
+declare_counter pu6_lock_now
+declare_counter pu7_lock_now
+declare_counter pu8_lock_now
+declare_counter pu9_lock_now
+declare_counter pu10_lock_now
+declare_counter pu11_lock_now
+declare_counter pu12_lock_now
+declare_counter pu13_lock_now
+declare_counter pu14_lock_now
+declare_counter pu15_lock_now
+declare_counter pu16_lock_now
+declare_counter pu17_lock_now
+declare_counter pu18_lock_now
+declare_counter pu19_lock_now
+declare_counter pu20_lock_now
+
+monitor_event BattleDeploymentPhaseCommenced FactionIsLocal
+    and I_CompareCounter panel_check = 1
+    and ! I_ConflictType SuccessfulAmbush
+
+    set_counter deployment_timer 1
+    battle_wait 30
+    if I_CompareCounter deployment_timer = 1
+    ;    and ! I_BattleIsSiegeBattle
+    set_counter deployment_timer 2
+    battle_wait 30
+    end_if
+    if I_CompareCounter deployment_timer = 2
+    and I_BattlePlayerArmyNumberOfUnits > 10
+    ;    and ! I_BattleIsSiegeBattle
+    set_counter deployment_timer 3
+    battle_wait 30
+    end_if
+
+if I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter deployment_timer > 1
+    if I_BattlePlayerArmyNumberOfUnits > 0
+    filter_unit_commands off a1u1
+    if I_BattlePlayerArmyNumberOfUnits > 1
+    filter_unit_commands off a1u2
+    if I_BattlePlayerArmyNumberOfUnits > 2
+    filter_unit_commands off a1u3
+    if I_BattlePlayerArmyNumberOfUnits > 3
+    filter_unit_commands off a1u4
+    if I_BattlePlayerArmyNumberOfUnits > 4
+    filter_unit_commands off a1u5
+    if I_BattlePlayerArmyNumberOfUnits > 5
+    filter_unit_commands off a1u6
+    if I_BattlePlayerArmyNumberOfUnits > 6
+    filter_unit_commands off a1u7
+    if I_BattlePlayerArmyNumberOfUnits > 7
+    filter_unit_commands off a1u8
+    if I_BattlePlayerArmyNumberOfUnits > 8
+    filter_unit_commands off a1u9
+    if I_BattlePlayerArmyNumberOfUnits > 9
+    filter_unit_commands off a1u10
+    if I_BattlePlayerArmyNumberOfUnits > 10
+    filter_unit_commands off a1u11
+    if I_BattlePlayerArmyNumberOfUnits > 11
+    filter_unit_commands off a1u12
+    if I_BattlePlayerArmyNumberOfUnits > 12
+    filter_unit_commands off a1u13
+    if I_BattlePlayerArmyNumberOfUnits > 13
+    filter_unit_commands off a1u14
+    if I_BattlePlayerArmyNumberOfUnits > 14
+    filter_unit_commands off a1u15
+    if I_BattlePlayerArmyNumberOfUnits > 15
+    filter_unit_commands off a1u16
+    if I_BattlePlayerArmyNumberOfUnits > 16
+    filter_unit_commands off a1u17
+    if I_BattlePlayerArmyNumberOfUnits > 17
+    filter_unit_commands off a1u18
+    if I_BattlePlayerArmyNumberOfUnits > 18
+    filter_unit_commands off a1u19
+    if I_BattlePlayerArmyNumberOfUnits = 20
+    filter_unit_commands off a1u20
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+
+;    if I_BattleIsSiegeBattle
+;    ai_active_set on
+;    end_if
+end_if
+
+if ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter deployment_timer > 1
+    if I_BattlePlayerArmyNumberOfUnits > 0
+    filter_unit_commands off a2u1
+    if I_BattlePlayerArmyNumberOfUnits > 1
+    filter_unit_commands off a2u2
+    if I_BattlePlayerArmyNumberOfUnits > 2
+    filter_unit_commands off a2u3
+    if I_BattlePlayerArmyNumberOfUnits > 3
+    filter_unit_commands off a2u4
+    if I_BattlePlayerArmyNumberOfUnits > 4
+    filter_unit_commands off a2u5
+    if I_BattlePlayerArmyNumberOfUnits > 5
+    filter_unit_commands off a2u6
+    if I_BattlePlayerArmyNumberOfUnits > 6
+    filter_unit_commands off a2u7
+    if I_BattlePlayerArmyNumberOfUnits > 7
+    filter_unit_commands off a2u8
+    if I_BattlePlayerArmyNumberOfUnits > 8
+    filter_unit_commands off a2u9
+    if I_BattlePlayerArmyNumberOfUnits > 9
+    filter_unit_commands off a2u10
+    if I_BattlePlayerArmyNumberOfUnits > 10
+    filter_unit_commands off a2u11
+    if I_BattlePlayerArmyNumberOfUnits > 11
+    filter_unit_commands off a2u12
+    if I_BattlePlayerArmyNumberOfUnits > 12
+    filter_unit_commands off a2u13
+    if I_BattlePlayerArmyNumberOfUnits > 13
+    filter_unit_commands off a2u14
+    if I_BattlePlayerArmyNumberOfUnits > 14
+    filter_unit_commands off a2u15
+    if I_BattlePlayerArmyNumberOfUnits > 15
+    filter_unit_commands off a2u16
+    if I_BattlePlayerArmyNumberOfUnits > 16
+    filter_unit_commands off a2u17
+    if I_BattlePlayerArmyNumberOfUnits > 17
+    filter_unit_commands off a2u18
+    if I_BattlePlayerArmyNumberOfUnits > 18
+    filter_unit_commands off a2u19
+    if I_BattlePlayerArmyNumberOfUnits = 20
+    filter_unit_commands off a2u20
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+
+;    if I_BattleIsSiegeBattle
+;    ai_active_set on
+;    end_if
+end_if
+
+end_monitor
+
+monitor_event BattleConflictPhaseCommenced FactionIsLocal
+    and I_CompareCounter panel_check = 1
+;    and ! I_ConflictType SuccessfulAmbush
+    and I_CompareCounter deployment_timer > 0
+
+    set_counter deployment_timer 0
+if I_BattlePlayerArmyIsAttacker
+    if I_BattlePlayerArmyNumberOfUnits > 0
+    filter_unit_commands on a1u1
+    if I_BattlePlayerArmyNumberOfUnits > 1
+    filter_unit_commands on a1u2
+    if I_BattlePlayerArmyNumberOfUnits > 2
+    filter_unit_commands on a1u3
+    if I_BattlePlayerArmyNumberOfUnits > 3
+    filter_unit_commands on a1u4
+    if I_BattlePlayerArmyNumberOfUnits > 4
+    filter_unit_commands on a1u5
+    if I_BattlePlayerArmyNumberOfUnits > 5
+    filter_unit_commands on a1u6
+    if I_BattlePlayerArmyNumberOfUnits > 6
+    filter_unit_commands on a1u7
+    if I_BattlePlayerArmyNumberOfUnits > 7
+    filter_unit_commands on a1u8
+    if I_BattlePlayerArmyNumberOfUnits > 8
+    filter_unit_commands on a1u9
+    if I_BattlePlayerArmyNumberOfUnits > 9
+    filter_unit_commands on a1u10
+    if I_BattlePlayerArmyNumberOfUnits > 10
+    filter_unit_commands on a1u11
+    if I_BattlePlayerArmyNumberOfUnits > 11
+    filter_unit_commands on a1u12
+    if I_BattlePlayerArmyNumberOfUnits > 12
+    filter_unit_commands on a1u13
+    if I_BattlePlayerArmyNumberOfUnits > 13
+    filter_unit_commands on a1u14
+    if I_BattlePlayerArmyNumberOfUnits > 14
+    filter_unit_commands on a1u15
+    if I_BattlePlayerArmyNumberOfUnits > 15
+    filter_unit_commands on a1u16
+    if I_BattlePlayerArmyNumberOfUnits > 16
+    filter_unit_commands on a1u17
+    if I_BattlePlayerArmyNumberOfUnits > 17
+    filter_unit_commands on a1u18
+    if I_BattlePlayerArmyNumberOfUnits > 18
+    filter_unit_commands on a1u19
+    if I_BattlePlayerArmyNumberOfUnits = 20
+    filter_unit_commands on a1u20
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+end_if
+
+if ! I_BattlePlayerArmyIsAttacker
+    if I_BattlePlayerArmyNumberOfUnits > 0
+    filter_unit_commands on a2u1
+    if I_BattlePlayerArmyNumberOfUnits > 1
+    filter_unit_commands on a2u2
+    if I_BattlePlayerArmyNumberOfUnits > 2
+    filter_unit_commands on a2u3
+    if I_BattlePlayerArmyNumberOfUnits > 3
+    filter_unit_commands on a2u4
+    if I_BattlePlayerArmyNumberOfUnits > 4
+    filter_unit_commands on a2u5
+    if I_BattlePlayerArmyNumberOfUnits > 5
+    filter_unit_commands on a2u6
+    if I_BattlePlayerArmyNumberOfUnits > 6
+    filter_unit_commands on a2u7
+    if I_BattlePlayerArmyNumberOfUnits > 7
+    filter_unit_commands on a2u8
+    if I_BattlePlayerArmyNumberOfUnits > 8
+    filter_unit_commands on a2u9
+    if I_BattlePlayerArmyNumberOfUnits > 9
+    filter_unit_commands on a2u10
+    if I_BattlePlayerArmyNumberOfUnits > 10
+    filter_unit_commands on a2u11
+    if I_BattlePlayerArmyNumberOfUnits > 11
+    filter_unit_commands on a2u12
+    if I_BattlePlayerArmyNumberOfUnits > 12
+    filter_unit_commands on a2u13
+    if I_BattlePlayerArmyNumberOfUnits > 13
+    filter_unit_commands on a2u14
+    if I_BattlePlayerArmyNumberOfUnits > 14
+    filter_unit_commands on a2u15
+    if I_BattlePlayerArmyNumberOfUnits > 15
+    filter_unit_commands on a2u16
+    if I_BattlePlayerArmyNumberOfUnits > 16
+    filter_unit_commands on a2u17
+    if I_BattlePlayerArmyNumberOfUnits > 17
+    filter_unit_commands on a2u18
+    if I_BattlePlayerArmyNumberOfUnits > 18
+    filter_unit_commands on a2u19
+    if I_BattlePlayerArmyNumberOfUnits = 20
+    filter_unit_commands on a2u20
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+end_if
+end_monitor
+
+;;;;;;;
+
+monitor_event BattlePlayerUnitAttacksEnemyUnit TrueCondition
+;   and BattleIsMeleeAttack
+and I_CompareCounter labels_only = 1
+and I_CompareCounter panel_check = 1
+and ! I_BattleIsSiegeBattle
+
+if I_BattlePlayerArmyIsAttacker
+
+    if I_CompareCounter player_unit_count >= 1
+    if I_UnitSelected a1u1
+;    and I_CompareCounter pu1_missile = 1
+    and I_CompareCounter pu1_selected = 0
+    set_counter pu1_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 2
+    if I_UnitSelected a1u2
+;    and I_CompareCounter pu2_missile = 1
+    and I_CompareCounter pu2_selected = 0
+    set_counter pu2_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 3
+    if I_UnitSelected a1u3
+;    and I_CompareCounter pu3_missile = 1
+    and I_CompareCounter pu3_selected = 0
+    set_counter pu3_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 4
+    if I_UnitSelected a1u4
+;    and I_CompareCounter pu4_missile = 1
+    and I_CompareCounter pu4_selected = 0
+    set_counter pu4_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 5
+    if I_UnitSelected a1u5
+;    and I_CompareCounter pu5_missile = 1
+    and I_CompareCounter pu5_selected = 0
+    set_counter pu5_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 6
+    if I_UnitSelected a1u6
+;    and I_CompareCounter pu6_missile = 1
+    and I_CompareCounter pu6_selected = 0
+    set_counter pu6_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 7
+    if I_UnitSelected a1u7
+;    and I_CompareCounter pu7_missile = 1
+    and I_CompareCounter pu7_selected = 0
+    set_counter pu7_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 8
+    if I_UnitSelected a1u8
+;    and I_CompareCounter pu8_missile = 1
+    and I_CompareCounter pu8_selected = 0
+    set_counter pu8_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 9
+    if I_UnitSelected a1u9
+;    and I_CompareCounter pu9_missile = 1
+    and I_CompareCounter pu9_selected = 0
+    set_counter pu9_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 10
+    if I_UnitSelected a1u10
+;    and I_CompareCounter pu10_missile = 1
+    and I_CompareCounter pu10_selected = 0
+    set_counter pu10_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 11
+    if I_UnitSelected a1u11
+;    and I_CompareCounter pu11_missile = 1
+    and I_CompareCounter pu11_selected = 0
+    set_counter pu11_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 12
+    if I_UnitSelected a1u12
+;    and I_CompareCounter pu12_missile = 1
+    and I_CompareCounter pu12_selected = 0
+    set_counter pu12_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 13
+    if I_UnitSelected a1u13
+;    and I_CompareCounter pu13_missile = 1
+    and I_CompareCounter pu13_selected = 0
+    set_counter pu13_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 14
+    if I_UnitSelected a1u14
+;    and I_CompareCounter pu14_missile = 1
+    and I_CompareCounter pu14_selected = 0
+    set_counter pu14_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 15
+    if I_UnitSelected a1u15
+;    and I_CompareCounter pu15_missile = 1
+    and I_CompareCounter pu15_selected = 0
+    set_counter pu15_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 16
+    if I_UnitSelected a1u16
+;    and I_CompareCounter pu16_missile = 1
+    and I_CompareCounter pu16_selected = 0
+    set_counter pu16_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 17
+    if I_UnitSelected a1u17
+;    and I_CompareCounter pu17_missile = 1
+    and I_CompareCounter pu17_selected = 0
+    set_counter pu17_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 18
+    if I_UnitSelected a1u18
+;    and I_CompareCounter pu18_missile = 1
+    and I_CompareCounter pu18_selected = 0
+    set_counter pu18_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 19
+    if I_UnitSelected a1u19
+;    and I_CompareCounter pu19_missile = 1
+    and I_CompareCounter pu19_selected = 0
+    set_counter pu19_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count = 20
+    if I_UnitSelected a1u20
+;    and I_CompareCounter pu20_missile = 1
+    and I_CompareCounter pu20_selected = 0
+    set_counter pu20_selected 1
+    end_if
+
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+
+end_if
+
+if ! I_BattlePlayerArmyIsAttacker
+
+    if I_CompareCounter player_unit_count >= 1
+    if I_UnitSelected a2u1
+;    and I_CompareCounter pu1_missile = 1
+    and I_CompareCounter pu1_selected = 0
+    set_counter pu1_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 2
+    if I_UnitSelected a2u2
+;    and I_CompareCounter pu2_missile = 1
+    and I_CompareCounter pu2_selected = 0
+    set_counter pu2_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 3
+    if I_UnitSelected a2u3
+;    and I_CompareCounter pu3_missile = 1
+    and I_CompareCounter pu3_selected = 0
+    set_counter pu3_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 4
+    if I_UnitSelected a2u4
+;    and I_CompareCounter pu4_missile = 1
+    and I_CompareCounter pu4_selected = 0
+    set_counter pu4_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 5
+    if I_UnitSelected a2u5
+;    and I_CompareCounter pu5_missile = 1
+    and I_CompareCounter pu5_selected = 0
+    set_counter pu5_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 6
+    if I_UnitSelected a2u6
+;    and I_CompareCounter pu6_missile = 1
+    and I_CompareCounter pu6_selected = 0
+    set_counter pu6_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 7
+    if I_UnitSelected a2u7
+;    and I_CompareCounter pu7_missile = 1
+    and I_CompareCounter pu7_selected = 0
+    set_counter pu7_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 8
+    if I_UnitSelected a2u8
+;    and I_CompareCounter pu8_missile = 1
+    and I_CompareCounter pu8_selected = 0
+    set_counter pu8_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 9
+    if I_UnitSelected a2u9
+;    and I_CompareCounter pu9_missile = 1
+    and I_CompareCounter pu9_selected = 0
+    set_counter pu9_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 10
+    if I_UnitSelected a2u10
+;    and I_CompareCounter pu10_missile = 1
+    and I_CompareCounter pu10_selected = 0
+    set_counter pu10_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 11
+    if I_UnitSelected a2u11
+;    and I_CompareCounter pu11_missile = 1
+    and I_CompareCounter pu11_selected = 0
+    set_counter pu11_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 12
+    if I_UnitSelected a2u12
+;    and I_CompareCounter pu12_missile = 1
+    and I_CompareCounter pu12_selected = 0
+    set_counter pu12_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 13
+    if I_UnitSelected a2u13
+;    and I_CompareCounter pu13_missile = 1
+    and I_CompareCounter pu13_selected = 0
+    set_counter pu13_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 14
+    if I_UnitSelected a2u14
+;    and I_CompareCounter pu14_missile = 1
+    and I_CompareCounter pu14_selected = 0
+    set_counter pu14_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 15
+    if I_UnitSelected a2u15
+;    and I_CompareCounter pu15_missile = 1
+    and I_CompareCounter pu15_selected = 0
+    set_counter pu15_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 16
+    if I_UnitSelected a2u16
+;    and I_CompareCounter pu16_missile = 1
+    and I_CompareCounter pu16_selected = 0
+    set_counter pu16_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 17
+    if I_UnitSelected a2u17
+;    and I_CompareCounter pu17_missile = 1
+    and I_CompareCounter pu17_selected = 0
+    set_counter pu17_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 18
+    if I_UnitSelected a2u18
+;    and I_CompareCounter pu18_missile = 1
+    and I_CompareCounter pu18_selected = 0
+    set_counter pu18_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count >= 19
+    if I_UnitSelected a2u19
+;    and I_CompareCounter pu19_missile = 1
+    and I_CompareCounter pu19_selected = 0
+    set_counter pu19_selected 1
+    end_if
+
+    if I_CompareCounter player_unit_count = 20
+    if I_UnitSelected a2u20
+;    and I_CompareCounter pu20_missile = 1
+    and I_CompareCounter pu20_selected = 0
+    set_counter pu20_selected 1
+    end_if
+
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+
+end_if
+
+end_monitor
+
+;;;;;;;
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 1
+    and I_CompareCounter pu1_selected = 0
+    and I_UnitStatus a1u1 charging
+    and ! I_IsUnitEngaged a1u1
+
+    set_counter pu1_selected 1
+    set_counter pu1_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 2
+    and I_CompareCounter pu2_selected = 0
+    and I_UnitStatus a1u2 charging
+    and ! I_IsUnitEngaged a1u2
+
+    set_counter pu2_selected 1
+    set_counter pu2_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 3
+    and I_CompareCounter pu3_selected = 0
+    and I_UnitStatus a1u3 charging
+    and ! I_IsUnitEngaged a1u3
+
+    set_counter pu3_selected 1
+    set_counter pu3_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 4
+    and I_CompareCounter pu4_selected = 0
+    and I_UnitStatus a1u4 charging
+    and ! I_IsUnitEngaged a1u4
+
+    set_counter pu4_selected 1
+    set_counter pu4_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 5
+    and I_CompareCounter pu5_selected = 0
+    and I_UnitStatus a1u5 charging
+    and ! I_IsUnitEngaged a1u5
+
+    set_counter pu5_selected 1
+    set_counter pu5_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 6
+    and I_CompareCounter pu6_selected = 0
+    and I_UnitStatus a1u6 charging
+    and ! I_IsUnitEngaged a1u6
+
+    set_counter pu6_selected 1
+    set_counter pu6_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 7
+    and I_CompareCounter pu7_selected = 0
+    and I_UnitStatus a1u7 charging
+    and ! I_IsUnitEngaged a1u7
+
+    set_counter pu7_selected 1
+    set_counter pu7_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 8
+    and I_CompareCounter pu8_selected = 0
+    and I_UnitStatus a1u8 charging
+    and ! I_IsUnitEngaged a1u8
+
+    set_counter pu8_selected 1
+    set_counter pu8_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 9
+    and I_CompareCounter pu9_selected = 0
+    and I_UnitStatus a1u9 charging
+    and ! I_IsUnitEngaged a1u9
+
+    set_counter pu9_selected 1
+    set_counter pu9_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 10
+    and I_CompareCounter pu10_selected = 0
+    and I_UnitStatus a1u10 charging
+    and ! I_IsUnitEngaged a1u10
+
+    set_counter pu10_selected 1
+    set_counter pu10_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 11
+    and I_CompareCounter pu11_selected = 0
+    and I_UnitStatus a1u11 charging
+    and ! I_IsUnitEngaged a1u11
+
+    set_counter pu11_selected 1
+    set_counter pu11_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 12
+    and I_CompareCounter pu12_selected = 0
+    and I_UnitStatus a1u12 charging
+    and ! I_IsUnitEngaged a1u12
+
+    set_counter pu12_selected 1
+    set_counter pu12_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 13
+    and I_CompareCounter pu13_selected = 0
+    and I_UnitStatus a1u13 charging
+    and ! I_IsUnitEngaged a1u13
+
+    set_counter pu13_selected 1
+    set_counter pu13_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 14
+    and I_CompareCounter pu14_selected = 0
+    and I_UnitStatus a1u14 charging
+    and ! I_IsUnitEngaged a1u14
+
+    set_counter pu14_selected 1
+    set_counter pu14_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 15
+    and I_CompareCounter pu15_selected = 0
+    and I_UnitStatus a1u15 charging
+    and ! I_IsUnitEngaged a1u15
+
+    set_counter pu15_selected 1
+    set_counter pu15_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 16
+    and I_CompareCounter pu16_selected = 0
+    and I_UnitStatus a1u16 charging
+    and ! I_IsUnitEngaged a1u16
+
+    set_counter pu16_selected 1
+    set_counter pu16_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 17
+    and I_CompareCounter pu17_selected = 0
+    and I_UnitStatus a1u17 charging
+    and ! I_IsUnitEngaged a1u17
+
+    set_counter pu17_selected 1
+    set_counter pu17_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 18
+    and I_CompareCounter pu18_selected = 0
+    and I_UnitStatus a1u18 charging
+    and ! I_IsUnitEngaged a1u18
+
+    set_counter pu18_selected 1
+    set_counter pu18_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 19
+    and I_CompareCounter pu19_selected = 0
+    and I_UnitStatus a1u19 charging
+    and ! I_IsUnitEngaged a1u19
+
+    set_counter pu19_selected 1
+    set_counter pu19_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count = 20
+    and I_CompareCounter pu20_selected = 0
+    and I_UnitStatus a1u20 charging
+    and ! I_IsUnitEngaged a1u20
+
+    set_counter pu20_selected 1
+    set_counter pu20_lock_now 1
+end_monitor
+
+;;;;;;;
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 1
+    and I_CompareCounter pu1_selected = 0
+    and I_UnitStatus a2u1 charging
+    and ! I_IsUnitEngaged a2u1
+
+    set_counter pu1_selected 1
+    set_counter pu1_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 2
+    and I_CompareCounter pu2_selected = 0
+    and I_UnitStatus a2u2 charging
+    and ! I_IsUnitEngaged a2u2
+
+    set_counter pu2_selected 1
+    set_counter pu2_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 3
+    and I_CompareCounter pu3_selected = 0
+    and I_UnitStatus a2u3 charging
+    and ! I_IsUnitEngaged a2u3
+
+    set_counter pu3_selected 1
+    set_counter pu3_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 4
+    and I_CompareCounter pu4_selected = 0
+    and I_UnitStatus a2u4 charging
+    and ! I_IsUnitEngaged a2u4
+
+    set_counter pu4_selected 1
+    set_counter pu4_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 5
+    and I_CompareCounter pu5_selected = 0
+    and I_UnitStatus a2u5 charging
+    and ! I_IsUnitEngaged a2u5
+
+    set_counter pu5_selected 1
+    set_counter pu5_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 6
+    and I_CompareCounter pu6_selected = 0
+    and I_UnitStatus a2u6 charging
+    and ! I_IsUnitEngaged a2u6
+
+    set_counter pu6_selected 1
+    set_counter pu6_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 7
+    and I_CompareCounter pu7_selected = 0
+    and I_UnitStatus a2u7 charging
+    and ! I_IsUnitEngaged a2u7
+
+    set_counter pu7_selected 1
+    set_counter pu7_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 8
+    and I_CompareCounter pu8_selected = 0
+    and I_UnitStatus a2u8 charging
+    and ! I_IsUnitEngaged a2u8
+
+    set_counter pu8_selected 1
+    set_counter pu8_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 9
+    and I_CompareCounter pu9_selected = 0
+    and I_UnitStatus a2u9 charging
+    and ! I_IsUnitEngaged a2u9
+
+    set_counter pu9_selected 1
+    set_counter pu9_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 10
+    and I_CompareCounter pu10_selected = 0
+    and I_UnitStatus a2u10 charging
+    and ! I_IsUnitEngaged a2u10
+
+    set_counter pu10_selected 1
+    set_counter pu10_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 11
+    and I_CompareCounter pu11_selected = 0
+    and I_UnitStatus a2u11 charging
+    and ! I_IsUnitEngaged a2u11
+
+    set_counter pu11_selected 1
+    set_counter pu11_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 12
+    and I_CompareCounter pu12_selected = 0
+    and I_UnitStatus a2u12 charging
+    and ! I_IsUnitEngaged a2u12
+
+    set_counter pu12_selected 1
+    set_counter pu12_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 13
+    and I_CompareCounter pu13_selected = 0
+    and I_UnitStatus a2u13 charging
+    and ! I_IsUnitEngaged a2u13
+
+    set_counter pu13_selected 1
+    set_counter pu13_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 14
+    and I_CompareCounter pu14_selected = 0
+    and I_UnitStatus a2u14 charging
+    and ! I_IsUnitEngaged a2u14
+
+    set_counter pu14_selected 1
+    set_counter pu14_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 15
+    and I_CompareCounter pu15_selected = 0
+    and I_UnitStatus a2u15 charging
+    and ! I_IsUnitEngaged a2u15
+
+    set_counter pu15_selected 1
+    set_counter pu15_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 16
+    and I_CompareCounter pu16_selected = 0
+    and I_UnitStatus a2u16 charging
+    and ! I_IsUnitEngaged a2u16
+
+    set_counter pu16_selected 1
+    set_counter pu16_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 17
+    and I_CompareCounter pu17_selected = 0
+    and I_UnitStatus a2u17 charging
+    and ! I_IsUnitEngaged a2u17
+
+    set_counter pu17_selected 1
+    set_counter pu17_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 18
+    and I_CompareCounter pu18_selected = 0
+    and I_UnitStatus a2u18 charging
+    and ! I_IsUnitEngaged a2u18
+
+    set_counter pu18_selected 1
+    set_counter pu18_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count >= 19
+    and I_CompareCounter pu19_selected = 0
+    and I_UnitStatus a2u19 charging
+    and ! I_IsUnitEngaged a2u19
+
+    set_counter pu19_selected 1
+    set_counter pu19_lock_now 1
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and ! I_BattlePlayerArmyIsAttacker
+    and I_CompareCounter player_unit_count = 20
+    and I_CompareCounter pu20_selected = 0
+    and I_UnitStatus a2u20 charging
+    and ! I_IsUnitEngaged a2u20
+
+    set_counter pu20_selected 1
+    set_counter pu20_lock_now 1
+end_monitor
+
+;;;;;;;
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu1_selected = 1
+    set_counter pu1_selected 2
+    if I_CompareCounter pu1_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu1_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u1
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u1
+    end_if
+    set_counter pu1_selected 3
+    battle_wait 15
+    if I_CompareCounter pu1_selected = 3
+    set_counter pu1_selected 4
+    if I_CompareCounter pu1_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu1_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u1
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u1
+    end_if
+    set_counter pu1_selected 0
+    if I_CompareCounter pu1_lock_now = 1
+    set_counter pu1_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu2_selected = 1
+    set_counter pu2_selected 2
+    if I_CompareCounter pu2_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu2_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u2
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u2
+    end_if
+    set_counter pu2_selected 3
+    battle_wait 15
+    if I_CompareCounter pu2_selected = 3
+    set_counter pu2_selected 4
+    if I_CompareCounter pu2_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu2_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u2
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u2
+    end_if
+    set_counter pu2_selected 0
+    if I_CompareCounter pu2_lock_now = 1
+    set_counter pu2_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu3_selected = 1
+    set_counter pu3_selected 2
+    if I_CompareCounter pu3_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu3_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u3
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u3
+    end_if
+    set_counter pu3_selected 3
+    battle_wait 15
+    if I_CompareCounter pu3_selected = 3
+    set_counter pu3_selected 4
+    if I_CompareCounter pu3_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu3_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u3
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u3
+    end_if
+    set_counter pu3_selected 0
+    if I_CompareCounter pu3_lock_now = 1
+    set_counter pu3_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu4_selected = 1
+    set_counter pu4_selected 2
+    if I_CompareCounter pu4_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu4_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u4
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u4
+    end_if
+    set_counter pu4_selected 3
+    battle_wait 15
+    if I_CompareCounter pu4_selected = 3
+    set_counter pu4_selected 4
+    if I_CompareCounter pu4_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu4_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u4
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u4
+    end_if
+    set_counter pu4_selected 0
+    if I_CompareCounter pu4_lock_now = 1
+    set_counter pu4_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu5_selected = 1
+    set_counter pu5_selected 2
+    if I_CompareCounter pu5_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu5_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u5
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u5
+    end_if
+    set_counter pu5_selected 3
+    battle_wait 15
+    if I_CompareCounter pu5_selected = 3
+    set_counter pu5_selected 4
+    if I_CompareCounter pu5_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu5_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u5
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u5
+    end_if
+    set_counter pu5_selected 0
+    if I_CompareCounter pu5_lock_now = 1
+    set_counter pu5_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu6_selected = 1
+    set_counter pu6_selected 2
+    if I_CompareCounter pu6_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu6_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u6
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u6
+    end_if
+    set_counter pu6_selected 3
+    battle_wait 15
+    if I_CompareCounter pu6_selected = 3
+    set_counter pu6_selected 4
+    if I_CompareCounter pu6_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu6_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u6
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u6
+    end_if
+    set_counter pu6_selected 0
+    if I_CompareCounter pu6_lock_now = 1
+    set_counter pu6_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu7_selected = 1
+    set_counter pu7_selected 2
+    if I_CompareCounter pu7_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu7_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u7
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u7
+    end_if
+    set_counter pu7_selected 3
+    battle_wait 15
+    if I_CompareCounter pu7_selected = 3
+    set_counter pu7_selected 4
+    if I_CompareCounter pu7_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu7_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u7
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u7
+    end_if
+    set_counter pu7_selected 0
+    if I_CompareCounter pu7_lock_now = 1
+    set_counter pu7_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu8_selected = 1
+    set_counter pu8_selected 2
+    if I_CompareCounter pu8_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu8_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u8
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u8
+    end_if
+    set_counter pu8_selected 3
+    battle_wait 15
+    if I_CompareCounter pu8_selected = 3
+    set_counter pu8_selected 4
+    if I_CompareCounter pu8_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu8_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u8
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u8
+    end_if
+    set_counter pu8_selected 0
+    if I_CompareCounter pu8_lock_now = 1
+    set_counter pu8_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu9_selected = 1
+    set_counter pu9_selected 2
+    if I_CompareCounter pu9_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu9_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u9
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u9
+    end_if
+    set_counter pu9_selected 3
+    battle_wait 15
+    if I_CompareCounter pu9_selected = 3
+    set_counter pu9_selected 4
+    if I_CompareCounter pu9_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu9_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u9
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u9
+    end_if
+    set_counter pu9_selected 0
+    if I_CompareCounter pu9_lock_now = 1
+    set_counter pu9_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu10_selected = 1
+    set_counter pu10_selected 2
+    if I_CompareCounter pu10_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu10_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u10
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u10
+    end_if
+    set_counter pu10_selected 3
+    battle_wait 15
+    if I_CompareCounter pu10_selected = 3
+    set_counter pu10_selected 4
+    if I_CompareCounter pu10_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu10_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u10
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u10
+    end_if
+    set_counter pu10_selected 0
+    if I_CompareCounter pu10_lock_now = 1
+    set_counter pu10_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu11_selected = 1
+    set_counter pu11_selected 2
+    if I_CompareCounter pu11_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu11_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u11
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u11
+    end_if
+    set_counter pu11_selected 3
+    battle_wait 15
+    if I_CompareCounter pu11_selected = 3
+    set_counter pu11_selected 4
+    if I_CompareCounter pu11_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu11_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u11
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u11
+    end_if
+    set_counter pu11_selected 0
+    if I_CompareCounter pu11_lock_now = 1
+    set_counter pu11_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu12_selected = 1
+    set_counter pu12_selected 2
+    if I_CompareCounter pu12_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu12_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u12
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u12
+    end_if
+    set_counter pu12_selected 3
+    battle_wait 15
+    if I_CompareCounter pu12_selected = 3
+    set_counter pu12_selected 4
+    if I_CompareCounter pu12_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu12_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u12
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u12
+    end_if
+    set_counter pu12_selected 0
+    if I_CompareCounter pu12_lock_now = 1
+    set_counter pu12_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu13_selected = 1
+    set_counter pu13_selected 2
+    if I_CompareCounter pu13_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu13_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u13
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u13
+    end_if
+    set_counter pu13_selected 3
+    battle_wait 15
+    if I_CompareCounter pu13_selected = 3
+    set_counter pu13_selected 4
+    if I_CompareCounter pu13_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu13_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u13
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u13
+    end_if
+    set_counter pu13_selected 0
+    if I_CompareCounter pu13_lock_now = 1
+    set_counter pu13_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu14_selected = 1
+    set_counter pu14_selected 2
+    if I_CompareCounter pu14_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu14_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u14
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u14
+    end_if
+    set_counter pu14_selected 3
+    battle_wait 15
+    if I_CompareCounter pu14_selected = 3
+    set_counter pu14_selected 4
+    if I_CompareCounter pu14_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu14_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u14
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u14
+    end_if
+    set_counter pu14_selected 0
+    if I_CompareCounter pu14_lock_now = 1
+    set_counter pu14_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu15_selected = 1
+    set_counter pu15_selected 2
+    if I_CompareCounter pu15_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu15_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u15
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u15
+    end_if
+    set_counter pu15_selected 3
+    battle_wait 15
+    if I_CompareCounter pu15_selected = 3
+    set_counter pu15_selected 4
+    if I_CompareCounter pu15_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu15_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u15
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u15
+    end_if
+    set_counter pu15_selected 0
+    if I_CompareCounter pu15_lock_now = 1
+    set_counter pu15_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu16_selected = 1
+    set_counter pu16_selected 2
+    if I_CompareCounter pu16_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu16_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u16
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u16
+    end_if
+    set_counter pu16_selected 3
+    battle_wait 15
+    if I_CompareCounter pu16_selected = 3
+    set_counter pu16_selected 4
+    if I_CompareCounter pu16_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu16_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u16
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u16
+    end_if
+    set_counter pu16_selected 0
+    if I_CompareCounter pu16_lock_now = 1
+    set_counter pu16_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu17_selected = 1
+    set_counter pu17_selected 2
+    if I_CompareCounter pu17_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu17_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u17
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u17
+    end_if
+    set_counter pu17_selected 3
+    battle_wait 15
+    if I_CompareCounter pu17_selected = 3
+    set_counter pu17_selected 4
+    if I_CompareCounter pu17_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu17_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u17
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u17
+    end_if
+    set_counter pu17_selected 0
+    if I_CompareCounter pu17_lock_now = 1
+    set_counter pu17_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu18_selected = 1
+    set_counter pu18_selected 2
+    if I_CompareCounter pu18_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu18_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u18
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u18
+    end_if
+    set_counter pu18_selected 3
+    battle_wait 15
+    if I_CompareCounter pu18_selected = 3
+    set_counter pu18_selected 4
+    if I_CompareCounter pu18_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu18_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u18
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u18
+    end_if
+    set_counter pu18_selected 0
+    if I_CompareCounter pu18_lock_now = 1
+    set_counter pu18_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu19_selected = 1
+    set_counter pu19_selected 2
+    if I_CompareCounter pu19_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu19_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u19
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u19
+    end_if
+    set_counter pu19_selected 3
+    battle_wait 15
+    if I_CompareCounter pu19_selected = 3
+    set_counter pu19_selected 4
+    if I_CompareCounter pu19_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu19_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u19
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u19
+    end_if
+    set_counter pu19_selected 0
+    if I_CompareCounter pu19_lock_now = 1
+    set_counter pu19_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+monitor_conditions I_BattleStarted
+    and I_CompareCounter labels_only = 1
+    and I_CompareCounter pu20_selected = 1
+    set_counter pu20_selected 2
+    if I_CompareCounter pu20_lock_now = 0
+    battle_wait 5
+    end_if
+    if I_CompareCounter pu20_selected = 2
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a1u20
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands off a2u20
+    end_if
+    set_counter pu20_selected 3
+    battle_wait 15
+    if I_CompareCounter pu20_selected = 3
+    set_counter pu20_selected 4
+    if I_CompareCounter pu20_lock_now = 0
+    battle_wait 15
+    end_if
+    if I_CompareCounter pu20_selected = 4
+    if I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a1u20
+    end_if
+    if ! I_BattlePlayerArmyIsAttacker
+    filter_unit_commands on a2u20
+    end_if
+    set_counter pu20_selected 0
+    if I_CompareCounter pu20_lock_now = 1
+    set_counter pu20_lock_now 0
+    end_if
+    end_if
+    end_if
+    end_if
+end_monitor
+
+;;;;;;;
+
+monitor_event BattleArmyRouted ! ArmyIsLocal
+    and ! I_BattleIsSiegeBattle
+
+if I_BattlePlayerArmyIsAttacker
+
+    if I_CompareCounter pu1_selected > 0
+    filter_unit_commands on a1u1
+    end_if
+    if I_CompareCounter pu2_selected > 0
+    filter_unit_commands on a1u2
+    end_if
+    if I_CompareCounter pu3_selected > 0
+    filter_unit_commands on a1u3
+    end_if
+    if I_CompareCounter pu4_selected > 0
+    filter_unit_commands on a1u4
+    end_if
+    if I_CompareCounter pu5_selected > 0
+    filter_unit_commands on a1u5
+    end_if
+    if I_CompareCounter pu6_selected > 0
+    filter_unit_commands on a1u6
+    end_if
+    if I_CompareCounter pu7_selected > 0
+    filter_unit_commands on a1u7
+    end_if
+    if I_CompareCounter pu8_selected > 0
+    filter_unit_commands on a1u8
+    end_if
+    if I_CompareCounter pu9_selected > 0
+    filter_unit_commands on a1u9
+    end_if
+    if I_CompareCounter pu10_selected > 0
+    filter_unit_commands on a1u10
+    end_if
+    if I_CompareCounter pu11_selected > 0
+    filter_unit_commands on a1u11
+    end_if
+    if I_CompareCounter pu12_selected > 0
+    filter_unit_commands on a1u12
+    end_if
+    if I_CompareCounter pu13_selected > 0
+    filter_unit_commands on a1u13
+    end_if
+    if I_CompareCounter pu14_selected > 0
+    filter_unit_commands on a1u14
+    end_if
+    if I_CompareCounter pu15_selected > 0
+    filter_unit_commands on a1u15
+    end_if
+    if I_CompareCounter pu16_selected > 0
+    filter_unit_commands on a1u16
+    end_if
+    if I_CompareCounter pu17_selected > 0
+    filter_unit_commands on a1u17
+    end_if
+    if I_CompareCounter pu18_selected > 0
+    filter_unit_commands on a1u18
+    end_if
+    if I_CompareCounter pu19_selected > 0
+    filter_unit_commands on a1u19
+    end_if
+    if I_CompareCounter pu20_selected > 0
+    filter_unit_commands on a1u20
+    end_if
+
+end_if
+
+if ! I_BattlePlayerArmyIsAttacker
+
+    if I_CompareCounter pu1_selected > 0
+    filter_unit_commands on a2u1
+    end_if
+    if I_CompareCounter pu2_selected > 0
+    filter_unit_commands on a2u2
+    end_if
+    if I_CompareCounter pu3_selected > 0
+    filter_unit_commands on a2u3
+    end_if
+    if I_CompareCounter pu4_selected > 0
+    filter_unit_commands on a2u4
+    end_if
+    if I_CompareCounter pu5_selected > 0
+    filter_unit_commands on a2u5
+    end_if
+    if I_CompareCounter pu6_selected > 0
+    filter_unit_commands on a2u6
+    end_if
+    if I_CompareCounter pu7_selected > 0
+    filter_unit_commands on a2u7
+    end_if
+    if I_CompareCounter pu8_selected > 0
+    filter_unit_commands on a2u8
+    end_if
+    if I_CompareCounter pu9_selected > 0
+    filter_unit_commands on a2u9
+    end_if
+    if I_CompareCounter pu10_selected > 0
+    filter_unit_commands on a2u10
+    end_if
+    if I_CompareCounter pu11_selected > 0
+    filter_unit_commands on a2u11
+    end_if
+    if I_CompareCounter pu12_selected > 0
+    filter_unit_commands on a2u12
+    end_if
+    if I_CompareCounter pu13_selected > 0
+    filter_unit_commands on a2u13
+    end_if
+    if I_CompareCounter pu14_selected > 0
+    filter_unit_commands on a2u14
+    end_if
+    if I_CompareCounter pu15_selected > 0
+    filter_unit_commands on a2u15
+    end_if
+    if I_CompareCounter pu16_selected > 0
+    filter_unit_commands on a2u16
+    end_if
+    if I_CompareCounter pu17_selected > 0
+    filter_unit_commands on a2u17
+    end_if
+    if I_CompareCounter pu18_selected > 0
+    filter_unit_commands on a2u18
+    end_if
+    if I_CompareCounter pu19_selected > 0
+    filter_unit_commands on a2u19
+    end_if
+    if I_CompareCounter pu20_selected > 0
+    filter_unit_commands on a2u20
+    end_if
+
+end_if
+
+end_monitor
+
+monitor_event ButtonPressed ButtonPressed toggle_special_ability
+    and I_CompareCounter stakes_lock = 1
+    and I_BattlePlayerArmyNumberOfAttribute stakes > 0
+    and I_BattleIsSiegeBattle
+    and ! I_BattlePlayerArmyIsAttacker
+
+    disable_ui toggle_special_ability
+
+    wait 0.1
+    if I_BattlePlayerArmyNumberOfUnits > 0
+    unit_set_formation_spacing a2u1 loose
+    unit_set_formation_spacing a2u1 tight
+    if I_BattlePlayerArmyNumberOfUnits > 1
+    unit_set_formation_spacing a2u2 loose
+    unit_set_formation_spacing a2u2 tight
+    if I_BattlePlayerArmyNumberOfUnits > 2
+    unit_set_formation_spacing a2u3 loose
+    unit_set_formation_spacing a2u3 tight
+    if I_BattlePlayerArmyNumberOfUnits > 3
+    unit_set_formation_spacing a2u4 loose
+    unit_set_formation_spacing a2u4 tight
+    if I_BattlePlayerArmyNumberOfUnits > 4
+    unit_set_formation_spacing a2u5 loose
+    unit_set_formation_spacing a2u5 tight
+    if I_BattlePlayerArmyNumberOfUnits > 5
+    unit_set_formation_spacing a2u6 loose
+    unit_set_formation_spacing a2u6 tight
+    if I_BattlePlayerArmyNumberOfUnits > 6
+    unit_set_formation_spacing a2u7 loose
+    unit_set_formation_spacing a2u7 tight
+    if I_BattlePlayerArmyNumberOfUnits > 7
+    unit_set_formation_spacing a2u8 loose
+    unit_set_formation_spacing a2u8 tight
+    if I_BattlePlayerArmyNumberOfUnits > 8
+    unit_set_formation_spacing a2u9 loose
+    unit_set_formation_spacing a2u9 tight
+    if I_BattlePlayerArmyNumberOfUnits > 9
+    unit_set_formation_spacing a2u10 loose
+    unit_set_formation_spacing a2u10 tight
+    if I_BattlePlayerArmyNumberOfUnits > 10
+    unit_set_formation_spacing a2u11 loose
+    unit_set_formation_spacing a2u11 tight
+    if I_BattlePlayerArmyNumberOfUnits > 11
+    unit_set_formation_spacing a2u12 loose
+    unit_set_formation_spacing a2u12 tight
+    if I_BattlePlayerArmyNumberOfUnits > 12
+    unit_set_formation_spacing a2u13 loose
+    unit_set_formation_spacing a2u13 tight
+    if I_BattlePlayerArmyNumberOfUnits > 13
+    unit_set_formation_spacing a2u14 loose
+    unit_set_formation_spacing a2u14 tight
+    if I_BattlePlayerArmyNumberOfUnits > 14
+    unit_set_formation_spacing a2u15 loose
+    unit_set_formation_spacing a2u15 tight
+    if I_BattlePlayerArmyNumberOfUnits > 15
+    unit_set_formation_spacing a2u16 loose
+    unit_set_formation_spacing a2u16 tight
+    if I_BattlePlayerArmyNumberOfUnits > 16
+    unit_set_formation_spacing a2u17 loose
+    unit_set_formation_spacing a2u17 tight
+    if I_BattlePlayerArmyNumberOfUnits > 17
+    unit_set_formation_spacing a2u18 loose
+    unit_set_formation_spacing a2u18 tight
+    if I_BattlePlayerArmyNumberOfUnits > 18
+    unit_set_formation_spacing a2u19 loose
+    unit_set_formation_spacing a2u19 tight
+    if I_BattlePlayerArmyNumberOfUnits = 20
+    unit_set_formation_spacing a2u20 loose
+    unit_set_formation_spacing a2u20 tight
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+    end_if
+
+    enable_ui toggle_special_ability
+end_monitor
+
+monitor_event BattleConflictPhaseCommenced I_CompareCounter stakes_lock = 1
+set_counter stakes_lock 0
+end_monitor
+
+monitor_event ScrollOpened ScrollOpened post_battle_scroll
+
+    set_counter deployment_timer 0
+    set_counter pu1_selected 0
+    set_counter pu2_selected 0
+    set_counter pu3_selected 0
+    set_counter pu4_selected 0
+    set_counter pu5_selected 0
+    set_counter pu6_selected 0
+    set_counter pu7_selected 0
+    set_counter pu8_selected 0
+    set_counter pu9_selected 0
+    set_counter pu10_selected 0
+    set_counter pu11_selected 0
+    set_counter pu12_selected 0
+    set_counter pu13_selected 0
+    set_counter pu14_selected 0
+    set_counter pu15_selected 0
+    set_counter pu16_selected 0
+    set_counter pu17_selected 0
+    set_counter pu18_selected 0
+    set_counter pu19_selected 0
+    set_counter pu20_selected 0
+    set_counter pu1_lock_now 0
+    set_counter pu2_lock_now 0
+    set_counter pu3_lock_now 0
+    set_counter pu4_lock_now 0
+    set_counter pu5_lock_now 0
+    set_counter pu6_lock_now 0
+    set_counter pu7_lock_now 0
+    set_counter pu8_lock_now 0
+    set_counter pu9_lock_now 0
+    set_counter pu10_lock_now 0
+    set_counter pu11_lock_now 0
+    set_counter pu12_lock_now 0
+    set_counter pu13_lock_now 0
+    set_counter pu14_lock_now 0
+    set_counter pu15_lock_now 0
+    set_counter pu16_lock_now 0
+    set_counter pu17_lock_now 0
+    set_counter pu18_lock_now 0
+    set_counter pu19_lock_now 0
+    set_counter pu20_lock_now 0
+end_monitor

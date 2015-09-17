@@ -1,0 +1,25 @@
+[name] Soulston AI
+[works for] early late
+[grouped in] AI
+[description] Soulston's campaign AI improvements\n
+Based on Savage AI\n
+AI needs poor relations to invade if not neighbour\n
+Pope Won't invade rebels\n
+Trusted Allies help more\n
+Alliances now work differently:\n
+- Catholics wont want to ally with anyone besides Catholics\n
+- Islam works the same way\n
+- Orthodox factions can ally with pagans.\n\n
+Aggressiveness - 6/10\n
+Backstabs - 7/10\n
+Ally holding - 6/10\n
+Alternative balanced AI.
+[files]
+overwrite data\descr_faction_standing.txt
+overwrite data\descr_diplomacy.xml
+overwrite data\descr_campaign_ai_db.xml
+replace data\descr_campaign_db.xml with autoresolve.xml from:
+  	<autoresolve>
+to:
+	</autoresolve>
+<end>
