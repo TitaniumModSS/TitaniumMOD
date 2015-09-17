@@ -35,6 +35,8 @@
 ;Part II - Section XIII: HERETIC TRAITS
 ;Part II - Section XIV: WITCH TRAITS
 
+;Part III: MISCELLANEOUS
+;Part III - Section I: SCRIPTED SIEGES CTD PREVENTION TRAITS
 ;=========================================;
 ;========= VNV TRAITS START HERE =========;
 ;=========================================;
@@ -7304,7 +7306,8 @@ Trait Drink
 
    Effect Command -2 
    Effect Authority -1 
-   Effect TaxCollection -10
+   ;Effect TaxCollection -10; This seems an error, Kingdoms original value bellow
+   Effect TaxCollection -2
 
  Level Alcoholic
    Description Alcoholic_desc
@@ -12883,6 +12886,39 @@ Trait MajorCount
    Effect Piety 1 
    Effect TroopMorale 2
    Effect HitPoints 1
+
+;=========================================;
+;==Scripted Sieges CTD Prevention Traits==;
+;=========================================;
+;------------------------------------------
+Trait InvasionCharacterCounter
+ Characters family
+ Hidden
+ 
+ Level MajorCount1
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 1
+
+ Level MajorCount2
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 2
+
+ Level MajorCount3
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 3
+
+ Level MajorCount5
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 4
+
+ Level MajorCount6
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 5
 
 ;===== ROYAL LADY OF THE COURT TRAITS =====
 ;------------------------------------------
@@ -20567,8 +20603,7 @@ Trigger King_Employs_Bribery
 Trigger King_Employs_Spies_Success
  WhenToTest LeaderOrderedSpyingMission
 
- Condition IsFactionLeader
-       and MissionSuccessLevel = highly_successful
+ Condition MissionSuccessLevel = highly_successful
 
  Affects KingsAuthority 1 Chance 20
  Affects SpyMaster 1 Chance 25
@@ -20579,8 +20614,7 @@ Trigger King_Employs_Spies_Success
 Trigger King_Employs_Spies_Success_2
  WhenToTest LeaderOrderedSpyingMission
 
- Condition IsFactionLeader
-       and MissionSuccessLevel = partly_successful
+ Condition MissionSuccessLevel = partly_successful
 
  Affects KingsAuthority 1 Chance 15
  Affects SpyMaster 1 Chance 12
@@ -20591,8 +20625,7 @@ Trigger King_Employs_Spies_Success_2
 Trigger King_Employs_Spies_Success_3
  WhenToTest LeaderOrderedSpyingMission
 
- Condition IsFactionLeader
-       and MissionSuccessLevel = slightly_successful
+ Condition MissionSuccessLevel = slightly_successful
 
  Affects KingsAuthority 1 Chance 10
  Affects SpyMaster 1 Chance 8
@@ -20604,8 +20637,7 @@ Trigger King_Employs_Spies_Success_3
 Trigger King_Employs_Spies_Failure
  WhenToTest LeaderOrderedSpyingMission
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
 
  Affects KingsAuthority -1 Chance 20
  Affects SpyMaster -1 Chance 25
@@ -20614,8 +20646,7 @@ Trigger King_Employs_Spies_Failure
 Trigger King_Employes_Assassins_Success
  WhenToTest LeaderOrderedAssassination
 
- Condition IsFactionLeader
-       and MissionSuccessLevel >= slightly_successful
+ Condition MissionSuccessLevel >= slightly_successful
 
  Affects KingsAuthority 1 Chance 20
  Affects AssassinMaster 1 Chance 33
@@ -20626,8 +20657,7 @@ Trigger King_Employes_Assassins_Success
 Trigger King_Employes_Assassins_Failure
  WhenToTest LeaderOrderedAssassination
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
 
  Affects KingsAuthority -1 Chance 33
  Affects AssassinMaster 1 Chance 5
@@ -20638,8 +20668,6 @@ Trigger King_Employes_Assassins_Failure
 Trigger King_Employes_Sabotage
  WhenToTest LeaderOrderedSabotage
 
- Condition IsFactionLeader
-
  Affects KingsAuthority 1 Chance 20
  Affects Despoiler 1 Chance 85 
  Affects DeceiverVirtue 1 Chance 5
@@ -20648,23 +20676,17 @@ Trigger King_Employes_Sabotage
 Trigger King_Employs_Diplomacy
  WhenToTest LeaderOrderedDiplomacy
 
- Condition IsFactionLeader
-
  Affects KingsAuthority 1 Chance 33
 
 ;------------------------------------------
 Trigger King_MissionSuccess
  WhenToTest LeaderMissionSuccess
 
- Condition IsFactionLeader
-
  Affects KingsAuthority 1 Chance 33
 
 ;------------------------------------------
 Trigger King_MissionFailure
  WhenToTest LeaderMissionFailed
-
- Condition IsFactionLeader
 
  Affects KingsAuthority -1 Chance 25
 
@@ -23737,12 +23759,12 @@ Trigger Eastern_Edu_secondary
        and Trait Wantschool >= 1
        and Trait Eastern_Edu >= 1
 
- Affects Drink 1 Chance 10
+ ;Affects Drink 1 Chance 10
  Affects Girls 1 Chance 5
  Affects InspiringSpeaker 1 Chance 10
  Affects BoringSpeaker 1 Chance 10
- Affects Intelligent 1 Chance 10
- Affects PublicFaith 1 Chance 15
+ ;Affects Intelligent 1 Chance 10
+ ;Affects PublicFaith 1 Chance 15
 
 ;--------------------------------------------
 Trigger Medical_Skill_Edu
@@ -32885,6 +32907,7 @@ Trigger random_birth_lithuania
 
  Condition FactionType lithuania
 
+ Affects Berserker 1 Chance 5 ; bugfix
  Affects GoodCavalryGeneral 1 Chance 25 
  Affects NightBattleCapable 1 Chance 10 
 
@@ -43071,8 +43094,7 @@ Trigger Venice_MissionSuccess
 Trigger Venice_MissionFailure
  WhenToTest LeaderMissionFailed
 
- Condition IsFactionLeader
-       and FactionType venice
+ Condition FactionType venice
 	and not Trait Venice_Signoria_Approval <= 1
        
  Affects Venice_Signoria_Approval -1 Chance 33
@@ -43081,8 +43103,7 @@ Trigger Venice_MissionFailure
 Trigger Venice_Employes_Assassins_Failure
  WhenToTest LeaderOrderedAssassination
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
        and FactionType venice
 	and not Trait Venice_Signoria_Approval <= 1
        
@@ -43092,8 +43113,7 @@ Trigger Venice_Employes_Assassins_Failure
 Trigger Venice_Employs_Spies_Failure
  WhenToTest LeaderOrderedSpyingMission
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
        and FactionType venice
 	and not Trait Venice_Signoria_Approval <= 1
        
@@ -43103,8 +43123,7 @@ Trigger Venice_Employs_Spies_Failure
 Trigger Venice_Authority_Loss_Over_Time
  WhenToTest CharacterTurnEnd
 
- Condition IsFactionLeader
-       and Trait Offensive_To_Nobles > 1
+ Condition Trait Offensive_To_Nobles > 1
        and Attribute Authority > 1
        and FactionType venice
 	and not Trait Venice_Signoria_Approval <= 1
@@ -43687,8 +43706,7 @@ Trigger Genoa_MissionFailure
 Trigger Genoa_Employes_Assassins_Failure
  WhenToTest LeaderOrderedAssassination
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
        and FactionType milan
           and not Trait Genoa_Comune_Approval <= 1
        
@@ -43698,8 +43716,7 @@ Trigger Genoa_Employes_Assassins_Failure
 Trigger Genoa_Employs_Spies_Failure
  WhenToTest LeaderOrderedSpyingMission
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
        and FactionType milan
           and not Trait Genoa_Comune_Approval <= 1
        
@@ -44179,8 +44196,7 @@ Trigger Novgorod_MissionFailure
 Trigger Novgorod_Employes_Assassins_Failure
  WhenToTest LeaderOrderedAssassination
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
        and FactionType russia
           and not Trait Novgorod_Veche_Approval <= 1
        
@@ -44190,8 +44206,7 @@ Trigger Novgorod_Employes_Assassins_Failure
 Trigger Novgorod_Employs_Spies_Failure
  WhenToTest LeaderOrderedSpyingMission
 
- Condition IsFactionLeader
-       and MissionSuccessLevel < slightly_successful
+ Condition MissionSuccessLevel < slightly_successful
        and FactionType russia
           and not Trait Novgorod_Veche_Approval <= 1
        

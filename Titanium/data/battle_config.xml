@@ -7,11 +7,11 @@
   <!-- global combat balancing factors -->
   <combat-balancing>
     <missile-target-accuracy>
-      <infantry>1.0</infantry>
+      <infantry>0.75</infantry>
       <cavalry>1.5</cavalry>
       <elephants>2.0</elephants>
     </missile-target-accuracy>
-    <melee-hit-rate>2.5</melee-hit-rate>
+    <melee-hit-rate>1.75</melee-hit-rate>
   </combat-balancing>
   <!-- per unit task configuration -->
   <unit-tasks>
@@ -119,9 +119,9 @@
       <!-- rules relating to plaza capture -->
       <plaza-capture>
         <!-- time the plaza needs to be held for to capture -->
-        <time-limit>5.0</time-limit>
+        <time-limit>3.5</time-limit>
         <!-- ratio of attackers to defenders to hold a plaza -->
-        <soldier-ratio>0.95</soldier-ratio>
+        <soldier-ratio>0.9</soldier-ratio>
       </plaza-capture>
     </rules>
   </settlements>

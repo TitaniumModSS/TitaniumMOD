@@ -11,7 +11,7 @@
       <units-per-wall>2</units-per-wall>
       <surprise-attack>
         <!-- percentage of units to try and place on the walls of the settlement -->
-        <percent-on-walls>0.4</percent-on-walls>
+        <percent-on-walls>0.5</percent-on-walls>
         <!-- percentage of units that are randomly scattered -->
         <percent-scattered>0.4</percent-scattered>
         <!-- bias towards defenders -->
@@ -21,11 +21,11 @@
       </surprise-attack>
       <expected-attack>
         <!-- percentage of units to try and place on the walls of the settlement -->
-        <percent-on-walls>0.5</percent-on-walls>
+        <percent-on-walls>0.6</percent-on-walls>
         <!-- percentage of units that are randomly scattered -->
         <percent-scattered>0.0</percent-scattered>
         <!-- bias towards defenders -->
-        <defender-bias>1.0</defender-bias>
+        <defender-bias>1.1</defender-bias>
         <!-- controls the spread of the units along the wall as a percentage of unit width -->
         <unit-spread>1.0</unit-spread>
       </expected-attack>
@@ -36,10 +36,10 @@
     <open>
       <infantry>
         <max-engage-dist>
-          <easy>160</easy>
-          <medium>160</medium>
-          <hard>160</hard>
-          <very_hard>160</very_hard>
+          <easy>150</easy>
+          <medium>150</medium>
+          <hard>150</hard>
+          <very_hard>150</very_hard>
         </max-engage-dist>
       </infantry>
       <missile>
@@ -52,10 +52,10 @@
       </missile>
       <cavalry>
         <max-engage-dist>
-          <easy>200</easy>
-          <medium>200</medium>
-          <hard>200</hard>
-          <very_hard>200</very_hard>
+          <easy>150</easy>
+          <medium>150</medium>
+          <hard>150</hard>
+          <very_hard>150</very_hard>
         </max-engage-dist>
       </cavalry>
       <general_unit>
@@ -102,7 +102,7 @@
       </general_unit>
     </settlement>
     <attack-brace>
-      <distance>200</distance>
+      <distance>180</distance>
       <time-to-change-formation>3.0</time-to-change-formation>
       <time-to-phalanx>5</time-to-phalanx>
       <time-to-schiltrom>9</time-to-schiltrom>
@@ -148,8 +148,8 @@
     <missile-strength-base-priority-modifier>0.002</missile-strength-base-priority-modifier>
   </missile-analyser>
   <gta>
-    <assault-dist>65.0</assault-dist>
-    <contact-dist>130.0</contact-dist>
+    <assault-dist>55.0</assault-dist>
+    <contact-dist>120.0</contact-dist>
     <close-approach-dist>150.0</close-approach-dist>
     <distant-approach-dist>1200.0</distant-approach-dist>
     <enemy-far-dist>250.0</enemy-far-dist>
@@ -244,10 +244,10 @@
         <missile-ratio>999.0</missile-ratio>
       </fight>
       <formation>
-        <easy>ai_triple_missiles_in_front</easy>
-        <medium>ai_triple_missiles_in_front</medium>
-        <hard>ai_triple_missiles_in_front</hard>
-        <very_hard>ai_triple_missiles_in_front</very_hard>
+        <easy>ai_infantry_on_flanks</easy>
+        <medium>ai_infantry_on_flanks</medium>
+        <hard>ai_infantry_on_flanks</hard>
+        <very_hard>ai_infantry_on_flanks</very_hard>
       </formation>
     </attack-battlegroup>
     <defend-line>
