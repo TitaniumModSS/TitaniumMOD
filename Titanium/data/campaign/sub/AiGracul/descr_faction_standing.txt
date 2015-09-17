@@ -3034,9 +3034,9 @@ Trigger Jerusalem
     FactionStanding factions { papal_states } normalise 1 30
     
 ;------------------------------------------
-Trigger Timurids
+Trigger Timurids; Abbasids
     WhenToTest FactionTurnStart
 
     Condition FactionType timurids
 
-    FactionStanding exclude_factions { } normalise -1 40
+    FactionStanding exclude_factions { turks, egypt, moors, kwarezm } normalise -1 40

@@ -1,4 +1,5 @@
 ;SS6.4 EDA edited by gracul: Jan-2011
+;Titanium, edited by gsthoed and melooo182: Sep-2014
 
 ;=========================================;
 ;========= ANC TRAITS START HERE =========;
@@ -12783,32 +12784,6 @@ Trigger white_stallion
  AcquireAncillary white_stallion chance 15 
  
 ;------------------------------------------ 
- and not HasAncType office
- 
- and not HasAncType office
- 
- and not HasAncType office
- 
- and not HasAncType office
- 
- and not HasAncType office
- 
- and not HasAncType office
- and not FactionwideAncillaryExists marshall
- and not HasAncType office
- 
- and not HasAncType office
- and not FactionwideAncillaryExists marshall_greek
- and not HasAncType office
- 
- and not HasAncType office
- 
- and not HasAncType office
- 
- and not HasAncType office
- 
-
-;------------------------------------------ 
 Trigger chancellor_player 
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral
@@ -12901,12 +12876,12 @@ Trigger chancellor_mongol_player
  and not IsFactionHeir
  and SettlementBuildingExists >= town_hall 
  and FactionIsLocal ;for player only
- and not FactionwideAncillaryExists chancellor_muslim
+ and not FactionwideAncillaryExists chancellor_mongol
  and not HasAncType office
  and not HasAncType office_military1
  and not HasAncType office_military2
  
- AcquireAncillary chancellor_muslim chance 100 
+ AcquireAncillary chancellor_mongol chance 100 
  
 ;------------------------------------------ 
 Trigger chancellor_mongol_ai 
@@ -12923,12 +12898,12 @@ Trigger chancellor_mongol_ai
  and not IsFactionHeir
  and SettlementBuildingExists >= town_hall 
  and not FactionIsLocal ;for ai
- and not FactionwideAncillaryExists chancellor_muslim
+ and not FactionwideAncillaryExists chancellor_mongol
  and not HasAncType office
  and not HasAncType office_military1
  and not HasAncType office_military2
  
- AcquireAncillary chancellor_muslim chance 75 
+ AcquireAncillary chancellor_mongol chance 75 
  
 ;------------------------------------------ 
 Trigger chancellor_player_greek 
@@ -13395,7 +13370,7 @@ Trigger marshall_eastern_rus_player
  and not HasAncType office
  and not HasAncType office_military1
  and not HasAncType office_military2
- and not FactionwideAncillaryExists marshall_eastern
+ and not FactionwideAncillaryExists marshall_eastern_rus
  
  AcquireAncillary marshall_eastern_rus chance 100 
  
@@ -13412,7 +13387,7 @@ Trigger marshall_eastern_rus_ai
  and SettlementBuildingExists >= wooden_castle ;so you must have a castle
  and SettlementBuildingExists >= mustering_hall
  and not FactionIsLocal ;for ai
- and not FactionwideAncillaryExists marshall_eastern
+ and not FactionwideAncillaryExists marshall_eastern_rus
  and not HasAncType office
  and not HasAncType office_military1
  and not HasAncType office_military2
@@ -28448,6 +28423,7 @@ Trigger crown_jerusalem9
  and SettlementName Jerusalem
  and FactionType poland
  and I_SettlementOwner Jerusalem = poland
+ and not I_WorldwideAncillaryExists crown_jerusalem
  
  AcquireAncillary crown_jerusalem chance 100 
 
@@ -28719,6 +28695,7 @@ Trigger Heir_Crown_Trigger
  and not FactionType russia
  and not FactionType hre
  and not FactionType byzantium
+ and not FactionType jerusalem
 
  AcquireAncillary Heir_Crown chance 100
 ;------------------------------------------
@@ -28791,16 +28768,6 @@ Trigger crusader_jerusalem_inherited2_trigger
  AcquireAncillary crusader_jerusalem chance 100 
  
 ;------------------------------------------ 
-Trigger crusader_jerusalem_inherited3_trigger
- WhenToTest CharacterTurnEnd
- Condition Trait Jerusalem_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief1
- and not FactionwideAncillaryExists crusader_jerusalem
- 
- AcquireAncillary crusader_jerusalem chance 100 
- 
-;------------------------------------------ 
 Trigger crusader_jerusalem_trigger
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
@@ -28826,16 +28793,6 @@ Trigger crusader_antioch_inherited1_trigger
 ;------------------------------------------ 
 Trigger crusader_antioch_inherited2_trigger
  WhenToTest CharacterTurnStart
- Condition Trait Antioch_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief2
- and not FactionwideAncillaryExists crusader_antioch
- 
- AcquireAncillary crusader_antioch chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_antioch_inherited3_trigger
- WhenToTest CharacterTurnEnd
  Condition Trait Antioch_Heir = 1
  and FactionType jerusalem
  and not HasAncType crusader_fief2
@@ -28877,16 +28834,6 @@ Trigger crusader_edessa_inherited2_trigger
  AcquireAncillary crusader_edessa chance 100 
  
 ;------------------------------------------ 
-Trigger crusader_edessa_inherited3_trigger
- WhenToTest CharacterTurnEnd
- Condition Trait Edessa_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief3
- and not FactionwideAncillaryExists crusader_edessa
- 
- AcquireAncillary crusader_edessa chance 100 
- 
-;------------------------------------------ 
 Trigger crusader_edessa_trigger
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
@@ -28912,16 +28859,6 @@ Trigger crusader_tortosa_inherited1_trigger
 ;------------------------------------------ 
 Trigger crusader_tortosa_inherited2_trigger
  WhenToTest CharacterTurnStart
- Condition Trait Tortosa_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief4
- and not FactionwideAncillaryExists crusader_tortosa
- 
- AcquireAncillary crusader_tortosa chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_tortosa_inherited3_trigger
- WhenToTest CharacterTurnEnd
  Condition Trait Tortosa_Heir = 1
  and FactionType jerusalem
  and not HasAncType crusader_fief4
@@ -28963,16 +28900,6 @@ Trigger crusader_nicosia_inherited2_trigger
  AcquireAncillary crusader_nicosia chance 100 
  
 ;------------------------------------------ 
-Trigger crusader_nicosia_inherited3_trigger
- WhenToTest CharacterTurnEnd
- Condition Trait Nicosia_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief5
- and not FactionwideAncillaryExists crusader_nicosia
- 
- AcquireAncillary crusader_nicosia chance 100 
- 
-;------------------------------------------ 
 Trigger crusader_nicosia_trigger
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
@@ -28998,16 +28925,6 @@ Trigger crusader_rhodes_inherited1_trigger
 ;------------------------------------------ 
 Trigger crusader_rhodes_inherited2_trigger
  WhenToTest CharacterTurnStart
- Condition Trait Rhodes_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief6
- and not FactionwideAncillaryExists crusader_rhodes
- 
- AcquireAncillary crusader_rhodes chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_rhodes_inherited3_trigger
- WhenToTest CharacterTurnEnd
  Condition Trait Rhodes_Heir = 1
  and FactionType jerusalem
  and not HasAncType crusader_fief6
@@ -29049,16 +28966,6 @@ Trigger crusader_constantinople_inherited2_trigger
  AcquireAncillary crusader_constantinople chance 100 
  
 ;------------------------------------------ 
-Trigger crusader_constantinople_inherited3_trigger
- WhenToTest CharacterTurnEnd
- Condition Trait Constantinople_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief7
- and not FactionwideAncillaryExists crusader_constantinople
- 
- AcquireAncillary crusader_constantinople chance 100 
- 
-;------------------------------------------ 
 Trigger crusader_constantinople_trigger
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
@@ -29084,16 +28991,6 @@ Trigger crusader_athens_inherited1_trigger
 ;------------------------------------------ 
 Trigger crusader_athens_inherited2_trigger
  WhenToTest CharacterTurnStart
- Condition Trait Athens_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief8
- and not FactionwideAncillaryExists crusader_athens
- 
- AcquireAncillary crusader_athens chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_athens_inherited3_trigger
- WhenToTest CharacterTurnEnd
  Condition Trait Athens_Heir = 1
  and FactionType jerusalem
  and not HasAncType crusader_fief8
@@ -29135,16 +29032,6 @@ Trigger crusader_corinth_inherited2_trigger
  AcquireAncillary crusader_corinth chance 100 
  
 ;------------------------------------------ 
-Trigger crusader_corinth_inherited3_trigger
- WhenToTest CharacterTurnEnd
- Condition Trait Corinth_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief9
- and not FactionwideAncillaryExists crusader_corinth
- 
- AcquireAncillary crusader_corinth chance 100 
- 
-;------------------------------------------ 
 Trigger crusader_corinth_trigger
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
@@ -29170,16 +29057,6 @@ Trigger crusader_thessalonica_inherited1_trigger
 ;------------------------------------------ 
 Trigger crusader_thessalonica_inherited2_trigger
  WhenToTest CharacterTurnStart
- Condition Trait Thessalonica_Heir = 1
- and FactionType jerusalem
- and not HasAncType crusader_fief10
- and not FactionwideAncillaryExists crusader_thessalonica
- 
- AcquireAncillary crusader_thessalonica chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_thessalonica_inherited3_trigger
- WhenToTest CharacterTurnEnd
  Condition Trait Thessalonica_Heir = 1
  and FactionType jerusalem
  and not HasAncType crusader_fief10

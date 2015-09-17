@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 	<!-- SS6.4 settlement mechanics edited by gracul: Jan-2011 -->
+	<!-- Titanium edited by melooo182: Sep-2014 -->
 <root>
 	<factor_modifiers>
 		<factor name="SPF_FARMING_LEVEL">
@@ -66,7 +67,7 @@
 		<factor name="SOF_BUILDINGS_FUN">
 			<pip_modifier value="1.0"/>
 			<pip_min value="0"/>
-			<pip_max value="30"/>	<!-- Increased 20% KER -->
+			<pip_max value="30"/>	<!-- 25 Increased 20% KER -->
 		</factor>
 		<factor name="SOF_GOVERNORS_INFLUENCE">
 			<pip_modifier value="1.0"/>
@@ -121,7 +122,7 @@
 			<pip_modifier value="1.0"/>
 			<castle_modifier value="0.5"/>
 			<pip_min value="0"/>
-			<pip_max value="30"/>	<!-- Increased 87.5% KER -->
+			<pip_max value="30"/>	<!-- 16 Increased 87.5% KER -->
 		</factor>
 		<factor name="SOF_BESIEGED">
 			<pip_modifier value="1.0"/>
@@ -140,18 +141,18 @@
 			<city_modifier value="1.2"/>
 		</factor>
 		<factor name="SIF_FARMS">
-			<pip_modifier value="1.0"/>
+			<pip_modifier value="0.8"/>	<!-- 1.0 reduced 20% 2TPY balance -->
 		</factor>
 		<factor name="SIF_TAXES">
-			<pip_modifier value="0.56"/>	<!-- reduced 30% KER -->
-			<castle_modifier value="0.525"/>	<!-- reduced 30% KER -->
+			<pip_modifier value="0.52"/>	<!-- 0.8 reduced 35% KER & 2TPY balance -->
+			<castle_modifier value="0.48"/>	<!-- 0.75 reduced 35% KER & 2TPY balance -->
 		</factor>
 		<factor name="SIF_MINING">
-			<pip_modifier value="1.25"/>
+			<pip_modifier value="1.00"/>	<!-- 1.25 reduced 20% 2TPY balance -->
 		</factor>
 		<factor name="SIF_TRADE">
-			<pip_modifier value="0.84"/>	<!-- reduced 30% KER -->
-			<castle_modifier value="0.56"/>	<!-- reduced 30% KER -->
+			<pip_modifier value="0.72"/>	<!-- 1.2 reduced 35% KER & 2TPY balance -->
+			<castle_modifier value="0.48"/>	<!-- 0.8 reduced 35% KER & 2TPY balance -->
 		</factor>
 		<factor name="SIF_BUILDINGS">
 			<pip_modifier value="1.0"/>

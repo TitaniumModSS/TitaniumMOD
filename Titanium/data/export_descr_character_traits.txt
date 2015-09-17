@@ -1,4 +1,5 @@
 ;SS6.4 EDCT edited by gracul: Jan-2011
+;Titanium submod edited by gsthoed and melooo182: Sep-2014
 
 ;=======================================================================
 ;BBB File by Dearmad and Pnutmaster - 2007 (thanks Re Berengario I ;)
@@ -287,7 +288,7 @@ Trait FactionleaderTO
 ;------------------------------------------
 Trait FactionheirTO
  Characters family
- AntiTraits Exheir
+ AntiTraits FactionleaderTO
 
  Level Grosskomtur
    Description Grosskomtur_desc
@@ -4014,7 +4015,7 @@ Trait SeverelyWounded
 ;------------------------------------------
 Trait FactionFutureRegent
  Characters family
- AntiTraits Exheir
+ AntiTraits Next_Heir_Trait, Desinherited_Trait
 
  Level FactionFutureRegent
    Description FactionFutureRegent_desc
@@ -4604,7 +4605,7 @@ Trait VendettaKwarezm
 Trait Factionleader
  Characters family
  NoGoingBackLevel 1
- AntiTraits Factionheir, FactionUsurper, FactionFutureUsurper
+ AntiTraits Factionheir, FactionUsurper, FactionFutureUsurper, Next_Heir_Trait, Desinherited_Trait
 
  Level Faction_Leader
    Description Faction_Leader_desc
@@ -4619,7 +4620,7 @@ Trait Factionleader
 ;------------------------------------------
 Trait Factionheir
  Characters family
- AntiTraits Exheir
+ AntiTraits Next_Heir_Trait, Desinherited_Trait
 
  Level Heir_Apparent
    Description Heir_Apparent_desc
@@ -4633,7 +4634,6 @@ Trait Factionheir
 ;------------------------------------------
 Trait Exheir
  Characters family
- AntiTraits Factionheir, FactionFutureRegent, FactionFutureUsurper, FactionUsurper
 
  Level Former_Successor
    Description Former_Successor_desc
@@ -14136,7 +14136,7 @@ Trait Byzantium_Triumph
 ;------------------------------------------
 Trait FactionFutureUsurper
  Characters family
- AntiTraits ExHeir
+ AntiTraits FactionUsurper, Next_Heir_Trait, Desinherited_Trait
 
  Level ThroneClaimant
    Description ThroneClaimant_desc
@@ -14149,7 +14149,7 @@ Trait FactionFutureUsurper
 Trait FactionUsurper
  Characters family
  NoGoingBackLevel 1
- AntiTraits FactionFutureUsurper, FactionFutureRegent
+ AntiTraits FactionFutureUsurper, FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
 
  Level Usurper
    Description Usurper_desc
@@ -14166,6 +14166,8 @@ Trait FactionUsurper
 ;-------------------------------------------
 Trait Jerusalem_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Jerusalem_Heir
 
  Level Crusader_Jerusalem_Ruler
    Description Crusader_Jerusalem_Ruler_desc
@@ -14175,6 +14177,8 @@ Trait Jerusalem_Ruler
 ;------------------------------------------
 Trait Antioch_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Antioch_Heir
 
  Level Crusader_Antioch_Ruler
    Description Crusader_Antioch_Ruler_desc
@@ -14184,6 +14188,8 @@ Trait Antioch_Ruler
 ;------------------------------------------
 Trait Edessa_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Edessa_Heir
 
  Level Crusader_Edessa_Ruler
    Description Crusader_Edessa_Ruler_desc
@@ -14193,6 +14199,8 @@ Trait Edessa_Ruler
 ;------------------------------------------
 Trait Tortosa_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Tortosa_Heir
 
  Level Crusader_Tortosa_Ruler
    Description Crusader_Tortosa_Ruler_desc
@@ -14202,6 +14210,8 @@ Trait Tortosa_Ruler
 ;------------------------------------------
 Trait Nicosia_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Nicosia_Heir
 
  Level Crusader_Nicosia_Ruler
    Description Crusader_Nicosia_Ruler_desc
@@ -14211,6 +14221,8 @@ Trait Nicosia_Ruler
 ;------------------------------------------
 Trait Rhodes_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Rhodes_Heir
 
  Level Crusader_Rhodes_Ruler
    Description Crusader_Rhodes_Ruler_desc
@@ -14220,6 +14232,8 @@ Trait Rhodes_Ruler
 ;------------------------------------------
 Trait Constantinople_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Constantinople_Heir
 
  Level Crusader_Constantinople_Ruler
    Description Crusader_Constantinople_Ruler_desc
@@ -14229,6 +14243,8 @@ Trait Constantinople_Ruler
 ;------------------------------------------
 Trait Athens_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Athens_Heir
 
  Level Crusader_Athens_Ruler
    Description Crusader_Athens_Ruler_desc
@@ -14238,6 +14254,8 @@ Trait Athens_Ruler
 ;------------------------------------------
 Trait Corinth_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Corinth_Heir
 
  Level Crusader_Corinth_Ruler
    Description Crusader_Corinth_Ruler_desc
@@ -14247,6 +14265,8 @@ Trait Corinth_Ruler
 ;------------------------------------------
 Trait Thessalonica_Ruler
  Characters family
+ NoGoingBackLevel 1
+ AntiTraits Thessalonica_Heir
 
  Level Crusader_Thessalonica_Ruler
    Description Crusader_Thessalonica_Ruler_desc
@@ -14258,101 +14278,111 @@ Trait Thessalonica_Ruler
 Trait Jerusalem_Heir
  Characters family
  Hidden
+ AntiTraits Jerusalem_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Antioch_Heir
  Characters family
  Hidden
+ AntiTraits Antioch_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Edessa_Heir
  Characters family
  Hidden
+ AntiTraits Edessa_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Tortosa_Heir
  Characters family
  Hidden
+ AntiTraits Tortosa_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Nicosia_Heir
  Characters family
  Hidden
+ AntiTraits Nicosia_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Rhodes_Heir
  Characters family
  Hidden
+ AntiTraits Rhodes_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Constantinople_Heir
  Characters family
  Hidden
+ AntiTraits Constantinople_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Athens_Heir
  Characters family
  Hidden
+ AntiTraits Athens_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Corinth_Heir
  Characters family
  Hidden
+ AntiTraits Corinth_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 Trait Thessalonica_Heir
  Characters family
  Hidden
+ AntiTraits Thessalonica_Ruler
 
  Level Crusader_Heir
    Description Crusader_Heir_desc
    EffectsDescription Crusader_Heir_effects_desc
-   Threshold 1
+   Threshold 2
 
 ;------------------------------------------
 ;**************************************************
@@ -14446,7 +14476,7 @@ Trait Venice_Factionleader
 ;------------------------------------------
 Trait Venice_Factionheir
  Characters family
- AntiTraits Exheir
+ AntiTraits Venice_Factionleader
 
  Level Consigliere
    Description Consigliere_desc
@@ -14664,7 +14694,7 @@ Trait Genoa_Factionleader
 ;------------------------------------------
 Trait Genoa_Factionheir
  Characters family
- AntiTraits Exheir
+ AntiTraits Genoa_Factionleader
 
  Level Genoa_Consigliere
    Description Genoa_Consigliere_desc
@@ -14873,7 +14903,7 @@ Trait Novgorod_Factionleader
 ;------------------------------------------
 Trait Novgorod_Factionheir
  Characters family
- AntiTraits Exheir
+ AntiTraits Novgorod_Factionleader
 
  Level Novgorod_Naslednik
    Description Novgorod_Naslednik_desc
@@ -14996,6 +15026,7 @@ Trait Novgorod_Veche_Approval
 ;------------------------------------------
 Trait Next_Heir_Trait
  Characters family
+ AntiTraits Desinherited_Trait
 
  Level Next_Heir
    Description Next_Heir_desc
@@ -15011,6 +15042,7 @@ Trait Next_Heir_Trait
 ;------------------------------------------
 Trait Desinherited_Trait
  Characters family
+ AntiTraits Next_Heir_Trait
 
  Level Former_Next_Heir
    Description Former_Next_Heir_desc
@@ -15362,8 +15394,8 @@ Trait Civil_Unrest
 ;----------------------------------------------
 Trait Magnanimus_Ruler
  Characters family
- AntiTraits Unforgiving_Ruler
  ;Hidden
+ AntiTraits Unforgiving_Ruler
 
  Level Forgiving
    Description Forgiving_desc
@@ -15395,8 +15427,8 @@ Trait Magnanimus_Ruler
 ;----------------------------------------------
 Trait Unforgiving_Ruler
  Characters family
- AntiTraits Magnanimus_Ruler
  ;Hidden
+ AntiTraits Magnanimus_Ruler
 
  Level Unforgiving
    Description Unforgiving_desc
@@ -15430,8 +15462,8 @@ Trait Unforgiving_Ruler
 ;----------------------------------------------
 Trait Generals_Unrest
  Characters family
- ;AntiTraits Unpopularly_Loyal
  ;Hidden
+ ;AntiTraits Unpopularly_Loyal
 
  Level Discontent
    Description Discontent_desc
@@ -15475,8 +15507,8 @@ Trait Generals_Unrest
 ;----------------------------------------------
 Trait Unpopularly_Loyal
  Characters family
- ;AntiTraits Generals_Unrest
  ;Hidden
+ ;AntiTraits Generals_Unrest
 
  Level Deferent
    Description Deferent_desc
@@ -24868,47 +24900,6 @@ Trigger factionleader_heresyimmunityAI_remove
        and Trait HeresyImmunityAI = 1
 
  Affects HeresyImmunityAI -1 Chance 100
-
-;==========================================
-;==========================================
-;------------------------------------------
-Trigger reinherited
- WhenToTest BecomesFactionHeir
-
- Condition Trait Exheir = 1
-
- Affects Factionheir 1 Chance 100
-
-;------------------------------------------
-Trigger disinherited 
- WhenToTest CeasedFactionHeir
-
- Condition not Trait Exheir >= 0
-       and not IsFactionLeader
-       and not Trait FactionRegent >= 0
-
- Affects Exheir 2 Chance 100
-
-;------------------------------------------
-Trigger inherited
- WhenToTest CeasedFactionHeir
-
- Condition IsFactionLeader
-       and not Trait FactionFutureRegent = 1
-       and not Trait FactionRegent = 1
-
- Affects Exheir 1 Chance 100
-
-;------------------------------------------
-Trigger inheritedregent
- WhenToTest CeasedFactionHeir
-
- Condition IsFactionLeader
-       and Trait FactionFutureRegent = 1
-
- Affects Exheir 1 Chance 100
-
-;------------------------------------------
 
 ;==========================================
 ;KINGDOMS, EMPIRES AND REPUBLICS CHANGES
@@ -37803,14 +37794,14 @@ Trigger NobleParents3
 Trigger Princess_Catholic_ComesOfAge1
 WhenToTest CharacterComesOfAge
 
-Condition FactionReligion catholic
+Condition AgentType = princess
+and FactionReligion catholic
 and not FatherTrait Muslim > 0
 and not FatherTrait Pagan > 0
 and not FatherTrait Orthodox > 0
 and not FatherTrait WifeIsMuslim > 0
 and not FatherTrait WifeIsPagan > 0
 and not FatherTrait WifeIsOrthodox > 0
-and AgentType = princess
 
 Affects Princess_Catholic 1 Chance 100
 
@@ -37818,9 +37809,9 @@ Affects Princess_Catholic 1 Chance 100
 Trigger Princess_Catholic_ComesOfAge2
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion catholic
+Condition AgentType = princess
+and not FactionReligion catholic
 and FatherTrait Catholic > 0
-and AgentType = princess
 
 Affects Princess_Catholic 1 Chance 80
 
@@ -37828,12 +37819,12 @@ Affects Princess_Catholic 1 Chance 80
 Trigger Princess_Catholic_ComesOfAge3
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion catholic
+Condition AgentType = princess
+and not FactionReligion catholic
 and FatherTrait WifeIsCatholic > 0
 and not FatherTrait Muslim > 0
 and not FatherTrait Pagan > 0
 and not FatherTrait Orthodox > 0
-and AgentType = princess
 
 Affects Princess_Catholic 1 Chance 20
 
@@ -37841,12 +37832,12 @@ Affects Princess_Catholic 1 Chance 20
 Trigger Princess_Catholic_ComesOfAge_Catch
 WhenToTest CharacterTurnEnd
 
-Condition FactionReligion catholic
+Condition AgentType = princess
+and FactionReligion catholic
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Catholic 1 Chance 100
 
@@ -37854,12 +37845,12 @@ Affects Princess_Catholic 1 Chance 100
 Trigger Princess_Catholic_ComesOfAge_Catch2
 WhenToTest CharacterTurnStart
 
-Condition FactionReligion catholic
+Condition AgentType = princess
+and FactionReligion catholic
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Catholic 1 Chance 100
 
@@ -37867,9 +37858,9 @@ Affects Princess_Catholic 1 Chance 100
 Trigger Princess_Catholic_Faith_Show
 WhenToTest CharacterTurnEnd
 
-Condition not FactionReligion catholic
+Condition AgentType = princess
+and not FactionReligion catholic
 and Trait Princess_Catholic > 0
-and AgentType = princess
 
 Affects Princess_Catholic_Shown 1 Chance 100
 
@@ -37878,14 +37869,14 @@ Affects Princess_Catholic_Shown 1 Chance 100
 Trigger Princess_Orthodox_ComesOfAge1
 WhenToTest CharacterComesOfAge
 
-Condition FactionReligion orthodox
+Condition AgentType = princess
+and FactionReligion orthodox
 and not FatherTrait Muslim > 0
 and not FatherTrait Pagan > 0
 and not FatherTrait Catholic > 0
 and not FatherTrait WifeIsMuslim > 0
 and not FatherTrait WifeIsPagan > 0
 and not FatherTrait WifeIsCatholic > 0
-and AgentType = princess
 
 Affects Princess_Orthodox 1 Chance 100
 
@@ -37893,9 +37884,9 @@ Affects Princess_Orthodox 1 Chance 100
 Trigger Princess_Orthodox_ComesOfAge2
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion orthodox
+Condition AgentType = princess
+and not FactionReligion orthodox
 and FatherTrait Orthodox > 0
-and AgentType = princess
 
 Affects Princess_Orthodox 1 Chance 80
 
@@ -37903,12 +37894,12 @@ Affects Princess_Orthodox 1 Chance 80
 Trigger Princess_Orthodox_ComesOfAge3
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion orthodox
+Condition AgentType = princess
+and not FactionReligion orthodox
 and FatherTrait WifeIsOrthodox > 0
 and not FatherTrait Muslim > 0
 and not FatherTrait Pagan > 0
 and not FatherTrait Catholic > 0
-and AgentType = princess
 
 Affects Princess_Orthodox 1 Chance 20
 
@@ -37916,12 +37907,12 @@ Affects Princess_Orthodox 1 Chance 20
 Trigger Princess_Orthodox_ComesOfAge_Catch
 WhenToTest CharacterTurnEnd
 
-Condition FactionReligion orthodox
+Condition AgentType = princess
+and FactionReligion orthodox
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Orthodox 1 Chance 100
 
@@ -37929,12 +37920,12 @@ Affects Princess_Orthodox 1 Chance 100
 Trigger Princess_Orthodox_ComesOfAge_Catch2
 WhenToTest CharacterTurnStart
 
-Condition FactionReligion orthodox
+Condition AgentType = princess
+and FactionReligion orthodox
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Orthodox 1 Chance 100
 
@@ -37942,9 +37933,9 @@ Affects Princess_Orthodox 1 Chance 100
 Trigger Princess_Pagan_Faith_Show
 WhenToTest CharacterTurnEnd
 
-Condition not FactionReligion orthodox
+Condition AgentType = princess
+and not FactionReligion orthodox
 and Trait Princess_Orthodox > 0
-and AgentType = princess
 
 Affects Princess_Orthodox_Shown 1 Chance 100
 
@@ -37953,14 +37944,14 @@ Affects Princess_Orthodox_Shown 1 Chance 100
 Trigger Princess_Pagan_ComesOfAge1
 WhenToTest CharacterComesOfAge
 
-Condition FactionReligion pagan
+Condition AgentType = princess
+and FactionReligion pagan
 and not FatherTrait Muslim > 0
 and not FatherTrait Orthodox > 0
 and not FatherTrait Catholic > 0
 and not FatherTrait WifeIsMuslim > 0
 and not FatherTrait WifeIsOrthodox > 0
 and not FatherTrait WifeIsCatholic > 0
-and AgentType = princess
 
 Affects Princess_Pagan 1 Chance 100
 
@@ -37968,9 +37959,9 @@ Affects Princess_Pagan 1 Chance 100
 Trigger Princess_Pagan_ComesOfAge2
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion pagan
+Condition AgentType = princess
+and not FactionReligion pagan
 and FatherTrait Pagan > 0
-and AgentType = princess
 
 Affects Princess_Pagan 1 Chance 80
 
@@ -37978,12 +37969,12 @@ Affects Princess_Pagan 1 Chance 80
 Trigger Princess_Pagan_ComesOfAge3
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion pagan
+Condition AgentType = princess
+and not FactionReligion pagan
 and FatherTrait WifeIsPagan > 0
 and not FatherTrait Muslim > 0
 and not FatherTrait Orthodox > 0
 and not FatherTrait Catholic > 0
-and AgentType = princess
 
 Affects Princess_Pagan 1 Chance 20
 
@@ -37991,12 +37982,12 @@ Affects Princess_Pagan 1 Chance 20
 Trigger Princess_Pagan_ComesOfAge_Catch
 WhenToTest CharacterTurnEnd
 
-Condition FactionReligion pagan
+Condition AgentType = princess
+and FactionReligion pagan
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Pagan 1 Chance 100
 
@@ -38004,12 +37995,12 @@ Affects Princess_Pagan 1 Chance 100
 Trigger Princess_Pagan_ComesOfAge_Catch2
 WhenToTest CharacterTurnStart
 
-Condition FactionReligion pagan
+Condition AgentType = princess
+and FactionReligion pagan
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Pagan 1 Chance 100
 
@@ -38017,9 +38008,9 @@ Affects Princess_Pagan 1 Chance 100
 Trigger Princess_Pagan_Faith_Show
 WhenToTest CharacterTurnEnd
 
-Condition not FactionReligion pagan
+Condition AgentType = princess
+and not FactionReligion pagan
 and Trait Princess_Pagan > 0
-and AgentType = princess
 
 Affects Princess_Pagan_Shown 1 Chance 100
 
@@ -38028,14 +38019,14 @@ Affects Princess_Pagan_Shown 1 Chance 100
 Trigger Princess_Muslim_ComesOfAge1
 WhenToTest CharacterComesOfAge
 
-Condition FactionReligion islam
+Condition AgentType = princess
+and FactionReligion islam
 and not FatherTrait Pagan > 0
 and not FatherTrait Orthodox > 0
 and not FatherTrait Catholic > 0
 and not FatherTrait WifeIsPagan > 0
 and not FatherTrait WifeIsOrthodox > 0
 and not FatherTrait WifeIsCatholic > 0
-and AgentType = princess
 
 Affects Princess_Muslim 1 Chance 100
 
@@ -38043,9 +38034,9 @@ Affects Princess_Muslim 1 Chance 100
 Trigger Princess_Muslim_ComesOfAge2
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion islam
+Condition AgentType = princess
+and not FactionReligion islam
 and FatherTrait Muslim > 0
-and AgentType = princess
 
 Affects Princess_Muslim 1 Chance 80
 
@@ -38053,12 +38044,12 @@ Affects Princess_Muslim 1 Chance 80
 Trigger Princess_Muslim_ComesOfAge3
 WhenToTest CharacterComesOfAge
 
-Condition not FactionReligion islam
+Condition AgentType = princess
+and not FactionReligion islam
 and FatherTrait WifeIsMuslim > 0
 and not FatherTrait Pagan > 0
 and not FatherTrait Orthodox > 0
 and not FatherTrait Catholic > 0
-and AgentType = princess
 
 Affects Princess_Muslim 1 Chance 20
 
@@ -38066,12 +38057,12 @@ Affects Princess_Muslim 1 Chance 20
 Trigger Princess_Muslim_ComesOfAge_Catch
 WhenToTest CharacterTurnEnd
 
-Condition FactionReligion islam
+Condition AgentType = princess
+and FactionReligion islam
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Muslim 1 Chance 100
 
@@ -38079,12 +38070,12 @@ Affects Princess_Muslim 1 Chance 100
 Trigger Princess_Muslim_ComesOfAge_Catch2
 WhenToTest CharacterTurnStart
 
-Condition FactionReligion islam
+Condition AgentType = princess
+and FactionReligion islam
 and not Trait Princess_Catholic > 0
 and not Trait Princess_Orthodox > 0
 and not Trait Princess_Pagan > 0
 and not Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Muslim 1 Chance 100
 
@@ -38092,9 +38083,9 @@ Affects Princess_Muslim 1 Chance 100
 Trigger Princess_Mulsim_Faith_Show
 WhenToTest CharacterTurnEnd
 
-Condition not FactionReligion islam
+Condition AgentType = princess
+and not FactionReligion islam
 and Trait Princess_Muslim > 0
-and AgentType = princess
 
 Affects Princess_Muslim_Shown 1 Chance 100
 
@@ -38992,15 +38983,10 @@ WhenToTest CharacterTurnEnd
 Condition IsGeneral
 and not IsFactionLeader
 and CultureType southern_european
-and not FactionType spain
-and not FactionType aragon
-and not FactionType portugal
-and not FactionType milan
-and not FactionType venice
-and not FactionType papal_states
+and FactionType sicily
 and HasAncType office_military1
 and Trait Military_Career_NEurope2 < 1
-and Trait Military_Career_SEurope_Iberia < 2
+and Trait Military_Career_SEurope_Italy < 2
 
 Affects Military_Career_NEurope2 4 Chance 100
 Affects Military_Career_SEurope_Italy -8 Chance 100
@@ -39012,15 +38998,10 @@ WhenToTest CharacterTurnEnd
 Condition IsGeneral
 and not IsFactionLeader
 and CultureType southern_european
-and not FactionType spain
-and not FactionType aragon
-and not FactionType portugal
-and not FactionType milan
-and not FactionType venice
-and not FactionType papal_states
+and FactionType sicily
 and HasAncType office_military1
 and Trait Military_Career_NEurope2 < 1
-and Trait Military_Career_SEurope_Iberia = 2
+and Trait Military_Career_SEurope_Italy = 2
 
 Affects Military_Career_NEurope2 5 Chance 100
 Affects Military_Career_SEurope_Italy -8 Chance 100
@@ -39032,15 +39013,10 @@ WhenToTest CharacterTurnEnd
 Condition IsGeneral
 and not IsFactionLeader
 and CultureType southern_european
-and not FactionType spain
-and not FactionType aragon
-and not FactionType portugal
-and not FactionType milan
-and not FactionType venice
-and not FactionType papal_states
+and FactionType sicily
 and HasAncType office_military1
 and Trait Military_Career_NEurope2 < 1
-and Trait Military_Career_SEurope_Iberia = 3
+and Trait Military_Career_SEurope_Italy = 3
 
 Affects Military_Career_NEurope2 6 Chance 100
 Affects Military_Career_SEurope_Italy -8 Chance 100
@@ -39205,7 +39181,7 @@ Affects Military_Career_EEurope2 6 Chance 100
 Affects Military_Career_EEurope -8 Chance 100
 
 ;------------------------------------------
-Trigger Military_Career_Tysyatsky
+Trigger Military_Career_Tysyatsky_trigger
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
@@ -39222,7 +39198,7 @@ Affects Military_Career_Tysyatsky 4 Chance 100
 Affects Military_Career_EEurope -8 Chance 100
 
 ;------------------------------------------
-Trigger Military_Career_Tysyatsky2
+Trigger Military_Career_Tysyatsky_trigger2
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
@@ -39239,7 +39215,7 @@ Affects Military_Career_Tysyatsky 5 Chance 100
 Affects Military_Career_EEurope -8 Chance 100
 
 ;------------------------------------------
-Trigger Military_Career_Tysyatsky3
+Trigger Military_Career_Tysyatsky_trigger3
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
@@ -39304,7 +39280,7 @@ Affects Military_Career_Muslim2 6 Chance 100
 Affects Military_Career_Muslim -8 Chance 100
 
 ;------------------------------------------
-Trigger Military_Career_Orlok
+Trigger Military_Career_Orlok_trigger
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
@@ -40414,7 +40390,6 @@ Trigger UsurperTakesThrone
        and not FactionType hre; no auto civil war for empires
 
  Affects FactionUsurper 1 Chance 100 
- Affects FactionFutureUsurper -1 Chance 100 
  Affects Offensive_To_Nobles 1 Chance 100
 
 ;------------------------------------------
@@ -41387,7 +41362,7 @@ Trigger archbishop_trait_remove2
 Trigger jerusalem_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Jerusalem_Ruler >= 1
+ Condition Trait Jerusalem_Ruler = 0
        and HasAncType crusader_fief1
 
  Affects Jerusalem_Ruler 1 Chance 100
@@ -41396,7 +41371,7 @@ Trigger jerusalem_ruler_trigger
 Trigger antioch_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Antioch_Ruler >= 1
+ Condition Trait Antioch_Ruler = 0
        and HasAncType crusader_fief2
 
  Affects Antioch_Ruler 1 Chance 100
@@ -41405,7 +41380,7 @@ Trigger antioch_ruler_trigger
 Trigger edessa_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Edessa_Ruler >= 1
+ Condition Trait Edessa_Ruler = 0
        and HasAncType crusader_fief3
 
  Affects Edessa_Ruler 1 Chance 100
@@ -41414,7 +41389,7 @@ Trigger edessa_ruler_trigger
 Trigger tortosa_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Tortosa_Ruler >= 1
+ Condition Trait Tortosa_Ruler = 0
        and HasAncType crusader_fief4
 
  Affects Tortosa_Ruler 1 Chance 100
@@ -41423,7 +41398,7 @@ Trigger tortosa_ruler_trigger
 Trigger nicosia_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Nicosia_Ruler >= 1
+ Condition Trait Nicosia_Ruler = 0
        and HasAncType crusader_fief5
 
  Affects Nicosia_Ruler 1 Chance 100
@@ -41432,7 +41407,7 @@ Trigger nicosia_ruler_trigger
 Trigger rhodes_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Rhodes_Ruler >= 1
+ Condition Trait Rhodes_Ruler = 0
        and HasAncType crusader_fief6
 
  Affects Rhodes_Ruler 1 Chance 100
@@ -41441,7 +41416,7 @@ Trigger rhodes_ruler_trigger
 Trigger constantinople_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Constantinople_Ruler >= 1
+ Condition Trait Constantinople_Ruler = 0
        and HasAncType crusader_fief7
 
  Affects Constantinople_Ruler 1 Chance 100
@@ -41450,7 +41425,7 @@ Trigger constantinople_ruler_trigger
 Trigger athens_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Athens_Ruler >= 1
+ Condition Trait Athens_Ruler = 0
        and HasAncType crusader_fief8
 
  Affects Athens_Ruler 1 Chance 100
@@ -41459,7 +41434,7 @@ Trigger athens_ruler_trigger
 Trigger corinth_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Corinth_Ruler >= 1
+ Condition Trait Corinth_Ruler = 0
        and HasAncType crusader_fief9
 
  Affects Corinth_Ruler 1 Chance 100
@@ -41468,35 +41443,35 @@ Trigger corinth_ruler_trigger
 Trigger thessalonica_ruler_trigger
  WhenToTest CharacterTurnStart
 
- Condition not Trait Thessalonica_Ruler >= 1
+ Condition Trait Thessalonica_Ruler = 0
        and HasAncType crusader_fief10
 
  Affects Thessalonica_Ruler 1 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
-Trigger jerusalem_ruler_loss_trigger
- WhenToTest CharacterTurnEnd
-
- Condition Trait Jerusalem_Ruler >= 1
-       and not HasAncType crusader_fief1
-
- Affects Jerusalem_Ruler -1 Chance 100
-
+;Trigger jerusalem_ruler_loss_trigger
+; WhenToTest CharacterTurnEnd
+;
+; Condition Trait Jerusalem_Ruler = 1
+;       and not HasAncType crusader_fief1
+;
+; Affects Jerusalem_Ruler -1 Chance 100
+;
 ;------------------------------------------
-Trigger antioch_ruler_loss_trigger
- WhenToTest CharacterTurnEnd
-
- Condition Trait Antioch_Ruler >= 1
-       and not HasAncType crusader_fief2
-
- Affects Antioch_Ruler -1 Chance 100
-
+;Trigger antioch_ruler_loss_trigger
+; WhenToTest CharacterTurnEnd
+;
+; Condition Trait Antioch_Ruler = 1
+;       and not HasAncType crusader_fief2
+;
+; Affects Antioch_Ruler -1 Chance 100
+;
 ;------------------------------------------
 Trigger edessa_ruler_loss_trigger
  WhenToTest CharacterTurnEnd
 
- Condition Trait Edessa_Ruler >= 1
+ Condition Trait Edessa_Ruler = 1
        and not HasAncType crusader_fief3
 
  Affects Edessa_Ruler -1 Chance 100
@@ -41505,7 +41480,7 @@ Trigger edessa_ruler_loss_trigger
 Trigger tortosa_ruler_loss_trigger
  WhenToTest CharacterTurnEnd
 
- Condition Trait Tortosa_Ruler >= 1
+ Condition Trait Tortosa_Ruler = 1
        and not HasAncType crusader_fief4
 
  Affects Tortosa_Ruler -1 Chance 100
@@ -41514,7 +41489,7 @@ Trigger tortosa_ruler_loss_trigger
 Trigger nicosia_ruler_loss_trigger
  WhenToTest CharacterTurnEnd
 
- Condition Trait Nicosia_Ruler >= 1
+ Condition Trait Nicosia_Ruler = 1
        and not HasAncType crusader_fief5
 
  Affects Nicosia_Ruler -1 Chance 100
@@ -41523,25 +41498,25 @@ Trigger nicosia_ruler_loss_trigger
 Trigger rhodes_ruler_loss_trigger
  WhenToTest CharacterTurnEnd
 
- Condition Trait Rhodes_Ruler >= 1
+ Condition Trait Rhodes_Ruler = 1
        and not HasAncType crusader_fief6
 
  Affects Rhodes_Ruler -1 Chance 100
 
 ;------------------------------------------
-Trigger constantinople_ruler_loss_trigger
- WhenToTest CharacterTurnEnd
-
- Condition Trait Constantinople_Ruler >= 1
-       and not HasAncType crusader_fief6
-
- Affects Constantinople_Ruler -1 Chance 100
-
+;Trigger constantinople_ruler_loss_trigger
+; WhenToTest CharacterTurnEnd
+;
+; Condition Trait Constantinople_Ruler = 1
+;       and not HasAncType crusader_fief6
+;
+; Affects Constantinople_Ruler -1 Chance 100
+;
 ;------------------------------------------
 Trigger athens_ruler_loss_trigger
  WhenToTest CharacterTurnEnd
 
- Condition Trait Athens_Ruler >= 1
+ Condition Trait Athens_Ruler = 1
        and not HasAncType crusader_fief6
 
  Affects Athens_Ruler -1 Chance 100
@@ -41550,7 +41525,7 @@ Trigger athens_ruler_loss_trigger
 Trigger corinth_ruler_loss_trigger
  WhenToTest CharacterTurnEnd
 
- Condition Trait Corinth_Ruler >= 1
+ Condition Trait Corinth_Ruler = 1
        and not HasAncType crusader_fief6
 
  Affects Corinth_Ruler -1 Chance 100
@@ -41559,7 +41534,7 @@ Trigger corinth_ruler_loss_trigger
 Trigger thessalonica_ruler_loss_trigger
  WhenToTest CharacterTurnEnd
 
- Condition Trait Thessalonica_Ruler >= 1
+ Condition Trait Thessalonica_Ruler = 1
        and not HasAncType crusader_fief6
 
  Affects Thessalonica_Ruler -1 Chance 100
@@ -41569,169 +41544,82 @@ Trigger thessalonica_ruler_loss_trigger
 Trigger jerusalem_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Jerusalem_Heir >= 1
- and FatherTrait Jerusalem_Ruler = 1
+ Condition FatherTrait Jerusalem_Ruler = 1
 
- Affects Jerusalem_Heir 1 Chance 100
+ Affects Jerusalem_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger jerusalem_heir_trait_gain2
- WhenToTest CharacterTurnStart
+ WhenToTest CharacterTurnEnd
 
- Condition not Trait Jerusalem_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Jerusalem_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Jerusalem_Ruler = 1
 
  Affects Jerusalem_Heir 1 Chance 100
 
 ;------------------------------------------
-Trigger jerusalem_heir_trait_gain3
- WhenToTest CharacterTurnEnd
-
- Condition not Trait Jerusalem_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Jerusalem_Ruler = 1
-
- Affects Jerusalem_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger jerusalem_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Jerusalem_Heir >= 1
- and not FatherTrait Jerusalem_Ruler = 1
-
- Affects Jerusalem_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger jerusalem_heir_trait_loss2
- WhenToTest CharacterTurnStart
-
- Condition Trait Jerusalem_Heir >= 1
- and not FatherTrait Jerusalem_Ruler = 1
-
- Affects Jerusalem_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger jerusalem_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Jerusalem_Heir >= 1
- and Trait Jerusalem_Ruler = 1
-
- Affects Jerusalem_Heir -1 Chance 100
-
+;Trigger jerusalem_heir_trait_loss1
+; WhenToTest CharacterTurnStart
+;
+; Condition Trait Jerusalem_Heir = 1
+; and FatherTrait Jerusalem_Ruler = 0
+;
+; Affects Jerusalem_Heir -1 Chance 100
+;
 ;------------------------------------------
 ;------------------------------------------
 Trigger antioch_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Antioch_Heir >= 1
- and FatherTrait Antioch_Ruler = 1
+ Condition FatherTrait Antioch_Ruler = 1
 
- Affects Antioch_Heir 1 Chance 100
+ Affects Antioch_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger antioch_heir_trait_gain2
- WhenToTest CharacterTurnStart
+ WhenToTest CharacterTurnEnd
 
- Condition not Trait Antioch_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Antioch_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Antioch_Ruler = 1
 
  Affects Antioch_Heir 1 Chance 100
 
 ;------------------------------------------
-Trigger antioch_heir_trait_gain3
- WhenToTest CharacterTurnEnd
-
- Condition not Trait Antioch_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Antioch_Ruler = 1
-
- Affects Antioch_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger antioch_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Antioch_Heir >= 1
- and not FatherTrait Antioch_Ruler = 1
-
- Affects Antioch_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger antioch_heir_trait_loss2
- WhenToTest CharacterTurnStart
-
- Condition Trait Antioch_Heir >= 1
- and not FatherTrait Antioch_Ruler = 1
-
- Affects Antioch_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger antioch_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Antioch_Heir >= 1
- and Trait Antioch_Ruler = 1
-
- Affects Antioch_Heir -1 Chance 100
-
+;Trigger antioch_heir_trait_loss1
+; WhenToTest CharacterTurnStart
+;
+; Condition Trait Antioch_Heir = 1
+; and FatherTrait Antioch_Ruler = 0
+;
+; Affects Antioch_Heir -1 Chance 100
+;
 ;------------------------------------------
 ;------------------------------------------
 Trigger edessa_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Edessa_Heir >= 1
- and FatherTrait Edessa_Ruler = 1
+ Condition FatherTrait Edessa_Ruler = 1
 
- Affects Edessa_Heir 1 Chance 100
+ Affects Edessa_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger edessa_heir_trait_gain2
- WhenToTest CharacterTurnStart
-
- Condition not Trait Edessa_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Edessa_Ruler = 1
-
- Affects Edessa_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger edessa_heir_trait_gain3
  WhenToTest CharacterTurnEnd
 
- Condition not Trait Edessa_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Edessa_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Edessa_Ruler = 1
 
  Affects Edessa_Heir 1 Chance 100
 
 ;------------------------------------------
 Trigger edessa_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Edessa_Heir >= 1
- and not FatherTrait Edessa_Ruler = 1
-
- Affects Edessa_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger edessa_heir_trait_loss2
  WhenToTest CharacterTurnStart
 
- Condition Trait Edessa_Heir >= 1
- and not FatherTrait Edessa_Ruler = 1
-
- Affects Edessa_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger edessa_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Edessa_Heir >= 1
- and Trait Edessa_Ruler = 1
+ Condition Trait Edessa_Heir = 1
+ and FatherTrait Edessa_Ruler = 0
 
  Affects Edessa_Heir -1 Chance 100
 
@@ -41740,55 +41628,26 @@ Trigger edessa_heir_trait_loss3
 Trigger tortosa_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Tortosa_Heir >= 1
- and FatherTrait Tortosa_Ruler = 1
+ Condition FatherTrait Tortosa_Ruler = 1
 
- Affects Tortosa_Heir 1 Chance 100
+ Affects Tortosa_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger tortosa_heir_trait_gain2
- WhenToTest CharacterTurnStart
-
- Condition not Trait Tortosa_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Tortosa_Ruler = 1
-
- Affects Tortosa_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger tortosa_heir_trait_gain3
  WhenToTest CharacterTurnEnd
 
- Condition not Trait Tortosa_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Tortosa_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Tortosa_Ruler = 1
 
  Affects Tortosa_Heir 1 Chance 100
 
 ;------------------------------------------
 Trigger tortosa_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Tortosa_Heir >= 1
- and not FatherTrait Tortosa_Ruler = 1
-
- Affects Tortosa_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger tortosa_heir_trait_loss2
  WhenToTest CharacterTurnStart
 
- Condition Trait Tortosa_Heir >= 1
- and not FatherTrait Tortosa_Ruler = 1
-
- Affects Tortosa_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger tortosa_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Tortosa_Heir >= 1
- and Trait Tortosa_Ruler = 1
+ Condition Trait Tortosa_Heir = 1
+ and FatherTrait Tortosa_Ruler = 0
 
  Affects Tortosa_Heir -1 Chance 100
 
@@ -41797,55 +41656,26 @@ Trigger tortosa_heir_trait_loss3
 Trigger nicosia_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Nicosia_Heir >= 1
- and FatherTrait Nicosia_Ruler = 1
+ Condition FatherTrait Nicosia_Ruler = 1
 
- Affects Nicosia_Heir 1 Chance 100
+ Affects Nicosia_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger nicosia_heir_trait_gain2
- WhenToTest CharacterTurnStart
-
- Condition not Trait Nicosia_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Nicosia_Ruler = 1
-
- Affects Nicosia_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger nicosia_heir_trait_gain3
  WhenToTest CharacterTurnEnd
 
- Condition not Trait Nicosia_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Nicosia_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Nicosia_Ruler = 1
 
  Affects Nicosia_Heir 1 Chance 100
 
 ;------------------------------------------
 Trigger nicosia_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Nicosia_Heir >= 1
- and not FatherTrait Nicosia_Ruler = 1
-
- Affects Nicosia_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger nicosia_heir_trait_loss2
  WhenToTest CharacterTurnStart
 
- Condition Trait Nicosia_Heir >= 1
- and not FatherTrait Nicosia_Ruler = 1
-
- Affects Nicosia_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger nicosia_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Nicosia_Heir >= 1
- and Trait Nicosia_Ruler = 1
+ Condition Trait Nicosia_Heir = 1
+ and FatherTrait Nicosia_Ruler = 0
 
  Affects Nicosia_Heir -1 Chance 100
 
@@ -41854,55 +41684,26 @@ Trigger nicosia_heir_trait_loss3
 Trigger rhodes_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Rhodes_Heir >= 1
- and FatherTrait Rhodes_Ruler = 1
+ Condition FatherTrait Rhodes_Ruler = 1
 
- Affects Rhodes_Heir 1 Chance 100
+ Affects Rhodes_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger rhodes_heir_trait_gain2
- WhenToTest CharacterTurnStart
-
- Condition not Trait Rhodes_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Rhodes_Ruler = 1
-
- Affects Rhodes_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger rhodes_heir_trait_gain3
  WhenToTest CharacterTurnEnd
 
- Condition not Trait Rhodes_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Rhodes_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Rhodes_Ruler = 1
 
  Affects Rhodes_Heir 1 Chance 100
 
 ;------------------------------------------
 Trigger rhodes_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Rhodes_Heir >= 1
- and not FatherTrait Rhodes_Ruler = 1
-
- Affects Rhodes_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger rhodes_heir_trait_loss2
  WhenToTest CharacterTurnStart
 
- Condition Trait Rhodes_Heir >= 1
- and not FatherTrait Rhodes_Ruler = 1
-
- Affects Rhodes_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger rhodes_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Rhodes_Heir >= 1
- and Trait Rhodes_Ruler = 1
+ Condition Trait Rhodes_Heir = 1
+ and FatherTrait Rhodes_Ruler = 0
 
  Affects Rhodes_Heir -1 Chance 100
 
@@ -41911,84 +41712,44 @@ Trigger rhodes_heir_trait_loss3
 Trigger constantinople_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Constantinople_Heir >= 1
- and FatherTrait Constantinople_Ruler = 1
+ Condition FatherTrait Constantinople_Ruler = 1
 
- Affects Constantinople_Heir 1 Chance 100
+ Affects Constantinople_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger constantinople_heir_trait_gain2
- WhenToTest CharacterTurnStart
+ WhenToTest CharacterTurnEnd
 
- Condition not Trait Constantinople_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Constantinople_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Constantinople_Ruler = 1
 
  Affects Constantinople_Heir 1 Chance 100
 
 ;------------------------------------------
-Trigger constantinople_heir_trait_gain3
- WhenToTest CharacterTurnEnd
-
- Condition not Trait Constantinople_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Constantinople_Ruler = 1
-
- Affects Constantinople_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger constantinople_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Constantinople_Heir >= 1
- and not FatherTrait Constantinople_Ruler = 1
-
- Affects Constantinople_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger constantinople_heir_trait_loss2
- WhenToTest CharacterTurnStart
-
- Condition Trait Constantinople_Heir >= 1
- and not FatherTrait Constantinople_Ruler = 1
-
- Affects Constantinople_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger constantinople_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Constantinople_Heir >= 1
- and Trait Constantinople_Ruler = 1
-
- Affects Constantinople_Heir -1 Chance 100
-
+;Trigger constantinople_heir_trait_loss1
+; WhenToTest CharacterTurnStart
+;
+; Condition Trait Constantinople_Heir = 1
+; and FatherTrait Constantinople_Ruler = 0
+;
+; Affects Constantinople_Heir -1 Chance 100
+;
 ;------------------------------------------
 ;------------------------------------------
 Trigger athens_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Athens_Heir >= 1
- and FatherTrait Athens_Ruler = 1
+ Condition FatherTrait Athens_Ruler = 1
 
- Affects Athens_Heir 1 Chance 100
+ Affects Athens_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger athens_heir_trait_gain2
- WhenToTest CharacterTurnStart
-
- Condition not Trait Athens_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Athens_Ruler = 1
-
- Affects Athens_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger athens_heir_trait_gain3
  WhenToTest CharacterTurnEnd
 
- Condition not Trait Athens_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Athens_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Athens_Ruler = 1
 
  Affects Athens_Heir 1 Chance 100
@@ -41997,26 +41758,8 @@ Trigger athens_heir_trait_gain3
 Trigger athens_heir_trait_loss1
  WhenToTest CharacterTurnEnd
 
- Condition Trait Athens_Heir >= 1
- and not FatherTrait Athens_Ruler = 1
-
- Affects Athens_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger athens_heir_trait_loss2
- WhenToTest CharacterTurnStart
-
- Condition Trait Athens_Heir >= 1
- and not FatherTrait Athens_Ruler = 1
-
- Affects Athens_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger athens_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Athens_Heir >= 1
- and Trait Athens_Ruler = 1
+ Condition Trait Athens_Heir = 1
+ and FatherTrait Athens_Ruler = 0
 
  Affects Athens_Heir -1 Chance 100
 
@@ -42025,55 +41768,26 @@ Trigger athens_heir_trait_loss3
 Trigger corinth_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Corinth_Heir >= 1
- and FatherTrait Corinth_Ruler = 1
+ Condition FatherTrait Corinth_Ruler = 1
 
- Affects Corinth_Heir 1 Chance 100
+ Affects Corinth_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger corinth_heir_trait_gain2
- WhenToTest CharacterTurnStart
-
- Condition not Trait Corinth_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Corinth_Ruler = 1
-
- Affects Corinth_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger corinth_heir_trait_gain3
  WhenToTest CharacterTurnEnd
 
- Condition not Trait Corinth_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Corinth_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Corinth_Ruler = 1
 
  Affects Corinth_Heir 1 Chance 100
 
 ;------------------------------------------
 Trigger corinth_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Corinth_Heir >= 1
- and not FatherTrait Corinth_Ruler = 1
-
- Affects Corinth_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger corinth_heir_trait_loss2
  WhenToTest CharacterTurnStart
 
- Condition Trait Corinth_Heir >= 1
- and not FatherTrait Corinth_Ruler = 1
-
- Affects Corinth_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger corinth_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Corinth_Heir >= 1
- and Trait Corinth_Ruler = 1
+ Condition Trait Corinth_Heir = 1
+ and FatherTrait Corinth_Ruler = 0
 
  Affects Corinth_Heir -1 Chance 100
 
@@ -42082,55 +41796,26 @@ Trigger corinth_heir_trait_loss3
 Trigger thessalonica_heir_trait_gain1
  WhenToTest CharacterComesOfAge
 
- Condition not Trait Thessalonica_Heir >= 1
- and FatherTrait Thessalonica_Ruler = 1
+ Condition FatherTrait Thessalonica_Ruler = 1
 
- Affects Thessalonica_Heir 1 Chance 100
+ Affects Thessalonica_Heir 2 Chance 100
 
 ;------------------------------------------
 Trigger thessalonica_heir_trait_gain2
- WhenToTest CharacterTurnStart
-
- Condition not Trait Thessalonica_Heir >= 1
- and Trait BiologicalSon >= 1
- and FatherTrait Thessalonica_Ruler = 1
-
- Affects Thessalonica_Heir 1 Chance 100
-
-;------------------------------------------
-Trigger thessalonica_heir_trait_gain3
  WhenToTest CharacterTurnEnd
 
- Condition not Trait Thessalonica_Heir >= 1
- and Trait BiologicalSon >= 1
+ Condition Trait Thessalonica_Heir = 0
+ and Trait BiologicalSon = 1
  and FatherTrait Thessalonica_Ruler = 1
 
  Affects Thessalonica_Heir 1 Chance 100
 
 ;------------------------------------------
 Trigger thessalonica_heir_trait_loss1
- WhenToTest CharacterTurnEnd
-
- Condition Trait Thessalonica_Heir >= 1
- and not FatherTrait Thessalonica_Ruler = 1
-
- Affects Thessalonica_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger thessalonica_heir_trait_loss2
  WhenToTest CharacterTurnStart
 
- Condition Trait Thessalonica_Heir >= 1
- and not FatherTrait Thessalonica_Ruler = 1
-
- Affects Thessalonica_Heir -1 Chance 100
-
-;------------------------------------------
-Trigger thessalonica_heir_trait_loss3
- WhenToTest CharacterTurnStart
-
- Condition Trait Thessalonica_Heir >= 1
- and Trait Thessalonica_Ruler = 1
+ Condition Trait Thessalonica_Heir = 1
+ and FatherTrait Thessalonica_Ruler = 0
 
  Affects Thessalonica_Heir -1 Chance 100
 
@@ -42591,7 +42276,6 @@ Trigger Venice_Factionleader_Trigger
  Condition FactionType venice
 
  Affects Venice_Factionleader 1 Chance 100
- Affects Venice_Factionheir -1 Chance 100
  Affects Venice_Consiglio_Member -3 Chance 100
  Affects Venice_Public_Office -2 Chance 100
  Affects Venice_Podesta -2 Chance 100
@@ -43257,7 +42941,6 @@ Trigger Genoa_Factionleader_Trigger
  Condition FactionType milan
 
  Affects Genoa_Factionleader 1 Chance 100
- Affects Genoa_Factionheir -1 Chance 100
  Affects Genoa_Public_Office -2 Chance 100
  Affects Genoa_Public_Person -2 Chance 100
  Affects Genoa_Consul -4 Chance 100 
@@ -43841,7 +43524,6 @@ Trigger Novgorod_Factionleader_Trigger
  Condition FactionType russia
 
  Affects Novgorod_Factionleader 1 Chance 100
- Affects Novgorod_Factionheir -1 Chance 100
 
 ;------------------------------------------
 Trigger Novgorod_FactionHeir_Trigger
@@ -44212,94 +43894,16 @@ and HasAncType NextHeirCrown
 Affects Next_Heir_Trait 1 Chance 100
 
 ;------------------------------------------
-Trigger Next_Heir_Trait_FactionLeader_Remove
-WhenToTest BecomesFactionLeader
-
-Condition Trait Next_Heir_Trait >= 1
-
-Affects Next_Heir_Trait -2 Chance 100
-
-;------------------------------------------
-Trigger Next_Heir_Trait_FactionHeir_Remove
-WhenToTest BecomesFactionHeir
-
-Condition Trait Next_Heir_Trait >= 1
-
-Affects Next_Heir_Trait -2 Chance 100
-
-;------------------------------------------
 ;------------------------------------------
 Trigger Next_Heir_Trait_Ancillary_Remove
 WhenToTest CharacterTurnEnd
 
-Condition Trait Next_Heir_Trait >= 1
+Condition Trait Next_Heir_Trait = 1
 and not HasAncType NextHeirCrown
 
-Affects Next_Heir_Trait -2 Chance 100
 Affects Desinherited_Trait 1 Chance 100
 
 ;------------------------------------------
-;------------------------------------------
-Trigger Desinherited_Trait_Remove1
-WhenToTest CharacterTurnEnd
-
-Condition Trait Desinherited_Trait >= 1
-and HasAncType NextHeirCrown
-
-Affects Desinherited_Trait -2 Chance 100
-
-;------------------------------------------
-Trigger Desinherited_Trait_Remove2
-WhenToTest BecomesFactionHeir
-
-Condition Trait Desinherited_Trait >= 1
-
-Affects Desinherited_Trait -2 Chance 100
-
-;------------------------------------------
-Trigger Desinherited_Trait_Remove3
-WhenToTest BecomesFactionLeader
-
-Condition Trait Desinherited_Trait >= 1
-
-Affects Desinherited_Trait -2 Chance 100
-
-;------------------------------------------
-Trigger Next_Heir_Trait_Ancillary_FactionHeir_Cleaup
-WhenToTest CharacterTurnEnd
-
-Condition IsFactionHeir
-and Trait Next_Heir_Trait >= 1
-
-Affects Next_Heir_Trait -2 Chance 100
-
-;------------------------------------------
-Trigger Next_Heir_Trait_Ancillary_FactionLeader_Cleaup
-WhenToTest CharacterTurnEnd
-
-Condition IsFactionLeader
-and Trait Next_Heir_Trait >= 1
-
-Affects Next_Heir_Trait -2 Chance 100
-
-;------------------------------------------
-Trigger Desinherited_Trait_FactionHeir_Cleaup
-WhenToTest CharacterTurnEnd
-
-Condition IsFactionHeir
-and Trait Desinherited_Trait >= 1
-
-Affects Desinherited_Trait -2 Chance 100
-
-;------------------------------------------
-Trigger Desinherited_Trait_FactionLeader_Cleaup
-WhenToTest CharacterTurnEnd
-
-Condition IsFactionLeader
-and Trait Desinherited_Trait >= 1
-
-Affects Desinherited_Trait -2 Chance 100
-
 ;===============================================================
 ;== CIVIL UNREST TRIGGERS START HERE ==
 ;===============================================================
@@ -45301,445 +44905,6 @@ Affects Unpopularly_Loyal -10 Chance 100
 ;== CIVIL UNREST TRIGGERS TRIGGERS ENDS ==
 ;===============================================================
 ;------------------------------------------
-;*********AUTHORITY FIX TRIGGERS***********
-;------------------------------------------
-Trigger Authority_Fix_Trigger_1
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -1
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_2
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -2
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 2 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_3
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -3
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 3 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_4
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -4
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 4 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_5
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -5
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 5 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_6
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -6
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 6 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_7
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -7
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 7 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_8
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -8
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 8 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_9
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority = -9
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 9 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_10
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority < -9
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 9 Chance 100
-Affects Fix_Authority_Trait2 1 Chance 100
-
-;------------------------------------------\
-Trigger Authority_Fix_Trigger_1alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -1
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_2alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -2
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 2 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_3alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -3
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 3 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_4alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -4
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 4 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_5alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -6
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 5 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_6alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -6
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 6 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_7alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -7
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 7 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_8alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -8
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 8 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_9alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority = -9
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 9 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_10alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority < -9
-and not Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 9 Chance 100
-Affects Fix_Authority_Trait2 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate1
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait = 9
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate2
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait = 9
-and not Trait Fix_Authority_Trait2 = 9
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait2 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate3
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait = 9
-and Trait Fix_Authority_Trait2 = 9
-and not Trait Fix_Authority_Trait3 = 9
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait3 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate4
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait = 9
-and Trait Fix_Authority_Trait2 = 9
-and Trait Fix_Authority_Trait3 = 9
-and not Trait Fix_Authority_Trait4 = 9
-
-Affects Fix_Authority_Trait4 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate1alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait = 9
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate2alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait = 9
-and not Trait Fix_Authority_Trait2 = 9
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait2 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate3alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait = 9
-and Trait Fix_Authority_Trait2 = 9
-and not Trait Fix_Authority_Trait3 = 9
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait3 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Trigger_Regulate4alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority < 0
-and Trait Fix_Authority_Trait = 9
-and Trait Fix_Authority_Trait2 = 9
-and Trait Fix_Authority_Trait3 = 9
-and not Trait Fix_Authority_Trait4 = 9
-
-Affects Fix_Authority_Trait4 1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove1
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait -1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove2
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait2 -1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove3
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and Trait Fix_Authority_Trait2 >= 1
-and Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait3 -1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove4
-WhenToTest CharacterTurnEnd
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and Trait Fix_Authority_Trait2 >= 1
-and Trait Fix_Authority_Trait3 >= 1
-and Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait4 -1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove1alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and not Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait -1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove2alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and Trait Fix_Authority_Trait2 >= 1
-and not Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait2 -1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove3alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and Trait Fix_Authority_Trait2 >= 1
-and Trait Fix_Authority_Trait3 >= 1
-and not Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait3 -1 Chance 100
-
-;------------------------------------------
-Trigger Authority_Fix_Remove4alt
-WhenToTest CharacterTurnStart
-
-Condition Attribute Authority > 0
-and Trait Fix_Authority_Trait >= 1
-and Trait Fix_Authority_Trait2 >= 1
-and Trait Fix_Authority_Trait3 >= 1
-and Trait Fix_Authority_Trait4 >= 1
-
-Affects Fix_Authority_Trait4 -1 Chance 100
-
-;------------------------------------------
-;------------------------------------------
 ;--------------KER CLEAN UP----------------
 ;------------------------------------------
 Trigger KER_cleanup_1a
@@ -46212,5 +45377,369 @@ Trigger Dreadful_King_doesnt_like_Bankers
 	and Trait LoanDread < 3
 
  Affects LoanDread 1 Chance 100
+
+;------------------------------------------
+;*********AUTHORITY FIX TRIGGERS***********
+;------------------------------------------
+;Must be always after any other trigger 
+;that might affect authority
+Trigger Authority_Fix_Remove1
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority > 0
+and Trait Fix_Authority_Trait4 >= 1
+
+Affects Fix_Authority_Trait4 -9 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Remove2
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority > 0
+and Trait Fix_Authority_Trait3 >= 1
+
+Affects Fix_Authority_Trait3 -9 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Remove3
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority > 0
+and Trait Fix_Authority_Trait2 >= 1
+
+Affects Fix_Authority_Trait2 -9 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Remove4
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority > 0
+and Trait Fix_Authority_Trait >= 1
+
+Affects Fix_Authority_Trait -9 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_1
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_2
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_3
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_4
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_5
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_6
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_7
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_8
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_9
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait < 9
+
+Affects Fix_Authority_Trait 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_10
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_11
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_12
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_13
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_14
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_15
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_16
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_17
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority = -5
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_18
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait2 < 9
+
+Affects Fix_Authority_Trait2 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_19
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_20
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_21
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_22
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_23
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_24
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_25
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_26
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_27
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait3 < 9
+
+Affects Fix_Authority_Trait3 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_28
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_29
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_30
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_31
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_32
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_33
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_34
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_35
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+Trigger Authority_Fix_Trigger_36
+WhenToTest CharacterTurnEnd
+
+Condition Attribute Authority < 0
+and Trait Fix_Authority_Trait4 < 9
+
+Affects Fix_Authority_Trait4 1 Chance 100
 
 ;------------------------------------------

@@ -28,6 +28,7 @@ playable
 	aragon
 	lithuania
 	kievan_rus
+	timurids;	ABBASIDS
 	norway
 	jerusalem
 	kwarezm
@@ -38,7 +39,7 @@ nonplayable
 	papal_states
 	mongols
 	teutonic_order
-	timurids
+;	timurids
 	slave
 end
 
@@ -440,7 +441,7 @@ resource	spices,	330,	69
 ;Gaza_Province
 resource	textiles,	323,	64
 
-;Tripoli_Province
+;Tripoli_Province, Tarabulus, Maghreb
 resource	slaves,	178,	81
 
 ;Alexandria_Province
@@ -517,7 +518,7 @@ resource	camels,	132,	225
 ;*REMOVED*;resource	wool,	28,	135
 resource	grain,	32,	141;*NEW*
 
-;Melilla_Province
+;Melilla_Province; Tlemcen
 resource	silver,	59,	83
 resource	tin,	77,	94;*ADDED*
 
@@ -776,7 +777,7 @@ resource	sugar,	421,	60
 ;Acre_Province
 resource	spices,	332,	87
 
-;Tortosa_Province
+;Tortosa_Province; Tripoli, Levant
 resource	glass,	337,	95
 
 ;Iraklion_Province
@@ -1482,7 +1483,7 @@ relative 	Svend,	Gunhild,	Erik Svendsen,	Niels Estridsen,	end
 faction	egypt, religious smith
 ai_label		islam
 denari	10000
-denari_kings_purse	2300
+denari_kings_purse	2100
 settlement
 {
 	level city
@@ -1735,7 +1736,7 @@ unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 
 ;Damietta
 character	Al_Hafiz, named character, male, age 24, x 306, y 72 
-traits LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 2 , ReligionStarter 1 
+traits LoyaltyStarter 1 , GovernorInclination 1 , PublicFaith 2 , ReligionStarter 1 , Royal_Blood_Egyptian 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -2244,7 +2245,7 @@ denari_kings_purse	15000
 faction	turks, balanced smith
 ai_label		islam
 denari	10000
-denari_kings_purse	2600
+denari_kings_purse	2200
 settlement
 {
 	level large_town
@@ -2810,64 +2811,6 @@ settlement
 
 settlement
 {
-	level town
-	region Bordeaux_Province
-
-	year_founded 0
-	population 2200
-	plan_set default_set
-	faction_creator france
-	building
-	{
-		type core_building wooden_pallisade
-	}
-	building
-	{
-		type barracks town_watch
-	}
-	building
-	{
-		type temple_catholic small_church
-	}
-	building
-	{
-		type market corn_exchange
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-}
-
-settlement castle
-{
-	level town
-	region Exeter_Province; Poitiers, Poitou Province
-
-	year_founded 0
-	population 2100
-	plan_set default_set
-	faction_creator france
-	building
-	{
-		type core_castle_building wooden_castle
-	}
-	building
-	{
-		type equestrian stables
-	}
-	building
-	{
-		type castle_barracks mustering_hall
-	}
-	building
-	{
-		type hinterland_castle_roads c_roads
-	}
-}
-
-settlement
-{
 	level large_town
 	region Khlynov_Province; Orleans, Orleanais Province
 
@@ -2948,28 +2891,11 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-;Bordeaux
-character	Guillaume de_Poitiers, named character, male, age 29, x 74, y 168, label france4general3 
-traits LoyaltyStarter 1 , Disloyal 2 , Disobedient 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodCommander 1 , LogisticalSkill 1 , Energetic 1 , BattleDread 1 , ReligionStarter 1 
-army
-unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-
-;Poitiers
-character	Bertrand de_Poitou, general, male, age 24, x 80, y 179 
-army
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-
 ;Orleans
 character	Frederic d_Orleans, general, male, age 30, x 90, y 187 
 army
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights			exp 1 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
@@ -2977,7 +2903,9 @@ unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
 ;Paris Province Fort (Troyes)
 character	Aubert de_Reims, general, male, age 21, x 104, y 191 
 army
+unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 
 character	Etienne de_Reims, priest, male, age 37, x 80, y 189 
@@ -4372,7 +4300,7 @@ relative 	Nikiphoros Vryennios,	Anna Komnenos,	end
 faction	moors, balanced smith
 ai_label		islam
 denari	10000
-denari_kings_purse	3000
+denari_kings_purse	2500
 settlement
 {
 	level city
@@ -4500,7 +4428,7 @@ settlement castle
 settlement castle
 {
 	level town
-	region Melilla_Province
+	region Melilla_Province; Tlemcen Province
 
 	year_founded 0
 	population 1000
@@ -4712,8 +4640,8 @@ unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
-;Melilla
-character	Tamim ibn_Yusuf, named character, male, age 23, x 56, y 99 
+;Tlemcen
+character	Tamim ibn_Yusuf, named character, male, age 23, x 66, y 97 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -4744,7 +4672,7 @@ unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 
-;Melilla Province Fort (Oran)
+;Tlemcen Province Fort (Oran)
 character	Bashar, general, male, age 22, x 74, y 102 
 army
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -5273,7 +5201,7 @@ relative 	Geza,	Zsofia,	Kalman Arpadhazi,	Almos Arpadhazi,	end
 faction	aragon, trader smith
 ai_label		catholic
 denari	10000
-denari_kings_purse	2300
+denari_kings_purse	2400
 settlement castle
 {
 	level large_town
@@ -5316,8 +5244,8 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-;Pamplona Province
-character	Alfonso Ramirez, named character, male, heir, age 27, x 74, y 150 
+;Pamplona Province Fort (Huesca)
+character	Alfonso Ramirez, named character, male, heir, age 27, x 83, y 149 
 traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Military_Edu 1 , GoodCommander 1 , Brave 1 , Royal_Blood_Aragonese 1 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -5354,40 +5282,134 @@ character_record		Ana, 	female, age 30, alive, never_a_leader
 relative 	Pedro Ramirez,	Ana,	end
 relative 	Sancho Ramirez,	Isabel,	Pedro Ramirez,	Alfonso Ramirez,	Ramiro Ramirez,	end
 
+;faction	lithuania, balanced smith
+;ai_label		pagan
+;denari	12000
+;denari_kings_purse	1900
+;settlement castle
+;{
+;	level town
+;	region Vilnius_Province
+;
+;	year_founded 0
+;	population 2200
+;	plan_set default_set
+;	faction_creator lithuania
+;	building
+;	{
+;		type core_castle_building wooden_castle
+;	}
+;	building
+;	{
+;		type castle_barracks mustering_hall
+;	}
+;	building
+;	{
+;		type equestrian stables
+;	}
+;	building
+;	{
+;		type hinterland_castle_roads c_roads
+;	}
+;}
+;
+;;Vilnius
+;character	Butigeidis, named character, male, leader, age 62, x 260, y 239 
+;traits Factionleader 1 , LoyaltyStarter 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 1 , BattleChivalry 1 , ReligionStarter 1 
+;army
+;unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
+;unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
+;unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
+;unit		Baltic Spearmen				exp 0 armour 0 weapon_lvl 0
+;unit		Baltic Spearmen				exp 1 armour 0 weapon_lvl 0
+;unit		Baltic Spearmen				exp 0 armour 0 weapon_lvl 0
+;unit		Lithuanian Axemen			exp 0 armour 0 weapon_lvl 0
+;unit		Lithuanian Axemen			exp 1 armour 0 weapon_lvl 0
+;unit		Lithuanian Axemen			exp 1 armour 0 weapon_lvl 0
+;unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
+;unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
+;
+;;Vilnius Province
+;character	Algimantas, named character, male, heir, age 31, x 264, y 234 
+;traits Factionheir 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 1 , ReligionStarter 1 , LoyaltyStarter 1 
+;army
+;unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
+;unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
+;unit		Baltic Spearmen				exp 0 armour 0 weapon_lvl 0
+;unit		Baltic Spearmen				exp 1 armour 0 weapon_lvl 0
+;unit		Baltic Spearmen				exp 0 armour 0 weapon_lvl 0
+;unit		Lithuanian Axemen			exp 0 armour 0 weapon_lvl 0
+;unit		Lithuanian Axemen			exp 1 armour 0 weapon_lvl 0
+;unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
+;
+;character	Jovirdas, spy, male, age 28, x 252, y 238 
+;traits NaturalSpySkill 2 
+;
+;character	Margiris, priest, male, age 34, x 259, y 241 
+;traits NaturalPriestSkill 1 
+;
+;character_record		Morta, 	female, age 57, alive, never_a_leader
+;character_record		Jiera, 	female, age 21, alive, never_a_leader
+;character_record		Rimgaudas, 	male, age 11, alive, never_a_leader
+;
+;relative 	Butigeidis,	Morta,	Algimantas,	end
+;relative 	Algimantas,	Jiera,	Rimgaudas,	end
+
+;Obotrites
 faction	lithuania, balanced smith
 ai_label		pagan
 denari	12000
 denari_kings_purse	1900
-settlement castle
+settlement
 {
-	level town
-	region Vilnius_Province
+	level large_town
+	region Damghan_Province; Lubeck, Mecklenburg Province
 
 	year_founded 0
-	population 2200
+	population 2500
 	plan_set default_set
 	faction_creator lithuania
 	building
 	{
-		type core_castle_building wooden_castle
+		type core_building wooden_wall
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type barracks town_guard
 	}
 	building
 	{
-		type equestrian stables
+		type hinterland_roads roads
 	}
 	building
 	{
-		type hinterland_castle_roads c_roads
+		type market market
+	}
+	building
+	{
+		type temple_perkunas perkunas_sanctuary
 	}
 }
 
-;Vilnius
-character	Butigeidis, named character, male, leader, age 62, x 260, y 239 
-traits Factionleader 1 , LoyaltyStarter 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 1 , BattleChivalry 1 , ReligionStarter 1 
+settlement castle
+{
+	level village
+	region Stettin_Province
+
+	year_founded 0
+	population 1000
+	plan_set default_set
+	faction_creator hre
+	building
+	{
+		type core_castle_building motte_and_bailey
+		plugin c_hansa c_hansa
+	}
+}
+
+;Lubeck
+character	Henryk, named character, male, leader, age 42, x 155, y 233 
+traits Factionleader 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 3 , BattleChivalry 1 , ReligionStarter 1 , Catholic 1 
 army
 unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
@@ -5401,31 +5423,42 @@ unit		Lithuanian Axemen			exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
-;Vilnius Province
-character	Algimantas, named character, male, heir, age 31, x 264, y 234 
-traits Factionheir 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 1 , ReligionStarter 1 , LoyaltyStarter 1 
+;Stettin
+character	Izbor, named character, male, heir, age 39, x 181, y 230 
+traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 1 , ReligionStarter 1 , PublicFaith 3 , Catholic 1 
 army
 unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
 unit		Baltic Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Baltic Spearmen				exp 1 armour 0 weapon_lvl 0
-unit		Baltic Spearmen				exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Axemen			exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Axemen			exp 1 armour 0 weapon_lvl 0
 unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
-character	Jovirdas, spy, male, age 28, x 252, y 238 
+;Lubeck Province
+character	Ugnius, general, male, age 27, x 156, y 233 
+army
+unit		Baltic Spearmen				exp 0 armour 0 weapon_lvl 0
+unit		Baltic Spearmen				exp 1 armour 0 weapon_lvl 0
+unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
+unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
+
+character	Jovirdas, spy, male, age 28, x 157, y 232 
 traits NaturalSpySkill 2 
 
-character	Margiris, priest, male, age 34, x 259, y 241 
+character	Margiris, priest, male, age 34, x 156, y 232 
 traits NaturalPriestSkill 1 
 
-character_record		Morta, 	female, age 57, alive, never_a_leader
+character_record		Godzimir, 	male, age 70, dead 34, past_leader
+character_record		Dzieslawa, 	female, age 67, dead 0, never_a_leader
+character_record		Morta, 	female, age 37, alive, never_a_leader
 character_record		Jiera, 	female, age 21, alive, never_a_leader
-character_record		Rimgaudas, 	male, age 11, alive, never_a_leader
+character_record		Nyklot, 	male, age 10, alive, never_a_leader
+character_record		Przemyslaw, 	male, age 13, alive, never_a_leader
 
-relative 	Butigeidis,	Morta,	Algimantas,	end
-relative 	Algimantas,	Jiera,	Rimgaudas,	end
+relative 	Henryk,	Morta,	Przemyslaw,	end
+relative 	Izbor,	Jiera,	Nyklot,	end
+relative 	Godzimir,	Dzieslawa,	Henryk,	Izbor,	end
 
 faction	kievan_rus, balanced smith
 ai_label		default
@@ -5609,13 +5642,121 @@ dead_until_resurrected
 denari	10000
 denari_kings_purse	3000
 
+;faction	timurids, balanced smith
+;ai_label		islam
+;dead_until_resurrected
+;denari	15000
+;denari_kings_purse	12000
 
+;Abbasids
 faction	timurids, balanced smith
 ai_label		islam
-dead_until_resurrected
 denari	15000
-denari_kings_purse	12000
+denari_kings_purse	2200
+settlement
+{
+	level city
+	region Baghdad_Province
 
+	year_founded 0
+	population 10000
+	plan_set default_set
+	faction_creator timurids
+	building
+	{
+		type core_building stone_wall
+	}
+	building
+	{
+		type barracks town_guard
+	}
+	building
+	{
+		type temple_muslim masjid
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+}
+
+settlement
+{
+	level town
+	region Basra_Province
+
+	year_founded 0
+	population 1200
+	plan_set default_set
+	faction_creator timurids
+	building
+	{
+		type core_building wooden_pallisade
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+}
+
+;Baghdad
+character	Al_Mustazhir Al_Abbasi, named character, male, leader, age 22, x 396, y 88 
+traits Factionleader 1 , GovernorInclination 1 , PublicFaith 3 , Intelligent 2 , ReligionStarter 1 , HatesEgypt 1 
+ancillaries apothecary
+army
+unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+
+;Baghdad Province Fort (Wasit)
+character	Abu_Nasr, general, male, age 21, x 413, y 78 
+army
+unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+
+;Basra
+character	Mujahid ibn_Abdul_Rahman, named character, male, age 21, x 420, y 65 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , PublicFaith 2 , Intelligent 2 , ReligionStarter 1 
+army
+unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+
+character	Nahar, spy, male, age 23, x 396, y 92 
+traits NaturalSpySkill 2 
+
+character	Sa#id ibn_Qasim, diplomat, male, age 26, x 394, y 94 
+traits NaturalDiplomatSkill 1 
+
+character_record		Al_Mustarshid, 	male, age 8, alive, current_heir
+character_record		Ishraq, 	female, age 29, alive, never_a_leader
+character_record		Maymuna, 	female, age 41, alive, never_a_leader
+character_record		Al_Muqtadi Al_Abbasi, 	male, age 44, dead 6, past_leader
+
+relative 	Al_Mustazhir Al_Abbasi,	Ishraq,	Al_Mustarshid,	end
+relative 	Al_Muqtadi Al_Abbasi,	Maymuna,	Al_Mustazhir Al_Abbasi,	end
 
 faction	norway, sailor smith
 ai_label		catholic
@@ -5713,7 +5854,7 @@ faction	jerusalem, fortified smith
 ai_label		catholic
 denari	10000
 ;denari_kings_purse	1700
-denari_kings_purse	2000
+denari_kings_purse	2200
 settlement
 {
 	level large_city
@@ -6353,21 +6494,21 @@ settlement castle
 	}
 }
 
-settlement castle
-{
-	level village
-	region Stettin_Province
-
-	year_founded 0
-	population 1000
-	plan_set default_set
-	faction_creator hre
-	building
-	{
-		type core_castle_building motte_and_bailey
-		plugin c_hansa c_hansa
-	}
-}
+;settlement castle
+;{
+;	level village
+;	region Stettin_Province
+;
+;	year_founded 0
+;	population 1000
+;	plan_set default_set
+;	faction_creator hre
+;	building
+;	{
+;		type core_castle_building motte_and_bailey
+;		plugin c_hansa c_hansa
+;	}
+;}
 
 settlement castle
 {
@@ -6600,6 +6741,64 @@ settlement castle
 	building
 	{
 		type hinterland_farms farms
+	}
+}
+
+settlement
+{
+	level town
+	region Bordeaux_Province
+
+	year_founded 0
+	population 2200
+	plan_set default_set
+	faction_creator france
+	building
+	{
+		type core_building wooden_pallisade
+	}
+	building
+	{
+		type barracks town_watch
+	}
+	building
+	{
+		type temple_catholic small_church
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+}
+
+settlement castle
+{
+	level town
+	region Exeter_Province; Poitiers, Poitou Province
+
+	year_founded 0
+	population 2100
+	plan_set default_set
+	faction_creator france
+	building
+	{
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
 	}
 }
 
@@ -6958,7 +7157,7 @@ settlement
 settlement
 {
 	level town
-	region Tripoli_Province
+	region Tripoli_Province; Tarabulus Province
 
 	year_founded 0
 	population 1500
@@ -7107,12 +7306,12 @@ settlement
 settlement
 {
 	level town
-	region Tortosa_Province
+	region Tortosa_Province; Tripoli Levant Province
 
 	year_founded 0
-	population 2500
+	population 2800
 	plan_set default_set
-	faction_creator turks
+	faction_creator jerusalem
 	building
 	{
 		type core_building wooden_pallisade
@@ -7120,6 +7319,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type temple_muslim small_masjid
 	}
 }
 
@@ -7757,57 +7960,84 @@ settlement
 	}
 }
 
-settlement
-{
-	level city
-	region Baghdad_Province
+;settlement
+;{
+;	level city
+;	region Baghdad_Province
+;
+;	year_founded 0
+;	population 10000
+;	plan_set default_set
+;	faction_creator turks
+;	building
+;	{
+;		type core_building stone_wall
+;	}
+;	building
+;	{
+;		type barracks town_guard
+;	}
+;	building
+;	{
+;		type temple_muslim masjid
+;	}
+;	building
+;	{
+;		type hinterland_farms farms
+;	}
+;	building
+;	{
+;		type market corn_exchange
+;	}
+;	building
+;	{
+;		type hinterland_roads roads
+;	}
+;}
+;
+;settlement
+;{
+;	level town
+;	region Basra_Province
+;
+;	year_founded 0
+;	population 1200
+;	plan_set default_set
+;	faction_creator turks
+;	building
+;	{
+;		type core_building wooden_pallisade
+;	}
+;	building
+;	{
+;		type hinterland_roads roads
+;	}
+;}
 
-	year_founded 0
-	population 10000
-	plan_set default_set
-	faction_creator turks
-	building
-	{
-		type core_building stone_wall
-	}
-	building
-	{
-		type barracks town_guard
-	}
-	building
-	{
-		type temple_muslim masjid
-	}
-	building
-	{
-		type hinterland_farms farms
-	}
-	building
-	{
-		type market corn_exchange
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-}
-
-settlement
+settlement castle
 {
 	level town
-	region Basra_Province
+	region Vilnius_Province
 
 	year_founded 0
-	population 1200
+	population 2200
 	plan_set default_set
-	faction_creator turks
+	faction_creator poland
 	building
 	{
-		type core_building wooden_pallisade
+		type core_castle_building wooden_castle
 	}
 	building
 	{
-		type hinterland_roads roads
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
 	}
 }
 
@@ -7838,32 +8068,32 @@ settlement castle
 	}
 }
 
-settlement
-{
-	level town
-	region Damghan_Province; Lubeck, Mecklenburg Province
-
-	year_founded 0
-	population 1500
-	plan_set default_set
-	faction_creator hre
-	building
-	{
-		type core_building wooden_pallisade
-	}
-	building
-	{
-		type barracks town_watch
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-	building
-	{
-		type market corn_exchange
-	}
-}
+;settlement
+;{
+;	level town
+;	region Damghan_Province; Lubeck, Mecklenburg Province
+;
+;	year_founded 0
+;	population 1500
+;	plan_set default_set
+;	faction_creator hre
+;	building
+;	{
+;		type core_building wooden_pallisade
+;	}
+;	building
+;	{
+;		type barracks town_watch
+;	}
+;	building
+;	{
+;		type hinterland_roads roads
+;	}
+;	building
+;	{
+;		type market corn_exchange
+;	}
+;}
 
 settlement
 {
@@ -8091,6 +8321,28 @@ unit		Peasant Crossbowmen			exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Bordeaux
+character	sub_faction france, Guillaume de_Poitiers, named character, male, age 29, x 74, y 168, label france4general3 
+traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodCommander 1 , LogisticalSkill 1 , Energetic 1 , BattleDread 1 , ReligionStarter 1 , Disloyal 2 , Disobedient 1 
+army
+unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+
+;Poitiers
+character	sub_faction france, Bertrand de_Poitou, named character, male, age 24, x 80, y 179 
+traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , ReligionStarter 1 
+army
+unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+
 ;Milan
 character	sub_faction milan, Mosca Visconti, named character, male, age 36, x 144, y 175 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 2 , GoodCommander 1 , ReligiousActivity 1 , ReligionStarter 1 
@@ -8154,7 +8406,7 @@ unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 
 ;Barcelona
-character	sub_faction aragon, Remon Berenguer, named character, male, age 18, x 96, y 146 
+character	sub_faction aragon, Remon Berenguer, named character, male, age 18, x 94, y 145 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
@@ -8170,7 +8422,7 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Zaragoza
-character	sub_faction moors, Abu_Ahmad ibn_Yusuf, named character, male, age 24, x 78, y 147 
+character	sub_faction moors, Abu_Ahmad ibn_Yusuf, named character, male, age 24, x 77, y 144 
 traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 2 armour 0 weapon_lvl 0
@@ -8348,9 +8600,17 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 
-
-;Tortosa
+;Tripoli Province Fort (Tartus)
 character	sub_faction turks, Ahmed, general, male, age 36, x 336, y 97 
+army
+unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Bedouin Cavalry				exp 2 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+
+;Tripoli, Levant
+character	sub_faction turks, Ahmed, general, male, age 36, x 336, y 93 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -8432,15 +8692,15 @@ army
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
-unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+;unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
-unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
-unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
-unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+;unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+;unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Damascus
 character	sub_faction turks, Selim Celebi, general, male, age 20, x 343, y 90 
@@ -8591,16 +8851,16 @@ unit		EE Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 2 armour 0 weapon_lvl 0
 unit		EE Peasants				exp 1 armour 0 weapon_lvl 0
 
-;Stettin
-character	sub_faction hre, Ehrhart von_Luxemburg, general, male, age 27, x 181, y 230 
-army
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
+;;Stettin
+;character	sub_faction hre, Ehrhart von_Luxemburg, general, male, age 27, x 181, y 230 
+;army
+;unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+;unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+;unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+;unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+;unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+;unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
+;unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
 ;Thorn
 character	sub_faction poland, Sobieslaw Leszczynski, general, male, age 25, x 211, y 228 
@@ -8734,7 +8994,7 @@ unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 
-;Tripoli
+;Tarabulus, Maghreb
 character	sub_faction egypt, Marzuq al-Qasim, general, male, age 24, x 173, y 82 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -8911,7 +9171,7 @@ unit		Lithuanian Archers			exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Dublin
-character	sub_faction england, Harold, general, male, age 24, x 31, y 233 
+character	sub_faction england, Harold, general, male, age 24, x 32, y 229 
 army
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
@@ -8924,6 +9184,18 @@ unit		Galloglaich Mercs			exp 1 armour 0 weapon_lvl 0
 unit		Galloglaich Mercs			exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+
+;Dublin Province Fort (Dundalk)
+character	sub_faction england, Harold, general, male, age 24, x 31, y 233 
+army
+unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
+unit		Irish Kerns				exp 2 armour 0 weapon_lvl 0
+unit		Irish Kerns				exp 1 armour 0 weapon_lvl 0
+unit		Galloglaich Mercs			exp 1 armour 0 weapon_lvl 0
+unit		Galloglaich Mercs			exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
@@ -9048,9 +9320,19 @@ unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
 
 ;Vilnius Province Fort (Kaunas)
-character	sub_faction Lithuania, Kaributas, general, male, age 25, x 245, y 241 
+character	sub_faction lithuania, Kaributas, named character, male, age 25, x 245, y 241 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 2 , Intelligent 1 , GoodCommander 1 , ReligionStarter 1 
+;character	sub_faction lithuania, Kaributas, general, male, age 25, x 245, y 241 
 army
+unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
+unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		Lithuanian Archers			exp 1 armour 0 weapon_lvl 0
+;EXTRA
+unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
+unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Archers			exp 1 armour 0 weapon_lvl 0
@@ -9158,40 +9440,40 @@ unit		Bedouin Camel Riders			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 
-;Baghdad
-character	sub_faction egypt, Al_Mustansir, named character, male, age 22, x 396, y 88 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
-ancillaries apothecary
-army
-unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
-unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
-unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
-unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
-unit		Turkomans				exp 0 armour 0 weapon_lvl 0
-unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
-unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
-unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
-unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
-unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+;;Baghdad
+;character	sub_faction egypt, Al_Mustansir, named character, male, age 22, x 396, y 88 
+;traits LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
+;ancillaries apothecary
+;army
+;unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
+;unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
+;unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
+;unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
+;unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
+;unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+;unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+;unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+;unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
-;Baghdad Province Fort (Wasit)
-character	sub_faction turks, Abu_Nasr, general, male, age 21, x 413, y 78 
-army
-unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+;;Baghdad Province Fort (Wasit)
+;character	sub_faction turks, Abu_Nasr, general, male, age 21, x 413, y 78 
+;army
+;unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+;unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 
-;Basra
-character	sub_faction egypt, Mujahid, general, male, age 21, x 420, y 65 
-army
-unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		Turkomans				exp 1 armour 0 weapon_lvl 0
-unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
-unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
-unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
-unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+;;Basra
+;character	sub_faction egypt, Mujahid, general, male, age 21, x 420, y 65 
+;army
+;unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
+;unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+;unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
+;unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
+;unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
+;unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Nizaris in Alamut
 character	sub_faction egypt, Al_Hadi Ibn_Nizar, named character, male, age 25, x 433, y 104 
@@ -9261,18 +9543,37 @@ unit		Spear Militia				exp 2 armour 0 weapon_lvl 0
 unit		Jinetes					exp 1 armour 0 weapon_lvl 0
 unit		Jinetes					exp 1 armour 0 weapon_lvl 0
 
-;Lubeck
-character	sub_faction hre, Berchtold, general, male, age 21, x 155, y 233 
+;;Lubeck
+;character	sub_faction hre, Berchtold, general, male, age 21, x 155, y 233 
+;army
+;unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+;unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+;unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+;unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+;unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+;unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
+;unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
+;unit		Peasants				exp 0 armour 0 weapon_lvl 0
+;unit		Peasants				exp 0 armour 0 weapon_lvl 0
+
+;Vilnius
+character	sub_faction lithuania, Dausprungas, named character, male, age 35, x 260, y 239 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 2 , Intelligent 1 , GoodCommander 1 , ReligionStarter 1 
 army
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
-unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
+unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Peasants				exp 0 armour 0 weapon_lvl 0
 unit		Peasants				exp 0 armour 0 weapon_lvl 0
+unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
+unit		Woodsmen				exp 0 armour 0 weapon_lvl 0
+unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		Lithuanian Archers			exp 1 armour 0 weapon_lvl 0
+unit		Lithuanian Archers			exp 0 armour 0 weapon_lvl 0
+unit		Lithuanian Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Florence
 character	sub_faction milan, Antonello, general, male, age 22, x 157, y 162 
@@ -9435,8 +9736,8 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Afghan Javelinmen			exp 1 armour 0 weapon_lvl 0
 unit		Afghan Javelinmen			exp 1 armour 0 weapon_lvl 0
 
-;Melilla Province Fort (Tlemcen)
-character	sub_faction moors, Al_Watiq, general, male, age 21, x 66, y 97 
+;Fes Province Fort (Melilla)
+character	sub_faction moors, Al_Watiq, general, male, age 21, x 56, y 99 
 army
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -9563,16 +9864,16 @@ faction_standings	papal_states,		0.20	hungary, aragon, norway, england, teutonic
 faction_standings	papal_states,		-0.20	byzantium, hre
 faction_standings	papal_states,		-0.60	slave
 faction_standings	papal_states,		-0.80	moors, turks
-faction_standings	papal_states,		-0.90	egypt
+faction_standings	papal_states,		-0.90	egypt, timurids
 faction_standings	denmark,		0.60	teutonic_order
 faction_standings	denmark,		0.40	norway
 faction_standings	denmark,		0.20	papal_states, russia
 faction_standings	denmark,		-0.20	lithuania, scotland, poland, england
 faction_standings	denmark,		-0.40	hre
 faction_standings	denmark,		-1.00	slave
-faction_standings	egypt,			0.40	moors, kwarezm
-faction_standings	egypt,			-0.10	turks
-faction_standings	egypt,			-0.40	venice, byzantium, sicily
+faction_standings	egypt,			0.40	kwarezm
+faction_standings	egypt,			0.10	moors
+faction_standings	egypt,			-0.40	venice, byzantium, sicily, turks
 faction_standings	egypt,			-0.90	papal_states, jerusalem
 faction_standings	egypt,			-1.00	mongols, slave, timurids
 faction_standings	scotland,		0.80	france
@@ -9586,13 +9887,12 @@ faction_standings	cumans,			-0.80	mongols
 faction_standings	cumans,			-1.00	slave
 faction_standings	mongols,		-0.80	hungary, poland, cumans
 faction_standings	mongols,		-1.00	egypt, timurids, slave, kwarezm, byzantium, russia, kievan_rus, turks
-faction_standings	turks,			0.40	moors, kwarezm
-faction_standings	turks,			-0.10	egypt
+faction_standings	turks,			0.40	moors, kwarezm, timurids
 faction_standings	turks,			-0.20	kievan_rus, teutonic_order
-faction_standings	turks,			-0.40	cumans
+faction_standings	turks,			-0.40	cumans, egypt
 faction_standings	turks,			-0.70	jerusalem
 faction_standings	turks,			-0.80	byzantium, papal_states
-faction_standings	turks,			-1.00	slave, mongols, timurids
+faction_standings	turks,			-1.00	slave, mongols;, timurids
 faction_standings	france,			0.80	scotland
 faction_standings	france,			-0.20	spain, milan, aragon
 faction_standings	france,			-0.40	hre
@@ -9626,7 +9926,7 @@ faction_standings	byzantium,		-0.40	sicily, egypt
 faction_standings	byzantium,		-0.50	venice
 faction_standings	byzantium,		-0.80	turks
 faction_standings	byzantium,		-1.00	slave, mongols
-faction_standings	moors,			0.40	egypt, turks
+faction_standings	moors,			0.40	egypt, turks, timurids
 faction_standings	moors,			-0.40	milan, sicily
 faction_standings	moors,			-0.70	portugal
 faction_standings	moors,			-0.80	aragon, papal_states
@@ -9671,18 +9971,22 @@ faction_standings	teutonic_order,		-0.20	turks, kievan_rus
 faction_standings	teutonic_order,		-0.40	russia
 faction_standings	teutonic_order,		-0.80	lithuania
 faction_standings	teutonic_order,		-1.00	slave
-faction_standings	timurids,		-0.20	byzantium
-faction_standings	timurids,		-1.00	kwarezm, slave, egypt, mongols, turks
+faction_standings	timurids,		-0.20	byzantium, papal_states
+faction_standings	timurids,		-0.50	jerusalem
+faction_standings	timurids,		0.60	turks, kwarezm, moors
+faction_standings	timurids,		-1.00	slave, egypt, mongols;, turks, kwarezm
 faction_standings	norway,			0.40	denmark
 faction_standings	norway,			0.20	papal_states
 faction_standings	norway,			-0.20	russia, england, hre, scotland
 faction_standings	norway,			-1.00	slave
 faction_standings	jerusalem,		0.40	milan, papal_states, venice, sicily
+faction_standings	jerusalem,		-0.50	timurids
 faction_standings	jerusalem,		-0.70	turks
 faction_standings	jerusalem,		-0.90	egypt
-faction_standings	kwarezm,		0.40	egypt, turks
+faction_standings	kwarezm,		0.40	turks, timurids
+faction_standings	kwarezm,		0.10	egypt
 faction_standings	kwarezm,		-0.40	cumans
-faction_standings	kwarezm,		-1.00	mongols, slave, timurids
+faction_standings	kwarezm,		-1.00	mongols, slave;, timurids
 faction_standings	slave,			-0.60	papal_states
 faction_standings	slave,			-1.00	hungary, spain, aragon, moors, lithuania, russia, kwarezm, norway, byzantium, teutonic_order, kievan_rus, timurids, egypt, denmark, cumans, scotland, sicily, poland, milan, england, hre, venice, portugal, turks, mongols, france
 
@@ -9694,12 +9998,12 @@ faction_relationships 	hre, allied_to 	jerusalem
 faction_relationships 	england, allied_to 	jerusalem
 faction_relationships 	jerusalem, allied_to 	venice, milan, papal_states, france, hre, england
 
-faction_relationships 	jerusalem, at_war_with 	egypt
-faction_relationships 	egypt, at_war_with 	jerusalem, turks
-faction_relationships 	turks, at_war_with 	egypt
+faction_relationships 	egypt, at_war_with 	jerusalem, turks, timurids
 
-faction_relationships 	turks, allied_to 	kwarezm
+;faction_relationships 	turks, allied_to 	kwarezm
+faction_relationships 	turks, allied_to 	kwarezm, timurids
 faction_relationships 	kwarezm, protectorate_of 	turks
+faction_relationships 	timurids, protectorate_of 	turks
 
 faction_relationships 	russia, allied_to 	kievan_rus
 faction_relationships 	kievan_rus, allied_to 	russia
@@ -9722,7 +10026,7 @@ faction_relationships 	egypt, at_war_with 	slave, timurids
 faction_relationships 	scotland, at_war_with 	slave
 faction_relationships 	cumans, at_war_with 	slave, mongols
 faction_relationships 	mongols, at_war_with 	kievan_rus, kwarezm, timurids, turks, poland, slave, cumans, russia, hungary, byzantium
-faction_relationships 	turks, at_war_with 	mongols, slave, timurids
+faction_relationships 	turks, at_war_with 	mongols, slave;, timurids
 faction_relationships 	france, at_war_with 	slave
 faction_relationships 	hre, at_war_with 	slave
 faction_relationships 	england, at_war_with 	slave
@@ -9737,10 +10041,10 @@ faction_relationships 	aragon, at_war_with 	slave
 faction_relationships 	lithuania, at_war_with 	slave
 faction_relationships 	kievan_rus, at_war_with 	slave, mongols
 faction_relationships 	teutonic_order, at_war_with 	slave
-faction_relationships 	timurids, at_war_with 	kwarezm, turks, slave, egypt, mongols
+faction_relationships 	timurids, at_war_with 	slave, egypt, mongols;, kwarezm, turks, 
 faction_relationships 	norway, at_war_with 	slave
 faction_relationships 	jerusalem, at_war_with 	slave
-faction_relationships 	kwarezm, at_war_with 	mongols, slave, timurids
+faction_relationships 	kwarezm, at_war_with 	slave, mongols;, timurids
 faction_relationships 	slave, at_war_with 	hungary, spain, aragon, byzantium, lithuania, russia, moors, jerusalem, norway, venice, kwarezm, teutonic_order, kievan_rus, timurids, denmark, papal_states, scotland, egypt, sicily, poland, milan, hre, france, portugal, england, mongols, cumans, turks
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -9755,8 +10059,6 @@ fort 245 241 stone_fort_a culture eastern_european
 
 region Reval_Province
 fort 240 280 stone_fort_a culture eastern_european
-
-;;region Turku_Province
 
 ;region Pskov_Province
 
@@ -9835,8 +10137,6 @@ fort 209 197 stone_fort_a culture eastern_european
 
 ;region Varad_Province
 
-;;region Belgrade_Province
-
 region Belgrade_Province; Naissus
 fort 227 169 stone_fort_a culture eastern_european
 
@@ -9850,7 +10150,7 @@ fort 227 169 stone_fort_a culture eastern_european
 
 ;region Zagreb_Province
 
-;;region Venice_Province
+;region Venice_Province
 
 ;region Yelabuga_Province; Veneto
 
@@ -9868,7 +10168,7 @@ fort 198 222 stone_fort_a culture eastern_european
 
 ;region Bologna_Province
 
-;;region Pisa_Province
+;region Pisa_Province
 
 ;region Nykoeping_Province; Tuscany
 
@@ -9881,8 +10181,6 @@ fort 198 222 stone_fort_a culture eastern_european
 ;region Syracuse_Province; Calabria
 
 ;region Bari_Province
-
-;;region Syracuse_Province
 
 region Palermo_Province
 fort 186 113 stone_fort_a culture southern_european
@@ -9933,6 +10231,8 @@ fort 114 160 stone_fort_a culture northern_european
 
 ;region Exeter_Province; Poitou
 
+;region Khlynov_Province; Orleanais
+
 ;region Rennes_Province
 
 ;region Caen_Province
@@ -9959,9 +10259,8 @@ fort 126 202 stone_fort_a culture northern_european
 
 ;region Zaragoza_Province
 
-;region Pamplona_Province
-
-;;region Exeter_Province
+region Pamplona_Province
+fort 83 149 stone_fort_a culture southern_european
 
 region Winchester_Province
 fort 52 211 stone_fort_a culture northern_european
@@ -9985,8 +10284,7 @@ fort 43 241 stone_fort_a culture northern_european
 
 region Dublin_Province
 fort 9 230 stone_fort_a culture northern_european
-
-;;region Galway_Province
+fort 31 233 stone_fort_a culture northern_european
 
 region Arhus_Province
 fort 141 244 stone_fort_a culture northern_european
@@ -9998,12 +10296,8 @@ fort 174 265 stone_fort_a culture eastern_european
 
 ;region Kalmar_Province
 
-;;region Nykoeping_Province
-
 region Uppsala_Province; Added
 fort 201 269 stone_fort_a culture northern_european
-
-;;region Skara_Province
 
 ;region Oslo_Province
 
@@ -10021,7 +10315,7 @@ fort 201 269 stone_fort_a culture northern_european
 
 ;region Lisbon_Province
 
-;;region Galway_Province; Coimbra
+;region Galway_Province; Coimbra
 
 ;region Salamanca_Province
 
@@ -10040,30 +10334,26 @@ fort 16 153 stone_fort_a culture southern_european
 
 ;region Marrakesh_Province
 
-;region Fes_Province
+region Fes_Province
+fort 56 99 me_fort_b culture middle_eastern
 
-region Melilla_Province
+region Melilla_Province; Tlemcen
 fort 74 102 me_fort_b culture middle_eastern
-fort 66 97 me_fort_b culture middle_eastern
-
-;;region Oran_Province
 
 region Algiers_Province
 fort 131 112 me_fort_b culture middle_eastern
-
-;;region Beleb_el_Anab_Province
 
 ;region Tunis_Province
 
 ;region Al-Mahdiya_Province
 
-;region Tripoli_Province
+;region Tripoli_Province; Tarabulus, Maghreb
 
 ;region Benghazi_Province
 
 ;region Alexandria_Province; Added
 
-;;region Cairo_Province
+;region Cairo_Province
 
 ;region Luxor_Province
 
@@ -10078,6 +10368,9 @@ fort 131 112 me_fort_b culture middle_eastern
 ;region Jerusalem_Province
 
 ;region Acre_Province
+
+region Tortosa_Province; Tripoli, Levant
+fort 336 97 me_fort_b culture middle_eastern
 
 region Damascus_Province
 fort 337 76 me_fort_b culture middle_eastern
@@ -10127,8 +10420,6 @@ region Moscow_Province
 fort 358 258 stone_fort_a culture eastern_european
 fort 361 244 stone_fort_a culture eastern_european
 
-;;region Ryazan_Province
-
 ;region Serdobinskaya_Province
 
 region Pereyaslav_Province
@@ -10164,13 +10455,9 @@ region Bulgar_Province
 fort 428 237 stone_fort_a culture eastern_european
 fort 446 235 stone_fort_a culture eastern_european
 
-;region Khlynov_Province; Orleanais
-
 region Kazan_Province
 fort 460 247 stone_fort_a culture eastern_european
 fort 436 266 stone_fort_a culture eastern_european
-
-;;region Yelabuga_Province
 
 region Jaiksk_Province
 fort 474 212 stone_fort_a culture eastern_european
@@ -10214,8 +10501,6 @@ fort 505 68 me_fort_b culture middle_eastern
 
 region Yazd_Province
 fort 498 88 me_fort_b culture middle_eastern
-
-;;region Damghan_Province
 
 region Mashhad_Province
 fort 509 89 me_fort_b culture middle_eastern

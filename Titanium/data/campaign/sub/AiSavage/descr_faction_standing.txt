@@ -56,7 +56,6 @@ relations_worsened_thresholds
 ; normalise [target_faction_standing] [divisor]	--> for each affected faction standing, add (target_faction_standing - faction_standing)/divisor
 ; per_unit [value]				--> for each unit in the events army, add 'value' to the affected faction standings
 
-
 ;gsthoed note: "Difficulty Levels" tweaked for hotseat compatibility
 ;######################## DIFFICULTY LEVELS ############################
 ; Adjust the AI relationships towards each faction based on difficulty level (AI factions have normal difficulty)
@@ -103,7 +102,6 @@ Trigger 0095_Update_Very_Hard_Difficulty
     and I_EventCounter DifficultyLevel = 4
 
     FactionStanding exclude_factions { } normalise -0.5 50
-
 
 ;################## BUILD RELIGIOUS STRUCTURES ############################
 ;=========== CATHOLIC =====================
@@ -3656,12 +3654,12 @@ Trigger Mongols
     FactionStanding exclude_factions { } normalise -1 40
 
 ;------------------------------------------
-Trigger Timurids
+Trigger Timurids; Abbasids
     WhenToTest FactionTurnStart
 
     Condition FactionType timurids
 
-    FactionStanding exclude_factions { } normalise -1 40
+    FactionStanding exclude_factions { turks, egypt, moors, kwarezm, } normalise -1 40
 
 ;------------------------------------------
 Trigger Teutonic_Order

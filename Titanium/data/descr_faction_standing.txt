@@ -3654,12 +3654,12 @@ Trigger Mongols
     FactionStanding exclude_factions { } normalise -1 40
 
 ;------------------------------------------
-Trigger Timurids
+Trigger Timurids; Abbasids
     WhenToTest FactionTurnStart
 
     Condition FactionType timurids
 
-    FactionStanding exclude_factions { } normalise -1 40
+    FactionStanding exclude_factions { turks, egypt, moors, kwarezm, } normalise -1 40
 
 ;------------------------------------------
 Trigger Teutonic_Order
