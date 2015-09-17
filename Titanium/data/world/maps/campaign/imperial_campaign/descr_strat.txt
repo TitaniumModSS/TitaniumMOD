@@ -2213,7 +2213,7 @@ unit		Dismounted Cuman Militia		exp 0 armour 0 weapon_lvl 0
 unit		Pechenegs				exp 1 armour 0 weapon_lvl 0
 
 ;Embi Province
-character	Turgut, general, male, age 29, x 475, y 185 
+character	Tugrul, general, male, age 29, x 475, y 185 
 army
 unit		Pechenegs				exp 1 armour 0 weapon_lvl 0
 unit		Pechenegs				exp 1 armour 0 weapon_lvl 0
@@ -4285,6 +4285,11 @@ unit		Toxotae					exp 0 armour 0 weapon_lvl 0
 character	Ioannis Chotzas, general, male, age 29, x 275, y 118 
 army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
+unit		Toxotae					exp 0 armour 0 weapon_lvl 0
+
+;Smyrna Province Fort
+character	Ioannis Lampinos, general, male, age 29, x 280, y 111 
+army
 unit		Toxotae					exp 0 armour 0 weapon_lvl 0
 
 ;Trebizond
@@ -8126,6 +8131,16 @@ unit		Welsh Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Welsh Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Peasants				exp 0 armour 0 weapon_lvl 0
 
+;Caernarvon Province Fort
+character	sub_faction england, Fulk Bardolf, general, male, age 29, x 56, y 219 
+army
+unit		Welsh Longbowmen			exp 1 armour 0 weapon_lvl 0
+unit		Welsh Longbowmen			exp 1 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 1 armour 0 weapon_lvl 0
+unit		Welsh Spearmen				exp 1 armour 0 weapon_lvl 0
+unit		Peasants				exp 0 armour 0 weapon_lvl 0
+unit		Peasants				exp 0 armour 0 weapon_lvl 0
+
 ;Lisbon
 character	sub_faction moors, Muhammad, general, male, age 45, x 11, y 125 
 army
@@ -8542,6 +8557,14 @@ unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+
+;Cagliari Province Fort
+character	sub_faction sicily, Orlando, general, male, age 40, x 144, y 141 
+army
+unit		Sicilian Muslim Archers			exp 1 armour 0 weapon_lvl 0
+unit		S Peasant Archers			exp 0 armour 0 weapon_lvl 0
+unit		Southern Peasants			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
 
 ;Riga
 character	sub_faction poland, Leszek Czarnkowski, general, male, age 27, x 250, y 255 
@@ -9502,6 +9525,13 @@ army
 unit		Pechenegs				exp 0 armour 0 weapon_lvl 0
 unit		Kasogi					exp 0 armour 0 weapon_lvl 0
 
+;Edinburgh Province Fort
+character	sub_faction scotland, Dabid, general, male, age 21, x 43, y 241 
+army
+unit		Feudal Knights				exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Galloglaich Mercs			exp 0 armour 0 weapon_lvl 0
+unit		Archer Militia				exp 0 armour 0 weapon_lvl 0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; >>>> start of diplomacy section <<<<
@@ -9777,7 +9807,8 @@ fort 233 123 bz_fort_m culture greek
 
 ;region Durazzo_Province
 
-;region Smyrna_Province
+region Smyrna_Province
+fort 280 111 bz_fort_m culture greek
 
 ;region Rhodes_Province
 
@@ -9940,11 +9971,13 @@ fort 57 215 stone_fort_a culture northern_european
 
 ;region Nottingham_Province
 
-;region Caernarvon_Province
+region Caernarvon_Province
+fort 56 219 stone_fort_a culture northern_european
 
 ;region York_Province
 
-;region Edinburgh_Province
+region Edinburgh_Province
+fort 43 241 stone_fort_a culture northern_european
 
 ;region Aberdeen_Province
 
@@ -10067,7 +10100,8 @@ fort 350 131 me_fort_b culture middle_eastern
 
 ;region Nicosia_Province
 
-;region Cagliari_Province
+region Cagliari_Province
+fort 144 141 stone_fort_a culture northern_european
 
 ;region Ajaccio_Province
 

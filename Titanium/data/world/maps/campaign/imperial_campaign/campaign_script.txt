@@ -50,6 +50,7 @@
 ; original SS6.4 file edited by gracul Jan-2011
 ; gracul's file edited by Melooo182 Sept-2014
 ; last edited by gsthoed for Titanium_Alpha Rev.31
+; last edited by melooo182 for Titanium_Alpha Rev.53
 
 ; G5 BAI v5.7 by Germanicu5
 
@@ -110,6 +111,7 @@ monitor_event PreFactionTurnStart CampaignDifficulty = very_hard
 	set_event_counter DifficultyLevel 4
 
 	historic_event difficulty_very_hard
+	historic_event titanium_message
 
 	if I_IsFactionAIControlled england
 		increment_kings_purse england 1900
@@ -198,6 +200,7 @@ monitor_event PreFactionTurnStart CampaignDifficulty != medium
 	set_event_counter DifficultyLevel 1
 
 	historic_event difficulty_easy
+	historic_event titanium_message
 
 	link_faction_ai england default
 	link_faction_ai france default
@@ -316,6 +319,7 @@ monitor_event PreFactionTurnStart
  if I_EventCounter DifficultyLevel = 3
 
 	historic_event difficulty_hard
+	historic_event titanium_message
 
 	if I_IsFactionAIControlled england
 		increment_kings_purse england 1400
@@ -400,6 +404,7 @@ monitor_event PreFactionTurnStart
  if I_EventCounter DifficultyLevel = 2
 
 	historic_event difficulty_medium
+	historic_event titanium_message
 
 	link_faction_ai england catholic
 	link_faction_ai france catholic
@@ -3872,6 +3877,238 @@ monitor_event FactionTurnStart
 	hide_all_revealed_tiles
 	terminate_monitor
 
+end_monitor
+
+;Hotseat Workaround
+monitor_event FactionTurnEnd
+	if not I_HotseatEnabled
+		terminate_monitor
+	end_if
+	if not I_IsFactionAIControlled egypt
+	and I_CompareCounter turn_fid != 1
+		;spawn_character egypt Muhammad al-Abbasi, priest, age 30, x 330, y 74 ;	Jerusalem
+		;console_command kill_character "Muhammad al-Abbasi"
+		spawn_character egypt Imran al-Abbasi, priest, age 30, x 396, y 88 ;	Baghdad
+		console_command kill_character "Imran al-Abbasi"
+		spawn_character egypt Umar al-Abbasi, priest, age 30, x 359, y 23 ;	Medina
+		console_command kill_character "Umar al-Abbasi"
+		spawn_character egypt Tahir al-Abbasi, priest, age 30, x 360, y 6 ;	Mecca
+		console_command kill_character "Tahir al-Abbasi"
+	end_if
+	if not I_IsFactionAIControlled turks
+	and I_CompareCounter turn_fid != 2
+		spawn_character turks Mehmed Muzaffer, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Mehmed Muzaffer"
+		spawn_character turks Zengi Muzaffer, priest, age 30, x 396, y 88 ;	Baghdad
+		console_command kill_character "Zengi Muzaffer"
+		spawn_character turks Selim Muzaffer, priest, age 30, x 359, y 23 ;	Medina
+		console_command kill_character "Selim Muzaffer"
+		spawn_character turks Al-Maqtadi Muzaffer, priest, age 30, x 360, y 6 ;	Mecca
+		console_command kill_character "Al-Maqtadi Muzaffer"
+	end_if
+	;if not I_IsFactionAIControlled timurids
+	;and I_CompareCounter turn_fid != 3
+	;end_if
+	if not I_IsFactionAIControlled kwarezm
+	and I_CompareCounter turn_fid != 4
+		spawn_character kwarezm Qudbaddin Altayli, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Qudbaddin Altayli"
+		spawn_character kwarezm Atsiz Altayli, priest, age 30, x 396, y 88 ;	Baghdad
+		console_command kill_character "Atsiz Altayli"
+		spawn_character kwarezm Derya Altayli, priest, age 30, x 359, y 23 ;	Medina
+		console_command kill_character "Derya Altayli"
+		spawn_character kwarezm Hayati Altayli, priest, age 30, x 360, y 6 ;	Mecca
+		console_command kill_character "Hayati Altayli"
+	end_if
+	if not I_IsFactionAIControlled moors
+	and I_CompareCounter turn_fid != 5
+		spawn_character moors Amjad ibn_Farraj, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Amjad ibn_Farraj"
+		spawn_character moors Bashar ibn_Farraj, priest, age 30, x 396, y 88 ;	Baghdad
+		console_command kill_character "Bashar ibn_Farraj"
+		spawn_character moors Shakir ibn_Farraj, priest, age 30, x 359, y 23 ;	Medina
+		console_command kill_character "Shakir ibn_Farraj"
+		spawn_character moors Muhammad ibn_Farraj, priest, age 30, x 360, y 6 ;	Mecca
+		console_command kill_character "Muhammad ibn_Farraj"
+	end_if
+	;if not I_IsFactionAIControlled lithuania
+	;and I_CompareCounter turn_fid != 6
+	;end_if
+	if not I_IsFactionAIControlled cumans
+	and I_CompareCounter turn_fid != 7
+		spawn_character cumans Bonyak of_Kazan, priest, age 30, x 284, y 142 ;	Constantinople
+		console_command kill_character "Bonyak of_Kazan"
+		spawn_character cumans Sotan of_Kazan, priest, age 30, x 396, y 88 ;	Baghdad
+		console_command kill_character "Sotan of_Kazan"
+	end_if
+	;if not I_IsFactionAIControlled mongols
+	;and I_CompareCounter turn_fid != 8
+	;end_if
+	if not I_IsFactionAIControlled byzantium
+	and I_CompareCounter turn_fid != 9
+		;spawn_character byzantium Frankoulis Grammatikos, priest, age 30, x 284, y 142 ;	Constantinople
+		;console_command kill_character "Frankoulis Grammatikos"
+		spawn_character byzantium Kyrillos Grammatikos, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Kyrillos Grammatikos"
+		spawn_character byzantium Dimitrios Grammatikos, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Dimitrios Grammatikos"
+	end_if
+	if not I_IsFactionAIControlled russia
+	and I_CompareCounter turn_fid != 10
+		spawn_character russia Lyutobor Istoma, priest, age 30, x 284, y 142 ;	Constantinople
+		console_command kill_character "Lyutobor Istoma"
+		spawn_character russia Aleksei Istoma, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Aleksei Istoma"
+	end_if
+	if not I_IsFactionAIControlled kievan_rus
+	and I_CompareCounter turn_fid != 11
+		spawn_character kievan_rus Vladimir Kalita, priest, age 30, x 284, y 142 ;	Constantinople
+		console_command kill_character "Vladimir Kalita"
+		spawn_character kievan_rus Georgii Kalita, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Georgii Kalita"
+	end_if
+	;if not I_IsFactionAIControlled venice; Venice is by default player faction 1
+	;and I_CompareCounter turn_fid != 12
+	;	spawn_character venice Victor Grissani, priest, age 30, x 330, y 74 ;	Jerusalem
+	;	console_command kill_character "Victor Grissani"
+	;	spawn_character venice Tusco Grissani, priest, age 30, x 169, y 146 ;	Rome
+	;	console_command kill_character "Tusco Grissani"
+	;	spawn_character venice Nicolo Grissani, priest, age 30, x 37, y 152 ;	Leon - Santiago
+	;	console_command kill_character "Nicolo Grissani"
+	;end_if
+	if not I_IsFactionAIControlled sicily
+	and I_CompareCounter turn_fid != 13
+		spawn_character sicily Rubbertu di_Palermo, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Rubbertu di_Palermo"
+		spawn_character sicily Serlo di_Palermo, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Serlo di_Palermo"
+		spawn_character sicily Pietro di_Palermo, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Pietro di_Palermo"
+	end_if
+	if not I_IsFactionAIControlled milan
+	and I_CompareCounter turn_fid != 14
+		spawn_character milan Tommaso da_Genova, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Tommaso da_Genova"
+		spawn_character milan Oberto da_Genova, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Oberto da_Genova"
+		spawn_character milan Ansaldo da_Genova, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Ansaldo da_Genova"
+	end_if
+	if not I_IsFactionAIControlled denmark
+	and I_CompareCounter turn_fid != 15
+		spawn_character denmark Svend Bjornsen, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Svend Bjornsen"
+		spawn_character denmark Budle Bjornsen, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Budle Bjornsen"
+		spawn_character denmark Toke Bjornsen, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Toke Bjornsen"
+	end_if
+	if not I_IsFactionAIControlled scotland
+	and I_CompareCounter turn_fid != 16
+		spawn_character scotland Etgar mac_Ideid, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Etgar mac_Ideid"
+		spawn_character scotland Alaxandair mac_Ideid, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Alaxandair mac_Ideid"
+		spawn_character scotland Dabid mac_Ideid, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Dabid mac_Ideid"
+	end_if
+	if not I_IsFactionAIControlled france
+	and I_CompareCounter turn_fid != 17
+		spawn_character france Bertrand Febre, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Bertrand Febre"
+		spawn_character france Frederic Febre, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Frederic Febre"
+		spawn_character france Etienne Febre, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Etienne Febre"
+	end_if
+	if not I_IsFactionAIControlled hre
+	and I_CompareCounter turn_fid != 18
+		spawn_character hre Rainald von_Koln, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Rainald von_Koln"
+		spawn_character hre Conrad von_Koln, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Conrad von_Koln"
+		spawn_character hre Kurt von_Koln, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Kurt von_Koln"
+	end_if
+	if not I_IsFactionAIControlled england
+	and I_CompareCounter turn_fid != 19
+		spawn_character england Samuel de_Blois, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Samuel de_Blois"
+		spawn_character england Laurence de_Blois, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Laurence de_Blois"
+		spawn_character england Anselm de_Blois, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Anselm de_Blois"
+	end_if
+	if not I_IsFactionAIControlled portugal
+	and I_CompareCounter turn_fid != 20
+		spawn_character portugal Afonso Ramalho, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Afonso Ramalho"
+		spawn_character portugal Lopo Ramalho, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Lopo Ramalho"
+		spawn_character portugal Manuel Ramalho, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Manuel Ramalho"
+	end_if
+	if not I_IsFactionAIControlled poland
+	and I_CompareCounter turn_fid != 21
+		spawn_character poland Wladyslaw Sandomierski, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Wladyslaw Sandomierski"
+		spawn_character poland Zbigniew Sandomierski, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Zbigniew Sandomierski"
+		spawn_character poland Boleslaw Sandomierski, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Boleslaw Sandomierski"
+	end_if
+	if not I_IsFactionAIControlled spain
+	and I_CompareCounter turn_fid != 22
+		spawn_character spain Alfonso Franco, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Alfonso Franco"
+		spawn_character spain Goncalo Franco, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Goncalo Franco"
+		;spawn_character spain Raimundo Franco, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		;console_command kill_character "Raimundo Franco"
+	end_if
+	if not I_IsFactionAIControlled hungary
+	and I_CompareCounter turn_fid != 23
+		spawn_character hungary Kalman Brankovics, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Kalman Brankovics"
+		spawn_character hungary Bodomer Brankovics, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Bodomer Brankovics"
+		spawn_character hungary Kozma Brankovics, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Kozma Brankovics"
+	end_if
+	if not I_IsFactionAIControlled aragon
+	and I_CompareCounter turn_fid != 24
+		spawn_character aragon Mauricio Maranon, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Mauricio Maranon"
+		spawn_character aragon Ordono Maranon, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Ordono Maranon"
+		spawn_character aragon Pedro Maranon, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Pedro Maranon"
+	end_if
+	;if not I_IsFactionAIControlled teutonic_order
+	;and I_CompareCounter turn_fid != 25
+	;end_if
+	if not I_IsFactionAIControlled norway
+	and I_CompareCounter turn_fid != 26
+		spawn_character norway Magnus Guddrodson, priest, age 30, x 330, y 74 ;	Jerusalem
+		console_command kill_character "Magnus Guddrodson"
+		spawn_character norway Sigurd Guddrodson, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Sigurd Guddrodson"
+		spawn_character norway Eystein Guddrodson, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Eystein Guddrodson"
+	end_if
+	if not I_IsFactionAIControlled jerusalem
+	and I_CompareCounter turn_fid != 27
+		;spawn_character jerusalem Baudouin de_Toulouse, priest, age 30, x 330, y 74 ;	Jerusalem
+		;console_command kill_character "Baudouin de_Toulouse"
+		spawn_character jerusalem Joscelin de_Toulouse, priest, age 30, x 169, y 146 ;	Rome
+		console_command kill_character "Joscelin de_Toulouse"
+		spawn_character jerusalem Bohemond de_Toulouse, priest, age 30, x 37, y 152 ;	Leon - Santiago
+		console_command kill_character "Bohemond de_Toulouse"
+	end_if
+	;if not I_IsFactionAIControlled papal_states
+	;and I_CompareCounter turn_fid != 28
+	;end_if
+	terminate_monitor
 end_monitor
 
 ;==================== Major Events ====================== 
@@ -41343,76 +41580,128 @@ end_monitor
 	console_command create_building Kutaisi ros_po_bonus
 	console_command create_building Ahvaz ros_po_bonus
 	console_command create_building Serdobinskaya ros_po_bonus
-
-;Scotland
-  if I_CompareCounter faction_emerge_id = 1
-	;Non Target settlements
+	if I_CompareCounter faction_emerge_id != 1
+		console_command create_building Edinburgh ros_po_bonus
+		console_command create_building Aberdeen ros_po_bonus
+		console_command create_building Inverness ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 2
 		console_command create_building Venice ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 3
 		console_command create_building Palermo ros_po_bonus
 		console_command create_building Syracuse ros_po_bonus
 		console_command create_building Naples ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 4
 		console_command create_building Genoa ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 5
 		console_command create_building Arhus ros_po_bonus
 		console_command create_building Roskilde ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 6
 		console_command create_building Jaiksk ros_po_bonus
 		console_command create_building Azaq ros_po_bonus
 		console_command create_building Baia ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 7
 		console_command create_building Caesarea ros_po_bonus
 		console_command create_building Ankara ros_po_bonus
 		console_command create_building Iconium ros_po_bonus
 		console_command create_building Diyarbakir ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 8
 		console_command create_building Paris ros_po_bonus
 		console_command create_building Rheims ros_po_bonus
 		console_command create_building Clermont ros_po_bonus
 		console_command create_building Angers ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 9
 		console_command create_building Frankfurt ros_po_bonus
 		console_command create_building Vienna ros_po_bonus
 		console_command create_building Prague ros_po_bonus
 		console_command create_building Staufen ros_po_bonus
 		console_command create_building Nuremburg ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 10
 		console_command create_building London ros_po_bonus
 		console_command create_building Nottingham ros_po_bonus
 		console_command create_building Winchester ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 11
 		console_command create_building Oporto ros_po_bonus
 		console_command create_building Lisbon ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 12
 		console_command create_building Krakow ros_po_bonus
 		console_command create_building Halych ros_po_bonus
 		console_command create_building Plock ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 13
 		console_command create_building Constantinople ros_po_bonus
 		console_command create_building Nicaea ros_po_bonus
 		console_command create_building Athens ros_po_bonus
 		console_command create_building Arta ros_po_bonus
 		console_command create_building Trebizond ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 14
 		console_command create_building Marrakesh ros_po_bonus
 		console_command create_building Fes ros_po_bonus
 		console_command create_building Melilla ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 15
 		console_command create_building Novgorod ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 16
 		console_command create_building Leon ros_po_bonus
 		console_command create_building Toledo ros_po_bonus
 		console_command create_building Salamanca ros_po_bonus
 		console_command create_building Burgos ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 17
 		console_command create_building Varad ros_po_bonus
 		console_command create_building Esztergom ros_po_bonus
 		console_command create_building Kassa ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 18
 		console_command create_building Zaragoza ros_po_bonus
 		console_command create_building Pamplona ros_po_bonus
 		console_command create_building Barcelona ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 19
 		console_command create_building Vilnius ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 20
 		console_command create_building Kiev ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 21
 		console_command create_building Bergen ros_po_bonus
 		console_command create_building Eikundarsund ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 22
 		console_command create_building Urgench ros_po_bonus
 		console_command create_building Khiva ros_po_bonus
 		console_command create_building Konjikala ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 23
 		console_command create_building Cairo ros_po_bonus
 		console_command create_building Alexandria ros_po_bonus
 		console_command create_building Damietta ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 24
 		console_command create_building Rhodes ros_po_bonus
 		console_command create_building Nicosia ros_po_bonus
 		console_command create_building Jerusalem ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 25
 		console_command create_building Thorn ros_po_bonus
 		console_command create_building Palanga ros_po_bonus
 		console_command create_building Riga ros_po_bonus
+	end_if
+
+;Scotland
+  if I_CompareCounter faction_emerge_id = 1
 	if I_CompareCounter edinburgh_riot = 0
 		console_command create_building Edinburgh ros_po_bonus
 	end_if
@@ -41858,75 +42147,6 @@ end_monitor
 
 ;Venice
   if I_CompareCounter faction_emerge_id = 2
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter venice_riot = 0
 		console_command create_building Venice ros_po_bonus
 	end_if
@@ -42080,73 +42300,6 @@ end_monitor
 
 ;Sicily
   if I_CompareCounter faction_emerge_id = 3
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter palermo_riot = 0
 		console_command create_building Palermo ros_po_bonus
 	end_if
@@ -42592,75 +42745,6 @@ end_monitor
 
 ;Milan/Genoa
   if I_CompareCounter faction_emerge_id = 4
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter genoa_riot = 0
 		console_command create_building Genoa ros_po_bonus
 	end_if
@@ -42814,74 +42898,6 @@ end_monitor
 
 ;Denmark
   if I_CompareCounter faction_emerge_id = 5
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter arhus_riot = 0
 		console_command create_building Arhus ros_po_bonus
 	end_if
@@ -43181,73 +43197,6 @@ end_monitor
 
 ;Cumans
   if I_CompareCounter faction_emerge_id = 6
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter jaiksk_riot = 0
 		console_command create_building Jaiksk ros_po_bonus
 	end_if
@@ -43693,72 +43642,6 @@ end_monitor
 
 ;Turks/Seljuks
   if I_CompareCounter faction_emerge_id = 7
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter caesarea_riot = 0
 		console_command create_building Caesarea ros_po_bonus
 	end_if
@@ -44350,72 +44233,6 @@ end_monitor
 
 ;France
   if I_CompareCounter faction_emerge_id = 8
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter paris_riot = 0
 		console_command create_building Paris ros_po_bonus
 	end_if
@@ -45007,71 +44824,6 @@ end_monitor
 
 ;HRE
   if I_CompareCounter faction_emerge_id = 9
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter frankfurt_riot = 0
 		console_command create_building Frankfurt ros_po_bonus
 	end_if
@@ -45810,73 +45562,6 @@ end_monitor
 
 ;England
   if I_CompareCounter faction_emerge_id = 10
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter london_riot = 0
 		console_command create_building London ros_po_bonus
 	end_if
@@ -46322,74 +46007,6 @@ end_monitor
 
 ;Portugal
   if I_CompareCounter faction_emerge_id = 11
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter oporto_riot = 0
 		console_command create_building Oporto ros_po_bonus
 	end_if
@@ -46689,73 +46306,6 @@ end_monitor
 
 ;Poland
   if I_CompareCounter faction_emerge_id = 12
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter krakow_riot = 0
 		console_command create_building Krakow ros_po_bonus
 	end_if
@@ -47201,71 +46751,6 @@ end_monitor
 
 ;Byzantium
   if I_CompareCounter faction_emerge_id = 13
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter constantinople_riot = 0
 		console_command create_building Constantinople ros_po_bonus
 	end_if
@@ -48003,73 +47488,6 @@ end_monitor
 
 ;Moors
   if I_CompareCounter faction_emerge_id = 14
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter marrakesh_riot = 0
 		console_command create_building Marrakesh ros_po_bonus
 	end_if
@@ -48515,75 +47933,6 @@ end_monitor
 
 ;Russia/Novgorod
   if I_CompareCounter faction_emerge_id = 15
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter novgorod_riot = 0
 		console_command create_building Novgorod ros_po_bonus
 	end_if
@@ -48737,72 +48086,6 @@ end_monitor
 
 ;Spain/Leon
   if I_CompareCounter faction_emerge_id = 16
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter leon_riot = 0
 		console_command create_building Leon ros_po_bonus
 	end_if
@@ -49394,73 +48677,6 @@ end_monitor
 
 ;Hungary
   if I_CompareCounter faction_emerge_id = 17
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter varad_riot = 0
 		console_command create_building Varad ros_po_bonus
 	end_if
@@ -49907,73 +49123,6 @@ end_monitor
 
 ;Aragon
   if I_CompareCounter faction_emerge_id = 18
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter zaragoza_riot = 0
 		console_command create_building Zaragoza ros_po_bonus
 	end_if
@@ -50419,75 +49568,6 @@ end_monitor
 
 ;Lithuania
   if I_CompareCounter faction_emerge_id = 19
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter vilnius_riot = 0
 		console_command create_building Vilnius ros_po_bonus
 	end_if
@@ -50641,75 +49721,6 @@ end_monitor
 
 ;Kievan Rus
   if I_CompareCounter faction_emerge_id = 20
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter kiev_riot = 0
 		console_command create_building Kiev ros_po_bonus
 	end_if
@@ -50864,74 +49875,6 @@ end_monitor
 
 ;Norway
   if I_CompareCounter faction_emerge_id = 21
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter bergen_riot = 0
 		console_command create_building Bergen ros_po_bonus
 	end_if
@@ -51231,73 +50174,6 @@ end_monitor
 
 ;Kwarezm
   if I_CompareCounter faction_emerge_id = 23
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter urgench_riot = 0
 		console_command create_building Urgench ros_po_bonus
 	end_if
@@ -51743,73 +50619,6 @@ end_monitor
 
 ;Egypt/Fatimids
   if I_CompareCounter faction_emerge_id = 23
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
-		console_command create_building Jerusalem ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter cairo_riot = 0
 		console_command create_building Cairo ros_po_bonus
 	end_if
@@ -52255,73 +51064,6 @@ end_monitor
 
 ;Jerusalem/Crusader States
   if I_CompareCounter faction_emerge_id = 24
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Thorn ros_po_bonus
-		console_command create_building Palanga ros_po_bonus
-		console_command create_building Riga ros_po_bonus
 	if I_CompareCounter rhodes_riot = 0
 		console_command create_building Rhodes ros_po_bonus
 	end_if
@@ -53043,72 +51785,6 @@ end_monitor
 
 ;Teutonic Order
   if I_CompareCounter faction_emerge_id = 25
-	;Non Target settlements
-		console_command create_building Edinburgh ros_po_bonus
-		console_command create_building Aberdeen ros_po_bonus
-		console_command create_building Inverness ros_po_bonus
-		console_command create_building Venice ros_po_bonus
-		console_command create_building Palermo ros_po_bonus
-		console_command create_building Syracuse ros_po_bonus
-		console_command create_building Naples ros_po_bonus
-		console_command create_building Genoa ros_po_bonus
-		console_command create_building Arhus ros_po_bonus
-		console_command create_building Roskilde ros_po_bonus
-		console_command create_building Jaiksk ros_po_bonus
-		console_command create_building Azaq ros_po_bonus
-		console_command create_building Baia ros_po_bonus
-		console_command create_building Caesarea ros_po_bonus
-		console_command create_building Ankara ros_po_bonus
-		console_command create_building Iconium ros_po_bonus
-		console_command create_building Diyarbakir ros_po_bonus
-		console_command create_building Paris ros_po_bonus
-		console_command create_building Rheims ros_po_bonus
-		console_command create_building Clermont ros_po_bonus
-		console_command create_building Angers ros_po_bonus
-		console_command create_building Frankfurt ros_po_bonus
-		console_command create_building Vienna ros_po_bonus
-		console_command create_building Prague ros_po_bonus
-		console_command create_building Staufen ros_po_bonus
-		console_command create_building Nuremburg ros_po_bonus
-		console_command create_building London ros_po_bonus
-		console_command create_building Nottingham ros_po_bonus
-		console_command create_building Winchester ros_po_bonus
-		console_command create_building Oporto ros_po_bonus
-		console_command create_building Lisbon ros_po_bonus
-		console_command create_building Krakow ros_po_bonus
-		console_command create_building Halych ros_po_bonus
-		console_command create_building Plock ros_po_bonus
-		console_command create_building Constantinople ros_po_bonus
-		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
-		console_command create_building Arta ros_po_bonus
-		console_command create_building Trebizond ros_po_bonus
-		console_command create_building Marrakesh ros_po_bonus
-		console_command create_building Fes ros_po_bonus
-		console_command create_building Melilla ros_po_bonus
-		console_command create_building Novgorod ros_po_bonus
-		console_command create_building Leon ros_po_bonus
-		console_command create_building Toledo ros_po_bonus
-		console_command create_building Salamanca ros_po_bonus
-		console_command create_building Burgos ros_po_bonus
-		console_command create_building Varad ros_po_bonus
-		console_command create_building Esztergom ros_po_bonus
-		console_command create_building Kassa ros_po_bonus
-		console_command create_building Zaragoza ros_po_bonus
-		console_command create_building Pamplona ros_po_bonus
-		console_command create_building Barcelona ros_po_bonus
-		console_command create_building Vilnius ros_po_bonus
-		console_command create_building Kiev ros_po_bonus
-		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Khiva ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
-		console_command create_building Cairo ros_po_bonus
-		console_command create_building Alexandria ros_po_bonus
-		console_command create_building Damietta ros_po_bonus
-		console_command create_building Rhodes ros_po_bonus
-		console_command create_building Nicosia ros_po_bonus
 	if I_CompareCounter thorn_riot = 0
 		console_command create_building Thorn ros_po_bonus
 	end_if
@@ -61499,8 +60175,6 @@ monitor_event FactionTurnEnd ;I_CompareCounter hs_console > 0
 	end_if
 
 end_monitor
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
