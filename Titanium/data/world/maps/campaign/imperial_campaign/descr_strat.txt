@@ -1059,10 +1059,10 @@ unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		S Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
 ;Naples
-;character	Rudolfu di_Montescaglioso, named character, male, age 49, x 182, y 139 
-;traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Infertile 3 , GoodCommander 2 , ReligionStarter 1 
-character	Rudolfu di_Montescaglioso, named character, male, heir, age 49, x 182, y 139 
-traits FactionFutureRegent 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Infertile 3 , GoodCommander 2 , ReligionStarter 1 
+character	Rudolfu di_Montescaglioso, named character, male, age 49, x 182, y 139 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Infertile 3 , GoodCommander 2 , ReligionStarter 1 
+;character	Rudolfu di_Montescaglioso, named character, male, heir, age 49, x 182, y 139 
+;traits FactionFutureRegent 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Infertile 3 , GoodCommander 2 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -1071,7 +1071,7 @@ unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		S Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
 ;Reggio
-character	Roberto di_Conversano, named character, male, age 28, x 192, y 120 
+character	Rubbertu di_Conversano, named character, male, age 28, x 192, y 120 
 traits LoyaltyStarter 1 , GovernorInclination 1 , GoodAdministrator 1 , Rabblerouser 2 , Handsome 2  , Energetic 3 , Just 1 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -1081,7 +1081,7 @@ unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Sicilian Muslim Archers			exp 1 armour 0 weapon_lvl 0
 
 ;Palermo Province Fort (Syracusa)
-character	Roberto, general, male, age 22, x 186, y 113 
+character	Rubbertu, general, male, age 22, x 186, y 113 
 army
 unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		S Peasant Archers			exp 0 armour 0 weapon_lvl 0
@@ -1104,8 +1104,8 @@ traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1
 
 character_record		Adelaisa, 	female, age 53, alive, never_a_leader
 character_record		Emma, 	female, age 30, alive, never_a_leader
-;Problematic;character_record		Simone, 	male, age 7, alive, current_heir
-character_record		Simone, 	male, age 7, alive, never_a_leader
+character_record		Simone, 	male, age 7, alive, current_heir
+;character_record		Simone, 	male, age 7, alive, never_a_leader
 character_record		Ruggero, 	male, age 5, alive, never_a_leader
 
 relative 	Ruggero d_Altavilla,	Adelaisa,	Emma,	Judith,	Simone,	Ruggero,	end
@@ -1301,6 +1301,7 @@ settlement
 	}
 }
 
+;Rome
 character	Paschalis, named character, male, leader, age 40, x 169, y 146 
 traits IAmPope 1 , GovernorInclination 1 , Western_Edu 1 , GoodAdministrator 2 , Austere 1 , ReligionStarter 1 , GoodDenouncer 1 , Peaceful 3 , Righteous 1 , WaveringFaith 2 , Missionary 2 
 ancillaries doctor
@@ -1311,6 +1312,7 @@ unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 character	Paschalis Arlocti, diplomat, male, age 30, x 165, y 149 
 traits NaturalDiplomatSkill 3 
 
+;Rome Province
 character	Nicolaus Corrigarius, named character, male, age 36, x 168, y 149 
 traits GovernorInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , PublicFaith 2 , GoodAdministrator 1 , Intelligent 1  , ReligionStarter 1 
 army
@@ -1700,10 +1702,10 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Gaza
-;character	Al_Afdal Shahansha, named character, male, age 34, x 323, y 69 
-;traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , Eastern_Edu 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
-character	Al_Afdal Shahansha, named character, male, heir, age 34, x 323, y 69 
-traits FactionFutureRegent 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , Eastern_Edu 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
+character	Al_Afdal Shahansha, named character, male, age 34, x 323, y 69 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , Eastern_Edu 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
+;character	Al_Afdal Shahansha, named character, male, heir, age 34, x 323, y 69 
+;traits FactionFutureRegent 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , Eastern_Edu 1 , PublicFaith 1 , MathematicsSkill 1 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -1781,8 +1783,8 @@ character_record		Muhammad al-Fatimiyyun, 	male, age 53, dead 0, never_a_leader
 character_record		Fayruz, 	female, age 39, alive, never_a_leader
 ;Al-Musta_li Family
 character_record		Safiya Shahansha, 	female, age 19, alive, never_a_leader
-;Problematic;character_record		Al-Amir al-Fatimiyyun, 	male, age 4, alive, current_heir
-character_record		Al-Amir al-Fatimiyyun, 	male, age 4, alive, never_a_leader
+character_record		Al-Amir al-Fatimiyyun, 	male, age 4, alive, current_heir
+;character_record		Al-Amir al-Fatimiyyun, 	male, age 4, alive, never_a_leader
 
 ;Viziers
 relative 	Al_Afdal Shahansha,	Hafza,	Safiya Shahansha,	end
@@ -3669,10 +3671,10 @@ unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
 ;Coimbra Province
-;character	Pedro de_Santiago, named character, male, age 25, x 17, y 139 
-;traits LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
-character	Pedro de_Santiago, named character, male, heir, age 25, x 17, y 139 
-traits FactionFutureRegent 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
+character	Pedro de_Santiago, named character, male, age 25, x 17, y 139 
+traits LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
+;character	Pedro de_Santiago, named character, male, heir, age 25, x 17, y 139 
+;traits FactionFutureRegent 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
@@ -3694,8 +3696,8 @@ character	Manuel, priest, male, age 40, x 20, y 138
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
 character_record		Teresa, 	female, age 35, alive, never_a_leader
-;Problematic;character_record		Afonso, 	male, age 6, alive, current_heir
-character_record		Afonso, 	male, age 6, alive, never_a_leader
+character_record		Afonso, 	male, age 6, alive, current_heir
+;character_record		Afonso, 	male, age 6, alive, never_a_leader
 character_record		Urraca, 	female, age 5, alive, never_a_leader
 character_record		Sancha de_Portugal, 	female, age 3, alive, never_a_leader
 ;
@@ -5054,10 +5056,10 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Salamanca
-;character	Raimundo de_Borgona, named character, male, age 30, x 37, y 141 
-;traits LoyaltyStarter 1 , WifeIsSpanish 1 , WifeIsDaughterofKingPrince 1 , MarriedAPrincess 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
-character	Raimundo de_Borgona, named character, male, heir, age 30, x 37, y 141 
-traits FactionFutureRegent 1 , LoyaltyStarter 1 , WifeIsSpanish 1 , WifeIsDaughterofKingPrince 1 , MarriedAPrincess 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
+character	Raimundo de_Borgona, named character, male, age 30, x 37, y 141 
+traits LoyaltyStarter 1 , WifeIsSpanish 1 , WifeIsDaughterofKingPrince 1 , MarriedAPrincess 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
+;character	Raimundo de_Borgona, named character, male, heir, age 30, x 37, y 141 
+;traits FactionFutureRegent 1 , LoyaltyStarter 1 , WifeIsSpanish 1 , WifeIsDaughterofKingPrince 1 , MarriedAPrincess 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
@@ -5087,8 +5089,8 @@ traits NaturalSpySkill 1 , GoodSpy 2
 
 character_record		Constanza, 	female, age 38, alive, never_a_leader
 character_record		Urraca Jimenez, 	female, age 19, alive, never_a_leader
-;Problematic;character_record		Sancho, 	male, age 10, alive, current_heir
-character_record		Sancho, 	male, age 10, alive, never_a_leader
+character_record		Sancho, 	male, age 10, alive, current_heir
+;character_record		Sancho, 	male, age 10, alive, never_a_leader
 character_record		Elvira, 	female, age 9, alive, never_a_leader
 
 relative 	Alfonso Jimenez,	Constanza,	Urraca Jimenez,	Sancho,	Elvira,	end
@@ -5821,28 +5823,29 @@ traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodC
 army
 unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
 unit		Crusader Knights			exp 3 armour 0 weapon_lvl 0
-unit		Armenians of Celicia			exp 0 armour 0 weapon_lvl 0
-unit		Armenians of Celicia			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
+unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
+unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Antioch
 character	Bohemond d_Antioche, named character, male, age 40, x 338, y 106 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, StrategyDread 1 , CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 ancillaries holy_lance 
 army
-unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
-unit		Norman Cavalry				exp 2 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
-unit		Pisan and Geonese sailors		exp 1 armour 0 weapon_lvl 0
-unit		Armenians of Celicia			exp 1 armour 0 weapon_lvl 0
+unit		NE Bodyguard				exp 6 armour 0 weapon_lvl 0
+unit		Norman Cavalry				exp 6 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 6 armour 3 weapon_lvl 0
+unit		Pisan and Geonese sailors		exp 3 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Antioch Province
 character	Tancred de_Galilee, named character, male, age 25, x 340, y 106 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 army
 unit		NE Bodyguard				exp 0 armour 0 weapon_lvl 0
-unit		Norman Cavalry				exp 1 armour 0 weapon_lvl 0
-unit		Armenian Infantry			exp 1 armour 0 weapon_lvl 0
-unit		Armenians of Celicia			exp 1 armour 0 weapon_lvl 0
+unit		Norman Cavalry				exp 6 armour 0 weapon_lvl 0
+unit		Armenian Infantry			exp 3 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Acre Province
 character	Baudouini de_Bourcq, named character, male, heir, age 33, x 329, y 80 
@@ -5856,14 +5859,14 @@ unit		Pisan and Geonese sailors		exp 1 armour 0 weapon_lvl 0
 unit		Pisan and Geonese sailors		exp 0 armour 0 weapon_lvl 0
 
 ;Adana Province
-character	Raymond de_Toulouse, named character, male, age 58, x 333, y 110 
+character	Raymond de_Toulouse, named character, male, age 58, x 335, y 113 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 3 , CrusaderHistory 2 , PublicFaith 1 , HatesIslam 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 ancillaries mercenary_captain 
 army
-unit		NE Bodyguard				exp 3 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
-unit		Pilgrims				exp 2 armour 0 weapon_lvl 0
-unit		Pilgrims				exp 2 armour 0 weapon_lvl 0
+unit		NE Bodyguard				exp 9 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 6 armour 3 weapon_lvl 0
+unit		Pilgrims				exp 3 armour 0 weapon_lvl 0
+unit		Pilgrims				exp 3 armour 0 weapon_lvl 0
 
 ;Toulouse Coast
 character	Bertrand de_Toulouse, named character, male, age 33, x 100, y 157 
@@ -5875,7 +5878,7 @@ unit		Dismounted Knights Hospitaller		exp 1 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
 unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
 unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 2 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 2 weapon_lvl 0
 unit		Crossbow Militia			exp 0 armour 2 weapon_lvl 0
 
 character	Claude, admiral, male, age 39, x 102, y 156 
@@ -5886,8 +5889,8 @@ unit		galley					exp 1 armour 0 weapon_lvl 0
 
 character	Charles, general, male, age 21, x 102, y 156 
 army
-unit		Pisan and Geonese sailors		exp 1 armour 0 weapon_lvl 0
-unit		Pisan and Geonese sailors		exp 1 armour 0 weapon_lvl 0
+unit		Pisan and Geonese sailors		exp 3 armour 0 weapon_lvl 0
+unit		Pisan and Geonese sailors		exp 3 armour 0 weapon_lvl 0
 
 character	Foucaud, spy, male, age 23, x 335, y 77 
 traits NaturalSpySkill 2 

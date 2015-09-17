@@ -19567,7 +19567,7 @@ Trigger civil_war_or_not1
 
  Condition Trait Offensive_To_Nobles = 0
        and SettlementsTaken >= 7
-       and FactionIsLocal
+       and not IsFactionAIControlled
 
  Affects Offensive_To_Nobles 1 Chance 5
 
@@ -19577,7 +19577,7 @@ Trigger civil_war_or_not2
 
  Condition Trait Offensive_To_Nobles = 0
        and SettlementsTaken >= 15
-       and FactionIsLocal 
+       and not IsFactionAIControlled 
 
  Affects Offensive_To_Nobles 1 Chance 10
 
@@ -19587,7 +19587,7 @@ Trigger civil_war_or_not3
 
  Condition Trait Offensive_To_Nobles = 0
        and SettlementsTaken >= 25
-       and FactionIsLocal
+       and not IsFactionAIControlled
 
  Affects Offensive_To_Nobles 1 Chance 15
 
@@ -19599,7 +19599,7 @@ Trigger Usurper1
  Condition Trait Offensive_To_Nobles = 0
        and SettlementsTaken >= 7
        and Trait SonofKingPrince <= 0
-       and FactionIsLocal
+       and not IsFactionAIControlled
        and not FactionType teutonic_order
        and not FactionType venice
        and not FactionType milan
@@ -24378,7 +24378,7 @@ Trigger Ai_MoveFix1_Remove_Besieging
 Trigger Ai_MoveFix1_Remove_Battle
  WhenToTest PostBattle
 
- Condition not FactionIsLocal
+ Condition IsFactionAIControlled
        and Trait Ai_MoveFix = 1
 
  Affects Ai_MoveFix -1 Chance 100 
@@ -24975,7 +24975,7 @@ Trigger adoptedbecomesfutureregent
  Condition not Trait BiologicalSon = 1
        and not Trait BastardSon = 1
        and not Trait SonofKingPrince > 0
-       and I_TurnNumber > 1
+       and I_TurnNumber > 0
        and CharacterAge >= 45; no young rengents
        and not FactionType teutonic_order
        and not FactionType venice
@@ -28055,7 +28055,7 @@ Trigger UndisciplinedArmy_a
  Condition IsGeneral
        and not WonBattle
        and PercentageRoutedOffField >= 40
-       and FactionIsLocal
+       and not IsFactionAIControlled
 
  Affects BadDisciplinarian 1 Chance 25
 
@@ -33448,10 +33448,26 @@ Trigger family15
 
 ;********* PRINCESS TRAITS TRIGGERS *********
 ;------------------------------------------
+Trigger princess_base
+ WhenToTest CharacterComesOfAge
 
-;MOVED
-;Trigger princess_base
+ Condition AgentType = princess
+ 	and Trait RoyalLadyC < 1
 
+ Affects IAmPrincess 1 Chance 100 
+ Affects AgentPiety 1 Chance 100
+
+;------------------------------------------
+Trigger princess_base1
+ WhenToTest CharacterComesOfAge
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 1
+
+ Affects NaturalPrincess 1 Chance 33
+ Affects PassionateWoman 1 Chance 15
+ Affects PrettyWoman 1 Chance 5
+ Affects BraveWoman 1 Chance 3
 
 ;------------------------------------------
 Trigger princess_dad_was_ugly
@@ -33674,35 +33690,6 @@ Trigger princess_dad_was_nonauthoritarian
  Affects HarshWoman 1 Chance 25
 
 ;------------------------------------------
-
-;------------------------------------------
-;------------------------------------------
-;PRINCESS TRIGGERS ARE NOW HERE
-;------------------------------------------
-;------------------------------------------
-Trigger princess_base
- WhenToTest CharacterComesOfAge
-
- Condition AgentType = princess
- 	and Trait RoyalLadyC < 1
-
- Affects IAmPrincess 1 Chance 100 
- Affects AgentPiety 1 Chance 100
-
-;------------------------------------------
-Trigger princess_base1
- WhenToTest CharacterComesOfAge
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 1
-
- Affects NaturalPrincess 1 Chance 33
- Affects PassionateWoman 1 Chance 15
- Affects PrettyWoman 1 Chance 5
- Affects BraveWoman 1 Chance 3
-
-;------------------------------------------
-;------------------------------------------
 Trigger princess_base2
 WhenToTest CharacterComesOfAge
 
@@ -33829,11 +33816,20 @@ Affects VapidWoman 1 Chance 10
 Affects FairWoman 1 Chance 5
 
 ;------------------------------------------
-;------------------------------------------
+Trigger princess_Buildings_Castle
+WhenToTest CharacterComesOfAge
 
-;------------------------------------------
-;Trigger princess_Buildings_Castle
-;MOVED AFTER RLC TRIGGERS
+Condition AgentType = princess
+and Trait IAmPrincess = 1
+and FactionBuildingExists >= wooden_castle
+
+Affects BraveWoman 1 Chance 10
+Affects SpiritedWoman 1 Chance 10
+Affects UnchasteWoman 1 Chance 10
+Affects ColdWoman 1 Chance 5
+Affects FairWoman 1 Chance 5
+Affects HarshWoman 1 Chance 5
+
 ;------------------------------------------
 Trigger sitting_around_town_vnv_trigger2
 WhenToTest CharacterTurnEnd
@@ -33882,9 +33878,6 @@ and SettlementBuildingExists >= cathedral
 and RemainingMPPercentage = 100
 
 Affects FaithfulWoman 1 Chance 20 
-
-;------------------------------------------
-
 
 ;------------------------------------------
 Trigger princess_mom_was_charming_1
@@ -35838,7 +35831,7 @@ Trigger anti_heresy_ai_boost
  WhenToTest CharacterNearHeretic
 
  Condition AgentType = priest
-       and not FactionIsLocal
+       and IsFactionAIControlled
 
  Affects AI_anti_heretic_boost 1 Chance 60
 
@@ -36480,7 +36473,7 @@ Trigger troubadours_accepted_princess
 
  Condition AgentType = princess
        and I_EventCounter troubadours_event_accepted = 1
-       and Trait IAmPrincess = 1 ;gsthoed note: do we need this condition?
+       and Trait IAmPrincess = 1
        and DistanceCapital <= 50
 
  Affects FairWoman 1 Chance 50
@@ -37607,11 +37600,10 @@ Affects FaithfulWomanRLC 1 Chance 20
 Trigger RLC_troubadours_accepted_princess
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and AgentType = princess
+ Condition AgentType = princess
+       and I_EventCounter troubadours_event_accepted = 1
        and Trait RoyalLadyC = 1
        and DistanceCapital <= 50
-       and I_EventCounter troubadours_event_true = 2
 
  Affects FairWoman 1 Chance 50
  Affects FaithfulWomanRLC 1 Chance 50
@@ -37620,11 +37612,10 @@ Trigger RLC_troubadours_accepted_princess
 Trigger RLC_troubadours_refused_princess
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and AgentType = princess
+ Condition AgentType = princess
+       and I_EventCounter troubadours_event_declined = 1
        and Trait RoyalLadyC = 1
        and DistanceCapital <= 50
-       and I_EventCounter troubadours_event_true = 1
 
  Affects VapidWomanRLC 1 Chance 50
  
@@ -40327,7 +40318,7 @@ Trigger adoptedbecomesclaimant
  Condition not Trait BiologicalSon = 1
        and not Trait BastardSon = 1
        and not Trait SonofKingPrince > 0
-       and I_TurnNumber > 1
+       and I_TurnNumber > 0
        and CharacterAge < 45
        and not FactionType teutonic_order
        and not FactionType venice
@@ -40466,7 +40457,7 @@ Trigger adoptedbecomesclaimant_BYZ
  Condition not Trait BiologicalSon = 1
        and not Trait BastardSon = 1
        and not Trait SonofKingPrince > 0
-       and I_TurnNumber > 1
+       and I_TurnNumber > 0
        and FactionType byzantium; no regents for empires
 
  Affects FactionFutureUsurper 1 Chance 100
@@ -40520,7 +40511,7 @@ Trigger adoptedbecomesclaimant_HRE
        and not Trait BastardSon = 1
        and not Trait HRE_Elector_Prince >= 1
        and not Trait SonofKingPrince > 0
-       and I_TurnNumber > 1
+       and I_TurnNumber > 0
        and FactionType hre; no regents for empires
 
  Affects FactionFutureUsurper 1 Chance 100
@@ -42920,7 +42911,7 @@ Trigger Venice_battle_loss
           and FactionType venice
           and not WonBattle
           and BattleSuccess < crushing
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Venice_Signoria_Approval <= 1
 
     Affects Venice_Signoria_Approval -10 Chance 100
@@ -42933,7 +42924,7 @@ Trigger Venice_battle_crushing_loss
           and FactionType venice
           and not WonBattle
           and BattleSuccess = crushing
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Venice_Signoria_Approval <= 1
           
     Affects Venice_Signoria_Approval -15 Chance 100
@@ -42945,7 +42936,7 @@ Trigger Venice_Battle_RunsAway
  Condition IsGeneral
           and FactionType venice
           and Routs
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Venice_Signoria_Approval <= 1
           
     Affects Venice_Signoria_Approval -10 Chance 100
@@ -43504,7 +43495,7 @@ Trigger Genoa_battle_loss
           and FactionType milan
           and not WonBattle
           and BattleSuccess < crushing
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Genoa_Comune_Approval <= 1
 
     Affects Genoa_Comune_Approval -10 Chance 100
@@ -43517,7 +43508,7 @@ Trigger Genoa_battle_crushing_loss
           and FactionType milan
           and not WonBattle
           and BattleSuccess = crushing
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Genoa_Comune_Approval <= 1
 
     Affects Genoa_Comune_Approval -14 Chance 100
@@ -43529,7 +43520,7 @@ Trigger Genoa_Battle_RunsAway
  Condition IsGeneral
           and FactionType milan
           and Routs
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Genoa_Comune_Approval <= 1
           
     Affects Genoa_Comune_Approval -10 Chance 100
@@ -43984,8 +43975,7 @@ Trigger Novgorod_Veche_battle_loss
           and FactionType russia
           and not WonBattle
           and BattleSuccess < crushing
-          and FactionIsLocal
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Novgorod_Veche_Approval <= 1
           
     Affects Novgorod_Veche_Approval -10 Chance 100
@@ -43998,7 +43988,7 @@ Trigger Novgorod_Veche_battle_crushing_loss
           and FactionType russia
           and not WonBattle
           and BattleSuccess = crushing
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Novgorod_Veche_Approval <= 1
           
     Affects Novgorod_Veche_Approval -14 Chance 100
@@ -44010,7 +44000,7 @@ Trigger Novgorod_Veche_Battle_RunsAway
  Condition IsGeneral
           and FactionType russia
           and Routs
-          and FactionIsLocal
+          and not IsFactionAIControlled
           and not Trait Novgorod_Veche_Approval <= 1
           
     Affects Novgorod_Veche_Approval -10 Chance 100
@@ -44189,6 +44179,22 @@ Trigger Novgorod_civil_war_progress
 
  Affects Offensive_To_Nobles 1 Chance 15
 
+;------------------------------------------
+Trigger kingdoms_factionheir_turn0_catch
+ WhenToTest CharacterTurnEnd
+
+ Condition IsFactionHeir
+       and I_TurnNumber 0
+       and not FactionType teutonic_order
+       and not FactionType venice
+       and not FactionType milan
+       and not FactionType russia
+       and Trait Factionheir = 0
+       and Trait FactionFutureRegent = 0
+       and Trait FactionFutureUsurper = 0
+
+ Affects Factionheir 1 Chance 100
+ 
 ;===============================================================
 ;== REPUBLICS GOV TRIGGERS ENDS ==
 ;===============================================================
@@ -44309,11 +44315,6 @@ and not Trait FactionFutureUsurper > 0
 and I_TurnNumber > 0
 and SettlementsTaken >= 2
 and not FactionType slave
-and not FactionType teutonic_order
-and not FactionType venice
-and not FactionType milan
-and not FactionType russia
-and not FactionType byzantium
 
 Affects Civil_Unrest 1 Chance 25
 
@@ -44329,11 +44330,6 @@ and not Trait FactionFutureUsurper > 0
 and I_TurnNumber > 0
 and SettlementsTaken >= 4
 and not FactionType slave
-and not FactionType teutonic_order
-and not FactionType venice
-and not FactionType milan
-and not FactionType russia
-and not FactionType byzantium
 
 Affects Civil_Unrest 2 Chance 50
 
@@ -44348,53 +44344,9 @@ and not Trait FactionFutureUsurper > 0
 and I_TurnNumber > 0
 and SettlementsTaken >= 6
 and not FactionType slave
-and not FactionType teutonic_order
-and not FactionType venice
-and not FactionType milan
-and not FactionType russia
-and not FactionType byzantium
 
 Affects Civil_Unrest 3 Chance 75
-
-;----------------------------------------------------
-;BYZ SPECIAL
-;----------------------------------------------------
-Trigger Byz_Civil_Unrest_trigger1
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 7
-and Attribute Authority > 3
-and not Trait Civil_Unrest > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 2
-and FactionType byzantium
-
-Affects Civil_Unrest 1 Chance 25
-
-;----------------------------------------------------
-Trigger Byz_Civil_Unrest_trigger2
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 4
-and Attribute Authority > 0
-and not Trait Civil_Unrest > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 4
-and FactionType byzantium
-
-Affects Civil_Unrest 2 Chance 50
-
-;----------------------------------------------------
-Trigger Byz_Civil_Unrest_trigger3
-WhenToTest BecomesFactionLeader
-
-Condition Attribute Authority < 1
-and not Trait Civil_Unrest > 0
-and I_TurnNumber > 0
-and SettlementsTaken >= 6
-and FactionType byzantium
-
-Affects Civil_Unrest 3 Chance 75
+Affects Offensive_To_Nobles 1 Chance 25
 
 ;----------------------------------------------------
 ;----------------------------------------------------
@@ -44512,7 +44464,7 @@ Condition RansomType release
 and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 60
 
@@ -44524,7 +44476,7 @@ Condition RansomType release
 and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 75
 
@@ -44537,7 +44489,7 @@ and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 100 
 
@@ -44550,7 +44502,7 @@ and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 100 
 
@@ -44562,7 +44514,7 @@ Condition RansomType release
 and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 60
 
@@ -44574,7 +44526,7 @@ Condition RansomType release
 and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 75
 
@@ -44587,7 +44539,7 @@ and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 100 
 
@@ -44600,7 +44552,7 @@ and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 100 
 
@@ -44612,7 +44564,7 @@ Condition RansomType release
 and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 60
 
@@ -44624,7 +44576,7 @@ Condition RansomType release
 and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 75
 
@@ -44637,7 +44589,7 @@ and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 100 
 
@@ -44650,7 +44602,7 @@ and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Magnanimus_Ruler 1 Chance 100 
 
@@ -44675,7 +44627,7 @@ Condition RansomType execute
 and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 60
 
@@ -44687,7 +44639,7 @@ Condition RansomType execute
 and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 75
 
@@ -44700,7 +44652,7 @@ and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 100 
 
@@ -44713,7 +44665,7 @@ and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 1
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 100 
 
@@ -44725,7 +44677,7 @@ Condition RansomType execute
 and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 60
 Affects Offensive_To_Nobles 1 Chance 7
@@ -44738,7 +44690,7 @@ Condition RansomType execute
 and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 75
 Affects Offensive_To_Nobles 1 Chance 7
@@ -44752,7 +44704,7 @@ and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 100 
 
@@ -44765,7 +44717,7 @@ and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 2
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 100 
 
@@ -44777,7 +44729,7 @@ Condition RansomType execute
 and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 60
 Affects Offensive_To_Nobles 1 Chance 15
@@ -44790,7 +44742,7 @@ Condition RansomType execute
 and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 75
 Affects Offensive_To_Nobles 1 Chance 15
@@ -44804,7 +44756,7 @@ and NumCapturedSoldiers > 50
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 100 
 
@@ -44817,7 +44769,7 @@ and NumCapturedCharacters >= 1
 and TargetFactionType slave
 and IsFactionLeader
 and FactionLeaderTrait Civil_Unrest = 3
-and FactionIsLocal
+and not IsFactionAIControlled
 
 Affects Unforgiving_Ruler 1 Chance 100 
 
@@ -46084,7 +46036,7 @@ Trigger King_Finances1BFL
 
  Condition Trait FactionLeaderInDebt < 1
 	and I_EventCounter loan_refund = 1
-	and FactionIsLocal
+	and not IsFactionAIControlled
 
  Affects FactionLeaderInDebt 1 Chance 100
 
@@ -46094,7 +46046,7 @@ Trigger King_Finances2BFL
 
  Condition Trait FactionLeaderInDebt < 1
 	and I_EventCounter loan_refund = 2
-	and FactionIsLocal
+	and not IsFactionAIControlled
 
  Affects FactionLeaderInDebt 2 Chance 100
 
@@ -46104,7 +46056,7 @@ Trigger King_Finances3BFL
 
  Condition Trait FactionLeaderInDebt = 0
 	and I_EventCounter loan_refund = 3
-	and FactionIsLocal
+	and not IsFactionAIControlled
 
  Affects FactionLeaderInDebt 3 Chance 100
 
@@ -46114,7 +46066,7 @@ Trigger King_Finances4BFL
 
  Condition Trait FactionLeaderInDebt = 0
 	and I_EventCounter loan_refund = 4
-	and FactionIsLocal
+	and not IsFactionAIControlled
 
  Affects FactionLeaderInDebt 4 Chance 100
 
@@ -46124,7 +46076,7 @@ Trigger King_Finances5BFL
 
  Condition Trait FactionLeaderInDebt = 0
 	and I_EventCounter loan_refund = 5
-	and FactionIsLocal
+	and not IsFactionAIControlled
 
  Affects FactionLeaderInDebt 5 Chance 100
 

@@ -471,6 +471,12 @@ pool Crusaders_Path
 	unit Mutatawwi'a			exp 2 cost 60 replenish 0.08 - 0.25 max 3 initial 1 religions { islam } crusading
 	unit Turkomans Mercs		exp 0 cost 385 replenish 0.06 - 0.18 max 3 initial 0 religions { islam }
 	unit Armenians of Celicia 	exp 1 cost 450 replenish 0.06 - 0.13 max 1 initial 0 start_year 1180
+	unit Crusader Knights			exp 3 cost 360 replenish 0.05 - 0.1 max 1 initial 1 religions { catholic } end_year 1125
+	unit Crusader Sergeants			exp 3 cost 200 replenish 0.05 - 0.1 max 2 initial 1 religions { catholic } end_year 1125
+	unit Dismounted Crusader Knights	exp 3 cost 300 replenish 0.05 - 0.1 max 1 initial 1 religions { catholic } end_year 1125
+	unit Crusader Knights			exp 1 cost 330 replenish 0.05 - 0.1 max 1 initial 1 religions { catholic } crusading start_year 1126 end_year 1250
+	unit Crusader Sergeants			exp 1 cost 180 replenish 0.05 - 0.1 max 2 initial 1 religions { catholic } crusading start_year 1126 end_year 1250
+	unit Dismounted Crusader Knights	exp 1 cost 260 replenish 0.05 - 0.1 max 1 initial 1 religions { catholic } crusading start_year 1126 end_year 1250
 
 pool Levant
 	regions Edessa_Province Antioch_Province Aleppo_Province Tortosa_Province
@@ -485,6 +491,12 @@ pool Levant
 	unit Mutatawwi'a			exp 2 cost 60 replenish 0.08 - 0.25 max 3 initial 1 religions { islam } crusading
 	unit Turkomans Mercs			exp 0 cost 385 replenish 0.06 - 0.18 max 3 initial 0 religions { islam }
 	unit Armenians of Celicia		exp 1 cost 450 replenish 0.06 - 0.13 max 1 initial 0 start_year 1180
+	unit Armenian Infantry			exp 1 cost 300 replenish 0.04 - 0.1 max 1 initial 0 religions { catholic } start_year 1150
+	unit Armenian Archers			exp 1 cost 280 replenish 0.04 - 0.1 max 1 initial 0 religions { catholic } start_year 1150
+	unit Armenian Cavalry			exp 1 cost 695 replenish 0.05 - 0.1 max 1 initial 0 religions { catholic } start_year 1150
+	unit Crusader Knights			exp 3 cost 360 replenish 0.05 - 0.1 max 1 initial 1 religions { catholic } end_year 1125
+	unit Crusader Sergeants			exp 3 cost 200 replenish 0.05 - 0.1 max 2 initial 1 religions { catholic } end_year 1125
+	unit Dismounted Crusader Knights	exp 3 cost 300 replenish 0.05 - 0.1 max 1 initial 1 religions { catholic } end_year 1125
 
 pool Egypt
 	regions Gaza_Province Alexandria_Province Damietta_Province Cairo_Province Al_Aqaba_Province Tayma_Province
