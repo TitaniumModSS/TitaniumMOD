@@ -56,22 +56,32 @@ relations_worsened_thresholds
 ; normalise [target_faction_standing] [divisor]	--> for each affected faction standing, add (target_faction_standing - faction_standing)/divisor
 ; per_unit [value]				--> for each unit in the events army, add 'value' to the affected faction standings
 
-
+;gsthoed note: "Difficulty Levels" tweaked for hotseat compatibility
 ;######################## DIFFICULTY LEVELS ############################
 ; Adjust the AI relationships towards each faction based on difficulty level (AI factions have normal difficulty)
 ;------------------------------------------
 Trigger 0092_Update_Easy_Difficulty
     WhenToTest FactionTurnStart
 
-    Condition CampaignDifficulty = easy
+    Condition not IsFactionAIControlled
+    and I_EventCounter DifficultyLevel = 1
 
     FactionStanding exclude_factions { } normalise 1.0 50
 
 ;------------------------------------------
-Trigger 0093_Update_Normal_Difficulty
+Trigger 0093_Update_Normal_Difficulty_AIcontrolled
     WhenToTest FactionTurnStart
 
-    Condition CampaignDifficulty = medium
+    Condition IsFactionAIControlled
+
+    FactionStanding exclude_factions { } normalise 0.5 50
+
+;------------------------------------------
+Trigger 0093_Update_Normal_Difficulty_human
+    WhenToTest FactionTurnStart
+
+    Condition not IsFactionAIControlled
+    and I_EventCounter DifficultyLevel = 2
 
     FactionStanding exclude_factions { } normalise 0.5 50
 
@@ -79,7 +89,8 @@ Trigger 0093_Update_Normal_Difficulty
 Trigger 0094_Update_Hard_Difficulty
     WhenToTest FactionTurnStart
 
-    Condition CampaignDifficulty = hard
+    Condition not IsFactionAIControlled
+    and I_EventCounter DifficultyLevel = 3
 
     FactionStanding exclude_factions { } normalise 0.0 50
 
@@ -87,10 +98,10 @@ Trigger 0094_Update_Hard_Difficulty
 Trigger 0095_Update_Very_Hard_Difficulty
     WhenToTest FactionTurnStart
 
-    Condition CampaignDifficulty = very_hard
+    Condition not IsFactionAIControlled
+    and I_EventCounter DifficultyLevel = 4
 
     FactionStanding exclude_factions { } normalise -0.5 50
-
 
 ;################## BUILD RELIGIOUS STRUCTURES ############################
 ;=========== CATHOLIC =====================

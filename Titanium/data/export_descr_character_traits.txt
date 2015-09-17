@@ -34137,74 +34137,47 @@ Trigger admiralinit1
 ;=== Patriarch and Antipope Workaround ====
 ;== This is linked with campaign_script ===
 ;------------------------------------------
-Trigger priest_patriarch_0
+Trigger priest_patriarch
  WhenToTest CharacterTurnEnd
 
  Condition AgentType = priest
-       and Attribute Piety > 4
+       and Religion orthodox
        and I_EventCounter Patriarch = 0
-       and Trait PriestLevel = 0
-       and FactionReligion orthodox
+       and Attribute Piety > 4
+       and Trait PriestLevel < 3
 
+ Affects PriestLevel -3 Chance 100 
  Affects PriestLevel 3 Chance 100 
- 
-;------------------------------------------
-Trigger priest_patriarch_1
- WhenToTest CharacterTurnEnd
-
- Condition AgentType = priest
-       and Attribute Piety > 4
-       and I_EventCounter Patriarch = 0
-       and Trait PriestLevel = 1
-       and FactionReligion orthodox
-
- Affects PriestLevel 2 Chance 100 
- 
-;------------------------------------------
-Trigger priest_antipope_priest0
- WhenToTest CharacterTurnEnd
-
- Condition AgentType = priest
-       and CharFactionType byzantium
-       and Attribute Piety > 4
-       and I_EventCounter Antipope = 0
-       and Trait PriestLevel = 0
-       and FactionReligion catholic
-
- Affects PriestLevel 4 Chance 100 
 
 ;------------------------------------------
 Trigger priest_antipope_priest1
  WhenToTest CharacterTurnEnd
 
  Condition AgentType = priest
+       and Trait PriestLevel = 2
+       and I_EventCounter Ordain_Antipope = 1
        and Attribute Piety > 4
-       and I_EventCounter Antipope = 0
-       and Trait PriestLevel = 1
-       and FactionReligion catholic
 
- Affects PriestLevel 3 Chance 100 
+ Affects PriestLevel 2 Chance 100
+ Affects WasCardinal 1 Chance 100
 
 ;------------------------------------------
 Trigger priest_antipope_priest2
  WhenToTest CharacterTurnEnd
 
  Condition AgentType = priest
+       and I_EventCounter Ordain_Antipope = 1
        and Attribute Piety > 4
-       and I_EventCounter Antipope = 0
-       and Trait PriestLevel = 2
-       and FactionReligion catholic
+       and Trait PriestLevel < 2
 
- Affects PriestLevel 2 Chance 100
- Affects WasCardinal 1 Chance 100
+ Affects PriestLevel -2 Chance 100 
+ Affects PriestLevel 4 Chance 100 
 
 ;------------------------------------------
 Trigger priest_antipope_cardinalpromo
  WhenToTest CardinalPromoted
 
- Condition AgentType = priest
-       and Trait PriestLevel = 4
-       and FactionReligion catholic
+ Condition Trait PriestLevel = 4
 
  Affects WasCardinal 1 Chance 100
 
@@ -34212,7 +34185,8 @@ Trigger priest_antipope_cardinalpromo
 Trigger antipope_remove_priest
  WhenToTest CharacterTurnStart
 
- Condition Trait PriestLevel = 4
+ Condition AgentType = priest
+       and Trait PriestLevel = 4
        and not FactionExcommunicated
        and Trait WasCardinal = 0
   
@@ -34222,12 +34196,13 @@ Trigger antipope_remove_priest
 Trigger antipope_remove_cardinal
  WhenToTest CharacterTurnStart
 
- Condition Trait PriestLevel = 4
-       and not FactionExcommunicated
+ Condition AgentType = priest
        and Trait WasCardinal = 1
+       and not FactionExcommunicated
  
  Affects PriestLevel -2 Chance 100
  Affects WasCardinal -1 Chance 100
+
 
 ;========= Bishops Trait Workaround =======
 ;== This is linked with campaign_script ===
@@ -34238,7 +34213,7 @@ Trigger Priest_to_Bishop
  Condition AgentType = priest
        and I_EventCounter AppointBishop = 1
        and Trait PriestLevel = 0
- 
+  
  Affects PriestLevel 1 Chance 100
 
 ;------------------------------------------
@@ -34246,8 +34221,8 @@ Trigger Priest_stripped_Bishop
  WhenToTest CharacterTurnEnd
  
  Condition AgentType = priest
-       and I_EventCounter StripBishop = 1
        and Trait PriestLevel = 1
+       and I_EventCounter StripBishop = 1
  
  Affects PriestLevel -1 Chance 100
 
@@ -36419,9 +36394,8 @@ Trigger random_AI_birth1
 Trigger great_fair_accepted
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
+ Condition I_EventCounter great_fair_accepted = 1
        and DistanceCapital <= 50
-       and I_EventCounter great_fair_true = 2
 
  Affects GoodTrader 12 Chance 50
  Affects GoodMerchant 1 Chance 50
@@ -36430,9 +36404,8 @@ Trigger great_fair_accepted
 Trigger great_fair_refused
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
+ Condition I_EventCounter great_fair_declined = 1
        and DistanceCapital <= 50
-       and I_EventCounter great_fair_true = 1
 
  Affects BadTrader 1 Chance 75
  Affects ServesSelfMerchant 1 Chance 75
@@ -36441,9 +36414,8 @@ Trigger great_fair_refused
 Trigger great_tourney_accepted_leader
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and IsFactionLeader
-       and I_EventCounter great_tourney_true = 2
+ Condition IsFactionLeader
+       and I_EventCounter great_tourney_accepted = 1
 
  Affects StrategyChivalry 1 Chance 50
  Affects Energetic 1 Chance 50
@@ -36452,11 +36424,10 @@ Trigger great_tourney_accepted_leader
 Trigger great_tourney_accepted_general
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
+ Condition I_EventCounter great_tourney_accepted = 1
        and IsGeneral
        and not IsFactionLeader
        and DistanceCapital <= 50
-       and I_EventCounter great_tourney_true = 2
 
  Affects HaleAndHearty 3 Chance 50
  Affects ContentGeneral 1 Chance 100
@@ -36466,10 +36437,9 @@ Trigger great_tourney_accepted_general
 Trigger great_tourney_accepted_princess
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and AgentType = princess
+ Condition AgentType = princess
+       and I_EventCounter great_tourney_declined = 1
        and DistanceCapital <= 50
-       and I_EventCounter great_tourney_true = 2
 
  Affects FairWoman 1 Chance 50
 
@@ -36477,9 +36447,8 @@ Trigger great_tourney_accepted_princess
 Trigger great_tourney_refused_leader
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and IsFactionLeader
-       and I_EventCounter great_tourney_true = 1
+ Condition IsFactionLeader
+       and I_EventCounter great_tourney_declined = 1
 
  Affects Slothful 1 Chance 50
 
@@ -36487,59 +36456,32 @@ Trigger great_tourney_refused_leader
 Trigger great_tourney_refused_general
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
+ Condition I_EventCounter great_tourney_declined = 1
        and IsGeneral
        and not IsFactionLeader
        and Attribute Chivalry > 3
-       and I_EventCounter great_tourney_true = 1
 
  Affects DiscontentGeneral 1 Chance 50
-
-;------------ Great Councils ------------------
-Trigger great_council_accepted_leader
- WhenToTest CharacterTurnEnd
-
- Condition CharacterIsLocal
-       and IsFactionLeader
-       and I_EventCounter great_council_true = 2
-
- Affects ReligiousActivity 1 Chance 50
-
-;------------------------------------------
-Trigger great_council_accepted_priest
- WhenToTest CharacterTurnEnd
-
- Condition CharacterIsLocal
-       and AgentType = priest
-       and DistanceCapital <= 60
-       and I_EventCounter great_council_true = 2
-
- Affects Dogmatic 1 Chance 100
- Affects StrongFaith 1 Chance 25
 
 ;------------ Troubadours ------------------
 Trigger troubadours_accepted_leader
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and IsFactionLeader
-       and I_EventCounter troubadours_event_true = 2
+ Condition IsFactionLeader
+       and I_EventCounter troubadours_event_accepted = 1
 
  Affects StrategyChivalry 1 Chance 50
  Affects Poet 1 Chance 25
  Affects Cultured 1 Chance 25
 
 ;------------------------------------------
-
 Trigger troubadours_accepted_princess
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and AgentType = princess
-       and Trait IAmPrincess = 1
+ Condition AgentType = princess
+       and I_EventCounter troubadours_event_accepted = 1
+       and Trait IAmPrincess = 1 ;gsthoed note: do we need this condition?
        and DistanceCapital <= 50
-
-       and I_EventCounter troubadours_event_true = 2
 
  Affects FairWoman 1 Chance 50
  Affects FaithfulWoman 1 Chance 50
@@ -36548,27 +36490,43 @@ Trigger troubadours_accepted_princess
 Trigger troubadours_refused_leader
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and IsFactionLeader
-       and I_EventCounter troubadours_event_true = 1
+ Condition IsFactionLeader
+       and I_EventCounter troubadours_event_declined = 1
 
  Affects StrategyDread 1 Chance 50
  Affects Miserly 1 Chance 50
 
 ;------------------------------------------
-
 Trigger troubadours_refused_princess
  WhenToTest CharacterTurnEnd
 
- Condition CharacterIsLocal
-       and AgentType = princess
+ Condition AgentType = princess
+       and I_EventCounter troubadours_event_declined = 1
        and Trait IAmPrincess = 1
        and DistanceCapital <= 50
 
-       and I_EventCounter troubadours_event_true = 1
-
  Affects VapidWoman 1 Chance 50
  Affects BadPrincess 1 Chance 50
+
+;------------ Great Councils ------------------
+Trigger Great_Council_accepted_leader
+ WhenToTest CharacterTurnEnd
+
+ Condition IsFactionLeader
+       and I_EventCounter great_council_accepted = 1
+
+ Affects ReligiousActivity 1 Chance 50
+
+;------------------------------------------
+Trigger Great_Council_accepted_priest
+ WhenToTest CharacterTurnEnd
+
+ Condition AgentType = priest
+       and I_EventCounter great_council_accepted = 1
+       and DistanceCapital <= 60
+
+ Affects Dogmatic 1 Chance 100
+ Affects StrongFaith 1 Chance 25
 
 ;-------- AI Bad Traits Remove ------------
 ;------------------------------------------
