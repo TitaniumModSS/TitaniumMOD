@@ -4222,7 +4222,7 @@ army
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 unit		Toxotae					exp 0 armour 0 weapon_lvl 0
 
-;Smyrna Province Fort
+;Smyrna Province Fort (Marmaris)
 character	Ioannis Lampinos, general, male, age 29, x 280, y 111 
 army
 unit		Toxotae					exp 0 armour 0 weapon_lvl 0
@@ -4685,7 +4685,7 @@ army
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
-character	Shakir al_Fazari, diplomat, male, age 20, x 39, y 119 
+character	Shakir Al_Fazari, diplomat, male, age 20, x 39, y 119 
 traits NaturalDiplomatSkill 2 , GoodDiplomat 1 
 
 character	Hasan ibn_Farraj, spy, male, age 20, x 32, y 114 
@@ -6318,7 +6318,7 @@ settlement castle
 }
 
 ;Khiva
-character	Qudbaddin Mohammed, named character, male, leader, age 49, x 505, y 147, label kwarezm4leader 
+character	Qutbeddin Mohammed, named character, male, leader, age 49, x 505, y 147, label kwarezm4leader 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 1 , ReligionStarter 1 
 ancillaries foodtaster
 army
@@ -6346,7 +6346,7 @@ unit		ME Archer Militia			exp 1 armour 0 weapon_lvl 0
 unit		Daylami Light Infantry			exp 1 armour 0 weapon_lvl 0
 
 ;Gorgan
-character	Inal-Tegin Mohammed, named character, male, age 14, x 470, y 113 
+character	Inal_Tegin Mohammed, named character, male, age 14, x 470, y 113 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , PublicFaith 2 , NaturalMilitarySkill 1 , Intelligent 1 , GoodCavalryGeneral 1 , ReligionStarter 1 
 army
 unit		ME Bodyguard				exp 2 armour 0 weapon_lvl 0
@@ -6396,7 +6396,7 @@ character_record		Huma, 	female, age 21, alive, never_a_leader
 character_record		Yusuf Mohammed, 	male, age 10, alive, never_a_leader
 character_record		Il-Arslan, 	male, age 5, alive, never_a_leader
 
-relative 	Qudbaddin Mohammed,	Melek,	Atsiz Mohammed,	Anahita,	Inal-Tegin Mohammed,	Yusuf Mohammed,	end
+relative 	Qutbeddin Mohammed,	Melek,	Atsiz Mohammed,	Anahita,	Inal_Tegin Mohammed,	Yusuf Mohammed,	end
 relative 	Atsiz Mohammed,	Huma,	Il-Arslan,	end
 
 faction	slave, balanced smith
@@ -8512,6 +8512,73 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
+;Lyon
+character	sub_faction france, Benoit Hogolin, general, male, age 25, x 114, y 174 
+army
+unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+
+;Bern
+character	sub_faction hre, Friedrich Ruesdorf, named character, male, age 26, x 133, y 183 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
+army
+unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+
+;Bern Province Fort (Zurich)
+character	sub_faction hre, Friedrich von_Schweiz, general, male, age 21, x 140, y 185 
+army
+unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
+
+;Reval Province Fort (Turku)
+character	sub_faction denmark, Inge Skovgard, general, male, age 29, x 240, y 280 
+army
+unit		Viking Raiders				exp 2 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
+unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+
+;Prague
+character	sub_faction hre, Wilhelm von_Bohmen, named character, male, age 23, x 181, y 206 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
+army
+unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
+unit		Slav Mercenaries			exp 1 armour 0 weapon_lvl 0
+unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
+
 ;Arta
 character	sub_faction byzantium, Tiverios, general, male, age 20, x 229, y 126 
 army
@@ -8545,7 +8612,7 @@ unit		Bulgarian Brigands			exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 
-;Bengazi
+;Benghazi
 character	sub_faction egypt, Abdullah, general, male, age 35, x 223, y 76 
 army
 unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
@@ -8555,18 +8622,6 @@ unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
-
-;Lyon
-character	sub_faction france, Benoit Hogolin, general, male, age 25, x 114, y 174 
-army
-unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Tbilisi
 character	sub_faction turks, Fikret Resat, named character, male, age 37, x 401, y 148 
@@ -8669,63 +8724,8 @@ unit		Contaratoi				exp 1 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 1 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 1 armour 0 weapon_lvl 0
 
-;Bern
-character	sub_faction hre, Friedrich Ruesdorf, named character, male, age 26, x 133, y 183 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
-army
-unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-
-;Bern Province Fort (Zurich)
-character	sub_faction hre, Friedrich von_Schweiz, general, male, age 21, x 140, y 185 
-army
-unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
-
-;Reval Province Fort (Turku)
-character	sub_faction denmark, Inge Skovgard, general, male, age 29, x 240, y 280 
-army
-unit		Viking Raiders				exp 2 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
-unit		Viking Raiders				exp 1 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-
-;Prague
-character	sub_faction hre, Wilhelm von_Bohmen, named character, male, age 23, x 181, y 206 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
-army
-unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
-unit		Slav Mercenaries			exp 1 armour 0 weapon_lvl 0
-unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-
 ;Acre
-character	sub_faction turks, Bayezid el_Abbas, general, male, age 28, x 331, y 83 
+character	sub_faction egypt, A#mir Al_Basri, general, male, age 28, x 331, y 83 
 army
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
@@ -8743,8 +8743,10 @@ unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 ;unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Damascus
-character	sub_faction turks, Selim Celebi, general, male, age 20, x 343, y 90 
+character	sub_faction turks, Duqaq Al_Muluk, named character, male, age 25, x 343, y 90 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
 army
+unit		ME Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Bedouin Cavalry				exp 1 armour 0 weapon_lvl 0
@@ -8766,8 +8768,10 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Aleppo
-character	sub_faction turks, Orhan Bulent, general, male, age 34, x 347, y 109 
+character	sub_faction turks, Ridvan Al_Muluk, named character, male, age 21, x 347, y 109 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
 army
+unit		ME Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -9023,7 +9027,7 @@ unit		Crossbowmen				exp 0 armour 0 weapon_lvl 0
 unit		Crossbowmen				exp 0 armour 0 weapon_lvl 0
 
 ;Tunis
-character	sub_faction moors, Umar al_Shafi_i, general, male, age 35, x 151, y 109 
+character	sub_faction moors, Umar Al_Shafii, general, male, age 35, x 151, y 109 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -9035,7 +9039,7 @@ unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 
 ;Tarabulus, Maghreb
-character	sub_faction egypt, Marzuq al-Qasim, general, male, age 24, x 173, y 82 
+character	sub_faction egypt, Marzuq Al_Qasim, general, male, age 24, x 173, y 82 
 army
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -9275,7 +9279,7 @@ unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 
 ;Al-Mu'miniya
-character	sub_faction egypt, Husayn, general, male, age 27, x 435, y 29 
+character	sub_faction egypt, Husain, general, male, age 27, x 435, y 29 
 army
 unit		ME Peasant Archers			exp 1 armour 0 weapon_lvl 0
 unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
@@ -9307,7 +9311,7 @@ unit		Woodsmen				exp 0 armour 0 weapon_lvl 0
 unit		Kasogi					exp 0 armour 0 weapon_lvl 0
 
 ;Kutaisi
-character	sub_faction byzantium, David, general, male, age 17, x 379, y 149 
+character	sub_faction byzantium, David#, general, male, age 17, x 379, y 149 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , PublicFaith 1 , Intelligent 1 , GoodBuilder 3 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -9517,7 +9521,7 @@ unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 ;unit		ME Peasant Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Nizaris in Alamut
-character	sub_faction egypt, Al_Hadi Ibn_Nizar, named character, male, age 25, x 433, y 104 
+character	sub_faction egypt, Al_Hadi ibn_Nizar, named character, male, age 25, x 433, y 104 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 3 , Intelligent 1 , GoodCommander 3 , ReligionStarter 1 , Royal_Blood_Egyptian 1 
 army
 unit		ME Bodyguard				exp 2 armour 0 weapon_lvl 0
@@ -9543,12 +9547,17 @@ traits NaturalHereticSkill 1 , HereticPersuasion 1
 character	sub_faction egypt, Mujahid ibn_Ismail, heretic, male, age 32, x 433, y 100 
 traits NaturalHereticSkill 1 , HereticPersuasion 2 
 
-;Alamut Province Fort (Rudar)
+;Alamut Province Fort (Rudkhan)
 character	sub_faction egypt, Imran, general, male, age 21, x 429, y 109 
 army
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
+unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Saracen Militia				exp 1 armour 0 weapon_lvl 0
+unit		Saracen Militia				exp 1 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 1 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 1 armour 0 weapon_lvl 0
 
 ;Mashhad
 character	sub_faction kwarezm, Cakmak Pasa, named character, male, age 30, x 500, y 107 

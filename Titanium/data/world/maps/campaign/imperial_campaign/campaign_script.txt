@@ -1337,7 +1337,7 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled england
 		spawn_army
 		faction england
-		character	David Plantagenet, named character, age 20, x 83, y 220, family
+		character	David de_Normandie, named character, age 20, x 83, y 220, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_English 1 , BiologicalSon 1
 		unit	NE Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
@@ -1433,7 +1433,7 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled moors
 		spawn_army
 		faction moors
-		character	Ayyub al_Andalusi, named character, age 20, x 40, y 113, family
+		character	Ayyub Al_Andalusi, named character, age 20, x 40, y 113, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Moorish 1 , BiologicalSon 1
 		unit	ME Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
@@ -1521,7 +1521,7 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled kwarezm
 		spawn_army
 		faction kwarezm
-		character	Batu Mohammed, named character, age 20, x 449, y 93, family
+		character	Baha Mohammed, named character, age 20, x 449, y 93, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Kwarezm 1 , BiologicalSon 1
 		unit	ME Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
@@ -1539,7 +1539,7 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled england
 		spawn_army
 		faction england
-		character	David Plantagenet, named character, age 30, x 78, y 218, family
+		character	David de_Normandie, named character, age 30, x 78, y 218, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_English 1 , BiologicalSon 1
 		unit	NE Bodyguard	exp 1 armour 1 weapon_lvl 0
 		unit	Fyrd Spearmen	exp 1 armour 0 weapon_lvl 0
@@ -1720,7 +1720,7 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled moors
 		spawn_army
 		faction moors
-		character	Ayyub al_Andalusi, named character, age 30, x 44, y 119, family
+		character	Ayyub Al_Andalusi, named character, age 30, x 44, y 119, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 3 , ReligionStarter 1 , Royal_Blood_Moorish 1 , BiologicalSon 1
 		unit	ME Bodyguard	exp 1 armour 1 weapon_lvl 0
 		unit	ME Spear Militia	exp 1 armour 0 weapon_lvl 0
@@ -1885,7 +1885,7 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled kwarezm
 		spawn_army
 		faction kwarezm
-		character	Batu Mohammed, named character, age 30, x 499, y 93, family
+		character	Baha Mohammed, named character, age 30, x 499, y 93, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Kwarezm 1 , BiologicalSon 1
 		unit	ME Bodyguard	exp 1 armour 1 weapon_lvl 0
 		unit	Turkomans	exp 1 armour 0 weapon_lvl 0
@@ -2369,7 +2369,7 @@ monitor_event PreFactionTurnStart FactionType slave
 	if I_IsFactionAIControlled england
 		spawn_army
 			faction england
-			character	Fulk Plantagenet, named character, age 30, x 78, y 218, family
+			character	Fulk de_Normandie, named character, age 30, x 78, y 218, family
 			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_English 1 , BiologicalSon 1
 			unit	NE Bodyguard		exp 1 armour 1 weapon_lvl 0
 			unit	Fyrd Spearmen		exp 1 armour 0 weapon_lvl 0
@@ -2524,7 +2524,7 @@ monitor_event PreFactionTurnStart FactionType slave
 	if I_IsFactionAIControlled moors
 		spawn_army
 			faction moors
-			character	Bakr al_Andalusi, named character, age 30, x 44, y 119, family
+			character	Bakr Al_Andalusi, named character, age 30, x 44, y 119, family
 			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Moorish 1 , BiologicalSon 1
 			unit	ME Bodyguard		exp 1 armour 1 weapon_lvl 0
 			unit	ME Spear Militia	exp 1 armour 0 weapon_lvl 0
@@ -9260,7 +9260,7 @@ monitor_event EventCounter EventCounterType mongols_invasion
 
 	spawn_army
 		faction mongols
-		character	Chagatai, named character, age 26, x 505, y 145, family
+		character	Chaghatai, named character, age 26, x 505, y 145, family
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Genocide 2 , BattleDread 2 , StrategyDread 1 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
