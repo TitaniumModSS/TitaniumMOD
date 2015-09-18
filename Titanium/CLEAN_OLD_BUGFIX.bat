@@ -327,6 +327,8 @@ del data\models_strat\textures\catholic_priest_ireland.tga
 del data\models_strat\textures\catholic_priest_ireland.tga.dds
 del data\models_strat\textures\late_general_ireland_strat.tga
 del data\models_strat\textures\late_general_ireland_strat.tga.dds
+del data\models_strat\textures\middle_eastern_sultan_novgorod.tga
+del data\models_strat\textures\middle_eastern_sultan_novgorod.tga.dds
 del data\models_strat\textures\northen_european_merchant_ireland.tga
 del data\models_strat\textures\northen_european_merchant_ireland.tga.dds
 del data\models_strat\textures\orthodox_bishop_ireland.tga
@@ -351,6 +353,14 @@ del data\models_strat\textures\spanish_general_spain.tga
 del data\models_strat\textures\spanish_general_spain.tga.dds
 del data\models_strat\textures\spy_kwarezm.tga
 del data\models_strat\textures\spy_kwarezm.tga.dds
+del data\unit_models\attachmentsets\final danish_denmark_diff.dds
+del data\unit_models\attachmentsets\final asian_timurids_diff.dds
+del data\unit_models\attachmentsets\final asian_timurids_norm.dds
+del data\unit_models\_generals_and_captains\islamic_captain\textures\islamic_captain_timurids.dds
+del data\unit_models\_generals_and_captains\islamic_general\textures\islamic_general_timurids.dds
+del data\unit_models\_units\as_lamellar_heavy\textures\as_lamellar_timurids.dds
+del data\unit_models\_units\banzai\banzai_mount_chariot_britons_lod0_merged_animby_med_elephant_die_forward_2_modified_modified.ms3d
+del data\unit_models\_units\banzai\banzai_mount_war_wagon_lod0.ms3d
 del data\sounds\events.idx
 del data\sounds\events.dat
 del data\world\maps\base\map.rwm

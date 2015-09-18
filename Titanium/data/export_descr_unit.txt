@@ -1888,9 +1888,9 @@ stat_food        60, 300
 stat_cost        1, 595, 595, 120, 95, 895, 4, 130
 armour_ug_levels 5
 armour_ug_models alan_aldary
-ownership        mongols, cumans, slave;, timurids
-era 0            mongols, cumans;, timurids
-era 1            mongols, cumans;, timurids
+ownership        mongols, cumans, slave;; , timurids
+era 0            mongols, cumans;; , timurids
+era 1            mongols, cumans;; , timurids
 recruit_priority_offset    15
 
 
@@ -2276,10 +2276,10 @@ stat_food        60, 300
 stat_cost        1, 195, 60, 65, 50, 195, 4, 50
 armour_ug_levels 0, 1, 4
 armour_ug_models Peasant_Archers, Peasant_Archers_ug1, Peasant_Archers_ug2
-ownership        england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, slave
-era 0            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem
-era 1            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem
-era 2            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem
+ownership        england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily, slave
+era 0            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+era 1            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+era 2            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
 recruit_priority_offset    -20 
 
 
@@ -2311,10 +2311,10 @@ stat_food        60, 300
 stat_cost        1, 195, 60, 65, 50, 195, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models S_Peasant_Archers, S_Peasant_Archers_ug1
-ownership        sicily, hungary, byzantium, slave
-era 0            sicily, hungary, byzantium
-era 1            sicily, hungary, byzantium
-era 2            sicily, hungary, byzantium
+ownership        byzantium, slave
+era 0            byzantium
+era 1            byzantium
+era 2            byzantium
 recruit_priority_offset    -20 
 
 
@@ -2852,10 +2852,10 @@ stat_food        60, 300
 stat_cost        1, 195, 60, 65, 50, 195, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models EE_Peasant_Archers, EE_Peasant_Archers_ug1
-ownership        poland, russia, kievan_rus, lithuania, cumans, slave
-era 0            poland, russia, kievan_rus, lithuania, cumans
-era 1            poland, russia, kievan_rus, lithuania, cumans
-era 2            poland, russia, kievan_rus, lithuania, cumans
+ownership        poland, russia, kievan_rus, lithuania, cumans, hungary, slave
+era 0            poland, russia, kievan_rus, lithuania, cumans, hungary
+era 1            poland, russia, kievan_rus, lithuania, cumans, hungary
+era 2            poland, russia, kievan_rus, lithuania, cumans, hungary
 recruit_priority_offset    -20 
 
 
@@ -3255,8 +3255,8 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 
-armour_ug_levels 0, 1;, 4
-armour_ug_models town_militia, town_militia_ug1;, town_militia_ug2
+armour_ug_levels 0, 1;; , 4
+armour_ug_models town_militia, town_militia_ug1;; , town_militia_ug2
 ownership        england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, teutonic_order, slave
 era 0            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
 era 1            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
@@ -3294,8 +3294,8 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 
-armour_ug_levels 0, 1;, 4
-armour_ug_models se_town_militia, se_town_militia_ug1;, se_town_militia_ug2
+armour_ug_levels 0, 1;; , 4
+armour_ug_models se_town_militia, se_town_militia_ug1;; , se_town_militia_ug2
 ownership        sicily, byzantium, slave
 era 0            sicily, byzantium
 era 1            sicily, byzantium
@@ -3577,8 +3577,8 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 160, 4, 20
 
-armour_ug_levels 0, 1;, 4
-armour_ug_models ee_town_militia, ee_town_militia_ug1;, ee_town_militia_ug2
+armour_ug_levels 0, 1;; , 4
+armour_ug_models ee_town_militia, ee_town_militia_ug1;; , ee_town_militia_ug2
 ownership        poland, russia, kievan_rus, hungary, lithuania, cumans, slave
 era 0            poland, russia, kievan_rus, hungary, lithuania, cumans
 era 1            poland, russia, kievan_rus, hungary, lithuania, cumans
@@ -5022,7 +5022,7 @@ stat_pri         9, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  5, 7, 0, metal ;, +1 slung shield
+stat_pri_armour  5, 7, 0, metal ;; , +1 slung shield
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      0, -2, 1, 0 
@@ -5737,10 +5737,10 @@ stat_food        60, 300
 stat_cost        1, 585, 585, 120, 95, 970, 4, 170
 armour_ug_levels 5, 9
 armour_ug_models alan_druzhina_aldarov, alan_druzhina_aldarov
-ownership        all ; slave, mongols, cumans;, timurids
-era 0            mongols, cumans;, timurids
-era 1            mongols, cumans;, timurids
-era 2            mongols, cumans;, timurids
+ownership        all ; slave, mongols, cumans;; , timurids
+era 0            mongols, cumans;; , timurids
+era 1            mongols, cumans;; , timurids
+era 2            mongols, cumans;; , timurids
 recruit_priority_offset 0
 
 
@@ -7004,8 +7004,8 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 
-armour_ug_levels 0, 1;, 4
-armour_ug_models me_town_militia, me_town_militia_ug1;, me_town_militia_ug2
+armour_ug_levels 0, 1;; , 4
+armour_ug_models me_town_militia, me_town_militia_ug1;; , me_town_militia_ug2
 ownership        moors, egypt, turks, mongols, kwarezm, timurids, slave
 era 0            moors, egypt, turks, mongols, kwarezm, timurids
 era 1            moors, egypt, turks, mongols, kwarezm, timurids
@@ -7216,7 +7216,7 @@ stat_food        60, 300
 stat_cost        1, 165, 115, 75, 60, 175, 4, 70
 armour_ug_levels 0
 armour_ug_models mon_kashtim
-ownership        mongols, slave;, timurids
+ownership        mongols, slave;; , timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -7667,7 +7667,7 @@ stat_food        60, 300
 stat_cost        1, 890, 375, 120, 95, 1080, 4, 140 ; 1, 560, 185, 120, 95, 670, 4, 140
 armour_ug_levels 0
 armour_ug_models mon_hoshiga
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -7704,7 +7704,7 @@ stat_food        60, 300
 stat_cost        1, 925, 565, 120, 95, 1215, 4, 140 ; 1, 535, 225, 120, 95, 690, 4, 140
 armour_ug_levels 6
 armour_ug_models mon_hoshuchi
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -7739,10 +7739,10 @@ stat_food        60, 300
 stat_cost        1, 950, 500, 120, 95, 1625, 4, 220 ; 5, 805, 185, 120, 95, 805, 4, 220
 armour_ug_levels 9, 23
 armour_ug_models mon_horchi_cav, mon_horchi_cav
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 0            mongols
 era 1            mongols
-era 2            mongols;, timurids
+era 2            mongols;; , timurids
 recruit_priority_offset    25
 
 
@@ -7776,9 +7776,9 @@ stat_food        60, 300
 stat_cost        1, 955, 565, 130, 100, 1605, 4, 210 ; 4, 1065, 225, 130, 100, 1065, 4, 210
 armour_ug_levels 9, 23
 armour_ug_models mon_torhaguti_cav, mon_torhaguti_cav
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 1            mongols
-era 2            mongols;, timurids
+era 2            mongols;; , timurids
 recruit_priority_offset    30
 
 
@@ -7811,10 +7811,10 @@ stat_food        60, 300
 stat_cost        1, 1140, 500, 150, 95, 1345, 4, 140
 armour_ug_levels 3
 armour_ug_models mon_lubchiten
-ownership        slave, mongols;, timurids
-era 0            mongols;, timurids
-era 1            mongols;, timurids
-era 2            mongols;, timurids
+ownership        slave, mongols;; , timurids
+era 0            mongols;; , timurids
+era 1            mongols;; , timurids
+era 2            mongols;; , timurids
 recruit_priority_offset 0
 
 
@@ -7844,7 +7844,7 @@ stat_food        60, 300
 stat_cost        1, 550, 225, 65, 50, 575, 4, 70 ; 1, 455, 150, 65, 50, 455, 4, 70
 armour_ug_levels 0
 armour_ug_models mon_habutu_inf
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -7878,7 +7878,7 @@ stat_food        60, 300
 stat_cost        1, 300, 225, 75, 55, 455, 4, 140 ; 1, 475, 150, 75, 55, 475, 4, 140
 armour_ug_levels 9, 23
 armour_ug_models mon_torhaguti_inf, mon_torhaguti_inf
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -7911,10 +7911,10 @@ stat_food        60, 300
 stat_cost        1, 290, 120, 65, 50, 300, 4, 60
 armour_ug_levels 1
 armour_ug_models sib_junior_militia
-ownership        slave, mongols;, timurids
-era 0            mongols;, timurids
-era 1            mongols;, timurids
-era 2            mongols;, timurids
+ownership        slave, mongols;; , timurids
+era 0            mongols;; , timurids
+era 1            mongols;; , timurids
+era 2            mongols;; , timurids
 recruit_priority_offset 0
 
 
@@ -7949,10 +7949,10 @@ stat_food        60, 300
 stat_cost        1, 510, 0, 60, 50, 510, 1, 105
 armour_ug_levels 14, 23
 armour_ug_models mon_keshikten, mon_keshikten
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 0            mongols
 era 1            mongols
-era 2            mongols;, timurids
+era 2            mongols;; , timurids
 recruit_priority_offset    25
 
 
@@ -7982,10 +7982,10 @@ stat_food        60, 300
 stat_cost        1, 450, 250, 65, 50, 740, 4, 70
 armour_ug_levels 5, 9
 armour_ug_models mon_mergen, mon_mergen
-ownership        slave, mongols;, timurids
-era 0            mongols;, timurids
-era 1            mongols;, timurids
-era 2            mongols;, timurids
+ownership        slave, mongols;; , timurids
+era 0            mongols;; , timurids
+era 1            mongols;; , timurids
+era 2            mongols;; , timurids
 recruit_priority_offset 0
 
 
@@ -8052,10 +8052,10 @@ stat_food        60, 300
 stat_cost        1, 370, 200, 90, 70, 610, 4, 170 ; 4, 585, 150, 90, 70, 585, 4, 170
 armour_ug_levels 9, 23
 armour_ug_models mon_horchi_inf, mon_horchi_inf
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 0            mongols
 era 1            mongols
-era 2            mongols;, timurids
+era 2            mongols;; , timurids
 recruit_priority_offset    20
 
 
@@ -8404,9 +8404,9 @@ stat_food        60, 300
 stat_cost        4, 1500, 250, 90, 70, 1100, 4, 270
 armour_ug_levels 1
 armour_ug_models Mongol_Rocket_Launcher_Crew
-ownership        mongols;, timurids
+ownership        mongols;; , timurids
 era 1            mongols
-era 2            mongols;, timurids
+era 2            mongols;; , timurids
 recruit_priority_offset    -10 
 
 
@@ -10339,10 +10339,10 @@ stat_food        60, 300
 stat_cost        1, 1160, 500, 150, 95, 1390, 4, 140
 armour_ug_levels 5, 9
 armour_ug_models mon_nukeri, mon_nukeri
-ownership        slave, mongols;, timurids
-era 0            mongols;, timurids
-era 1            mongols;, timurids
-era 2            mongols;, timurids
+ownership        slave, mongols;; , timurids
+era 0            mongols;; , timurids
+era 1            mongols;; , timurids
+era 2            mongols;; , timurids
 recruit_priority_offset 0
  
  
@@ -10557,7 +10557,7 @@ stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  7, 8, 5, metal ;, armor +1 for full helm and to compensate for no scope for metallurgy improvements 
+stat_pri_armour  7, 8, 5, metal ;; , armor +1 for full helm and to compensate for no scope for metallurgy improvements 
 ;stat_armour_ex   7, 9, 0, 0, 5, 8, 8, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        6
@@ -12912,10 +12912,10 @@ stat_food        60, 300
 stat_cost        1, 235, 135, 85, 65, 275, 4, 50
 armour_ug_levels 5
 armour_ug_models sib_senior_militia
-ownership        slave, mongols;, timurids
-era 0            mongols;, timurids
-era 1            mongols;, timurids
-era 2            mongols;, timurids
+ownership        slave, mongols;; , timurids
+era 0            mongols;; , timurids
+era 1            mongols;; , timurids
+era 2            mongols;; , timurids
 recruit_priority_offset 0
 
 

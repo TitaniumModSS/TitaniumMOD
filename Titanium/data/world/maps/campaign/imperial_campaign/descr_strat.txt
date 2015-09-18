@@ -26,7 +26,7 @@ playable
 	spain
 	hungary
 	aragon
-	lithuania
+	lithuania;	OBOTRITES
 	kievan_rus
 	timurids;	ABBASIDS
 	norway
@@ -5409,7 +5409,7 @@ settlement castle
 
 ;Lubeck
 character	Henryk, named character, male, leader, age 42, x 155, y 233 
-traits Factionleader 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 3 , BattleChivalry 1 , ReligionStarter 1 , Catholic 1 
+traits Factionleader 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 3 , BattleChivalry 1 , ReligionStarter 1 , Catholic 3 
 army
 unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
@@ -5425,7 +5425,7 @@ unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
 ;Stettin
 character	Izbor, named character, male, heir, age 39, x 181, y 230 
-traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 1 , ReligionStarter 1 , PublicFaith 3 , Catholic 1 
+traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 1 , ReligionStarter 1 , PublicFaith 3 , Catholic 2 , Royal_Blood_Lithuanian 1 
 army
 unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
@@ -5447,7 +5447,7 @@ character	Jovirdas, spy, male, age 28, x 157, y 232
 traits NaturalSpySkill 2 
 
 character	Margiris, priest, male, age 34, x 156, y 232 
-traits NaturalPriestSkill 1 
+traits NaturalPriestSkill 1 , PaganPriest 1 
 
 character_record		Godzimir, 	male, age 70, dead 34, past_leader
 character_record		Dzieslawa, 	female, age 67, dead 0, never_a_leader
@@ -5655,24 +5655,28 @@ denari	15000
 denari_kings_purse	2200
 settlement
 {
-	level city
+	level large_city
 	region Baghdad_Province
 
 	year_founded 0
-	population 10000
+	population 12000
 	plan_set default_set
 	faction_creator timurids
 	building
 	{
-		type core_building stone_wall
+		type core_building large_stone_wall
 	}
 	building
 	{
-		type barracks town_guard
+		type barracks militia_drill_square
 	}
 	building
 	{
-		type temple_muslim masjid
+		type smith blacksmith
+	}
+	building
+	{
+		type temple_muslim jama
 	}
 	building
 	{
@@ -5680,11 +5684,27 @@ settlement
 	}
 	building
 	{
-		type market corn_exchange
+		type market great_market
 	}
 	building
 	{
-		type hinterland_roads roads
+		type education_university university
+	}
+	building
+	{
+		type education_libraries library
+	}
+	building
+	{
+		type taverns tavern
+	}
+	building
+	{
+		type city_hall council_chambers
+	}
+	building
+	{
+		type hinterland_roads paved_roads
 	}
 }
 
@@ -5703,7 +5723,15 @@ settlement
 	}
 	building
 	{
+		type barracks town_watch
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type market corn_exchange
 	}
 }
 
@@ -5750,13 +5778,19 @@ traits NaturalSpySkill 2
 character	Sa#id ibn_Qasim, diplomat, male, age 26, x 394, y 94 
 traits NaturalDiplomatSkill 1 
 
+character	Arwa Al_Abbasi, princess, female, age 24, x 396, y 88 
+traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 , Princess_Royal_Blood_Timurid 1 
+
+character	Ganiya Al_Abbasi, princess, female, age 18, x 396, y 88 
+traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 2 , Princess_Royal_Blood_Timurid 1 
+
 character_record		Al_Mustarshid, 	male, age 8, alive, current_heir
 character_record		Ishraq, 	female, age 29, alive, never_a_leader
 character_record		Maymuna, 	female, age 41, alive, never_a_leader
 character_record		Al_Muqtadi Al_Abbasi, 	male, age 44, dead 6, past_leader
 
 relative 	Al_Mustazhir Al_Abbasi,	Ishraq,	Al_Mustarshid,	end
-relative 	Al_Muqtadi Al_Abbasi,	Maymuna,	Al_Mustazhir Al_Abbasi,	end
+relative 	Al_Muqtadi Al_Abbasi,	Maymuna,	Arwa Al_Abbasi,	Al_Mustazhir Al_Abbasi,	Ganiya Al_Abbasi,	end
 
 faction	norway, sailor smith
 ai_label		catholic
@@ -9892,7 +9926,7 @@ faction_standings	turks,			-0.20	kievan_rus, teutonic_order
 faction_standings	turks,			-0.40	cumans, egypt
 faction_standings	turks,			-0.70	jerusalem
 faction_standings	turks,			-0.80	byzantium, papal_states
-faction_standings	turks,			-1.00	slave, mongols;, timurids
+faction_standings	turks,			-1.00	slave, mongols
 faction_standings	france,			0.80	scotland
 faction_standings	france,			-0.20	spain, milan, aragon
 faction_standings	france,			-0.40	hre
@@ -9974,7 +10008,7 @@ faction_standings	teutonic_order,		-1.00	slave
 faction_standings	timurids,		-0.20	byzantium, papal_states
 faction_standings	timurids,		-0.50	jerusalem
 faction_standings	timurids,		0.60	turks, kwarezm, moors
-faction_standings	timurids,		-1.00	slave, egypt, mongols;, turks, kwarezm
+faction_standings	timurids,		-1.00	slave, egypt, mongols
 faction_standings	norway,			0.40	denmark
 faction_standings	norway,			0.20	papal_states
 faction_standings	norway,			-0.20	russia, england, hre, scotland
@@ -9986,7 +10020,7 @@ faction_standings	jerusalem,		-0.90	egypt
 faction_standings	kwarezm,		0.40	turks, timurids
 faction_standings	kwarezm,		0.10	egypt
 faction_standings	kwarezm,		-0.40	cumans
-faction_standings	kwarezm,		-1.00	mongols, slave;, timurids
+faction_standings	kwarezm,		-1.00	mongols, slave
 faction_standings	slave,			-0.60	papal_states
 faction_standings	slave,			-1.00	hungary, spain, aragon, moors, lithuania, russia, kwarezm, norway, byzantium, teutonic_order, kievan_rus, timurids, egypt, denmark, cumans, scotland, sicily, poland, milan, england, hre, venice, portugal, turks, mongols, france
 
@@ -10000,10 +10034,8 @@ faction_relationships 	jerusalem, allied_to 	venice, milan, papal_states, france
 
 faction_relationships 	egypt, at_war_with 	jerusalem, turks, timurids
 
-;faction_relationships 	turks, allied_to 	kwarezm
 faction_relationships 	turks, allied_to 	kwarezm, timurids
 faction_relationships 	kwarezm, protectorate_of 	turks
-faction_relationships 	timurids, protectorate_of 	turks
 
 faction_relationships 	russia, allied_to 	kievan_rus
 faction_relationships 	kievan_rus, allied_to 	russia
@@ -10026,7 +10058,7 @@ faction_relationships 	egypt, at_war_with 	slave, timurids
 faction_relationships 	scotland, at_war_with 	slave
 faction_relationships 	cumans, at_war_with 	slave, mongols
 faction_relationships 	mongols, at_war_with 	kievan_rus, kwarezm, timurids, turks, poland, slave, cumans, russia, hungary, byzantium
-faction_relationships 	turks, at_war_with 	mongols, slave;, timurids
+faction_relationships 	turks, at_war_with 	mongols, slave
 faction_relationships 	france, at_war_with 	slave
 faction_relationships 	hre, at_war_with 	slave
 faction_relationships 	england, at_war_with 	slave
@@ -10041,10 +10073,11 @@ faction_relationships 	aragon, at_war_with 	slave
 faction_relationships 	lithuania, at_war_with 	slave
 faction_relationships 	kievan_rus, at_war_with 	slave, mongols
 faction_relationships 	teutonic_order, at_war_with 	slave
-faction_relationships 	timurids, at_war_with 	slave, egypt, mongols;, kwarezm, turks, 
+faction_relationships 	timurids, at_war_with 	slave, egypt, mongols
+faction_relationships 	timurids, allied_to	turks
 faction_relationships 	norway, at_war_with 	slave
 faction_relationships 	jerusalem, at_war_with 	slave
-faction_relationships 	kwarezm, at_war_with 	slave, mongols;, timurids
+faction_relationships 	kwarezm, at_war_with 	slave, mongols
 faction_relationships 	slave, at_war_with 	hungary, spain, aragon, byzantium, lithuania, russia, moors, jerusalem, norway, venice, kwarezm, teutonic_order, kievan_rus, timurids, denmark, papal_states, scotland, egypt, sicily, poland, milan, hre, france, portugal, england, mongols, cumans, turks
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

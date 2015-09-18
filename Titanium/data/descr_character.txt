@@ -14,7 +14,8 @@ faction			lithuania
 dictionary		1
 strat_model		aztec_general
 strat_model		aztec_general					; heir
-strat_model		northern_generic_king					; leader
+strat_model		aztec_general					; pagan leader
+strat_model		northern_generic_king					; catholic leader
 battle_model	Aztec_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
@@ -201,7 +202,7 @@ dictionary		2
 strat_model		aztec_general
 strat_model		aztec_general					; heir
 strat_model		aztec_general					; leader
-battle_model	Northern_Captain
+battle_model	andronicus
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			spain
@@ -1204,11 +1205,12 @@ starting_action_points	140
 
 faction			lithuania
 dictionary		2
-strat_model		pagan_priest						; default model
+strat_model		catholic_priest						; default model
+strat_model		catholic_bishop						; medium level priest
+strat_model		catholic_cardinal					; advanced priest
 strat_model		pagan_priest						; placeholder
-strat_model		pagan_priest						; placeholder
-strat_model		pagan_priest						; placeholder
-strat_model		pagan_high_priest					; advanced priest
+strat_model		pagan_priest						; default pagan model
+strat_model		pagan_high_priest					; advanced pagan priest
 
 faction			jerusalem
 dictionary		2
@@ -1284,19 +1286,21 @@ strat_model		catholic_cardinal					; advanced priest
 
 faction			cumans
 dictionary		2
-strat_model		pagan_priest						; default model
 strat_model		pagan_priest						; placeholder
 strat_model		pagan_priest						; placeholder
 strat_model		pagan_priest						; placeholder
-strat_model		pagan_high_priest					; advanced priest
+strat_model		pagan_priest						; placeholder
+strat_model		pagan_priest						; default pagan model
+strat_model		pagan_high_priest					; advanced pagan priest
 
 faction			mongols
 dictionary		2
-strat_model		pagan_priest						; default model
 strat_model		pagan_priest						; placeholder
 strat_model		pagan_priest						; placeholder
 strat_model		pagan_priest						; placeholder
-strat_model		pagan_high_priest					; advanced priest
+strat_model		pagan_priest						; placeholder
+strat_model		pagan_priest						; default pagan model
+strat_model		pagan_high_priest					; advanced pagan priest
 
 faction			turks
 dictionary		2

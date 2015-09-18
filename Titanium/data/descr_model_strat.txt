@@ -432,6 +432,7 @@ texture				sicily, models_strat/textures/catholic_priest_sicily.tga
 texture				poland, models_strat/textures/catholic_priest_poland.tga
 texture				hungary, models_strat/textures/catholic_priest_hungary.tga
 texture				portugal, models_strat/textures/mtw_catholic_priest_portugal.tga
+texture				lithuania, models_strat/textures/catholic_priest_lithuania.tga
 model_flexi_m			models_strat/catholic_priest.cas, max
 shadow_model_flexi		models_strat/shadow_staff.CAS, max
 
@@ -456,6 +457,7 @@ texture				sicily, models_strat/textures/mtw_catholic_bishop_sicily.tga
 texture				poland, models_strat/textures/mtw_catholic_bishop_poland.tga
 texture				hungary, models_strat/textures/mtw_catholic_bishop_hungary.tga
 texture				portugal, models_strat/textures/mtw_catholic_bishop_portugal.tga
+texture				lithuania, models_strat/textures/mtw_catholic_bishop_lithuania.tga
 model_flexi_m			models_strat/catholic_bishop.cas, max
 shadow_model_flexi		models_strat/shadow_staff.CAS, max
 
@@ -480,6 +482,7 @@ texture				sicily, models_strat/textures/mtw_catholic_cardinal_sicily.tga
 texture				poland, models_strat/textures/mtw_catholic_cardinal_poland.tga
 texture				hungary, models_strat/textures/mtw_catholic_cardinal_hungary.tga
 texture				portugal, models_strat/textures/mtw_catholic_cardinal_portugal.tga
+texture				lithuania, models_strat/textures/mtw_catholic_cardinal_lithuania.tga
 model_flexi_m			models_strat/catholic_cardinal.cas, max
 shadow_model_flexi		models_strat/shadow_staff.CAS, max
 
@@ -635,7 +638,8 @@ skeleton			strat_named_with_army
 scale				0.7
 indiv_range			40
 texture				cumans, models_strat/textures/aztec_general_cumans.tga
-texture				lithuania, models_strat/textures/aztec_general_lithuania.tga
+;texture				lithuania, models_strat/textures/aztec_general_lithuania.tga
+texture				lithuania, models_strat/textures/aztec_general_obotrites.tga
 texture				russia, models_strat/textures/aztec_general_russia.tga
 texture				kievan_rus, models_strat/textures/aztec_general_kievan.tga
 texture				byzantium, models_strat/textures/aztec_general_byzantium.tga
@@ -862,7 +866,8 @@ skeleton			strat_named_with_army
 scale				0.7
 indiv_range			40
 texture				cumans, models_strat/textures/crusader_captain_aztecs.tga
-texture				lithuania, models_strat/textures/crusader_captain_lithuania.tga
+;texture				lithuania, models_strat/textures/crusader_captain_lithuania.tga
+texture				lithuania, models_strat/textures/crusader_captain_byzantium.tga
 texture				teutonic_order, models_strat/textures/crusader_captain_teutonics.tga
 texture				slave, models_strat/textures/crusader_captain_rebels.tga
 texture				byzantium, models_strat/textures/crusader_captain_byzantium.tga

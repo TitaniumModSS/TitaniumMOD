@@ -216,29 +216,32 @@ Trait ScotlandHero
    Effect Combat_V_Faction_England 3 
 
 ;------------------------------------------
-Trait PaganPriest
+Trait PaganPriestHigh
  Characters priest
+ NoGoingBackLevel 1 
+ AntiTraits PaganPriest
 
  Level Pagan_High_Priest
    Description Pagan_High_Priest_desc
    EffectsDescription Pagan_High_Priest_effects_desc
    Threshold 1 
 
-   Effect Level 4
+   Effect Level 5
    Effect Piety 1
    Effect MovementPoints 5
 
 ;------------------------------------------
-Trait PaganPriestMongols
+Trait PaganPriest
  Characters priest
  Hidden
+ AntiTraits PaganPriestHigh
 
  Level Pagan_Priest
    Description Pagan_Priest_desc
    EffectsDescription Pagan_Priest_effects_desc
    Threshold 1 
 
-   Effect Level 1
+   Effect Level 4
 
 ;------------------------------------------
 Trait DivineProtectionPagan
@@ -4615,6 +4618,17 @@ Trait Factionleader
    Effect Authority 3 
    Effect PersonalSecurity 3 
    Effect Level 2 
+   Effect Fertility 2
+
+ ;*** CONVERTED PAGAN KINGDOM Level ***
+ Level Faction_Leader
+   Description Faction_Leader_desc
+   EffectsDescription Faction_Leader_effects_desc
+   Threshold 4 
+ 
+   Effect Authority 3 
+   Effect PersonalSecurity 3 
+   Effect Level 3 
    Effect Fertility 2
 
 ;------------------------------------------
@@ -13404,11 +13418,31 @@ Trait Muslim
    EffectsDescription Muslim_effects_desc
    Threshold 1
 
-   Effect Piety -8
-   Effect Loyalty -5
+   Effect Piety -6
+   Effect Loyalty -4
    Effect LocalPopularity -2
    Effect Combat_V_Religion_islam -2
    Effect BribeResistance -2 
+ 
+ Level Muslim
+   Description ForeignReligion_desc
+   EffectsDescription Muslim2_effects_desc
+   Threshold 2
+
+   Effect Piety -4
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_islam -2
+ 
+ Level Muslim_Leader
+   Description ForeignReligionLeader_desc
+   EffectsDescription Muslim_Leader_effects_desc
+   Threshold 3
+
+   Effect Piety -4
+   Effect Authority -2
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_islam -2
+   
    
 ;------------------------------------------
 Trait Catholic
@@ -13419,11 +13453,30 @@ Trait Catholic
    EffectsDescription Catholic_effects_desc
    Threshold 1
 
-   Effect Piety -8
-   Effect Loyalty -5
+   Effect Piety -6
+   Effect Loyalty -4
    Effect LocalPopularity -2
    Effect Combat_V_Religion_catholic -2
    Effect BribeResistance -2 
+ 
+ Level Catholic
+   Description ForeignReligion_desc
+   EffectsDescription Catholic2_effects_desc
+   Threshold 2
+
+   Effect Piety -4
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_catholic -2
+ 
+ Level Catholic_Leader
+   Description ForeignReligionLeader_desc
+   EffectsDescription Catholic_Leader_effects_desc
+   Threshold 3
+
+   Effect Piety -4
+   Effect Authority -2
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_catholic -2
    
    
 ;------------------------------------------
@@ -13435,11 +13488,31 @@ Trait Orthodox
    EffectsDescription Orthodox_effects_desc
    Threshold 1
 
-   Effect Piety -8
-   Effect Loyalty -5
+   Effect Piety -6
+   Effect Loyalty -4
    Effect LocalPopularity -2
    Effect Combat_V_Religion_orthodox -2
    Effect BribeResistance -2 
+ 
+ Level Orthodox
+   Description ForeignReligion_desc
+   EffectsDescription Orthodox2_effects_desc
+   Threshold 2
+
+   Effect Piety -4
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_orthodox -2
+ 
+ Level Orthodox_Leader
+   Description ForeignReligionLeader_desc
+   EffectsDescription Orthodox_Leader_effects_desc
+   Threshold 3
+
+   Effect Piety -3
+   Effect Authority -2
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_orthodox -2
+   
    
 ;------------------------------------------
 Trait Pagan
@@ -13455,8 +13528,27 @@ Trait Pagan
    Effect LocalPopularity -2
    Effect Combat_V_Religion_pagan -2
    Effect BribeResistance -2 
-   
+ 
+ Level Pagan
+   Description ForeignReligion_desc
+   EffectsDescription Pagan2_effects_desc
+   Threshold 2
 
+   Effect Piety -4
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_pagan -2
+ 
+ Level Pagan_Leader
+   Description ForeignReligionLeader_desc
+   EffectsDescription Pagan_Leader_effects_desc
+   Threshold 3
+
+   Effect Piety -4
+   Effect Authority -2
+   Effect LocalPopularity -2
+   Effect Combat_V_Religion_pagan -2
+   
+   
 ;------------------------------------------
 Trait Princess_Muslim
  Characters princess
@@ -15019,7 +15111,7 @@ Trait Novgorod_Veche_Approval
         Threshold  75
 
         Effect Authority 6
-;-------------------------------------------
+
 ;**************************************************
 ;------------------------------------------
 ;NHM
@@ -15667,7 +15759,7 @@ Trigger priestinit14
        and SettlementBuildingExists = dievas_temple
        and FactionType lithuania
 
- Affects PaganPriest 1 Chance 100 
+ Affects PaganPriestHigh 1 Chance 100 
 
 ;------------------------------------------
 Trigger priestinit15
@@ -15678,7 +15770,7 @@ Trigger priestinit15
        and SettlementBuildingExists = perkunas_temple
        and FactionType lithuania
 
- Affects PaganPriest 1 Chance 100 
+ Affects PaganPriestHigh 1 Chance 100 
 
 ;------------------------------------------
 Trigger priestinit16
@@ -15689,7 +15781,7 @@ Trigger priestinit16
        and SettlementBuildingExists = giltine_temple
        and FactionType lithuania
 
- Affects PaganPriest 1 Chance 100 
+ Affects PaganPriestHigh 1 Chance 100 
 
 ;------------------------------------------
 Trigger priestinit18
@@ -15700,7 +15792,7 @@ Trigger priestinit18
        and SettlementBuildingExists = tengir_temple
        and FactionType cumans
 
- Affects PaganPriest 1 Chance 100 
+ Affects PaganPriestHigh 1 Chance 100 
  
 ;------------------------------------------
 Trigger priestinit18
@@ -15711,7 +15803,7 @@ Trigger priestinit18
        and SettlementBuildingExists = tengir_temple
        and FactionType mongols
 
- Affects PaganPriest 1 Chance 100 
+ Affects PaganPriestHigh 1 Chance 100 
 
 ;------------------------------------------
 Trigger priestinit19
@@ -23474,6 +23566,7 @@ Trigger Pagan_Edu_castle1_lithuania
  WhenToTest CharacterTurnEnd
 
  Condition IsGeneral
+       and and FactionReligion pagan
        and EndedInSettlement
        and FactionType lithuania 
        and Trait Wantschool >= 1
@@ -23486,6 +23579,7 @@ Trigger Pagan_Edu_city1_lithuania
  WhenToTest CharacterTurnEnd
 
  Condition IsGeneral
+       and and FactionReligion pagan
        and EndedInSettlement
        and Trait Wantschool >= 1
        and FactionType lithuania 
@@ -23498,6 +23592,7 @@ Trigger Pagan_Edu_inwild_lithuania
  WhenToTest CharacterTurnEnd
 
  Condition IsGeneral
+       and and FactionReligion pagan
        and not EndedInSettlement
        and RemainingMPPercentage = 100
        and Trait Wantschool >= 1
@@ -29979,6 +30074,7 @@ Trigger hate_religion_catholic
  WhenToTest PostBattle
 
  Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not GeneralFoughtFaction egypt
        and not GeneralFoughtFaction cumans
@@ -29997,10 +30093,33 @@ Trigger hate_religion_catholic
  Affects HatesCatholic 1 Chance 5
 
 ;------------------------------------------
+Trigger hate_religion_catholic_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects HatesCatholic 1 Chance 5
+
+;------------------------------------------
 Trigger fear_religion_catholic_1
  WhenToTest PostBattle
 
  Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
@@ -30021,10 +30140,35 @@ Trigger fear_religion_catholic_1
  Affects FearsCatholic 1 Chance 5
 
 ;------------------------------------------
+Trigger fear_religion_catholic_1_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects FearsCatholic 1 Chance 5
+
+;------------------------------------------
 Trigger fear_religion_catholic_2
  WhenToTest PostBattle
 
  Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 0
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
@@ -30036,6 +30180,30 @@ Trigger fear_religion_catholic_2
        and not GeneralFoughtFaction moors
        and not GeneralFoughtFaction russia
        and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects FearsCatholic 1 Chance 20
+
+;------------------------------------------
+Trigger fear_religion_catholic_2_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 1
+       and BattleSuccess = crushing
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction russia
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
        and not GeneralFoughtFaction kwarezm
@@ -34626,22 +34794,22 @@ Trigger paganpriest_fake_descr_turn_one
  WhenToTest CharacterTurnStart
 
  Condition AgentType = priest
- and Trait PaganPriestMongols = 0
  and Trait PaganPriest = 0
- and CharFactionType mongols
+ and Trait PaganPriestHigh = 0
+ and CharacterReligion pagan
 
- Affects PaganPriestMongols 1 Chance 100
+ Affects PaganPriest 1 Chance 100
 
 ;------------------------------------------
 Trigger paganpriest_fake_descr_recruitment
  WhenToTest AgentCreated
 
  Condition AgentType = priest
- and Trait PaganPriestMongols = 0
  and Trait PaganPriest = 0
- and CharFactionType mongols
+ and Trait PaganPriestHigh = 0
+ and CharacterReligion pagan
 
- Affects PaganPriestMongols 1 Chance 100
+ Affects PaganPriest 1 Chance 100
 
 ;********* INQUISITOR TRAITS TRIGGERS *********
 ;------------------------------------------
@@ -38354,10 +38522,10 @@ Trigger IsMuslimNow
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
-and Trait Muslim = 1
+and Trait Muslim >= 1
 and FactionReligion islam
       
-Affects Muslim -1 Chance 100
+Affects Muslim -3 Chance 100
 Affects Convert 1 Chance 100
 Affects HatesIslam -7 Chance 100
 Affects FearsIslam -7 Chance 100
@@ -38367,10 +38535,10 @@ Trigger IsCatholicNow
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
-and Trait Catholic = 1
+and Trait Catholic >= 1
 and FactionReligion catholic
        
-Affects Catholic -1 Chance 100
+Affects Catholic -3 Chance 100
 Affects Convert 1 Chance 100
 Affects HatesCatholic -7 Chance 100
 Affects FearsCatholic -7 Chance 100
@@ -38380,10 +38548,10 @@ Trigger IsOrthodoxNow
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
-and Trait Orthodox = 1
+and Trait Orthodox >= 1
 and FactionReligion orthodox
       
-Affects Orthodox -1 Chance 100
+Affects Orthodox -3 Chance 100
 Affects Convert 1 Chance 100
 Affects HatesOrthodox -7 Chance 100
 Affects FearsOrthodox -7 Chance 100
@@ -38393,10 +38561,10 @@ Trigger IsPaganNow
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
-and Trait Pagan = 1
+and Trait Pagan >= 1
 and FactionReligion pagan
       
-Affects Pagan -1 Chance 100
+Affects Pagan -3 Chance 100
 Affects Convert 1 Chance 100
 Affects HatesPagan -7 Chance 100
 Affects FearsPagan -7 Chance 100
@@ -38409,7 +38577,7 @@ WhenToTest CharacterComesOfAge
 
 Condition IsGeneral
 and not FactionReligion catholic
-and FatherTrait Catholic = 1
+and FatherTrait Catholic >= 1
  
 Affects Catholic 1 Chance 80
  
@@ -38420,9 +38588,9 @@ WhenToTest CharacterComesOfAge
 Condition IsGeneral
 and not FactionReligion catholic
 and FatherTrait WifeIsCatholic = 1
-and not FatherTrait Orthodox = 1
-and not FatherTrait Pagan = 1
-and not FatherTrait Muslim = 1
+and not FatherTrait Orthodox >= 1
+and not FatherTrait Pagan >= 1
+and not FatherTrait Muslim >= 1
  
 Affects Catholic 1 Chance 20
  
@@ -38432,7 +38600,7 @@ WhenToTest CharacterComesOfAge
 
 Condition IsGeneral
 and not FactionReligion orthodox
-and FatherTrait Orthodox = 1
+and FatherTrait Orthodox >= 1
  
 Affects Orthodox 1 Chance 80
  
@@ -38443,9 +38611,9 @@ WhenToTest CharacterComesOfAge
 Condition IsGeneral
 and not FactionReligion orthodox
 and FatherTrait WifeIsOrthodox = 1
-and not FatherTrait Catholic = 1
-and not FatherTrait Pagan = 1
-and not FatherTrait Muslim = 1
+and not FatherTrait Catholic >= 1
+and not FatherTrait Pagan >= 1
+and not FatherTrait Muslim >= 1
  
 Affects Orthodox 1 Chance 20
  
@@ -38455,7 +38623,7 @@ WhenToTest CharacterComesOfAge
 
 Condition IsGeneral
 and not FactionReligion pagan
-and FatherTrait Pagan = 1
+and FatherTrait Pagan >= 1
  
 Affects Pagan 1 Chance 80
  
@@ -38466,9 +38634,9 @@ WhenToTest CharacterComesOfAge
 Condition IsGeneral
 and not FactionReligion pagan
 and FatherTrait WifeIsPagan = 1
-and not FatherTrait Orthodox = 1
-and not FatherTrait Catholic = 1
-and not FatherTrait Muslim = 1
+and not FatherTrait Orthodox >= 1
+and not FatherTrait Catholic >= 1
+and not FatherTrait Muslim >= 1
  
 Affects Pagan 1 Chance 20
  
@@ -38478,7 +38646,7 @@ WhenToTest CharacterComesOfAge
 
 Condition IsGeneral
 and not FactionReligion islam
-and FatherTrait Muslim = 1
+and FatherTrait Muslim >= 1
  
 Affects Muslim 1 Chance 80
  
@@ -38489,23 +38657,48 @@ WhenToTest CharacterComesOfAge
 Condition IsGeneral
 and not FactionReligion islam
 and FatherTrait WifeIsCatholic = 1
-and not FatherTrait Orthodox = 1
-and not FatherTrait Pagan = 1
-and not FatherTrait Catholic = 1
+and not FatherTrait Orthodox >= 1
+and not FatherTrait Pagan >= 1
+and not FatherTrait Catholic >= 1
  
 Affects Muslim 1 Chance 20
  
 ;------------------------------------------
 ;------------------------------------------
-Trigger FactionLeaderConvert
+Trigger Muslim_BecomesFactionLeader_Convert
 WhenToTest BecomesFactionLeader
 
-Condition RandomPercent < 51
+Condition Trait Muslim >= 1
 
-Affects Catholic -1 Chance 100
-Affects Orthodox -1 Chance 100
-Affects Pagan -1 Chance 100
-Affects Muslim -1 Chance 100
+Affects Muslim 3 Chance 100
+Affects Muslim -5 Chance 50
+ 
+;------------------------------------------
+Trigger Catholic_BecomesFactionLeader_Convert
+WhenToTest BecomesFactionLeader
+
+Condition Trait Catholic >= 1
+
+Affects Catholic 3 Chance 100
+Affects Catholic -5 Chance 50
+ 
+;------------------------------------------
+Trigger Pagan_BecomesFactionLeader_Convert
+WhenToTest BecomesFactionLeader
+
+Condition Trait Pagan >= 1
+
+Affects Pagan 3 Chance 100
+Affects Pagan -5 Chance 50
+ 
+;------------------------------------------
+Trigger Orthodox_BecomesFactionLeader_Convert
+WhenToTest BecomesFactionLeader
+
+Condition Trait Orthodox >= 1
+
+Affects Orthodox 3 Chance 100
+Affects Orthodox -5 Chance 50
  
 ;------------------------------------------
 Trigger FactionLeaderIsMuslim1
@@ -38513,7 +38706,7 @@ WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Muslim = 1
+and FactionLeaderTrait Muslim >= 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
 and Trait Muslim = 0
@@ -38526,7 +38719,7 @@ WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Muslim = 1
+and FactionLeaderTrait Muslim >= 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
 and Trait Muslim = 0
@@ -38534,12 +38727,23 @@ and Trait Muslim = 0
 Affects LeaderGodNotMine 1 Chance 80
  
 ;------------------------------------------
+Trigger FactionLeaderIsMuslim3
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and not IsFactionLeader
+and FactionLeaderTrait Muslim >= 1
+and Trait Muslim = 1
+	   
+Affects Muslim 1 Chance 100
+ 
+;------------------------------------------
 Trigger FactionLeaderIsCatholic1
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Catholic = 1
+and FactionLeaderTrait Catholic >= 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
 and Trait Catholic = 0
@@ -38552,7 +38756,7 @@ WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Catholic = 1
+and FactionLeaderTrait Catholic >= 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
 and Trait Catholic = 0
@@ -38560,12 +38764,23 @@ and Trait Catholic = 0
 Affects LeaderGodNotMine 1 Chance 80
  
 ;------------------------------------------
+Trigger FactionLeaderIsCatholic3
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and not IsFactionLeader
+and FactionLeaderTrait Catholic >= 1
+and Trait Catholic = 1
+	   
+Affects Catholic 1 Chance 100
+ 
+;------------------------------------------
 Trigger FactionLeaderIsPagan1
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Pagan = 1
+and FactionLeaderTrait Pagan >= 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
 and Trait Pagan = 0
@@ -38578,7 +38793,7 @@ WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Pagan = 1
+and FactionLeaderTrait Pagan >= 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
 and Trait Pagan = 0
@@ -38586,12 +38801,23 @@ and Trait Pagan = 0
 Affects LeaderGodNotMine 1 Chance 80
  
 ;------------------------------------------
+Trigger FactionLeaderIsPagan3
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and not IsFactionLeader
+and FactionLeaderTrait Pagan >= 1
+and Trait Pagan = 1
+	   
+Affects Pagan 1 Chance 100
+ 
+;------------------------------------------
 Trigger FactionLeaderIsOrthodox1
 WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Orthodox = 1
+and FactionLeaderTrait Orthodox >= 1
 and Attribute Piety <= 4
 and Trait LeaderGodNotMine = 0
 and Trait Orthodox = 0
@@ -38604,12 +38830,23 @@ WhenToTest CharacterTurnEnd
 
 Condition IsGeneral
 and not IsFactionLeader
-and FactionLeaderTrait Orthodox = 1
+and FactionLeaderTrait Orthodox >= 1
 and Attribute Piety >= 5
 and Trait LeaderGodNotMine = 0
 and Trait Orthodox = 0
 
 Affects LeaderGodNotMine 1 Chance 80
+ 
+;------------------------------------------
+Trigger FactionLeaderIsOrthodox3
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and not IsFactionLeader
+and FactionLeaderTrait Orthodox >= 1
+and Trait Orthodox = 1
+	   
+Affects Catholic 1 Chance 100
  
 ;------------------------------------------
 Trigger LeaderGodNotMine_Remove
@@ -38633,7 +38870,7 @@ Trigger LeaderGodNotMine_Remove_Muslim
 WhenToTest CharacterTurnStart
 
 Condition IsGeneral
-and FactionLeaderTrait Muslim = 1
+and FactionLeaderTrait Muslim >= 1
 and Trait Muslim = 1
 and Trait LeaderGodNotMine = 1
 
@@ -38644,7 +38881,7 @@ Trigger LeaderGodNotMine_Remove_Catholic
 WhenToTest CharacterTurnStart
 
 Condition IsGeneral
-and FactionLeaderTrait Catholic = 1
+and FactionLeaderTrait Catholic >= 1
 and Trait Catholic = 1
 and Trait LeaderGodNotMine = 1
 
@@ -38655,7 +38892,7 @@ Trigger LeaderGodNotMine_Remove_Pagan
 WhenToTest CharacterTurnStart
 
 Condition IsGeneral
-and FactionLeaderTrait Pagan = 1
+and FactionLeaderTrait Pagan >= 1
 and Trait Pagan = 1
 and Trait LeaderGodNotMine = 1
 
@@ -38666,7 +38903,7 @@ Trigger LeaderGodNotMine_Remove_Orthodox
 WhenToTest CharacterTurnStart
 
 Condition IsGeneral
-and FactionLeaderTrait Orthodox = 1
+and FactionLeaderTrait Orthodox >= 1
 and Trait Orthodox = 1
 and Trait LeaderGodNotMine = 1
 
@@ -40422,6 +40659,28 @@ Trigger UsurperRecognized
 
  Affects FactionUsurper -1 Chance 100 
  Affects Factionleader 1 Chance 100 
+
+;------------------------------------------
+;RELIGION CONVERTED KINGDOMS
+;------------------------------------------
+Trigger Catholic_Lithuanian_King
+ WhenToTest BecomesFactionLeader
+
+ Condition FactionType lithuania
+       and Trait Factionleader = 1
+       and CharacterReligion catholic
+
+ Affects Factionleader 3 Chance 100 
+
+;------------------------------------------
+Trigger Catholic_Lithuanian_King2
+ WhenToTest CharacterTurnStart
+
+ Condition FactionType lithuania
+       and CharacterReligion catholic
+       and Trait Factionleader < 2
+
+ Affects Factionleader 3 Chance 100 
 
 ;------------------------------------------
 ;BYZANTINE EMPIRE
