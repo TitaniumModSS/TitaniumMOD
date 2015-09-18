@@ -80,7 +80,7 @@ climate rocky_desert
 climate unused1
 {
 	colour	237 20 91
-	heat	0.9
+	heat	0.7
 	winter
 
 	strategy	summer	sparse_tree	birch_a.cas						1
@@ -104,7 +104,7 @@ climate unused1
 climate steppe
 {
 	colour	237 28 36
-	heat	0.8
+	heat	0.7
 	winter
 	
 	strategy	summer	sparse_tree	birch_a.cas						1
@@ -130,7 +130,7 @@ climate steppe
 climate temperate_deciduous_forest
 {
 	colour	242 101 34
-	heat	0.9
+	heat	0.8
 	winter
 
 	strategy	summer	sparse_tree	deciduous_a.cas						1
@@ -160,7 +160,7 @@ climate temperate_deciduous_forest
 climate temperate_coniferous_forest
 {
 	colour	247 148 29
-	heat	0.9
+	heat	0.8
 	winter
 
 	strategy	summer	sparse_tree	conifer_a.cas						2
@@ -184,7 +184,7 @@ climate temperate_coniferous_forest
 climate unused2
 {
 	colour	255 242 0
-	heat	0.9
+	heat	0.7
 
 	battle_vegetation
 	dense_forest	dense_pine
@@ -199,7 +199,7 @@ climate unused2
 climate highland
 {
 	colour	141 198 63
-	heat	1
+	heat	0.6
 	winter
 
 	strategy	summer	sparse_tree	conifer_a.cas						2
@@ -229,7 +229,7 @@ climate highland
 climate alpine
 {
 	colour	57 181 74
-	heat	0.6
+	heat	0.5
 	winter
 
 	strategy	summer	sparse_tree	conifer_a.cas						2
@@ -257,7 +257,7 @@ climate alpine
 climate tropical
 {
 	colour	0 166 81
-	heat	1.6
+	heat	1.5
 	winter
 
 	strategy	summer	sparse_tree palm_small_A.CAS	8
@@ -279,7 +279,7 @@ climate tropical
 climate semi_arid
 {
 	colour	0 114 188
-	heat	1.5
+	heat	1.25
 
 	strategy	summer	sparse_tree	olive_a.cas				10
 	strategy	summer	dense_tree	olive_a_impassable.cas	10

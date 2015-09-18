@@ -54,7 +54,7 @@ monitor_event PreFactionTurnStart TrueCondition
 	terminate_monitor
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Constantinople
@@ -221,7 +221,7 @@ monitor_event UnitTrained UnitType Royal Envoy
 	set_recruit_pool London_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Frankfurt
@@ -305,7 +305,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Frankfurt_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Paris
@@ -389,7 +389,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Paris_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Arhus
@@ -473,7 +473,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Arhus_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Eikundarsund
@@ -557,7 +557,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Eikundarsund_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Leon
@@ -641,7 +641,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Leon_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Naples
@@ -725,7 +725,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Naples_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Genoa
@@ -809,7 +809,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Genoa_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Novgorod
@@ -893,7 +893,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Novgorod_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Krakow
@@ -977,7 +977,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Krakow_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Kiev
@@ -1061,7 +1061,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Kiev_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Venice
@@ -1145,7 +1145,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Venice_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Esztergom
@@ -1229,7 +1229,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Esztergom_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Milan
@@ -1313,7 +1313,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Milan_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Edinburgh
@@ -1397,7 +1397,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Edinburgh_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Zaragoza
@@ -1481,7 +1481,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Zaragoza_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Cordoba
@@ -1565,7 +1565,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Cordoba_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Rome
@@ -1649,7 +1649,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Rome_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Jerusalem
@@ -1733,7 +1733,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Jerusalem_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Tbilisi
@@ -1817,7 +1817,7 @@ monitor_event UnitTrained TrainedUnitCategory cavalry
 	set_recruit_pool Tbilisi_Province 0 Royal Envoy
 end_monitor
 
-monitor_event UnitTrained TrainedUnitCategory cavalry
+monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
 	and SettlementName Vilnius

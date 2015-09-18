@@ -1,4 +1,4 @@
-;SS 5.0
+;SS 6.4+TITANIUM RC2.0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;
 ;	This file contains the mount linkages; it gets parsed on application
@@ -52,14 +52,85 @@
 ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-type				camel
+;type				camel
+;class				camel
+;model				Mount_Camel
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect  horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.60, -0.23
+
+type				camel brawler
 class				camel
-model				Mount_Camel
+model				Mount_Camel_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
 mass				3
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect  horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.60, -0.23
+
+
+type				camel brawler charger
+class				camel
+model				Mount_Camel_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect  horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.60, -0.23
+
+type				camel charger
+class				camel
+model				Mount_Camel_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect  horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.60, -0.23
+
+type				camel HA
+class				camel
+model				Mount_Camel_Lancer_and_HA
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.75
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect  horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.60, -0.23
+
+type				camel lancer
+class				camel
+model				Mount_Camel_Lancer_and_HA
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect  horse_water_trail
@@ -90,82 +161,108 @@ rider_offset		0.0, 0.60, -0.23
 ;0 medium horse, 2.25				F	1
 ;0 pony, 2					O	1
 ;0 fast pony, 1.75				F	0.95
- 
-type				eastern barded horse
+
+;type				eastern barded horse
+;class				horse
+;model				Mount_Eastern_barded_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				eastern barded horse brawler
 class				horse
-model				Mount_Eastern_barded_Horse
+model				Mount_Eastern_Barded_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3
+mass				2.25
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-
-type				eastern armoured horse
+type				eastern barded horse charger
 class				horse
-model				Mount_Eastern_Armoured_Horse
+model				Mount_Eastern_Barded_Horse_Charger
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.5
+mass				2.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-type				russian armoured horse
+;type				eastern armoured horse
+;class				horse
+;model				Mount_Eastern_Armoured_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.5
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				eastern armoured horse brawler
 class				horse
-model				Mount_Eastern_Armoured_Horse
+model				Mount_Eastern_Armoured_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.75
+mass				2.75
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-type				russian barded horse
+type				eastern armoured horse brawler charger
 class				horse
-model				mount_russian_barded_horse
+model				Mount_Eastern_Armoured_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.75
-banner_height		0
-bouyancy_offset		1.8
-water_trail_effect	horse_water_trail
-root_node_height	1.0
-;rider_offset		0.0, 0.45, 0.35
-rider_offset		0.0, 0.38, 0.70
-
-type				mamluk armoured horse
-class				horse
-model				Mount_Eastern_Armoured_Horse
-radius				1.2
-x_radius			0.5
-y_offset			0.7
-height				2.5
-mass				3.75
+mass				3.0
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-type				mongol armoured horse
+type				eastern armoured horse charger
 class				horse
-model				Mount_Eastern_Armoured_Horse
+model				Mount_Eastern_Armoured_Horse_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				eastern armoured horse charger lancer
+class				horse
+model				Mount_Eastern_Armoured_Horse_Charger
 radius				1.2
 x_radius			0.5
 y_offset			0.7
@@ -177,11 +274,281 @@ water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-type				cataphract armoured horse
+type				eastern armoured horse HA
 class				horse
-model				Mount_Eastern_Armoured_Horse
+model				Mount_Eastern_Armoured_Horse_Lancer_and_HA
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.5
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				eastern armoured horse lancer
+class				horse
+model				Mount_Eastern_Armoured_Horse_Lancer_and_HA
 radius				1.2
 x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				russian armoured horse
+;class				horse
+;model				Mount_Eastern_Armoured_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				russian armoured horse brawler
+class				horse
+model				Mount_Eastern_Armoured_Horse_Brawler
+radius				1.2
+x_radius			0.55
+y_offset			0.7
+height				2.5
+mass				3.0
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				russian barded horse
+;class				horse
+;model				mount_russian_barded_horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				russian barded horse brawler charger
+class				horse
+model				mount_russian_barded_horse_brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				russian barded horse charger
+class				horse
+model				mount_russian_barded_horse_charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				lith padded horse brawler lancer
+class				horse
+model				Mount_Lith_Padded_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+;type				mamluk armoured horse
+;class				horse
+;model				Mount_Eastern_Armoured_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				mamluk armoured horse brawler charger
+class				horse
+model				Mount_Eastern_Armoured_Horse_Brawler
+radius				1.2
+x_radius			0.55
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				mongol armoured horse
+;class				horse
+;model				Mount_Eastern_Armoured_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.25
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				mongol armoured horse brawler
+class				horse
+model				Mount_Eastern_Armoured_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				2.5
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				mongol armoured horse charger
+class				horse
+model				Mount_Eastern_Armoured_Horse_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				2.75
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				cataphract armoured horse
+;class				horse
+;model				Mount_Eastern_Armoured_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				4.0
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				cataphract armoured horse brawler
+class				horse
+model				Mount_Eastern_Armoured_Horse_Brawler
+radius				1.2
+x_radius			0.55
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				cataphract armoured horse charger
+class				horse
+model				Mount_Eastern_Armoured_Horse_Charger
+radius				1.2
+x_radius			0.55
+y_offset			0.7
+height				2.5
+mass				3.5
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				armoured horse
+;class				horse
+;model				Mount_Armoured_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				4.25
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				armoured horse brawler charger
+class				horse
+model				Mount_Armoured_Horse_Brawler
+radius				1.2
+x_radius			0.55
+y_offset			0.7
+height				2.5
+mass				3.75
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				armoured horse charger
+class				horse
+model				Mount_Armoured_Horse_Charger
+radius				1.2
+x_radius			0.55
+y_offset			0.7
+height				2.5
+mass				3.75
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				armoured horse lancer
+class				horse
+model				Mount_Armoured_Horse_Lancer_and_HA
+radius				1.2
+x_radius			0.55
 y_offset			0.7
 height				2.5
 mass				4.0
@@ -191,11 +558,25 @@ water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-type				armoured horse
+;type				french armoured horse
+;class				horse
+;model				Mount_Armoured_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				4.5
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				french armoured horse brawler lancer
 class				horse
-model				Mount_Armoured_Horse
+model				Mount_Armoured_Horse_Brawler
 radius				1.2
-x_radius			0.5
+x_radius			0.55
 y_offset			0.7
 height				2.5
 mass				4.25
@@ -205,29 +586,29 @@ water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
+;type				barded horse
+;class				horse
+;model				Mount_Barded_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.5
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
 
-type				french armoured horse
+type				barded horse brawler
 class				horse
-model				Mount_Armoured_Horse
+model				Mount_Barded_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				4.5
-banner_height		0
-bouyancy_offset		1.8
-water_trail_effect	horse_water_trail
-root_node_height	1.0
-rider_offset		0.0, 0.38, 0.70
-
-type				barded horse
-class				horse
-model				Mount_Barded_Horse
-radius				1.2
-x_radius			0.5
-y_offset			0.7
-height				2.5
-mass				3.5
+mass				2.75
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -235,9 +616,24 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				early barded horse
+type				barded horse brawler charger
 class				horse
-model				Mount_Barded_Horse
+model				Mount_Barded_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				barded horse brawler lancer
+class				horse
+model				Mount_Barded_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
@@ -250,14 +646,14 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				french barded horse
+type				barded horse charger
 class				horse
-model				Mount_Barded_Horse
+model				Mount_Barded_Horse_Charger
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.75
+mass				3.0
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -265,9 +661,99 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				order barded horse
+type				barded horse charger lancer
 class				horse
-model				Mount_order_Barded_Horse
+model				Mount_Barded_Horse_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				barded horse lancer
+class				horse
+model				Mount_Barded_Horse_Lancer_and_HA
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+;type				early barded horse
+;class				horse
+;model				Mount_Barded_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.25
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				early barded horse brawler lancer
+class				horse
+model				Mount_Barded_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+;type				french barded horse
+;class				horse
+;model				Mount_Barded_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				french barded horse brawler charger
+class				horse
+model				Mount_Barded_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				french barded horse brawler lancer
+class				horse
+model				Mount_Barded_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
@@ -280,9 +766,114 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				alt barded horse
+;type				order barded horse
+;class				horse
+;model				Mount_order_Barded_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.5
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				order barded horse charger lancer
 class				horse
-model				Mount_alt_Barded_Horse
+model				Mount_Order_Barded_Horse_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+;type				alt barded horse
+;class				horse
+;model				Mount_alt_Barded_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.5
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				alt barded horse brawler lancer
+class				horse
+model				Mount_Alt_Barded_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+;type				mailed horse
+;class				horse
+;model				Mount_Mailed_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				mailed horse brawler
+class				horse
+model				Mount_Mailed_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				mailed horse brawler charger
+class				horse
+model				Mount_Mailed_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				mailed horse brawler lancer
+class				horse
+model				Mount_Mailed_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
@@ -295,9 +886,69 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				mailed horse
+type				mailed horse charger
 class				horse
-model				Mount_Mailed_Horse
+model				Mount_Mailed_Horse_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.25
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				mailed horse charger lancer
+class				horse
+model				Mount_Mailed_Horse_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.5
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+;type				french mailed horse
+;class				horse
+;model				Mount_Mailed_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				4.0
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				french mailed horse brawler charger
+class				horse
+model				Mount_Mailed_Horse_Brawler
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.5
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
+rider_offset		0.0, 0.38, 0.70
+
+type				french mailed horse brawler lancer
+class				horse
+model				Mount_Mailed_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
@@ -310,14 +961,29 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				french mailed horse
+;type				order mailed horse
+;class				horse
+;model				Mount_order_Mailed_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				order mailed horse charger lancer
 class				horse
-model				Mount_Mailed_Horse
+model				Mount_Order_Mailed_Horse_Charger
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				4.0
+mass				3.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -325,14 +991,29 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				order mailed horse
+;type				order mailed horse2
+;class				horse
+;model				Mount_order_Mailed_Horse2
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				order mailed horse2 brawler lancer
 class				horse
-model				Mount_order_Mailed_Horse
+model				Mount_Order_Mailed_Horse2_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.75
+mass				3.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -340,44 +1021,74 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				order mailed horse2
+type				order mailed horse2 charger lancer
 class				horse
-model				Mount_order_Mailed_Horse2
+model				Mount_Order_Mailed_Horse2_Charger
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.75
+mass				3.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
+
+;type				pony
+;class				horse
+;model				Mount_Pony
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				2	;was 2.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
 
 type				pony
 class				horse
 model				Mount_Pony
 radius				1.2
-x_radius			0.5
+x_radius			0.35
 y_offset			0.7
-height				2.5
-mass				2	;was 2.75
+height				1.75
+mass				1.25	;was 2.75
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
+
+;type				fast pony
+;class				horse
+;model				Mount_Fast_Pony
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				1.75	;was 2.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
 
 type				fast pony
 class				horse
-model				Mount_Fast_Pony
+model				mount_fast_pony_lancer_and_HA
 radius				1.2
-x_radius			0.5
+x_radius			0.35
 y_offset			0.7
 height				2.5
-mass				1.75	;was 2.75
+mass				1.25	;was 2.75
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -385,23 +1096,38 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				heavy horse
+type				mongol fast pony
 class				horse
-model				Mount_Heavy_Horse
+model				mount_fast_pony_lancer_and_HA
 radius				1.2
-x_radius			0.5
+x_radius			0.35
 y_offset			0.7
 height				2.5
-mass				3.25	;changed from 4.0 29/4/05
+mass				1.25	;was 2.75
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
+;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				early heavy horse
+;type				heavy horse
+;class				horse
+;model				Mount_Heavy_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.25	;changed from 4.0 29/4/05
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				heavy horse brawler lancer
 class				horse
-model				Mount_Heavy_Horse_Marka
+model				Mount_Heavy_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
@@ -412,10 +1138,10 @@ bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
-									
-type				mongol heavy horse
+
+type				heavy horse brawler charger
 class				horse
-model				Mount_Heavy_Horse ; _Marka
+model				Mount_Heavy_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
@@ -427,11 +1153,95 @@ water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-type				medium horse
+type				heavy horse charger
 class				horse
-model				Mount_Medium_Horse_Marka
+model				Mount_Heavy_Horse_Charger
 radius				1.2
 x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				2.75	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				heavy horse charger lancer
+class				horse
+model				Mount_Heavy_Horse_Charger
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				heavy horse lancer
+class				horse
+model				Mount_Heavy_Horse_Lancer_and_HA
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				3.0	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				heavy horse lancer charger
+class				horse
+model				Mount_Heavy_Horse_Lancer_and_HA
+radius				1.2
+x_radius			0.5
+y_offset			0.7
+height				2.5
+mass				2.75	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				early heavy horse
+;class				horse
+;model				Mount_Heavy_Horse_Marka
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.0	;changed from 4.0 29/4/05
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				early heavy horse brawler charger
+class				horse
+model				Mount_Heavy_Horse_Marka_Brawler
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.5	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				early heavy horse brawler
+class				horse
+model				Mount_Heavy_Horse_Marka_Brawler
+radius				1.2
+x_radius			0.45
 y_offset			0.7
 height				2.5
 mass				2.25	;changed from 4.0 29/4/05
@@ -441,14 +1251,266 @@ water_trail_effect	horse_water_trail
 root_node_height	1.0
 rider_offset		0.0, 0.38, 0.70
 
-type				eastern horse
+type				early heavy horse charger
 class				horse
-model				mount_fast_pony
+model				Mount_Heavy_Horse_Marka_Charger
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.5	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				early heavy horse charger lancer
+class				horse
+model				Mount_Heavy_Horse_Marka_Charger
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.75	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				early heavy horse HA
+class				horse
+model				Mount_Heavy_Horse_Marka_Lancer_and_HA
+radius				1.2
+x_radius			0.4
+y_offset			0.7
+height				2.5
+mass				2.0	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				early heavy horse lancer
+class				horse
+model				Mount_Heavy_Horse_Marka_Lancer_and_HA
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.75	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				early heavy horse lancer charger
+class				horse
+model				Mount_Heavy_Horse_Marka_Charger
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.5	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+									
+;type				mongol heavy horse
+;class				horse
+;model				Mount_Heavy_Horse ; _Marka
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				2.75	;changed from 4.0 29/4/05
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				mongol heavy horse HA
+class				horse
+model				Mount_Heavy_Horse_Lancer_and_HA ; _Marka
+radius				1.2
+x_radius			0.4
+y_offset			0.7
+height				2.5
+mass				1.75	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				medium horse
+;class				horse
+;model				Mount_Medium_Horse_Marka
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				2.25	;changed from 4.0 29/4/05
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				medium horse charger
+class				horse
+model				Mount_Medium_Horse_Marka_Charger
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.0	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				medium horse charger brawler
+class				horse
+model				Mount_Medium_Horse_Marka_Charger
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				1.75	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				medium horse HA
+class				horse
+model				Mount_Medium_Horse_Marka_Lancer_and_HA
+radius				1.2
+x_radius			0.4
+y_offset			0.7
+height				2.5
+mass				1.5	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				medium horse lancer
+class				horse
+model				Mount_Medium_Horse_Marka_Lancer_and_HA
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.25	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				medium horse lancer charger
+class				horse
+model				Mount_Medium_Horse_Marka_Lancer_and_HA
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.0	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+;type				eastern horse
+;class				horse
+;model				mount_fast_pony
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				2.5	;changed from 4.0 29/4/05
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;rider_offset		0.0, 0.38, 0.70
+
+type				eastern horse HA
+class				horse
+model				mount_fast_pony_lancer_and_ha
+radius				1.2
+x_radius			0.4
+y_offset			0.7
+height				2.5
+mass				1.5	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				eastern horse lancer
+class				horse
+model				mount_fast_pony_lancer_and_ha
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.25	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				eastern horse lancer charger
+class				horse
+model				mount_fast_pony_lancer_and_ha
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.0	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				eastern horse charger lancer
+class				horse
+model				mount_fast_pony_charger
+radius				1.2
+x_radius			0.45
+y_offset			0.7
+height				2.5
+mass				2.25	;changed from 4.0 29/4/05
+banner_height		0
+bouyancy_offset		1.8
+water_trail_effect	horse_water_trail
+root_node_height	1.0
+rider_offset		0.0, 0.38, 0.70
+
+type				early eastern armoured horse brawler
+class				horse
+model				Mount_Eastern_Armoured_Horse_Brawler
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				2.5	;changed from 4.0 29/4/05
+mass				2.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -553,17 +1615,31 @@ rider_offset			0.0, -0.96, -3.2
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;;;;;;;;;;;;;;;;;;;;;EXTRA KNIGHT ORDER MOUNTS;;;;;;;;;;;;;;;;;;;;;;
 
-type				order mailed horse3
+;type				order mailed horse3
+;class				horse
+;model				mount_order_mailed_horse3
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				order mailed horse3 charger lancer
 class				horse
 model				mount_order_mailed_horse3
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.75
+mass				3.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -571,14 +1647,29 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				order mailed horse4
+;type				order mailed horse4
+;class				horse
+;model				mount_order_mailed_horse4
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.75
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				order mailed horse4 charger lancer
 class				horse
 model				mount_order_mailed_horse4
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.75
+mass				3.5
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail
@@ -586,14 +1677,29 @@ root_node_height	1.0
 ;rider_offset		0.0, 0.45, 0.35
 rider_offset		0.0, 0.38, 0.70
 
-type				teutonic barded horse
+;type				teutonic barded horse
+;class				horse
+;model				mount_teutonic_Barded_Horse
+;radius				1.2
+;x_radius			0.5
+;y_offset			0.7
+;height				2.5
+;mass				3.5
+;banner_height		0
+;bouyancy_offset		1.8
+;water_trail_effect	horse_water_trail
+;root_node_height	1.0
+;;rider_offset		0.0, 0.45, 0.35
+;rider_offset		0.0, 0.38, 0.70
+
+type				teutonic barded horse brawler lancer
 class				horse
 model				mount_teutonic_Barded_Horse
 radius				1.2
 x_radius			0.5
 y_offset			0.7
 height				2.5
-mass				3.5
+mass				3.25
 banner_height		0
 bouyancy_offset		1.8
 water_trail_effect	horse_water_trail

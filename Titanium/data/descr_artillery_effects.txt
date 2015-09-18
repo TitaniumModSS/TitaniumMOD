@@ -1,4 +1,4 @@
-;SS 6.0
+;SS 6.4+RC2.0 TITANIUM
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;																												     ;
 ;  											ARTILLERY EFFECTS FOR SIEGE WEAPONS									 	 ;
@@ -23,7 +23,7 @@ effect cannon_shot_test
         debris_lifetime_range    0.05, 0.06
         debris_emit_angle        50               ; degrees
         debris_time_bias         0.97
-        debris_velocity_range    6.5, 8.5
+        debris_velocity_range    10.5, 9.5
         debris_scale_range       0.2, 0.5
 	}
 }
@@ -58,8 +58,8 @@ effect cannon_shot_test_smoke_trail
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				5
-		max_scale   			25
+		anim_time				1
+		max_scale   			0.1
 		max_particle_scale 		0.7
 		scale_time_bias			0.9
 		alpha_time_bias			0.95
@@ -82,9 +82,9 @@ effect cannon_shot_test_smoke
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				3
-		max_scale   			15
-		max_particle_scale 		0.7
+		anim_time				160
+		max_scale   			30
+		max_particle_scale 		.5
 		scale_time_bias			0.9
 		alpha_time_bias			0.95
 
@@ -92,7 +92,7 @@ effect cannon_shot_test_smoke
         debris_model             models_effects/debris.cas
         debris_num_particles     1
         debris_lifetime_range    0.05, 0.06
-        debris_emit_angle        50               ; degrees
+        debris_emit_angle        180               ; degrees
         debris_time_bias         0.97
         debris_velocity_range    6.5, 8.5
         debris_scale_range       0.2, 0.5
@@ -168,7 +168,7 @@ effect cannon_shot_basilisk_smoke_trail
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				11
+		anim_time				1
 		max_scale   			35
 		max_particle_scale 		1
 		scale_time_bias			0.9
@@ -192,17 +192,17 @@ effect cannon_shot_basilisk_smoke
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				4
-		max_scale   			14
-		max_particle_scale 		7
+		anim_time				160
+		max_scale   			20
+		max_particle_scale 		3
 		scale_time_bias			0.9
 		alpha_time_bias			0.95
 
 		; debris
         debris_model             models_effects/debris.cas
-        debris_num_particles     1
+        debris_num_particles     8
         debris_lifetime_range    0.05, 0.06
-        debris_emit_angle        50               ; degrees
+        debris_emit_angle        180               ; degrees
         debris_time_bias         0.97
         debris_velocity_range    6.5, 8.5
         debris_scale_range       0.2, 0.5
@@ -279,7 +279,7 @@ effect cannon_shot_bombard_smoke_trail
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				5
+		anim_time				1
 		max_scale   			20
 		max_particle_scale 		1
 		scale_time_bias			0.9
@@ -303,7 +303,7 @@ effect cannon_shot_bombard_smoke
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				3
+		anim_time				110
 		max_scale   			11
 		max_particle_scale 		3.4
 		scale_time_bias			0.9
@@ -313,7 +313,7 @@ effect cannon_shot_bombard_smoke
         debris_model             models_effects/debris.cas
         debris_num_particles     1
         debris_lifetime_range    0.05, 0.06
-        debris_emit_angle        50               ; degrees
+        debris_emit_angle        180               ; degrees
         debris_time_bias         0.97
         debris_velocity_range    6.5, 8.5
         debris_scale_range       0.2, 0.5
@@ -389,7 +389,7 @@ effect cannon_shot_Balista_smoke_trail
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				5
+		anim_time				15
 		max_scale   			35
 		max_particle_scale 		1
 		scale_time_bias			0.9
@@ -413,7 +413,7 @@ effect cannon_shot_Balista_smoke
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				3
+		anim_time				10
 		max_scale   			20
 		max_particle_scale 		1
 		scale_time_bias			0.9
@@ -524,7 +524,7 @@ effect cannon_shot_Mortar_smoke
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				3
+		anim_time				10
 		max_scale   			4
 		max_particle_scale 		11
 		scale_time_bias			0.9
@@ -611,9 +611,9 @@ effect cannon_shot_Culverin_smoke_trail
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				50
-		max_scale   			10
-		max_particle_scale 		1
+		anim_time				1
+		max_scale   			.1
+		max_particle_scale 		.1
 		scale_time_bias			0.9
 		alpha_time_bias			0.95
 
@@ -621,7 +621,7 @@ effect cannon_shot_Culverin_smoke_trail
         debris_model             models_effects/debris.cas
         debris_num_particles     1
         debris_lifetime_range    0.05, 0.06
-        debris_emit_angle        50               ; degrees
+        debris_emit_angle        180               ; degrees
         debris_time_bias         0.97
         debris_velocity_range    6.5, 8.5
         debris_scale_range       0.2, 0.5
@@ -635,20 +635,20 @@ effect cannon_shot_Culverin_smoke
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke.CAS
-		anim_time				30
-		max_scale   			7
-		max_particle_scale 		11
+		anim_time				160
+		max_scale   			12
+		max_particle_scale 		.5
 		scale_time_bias			0.9
 		alpha_time_bias			0.95
 
 		; debris
         debris_model             models_effects/debris.cas
         debris_num_particles     1
-        debris_lifetime_range    0.05, 0.06
-        debris_emit_angle        50               ; degrees
+        debris_lifetime_range    0.05, 0.07
+        debris_emit_angle        180               ; degrees
         debris_time_bias         0.97
-        debris_velocity_range    6.5, 8.5
-        debris_scale_range       0.2, 0.5
+        debris_velocity_range    10.5, 10.5
+        debris_scale_range       0.4, 0.8
 	}
 }
 
@@ -756,7 +756,7 @@ effect cannon_shot_elephant_serpentine_smoke
         debris_model             models_effects/debris.cas
         debris_num_particles     1
         debris_lifetime_range    0.05, 0.06
-        debris_emit_angle        50               ; degrees
+        debris_emit_angle        180               ; degrees
         debris_time_bias         0.97
         debris_velocity_range    6.5, 8.5
         debris_scale_range       0.2, 0.5
@@ -1049,9 +1049,9 @@ effect cannon_shot_Huge_Bombard_smoke
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash_smoke_dark.CAS
-		anim_time				5
-		max_scale   			7
-		max_particle_scale 		14
+		anim_time				150
+		max_scale   			20
+		max_particle_scale 		1
 		scale_time_bias			0.9
 		alpha_time_bias			0.95
 
@@ -1059,9 +1059,9 @@ effect cannon_shot_Huge_Bombard_smoke
         debris_model             models_effects/debris.cas
         debris_num_particles     1
         debris_lifetime_range    0.05, 0.06
-        debris_emit_angle        50               ; degrees
+        debris_emit_angle        180               ; degrees
         debris_time_bias         0.97
-        debris_velocity_range    6.5, 8.5
+        debris_velocity_range    10.5, 11.5
         debris_scale_range       0.2, 0.5
 	}
 }
@@ -1344,9 +1344,9 @@ effect explosive_cloud_model
 	{
 		; main explosion
 		model 					models_effects/explosive_cloud.CAS
-		anim_time				15
-		max_scale   			11
-		max_particle_scale 		2.4
+		anim_time				8
+		max_scale   			12
+		max_particle_scale 		2
 		scale_time_bias			0.9
 		alpha_time_bias			0.95
 
@@ -1381,7 +1381,7 @@ effect musket_shot_muzzle_flash
 	{
 		; main explosion
 		model 					models_effects/cannon_muzzle_flash.CAS
-        anim_time				0.35
+        anim_time				0.2
 		max_scale   			1.3
 		max_particle_scale 		1.3
 		scale_time_bias			0.9

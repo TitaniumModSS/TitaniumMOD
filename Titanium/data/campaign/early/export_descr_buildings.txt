@@ -1,10 +1,10 @@
 ;SS 6.4 EDB edited by gracul: Jan-2011
-;Edited by SMM Regional Knight Orders submod
+;Titanium Early Era Campaign
+;Edited by Melooo182: Dic-2014
 
 hidden_resources Constable Iqta Constantinople Khassaki river silk_road crusader crusade jihad horde_target no_pirates no_brigands wonder1 wonder2 wonder3 wonder4 wonder5 wonder6 wonder7 wonder8 venice scotland england france portugal spain aragon moors milan papal_states sicily hre norway denmark poland russia lithuania cumans kwarezm turks jerusalem prussia egypt byzantium hungary kievan_rus ireland teutonic_knights_chapter_house montesa_chapter_house knights_of_santiago_chapter_house templars_chapter_house st_johns_chapter_house chapter_hq teutonic_hq
 
 building core_building
-
 {
   convert_to core_castle_building
   levels wooden_pallisade wooden_wall stone_wall large_stone_wall huge_stone_wall
@@ -656,9 +656,9 @@ building core_castle_building
         recruit_pool "Feudal Knights"  0   0.000001   0.10  0  requires factions { denmark, }
         recruit_pool "Chivalric Knights"  0   0.000001   0.10  0  requires factions { denmark, }
         
-        recruit_pool "Behk Druzhina"  1   0.20   3  0  requires factions { cumans, }
+        recruit_pool "Behk Druzhina"  1   0.1   3  0  requires factions { cumans, }
         recruit_pool "Dismounted Bekh Druzhina"  1   0.072   2  0  requires factions { cumans, }
-        recruit_pool "Kwarezmian Cavalry"  1   0.20   3  0  requires factions { kwarezm, }
+        recruit_pool "Kwarezmian Cavalry"  1   0.1   3  0  requires factions { kwarezm, }
         
         recruit_pool "Noble Cavalry"  1   0.072   2  0  requires factions { lithuania, }
         recruit_pool "Noble Sons Cavalry"  1   0.072   2  0  requires factions { lithuania, }
@@ -685,12 +685,12 @@ building core_castle_building
         recruit_pool "Polish Nobles"  1   0.15   3  0  requires factions { poland, }  and not event_counter HEAVY_MAIL_ARMOR 1
         
         ;high before Platemail
-        recruit_pool "Feudal Knights"  1   0.20   3  0  requires factions { england, spain, aragon, portugal, papal_states, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Feudal Knights"  1   0.1   3  0  requires factions { england, spain, aragon, portugal, papal_states, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Feudal Knights"  1   0.072   3  0  requires factions { milan, venice,  } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
         recruit_pool "French Feudal Knights"  1   0.15   3  0  requires factions { france, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "German Feudal Knights"  1   0.20   3  0  requires factions { hre, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "German Feudal Knights"  1   0.1   3  0  requires factions { hre, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
         recruit_pool "German Feudal Knights"  1   0.072   3  0  requires factions { scotland, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Norman Knights"  1   0.20   3  0  requires factions { sicily, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Norman Knights"  1   0.1   3  0  requires factions { sicily, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Polish Nobles"  1   0.072   1  0  requires factions { poland, }  and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Polish Knights"  1   0.1   2  0  requires factions { poland, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter HALF_PLATE_ARMOR 1
         
@@ -713,13 +713,13 @@ building core_castle_building
         recruit_pool "Polish Knights"  1   0.15   3  0  requires factions { poland, } and event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Polish Retainers"  1   0.05   1  0  requires factions { poland, } and event_counter HALF_PLATE_ARMOR 1
         
-        recruit_pool "Knights of Jerusalem"  1   0.20   3  0  requires factions { jerusalem, }
+        recruit_pool "Knights of Jerusalem"  1   0.1   3  0  requires factions { jerusalem, }
         
         recruit_pool "Sipahis"  1   0.1   3  0  requires factions { moors, }
         recruit_pool "Sipahis"  1   0.072   2  0  requires factions { turks, timurids, }
         recruit_pool "Sipahi Lancers"  1   0.072   2  0  requires factions { turks, }
         
-        recruit_pool "Boyars"  1   0.20   3  0  requires factions { russia, kievan_rus, } and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Boyars"  1   0.1   3  0  requires factions { russia, kievan_rus, } and not event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Boyars"  1   0.05   1  0  requires factions { russia, kievan_rus, } and event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Heavy Boyars"  1   0.072   2  0  requires factions { kievan_rus, } and event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Heavy Boyars"  1   0.072   2  0  requires factions { russia, } and event_counter HALF_PLATE_ARMOR 1
@@ -2668,7 +2668,7 @@ building hinterland_byzantine_imperial_barracks
         recruit_pool "Scholarii"  0   0.25   2  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource Constantinople
         recruit_pool "Spartharii tou Vasileos"  0   0.025   0.4  0  requires factions { byzantium, } and not event_counter lateran_council4 1
         recruit_pool "Spartharii tou Vasileos"  0   0.125   1  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource Constantinople
-        recruit_pool "Siphonatores"  0   0.025   0.2  0  requires factions { byzantium, } and not event_counter lateran_council4 1
+        recruit_pool "Siphonatores"  0   0.025   0.4  0  requires factions { byzantium, } and not event_counter lateran_council4 1
         recruit_pool "Siphonatores"  0   0.125   1  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource Constantinople
         law_bonus bonus 1
       }
@@ -2733,7 +2733,7 @@ building castle_barracks
         recruit_pool "Afghan Javelinmen"  1   0.125   2  0  requires factions { kwarezm, } and hidden_resource kwarezm
         recruit_pool "Afghan Javelinmen"  0   0.0625   1  0  requires factions { kwarezm, }  and hidden_resource turks or hidden_resource cumans
         recruit_pool "Afghan Javelinmen"  0   0.0625   1  0  requires factions { venice, scotland,  england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, lithuania, cumans, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, } and hidden_resource kwarezm
-        recruit_pool "ME Peasants"  1   0.20   1  0  requires factions { kwarezm, }
+        recruit_pool "ME Peasants"  1   0.1   1  0  requires factions { kwarezm, }
         
         recruit_pool "Lithuanian Skirmishers"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania
         recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource poland or hidden_resource hungary or hidden_resource russia
@@ -4672,7 +4672,7 @@ building cannon
   convert_to castle_cannon
   levels gunsmith cannon_maker cannon_foundry royal_arsenal
   {
-    gunsmith city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    gunsmith city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 0
       capability
@@ -4688,7 +4688,7 @@ building cannon
         cannon_maker
       }
     }
-    cannon_maker city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    cannon_maker city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 1
       capability
@@ -4705,7 +4705,7 @@ building cannon
         cannon_foundry
       }
     }
-    cannon_foundry city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    cannon_foundry city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 2
       capability
@@ -4722,7 +4722,7 @@ building cannon
         royal_arsenal
       }
     }
-    royal_arsenal city requires factions { hre, teutonic_order, france, turks, kwarezm, hungary, russia, venice, milan, portugal, spain, aragon, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    royal_arsenal city requires factions { hre, teutonic_order, france, turks, kwarezm, hungary, russia, venice, milan, portugal, spain, aragon, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 3
       capability
@@ -4748,7 +4748,7 @@ building castle_cannon
   convert_to cannon
   levels c_gunsmith c_cannon_maker c_cannon_foundry c_royal_arsenal
   {
-    c_gunsmith castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    c_gunsmith castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 0
       capability
@@ -4764,7 +4764,7 @@ building castle_cannon
         c_cannon_maker
       }
     }
-    c_cannon_maker castle requires factions { northern_european, greek, middle_eastern, eastern_european, southern_european, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    c_cannon_maker castle requires factions { northern_european, greek, middle_eastern, eastern_european, southern_european, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 1
       capability
@@ -4781,7 +4781,7 @@ building castle_cannon
         c_cannon_foundry
       }
     }
-    c_cannon_foundry castle requires factions { northern_european, greek, middle_eastern, eastern_european, southern_european, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    c_cannon_foundry castle requires factions { northern_european, greek, middle_eastern, eastern_european, southern_european, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 2
       capability
@@ -4798,7 +4798,7 @@ building castle_cannon
         c_royal_arsenal
       }
     }
-    c_royal_arsenal castle requires factions { hre, teutonic_order, france, turks, kwarezm, hungary, russia, venice, milan, portugal, spain, aragon, }  and event_counter CANNONS 1 and not event_counter early_era 1
+    c_royal_arsenal castle requires factions { hre, teutonic_order, france, turks, kwarezm, hungary, russia, venice, milan, portugal, spain, aragon, }  and event_counter CANNONS 1 and event_counter high_era 1
     {
       convert_to 3
       capability
@@ -4942,7 +4942,7 @@ building smith
         plate_armourer
       }
     }
-    plate_armourer city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, } and event_counter FULL_PLATE_ARMOR 1 and not event_counter early_era 1 ; and building_present_min_level market great_market
+    plate_armourer city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, } and event_counter FULL_PLATE_ARMOR 1 and event_counter high_era 1 ; and building_present_min_level market great_market
     {
       convert_to 4
       capability
@@ -4968,7 +4968,7 @@ building smith
         gothic_armourer
       }
     }
-    gothic_armourer city requires factions { northern_european, eastern_european, southern_european, } and event_counter GOTHIC_ARMOR 1 and not event_counter early_era 1 ; and building_present_min_level market great_market
+    gothic_armourer city requires factions { northern_european, eastern_european, southern_european, } and event_counter GOTHIC_ARMOR 1 and event_counter high_era 1 ; and building_present_min_level market great_market
     {
       convert_to 5
       capability
@@ -5077,7 +5077,7 @@ building castle_smith
         c_plate_armourer
       }
     }
-    c_plate_armourer castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, } and event_counter FULL_PLATE_ARMOR 1 and not event_counter early_era 1
+    c_plate_armourer castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, } and event_counter FULL_PLATE_ARMOR 1 and event_counter high_era 1
     {
       convert_to 4
       capability
@@ -5103,7 +5103,7 @@ building castle_smith
         c_gothic_armourer
       }
     }
-    c_gothic_armourer castle requires factions { northern_european, eastern_european, southern_european, } and event_counter GOTHIC_ARMOR 1 and not event_counter early_era 1
+    c_gothic_armourer castle requires factions { northern_european, eastern_european, southern_european, } and event_counter GOTHIC_ARMOR 1 and event_counter high_era 1
     {
       convert_to 5
       capability
@@ -6041,11 +6041,11 @@ building temple_dievas
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        religion_level bonus 2 
-        law_bonus bonus 1 
-        happiness_bonus bonus 1 
-        agent_limit priest 1 
+        agent priest  0  requires factions { lithuania, }
+        religion_level bonus 2
+        law_bonus bonus 1
+        happiness_bonus bonus 1
+        agent_limit priest 1
       }
       material wooden
       construction  4
@@ -6060,11 +6060,11 @@ building temple_dievas
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        religion_level bonus 3 
-        law_bonus bonus 2 
-        happiness_bonus bonus 2 
-        agent_limit priest 1 
+        agent priest  0  requires factions { lithuania, }
+        religion_level bonus 3
+        law_bonus bonus 2
+        happiness_bonus bonus 2
+        agent_limit priest 1
       }
       material wooden
       construction  6
@@ -6079,13 +6079,13 @@ building temple_dievas
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        recruit_pool "Dievas Guard"  1   0.084   1  0  requires factions { lithuania, } 
-        religion_level bonus 4 
-        law_bonus bonus 3 
-        happiness_bonus 3 
-        agent_limit priest 2 
-        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 
+        agent priest  0  requires factions { lithuania, }
+        recruit_pool "Dievas Guard"  1   0.084   1  0  requires factions { lithuania, }
+        religion_level bonus 4
+        law_bonus bonus 3
+        happiness_bonus 3
+        agent_limit priest 2
+        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1
       }
       material wooden
       construction  8
@@ -6111,11 +6111,11 @@ building temple_dievas_castle
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        religion_level bonus 2 
-        happiness_bonus bonus 2 
-        law_bonus bonus 1 
-        agent_limit priest 1 
+        agent priest  0  requires factions { lithuania, }
+        religion_level bonus 2
+        happiness_bonus bonus 2
+        law_bonus bonus 1
+        agent_limit priest 1
       }
       material wooden
       construction  4
@@ -6141,11 +6141,11 @@ building temple_perkunas
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        population_health_bonus 1 
-        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 
-        religion_level bonus 1 
-        agent_limit priest 1 
+        agent priest  0  requires factions { lithuania, }
+        population_health_bonus 1
+        population_growth_bonus bonus 1 requires event_counter is_the_ai 1
+        religion_level bonus 1
+        agent_limit priest 1
       }
       material wooden
       construction  4
@@ -6160,12 +6160,12 @@ building temple_perkunas
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        recruit_pool "Followers of Perkunas"  1   0.084   1  0  requires factions { lithuania, } 
-        population_health_bonus 2 
-        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 
-        religion_level bonus 2 
-        agent_limit priest 1 
+        agent priest  0  requires factions { lithuania, }
+        recruit_pool "Followers of Perkunas"  1   0.084   1  0  requires factions { lithuania, }
+        population_health_bonus 2
+        population_growth_bonus bonus 1 requires event_counter is_the_ai 1
+        religion_level bonus 2
+        agent_limit priest 1
       }
       material wooden
       construction  6
@@ -6180,13 +6180,13 @@ building temple_perkunas
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        recruit_pool "Followers of Perkunas"  1   0.125   2  0  requires factions { lithuania, } 
-        population_health_bonus 3 
-        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 
-        religion_level bonus 3 
-        agent_limit priest 2 
-        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 
+        agent priest  0  requires factions { lithuania, }
+        recruit_pool "Followers of Perkunas"  1   0.125   2  0  requires factions { lithuania, }
+        population_health_bonus 3
+        population_growth_bonus bonus 1 requires event_counter is_the_ai 1
+        religion_level bonus 3
+        agent_limit priest 2
+        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1
       }
       material wooden
       construction  8
@@ -6212,12 +6212,12 @@ building temple_perkunas_castle
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
+        agent priest  0  requires factions { lithuania, }
         recruit_pool "Lettish Crossbowmen"  1   0.084   1  0  requires factions { lithuania, }
-        population_health_bonus 1 
-        population_growth_bonus bonus 1 
-        religion_level bonus 1 
-        agent_limit priest 1 
+        population_health_bonus 1
+        population_growth_bonus bonus 1
+        religion_level bonus 1
+        agent_limit priest 1
       }
       material wooden
       construction  4
@@ -6243,10 +6243,10 @@ building temple_giltine
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
-        law_bonus bonus 1 
-        religion_level bonus 1 
-        agent_limit priest 1 
+        agent priest  0  requires factions { lithuania, }
+        law_bonus bonus 1
+        religion_level bonus 1
+        agent_limit priest 1
       }
       material wooden
       construction  4
@@ -6261,10 +6261,10 @@ building temple_giltine
     {
       capability
       {
-        agent priest  0  requires factions {  lithuania, } 
-        law_bonus bonus 2 
-        religion_level bonus 2 
-        agent_limit priest 1 
+        agent priest  0  requires factions {  lithuania, }
+        law_bonus bonus 2
+        religion_level bonus 2
+        agent_limit priest 1
       }
       material wooden
       construction  6
@@ -6279,12 +6279,12 @@ building temple_giltine
     {
       capability
       {
-        agent priest  0  requires factions {  lithuania, } 
-        recruit_pool "Giltines Chosen"  1   0.084   1  0  requires factions { lithuania, } 
-        law_bonus bonus 3 
-        religion_level bonus 3 
-        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 
-        agent_limit priest 2 
+        agent priest  0  requires factions {  lithuania, }
+        recruit_pool "Giltines Chosen"  1   0.084   1  0  requires factions { lithuania, }
+        law_bonus bonus 3
+        religion_level bonus 3
+        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1
+        agent_limit priest 2
       }
       material wooden
       construction  8
@@ -6310,11 +6310,11 @@ building temple_giltine_castle
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } 
+        agent priest  0  requires factions { lithuania, }
         recruit_pool "Lettish Crossbowmen"  1   0.084   1  0  requires factions { lithuania, }
-        law_bonus bonus 1 
-        religion_level bonus 1 
-        agent_limit priest 1 
+        law_bonus bonus 1
+        religion_level bonus 1
+        agent_limit priest 1
       }
       material wooden
       construction  4
@@ -6335,7 +6335,7 @@ building temple_tengir
   religion pagan
   levels tengir_altar tengir_sanctuary tengir_temple
   {
-    tengir_altar city requires factions { cumans, mongols, } 
+    tengir_altar city requires factions { cumans, mongols, }
     {
       convert_to 0
       capability
@@ -6357,7 +6357,7 @@ building temple_tengir
         tengir_sanctuary
       }
     }
-    tengir_sanctuary city requires factions { cumans, mongols, } 
+    tengir_sanctuary city requires factions { cumans, mongols, }
     {
       capability
       {
@@ -6378,7 +6378,7 @@ building temple_tengir
         tengir_temple
       }
     }
-    tengir_temple city requires factions { cumans, mongols, } 
+    tengir_temple city requires factions { cumans, mongols, }
     {
       capability
       {
@@ -6410,7 +6410,7 @@ building temple_tengir_castle
   religion pagan
   levels c_tengir_altar
   {
-    c_tengir_altar castle requires factions { cumans, mongols, } 
+    c_tengir_altar castle requires factions { cumans, mongols, }
     {
       convert_to 0
       capability
@@ -6611,7 +6611,7 @@ building temple_catholic_castle
       convert_to 1
       capability
       {
-        agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, } 
+        agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, }
         agent priest  0  requires factions { hungary, poland, lithuania, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
         happiness_bonus bonus 1
@@ -7147,7 +7147,6 @@ building castle_taverns
 }
 building city_hall
 {
-
   convert_to castle_academic
   levels town_hall council_chambers city_hall mayors_palace
   {
@@ -7155,7 +7154,6 @@ building city_hall
     {
       convert_to 0
       capability
-
       {
         agent diplomat  0  requires factions { northern_european, }
         agent diplomat  0  requires factions { middle_eastern, }
@@ -7175,7 +7173,6 @@ building city_hall
         council_chambers
       }
     }
-
     council_chambers city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 1
@@ -7201,12 +7198,10 @@ building city_hall
         city_hall
       }
     }
-
     city_hall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 1
       capability
-
       {
         agent diplomat  0  requires factions { northern_european, }
         agent diplomat  0  requires factions { middle_eastern, }
@@ -7230,12 +7225,10 @@ building city_hall
         mayors_palace
       }
     }
-
     mayors_palace city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 1
       capability
-
       {
         agent diplomat  0  requires factions { northern_european, }
         agent diplomat  0  requires factions { middle_eastern, }
@@ -7591,7 +7584,6 @@ building tourney
 }
 building castle_academic
 {
-
   convert_to city_hall
   levels castle_library academy
   {
@@ -7602,12 +7594,10 @@ building castle_academic
 
       {
         agent diplomat  0  requires factions { northern_european, }
-
         agent diplomat  0  requires factions { middle_eastern, }
         agent diplomat  0  requires factions { eastern_european, }
         agent diplomat  0  requires factions { greek, }
         agent diplomat  0  requires factions { southern_european, }
-
         agent_limit diplomat 1
 
       }
@@ -7620,29 +7610,23 @@ building castle_academic
         academy
       }
     }
-
     academy castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 1
       capability
-
       {
         agent diplomat  0  requires factions { northern_european, }
-
         agent diplomat  0  requires factions { middle_eastern, }
         agent diplomat  0  requires factions { eastern_european, }
         agent diplomat  0  requires factions { greek, }
         agent diplomat  0  requires factions { southern_european, }
-
         agent assassin  0  requires factions { northern_european, }
         agent assassin  0  requires factions { middle_eastern, }
         agent assassin  0  requires factions { eastern_european, }
         agent assassin  0  requires factions { greek, }
         agent assassin  0  requires factions { southern_european, }
-
         agent_limit diplomat 1
         agent_limit assassin 1
-
       }
       material stone
       construction  16
@@ -9213,7 +9197,6 @@ building guild_woodsmens_guild
     {
       capability
       {
-        recruit_pool "Sherwood Archers"  1   0.125   2  0  requires factions { england, } and hidden_resource england
         archer_bonus 2
       }
       material wooden
@@ -9229,7 +9212,6 @@ building guild_woodsmens_guild
     {
       capability
       {
-        recruit_pool "Sherwood Archers"  1   0.17   3  1  requires factions { england, } and hidden_resource england
         archer_bonus 2
       }
       faction_capability
@@ -9251,14 +9233,10 @@ building guild_woodsmens_guild
 }
 building guild_horse_breeders_guild
 {
-
   convert_to guild_horse_breeders_guild
   levels horse_breeders_guild m_horse_breeders_guild gm_horse_breeders_guild
-
   {
-
     horse_breeders_guild requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
-
     {
       capability
       {
@@ -9273,9 +9251,7 @@ building guild_horse_breeders_guild
         m_horse_breeders_guild
       }
     }
-
     m_horse_breeders_guild requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
-
     {
       capability
       {
@@ -9290,9 +9266,7 @@ building guild_horse_breeders_guild
         gm_horse_breeders_guild
       }
     }
-
     gm_horse_breeders_guild requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
-
     {
       capability
       {

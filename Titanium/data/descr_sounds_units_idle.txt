@@ -22,7 +22,7 @@ BANK: animal_idle
 ;;;;;;;;;;;;;   CAMELS   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-	mount camel
+	mount camel brawler, camel brawler charger, camel charger, camel HA, camel lancer
 		event lod 1 probability 0.04 volume -25 mindist 4
 			folder data/sounds/Voice/Animal/Camel
 			Camel_Groan_02
@@ -94,7 +94,7 @@ BANK: animal_idle
 ;;;;;;;;;;;;;;;;;;   HORSES    ;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-	mount pony, fast pony, heavy horse, barded horse, armoured horse, eastern armoured horse, mailed horse
+	mount eastern barded horse brawler, eastern barded horse charger, eastern armoured horse brawler, eastern armoured horse brawler charger, eastern armoured horse charger, eastern armoured horse charger lancer, eastern armoured horse HA, eastern armoured horse lancer, russian armoured horse brawler, russian barded horse brawler charger, russian barded horse charger, lith padded horse brawler lancer, mamluk armoured horse brawler charger, mongol armoured horse brawler, mongol armoured horse charger, cataphract armoured horse brawler, cataphract armoured horse charger, armoured horse brawler charger, armoured horse charger, armoured horse lancer, french armoured horse brawler lancer, barded horse brawler, barded horse brawler charger, barded horse brawler lancer, barded horse charger, barded horse charger lancer, barded horse lancer, early barded horse brawler lancer, french barded horse brawler charger, french barded horse brawler lancer, order barded horse charger lancer, alt barded horse brawler lancer, mailed horse brawler, mailed horse brawler charger, mailed horse brawler lancer, mailed horse charger, mailed horse charger lancer, french mailed horse brawler charger, french mailed horse brawler lancer, order mailed horse charger lancer, order mailed horse2 brawler lancer, order mailed horse2 charger lancer, pony, fast pony, mongol fast pony, heavy horse brawler lancer, heavy horse brawler charger, heavy horse charger, heavy horse charger lancer, heavy horse lancer, heavy horse lancer charger, early heavy horse brawler charger, early heavy horse brawler, early heavy horse charger, early heavy horse charger lancer, early heavy horse HA, early heavy horse lancer, early heavy horse lancer charger, mongol heavy horse HA, medium horse charger, medium horse charger brawler, medium horse HA, medium horse lancer, medium horse lancer charger, eastern horse HA, eastern horse lancer, eastern horse lancer charger, eastern horse charger lancer, early eastern armoured horse brawler, order mailed horse3 charger lancer, order mailed horse4 charger lancer, teutonic barded horse brawler lancer
 		event lod 1 probability 0.07 volume -45 mindist 3
 			folder data/sounds/Voice/Animal/Horse
 			horse_snort_01

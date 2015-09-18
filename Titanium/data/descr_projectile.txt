@@ -51,13 +51,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 delay		standard	0.0
-delay		flaming	15.0
+delay		flaming		20.0
 delay		gunpowder	0.0
 
 
 
 
-projectile arrow
+projectile average_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -78,9 +78,9 @@ velocity	21 42
 display		aimed
 effect_only
 
-projectile arrow_fiery
+projectile average_arrow_fiery
 
-flaming		arrow
+flaming		average_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -102,7 +102,7 @@ velocity	18 36
 display		aimed
 effect_only
 
-projectile mass_arrow
+projectile average_missile_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -123,9 +123,9 @@ velocity	21 42
 display		aimed
 effect_only
 
-projectile mass_arrow_fiery
+projectile average_missile_arrow_fiery
 
-flaming		mass_arrow
+flaming		average_missile_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -147,7 +147,7 @@ velocity	18 36
 display		aimed
 effect_only
 
-projectile composite_arrow
+projectile average_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -169,9 +169,9 @@ velocity	24 48
 display		aimed
 effect_only
 
-projectile composite_arrow_fiery
+projectile average_composite_arrow_fiery
 
-flaming		composite_arrow
+flaming		average_composite_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -193,7 +193,7 @@ velocity	21 42
 display		aimed
 effect_only
 
-projectile mass_composite_arrow
+projectile average_missile_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -215,9 +215,9 @@ velocity	24 48
 display		aimed
 effect_only
 
-projectile mass_composite_arrow_fiery
+projectile average_missile_composite_arrow_fiery
 
-flaming		mass_composite_arrow
+flaming		average_missile_composite_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -239,7 +239,7 @@ velocity	21 42
 display		aimed
 effect_only
 
-projectile cav_composite_arrow
+projectile average_mounted_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -261,7 +261,7 @@ velocity	26 52
 display		aimed
 effect_only
 
-projectile cav_mass_composite_arrow
+projectile average_mounted_missile_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -275,7 +275,7 @@ effect_offset	-1.5
 damage		0
 radius		0.1
 mass		0.06
-accuracy_vs_units		0.0825
+accuracy_vs_units		0.09
 affected_by_rain
 min_angle	-80
 max_angle	70
@@ -283,7 +283,7 @@ velocity	26 52
 display		aimed
 effect_only
 
-projectile bodkin_arrow
+projectile average_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -304,9 +304,9 @@ velocity	22 44
 display		aimed
 effect_only
 
-projectile bodkin_arrow_fiery
+projectile average_longbow_arrow_fiery
 
-flaming		bodkin_arrow
+flaming		average_longbow_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -328,7 +328,7 @@ velocity	19 38
 display		aimed
 effect_only
 
-projectile mass_bodkin_arrow
+projectile average_missile_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -349,9 +349,9 @@ velocity	22 44
 display		aimed
 effect_only
 
-projectile mass_bodkin_arrow_fiery
+projectile average_missile_longbow_arrow_fiery
 
-flaming		mass_bodkin_arrow
+flaming		average_missile_longbow_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -373,7 +373,7 @@ velocity	19 38
 display		aimed
 effect_only
 
-projectile cav_bodkin_arrow
+projectile average_mounted_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -572,7 +572,7 @@ model		data/models_missile/Bolt_high.CAS,  40.0
 model		data/models_missile/Bolt_med.CAS,  80.0
 model		data/models_missile/Bolt_low.CAS,  max
 
-projectile javelin
+projectile average_javelin
 
 damage		0
 radius		0.05
@@ -585,12 +585,12 @@ display		aimed invert_model_z
 model		data/models_missile/weapon_javelin_high.cas, 40
 model		data/models_missile/weapon_javelin_low.cas,  max
 
-projectile cav_javelin
+projectile average_mounted_javelin
 
 damage		0
 radius		0.05
 mass		0.14
-accuracy_vs_units		0.0825
+accuracy_vs_units		0.0875
 min_angle	-60
 max_angle	45
 velocity	30
@@ -614,12 +614,12 @@ damage		0
 damage_to_troops 5
 radius		0.001
 mass		0.2
-accuracy_vs_units		0.04 
+accuracy_vs_units		0.035 
 accuracy_vs_buildings	0.02
 accuracy_vs_towers      0.02 
 min_angle	-30
 max_angle	35
-velocity	60
+velocity	70
 ;bounce		0.5 0.6 0.5 0.4
 body_piercing
 display		aimed particle_trail invert_model_z
@@ -644,13 +644,13 @@ damage		0
 damage_to_troops 5
 radius		0.001
 mass		0.2
-accuracy_vs_units		0.05
-accuracy_vs_buildings	0.03
-accuracy_vs_towers      0.03 
+accuracy_vs_units		0.04
+accuracy_vs_buildings	0.025
+accuracy_vs_towers      0.025
 fiery
 min_angle	-45
 max_angle	45
-velocity	85
+velocity	65
 body_piercing
 display		aimed invert_model_z
 model		data/models_missile/missile_ballista_bolt_high.CAS,  40.0
@@ -1495,7 +1495,7 @@ display		aimed
 effect_only
 
 
-projectile hand_gun_bullet
+projectile average_hand_gun_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1507,7 +1507,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.1
+mass		0.22
 accuracy_vs_units		0.0775 
 affected_by_rain
 min_angle	-80
@@ -1517,7 +1517,7 @@ display		aimed
 effect_only
 
 
-projectile quality_hand_gun_bullet
+projectile superior_hand_gun_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1529,7 +1529,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.1
+mass		0.22
 accuracy_vs_units		0.0725
 affected_by_rain
 min_angle	-80
@@ -1539,7 +1539,7 @@ display		aimed
 effect_only
 
 
-projectile early_arquebus_bullet
+projectile average_early_arquebus_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1551,7 +1551,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.13
+mass		0.28
 accuracy_vs_units		0.0725 
 affected_by_rain
 min_angle	-80
@@ -1561,7 +1561,7 @@ display		aimed
 effect_only
 
 
-projectile quality_early_arquebus_bullet
+projectile superior_early_arquebus_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1573,7 +1573,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.13
+mass		0.28
 accuracy_vs_units		0.0675 
 affected_by_rain
 min_angle	-80
@@ -1583,7 +1583,7 @@ display		aimed
 effect_only
 
 
-projectile arquebus_bullet
+projectile average_arquebus_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1595,7 +1595,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.13
+mass		0.36
 accuracy_vs_units		0.0675
 affected_by_rain
 min_angle	-80
@@ -1605,7 +1605,7 @@ display		aimed
 effect_only
 
 
-projectile mounted_arquebus_bullet
+projectile average_mounted_arquebus_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1617,7 +1617,29 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.13
+mass		0.28
+accuracy_vs_units		0.0725
+affected_by_rain
+min_angle	-80
+max_angle	70
+velocity	400 400
+display		aimed
+effect_only
+
+
+projectile superior_mounted_arquebus_bullet
+
+effect					bullet_model_set
+end_effect				bullet_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	bullet_impact_wall_set
+end_shatter_effect		bullet_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect		bullet_impact_wall_set
+
+damage		0
+radius		0.001
+mass		0.28
 accuracy_vs_units		0.0675
 affected_by_rain
 min_angle	-80
@@ -1627,7 +1649,7 @@ display		aimed
 effect_only
 
 
-projectile quality_mounted_arquebus_bullet
+projectile average_musket_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1639,29 +1661,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.13
-accuracy_vs_units		0.0625
-affected_by_rain
-min_angle	-80
-max_angle	70
-velocity	400 400
-display		aimed
-effect_only
-
-
-projectile musket_bullet
-
-effect					bullet_model_set
-end_effect				bullet_impact_ground_set
-end_man_effect			man_impact_tiny_set
-end_package_effect    	bullet_impact_wall_set
-end_shatter_effect		bullet_impact_ground_set
-end_shatter_man_effect		man_impact_tiny_set
-end_shatter_package_effect		bullet_impact_wall_set
-
-damage		0
-radius		0.001
-mass		0.2
+mass		0.64
 accuracy_vs_units		0.0625
 affected_by_rain
 min_angle	-80
@@ -1671,7 +1671,7 @@ display		aimed
 effect_only
 
 
-projectile caliver_bullet
+projectile average_caliver_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1683,7 +1683,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.17
+mass		0.52
 accuracy_vs_units		0.065
 affected_by_rain
 min_angle	-80
@@ -1693,7 +1693,7 @@ display		aimed
 effect_only
 
 
-projectile flintlock_bullet
+projectile average_late_arquebus_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1705,7 +1705,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.17
+mass		0.44
 accuracy_vs_units		0.065
 ;affected_by_rain
 min_angle	-80
@@ -1715,7 +1715,7 @@ display		aimed
 effect_only
 
 
-projectile quality_pistol_bullet
+projectile superior_pistol_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1727,8 +1727,8 @@ end_shatter_package_effect			bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.11
-accuracy_vs_units		0.0675
+mass		0.22
+accuracy_vs_units		0.0725
 affected_by_rain
 min_angle	-80
 max_angle	70
@@ -1737,7 +1737,7 @@ display		aimed
 effect_only
 
 
-projectile quality_early_pistol_bullet
+projectile superior_early_pistol_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1749,8 +1749,8 @@ end_shatter_package_effect			bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.11
-accuracy_vs_units		0.07
+mass		0.20
+accuracy_vs_units		0.075
 affected_by_rain
 min_angle	-80
 max_angle	70
@@ -1759,7 +1759,7 @@ display		aimed
 effect_only
 
 
-projectile camel_gun_bullet
+projectile average_camel_gun_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -1771,8 +1771,8 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.17
-accuracy_vs_units		0.065
+mass		0.44
+accuracy_vs_units		0.0675
 affected_by_rain
 min_angle	-80
 max_angle	70
@@ -1781,7 +1781,7 @@ display		aimed
 effect_only
 
 
-projectile light_crossbow_bolt
+projectile average_light_crossbow_bolt
 
 effect			crossbow_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -1803,7 +1803,7 @@ display		aimed
 effect_only
 
 
-projectile crossbow_bolt
+projectile average_crossbow_bolt
 
 effect			crossbow_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -1824,7 +1824,7 @@ display		aimed
 effect_only
 
 
-projectile heavy_crossbow_bolt
+projectile average_heavy_crossbow_bolt
 
 effect			crossbow_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -1845,7 +1845,7 @@ velocity	50 55
 display		aimed
 effect_only
 
-projectile steel_crossbow_bolt
+projectile average_steel_crossbow_bolt
 
 effect			crossbow_steel_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -1934,9 +1934,9 @@ effect_only
 ;--------------------------------NEW PROJECTILE TYPES WITH VARIABLE ACCURACY FOR SHOOTER SKILL----------------------------
 ;-------------------------------------------------------------------------------------------------------------------------
 
-;-------------------------------------------------------cav arrow---------------------------------------------------------
+;-------------------------------------------------------mounted arrow---------------------------------------------------------
 
-projectile militia_cav_arrow
+projectile militia_mounted_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -1958,7 +1958,7 @@ display		aimed
 effect_only
 
 
-projectile cav_arrow
+projectile average_mounted_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -1980,7 +1980,7 @@ display		aimed
 effect_only
 
 
-projectile cav_mass_arrow
+projectile average_mounted_missile_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -1994,7 +1994,7 @@ effect_offset	-1.5
 damage		0
 radius		0.1
 mass		0.04
-accuracy_vs_units		0.0825
+accuracy_vs_units		0.09
 min_angle	-80
 max_angle	70
 velocity	23 46
@@ -2002,7 +2002,7 @@ display		aimed
 effect_only
 
 
-projectile quality_cav_arrow
+projectile superior_mounted_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2024,7 +2024,7 @@ display		aimed
 effect_only
 
 
-projectile elite_cav_arrow
+projectile elite_mounted_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2188,7 +2188,7 @@ display		aimed
 effect_only
 
 
-projectile militia_mass_arrow
+projectile militia_missile_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2210,9 +2210,9 @@ display		aimed
 effect_only
 
 
-projectile militia_mass_arrow_fiery
+projectile militia_missile_arrow_fiery
 
-flaming		militia_mass_arrow
+flaming		militia_missile_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2235,7 +2235,7 @@ display		aimed
 effect_only
 
 
-projectile quality_arrow
+projectile superior_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2257,9 +2257,9 @@ display		aimed
 effect_only
 
 
-projectile quality_arrow_fiery
+projectile superior_arrow_fiery
 
-flaming		quality_arrow
+flaming		superior_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2330,7 +2330,7 @@ effect_only
 
 ;-------------------------------------------------------composite arrow-------------------------------------------------------------
 
-projectile quality_composite_arrow
+projectile superior_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2352,9 +2352,9 @@ velocity	25 50
 display		aimed
 effect_only
 
-projectile quality_composite_arrow_fiery
+projectile superior_composite_arrow_fiery
 
-flaming		quality_composite_arrow
+flaming		superior_composite_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2377,7 +2377,7 @@ display		aimed
 effect_only
 
 
-projectile quality_mass_composite_arrow
+projectile superior_missile_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2399,9 +2399,9 @@ velocity	25 50
 display		aimed
 effect_only
 
-projectile quality_mass_composite_arrow_fiery
+projectile superior_missile_composite_arrow_fiery
 
-flaming		quality_mass_composite_arrow
+flaming		superior_missile_composite_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2517,7 +2517,7 @@ display		aimed
 effect_only
 
 
-projectile elite_mass_composite_arrow
+projectile elite_missile_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2539,9 +2539,9 @@ velocity	26 52
 display		aimed
 effect_only
 
-projectile elite_mass_composite_arrow_fiery
+projectile elite_missile_composite_arrow_fiery
 
-flaming		elite_mass_composite_arrow
+flaming		elite_missile_composite_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2611,7 +2611,7 @@ display		aimed
 effect_only
 
 
-projectile exceptional_mass_composite_arrow
+projectile exceptional_missile_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2633,9 +2633,9 @@ velocity	27 54
 display		aimed
 effect_only
 
-projectile exceptional_mass_composite_arrow_fiery
+projectile exceptional_missile_composite_arrow_fiery
 
-flaming		elite_mass_composite_arrow
+flaming		elite_missile_composite_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2657,9 +2657,9 @@ velocity	24 48
 display		aimed
 effect_only
 
-;-------------------------------------------------------cav composite arrow-------------------------------------------------------------
+;-------------------------------------------------------mounted composite arrow-------------------------------------------------------------
 
-projectile quality_cav_composite_arrow
+projectile superior_mounted_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2682,7 +2682,7 @@ display		aimed
 effect_only
 
 
-projectile quality_cav_mass_composite_arrow
+projectile superior_mounted_missile_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2696,7 +2696,7 @@ effect_offset	-1.5
 damage		0
 radius		0.1
 mass		0.07
-accuracy_vs_units		0.075
+accuracy_vs_units		0.0825
 affected_by_rain
 min_angle	-80
 max_angle	70
@@ -2705,7 +2705,7 @@ display		aimed
 effect_only
 
 
-projectile elite_cav_composite_arrow
+projectile elite_mounted_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2728,7 +2728,30 @@ display		aimed
 effect_only
 
 
-projectile elite_cav_mass_composite_arrow
+projectile elite_mounted_missile_composite_arrow
+
+effect			arrows_new_set
+end_effect				arrow_impact_ground_set
+end_man_effect			man_impact_tiny_set
+end_package_effect    	arrow_impact_wall_set
+end_shatter_effect		arrow_impact_ground_set
+end_shatter_man_effect		man_impact_tiny_set
+end_shatter_package_effect	arrow_broken_impact_wall_set
+
+effect_offset	-1.5
+damage		0
+radius		0.1
+mass		0.07
+accuracy_vs_units		0.075
+affected_by_rain
+min_angle	-80
+max_angle	70
+velocity	28 56
+display		aimed
+effect_only
+
+
+projectile exceptional_mounted_missile_composite_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2746,36 +2769,13 @@ accuracy_vs_units		0.0675
 affected_by_rain
 min_angle	-80
 max_angle	70
-velocity	28 56
-display		aimed
-effect_only
-
-
-projectile exceptional_cav_mass_composite_arrow
-
-effect			arrows_new_set
-end_effect				arrow_impact_ground_set
-end_man_effect			man_impact_tiny_set
-end_package_effect    	arrow_impact_wall_set
-end_shatter_effect		arrow_impact_ground_set
-end_shatter_man_effect		man_impact_tiny_set
-end_shatter_package_effect	arrow_broken_impact_wall_set
-
-effect_offset	-1.5
-damage		0
-radius		0.1
-mass		0.07
-accuracy_vs_units		0.06
-affected_by_rain
-min_angle	-80
-max_angle	70
 velocity	29 58
 display		aimed
 effect_only
 
-;-------------------------------------------------------bodkin arrow-------------------------------------------------------------
+;-------------------------------------------------------longbow arrow-------------------------------------------------------------
 
-projectile quality_bodkin_arrow
+projectile superior_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2796,9 +2796,9 @@ velocity	23 46
 display		aimed
 effect_only
 
-projectile quality_bodkin_arrow_fiery
+projectile superior_longbow_arrow_fiery
 
-flaming		quality_bodkin_arrow
+flaming		superior_longbow_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2821,7 +2821,7 @@ display		aimed
 effect_only
 
 
-projectile quality_mass_bodkin_arrow
+projectile superior_missile_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2842,9 +2842,9 @@ velocity	23 46
 display		aimed
 effect_only
 
-projectile quality_mass_bodkin_arrow_fiery
+projectile superior_missile_longbow_arrow_fiery
 
-flaming		quality_mass_bodkin_arrow
+flaming		superior_missile_longbow_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2866,7 +2866,7 @@ velocity	20 40
 display		aimed
 effect_only
 
-projectile elite_bodkin_arrow
+projectile elite_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2887,9 +2887,9 @@ velocity	24 48
 display		aimed
 effect_only
 
-projectile elite_bodkin_arrow_fiery
+projectile elite_longbow_arrow_fiery
 
-flaming		elite_bodkin_arrow
+flaming		elite_longbow_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2911,7 +2911,7 @@ velocity	21 42
 display		aimed
 effect_only
 
-projectile elite_mass_bodkin_arrow
+projectile elite_missile_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2932,9 +2932,9 @@ velocity	24 48
 display		aimed
 effect_only
 
-projectile elite_mass_bodkin_arrow_fiery
+projectile elite_missile_longbow_arrow_fiery
 
-flaming		elite_mass_bodkin_arrow
+flaming		elite_missile_longbow_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -2956,7 +2956,7 @@ velocity	21 42
 display		aimed
 effect_only
 
-projectile sherwood_bodkin_arrow
+projectile exceptional_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -2977,9 +2977,9 @@ velocity	25 50
 display		aimed
 effect_only
 
-projectile sherwood_bodkin_arrow_fiery
+projectile exceptional_longbow_arrow_fiery
 
-flaming		sherwood_bodkin_arrow
+flaming		exceptional_longbow_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -3001,9 +3001,9 @@ velocity	22 44
 display		aimed
 effect_only
 
-;-------------------------------------------------------cav bodkin arrow-------------------------------------------------------------
+;-------------------------------------------------------mounted longbow arrow-------------------------------------------------------------
 
-projectile quality_cav_bodkin_arrow
+projectile superior_mounted_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3025,7 +3025,7 @@ display		aimed
 effect_only
 
 
-projectile elite_cav_bodkin_arrow
+projectile elite_mounted_longbow_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3048,7 +3048,7 @@ effect_only
 
 ;-------------------------------------------------------war arrows-------------------------------------------------------------
 
-projectile cav_war_arrow
+projectile average_mounted_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3070,7 +3070,7 @@ display		aimed
 effect_only
 
 
-projectile cav_mass_war_arrow
+projectile average_mounted_missile_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3084,14 +3084,14 @@ effect_offset	-1.5
 damage		0
 radius		0.1
 mass		0.05
-accuracy_vs_units		0.0825
+accuracy_vs_units		0.09
 min_angle	-80
 max_angle	70
 velocity	23 46
 display		aimed
 effect_only
 
-projectile quality_cav_mass_war_arrow
+projectile superior_mounted_missile_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3105,14 +3105,14 @@ effect_offset	-1.5
 damage		0
 radius		0.1
 mass		0.06
-accuracy_vs_units		0.075
+accuracy_vs_units		0.0825
 min_angle	-80
 max_angle	70
 velocity	24 48
 display		aimed
 effect_only
 
-projectile elite_cav_mass_war_arrow
+projectile elite_mounted_missile_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3126,7 +3126,7 @@ effect_offset	-1.5
 damage		0
 radius		0.1
 mass		0.06
-accuracy_vs_units		0.0675
+accuracy_vs_units		0.075
 min_angle	-80
 max_angle	70
 velocity	25 50
@@ -3179,7 +3179,8 @@ velocity	17 34
 display		aimed
 effect_only
 
-projectile war_arrow
+
+projectile average_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3201,9 +3202,9 @@ display		aimed
 effect_only
 
 
-projectile war_arrow_fiery
+projectile average_war_arrow_fiery
 
-flaming		war_arrow
+flaming		average_war_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -3225,7 +3226,7 @@ velocity	18 36
 display		aimed
 effect_only
 
-projectile war_mass_arrow
+projectile average_missile_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3246,9 +3247,9 @@ velocity	21 42
 display		aimed
 effect_only
 
-projectile war_mass_arrow_fiery
+projectile average_missile_war_arrow_fiery
 
-flaming		war_mass_arrow
+flaming		average_missile_war_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -3270,7 +3271,7 @@ velocity	18 36
 display		aimed
 effect_only
 
-projectile quality_war_arrow
+projectile superior_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3292,9 +3293,9 @@ display		aimed
 effect_only
 
 
-projectile quality_war_arrow_fiery
+projectile superior_war_arrow_fiery
 
-flaming		quality_war_arrow
+flaming		superior_war_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -3316,7 +3317,7 @@ velocity	19 38
 display		aimed
 effect_only
 
-projectile quality_war_mass_arrow
+projectile superior_missile_war_arrow
 
 effect			arrows_new_set
 end_effect				arrow_impact_ground_set
@@ -3338,9 +3339,9 @@ display		aimed
 effect_only
 
 
-projectile quality_war_mass_arrow_fiery
+projectile superior_missile_war_arrow_fiery
 
-flaming		quality_war_mass_arrow
+flaming		superior_missile_war_arrow
 effect 			arrows_fire_new_set
 end_effect				arrow_flaming_impact_ground_set
 end_man_effect			man_impact_tiny_set
@@ -3411,7 +3412,7 @@ effect_only
 
 ;-------------------------------------------------------crossbows-------------------------------------------------------------
 
-projectile cav_light_crossbow_bolt
+projectile average_mounted_light_crossbow_bolt
 
 effect			crossbow_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -3432,7 +3433,7 @@ velocity	50 55
 display		aimed
 effect_only
 
-projectile quality_cav_light_crossbow_bolt
+projectile superior_mounted_light_crossbow_bolt
 
 effect			crossbow_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -3474,7 +3475,7 @@ velocity	45 50
 display		aimed
 effect_only
 
-projectile peasant_militia_crossbow_bolt
+projectile peasant_militia_light_crossbow_bolt
 
 effect			crossbow_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -3528,7 +3529,7 @@ end_shatter_package_effect		bolt_impact_wall_set
 
 damage		0
 radius		0.075
-mass		0.011
+mass		0.11
 accuracy_vs_units		0.0675
 affected_by_rain
 min_angle	-80
@@ -3549,15 +3550,15 @@ end_shatter_package_effect		bolt_impact_wall_set
 
 damage		0
 radius		0.075
-mass		0.09
+mass		0.13
 accuracy_vs_units		0.07
 min_angle	-80
-max_angle	70
+max_angle	60
 velocity	50 55
 display		aimed
 effect_only
 
-projectile quality_crossbow_bolt
+projectile superior_crossbow_bolt
 
 effect			crossbow_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -3569,7 +3570,7 @@ end_shatter_package_effect		bolt_impact_wall_set
 
 damage		0
 radius		0.075
-mass		0.01
+mass		0.1
 accuracy_vs_units		0.0575
 affected_by_rain
 min_angle	-80
@@ -3578,7 +3579,7 @@ velocity	50 55
 display		aimed
 effect_only
 
-projectile quality_heavy_crossbow_bolt
+projectile superior_heavy_crossbow_bolt
 
 effect			crossbow_steel_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -3641,7 +3642,7 @@ velocity	50 55
 display		aimed
 effect_only
 
-projectile quality_steel_crossbow_bolt
+projectile superior_steel_crossbow_bolt
 
 effect			crossbow_steel_arrows_new_set
 end_effect				bolt_impact_ground_set
@@ -3683,7 +3684,7 @@ effect_only
 
 ;-------------------------------------------------------firearms-------------------------------------------------------------
 
-projectile quality_arquebus_bullet
+projectile superior_arquebus_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -3695,7 +3696,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.12
+mass		0.44
 accuracy_vs_units		0.0625 
 affected_by_rain
 min_angle	-80
@@ -3716,7 +3717,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.12
+mass		0.44
 accuracy_vs_units		0.0575
 affected_by_rain
 min_angle	-80
@@ -3725,7 +3726,7 @@ velocity	400 400
 display		aimed
 effect_only
 
-projectile quality_musket_bullet
+projectile superior_musket_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -3737,7 +3738,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.14
+mass		0.64
 accuracy_vs_units		0.0575
 affected_by_rain
 min_angle	-80
@@ -3758,7 +3759,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.14
+mass		0.64
 accuracy_vs_units		0.0525
 affected_by_rain
 min_angle	-80
@@ -3768,7 +3769,7 @@ display		aimed
 effect_only
 
 
-projectile quality_caliver_bullet
+projectile superior_caliver_bullet
 
 effect					bullet_model_set
 end_effect				bullet_impact_ground_set
@@ -3780,7 +3781,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.17
+mass		0.52
 accuracy_vs_units		0.06
 affected_by_rain
 min_angle	-80
@@ -3802,7 +3803,7 @@ end_shatter_package_effect		bullet_impact_wall_set
 
 damage		0
 radius		0.001
-mass		0.17
+mass		0.52
 accuracy_vs_units		0.055
 affected_by_rain
 min_angle	-80
@@ -3840,7 +3841,7 @@ display		aimed invert_model_z
 model		data/models_missile/weapon_javelin_high.cas, 40
 model		data/models_missile/weapon_javelin_low.cas,  max
 
-projectile quality_javelin
+projectile superior_javelin
 
 damage		0
 radius		0.05
@@ -3866,12 +3867,12 @@ display		aimed invert_model_z
 model		data/models_missile/weapon_javelin_high.cas, 40
 model		data/models_missile/weapon_javelin_low.cas,  max
 
-projectile militia_cav_javelin
+projectile militia_mounted_javelin
 
 damage		0
 radius		0.05
 mass		0.13
-accuracy_vs_units		0.0925
+accuracy_vs_units		0.0975
 min_angle	-60
 max_angle	45
 velocity	28
@@ -3879,12 +3880,12 @@ display		aimed invert_model_z
 model		data/models_missile/weapon_javelin_high.cas, 40
 model		data/models_missile/weapon_javelin_low.cas,  max
 
-projectile quality_cav_javelin
+projectile superior_mounted_javelin
 
 damage		0
 radius		0.05
 mass		0.15
-accuracy_vs_units		0.0725
+accuracy_vs_units		0.0775
 min_angle	-60
 max_angle	45
 velocity	32
@@ -3892,12 +3893,12 @@ display		aimed invert_model_z
 model		data/models_missile/weapon_javelin_high.cas, 40
 model		data/models_missile/weapon_javelin_low.cas,  max
 
-projectile elite_cav_javelin
+projectile elite_mounted_javelin
 
 damage		0
 radius		0.05
 mass		0.15
-accuracy_vs_units		0.0625
+accuracy_vs_units		0.0675
 min_angle	-60
 max_angle	45
 velocity	34
@@ -4158,7 +4159,7 @@ end_shatter_package_effect bullet_impact_wall_set
 
 damage 0
 radius 0
-mass 0.05
+mass 0.15
 accuracy_vs_units 0.001
 min_angle -60
 max_angle 70
