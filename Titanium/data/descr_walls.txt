@@ -110,7 +110,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-			stat		8, 0, average_war_arrow, 125, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+			stat		8, 0, average_arrow, 125, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	100
@@ -160,7 +160,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-			stat		8, 0, average_war_arrow, 145, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+			stat		8, 0, average_arrow, 145, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	100
@@ -208,7 +208,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-		stat		8, 0, average_war_arrow, 165, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+		stat		8, 0, average_composite_arrow, 165, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	100
@@ -244,7 +244,7 @@ wall
 		
 		missile_level
 		{
-			stat		12, 0, superior_war_arrow, 175, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+			stat		12, 0, superior_composite_arrow, 175, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			shot_gfx	
@@ -310,7 +310,7 @@ wall
 		; as in descr_unit.txt
 		level
 		{
-			stat		8, 0, average_war_arrow, 185, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+			stat		8, 0, average_composite_arrow, 185, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	100
@@ -362,7 +362,7 @@ wall
 		
 		missile_level
 		{
-			stat		12, 0, superior_war_arrow, 200, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+			stat		12, 0, superior_composite_arrow, 200, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			shot_gfx	
@@ -428,7 +428,7 @@ wall
 
                 level
 		{
-			stat		8, 0, average_war_arrow, 200, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+			stat		8, 0, average_composite_arrow, 200, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			fire_angle	100
@@ -481,7 +481,7 @@ wall
 		
 		missile_level
 		{
-			stat		12, 0, superior_war_arrow, 200, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
+			stat		12, 0, superior_composite_arrow, 200, 80, missile, missile_mechanical, piercing, arrow_tower, 5, 1
 			stat_attr	area
 			shot_sfx	TOWER_ARROW_FIRING
 			shot_gfx	

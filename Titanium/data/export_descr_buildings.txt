@@ -6325,11 +6325,15 @@ building smith
       convert_to 2
       capability
       {
-        armour 8 requires factions { northern_european, southern_european, eastern_european, } and event_counter TRANSITIONAL_ARMOR 1
+        armour 15 requires factions { northern_european, southern_european, eastern_european, } and event_counter TRANSITIONAL_ARMOR 1
+        armour 16 requires factions { northern_european, southern_european, eastern_european, } and event_counter TRANSITIONAL_ARMOR 1
         armour 9
+        armour 12
         armour 10 requires not factions { mongols, timurids, }
+        armour 13 requires not factions { mongols, timurids, }
         armour 11 requires not factions { mongols, timurids, }
-        ;armour 12 requires factions { northern_european, southern_european, eastern_european, }
+        armour 14 requires not factions { mongols, timurids, }
+        armour 8 requires factions { northern_european, southern_european, eastern_european, }
       }
       material wooden
       construction  12
@@ -6345,12 +6349,17 @@ building smith
       convert_to 3
       capability
       {
-        armour 13 requires factions { middle_eastern, } and event_counter HALF_PLATE_ARMOR 1
-        armour 13 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
-        armour 14
-        armour 15 requires factions { northern_european, southern_european, eastern_european, middle_eastern, }
-        armour 16 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
-        armour 17 requires factions { northern_european, southern_european, eastern_european, } and event_counter FULL_PLATE_ARMOR 1
+        armour 21 requires factions { middle_eastern, } and event_counter HALF_PLATE_ARMOR 1
+        armour 21 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 23 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 18
+        armour 20
+        armour 17 requires factions { northern_european, southern_european, eastern_european, middle_eastern, }
+        armour 19 requires factions { northern_european, southern_european, eastern_european, middle_eastern, }
+        armour 22 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 24 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 25 requires factions { northern_european, southern_european, eastern_european, } and event_counter FULL_PLATE_ARMOR 1
+        armour 26 requires factions { northern_european, southern_european, eastern_european, } and event_counter FULL_PLATE_ARMOR 1
       }
       material stone
       construction  16
@@ -6366,17 +6375,21 @@ building smith
       convert_to 4
       capability
       {
-        armour 18 requires factions { middle_eastern, }
-        armour 18 requires factions { northern_european, southern_european, eastern_european, }
-        armour 19 requires factions { eastern_european, greek, }
-        armour 20 requires factions { middle_eastern, }
-        armour 21 requires factions { northern_european, southern_european, eastern_european, }
-        armour 22 requires factions { northern_european, southern_european, eastern_european, } and event_counter spanish_inquisition 1
-        armour 23 requires factions { venice, sicily, milan, papal_states, } and event_counter IMPROVED_METALLURGY 1
-        armour 23 requires factions { hre, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
-        armour 23 requires factions { hre, } and event_counter MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
-        armour 23 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
-        armour 23 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter GOTHIC_ARMOR 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
+        armour 29 requires factions { middle_eastern, }
+        armour 29 requires factions { northern_european, southern_european, eastern_european, }
+        armour 33 requires factions { northern_european, southern_european, eastern_european, }
+        armour 28 requires factions { eastern_european, greek, }
+        armour 32 requires factions { eastern_european, greek, }
+        armour 27 requires factions { middle_eastern, }
+        armour 30 requires factions { northern_european, southern_european, eastern_european, }
+        armour 34 requires factions { northern_european, southern_european, eastern_european, }
+        armour 35 requires factions { northern_european, southern_european, eastern_european, } and event_counter spanish_inquisition 1
+        armour 36 requires factions { northern_european, southern_european, eastern_european, } and event_counter spanish_inquisition 1
+        armour 37 requires factions { venice, sicily, milan, papal_states, } and event_counter IMPROVED_METALLURGY 1
+        armour 37 requires factions { hre, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
+        armour 37 requires factions { hre, } and event_counter MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
+        armour 37 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
+        armour 37 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter GOTHIC_ARMOR 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
       }
       material stone
       construction  18
@@ -6392,13 +6405,15 @@ building smith
       convert_to 5
       capability
       {
-        armour 23 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter GOTHIC_ARMOR 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
-        armour 24 requires factions { northern_european, southern_european, eastern_european, }
-        armour 25 requires factions { northern_european, southern_european, eastern_european, } and event_counter pike_and_shot 1
-        armour 26 requires factions { venice, sicily, milan, papal_states, hre, england, } and event_counter ADVANCED_METALLURGY 1
-        armour 26 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
-        armour 26 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
-        armour 27 requires event_counter the_flintlock 1
+        armour 37 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter GOTHIC_ARMOR 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
+        armour 38 requires factions { northern_european, southern_european, eastern_european, }
+        armour 39 requires factions { northern_european, southern_european, eastern_european, }
+        armour 42 requires factions { northern_european, southern_european, eastern_european, } and event_counter pike_and_shot 1
+        armour 41 requires factions { northern_european, southern_european, eastern_european, } and event_counter pike_and_shot 1
+        armour 40 requires factions { venice, sicily, milan, papal_states, hre, england, } and event_counter ADVANCED_METALLURGY 1
+        armour 40 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
+        armour 40 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
+        armour 43 requires event_counter the_flintlock 1
       }
       material stone
       construction  20
@@ -6460,11 +6475,15 @@ building castle_smith
       convert_to 2
       capability
       {
-        armour 8 requires factions { northern_european, southern_european, eastern_european, } and event_counter TRANSITIONAL_ARMOR 1
+        armour 15 requires factions { northern_european, southern_european, eastern_european, } and event_counter TRANSITIONAL_ARMOR 1
+        armour 16 requires factions { northern_european, southern_european, eastern_european, } and event_counter TRANSITIONAL_ARMOR 1
         armour 9
+        armour 12
         armour 10 requires not factions { mongols, timurids, }
+        armour 13 requires not factions { mongols, timurids, }
         armour 11 requires not factions { mongols, timurids, }
-        ;armour 12 requires factions { northern_european, southern_european, eastern_european, }
+        armour 14 requires not factions { mongols, timurids, }
+        armour 8 requires factions { northern_european, southern_european, eastern_european, }
       }
       material wooden
       construction  12
@@ -6480,12 +6499,17 @@ building castle_smith
       convert_to 3
       capability
       {
-        armour 13 requires factions { middle_eastern, } and event_counter HALF_PLATE_ARMOR 1
-        armour 13 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
-        armour 14
-        armour 15 requires factions { northern_european, southern_european, eastern_european, middle_eastern, }
-        armour 16 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
-        armour 17 requires factions { northern_european, southern_european, eastern_european, } and event_counter FULL_PLATE_ARMOR 1
+        armour 21 requires factions { middle_eastern, } and event_counter HALF_PLATE_ARMOR 1
+        armour 21 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 23 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 18
+        armour 20
+        armour 17 requires factions { northern_european, southern_european, eastern_european, middle_eastern, }
+        armour 19 requires factions { northern_european, southern_european, eastern_european, middle_eastern, }
+        armour 22 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 24 requires factions { northern_european, southern_european, eastern_european, } and event_counter HALF_PLATE_ARMOR 1
+        armour 25 requires factions { northern_european, southern_european, eastern_european, } and event_counter FULL_PLATE_ARMOR 1
+        armour 26 requires factions { northern_european, southern_european, eastern_european, } and event_counter FULL_PLATE_ARMOR 1
       }
       material stone
       construction  16
@@ -6501,17 +6525,22 @@ building castle_smith
       convert_to 4
       capability
       {
-        armour 18 requires factions { middle_eastern, }
-        armour 18 requires factions { northern_european, southern_european, eastern_european, }
-        armour 19 requires factions { eastern_european, greek, }
-        armour 20 requires factions { middle_eastern, }
-        armour 21 requires factions { northern_european, southern_european, eastern_european, }
-        armour 22 requires factions { northern_european, southern_european, eastern_european, } and event_counter spanish_inquisition 1
-        armour 23 requires factions { venice, sicily, milan, papal_states, } and event_counter IMPROVED_METALLURGY 1
-        armour 23 requires factions { hre, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
-        armour 23 requires factions { hre, } and event_counter MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
-        armour 23 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
-        armour 23 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter GOTHIC_ARMOR 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
+        armour 29 requires factions { middle_eastern, }
+        armour 29 requires factions { northern_european, southern_european, eastern_european, }
+        armour 33 requires factions { northern_european, southern_european, eastern_european, }
+        armour 28 requires factions { eastern_european, greek, }
+        armour 32 requires factions { eastern_european, greek, }
+        armour 27 requires factions { middle_eastern, }
+        armour 31 requires factions { middle_eastern, }
+        armour 30 requires factions { northern_european, southern_european, eastern_european, }
+        armour 34 requires factions { northern_european, southern_european, eastern_european, }
+        armour 35 requires factions { northern_european, southern_european, eastern_european, } and event_counter spanish_inquisition 1
+        armour 36 requires factions { northern_european, southern_european, eastern_european, } and event_counter spanish_inquisition 1
+        armour 37 requires factions { venice, sicily, milan, papal_states, } and event_counter IMPROVED_METALLURGY 1
+        armour 37 requires factions { hre, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
+        armour 37 requires factions { hre, } and event_counter MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
+        armour 37 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter IMPROVED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states
+        armour 37 requires factions { denmark, scotland, france, england, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, middle_eastern, greek, } and event_counter GOTHIC_ARMOR 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states
       }
       material stone
       construction  18
@@ -6527,12 +6556,14 @@ building castle_smith
       convert_to 5
       capability
       {
-        armour 24 requires factions { northern_european, southern_european, eastern_european, }
-        armour 25 requires factions { northern_european, southern_european, eastern_european, } and event_counter pike_and_shot 1
-        armour 26 requires factions { venice, sicily, milan, papal_states, hre, england, } and event_counter ADVANCED_METALLURGY 1
-        armour 26 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
-        armour 26 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
-        armour 27 requires event_counter the_flintlock 1
+        armour 38 requires factions { northern_european, southern_european, eastern_european, }
+        armour 39 requires factions { northern_european, southern_european, eastern_european, }
+        armour 41 requires factions { northern_european, southern_european, eastern_european, } and event_counter pike_and_shot 1
+        armour 42 requires factions { northern_european, southern_european, eastern_european, } and event_counter pike_and_shot 1
+        armour 40 requires factions { venice, sicily, milan, papal_states, hre, england, } and event_counter ADVANCED_METALLURGY 1
+        armour 40 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
+        armour 40 requires factions { denmark, scotland, france, portugal, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
+        armour 43 requires event_counter the_flintlock 1
       }
       material stone
       construction  20

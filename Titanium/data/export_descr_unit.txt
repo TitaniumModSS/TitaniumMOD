@@ -1,5 +1,6 @@
 ;SS6.4 EDU edited by gracul: Jan-2011
 ;Edited by Melooo182: Dec-2014, RC2.0
+;K/T Polearm and Axes Rebalance
 ;
 ; Medieval 2 Total War Unit Details spreadsheet-generated unit descriptions
 ;
@@ -896,8 +897,8 @@ formation        1.5, 4.4, 2.5, 6, 2, square ; , wedge
 stat_health      1, 3
 stat_pri         5, 13, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
-stat_sec         8, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_sec_attr    ap
+stat_sec         12, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  15, 4, 3, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        13
@@ -1433,8 +1434,8 @@ formation        2, 4.4, 3, 6, 3, square ; , wedge
 stat_health      1, 2
 stat_pri         6, 5, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
-stat_sec         5, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         9, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 4, 3, metal ; 
 stat_sec_armour  0, 0, flesh
 stat_heat        8
@@ -1718,8 +1719,8 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, can_formed_c
 move_speed_mod	 0.9
 formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 2
-stat_pri         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         11, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  7, 3, 4, metal
@@ -2690,8 +2691,8 @@ formation        2, 4.4, 3, 6, 4, square
 stat_health      1, 2
 stat_pri         3, 6, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
-stat_sec         3, 4, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
-stat_sec_attr    ap
+stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  2, 0, 3, leather
 stat_sec_armour  0, 0, flesh
 stat_heat        8
@@ -2808,9 +2809,9 @@ stat_food        60, 300
 stat_cost        1, 595, 595, 120, 95, 895, 4, 130
 armour_ug_levels 5
 armour_ug_models alan_aldary
-ownership        mongols, cumans, slave;; , timurids
-era 0            mongols, cumans;; , timurids
-era 1            mongols, cumans;; , timurids
+ownership        mongols, timurids, cumans, slave
+era 0            mongols, timurids, cumans
+era 1            mongols, timurids, cumans
 recruit_priority_offset    15
 
 
@@ -2900,8 +2901,8 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 1, militia_javelin, 50, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  4, 2, 2, flesh ; shield -1
 stat_sec_armour  0, 0, flesh
 stat_heat        9
@@ -3114,8 +3115,8 @@ formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
 stat_pri         7, 5, average_mounted_light_crossbow_bolt, 100, 45, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         5, 5, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  3, 0, 0, leather ;slung shield +1 armour ;
 stat_sec_armour  0, 0, flesh
 stat_heat        5
@@ -3174,7 +3175,7 @@ recruit_priority_offset 0
 type             Peasant Archers
 dictionary       Peasant_Archers      ; Peasant Archers, r
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3208,7 +3209,7 @@ recruit_priority_offset    -20
 type             S Peasant Archers
 dictionary       S_Peasant_Archers      ; Peasant Archers, r
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3307,7 +3308,7 @@ recruit_priority_offset    35
 type             Highland Archers
 dictionary       Highland_Archers      ; Highland Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3318,8 +3319,8 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         2, 1, militia_arrow, 100, 40, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 4, 1, flesh ; shield -1
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -3341,7 +3342,7 @@ recruit_priority_offset    -10
 type             Noble Highland Archers
 dictionary       Noble_Highland_Archers      ; Noble Highland Archers, ep (f morale)
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -3352,8 +3353,8 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         5, 3, elite_war_arrow, 140, 35, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
-stat_sec_attr    ap
+stat_sec         6, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  6, 7, 2, metal ; 
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -3374,7 +3375,7 @@ recruit_priority_offset    10
 type             Peasant Crossbowmen
 dictionary       Peasant_Crossbowmen      ; Peasant Crossbowmen, r
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3408,7 +3409,7 @@ recruit_priority_offset    -10
 type             Crossbowmen
 dictionary       Crossbowmen      ; Crossbowmen, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -3441,7 +3442,7 @@ recruit_priority_offset    0
 type             Aventurier
 dictionary       Aventurier      ; Aventurier, ep/cep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -3473,7 +3474,7 @@ recruit_priority_offset    25
 type             Pavise Crossbowmen
 dictionary       Pavise_Crossbowmen      ; Pavise Crossbowmen, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -3507,7 +3508,7 @@ recruit_priority_offset    15
 type             Pavise Crossbow Militia
 dictionary       Pavise_Crossbow_Militia      ; Pavise Crossbow Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -3541,7 +3542,7 @@ recruit_priority_offset    10
 type             Genoese Crossbowmen
 dictionary       Genoese_Crossbowmen      ; Genoese Crossbowmen, ep/cep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -3575,7 +3576,7 @@ recruit_priority_offset    25
 type             Genoese Crossbow Militia
 dictionary       Genoese_Crossbow_Militia      ; Genoese Crossbow Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -3670,7 +3671,7 @@ recruit_priority_offset    0
 type             Crossbow Militia
 dictionary       Crossbow_Militia      ; Crossbow Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3701,7 +3702,7 @@ recruit_priority_offset    0
 type             Sicilian Muslim Archers
 dictionary       Sicilian_Muslim_Archers      ; Muslim Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Arabic
 banner faction   main_missile
@@ -3768,7 +3769,7 @@ recruit_priority_offset    20
 type             EE Peasant Archers
 dictionary       EE_Peasant_Archers      ; Peasant Archers, r
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         East_European
 banner faction   main_missile
@@ -3803,7 +3804,7 @@ recruit_priority_offset    -20
 type             EE Archer Militia
 dictionary       EE_Archer_Militia      ; Archer Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3834,7 +3835,7 @@ recruit_priority_offset    0
 type             EE Crossbow Militia
 dictionary       EE_Crossbow_Militia      ; Crossbow Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3959,7 +3960,7 @@ recruit_priority_offset    15
 type             Bosnian Archers
 dictionary       Bosnian_Archers      ; Bosnian Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -3993,7 +3994,7 @@ recruit_priority_offset    5
 type             Lithuanian Archers
 dictionary       Lithuanian_Archers      ; Lithuanian Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         East_European
 banner faction   main_missile
@@ -4092,7 +4093,7 @@ recruit_priority_offset    25
 type             Norse Archers
 dictionary       Norse_Archers      ; Norse Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -4222,7 +4223,7 @@ recruit_priority_offset    20
 type             Mercenary Pavise Crossbowmen
 dictionary       Mercenary_Pavise_Crossbowmen      ; Mercenary Pavise Crossbowmen, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Mediterranean
 banner faction   main_missile
@@ -4318,7 +4319,7 @@ recruit_priority_offset    15
 type             Bulgarian Brigands
 dictionary       Bulgarian_Brigands      ; Bulgarian Brigands, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         East_European
 banner faction   main_missile
@@ -4350,7 +4351,7 @@ recruit_priority_offset    0
 type             Mercenary Crossbowmen
 dictionary       Mercenary_Crossbowmen      ; Mercenary Crossbowmen, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Mediterranean
 banner faction   main_missile
@@ -4382,7 +4383,7 @@ recruit_priority_offset    10
 type             Balkan Archers
 dictionary       Balkan_Archers      ; Balkan Archers, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         East_European
 banner faction   main_missile
@@ -4495,7 +4496,7 @@ attributes       sea_faring, hide_forest, can_withdraw, is_peasant, peasant, fre
 formation        1.4, 1.4, 2.8, 2.8, 7, square
 stat_health      1, 0
 stat_pri         1, 1, no, 0, 0, melee, melee_simple, slashing, axe, 45, 1
-stat_pri_attr    no
+stat_pri_attr    no ; ap ; 1H axe (hatchet)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  0, 5, 0, flesh
@@ -4528,8 +4529,8 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, hardy, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 2.4, 5, square
 stat_health      1, 1
-stat_pri         4, 2, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
-stat_pri_attr    ap
+stat_pri         8, 2, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  0, 5, 3, flesh
@@ -4564,8 +4565,8 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, f
 move_speed_mod	 0.9
 formation        1.4, 1.2, 2.8, 2.4, 4, square, shield_wall
 stat_health      1, 1
-stat_pri         4, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
-stat_pri_attr    ap
+stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  0, 6, 4, flesh
@@ -4806,8 +4807,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 2.4, 4, square
 stat_health      1, 1
-stat_pri         5, 3, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
-stat_pri_attr    ap
+stat_pri         11, 3, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  0, 6, 0, flesh
@@ -4876,8 +4877,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 2.4, 4, square
 stat_health      1, 1
-stat_pri         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_pri_attr    ap
+stat_pri         13, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  2, 6, 0, leather ;
@@ -4905,24 +4906,24 @@ class            light
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
-soldier          Transilvanian_Peasants, 48, 0, 1.05
-mount_effect     horse +6, camel +6
+soldier          Transilvanian_Peasants, 60, 0, 1.125, 0.5
+mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, mercenary_unit, free_upkeep_unit
-formation        1.4, 1.4, 2.8, 2.8, 4, square
+formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, axe, 150, 1
-stat_pri_attr    ap
+stat_pri         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 150, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (crude poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 5, 0, flesh
+stat_pri_armour  0, 4, 0, flesh
 stat_sec_armour  0, 0, flesh
-stat_heat        5
+stat_heat        7
 stat_ground      1, -1, 2, 1 
-stat_mental      5, low, untrained
+stat_mental      2, low, untrained
 stat_charge_dist 6
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 140, 65, 65, 50, 140, 4, 60
+stat_cost        1, 120, 100, 65, 50, 120, 4, 20
 armour_ug_levels 0, 1
 armour_ug_models Transilvanian_Peasants, Transilvanian_Peasants_ug1
 ownership        all ; hungary, slave
@@ -5964,8 +5965,8 @@ mount_effect	 horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         5, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_pri_attr    ap
+stat_pri         11, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (billhook)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  0, 6, 0, flesh
@@ -6000,8 +6001,8 @@ mount_effect	 horse +4, camel +4
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         5, 5, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
-stat_pri_attr    ap
+stat_pri         11, 5, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (billhook)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  8, 5, 0, metal
@@ -6069,8 +6070,8 @@ attributes       sea_faring, hide_forest, can_withdraw, start_phalanxing
 move_speed_mod	 0.70
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         6, 5, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
-stat_pri_attr    ap, light_spear
+stat_pri         13, 5, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
+stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 7, 0, metal ; 
@@ -6204,8 +6205,8 @@ mount_effect	 horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 0
-stat_pri         5, 3, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
-stat_pri_attr    ap
+stat_pri         11, 3, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  2, 4, 0, flesh
@@ -6237,8 +6238,8 @@ mount_effect	 horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
-stat_pri_attr    ap
+stat_pri         10, 4, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  6, 4, 0, metal
@@ -6308,8 +6309,8 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, start_
 move_speed_mod	 0.65
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         5, 4, no, 0, 0, melee, melee_blade, piercing, axe, 135, 1
-stat_pri_attr    ap, light_spear
+stat_pri         12, 4, no, 0, 0, melee, melee_blade, piercing, axe, 135, 1
+stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 6, 0, metal ; 
@@ -6342,8 +6343,8 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, start_
 move_speed_mod	 0.65
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         5, 4, no, 0, 0, melee, melee_blade, piercing, axe, 150, 1
-stat_pri_attr    ap, light_spear
+stat_pri         14, 4, no, 0, 0, melee, melee_blade, piercing, axe, 150, 1
+stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 7, 0, metal ; 
@@ -6411,8 +6412,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         8, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         14, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  7, 7, 0, metal ;, +1 slung shield
@@ -6516,8 +6517,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, frighten_foot, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         12, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         18, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  8, 8, 0, metal ;slung shield +1 armour ;
@@ -6553,8 +6554,8 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, start_phalanxing
 move_speed_mod	 0.75
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         7, 6, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
-stat_pri_attr    ap, light_spear
+stat_pri         13, 6, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
+stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  12, 9, 0, metal
@@ -6659,8 +6660,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         10, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         16, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  13, 8, 0, metal
@@ -6730,8 +6731,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         11, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         17, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  13, 7, 0, metal
@@ -6834,8 +6835,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         8, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         14, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 8, 0, metal ;slung shield +1 armour ;
@@ -6868,8 +6869,8 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, free_upkeep_
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square, shield_wall
 stat_health      1, 1
-stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 30, 1
-stat_pri_attr    ap
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 30, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  7, 5, 4, metal
@@ -6904,8 +6905,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         10, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         16, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  13, 8, 0, metal
@@ -6977,8 +6978,8 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, start_phalan
 move_speed_mod	 0.75
 formation        1.2, 1.2, 2.4, 2.4, 4, phalanx, square
 stat_health      1, 1
-stat_pri         9, 6, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1
-stat_pri_attr    ap, light_spear
+stat_pri         15, 6, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1
+stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  10, 12, 0, metal  ; GUARD
@@ -7119,8 +7120,8 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
-stat_pri_attr    ap
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  6, 5, 5, metal ; 
@@ -7154,8 +7155,8 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
-stat_pri_attr    ap
+stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 6, 4, metal ; 
@@ -7240,10 +7241,10 @@ stat_food        60, 300
 stat_cost        1, 585, 585, 120, 95, 970, 4, 170
 armour_ug_levels 5, 9
 armour_ug_models alan_druzhina_aldarov, alan_druzhina_aldarov
-ownership        all ; slave, mongols, cumans;; , timurids
-era 0            mongols, cumans;; , timurids
-era 1            mongols, cumans;; , timurids
-era 2            mongols, cumans;; , timurids
+ownership        all ; slave, mongols, timurids, cumans
+era 0            mongols, timurids, cumans 
+era 1            mongols, timurids, cumans  
+era 2            mongols, timurids, cumans  
 recruit_priority_offset 0
 
 
@@ -7261,8 +7262,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         8, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         12, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 8, 0, metal ; slung shield ; 
@@ -7296,8 +7297,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         7, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
-stat_pri_attr    ap
+stat_pri         13, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  11, 7, 0, metal
@@ -7414,10 +7415,10 @@ stat_food        60, 300
 stat_cost        1, 745, 370, 90, 70, 905, 4, 120
 armour_ug_levels 0, 1, 6
 armour_ug_models Turkomans, Turkomans_ug1, Turkomans_ug2
-ownership        all; turks, kwarezm, timurids, slave
-era 0            turks, kwarezm, timurids
-era 1            turks, kwarezm, timurids
-era 2            turks, kwarezm, timurids
+ownership        all; turks, kwarezm, slave
+era 0            turks, kwarezm
+era 1            turks, kwarezm
+era 2            turks, kwarezm
 recruit_priority_offset    25
 
 
@@ -7451,10 +7452,10 @@ stat_food        60, 300
 stat_cost        1, 820, 375, 100, 75, 820, 4, 190
 armour_ug_levels 7, 11, 17, 37
 armour_ug_models Sipahis, Sipahis_ug1, Sipahis_ug2, Sipahis_ug2
-ownership        turks, moors, timurids
-era 0            turks, moors, timurids
-era 1            turks, moors, timurids
-era 2            turks, moors, timurids
+ownership        turks, moors
+era 0            turks, moors
+era 1            turks, moors
+era 2            turks, moors
 recruit_priority_offset    35
 
 
@@ -7560,10 +7561,10 @@ stat_food        60, 300
 stat_cost        1, 320, 175, 100, 75, 460, 4, 130
 armour_ug_levels 0, 1
 armour_ug_models Desert_Cavalry, Desert_Cavalry_ug1
-ownership        all; moors, egypt, timurids, slave
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        all; moors, egypt, slave
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    0
 
 
@@ -7634,10 +7635,10 @@ stat_food        60, 300
 stat_cost        1, 375, 300, 100, 75, 580, 4, 150
 armour_ug_levels 0
 armour_ug_models Bedouin_Camel_Riders
-ownership        slave, egypt, timurids
-era 0            egypt, timurids
-era 1            egypt, timurids
-era 2            egypt, timurids
+ownership        slave, egypt
+era 0            egypt
+era 1            egypt
+era 2            egypt
 recruit_priority_offset    15
 
 
@@ -7672,10 +7673,10 @@ stat_food        60, 300
 stat_cost        6, 955, 200, 100, 75, 755, 4, 120
 armour_ug_levels 2, 7, 14
 armour_ug_models Arab_Cavalry, Arab_Cavalry_ug1, Arab_Cavalry_ug2
-ownership        moors, egypt, timurids, slave
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        moors, egypt, slave
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    15
 
 
@@ -8073,7 +8074,7 @@ stat_cost        1, 690, 690, 120, 95, 1165, 4, 180
 armour_ug_levels 18, 37
 armour_ug_models Kwarizmian_Cavalry, Kwarizmian_Cavalry
 ownership        slave, turks, egypt, mongols, kwarezm, timurids
-era 0            turks, egypt, mongols, kwarezm, timurids
+era 0            turks, egypt, mongols, kwarezm
 recruit_priority_offset    40
 
 
@@ -8108,10 +8109,10 @@ stat_food        60, 300
 stat_cost        1, 520, 0, 60, 50, 520, 1, 110
 armour_ug_levels 11, 17, 37
 armour_ug_models ME_Bodyguard, ME_Bodyguard_ug1, ME_Bodyguard_ug1
-ownership        moors, egypt, turks, kwarezm, timurids, slave
-era 0            moors, egypt, turks, kwarezm, timurids
-era 1            moors, egypt, turks, kwarezm, timurids
-era 2            moors, egypt, turks, kwarezm, timurids
+ownership        moors, egypt, turks, kwarezm, slave
+era 0            moors, egypt, turks, kwarezm
+era 1            moors, egypt, turks, kwarezm
+era 2            moors, egypt, turks, kwarezm
 recruit_priority_offset    40
 
 
@@ -8255,14 +8256,14 @@ stat_food        60, 300
 stat_cost        1, 285, 285, 90, 70, 435, 4, 100
 armour_ug_levels 0
 armour_ug_models Akinjis
-ownership        slave, moors, egypt, turks, timurids
+ownership        slave, moors, egypt, turks
 recruit_priority_offset    5
 
 
 type             ME Peasant Archers
 dictionary       ME_Peasant_Archers      ; Peasant Archers, r
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -8287,8 +8288,8 @@ stat_cost        1, 80, 55, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models ME_Peasant_Archers, ME_Peasant_Archers_ug1
 ownership        egypt, turks, kwarezm, mongols, slave, timurids
-era 0            egypt, turks, kwarezm, timurids
-era 1            egypt, turks, kwarezm, timurids
+era 0            egypt, turks, kwarezm
+era 1            egypt, turks, kwarezm
 era 2            egypt, turks, kwarezm, timurids
 recruit_priority_offset    -20 
 
@@ -8296,7 +8297,7 @@ recruit_priority_offset    -20
 type             Turkish Archers
 dictionary       Turkish_Archers      ; Turkish Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Arabic
 banner faction   main_missile
@@ -8489,8 +8490,8 @@ stat_cost        2, 265, 230, 55, 40, 405, 4, 90
 armour_ug_levels 7, 14
 armour_ug_models Naffatun, Naffatun_ug1
 ownership        egypt, turks, mongols, timurids
-era 0            egypt, turks, mongols, timurids
-era 1            egypt, turks, mongols, timurids
+era 0            egypt, turks, mongols
+era 1            egypt, turks, mongols
 era 2            egypt, turks, mongols, timurids
 recruit_priority_offset    0
 
@@ -8498,7 +8499,7 @@ recruit_priority_offset    0
 type             Desert Archers
 dictionary       Desert_Archers      ; Desert Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -8522,10 +8523,10 @@ stat_food        60, 300
 stat_cost        1, 480, 150, 65, 50, 505, 4, 90
 armour_ug_levels 0, 1
 armour_ug_models desert_archers, desert_archers_ug1
-ownership        all; moors, egypt, timurids, slave
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        all; moors, egypt, slave
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    10
 
 
@@ -8595,7 +8596,7 @@ recruit_priority_offset    20
 type             ME Archer Militia
 dictionary       ME_Archer_Militia      ; Archer Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -8619,7 +8620,7 @@ stat_food        60, 300
 stat_cost        1, 135, 70, 65, 50, 135, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models ME_Archer_Militia, ME_Archer_Militia_ug1
-ownership        egypt, kwarezm, timurids
+ownership        egypt, kwarezm
 recruit_priority_offset    0
 
 
@@ -8692,7 +8693,7 @@ recruit_priority_offset    -5
 type             ME Peasant Crossbowmen
 dictionary       ME_Peasant_Crossbowmen      ; Peasant Crossbowmen, r
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -8725,7 +8726,7 @@ recruit_priority_offset    0
 type             ME Crossbow Militia
 dictionary       ME_Crossbow_Militia      ; Crossbow Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -8755,7 +8756,7 @@ recruit_priority_offset    10
 type             Armenian Archers
 dictionary       Armenian_Archers      ; Armenian Archers, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         East_European
 banner faction   main_missile
@@ -8813,8 +8814,8 @@ stat_cost        1, 120, 100, 65, 50, 120, 4, 20
 armour_ug_levels 0, 1
 armour_ug_models me_levy_infantry, me_levy_infantry_ug1
 ownership        moors, egypt, turks, mongols, kwarezm, timurids, slave
-era 0            moors, egypt, turks, mongols, kwarezm, timurids
-era 1            moors, egypt, turks, mongols, kwarezm, timurids
+era 0            moors, egypt, turks, mongols, kwarezm
+era 1            moors, egypt, turks, mongols, kwarezm
 era 2            moors, egypt, turks, mongols, kwarezm, timurids
 recruit_priority_offset    -50 
 
@@ -8880,10 +8881,10 @@ stat_food        60, 300
 stat_cost        1, 290, 150, 65, 50, 315, 4, 100
 armour_ug_levels 0, 1
 armour_ug_models Kurdish_Javelinmen, Kurdish_Javelinmen_ug1
-ownership        all; egypt, timurids, slave
-era 0            egypt, timurids
-era 1            egypt, timurids
-era 2            egypt, timurids
+ownership        all; egypt, slave
+era 0            egypt
+era 1            egypt
+era 2            egypt
 recruit_priority_offset    -5 
 
 
@@ -8915,9 +8916,9 @@ stat_food        60, 300
 stat_cost        1, 160, 115, 75, 60, 170, 4, 70
 armour_ug_levels 0, 1
 armour_ug_models ME_Spear_Militia, ME_Spear_Militia_ug1
-ownership        kwarezm, moors, egypt, turks, timurids, slave
-era 0            kwarezm, moors, egypt, turks, timurids
-era 1            kwarezm, moors, egypt, turks, timurids
+ownership        kwarezm, moors, egypt, turks, slave
+era 0            kwarezm, moors, egypt, turks
+era 1            kwarezm, moors, egypt, turks
 era 2            kwarezm, timurids
 recruit_priority_offset    0
 
@@ -9020,7 +9021,7 @@ stat_food        60, 300
 stat_cost        1, 165, 115, 75, 60, 175, 4, 70
 armour_ug_levels 0
 armour_ug_models mon_kashtim
-ownership        mongols, slave;; , timurids
+ownership        mongols, slave, timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -9055,9 +9056,9 @@ stat_food        60, 300
 stat_cost        1, 300, 300, 90, 70, 355, 4, 160
 armour_ug_levels 0, 1
 armour_ug_models Afghan_Javelinmen, Afghan_Javelinmen_ug1
-ownership        all; slave, turks, kwarezm, timurids
-era 0            turks, kwarezm, timurids
-era 1            turks, kwarezm, timurids
+ownership        all; slave, turks, kwarezm
+era 0            turks, kwarezm
+era 1            turks, kwarezm
 era 2            turks, kwarezm, timurids
 recruit_priority_offset    10
 
@@ -9125,10 +9126,10 @@ stat_food        60, 300
 stat_cost        4, 595, 180, 75, 55, 415, 4, 100
 armour_ug_levels 2, 7, 11
 armour_ug_models Dismounted_Arab_Cavalry, Dismounted_Arab_Cavalry_ug1, Dismounted_Arab_Cavalry_ug2
-ownership        moors, egypt, timurids
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        moors, egypt
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    10
 
 
@@ -9145,8 +9146,8 @@ officer		 eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         8, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  0, 3, 3, flesh
@@ -9160,7 +9161,7 @@ stat_food        60, 300
 stat_cost        1, 245, 245, 90, 70, 330, 4, 120
 armour_ug_levels 0
 armour_ug_models Ghazis
-ownership        slave, moors, egypt, turks, timurids
+ownership        slave, moors, egypt, turks
 recruit_priority_offset    0
 
 
@@ -9193,7 +9194,7 @@ stat_food        60, 300
 stat_cost        1, 125, 125, 90, 70, 175, 4, 40
 armour_ug_levels 0
 armour_ug_models Mutatawwi'a
-ownership        slave, moors, egypt, turks, timurids
+ownership        slave, moors, egypt, turks
 recruit_priority_offset    0
 
 
@@ -9212,8 +9213,8 @@ mount_effect     horse +6, camel +6
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         9, 6, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 ; -1 attack shield
-stat_pri_attr    ap
+stat_pri         18, 6, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 ; -1 attack shield
+stat_pri_attr    no ; ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 9, 4, metal ; shield -1 defense
@@ -9260,9 +9261,9 @@ stat_food        60, 300
 stat_cost        1, 340, 180, 85, 65, 430, 4, 120
 armour_ug_levels 7, 14
 armour_ug_models Saracen_Militia, Saracen_Militia_ug1
-ownership        egypt, turks, kwarezm, timurids, slave
-era 1            egypt, turks, kwarezm, timurids
-era 2            egypt, turks, kwarezm, timurids
+ownership        egypt, turks, kwarezm, slave
+era 1            egypt, turks, kwarezm
+era 2            egypt, turks, kwarezm
 recruit_priority_offset    10
 
 
@@ -9281,8 +9282,8 @@ mount_effect     horse +6, camel +6
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         5, 4, no, 0, 0, melee, melee_blade, slashing, axe, 135, 1
-stat_pri_attr    ap
+stat_pri         14, 4, no, 0, 0, melee, melee_blade, slashing, axe, 135, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 6, 0, metal ; 
@@ -9327,9 +9328,9 @@ stat_food        60, 300
 stat_cost        12, 810, 190, 55, 45, 620, 4, 105
 armour_ug_levels 10, 37
 armour_ug_models Hashishim, Hashishim
-ownership        moors, egypt, turks, kwarezm, timurids, slave
-era 1            moors, egypt, turks, kwarezm, timurids
-era 2            moors, egypt, turks, kwarezm, timurids
+ownership        moors, egypt, turks, kwarezm, slave
+era 1            moors, egypt, turks, kwarezm
+era 2            moors, egypt, turks, kwarezm
 recruit_priority_offset    10
 
 
@@ -9348,8 +9349,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         10, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         16, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  8, 10, 0, metal ; +1 slung shield ; GUARD
@@ -9503,7 +9504,7 @@ stat_food        60, 300
 stat_cost        1, 890, 190, 120, 95, 1080, 4, 140 ; 1, 560, 185, 120, 95, 670, 4, 140
 armour_ug_levels 0, 1
 armour_ug_models mon_hoshiga, mon_hoshiga
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -9528,8 +9529,8 @@ formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 2
 stat_pri         7, 12, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
-stat_sec         5, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 
-stat_sec_attr    ap
+stat_sec         9, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 2, 3, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        3
@@ -9541,7 +9542,7 @@ stat_food        60, 300
 stat_cost        1, 925, 285, 120, 95, 1215, 4, 140 ; 1, 535, 225, 120, 95, 690, 4, 140
 armour_ug_levels 6
 armour_ug_models mon_hoshuchi
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -9577,10 +9578,10 @@ stat_food        60, 300
 stat_cost        1, 950, 250, 120, 95, 1625, 4, 220 ; 5, 805, 185, 120, 95, 805, 4, 220
 armour_ug_levels 9, 18, 37
 armour_ug_models mon_horchi_cav, mon_horchi_cav, mon_horchi_cav
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 0            mongols
 era 1            mongols
-era 2            mongols;; , timurids
+era 2            mongols, timurids
 recruit_priority_offset    25
 
 
@@ -9614,9 +9615,9 @@ stat_food        60, 300
 stat_cost        1, 955, 285, 130, 100, 1605, 4, 210 ; 4, 1065, 225, 130, 100, 1065, 4, 210
 armour_ug_levels 9, 18, 37
 armour_ug_models mon_torhaguti_cav, mon_torhaguti_cav, mon_torhaguti_cav
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 1            mongols
-era 2            mongols;; , timurids
+era 2            mongols, timurids
 recruit_priority_offset    30
 
 
@@ -9649,10 +9650,10 @@ stat_food        60, 300
 stat_cost        1, 1140, 500, 150, 95, 1345, 4, 140
 armour_ug_levels 3
 armour_ug_models mon_lubchiten
-ownership        slave, mongols;; , timurids
-era 0            mongols;; , timurids
-era 1            mongols;; , timurids
-era 2            mongols;; , timurids
+ownership        slave, mongols, timurids
+era 0            mongols, timurids
+era 1            mongols, timurids
+era 2            mongols, timurids
 recruit_priority_offset 0
 
 
@@ -9682,7 +9683,7 @@ stat_food        60, 300
 stat_cost        1, 365, 75, 65, 50, 380, 4, 70 ; 1, 455, 150, 65, 50, 455, 4, 70
 armour_ug_levels 0, 1
 armour_ug_models mon_habutu_inf, mon_habutu_inf
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -9717,7 +9718,7 @@ stat_food        60, 300
 stat_cost        1, 300, 115, 75, 55, 455, 4, 140 ; 1, 475, 150, 75, 55, 475, 4, 140
 armour_ug_levels 9, 18, 37
 armour_ug_models mon_torhaguti_inf, mon_torhaguti_inf, mon_torhaguti_inf
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 0            mongols
 era 1            mongols
 era 2            mongols
@@ -9727,7 +9728,7 @@ recruit_priority_offset    15
 type             Sibiryaki Junior Militia
 dictionary       sib_junior_militia ; u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -9750,10 +9751,10 @@ stat_food        60, 300
 stat_cost        1, 290, 120, 65, 50, 300, 4, 60
 armour_ug_levels 1
 armour_ug_models sib_junior_militia
-ownership        slave, mongols;; , timurids
-era 0            mongols;; , timurids
-era 1            mongols;; , timurids
-era 2            mongols;; , timurids
+ownership        slave, mongols, timurids
+era 0            mongols, timurids
+era 1            mongols, timurids
+era 2            mongols, timurids
 recruit_priority_offset 0
 
 
@@ -9788,17 +9789,17 @@ stat_food        60, 300
 stat_cost        1, 510, 0, 60, 50, 510, 1, 105
 armour_ug_levels 18, 37
 armour_ug_models mon_keshikten, mon_keshikten
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 0            mongols
 era 1            mongols
-era 2            mongols;; , timurids
+era 2            mongols, timurids
 recruit_priority_offset    25
 
 
 type             Merguen Archers
 dictionary       mon_mergen      ; Merguen Archers, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
@@ -9821,10 +9822,10 @@ stat_food        60, 300
 stat_cost        1, 450, 250, 65, 50, 740, 4, 70
 armour_ug_levels 5, 9, 18, 37
 armour_ug_models mon_mergen, mon_mergen, mon_mergen, mon_mergen
-ownership        slave, mongols;; , timurids
-era 0            mongols;; , timurids
-era 1            mongols;; , timurids
-era 2            mongols;; , timurids
+ownership        slave, mongols, timurids
+era 0            mongols, timurids
+era 1            mongols, timurids
+era 2            mongols, timurids
 recruit_priority_offset 0
 
 
@@ -9891,10 +9892,10 @@ stat_food        60, 300
 stat_cost        1, 370, 100, 90, 70, 610, 4, 170 ; 4, 585, 150, 90, 70, 585, 4, 170
 armour_ug_levels 9, 18, 37
 armour_ug_models mon_horchi_inf, mon_horchi_inf, mon_horchi_inf
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 0            mongols
 era 1            mongols
-era 2            mongols;; , timurids
+era 2            mongols, timurids
 recruit_priority_offset    20
 
 
@@ -9910,8 +9911,8 @@ soldier          cum_kosog_axe_ug0, 60, 0, 0.85, 0.45
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 0
-stat_pri         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_pri_attr    ap
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
 stat_pri_armour  2, 3, 2, leather
@@ -9982,8 +9983,8 @@ mount_effect     horse +6, camel +6
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         7, 6, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
-stat_pri_attr    ap
+stat_pri         16, 6, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  11, 7, 0, metal
@@ -10005,7 +10006,7 @@ recruit_priority_offset    30
 type             Urban Crossbow Militia
 dictionary       Urban_Crossbow_Militia      ; Urban Crossbow Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -10063,8 +10064,8 @@ stat_cost        1, 500, 150, 90, 70, 370, 4, 90
 armour_ug_levels 1
 armour_ug_models ME_Ballista_Crew
 ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 0            turks, moors, egypt, kwarezm, cumans, timurids
-era 1            turks, moors, egypt, kwarezm, cumans, timurids
+era 0            turks, moors, egypt, kwarezm, cumans
+era 1            turks, moors, egypt, kwarezm, cumans
 recruit_priority_offset    -25 
 
 
@@ -10237,8 +10238,8 @@ stat_cost        2, 600, 150, 90, 70, 400, 4, 100
 armour_ug_levels 1
 armour_ug_models ME_Catapult_Crew
 ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 0            turks, moors, egypt, kwarezm, cumans, timurids
-era 1            turks, moors, egypt, kwarezm, cumans, timurids
+era 0            turks, moors, egypt, kwarezm, cumans
+era 1            turks, moors, egypt, kwarezm, cumans
 recruit_priority_offset    -20 
 
 
@@ -10409,7 +10410,7 @@ stat_cost        2, 700, 250, 90, 70, 430, 4, 100
 armour_ug_levels 1
 armour_ug_models ME_Trebuchet_Crew
 ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 1            turks, moors, egypt, kwarezm, cumans, timurids
+era 1            turks, moors, egypt, kwarezm, cumans
 recruit_priority_offset    -10 
 
 
@@ -10466,8 +10467,8 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, start_phalan
 move_speed_mod	 0.80
 formation        1.2, 1.2, 2.4, 2.4, 4, phalanx, square
 stat_health      1, 1
-stat_pri         12, 6, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
-stat_pri_attr    ap, light_spear
+stat_pri         21, 6, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  8, 12, 0, metal
@@ -10618,9 +10619,9 @@ stat_food        60, 300
 stat_cost        2, 1500, 250, 90, 70, 1100, 4, 270
 armour_ug_levels 1
 armour_ug_models Mongol_Rocket_Launcher_Crew
-ownership        mongols;; , timurids
+ownership        mongols, timurids
 era 1            mongols
-era 2            mongols;; , timurids
+era 2            mongols, timurids
 recruit_priority_offset    -10 
 
 
@@ -10691,9 +10692,9 @@ stat_food        60, 300
 stat_cost        4, 800, 180, 75, 55, 620, 4, 100
 armour_ug_levels 14, 19, 37
 armour_ug_models me_heavy_spearmen, me_heavy_spearmen_ug1, me_heavy_spearmen_ug1
-ownership        kwarezm, turks, egypt, moors, timurids
-era 1            kwarezm, turks, egypt, moors, timurids
-era 2            kwarezm, turks, egypt, moors, timurids
+ownership        kwarezm, turks, egypt, moors
+era 1            kwarezm, turks, egypt, moors
+era 2            kwarezm, turks, egypt, moors
 recruit_priority_offset    15
 
 
@@ -10938,9 +10939,9 @@ stat_food        60, 300
 stat_cost        8, 1090, 185, 65, 50, 905, 4, 90
 armour_ug_levels 11, 17, 37
 armour_ug_models saracen_archers, saracen_archers_ug1
-ownership        kwarezm, turks, egypt, moors, timurids
-era 1            kwarezm, turks, egypt, moors, timurids
-era 2            kwarezm, turks, egypt, moors, timurids
+ownership        kwarezm, turks, egypt, moors
+era 1            kwarezm, turks, egypt, moors
+era 2            kwarezm, turks, egypt, moors
 recruit_priority_offset    25
 
 
@@ -11024,8 +11025,8 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri_attr    no ; ap ; 1H axe (hatchet)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 4, 2, metal ; mail
@@ -11159,7 +11160,7 @@ soldier          Carroccio_Standard, 24, 1, 1.05, 0.30
 officer		 northern_captain
 engine           great_standart_milan
 mount_effect     horse +4, camel +4
-attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command
+attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command; , area_effect_ae_holy_inspiration
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
@@ -11196,7 +11197,7 @@ soldier          Carroccio_Standard, 24, 1, 1.05, 0.30
 officer		 northern_captain
 engine           great_standart_venice
 mount_effect     horse +4, camel +4
-attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command
+attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command; , area_effect_ae_holy_inspiration
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
@@ -11225,7 +11226,7 @@ recruit_priority_offset    -5
 type             Hussites
 dictionary       Hussites      ; Hussites, o
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 accent         East_European
 banner faction   main_missile
@@ -11706,8 +11707,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         15, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  14, 9, 0, metal
@@ -11868,7 +11869,7 @@ recruit_priority_offset    10
 type             Basque Archers
 dictionary       Basque_Archers      ; Basque Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Mediterranean
 banner faction   main_missile
@@ -11959,7 +11960,7 @@ stat_food        60, 300
 stat_cost        1, 390, 225, 130, 100, 400, 4, 270
 armour_ug_levels 0, 1
 armour_ug_models desert_raiders, desert_raiders_ug1
-ownership        all; egypt, moors, timurids
+ownership        all; egypt, moors
 recruit_priority_offset    -10 
 
 
@@ -11978,8 +11979,8 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         4, 1, average_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  4, 2, 3, metal 
 stat_sec_armour  0, 0, flesh
 stat_heat        9
@@ -12011,8 +12012,8 @@ formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
 stat_pri         3, 5, average_mounted_missile_composite_arrow, 160, 45, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         1, 5, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1 ; -1 to attack 
-stat_sec_attr    ap
+stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 ; -1 to attack 
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  4, 0, 3, metal ; defense -1 so -1 to attack
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -12044,8 +12045,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         10, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         16, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  7, 9, 0, metal ;slung shield +1 armour ; GUARD
@@ -12079,8 +12080,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
-stat_pri_attr    ap
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  3, 4, 0, leather ; +1 slung shield
@@ -12143,8 +12144,8 @@ soldier          Junior_Militia, 60, 0, 0.8, 0.45
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 0
-stat_pri         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_pri_attr    ap
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
 stat_pri_armour  0, 4, 2, flesh ; shield -1
@@ -12178,8 +12179,8 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         11, 1, average_javelin, 55, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_sec_attr    no
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  2, 4, 3, flesh
 stat_sec_armour  0, 0, flesh
 stat_heat        4
@@ -12447,7 +12448,7 @@ stat_food        60, 300
 stat_cost        1, 320, 320, 100, 75, 495, 4, 170
 armour_ug_levels 10, 37
 armour_ug_models hashishim_mercenaries, hashishim_mercenaries
-ownership        slave, turks, egypt, kwarezm, timurids
+ownership        slave, turks, egypt, kwarezm
 recruit_priority_offset    15
 
 
@@ -12464,8 +12465,8 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
-stat_pri_attr    ap
+stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 6, 4, metal ; 
@@ -12522,7 +12523,7 @@ recruit_priority_offset    20
 type             Arbalesters
 dictionary       Arbalesters      ; Arbalesters, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Mediterranean
 banner faction   main_missile
@@ -12587,7 +12588,7 @@ recruit_priority_offset    20
 type             Hunters
 dictionary       Hunters      ; Hunters, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         East_European
 banner faction   main_missile
@@ -12799,8 +12800,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 1
-stat_pri         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_pri_attr    ap
+stat_pri         13, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  4, 6, 0, metal ; 
@@ -12880,7 +12881,7 @@ stat_food        60, 300
 stat_cost        1, 420, 420, 90, 70, 665, 4, 150
 armour_ug_levels 20, 37
 armour_ug_models mercenary_saracens, mercenary_saracens
-ownership        all ; slave, turks, egypt, moors, timurids
+ownership        all ; slave, turks, egypt, moors
 recruit_priority_offset    30
 
 
@@ -13072,7 +13073,7 @@ recruit_priority_offset    30
 type             Breton Light Cavalry
 dictionary       Breton_Light_Cavalry      ; Breton Light Cavalry, m
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
@@ -13206,10 +13207,10 @@ stat_food        60, 300
 stat_cost        1, 1160, 500, 150, 95, 1390, 4, 140
 armour_ug_levels 5, 9
 armour_ug_models mon_nukeri, mon_nukeri
-ownership        slave, mongols;; , timurids
-era 0            mongols;; , timurids
-era 1            mongols;; , timurids
-era 2            mongols;; , timurids
+ownership        slave, mongols, timurids
+era 0            mongols, timurids
+era 1            mongols, timurids
+era 2            mongols, timurids
 recruit_priority_offset 0
  
  
@@ -13417,8 +13418,8 @@ attributes       sea_faring, hide_forest, can_withdraw, start_phalanxing
 move_speed_mod	 0.75
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         7, 6, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
-stat_pri_attr    ap, light_spear
+stat_pri         16, 6, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
+stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  12, 9, 0, metal
@@ -13452,9 +13453,9 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         8, 6, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1 ;-2 attack hampered by large shield 
+stat_pri         14, 6, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1 ;-2 attack hampered by large shield 
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    ap, light_spear
+stat_pri_attr    light_spear ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
@@ -13506,7 +13507,8 @@ stat_mental      20, impetuous, highly_trained ; RECKLESS
 stat_charge_dist 6
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 960, 600, 65, 155, 960, 2, 200
+;stat_cost        1, 960, 186, 65, 155, 960, 2, 200; Religious Order reduced Upkeep
+stat_cost        1, 960, 600, 65, 155, 960, 2, 200; Old Cost
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Dismounted_Ritterbruder, Dismounted_Ritterbruder, Dismounted_Ritterbruder_ug1, Dismounted_Ritterbruder_ug1
 ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, slave
@@ -13556,7 +13558,7 @@ recruit_priority_offset    5
 type             Livonian Auxiliaries
 dictionary       Livonian_Auxiliaries      ; Livonian Auxiliaries, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 soldier          Pavise_Crossbowmen, 48, 0, 0.95
@@ -13736,7 +13738,8 @@ stat_mental      21, impetuous, highly_trained ; RECKLESS
 stat_charge_dist 45
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 1230, 800, 85, 205, 1230, 2, 290
+;stat_cost        1, 1230, 210, 85, 205, 1230, 2, 290; Religious Order reduced upkeep
+stat_cost        1, 1230, 800, 85, 205, 1230, 2, 290; Old cost values
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Ritterbruder, Ritterbruder, Ritterbruder_ug1, Ritterbruder_ug1
 ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, slave
@@ -13847,9 +13850,9 @@ stat_health      1, 3
 stat_pri         6, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_sec         11, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_sec_ex      0, 0, 0
-stat_sec_attr    ap
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  8, 4, 3, metal ; 
 ;stat_armour_ex   5, 0, 0, 0, 4, 6, 4, metal
 stat_sec_armour  0, 0, flesh
@@ -14000,9 +14003,9 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         11, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         17, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    ap
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
@@ -14105,7 +14108,7 @@ recruit_priority_offset    -10
 type             Templar Crossbowmen
 dictionary       Templar_Crossbowmen      ; Templar Crossbowmen, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -14156,9 +14159,9 @@ stat_health      1, 3
 stat_pri         7, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         8, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_sec         12, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_sec_ex      0, 0, 0
-stat_sec_attr    ap
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  9, 3, 3, metal ; 
 ;stat_armour_ex   5, 0, 0, 0, 4, 6, 4, metal
 stat_sec_armour  0, 0, flesh
@@ -14193,9 +14196,9 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 5, square
 stat_health      1, 1
-stat_pri         7, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         13, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    ap
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
@@ -14331,7 +14334,7 @@ recruit_priority_offset    15
 type             Turkish Crossbowmen
 dictionary       Turkish_Crossbowmen      ; Turkish Crossbowmen, lp
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -14394,9 +14397,9 @@ stat_food        60, 300
 stat_cost        10, 1345, 300, 120, 95, 1045, 4, 180
 armour_ug_levels 5, 9, 37
 armour_ug_models Ghulam, Ghulam, Ghulam
-ownership        egypt, kwarezm, timurids
-era 0            egypt, kwarezm, timurids
-era 1            egypt, kwarezm, timurids
+ownership        egypt, kwarezm
+era 0            egypt, kwarezm
+era 1            egypt, kwarezm
 recruit_priority_offset    35
 
 
@@ -14434,9 +14437,9 @@ stat_food        60, 300
 stat_cost        16, 2460, 535, 120, 95, 1925, 4, 180
 armour_ug_levels 11, 37
 armour_ug_models Khassaki, Khassaki_ug1
-ownership        egypt, timurids
-era 0            egypt, timurids
-era 1            egypt, timurids
+ownership        egypt
+era 0            egypt
+era 1            egypt
 recruit_priority_offset    55
  
  
@@ -14473,9 +14476,9 @@ stat_food        60, 300
 stat_cost        6, 940, 225, 110, 85, 715, 4, 210
 armour_ug_levels 5, 9, 37
 armour_ug_models Dismounted_ghulam, Dismounted_ghulam, Dismounted_ghulam
-ownership        egypt, kwarezm, timurids
-era 0            egypt, kwarezm, timurids
-era 1            egypt, kwarezm, timurids
+ownership        egypt, kwarezm
+era 0            egypt, kwarezm
+era 1            egypt, kwarezm
 recruit_priority_offset    15
 
 
@@ -14520,7 +14523,7 @@ recruit_priority_offset    10
 type             Arbalest Militia
 dictionary       Arbalest_Militia      ; Arbalest Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -14600,9 +14603,9 @@ stat_health      1, 2
 stat_pri         5, 1, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
-stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_sec         7, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 ;stat_sec_ex      0, 0, 0
-stat_sec_attr    ap
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 3, 0, metal ; 
 ;stat_armour_ex   3, 0, 0, 0, 1, 5, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -14667,9 +14670,9 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, frighten_foot
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         8, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         15, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    ap
+stat_pri_attr    no ; ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
@@ -14703,9 +14706,9 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, frighten_foot
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri         15, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    ap
+stat_pri_attr    no ; ap ;polearm rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
@@ -14743,8 +14746,8 @@ formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 3
 stat_pri         12, 3, superior_javelin, 60, 2, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown, prec
-stat_sec         5, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
-stat_sec_attr    ap
+stat_sec         9, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  6, 3, 4, metal ;;
 stat_sec_armour  0, 0, flesh
 stat_heat        10
@@ -14777,8 +14780,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         9, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_pri_attr    ap
+stat_pri         15, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 6, 0, metal
@@ -14799,7 +14802,7 @@ recruit_priority_offset    10
 type             Ruthenian Archers
 dictionary       Ruthenian_Archers      ; Ruthenian Archers, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 soldier          ruthenian_archers, 48, 0, 0.85, 0.45
@@ -14810,8 +14813,8 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_sec_attr    ap
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  2, 3, 2, leather
 stat_sec_armour  0, 0, flesh
 stat_heat        6
@@ -14832,7 +14835,7 @@ recruit_priority_offset    0
 type             Lettish Crossbowmen
 dictionary       Lettish_Crossbowmen      ; Latvian Crossbowmen, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 soldier          Lettish_Crossbowmen, 48, 0, 0.95, 0.45
@@ -14916,8 +14919,8 @@ formation        2, 4.4, 3, 4.4, 4, square
 stat_health      1, 3
 stat_pri         12, 4, superior_mounted_javelin, 60, 3, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         6, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         10, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  6, 2, 3, metal 
 stat_sec_armour  0, 0, flesh
 stat_heat        10
@@ -15086,7 +15089,7 @@ recruit_priority_offset    15
 type             L Cavalry Militia
 dictionary       L_Cavalry_Militia      ; Cavalry Militia, u
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_cavalry
 soldier          L_Cavalry_Militia, 24, 0, 1
@@ -15306,7 +15309,7 @@ recruit_priority_offset    40
 type             Saracen Archers
 dictionary       Saracen_Archers      ; Saracen Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Arabic
 banner faction   main_missile
@@ -15331,9 +15334,9 @@ stat_food        60, 300
 stat_cost        1, 470, 150, 45, 105, 480, 4, 110
 armour_ug_levels 7, 14
 armour_ug_models Abid_Al_Shira, Abid_Al_Shira_ug1
-ownership        all; kwarezm, timurids
-era 0            kwarezm, timurids
-era 1            kwarezm, timurids
+ownership        all; kwarezm
+era 0            kwarezm
+era 1            kwarezm
 ;unit_info        3, 7, 9
 recruit_priority_offset    5
 
@@ -15365,7 +15368,7 @@ stat_food        60, 300
 stat_cost        1, 410, 225, 75, 55, 670, 4, 160
 armour_ug_levels 5, 12, 37
 armour_ug_models Persian_Archers, Persian_Archers_ug1, Persian_Archers_ug1
-ownership        kwarezm, timurids, slave
+ownership        kwarezm, slave
 era 1            kwarezm
 era 2            kwarezm
 recruit_priority_offset    20
@@ -15482,10 +15485,10 @@ stat_food        60, 300
 stat_cost        1, 260, 205, 75, 55, 385, 4, 100
 armour_ug_levels 5, 12
 armour_ug_models Persian_Spearmen, Persian_Spearmen_ug1
-ownership        kwarezm, timurids, slave
-era 0            kwarezm, timurids
-era 1            kwarezm, timurids
-era 2            kwarezm, timurids
+ownership        kwarezm, slave
+era 0            kwarezm
+era 1            kwarezm
+era 2            kwarezm
 recruit_priority_offset    10
 
 
@@ -15520,10 +15523,10 @@ stat_food        60, 300
 stat_cost        1, 405, 300, 75, 55, 610, 4, 100
 armour_ug_levels 9, 20, 37
 armour_ug_models Iraqi_infantry, Iraqi_infantry_ug1, Iraqi_infantry_ug1
-ownership        kwarezm, timurids
-era 0            kwarezm, timurids
-era 1            kwarezm, timurids
-era 2            kwarezm, timurids
+ownership        kwarezm
+era 0            kwarezm
+era 1            kwarezm
+era 2            kwarezm
 recruit_priority_offset    10
 
 
@@ -15582,8 +15585,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         10, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         16, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  10, 10, 0, metal ;slung shield +1 armour ; GUARD
@@ -15635,9 +15638,9 @@ stat_food        60, 300
 stat_cost        4, 590, 150, 60, 140, 440, 4, 160
 armour_ug_levels 1, 5
 armour_ug_models Al_Haqa_Infantry, Al_Haqa_Infantry_ug1
-ownership        kwarezm, timurids
-era 0            kwarezm, timurids
-era 1            kwarezm, timurids
+ownership        kwarezm
+era 0            kwarezm
+era 1            kwarezm
 ;unit_info        11, 0, 15
 recruit_priority_offset    0
 
@@ -15729,8 +15732,8 @@ formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 2
 stat_pri         5, 12, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
-stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 
-stat_sec_attr    ap
+stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 0, 3, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -15789,7 +15792,7 @@ recruit_priority_offset    5
 type             Steppe Alans
 dictionary       cum_alan_axe ; Steppe Alans (Cuman), l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       light
 banner faction   main_missile
 banner holy      crusade
@@ -15799,8 +15802,8 @@ formation        1.4, 1.4, 2.8, 2.8, 3, square
 stat_health      1, 0
 stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    no
-stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_sec_attr    ap
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 5, 3, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        5
@@ -15897,7 +15900,7 @@ recruit_priority_offset    35
 type             Dismounted Cuman Militia
 dictionary       cum_militia_a_sw      ; Cuman Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         	 Mongolian
 banner faction   main_missile
@@ -15956,10 +15959,10 @@ stat_food        60, 300
 stat_cost        1, 235, 135, 85, 65, 275, 4, 50
 armour_ug_levels 5
 armour_ug_models sib_senior_militia
-ownership        slave, mongols;; , timurids
-era 0            mongols;; , timurids
-era 1            mongols;; , timurids
-era 2            mongols;; , timurids
+ownership        slave, mongols, timurids
+era 0            mongols, timurids
+era 1            mongols, timurids
+era 2            mongols, timurids
 recruit_priority_offset 0
 
 
@@ -15999,7 +16002,7 @@ recruit_priority_offset    40
 type             Pechenegs
 dictionary       cum_pecheneg_cav_a_sw   ; Pechenegs, l
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
@@ -16220,8 +16223,8 @@ officer          russia_captain_early_flag
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
 stat_pri_armour  2, 3, 3, metal
@@ -16539,8 +16542,8 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upk
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square, shield_wall
 stat_health      1, 1
-stat_pri         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    ap
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 2, 4, metal ;;
@@ -16563,7 +16566,7 @@ recruit_priority_offset    0
 type             Prussian Auxillia
 dictionary       prussian_auxillia      ; prussian_auxillia, l
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
@@ -16577,8 +16580,8 @@ formation        2, 4.4, 3, 4.4, 4, square
 stat_health      1, 3
 stat_pri         11, 5, average_mounted_javelin, 55, 6, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
-stat_sec_attr    ap
+stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 0, 3, metal ; mail
 stat_sec_armour  0, 0, flesh
 stat_heat        6
@@ -16689,8 +16692,8 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 1
 stat_pri         9, 1, peasant_militia_javelin, 45, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         1, 1,  no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         3, 1,  no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 4, 1, flesh ; shield -1
 stat_sec_armour  0, 0, flesh
 stat_heat        1
@@ -17009,7 +17012,7 @@ recruit_priority_offset    0
 type             Gasmuli
 dictionary       Gasmuli      ; Gasmuli, urban militia
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
@@ -17438,7 +17441,7 @@ recruit_priority_offset   20
 type             Toxotae
 dictionary       Toxotae      ; Toxotae, urban militia
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
@@ -17451,8 +17454,8 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         2, 1, militia_arrow, 100, 40, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
-stat_sec_attr    ap
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 4, 2, flesh
 stat_sec_armour  0, 0, flesh
 stat_heat        1
@@ -17486,8 +17489,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command, frighten_foot
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         11, 5, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
-stat_pri_attr    ap
+stat_pri         17, 5, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  8, 11, 0, metal ; mail, slung shield +1 ; GUARD
@@ -17553,9 +17556,9 @@ soldier          Viking_Raiders, 48, 0, 0.75, 0.45
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 1
-stat_pri         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 0
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 0
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    ap
+stat_pri_attr    no ; ap ; 1H axe (hatchet)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
@@ -17648,7 +17651,7 @@ class            spearmen
 voice_type       Light
 soldier          NE_Bodyguard, 8, 0, 1
 officer          northern_captain_early_flag
-;mount            barded horse
+;mount            barded horse brawler charger
 ;mount_effect     elephant -4, camel -4 
 attributes       sea_faring, can_withdraw, no_custom, princess
 move_speed_mod	 0.95

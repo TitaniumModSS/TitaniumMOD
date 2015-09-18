@@ -12777,7 +12777,7 @@ Trigger chancellor_muslim_player
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and Attribute Loyalty >= 6
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -12797,7 +12797,7 @@ Trigger chancellor_muslim_ai
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and Attribute Loyalty >= 5
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -12820,7 +12820,6 @@ Trigger chancellor_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and Attribute Loyalty >= 6
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -12843,7 +12842,6 @@ Trigger chancellor_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and Attribute Loyalty >= 5
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -12955,7 +12953,7 @@ Trigger seneschal_muslim_player
  WhenToTest CharacterTurnEnd 
  Condition IsFactionLeader
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -12969,7 +12967,7 @@ Trigger seneschal_muslim_ai
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral 
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -12991,7 +12989,6 @@ Trigger seneschal_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13008,7 +13005,6 @@ Trigger seneschal_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13077,7 +13073,7 @@ Trigger chamberlain_muslim
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral 
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and SettlementBuildingExists >= council_chambers 
@@ -13099,7 +13095,6 @@ Trigger chamberlain_mongol
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and SettlementBuildingExists >= council_chambers 
@@ -13355,7 +13350,7 @@ Trigger marshall_muslim_player
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13376,7 +13371,7 @@ Trigger marshall_muslim_ai
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13398,7 +13393,6 @@ Trigger marshall_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids; abbasids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13422,7 +13416,6 @@ Trigger marshall_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids; abbasids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13576,7 +13569,7 @@ Trigger moh_muslim
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13601,7 +13594,6 @@ Trigger moh_mongol
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13672,7 +13664,7 @@ Trigger steward_mulsim_player
  WhenToTest CharacterTurnEnd 
  Condition IsFactionLeader
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and SettlementBuildingExists >= council_chambers 
  and FactionIsLocal ;for player only
@@ -13685,7 +13677,7 @@ Trigger steward_muslim_ai
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral 
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and not IsFactionLeader
  and not IsFactionHeir
  and EndedInSettlement
@@ -13706,7 +13698,6 @@ Trigger steward_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and SettlementBuildingExists >= council_chambers 
  and FactionIsLocal ;for player only
@@ -13722,7 +13713,6 @@ Trigger steward_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and not IsFactionLeader
  and not IsFactionHeir
  and EndedInSettlement
@@ -13806,7 +13796,7 @@ Trigger treasurer_muslim_player
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral 
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and IsFactionLeader
@@ -13825,7 +13815,7 @@ Trigger treasurer_muslim_ai
  WhenToTest CharacterTurnEnd 
  Condition IsGeneral 
  and not CharFactionType mongols
- ;and not CharFactionType timurids
+ and not CharFactionType timurids
  and not IsFactionLeader
  and not IsFactionHeir
  and Treasury > 10000
@@ -13847,7 +13837,6 @@ Trigger treasurer_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and IsFactionLeader
@@ -13869,7 +13858,6 @@ Trigger treasurer_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids ;abbasids
  and not IsFactionLeader
  and not IsFactionHeir
  and Treasury > 10000
