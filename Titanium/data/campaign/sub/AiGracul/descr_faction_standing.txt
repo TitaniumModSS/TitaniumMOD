@@ -2941,6 +2941,7 @@ Trigger Egypt
     WhenToTest FactionTurnStart
 
     Condition FactionType egypt
+	and I_EventCounter abbasid_exist != 1
 
     FactionStanding factions { mongols } normalise -1 40
     FactionStanding factions { spain, england, france, hre } normalise -1 60
@@ -3715,6 +3716,19 @@ Trigger TurksAlt
     FactionStanding factions { england, france, hre } normalise -1 95
     FactionStanding factions { egypt, moors, kwarezm } normalise 1 45
     FactionStanding factions { timurids } normalise 1 60
+
+;------------------------------------------
+Trigger EgyptAlt
+    WhenToTest FactionTurnStart
+
+    Condition FactionType egypt
+	and I_EventCounter abbasid_exist = 1
+
+    FactionStanding factions { mongols, timurids } normalise -1 40
+    FactionStanding factions { spain, england, france, hre } normalise -1 60
+    FactionStanding factions { milan, venice, sicily } normalise -1 70
+    FactionStanding factions { byzantium, russia, kievan_rus, jerusalem } normalise -1 80
+    FactionStanding factions { turks, moors, kwarezm } normalise 1 45
 
 ;------------------------------------------
 Trigger LithuaniaAlt

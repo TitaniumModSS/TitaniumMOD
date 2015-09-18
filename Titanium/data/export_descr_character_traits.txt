@@ -38656,7 +38656,7 @@ and IsGeneral
 and not IsFactionLeader
 and CultureType middle_eastern
 and not FactionType mongols
-and not FactionType timurids
+;and not FactionType timurids
 and not HasAncType office_military1
 and Trait MilitaryInclination = 1
 and Trait Military_Career_Muslim = 0
@@ -38742,7 +38742,7 @@ and BattleOdds < 2.1
 and not IsFactionLeader
 and CultureType middle_eastern
 and not FactionType mongols
-and not FactionType timurids
+;and not FactionType timurids
 and not HasAncType office_military1
 and Trait GoodCommander >= 1
 and Trait Military_Career_Muslim = 0
@@ -39056,7 +39056,7 @@ Condition IsGeneral
 and not IsFactionLeader
 and CultureType middle_eastern
 and not FactionType mongols
-and not FactionType timurids
+;and not FactionType timurids
 and HasAncType office_military1
 and Trait Military_Career_Muslim2 < 1
 and Trait Military_Career_Muslim < 2
@@ -39072,7 +39072,7 @@ Condition IsGeneral
 and not IsFactionLeader
 and CultureType middle_eastern
 and not FactionType mongols
-and not FactionType timurids
+;and not FactionType timurids
 and HasAncType office_military1
 and Trait Military_Career_Muslim2 < 1
 and Trait Military_Career_Muslim = 2
@@ -39088,7 +39088,7 @@ Condition IsGeneral
 and not IsFactionLeader
 and CultureType middle_eastern
 and not FactionType mongols
-and not FactionType timurids
+;and not FactionType timurids
 and HasAncType office_military1
 and Trait Military_Career_Muslim2 < 1
 and Trait Military_Career_Muslim = 3
@@ -39107,6 +39107,7 @@ and not FactionType egypt
 and not FactionType moors
 and not FactionType turks
 and not FactionType kwarezm
+and not FactionType timurids ;abbasids
 and HasAncType office_military1
 and Trait Military_Career_Orlok < 1
 
@@ -41996,6 +41997,15 @@ and Trait Crusader_General_Levels = 1
 and Trait Tortosa_Ruler = 0
 
 Affects Crusader_General_Levels -1 Chance 100
+
+;------------------------------------------
+Trigger crusader_general_levels_trigger_remove_all
+WhenToTest CharacterTurnEnd
+
+Condition Trait Crusader_General_Levels >= 1
+and not FactionType jerusalem
+
+Affects Crusader_General_Levels -10 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
@@ -44940,7 +44950,7 @@ and not FactionType venice
 Affects Venice_Signoria_Approval -76 Chance 100
 
 ;------------------------------------------
-Trigger KER_cleanup_1
+Trigger KER_cleanup_2
 WhenToTest CharacterTurnEnd
 
 Condition Trait Genoa_Comune_Approval > 0
@@ -44949,7 +44959,7 @@ and not FactionType milan
 Affects Genoa_Comune_Approval -76 Chance 100
 
 ;------------------------------------------
-Trigger KER_cleanup_1
+Trigger KER_cleanup_3
 WhenToTest CharacterTurnEnd
 
 Condition Trait Novgorod_Veche_Approval > 0

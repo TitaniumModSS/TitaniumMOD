@@ -2,13 +2,17 @@
 :BEGIN
 CLS
 ECHO.                 
-ECHO          SS CLEAN UP TOOL
+ECHO          TITANIUM SETUP TOOL
 ECHO.
-ECHO This will remove:
-ECHO Some unnecessary files probably left by mistake by SS developers
-ECHO Campaign map.rwm, event.dat and event.idx so the game can renegerate them with the latest modifications if any.
+ECHO This will clone SS folder and merge it with Titanium's one
+ECHO then it will remove any unnecessary files from cloned SS6.4
+ECHO and finally apply Titanium's Campaigns and Submod options.
+ECHO In case SS6.4 mod is not found the setup will check if has already
+ECHO been merged with Titanium's folder.
 ECHO.
+ECHO This batch file will delete itself once the installation is done.
 ECHO.
+ECHO Are you sure you want to proceed?
 ECHO        1 = CONTINUE
 ECHO        2 = EXIT
 ECHO.
@@ -18,11 +22,29 @@ set /p inputChoice=[1,2]?:
 if "%inputChoice%"=="1" (GOTO ONE) else (GOTO TWO)
 
 :ONE
-rmdir /s /q data\ui\unit_models
-rmdir /s /q data\ui\northern_european\eventpics
-rmdir /s /q data\ui\middle_eastern\eventpics
-rmdir /s /q data\ui\greek\buildings
-rmdir /s /q data\ui\eastern_european\eventpics
+for %%* in (.) do set foldername=%%~n*
+if not "%foldername%"=="Titanium_Alpha" (GOTO WRONG)
+
+cd..
+IF NOT EXIST "SS6.3\" GOTO WRONG2
+IF NOT EXIST "SS6.3\SS_setup.exe" GOTO WRONG2
+IF NOT EXIST "SS6.3\SS_launcher.exe" GOTO WRONG2
+IF NOT EXIST "SS6.3\data\unit_models" GOTO WRONG2
+ECHO cloning Stainless Steel...
+@echo off
+start/wait xcopy "SS6.3\data" "Titanium_Alpha\data\" /e /y
+xcopy "SS6.3\SS_Launcher.exe" "Titanium_Alpha\" /y
+xcopy "SS6.3\SS_setup.exe" "Titanium_Alpha\" /y
+
+:CLEAN
+ECHO removing unnecessary files...
+@echo off
+cd "Titanium_Alpha"
+rd data\ui\unit_models /s /q
+rd data\ui\northern_european\eventpics /s /q
+rd data\ui\middle_eastern\eventpics /s /q
+rd data\ui\greek\buildings /s /q 
+rd data\ui\eastern_european\eventpics /s /q
 del data\ui\northern_european\stratpage_03.tga
 del data\ui\northern_european\interface\battlepage_01.tga_mouseover.tga
 del data\ui\northern_european\interface\battlepage_02.tga
@@ -365,7 +387,97 @@ del data\unit_models\_units\banzai\banzai_mount_war_wagon_lod0.ms3d
 del data\sounds\events.idx
 del data\sounds\events.dat
 del data\world\maps\base\map.rwm
-del data\campaign\backup\world\maps\base\map.rwm
+
+:CHECK
+if exist "titanium_data\" (GOTO REPLACE) else (GOTO NOTFOUND)
+
+:CHECK2
+CLS
+ECHO SS6.4 files detected inside "Titanium_Alpha" folder
+ECHO and seem to be complete.
+ECHO Do you wish to continue and Install Titanium's files over SS?
+ECHO.
+ECHO        1 = YES
+ECHO        2 = NO (EXIT)
+ECHO.
+
+set /p inputChoice=[1,2]?:
+if "%inputChoice%"=="1" (GOTO CLEAN) else (GOTO TWO)
+
+:REPLACE
+ECHO Titanium campaign and submods installation...
+@echo off
+rmdir /s /q data\campaign
+md data\campaign
+xcopy /e /y "titanium_data" "data\"
+if not exist "titanium_music\" GOTO FINISH
+
+CLS
+ECHO Do you wish to install new music files?
+ECHO This will replace Stainless Steel 6.4 main menu music
+ECHO.
+ECHO        1 = YES (INSTALL MUSIC)
+ECHO        2 = NO (FINISH SETUP)
+ECHO.
+
+set /p inputChoice=[1,2]?:
+if "%inputChoice%"=="1" (GOTO MUSIC) else (GOTO FINISH)
+
+:MUSIC
+@echo off
+del "data\sounds\music\(Frontend).mp3"
+del "data\sounds\music\(Frontend_1)_Long_Road_Ahead.mp3"
+del "data\sounds\music\(Frontend_2)_Arcadia.mp3"
+del "data\sounds\music\(Frontend_3)_Impending_Boom.mp3"
+del "data\sounds\music\(Frontend_4)_Private_Reflection.mp3"
+xcopy /e /y "titanium_music" "data\sounds\music\"
+rmdir /s /q "titanium_music"
+
+:FINISH
+@echo off
+md "old_batch"
+xcopy /y "TITANIUM_SETUP.bat" "old_batch\"
+rmdir /s /q "titanium_data"
+
+CLS
+ECHO Titanium installed successfully!
+ECHO press any key to remove batch file and exit . . .
+pause > nul
+del "%~f0"
+EXIT 0
+
+:NOTFOUND
+CLS
+ECHO "titanium_data" folder not found, Titanium submod is probably installed already
+ECHO if not, extract the content from the downloaded 7z file again.
+ECHO press any key to exit . . .
+pause > nul
+EXIT 0
+
+:WRONG
+CLS
+ECHO ERROR! this setup is intended for "Titanium_Alpha" mod folder only
+ECHO press any key to exit . . .
+pause > nul
+EXIT 0
+
+:WRONG2
+CLS
+ECHO ERROR! SS6.4 mod folder "SS6.3" does not exists or data is missing
+ECHO press any key to check if Stainless Steel files are in "Titanium_Alpha"
+pause > nul
+IF NOT EXIST "Titanium_Alpha\SS_setup.exe" (GOTO WRONG3)
+IF NOT EXIST "Titanium_Alpha\SS_launcher.exe" (GOTO WRONG3)
+IF NOT EXIST "Titanium_Alpha\data\unit_models" (GOTO WRONG3)
+IF NOT EXIST "Titanium_Alpha\data\campaign\sub\" (GOTO WRONG3)
+IF NOT EXIST "Titanium_Alpha\data\campaign\late\campaign.txt" (GOTO WRONG3)
+IF NOT EXIST "Titanium_Alpha\data\campaign\early\campaign.txt" (GOTO WRONG3) else (GOTO CHECK2)
+
+:WRONG3
+CLS
+ECHO Stainless Steel files not found or incomplete
+ECHO press any key to exit . . .
+pause > nul
 
 :TWO
 EXIT 0

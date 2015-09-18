@@ -2097,7 +2097,7 @@
 58 unit_models/_Units/EN_Lmail_Hmail/feudal_knights_lod1.mesh 900 
 58 unit_models/_Units/EN_Lmail_Hmail/feudal_knights_lod2.mesh 2500 
 58 unit_models/_Units/EN_Lmail_Hmail/feudal_knights_lod3.mesh 20000 
-16 
+17 
 7 england 
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_englanw.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
@@ -2146,14 +2146,6 @@
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_hungary.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
 46 unit_sprites/hungary_Feudal_Knights_sprite.spr 
-5 slave 
-72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_rebels.texture 
-72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
-44 unit_sprites/slave_Feudal_Knights_sprite.spr 
-4 merc 
-72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_rebels.texture 
-72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
-44 unit_sprites/slave_Feudal_Knights_sprite.spr 
 7 normans 
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_england.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
@@ -2162,7 +2154,19 @@
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norway.texture 
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal3.texture 
 45 unit_sprites/norway_Feudal_Knights_sprite.spr 
-16 
+6 sicily 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_sicily.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
+44 unit_sprites/slave_Feudal_Knights_sprite.spr 
+4 merc 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
+44 unit_sprites/slave_Feudal_Knights_sprite.spr 
+5 slave 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_kmail_kmail_normal.texture 
+44 unit_sprites/slave_Feudal_Knights_sprite.spr 
+17 
 7 england 
 60 unit_models/AttachmentSets/Final Heater_england_diff.texture 
 60 unit_models/AttachmentSets/Final Heater_england_norm.texture 0 
@@ -2199,18 +2203,21 @@
 7 hungary 
 60 unit_models/AttachmentSets/Final Heater_hungary_diff.texture 
 60 unit_models/AttachmentSets/Final Heater_hungary_norm.texture 0 
-5 slave 
-58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
-58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
-4 merc 
-58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
-58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
 7 normans 
 60 unit_models/AttachmentSets/Final Heater_normans_diff.texture 
 60 unit_models/AttachmentSets/Final Heater_normans_norm.texture 0 
 6 norway 
 59 unit_models/AttachmentSets/Final Heater_norway_diff.texture 
 62 unit_models/AttachmentSets/Final Heater_jerusalem_norm.texture 0 
+6 sicily 
+59 unit_models/AttachmentSets/Final Heater_sicily_diff.texture 
+59 unit_models/AttachmentSets/Final Heater_sicily_norm.texture 0 
+4 merc 
+58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
+58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
+5 slave 
+58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
+58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
 1 
 5 Horse 
 13 MTW2_HR_Lance 
@@ -2225,7 +2232,7 @@
 63 unit_models/_Units/EN_Pplate_Plate/feudal_knights_ug1_lod0.mesh 121 
 63 unit_models/_Units/EN_Pplate_Plate/feudal_knights_ug1_lod1.mesh 1225 
 63 unit_models/_Units/EN_Pplate_Plate/feudal_knights_ug1_lod2.mesh 20000 
-16 
+17 
 7 england 
 74 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_england.texture 
 73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
@@ -2274,14 +2281,6 @@
 74 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_hungary.texture 
 73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
 50 unit_sprites/hungary_Feudal_Knights_ug1_sprite.spr 
-5 slave 
-73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_rebels.texture 
-73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
-48 unit_sprites/slave_Feudal_Knights_ug1_sprite.spr 
-4 merc 
-73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_rebels.texture 
-73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
-48 unit_sprites/slave_Feudal_Knights_ug1_sprite.spr 
 7 normans 
 74 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_england.texture 
 73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
@@ -2290,7 +2289,19 @@
 73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_norway.texture 
 73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
 49 unit_sprites/norway_Feudal_Knights_ug1_sprite.spr 
-16 
+6 sicily 
+73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_en_pplate_sicily.texture 
+73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
+48 unit_sprites/slave_Feudal_Knights_ug1_sprite.spr 
+4 merc 
+73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_rebels.texture 
+73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
+48 unit_sprites/slave_Feudal_Knights_ug1_sprite.spr 
+5 slave 
+73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_rebels.texture 
+73 unit_models/_Units/EN_Pplate_Plate/textures/mtw2_EN_Pplate_normal.texture 
+48 unit_sprites/slave_Feudal_Knights_ug1_sprite.spr 
+17 
 7 england 
 60 unit_models/AttachmentSets/Final Heater_england_diff.texture 
 60 unit_models/AttachmentSets/Final Heater_england_norm.texture 0 
@@ -2327,18 +2338,21 @@
 7 hungary 
 60 unit_models/AttachmentSets/Final Heater_hungary_diff.texture 
 60 unit_models/AttachmentSets/Final Heater_hungary_norm.texture 0 
-5 slave 
-58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
-58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
-4 merc 
-58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
-58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
 7 normans 
 60 unit_models/AttachmentSets/Final Heater_normans_diff.texture 
 60 unit_models/AttachmentSets/Final Heater_normans_norm.texture 0 
 6 norway 
 59 unit_models/AttachmentSets/Final Heater_norway_diff.texture 
 62 unit_models/AttachmentSets/Final Heater_jerusalem_norm.texture 0 
+6 sicily 
+59 unit_models/AttachmentSets/Final Heater_sicily_diff.texture 
+59 unit_models/AttachmentSets/Final Heater_sicily_norm.texture 0 
+4 merc 
+58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
+58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
+5 slave 
+58 unit_models/AttachmentSets/Final Heater_slave_diff.texture 
+58 unit_models/AttachmentSets/Final Heater_slave_norm.texture 0 
 1 
 5 Horse 
 13 MTW2_HR_Lance 
