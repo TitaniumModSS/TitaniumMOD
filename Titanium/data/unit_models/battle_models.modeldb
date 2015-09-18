@@ -1,4 +1,4 @@
-22 serialization::archive 3 0 0 0 0 1240 0 0 
+22 serialization::archive 3 0 0 0 0 1244 0 0 
 10 mount_pony 
 1.12 0 0 3 0 0 
 52 unit_models/Mounts/Medium_Horse/mount_pony_lod0.mesh 121 
@@ -13322,104 +13322,62 @@
 18 MTW2_Knife_Primary 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 17 s_peasant_archers 
-1 4 
-64 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_lod0.mesh 121 
-64 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_lod1.mesh 900 
-64 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_lod2.mesh 2500 
-64 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_lod3.mesh 20000 
-5 
-6 sicily 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-48 unit_sprites/sicily_S_Peasant_Archers_sprite.spr 
-7 hungary 
-72 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_hungary.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-49 unit_sprites/hungary_S_Peasant_Archers_sprite.spr 
+1 2 
+60 unit_models/_Units/paleologos/ERE_Levy_Archers_ug0_lod0.mesh 2500 
+60 unit_models/_Units/paleologos/ERE_Levy_Archers_ug0_lod0.mesh 20000 
+2 
 9 byzantium 
-74 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_byzantium.texture 
-75 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal_byz.texture 
-51 unit_sprites/byzantium_S_Peasant_Archers_sprite.spr 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_ERE.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+70 unit_sprites/paleologos/_Ti_ERE/byzantium_s_peasant_archers_sprite.spr 
 5 slave 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_rebels.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-47 unit_sprites/slave_S_Peasant_Archers_sprite.spr 
-15 knights_templar 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-48 unit_sprites/sicily_S_Peasant_Archers_sprite.spr 
-5 
-6 sicily 
-68 unit_models/AttachmentSets/Final European Archer_sicily_diff.texture 
-68 unit_models/AttachmentSets/Final European Archer_sicily_norm.texture 0 
-7 hungary 
-69 unit_models/AttachmentSets/Final European Archer_hungary_diff.texture 
-69 unit_models/AttachmentSets/Final European Archer_hungary_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_Reb.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+66 unit_sprites/paleologos/_Ti_ERE/slave_s_peasant_archers_sprite.spr 
+2 
 9 byzantium 
-71 unit_models/AttachmentSets/Final European Archer_byzantium_diff.texture 
-71 unit_models/AttachmentSets/Final European Archer_byzantium_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_ERE.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
 5 slave 
-67 unit_models/AttachmentSets/Final European Archer_slave_diff.texture 
-67 unit_models/AttachmentSets/Final European Archer_slave_norm.texture 0 
-15 knights_templar 
-68 unit_models/AttachmentSets/Final European Archer_sicily_diff.texture 
-68 unit_models/AttachmentSets/Final European Archer_sicily_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_Reb.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_2NM.texture 0 
 1 
 4 None 
 16 MTW2_Fast_Bowman 
-18 MTW2_Fast_Knifeman 1 
-19 MTW2_Bowman_Primary 1 
-18 MTW2_Knife_Primary 
+14 MTW2_Fast_Mace 2 
+19 MTW2_Bowman_Primary 
+14 fs_test_shield 2 
+17 MTW2_Mace_Primary 
+14 fs_test_shield 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 21 s_peasant_archers_ug1 
-1 4 
-68 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_ug1_lod0.mesh 121 
-68 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_ug1_lod1.mesh 900 
-68 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_ug1_lod2.mesh 2500 
-68 unit_models/_Units/ES_Peasant_Padded/s_peasant_archers_ug1_lod3.mesh 20000 
-5 
-6 sicily 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-52 unit_sprites/sicily_S_Peasant_Archers_ug1_sprite.spr 
-7 hungary 
-72 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_hungary.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-53 unit_sprites/hungary_S_Peasant_Archers_ug1_sprite.spr 
+1 2  
+60 unit_models/_Units/paleologos/ERE_Levy_Archers_ug1_lod0.mesh 2500 
+60 unit_models/_Units/paleologos/ERE_Levy_Archers_ug1_lod0.mesh 20000 
+2 
 9 byzantium 
-74 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_byzantium.texture 
-75 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal_byz.texture 
-55 unit_sprites/byzantium_S_Peasant_Archers_ug1_sprite.spr 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_3_ERE.texture 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_7_NrM.texture 
+69 unit_sprites/paleologos/_Ti_ERE/byzantium_Levy_Archers_ug1_sprite.spr 
 5 slave 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_rebels.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-51 unit_sprites/slave_S_Peasant_Archers_ug1_sprite.spr 
-15 knights_templar 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-52 unit_sprites/sicily_S_Peasant_Archers_ug1_sprite.spr 
-5 
-6 sicily 
-68 unit_models/AttachmentSets/Final European Archer_sicily_diff.texture 
-68 unit_models/AttachmentSets/Final European Archer_sicily_norm.texture 0 
-7 hungary 
-69 unit_models/AttachmentSets/Final European Archer_hungary_diff.texture 
-69 unit_models/AttachmentSets/Final European Archer_hungary_norm.texture 0 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_6_Reb.texture 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_7_NrM.texture 
+65 unit_sprites/paleologos/_Ti_ERE/slave_Levy_Archers_ug1_sprite.spr 
+2 
 9 byzantium 
-71 unit_models/AttachmentSets/Final European Archer_byzantium_diff.texture 
-71 unit_models/AttachmentSets/Final European Archer_byzantium_norm.texture 0 
+61 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_ERE.texture 
+60 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_NM.texture 0 
 5 slave 
-67 unit_models/AttachmentSets/Final European Archer_slave_diff.texture 
-67 unit_models/AttachmentSets/Final European Archer_slave_norm.texture 0 
-15 knights_templar 
-68 unit_models/AttachmentSets/Final European Archer_sicily_diff.texture 
-68 unit_models/AttachmentSets/Final European Archer_sicily_norm.texture 0 
+61 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_Reb.texture 
+60 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_NM.texture 0 
 1 
 4 None 
 16 MTW2_Fast_Bowman 
-18 MTW2_Fast_Knifeman 1 
-19 MTW2_Bowman_Primary 1 
-18 MTW2_Knife_Primary 
+14 MTW2_Fast_Mace 2 
+19 MTW2_Bowman_Primary 
+14 fs_test_shield 2 
+17 MTW2_Mace_Primary 
+14 fs_test_shield 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 16 s_archer_militia 
 1 4 
@@ -17942,41 +17900,32 @@
 18 MTW2_Spear_primary 0 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 17 southern_peasants 
-1 4 
-64 unit_models/_Units/ES_Peasant_Padded/southern_peasants_lod0.mesh 121 
-64 unit_models/_Units/ES_Peasant_Padded/southern_peasants_lod1.mesh 900 
-64 unit_models/_Units/ES_Peasant_Padded/southern_peasants_lod2.mesh 2500 
-64 unit_models/_Units/ES_Peasant_Padded/southern_peasants_lod3.mesh 20000 
-4 
+1 2 
+51 unit_models/_Units/paleologos/SE_Levy_ug0_lod0.mesh 2500 
+51 unit_models/_Units/paleologos/SE_Levy_ug0_lod0.mesh 20000 
+3 
 6 sicily 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-48 unit_sprites/sicily_Southern_Peasants_sprite.spr 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_ScN.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+67 unit_sprites/paleologos/_Ti_ERE/sicily_Southern_Peasants_sprite.spr 
 9 byzantium 
-74 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_byzantium.texture 
-75 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal_byz.texture 
-51 unit_sprites/byzantium_Southern_Peasants_sprite.spr 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_ERE.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+70 unit_sprites/paleologos/_Ti_ERE/byzantium_Southern_Peasants_sprite.spr 
 5 slave 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_rebels.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-47 unit_sprites/slave_Southern_Peasants_sprite.spr 
-15 knights_templar 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-48 unit_sprites/sicily_Southern_Peasants_sprite.spr 
-4 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_Reb.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+66 unit_sprites/paleologos/_Ti_ERE/slave_Southern_Peasants_sprite.spr 
+3 
 6 sicily 
-67 unit_models/AttachmentSets/Final European Light_sicily_diff.texture 
-67 unit_models/AttachmentSets/Final European Light_sicily_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_ScN.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
 9 byzantium 
-70 unit_models/AttachmentSets/Final European Light_byzantium_diff.texture 
-70 unit_models/AttachmentSets/Final European Light_byzantium_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_ERE.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
 5 slave 
-66 unit_models/AttachmentSets/Final European Light_slave_diff.texture 
-66 unit_models/AttachmentSets/Final European Light_slave_norm.texture 0 
-15 knights_templar 
-67 unit_models/AttachmentSets/Final European Light_sicily_diff.texture 
-67 unit_models/AttachmentSets/Final European Light_sicily_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_Reb.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
 1 
 4 None 
 10 MTW2_Spear 0 
@@ -17984,41 +17933,32 @@
 18 MTW2_Spear_primary 0 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 21 southern_peasants_ug1 
-1 4 
-68 unit_models/_Units/ES_Peasant_Padded/southern_peasants_ug1_lod0.mesh 121 
-68 unit_models/_Units/ES_Peasant_Padded/southern_peasants_ug1_lod1.mesh 900 
-68 unit_models/_Units/ES_Peasant_Padded/southern_peasants_ug1_lod2.mesh 2500 
-68 unit_models/_Units/ES_Peasant_Padded/southern_peasants_ug1_lod3.mesh 20000 
-4 
+1 2 
+51 unit_models/_Units/paleologos/SE_Levy_ug1_lod0.mesh 2500 
+51 unit_models/_Units/paleologos/SE_Levy_ug1_lod0.mesh 20000 
+3 
 6 sicily 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-52 unit_sprites/sicily_Southern_Peasants_ug1_sprite.spr 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug1_ScN.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug1_NM2.texture 
+71 unit_sprites/paleologos/_Ti_ERE/sicily_southern_peasants_ug1_sprite.spr 
 9 byzantium 
-74 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_byzantium.texture 
-75 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal_byz.texture 
-55 unit_sprites/byzantium_Southern_Peasants_ug1_sprite.spr 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug1_ERE.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug1_NM1.texture 
+74 unit_sprites/paleologos/_Ti_ERE/byzantium_southern_peasants_ug1_sprite.spr 
 5 slave 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_rebels.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-51 unit_sprites/slave_Southern_Peasants_ug1_sprite.spr 
-15 knights_templar 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_sicily.texture 
-71 unit_models/_Units/ES_Peasant_Padded/textures/ES_Peasant_normal.texture 
-52 unit_sprites/sicily_Southern_Peasants_ug1_sprite.spr 
-4 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug1_Reb.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug1_NM2.texture 
+70 unit_sprites/paleologos/_Ti_ERE/slave_Southern_Peasants_ug1_sprite.spr 
+3 
 6 sicily 
-67 unit_models/AttachmentSets/Final European Light_sicily_diff.texture 
-67 unit_models/AttachmentSets/Final European Light_sicily_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_ScN.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
 9 byzantium 
-70 unit_models/AttachmentSets/Final European Light_byzantium_diff.texture 
-70 unit_models/AttachmentSets/Final European Light_byzantium_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_ERE.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
 5 slave 
-66 unit_models/AttachmentSets/Final European Light_slave_diff.texture 
-66 unit_models/AttachmentSets/Final European Light_slave_norm.texture 0 
-15 knights_templar 
-67 unit_models/AttachmentSets/Final European Light_sicily_diff.texture 
-67 unit_models/AttachmentSets/Final European Light_sicily_norm.texture 0 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_Reb.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_2NM.texture 0 
 1 
 4 None 
 10 MTW2_Spear 0 
@@ -53881,6 +53821,118 @@
 2 
 18 MTW2_Spear_primary 
 14 fs_test_shield 0 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+21 Contaratoi_paleologos 
+1 2 
+61 unit_models/_Units/paleologos/ERE_Levy_SpearMen_ug0_lod0.mesh 2500 
+61 unit_models/_Units/paleologos/ERE_Levy_SpearMen_ug0_lod0.mesh 20000 
+2 
+9 byzantium 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_ERE.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+63 unit_sprites/paleologos/_Ti_ERE/byzantium_Contaratoi_sprite.spr 
+5 slave 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_Reb.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+59 unit_sprites/paleologos/_Ti_ERE/slave_Contaratoi_sprite.spr 
+2 
+9 byzantium 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_ERE.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
+5 slave 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_Reb.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_2NM.texture 0 
+1 
+4 None 
+10 MTW2_Spear 0 
+2 
+18 MTW2_Spear_primary 
+14 fs_test_shield 0 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+25 Contaratoi_paleologos_ug1 
+1 2 
+61 unit_models/_Units/paleologos/ERE_Levy_SpearMen_ug1_lod0.mesh 2500 
+61 unit_models/_Units/paleologos/ERE_Levy_SpearMen_ug1_lod0.mesh 20000 
+2 
+9 byzantium 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_1_ERE.texture 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_7_NrM.texture 
+68 unit_sprites/paleologos/_Ti_ERE/byzantium_Contaratoi_ug1_sprite.spr 
+5 slave 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_4_Reb.texture 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_7_NrM.texture 
+63 unit_sprites/paleologos/_Ti_ERE/slave_Contaratoi_ug1_sprite.spr 
+2 
+9 byzantium 
+61 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_ERE.texture 
+60 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_NM.texture 0 
+5 slave 
+61 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_Reb.texture 
+60 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_NM.texture 0 
+1 
+4 None 
+10 MTW2_Spear 0 
+2 
+18 MTW2_Spear_primary 
+14 fs_test_shield 0 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+21 Acontistae_paleologos 
+1 2 
+63 unit_models/_Units/paleologos/ERE_Levy_Akondistai_ug0_lod0.mesh 2500 
+63 unit_models/_Units/paleologos/ERE_Levy_Akondistai_ug0_lod0.mesh 20000 
+2 
+9 byzantium 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_ERE.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+63 unit_sprites/paleologos/_Ti_ERE/byzantium_Acontistae_sprite.spr 
+5 slave 
+62 unit_models/_Units/paleologos/textures/SE_Levy_ug0_Reb.texture 
+61 unit_models/_Units/paleologos/textures/SE_Levy_ug0_NM.texture 
+59 unit_sprites/paleologos/_Ti_ERE/slave_Acontistae_sprite.spr 
+2 
+9 byzantium 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_ERE.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_1NM.texture 0 
+5 slave 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_Reb.texture 
+62 unit_models/_Units/paleologos/textures/SE_Levy_EQ0_2NM.texture 0 
+1 
+4 None 
+17 MTW2_Fast_Javelin 
+14 MTW2_Fast_Mace 2 
+20 MTW2_Javelin_primary 
+14 fs_test_shield 2 
+17 MTW2_Mace_Primary 
+14 fs_test_shield 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+25 Acontistae_paleologos_ug1 
+1 2 
+63 unit_models/_Units/paleologos/ERE_Levy_Akondistai_ug1_lod0.mesh 2500 
+63 unit_models/_Units/paleologos/ERE_Levy_Akondistai_ug1_lod0.mesh 20000 
+2 
+9 byzantium 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_2_ERE.texture 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_7_NrM.texture 
+68 unit_sprites/paleologos/_Ti_ERE/byzantium_Akondistai_ug1_sprite.spr 
+5 slave 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_5_Reb.texture 
+69 unit_models/_Units/paleologos/textures/Gr_Levies_Padded_7_NrM.texture 
+63 unit_sprites/paleologos/_Ti_ERE/slave_Akondistai_ug1_sprite.spr 
+2 
+9 byzantium 
+61 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_ERE.texture 
+60 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_NM.texture 0 
+5 slave 
+61 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_Reb.texture 
+60 unit_models/_Units/paleologos/textures/Gr_Levy_EQ_NM.texture 0 
+1 
+4 None 
+17 MTW2_Fast_Javelin 
+14 MTW2_Fast_Mace 2 
+20 MTW2_Javelin_primary 
+14 fs_test_shield 2 
+17 MTW2_Mace_Primary 
+14 fs_test_shield 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 7 gasmuli 
 1 3 

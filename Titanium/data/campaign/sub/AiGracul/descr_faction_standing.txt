@@ -3103,8 +3103,8 @@ Trigger Abbasids
     Condition FactionType timurids
     and I_EventCounter abbasids_exist = 1
 
-    FactionStanding factions { mongols } normalise -1 30
-    FactionStanding factions { egypt } normalise -1 60
+    FactionStanding factions { mongols } normalise -1 60
+    FactionStanding factions { egypt } normalise -1 120
 
 ;==================================================================================
 ;ALTERNATE TRIGGERS

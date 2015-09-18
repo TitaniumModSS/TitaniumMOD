@@ -7,7 +7,7 @@ declare_counter london_courtesan_id
 declare_counter frankfurt_courtesan_id
 declare_counter paris_courtesan_id
 declare_counter arhus_courtesan_id
-declare_counter eikundarsund_courtesan_id
+declare_counter oslo_courtesan_id
 declare_counter leon_courtesan_id
 declare_counter naples_courtesan_id
 declare_counter genoa_courtesan_id
@@ -34,7 +34,7 @@ monitor_event PreFactionTurnStart TrueCondition
 	console_command create_building Frankfurt royal_court
 	console_command create_building Paris royal_court
 	console_command create_building Arhus royal_court
-	console_command create_building Eikundarsund royal_court
+	console_command create_building Oslo royal_court
 	console_command create_building Leon royal_court
 	console_command create_building Naples royal_court
 	console_command create_building Genoa royal_court
@@ -476,85 +476,85 @@ end_monitor
 monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
-	and SettlementName Eikundarsund
+	and SettlementName Oslo
 	set_counter courtesan_lady 1
-	if I_SettlementOwner Eikundarsund = byzantium
-		set_counter eikundarsund_courtesan_id 1
+	if I_SettlementOwner Oslo = byzantium
+		set_counter oslo_courtesan_id 1
 		destroy_units byzantium princess
 	end_if
-	if I_SettlementOwner Eikundarsund = england
-		set_counter eikundarsund_courtesan_id 2
+	if I_SettlementOwner Oslo = england
+		set_counter oslo_courtesan_id 2
 		destroy_units england princess
 	end_if
-	if I_SettlementOwner Eikundarsund = scotland
-		set_counter eikundarsund_courtesan_id 3
+	if I_SettlementOwner Oslo = scotland
+		set_counter oslo_courtesan_id 3
 		destroy_units scotland princess
 	end_if
-	if I_SettlementOwner Eikundarsund = hre
-		set_counter eikundarsund_courtesan_id 4
+	if I_SettlementOwner Oslo = hre
+		set_counter oslo_courtesan_id 4
 		destroy_units hre princess
 	end_if
-	if I_SettlementOwner Eikundarsund = france
-		set_counter eikundarsund_courtesan_id 5
+	if I_SettlementOwner Oslo = france
+		set_counter oslo_courtesan_id 5
 		destroy_units france princess
 	end_if
-	if I_SettlementOwner Eikundarsund = denmark
-		set_counter eikundarsund_courtesan_id 6
+	if I_SettlementOwner Oslo = denmark
+		set_counter oslo_courtesan_id 6
 		destroy_units denmark princess
 	end_if
-	if I_SettlementOwner Eikundarsund = norway
-		set_counter eikundarsund_courtesan_id 7
+	if I_SettlementOwner Oslo = norway
+		set_counter oslo_courtesan_id 7
 		destroy_units norway princess
 	end_if
-	if I_SettlementOwner Eikundarsund = spain
-		set_counter eikundarsund_courtesan_id 8
+	if I_SettlementOwner Oslo = spain
+		set_counter oslo_courtesan_id 8
 		destroy_units spain princess
 	end_if
-	if I_SettlementOwner Eikundarsund = aragon
-		set_counter eikundarsund_courtesan_id 9
+	if I_SettlementOwner Oslo = aragon
+		set_counter oslo_courtesan_id 9
 		destroy_units aragon princess
 	end_if
-	if I_SettlementOwner Eikundarsund = portugal
-		set_counter eikundarsund_courtesan_id 10
+	if I_SettlementOwner Oslo = portugal
+		set_counter oslo_courtesan_id 10
 		destroy_units portugal princess
 	end_if
-	if I_SettlementOwner Eikundarsund = venice
-		set_counter eikundarsund_courtesan_id 11
+	if I_SettlementOwner Oslo = venice
+		set_counter oslo_courtesan_id 11
 		destroy_units venice princess
 	end_if
-	if I_SettlementOwner Eikundarsund = milan
-		set_counter eikundarsund_courtesan_id 12
+	if I_SettlementOwner Oslo = milan
+		set_counter oslo_courtesan_id 12
 		destroy_units milan princess
 	end_if
-	if I_SettlementOwner Eikundarsund = sicily
-		set_counter eikundarsund_courtesan_id 13
+	if I_SettlementOwner Oslo = sicily
+		set_counter oslo_courtesan_id 13
 		destroy_units sicily princess
 	end_if
-	if I_SettlementOwner Eikundarsund = hungary
-		set_counter eikundarsund_courtesan_id 14
+	if I_SettlementOwner Oslo = hungary
+		set_counter oslo_courtesan_id 14
 		destroy_units hungary princess
 	end_if
-	if I_SettlementOwner Eikundarsund = poland
-		set_counter eikundarsund_courtesan_id 15
+	if I_SettlementOwner Oslo = poland
+		set_counter oslo_courtesan_id 15
 		destroy_units poland princess
 	end_if
-	if I_SettlementOwner Eikundarsund = lithuania
-		set_counter eikundarsund_courtesan_id 16
+	if I_SettlementOwner Oslo = lithuania
+		set_counter oslo_courtesan_id 16
 		destroy_units lithuania princess
 	end_if
-	if I_SettlementOwner Eikundarsund = kievan_rus
-		set_counter eikundarsund_courtesan_id 17
+	if I_SettlementOwner Oslo = kievan_rus
+		set_counter oslo_courtesan_id 17
 		destroy_units kievan_rus princess
 	end_if
-	if I_SettlementOwner Eikundarsund = russia
-		set_counter eikundarsund_courtesan_id 18
+	if I_SettlementOwner Oslo = russia
+		set_counter oslo_courtesan_id 18
 		destroy_units russia princess
 	end_if
-	if I_SettlementOwner Eikundarsund = jerusalem
-		set_counter eikundarsund_courtesan_id 19
+	if I_SettlementOwner Oslo = jerusalem
+		set_counter oslo_courtesan_id 19
 		destroy_units jerusalem princess
 	end_if
-	set_recruit_pool Eikundarsund_Province 0 Royal Envoy
+	set_recruit_pool Oslo_Province 0 Royal Envoy
 end_monitor
 
 monitor_event UnitTrained TrainedUnitCategory non_combatant
@@ -2397,103 +2397,103 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		set_counter arhus_courtesan_id 0
 	end_if
 ;
-	if I_CompareCounter eikundarsund_courtesan_id >= 1
-		if I_CompareCounter eikundarsund_courtesan_id = 1
+	if I_CompareCounter oslo_courtesan_id >= 1
+		if I_CompareCounter oslo_courtesan_id = 1
 		and I_CompareCounter turn_fid = 9
-			spawn_character byzantium random_name, princess, age 19, x 120, y 269
+			spawn_character byzantium random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { byzantium, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 2
+		if I_CompareCounter oslo_courtesan_id = 2
 		and I_CompareCounter turn_fid = 19
-			spawn_character england random_name, princess, age 19, x 120, y 269
+			spawn_character england random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { england, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 3
+		if I_CompareCounter oslo_courtesan_id = 3
 		and I_CompareCounter turn_fid = 16
-			spawn_character scotland random_name, princess, age 19, x 120, y 269
+			spawn_character scotland random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { scotland, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 4
+		if I_CompareCounter oslo_courtesan_id = 4
 		and I_CompareCounter turn_fid = 18
-			spawn_character hre random_name, princess, age 19, x 120, y 269
+			spawn_character hre random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { hre, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 5
+		if I_CompareCounter oslo_courtesan_id = 5
 		and I_CompareCounter turn_fid = 17
-			spawn_character france random_name, princess, age 19, x 120, y 269
+			spawn_character france random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { france, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 6
+		if I_CompareCounter oslo_courtesan_id = 6
 		and I_CompareCounter turn_fid = 15
-			spawn_character denmark random_name, princess, age 19, x 120, y 269
+			spawn_character denmark random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { denmark, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 7
+		if I_CompareCounter oslo_courtesan_id = 7
 		and I_CompareCounter turn_fid = 26
-			spawn_character norway random_name, princess, age 19, x 120, y 269
+			spawn_character norway random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { norway, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 8
+		if I_CompareCounter oslo_courtesan_id = 8
 		and I_CompareCounter turn_fid = 22
-			spawn_character spain random_name, princess, age 19, x 120, y 269
+			spawn_character spain random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { spain, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 9
+		if I_CompareCounter oslo_courtesan_id = 9
 		and I_CompareCounter turn_fid = 24
-			spawn_character aragon random_name, princess, age 19, x 120, y 269
+			spawn_character aragon random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { aragon, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 10
+		if I_CompareCounter oslo_courtesan_id = 10
 		and I_CompareCounter turn_fid = 20
-			spawn_character portugal random_name, princess, age 19, x 120, y 269
+			spawn_character portugal random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { portugal, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 11
+		if I_CompareCounter oslo_courtesan_id = 11
 		and I_CompareCounter turn_fid = 12
-			spawn_character venice random_name, princess, age 19, x 120, y 269
+			spawn_character venice random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { venice, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 12
+		if I_CompareCounter oslo_courtesan_id = 12
 		and I_CompareCounter turn_fid = 14
-			spawn_character milan random_name, princess, age 19, x 120, y 269
+			spawn_character milan random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { milan, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 13
+		if I_CompareCounter oslo_courtesan_id = 13
 		and I_CompareCounter turn_fid = 13
-			spawn_character sicily random_name, princess, age 19, x 120, y 269
+			spawn_character sicily random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { sicily, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 14
+		if I_CompareCounter oslo_courtesan_id = 14
 		and I_CompareCounter turn_fid = 23
-			spawn_character hungary random_name, princess, age 19, x 120, y 269
+			spawn_character hungary random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { hungary, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 15
+		if I_CompareCounter oslo_courtesan_id = 15
 		and I_CompareCounter turn_fid = 21
-			spawn_character poland random_name, princess, age 19, x 120, y 269
+			spawn_character poland random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { poland, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 16
+		if I_CompareCounter oslo_courtesan_id = 16
 		and I_CompareCounter turn_fid = 6
-			spawn_character lithuania random_name, princess, age 19, x 120, y 269
+			spawn_character lithuania random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { lithuania, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 17
+		if I_CompareCounter oslo_courtesan_id = 17
 		and I_CompareCounter turn_fid = 11
-			spawn_character kievan_rus random_name, princess, age 19, x 120, y 269
+			spawn_character kievan_rus random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { kievan_rus, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 18
+		if I_CompareCounter oslo_courtesan_id = 18
 		and I_CompareCounter turn_fid = 10
-			spawn_character russia random_name, princess, age 19, x 120, y 269
+			spawn_character russia random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { russia, }
 		end_if
-		if I_CompareCounter eikundarsund_courtesan_id = 19
+		if I_CompareCounter oslo_courtesan_id = 19
 		and I_CompareCounter turn_fid = 27
-			spawn_character jerusalem random_name, princess, age 19, x 120, y 269
+			spawn_character jerusalem random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { jerusalem, }
 		end_if
-		set_counter eikundarsund_courtesan_id 0
+		set_counter oslo_courtesan_id 0
 	end_if
 ;
 	if I_CompareCounter leon_courtesan_id >= 1
@@ -4085,7 +4085,7 @@ monitor_event PreFactionTurnStart FactionIsLocal
 	and I_CompareCounter frankfurt_courtesan_id = 0
 	and I_CompareCounter paris_courtesan_id = 0
 	and I_CompareCounter arhus_courtesan_id = 0
-	and I_CompareCounter eikundarsund_courtesan_id = 0
+	and I_CompareCounter oslo_courtesan_id = 0
 	and I_CompareCounter leon_courtesan_id = 0
 	and I_CompareCounter naples_courtesan_id = 0
 	and I_CompareCounter genoa_courtesan_id = 0

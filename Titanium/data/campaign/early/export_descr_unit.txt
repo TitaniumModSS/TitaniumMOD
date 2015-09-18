@@ -2315,8 +2315,8 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
 stat_pri         1, 1, peasant_arrow, 80, 40, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
-stat_sec_attr    no
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 0, 0, flesh
 stat_sec_armour  0, 0, flesh
 stat_heat        4
@@ -2325,9 +2325,9 @@ stat_mental      1, low, untrained
 stat_charge_dist 6
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 80, 55, 65, 50, 80, 4, 50
-armour_ug_levels 0, 1
-armour_ug_models S_Peasant_Archers, S_Peasant_Archers_ug1
+stat_cost        1, 95, 60, 65, 50, 80, 4, 50
+armour_ug_levels 0, 2, 2
+armour_ug_models S_Peasant_Archers, S_Peasant_Archers_ug1, S_Peasant_Archers_ug1
 ownership        byzantium, slave
 era 0            byzantium
 era 1            byzantium
@@ -3233,7 +3233,7 @@ class            light
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
-soldier          SE_Town_Militia, 80, 0, 0.75, 0.5
+soldier          Southern_Peasants, 80, 0, 0.75, 0.5
 officer          northern_captain
 mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, peasant, free_upkeep_unit
@@ -3252,8 +3252,8 @@ stat_charge_dist 6
 stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
-armour_ug_levels 0, 1
-armour_ug_models se_levy_infantry, se_town_militia_ug1
+armour_ug_levels 0, 2
+armour_ug_models Southern_Peasants, southern_Peasants_ug1
 ownership        sicily, byzantium, slave
 era 0            sicily, byzantium
 era 1            sicily, byzantium
@@ -8522,7 +8522,7 @@ soldier          Carroccio_Standard, 24, 1, 1.05, 0.30
 officer		 northern_captain
 engine           great_standart_milan
 mount_effect     horse +4, camel +4
-attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command; , area_effect_ae_holy_inspiration
+attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
@@ -8559,7 +8559,7 @@ soldier          Carroccio_Standard, 24, 1, 1.05, 0.30
 officer		 northern_captain
 engine           great_standart_venice
 mount_effect     horse +4, camel +4
-attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command; , area_effect_ae_holy_inspiration
+attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
@@ -9097,7 +9097,7 @@ recruit_priority_offset    10
 type             Basque Archers
 dictionary       Basque_Archers      ; Basque Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Mediterranean
 banner faction   main_missile
@@ -9750,7 +9750,7 @@ recruit_priority_offset    20
 type             Hunters
 dictionary       Hunters      ; Hunters, m
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         East_European
 banner faction   main_missile
@@ -10198,7 +10198,7 @@ recruit_priority_offset    30
 type             Breton Light Cavalry
 dictionary       Breton_Light_Cavalry      ; Breton Light Cavalry, m
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
@@ -10575,7 +10575,7 @@ recruit_priority_offset    5
 type             Livonian Auxiliaries
 dictionary       Livonian_Auxiliaries      ; Livonian Auxiliaries, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 soldier          Pavise_Crossbowmen, 48, 0, 0.95
@@ -11086,7 +11086,7 @@ recruit_priority_offset    -10
 type             Templar Crossbowmen
 dictionary       Templar_Crossbowmen      ; Templar Crossbowmen, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -11312,7 +11312,7 @@ recruit_priority_offset    15
 type             Turkish Crossbowmen
 dictionary       Turkish_Crossbowmen      ; Turkish Crossbowmen, lp
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
@@ -11749,7 +11749,7 @@ recruit_priority_offset    10
 type             Ruthenian Archers
 dictionary       Ruthenian_Archers      ; Ruthenian Archers, ep
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 soldier          ruthenian_archers, 48, 0, 0.85, 0.45
@@ -11782,7 +11782,7 @@ recruit_priority_offset    0
 type             Lettish Crossbowmen
 dictionary       Lettish_Crossbowmen      ; Latvian Crossbowmen, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_missile
 soldier          Lettish_Crossbowmen, 48, 0, 0.95, 0.45
@@ -12001,7 +12001,7 @@ recruit_priority_offset    15
 type             L Cavalry Militia
 dictionary       L_Cavalry_Militia      ; Cavalry Militia, u
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Heavy
 banner faction   main_cavalry
 soldier          L_Cavalry_Militia, 24, 0, 1
@@ -12221,7 +12221,7 @@ recruit_priority_offset    40
 type             Saracen Archers
 dictionary       Saracen_Archers      ; Saracen Archers, l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         Arabic
 banner faction   main_missile
@@ -12704,7 +12704,7 @@ recruit_priority_offset    5
 type             Steppe Alans
 dictionary       cum_alan_axe ; Steppe Alans (Cuman), l
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       light
 banner faction   main_missile
 banner holy      crusade
@@ -12812,7 +12812,7 @@ recruit_priority_offset    35
 type             Dismounted Cuman Militia
 dictionary       cum_militia_a_sw      ; Cuman Militia, u
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 accent         	 Mongolian
 banner faction   main_missile
@@ -12914,7 +12914,7 @@ recruit_priority_offset    40
 type             Pechenegs
 dictionary       cum_pecheneg_cav_a_sw   ; Pechenegs, l
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
@@ -13406,7 +13406,7 @@ recruit_priority_offset    0
 type             Prussian Auxillia
 dictionary       prussian_auxillia      ; prussian_auxillia, l
 category         cavalry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
@@ -13523,7 +13523,7 @@ class            skirmish
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
-soldier          Acontistae, 48, 0, 0.7, 0.45
+soldier          Acontistae_paleologos, 48, 0, 0.7, 0.45
 officer		 byzantine_unit_officer
 officer		 byzantium_infantry_flag
 mount_effect     elephant -10
@@ -13532,8 +13532,8 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 1
 stat_pri         9, 1, peasant_militia_javelin, 45, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         3, 1,  no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
-stat_sec_attr    no ; ap ; 1H axe (hatchet)
+stat_sec         5, 1,  no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  0, 4, 1, flesh ; shield -1
 stat_sec_armour  0, 0, flesh
 stat_heat        1
@@ -13543,9 +13543,9 @@ stat_charge_dist 6
 stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 135, 90, 65, 50, 145, 4, 20
-armour_ug_levels 0
-armour_ug_models Acontistae
-ownership        byzantium
+armour_ug_levels 0, 2, 2
+armour_ug_models Acontistae_paleologos, Acontistae_paleologos_ug1, Acontistae_paleologos_ug1
+ownership        byzantium, slave
 era 0            byzantium
 era 1            byzantium
 era 2            byzantium
@@ -13819,7 +13819,7 @@ class            spearmen
 voice_type       Light
 banner faction   main_spear
 banner holy      crusade
-soldier          Contaratoi, 60, 0, 0.9, 0.30
+soldier          Contaratoi_paleologos, 60, 0, 0.9, 0.30
 officer		 byzantine_unit_officer
 officer		 byzantium_infantry_flag
 mount_effect     horse +4, camel +4
@@ -13840,8 +13840,8 @@ stat_charge_dist 6
 stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 160, 115, 75, 60, 165, 4, 70
-armour_ug_levels 0, 1, 6
-armour_ug_models Contaratoi, Contaratoi_ug1, Contaratoi_ug2
+armour_ug_levels 0, 2, 2, 6
+armour_ug_models Contaratoi_paleologos, Contaratoi_paleologos_ug1, Contaratoi_paleologos_ug1, Contaratoi_paleologos_ug1
 ownership        byzantium, slave
 era 0            byzantium
 era 1            byzantium
@@ -13852,7 +13852,7 @@ recruit_priority_offset    0
 type             Gasmuli
 dictionary       Gasmuli      ; Gasmuli, urban militia
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
@@ -14247,7 +14247,7 @@ recruit_priority_offset   20
 type             Toxotae
 dictionary       Toxotae      ; Toxotae, urban militia
 category         infantry
-class            missile
+class            missile; skirmish
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade

@@ -3739,8 +3739,8 @@ Trigger Abbasids
     Condition FactionType timurids
     and I_EventCounter abbasids_exist = 1
 
-    FactionStanding factions { mongols } normalise -1 30
-    FactionStanding factions { egypt } normalise -1 60
+    FactionStanding factions { mongols } normalise -1 60
+    FactionStanding factions { egypt } normalise -1 120
 
 ;------------------------------------------
 Trigger AbbasidsAI
@@ -3764,7 +3764,7 @@ Trigger AbbasidsBig
 
     FactionStanding factions { kwarezm } normalise -1 60
     FactionStanding factions { turks } normalise -1 80
-    FactionStanding factions { egypt } normalise -1 100
+    FactionStanding factions { egypt } normalise -1 180
 
 ;------------------------------------------
 Trigger Teutonic_Order
@@ -4587,7 +4587,8 @@ Trigger EgyptBigAlt
 	and I_NumberOfSettlements egypt > 10
 
     FactionStanding factions { turks  } normalise -1 80
-    FactionStanding factions { kwarezm, timurids } normalise -1 100
+    FactionStanding factions { kwarezm } normalise -1 100
+    FactionStanding factions { timurids } normalise -1 150
 ;------------------------------------------
 Trigger PolandAlt
     WhenToTest FactionTurnStart

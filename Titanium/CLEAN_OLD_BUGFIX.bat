@@ -81,10 +81,18 @@ del data\ui\eastern_european\interface\stratpage_02.tga_mouseover.tga
 del data\ui\eastern_european\interface\stratpage_03.tga_mouseover.tga
 del data\ui\eastern_european\interface\stratpage_04.tga_mouseover.tga
 del data\ui\unit_info\aragon\inquisator_info.tga
-del data\ui\unit_info\slave\#ee_bodyguard.tga
-del data\ui\unit_info\turks\dismounted_mailed_knights_info.tga
-del data\ui\unit_info\moors\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\byzantium\dismounted_mailed_knights_info.tga
 del data\ui\unit_info\egypt\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\england\norman_serjeants.tga
+del data\ui\unit_info\kievan_rus\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\kwarezm\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\mongols\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\moors\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\russia\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\sicily\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\slave\#ee_bodyguard.tga
+del data\ui\unit_info\teutonic_order\dismounted_mailed_knights_info.tga
+del data\ui\unit_info\turks\dismounted_mailed_knights_info.tga
 del data\ui\units\aragon\dismounted_mailed_knights_info.tga
 del data\ui\units\aragon\#assassin.tga
 del data\ui\units\aragon\#assassin_southern.tga
@@ -353,9 +361,9 @@ del data\models_strat\textures\spanish_general_spain.tga
 del data\models_strat\textures\spanish_general_spain.tga.dds
 del data\models_strat\textures\spy_kwarezm.tga
 del data\models_strat\textures\spy_kwarezm.tga.dds
-del data\unit_models\attachmentsets\final danish_denmark_diff.dds
-del data\unit_models\attachmentsets\final asian_timurids_diff.dds
-del data\unit_models\attachmentsets\final asian_timurids_norm.dds
+del "data\unit_models\attachmentsets\final danish_denmark_diff.dds"
+del "data\unit_models\attachmentsets\final asian_timurids_diff.dds"
+del "data\unit_models\attachmentsets\final asian_timurids_norm.dds"
 del data\unit_models\_generals_and_captains\islamic_captain\textures\islamic_captain_timurids.dds
 del data\unit_models\_generals_and_captains\islamic_general\textures\islamic_general_timurids.dds
 del data\unit_models\_units\as_lamellar_heavy\textures\as_lamellar_timurids.dds
