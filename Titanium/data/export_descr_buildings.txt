@@ -5133,14 +5133,14 @@ building port
   convert_to castle_port
   levels port shipwright dockyard naval_drydock
   {
-    port city requires factions { northern_european, moors, turks, egypt, kwarezm, mongols, eastern_european, greek, southern_european, }
+    port city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 0
       capability
       {
         recruit_pool "cog"  1   0.25   1  0  requires factions { hre, teutonic_order, france, scotland, england,  }
         recruit_pool "longboat"  1   0.25   1  0  requires factions { denmark, norway, }
-        recruit_pool "dhow"  1   0.25   1  0  requires factions { moors, turks, egypt, kwarezm, }
+        recruit_pool "dhow"  1   0.25   1  0  requires factions { moors, turks, egypt, kwarezm, timurids, }
         recruit_pool "dhow"  1   0.17   1  0  requires factions { mongols, }
         recruit_pool "cog"  1   0.25   1  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.25   1  0  requires factions { russia, cumans, kievan_rus, }
@@ -5160,7 +5160,7 @@ building port
         shipwright
       }
     }
-    shipwright city requires factions { northern_european, moors, turks, kwarezm, egypt, mongols, eastern_european, greek, southern_european, }
+    shipwright city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 1
       capability
@@ -5169,9 +5169,9 @@ building port
         recruit_pool "longboat"  1   0.25   1  0  requires factions { denmark, norway, }
         recruit_pool "holk"  1   0.25   1  0  requires factions { hre, scotland, france, england,  teutonic_order, }
         recruit_pool "dragon boat"  1   0.25   1  0  requires factions { denmark, norway, }
-        recruit_pool "dhow"  1   0.25   1  0  requires factions { moors, turks, egypt, kwarezm, }
+        recruit_pool "dhow"  1   0.25   1  0  requires factions { moors, turks, egypt, kwarezm, timurids, }
         recruit_pool "dhow"  1   0.25   1  0  requires factions { mongols, }
-        recruit_pool "war galley"  1   0.25   1  0  requires factions { egypt, moors, turks, kwarezm, }
+        recruit_pool "war galley"  1   0.25   1  0  requires factions { egypt, moors, turks, kwarezm, timurids, }
         recruit_pool "cog"  1   0.25   1  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.25   1  0  requires factions { russia, cumans, kievan_rus, }
         recruit_pool "war galley"  1   0.25   1  0  requires factions { hungary, jerusalem, }
@@ -5195,7 +5195,7 @@ building port
         dockyard
       }
     }
-    dockyard city requires factions { northern_european, moors, turks, kwarezm, egypt, mongols, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
+    dockyard city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
     {
       convert_to 2
       capability
@@ -5204,9 +5204,9 @@ building port
         recruit_pool "longboat"  1   0.125   2  0  requires factions { denmark, norway, }
         recruit_pool "holk"  1   0.25   2  0  requires factions { hre, scotland, france, england,  teutonic_order, }
         recruit_pool "dragon boat"  1   0.25   2  0  requires factions { denmark, norway, }
-        recruit_pool "dhow"  1   0.125   2  0  requires factions { moors, turks, egypt, kwarezm, }
+        recruit_pool "dhow"  1   0.125   2  0  requires factions { moors, turks, egypt, kwarezm, timurids, }
         recruit_pool "dhow"  1   0.25   4  0  requires factions { mongols, }
-        recruit_pool "war galley"  1   0.25   2  0  requires factions { egypt, moors, turks, kwarezm, }
+        recruit_pool "war galley"  1   0.25   2  0  requires factions { egypt, moors, turks, kwarezm, timurids, }
         recruit_pool "cog"  1   0.125   2  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.125   2  0  requires factions { russia, cumans, kievan_rus, }
         recruit_pool "war galley"  1   0.25   2  0  requires factions { hungary, jerusalem, }
@@ -5230,7 +5230,7 @@ building port
         naval_drydock
       }
     }
-    naval_drydock city requires factions { northern_european, moors, turks, kwarezm, egypt, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
+    naval_drydock city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
     {
       convert_to 3
       capability
@@ -5239,9 +5239,9 @@ building port
         recruit_pool "longboat"  1   0.125   1  0  requires factions { denmark, norway, }
         recruit_pool "holk"  1   0.25   2  0  requires factions { hre, scotland, france, england,  teutonic_order, }
         recruit_pool "dragon boat"  1   0.25   2  0  requires factions { denmark, norway, }
-        recruit_pool "dhow"  1   0.125   1  0  requires factions { moors, turks, egypt, kwarezm, }
+        recruit_pool "dhow"  1   0.125   1  0  requires factions { moors, turks, egypt, kwarezm, timurids, }
         recruit_pool "dhow"  1   0.25   2  0  requires factions { mongols, }
-        recruit_pool "war galley"  1   0.25   2  0  requires factions { egypt, moors, turks, kwarezm, }
+        recruit_pool "war galley"  1   0.25   2  0  requires factions { egypt, moors, turks, kwarezm, timurids, }
         recruit_pool "cog"  1   0.125   1  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.125   1  0  requires factions { russia, cumans, kievan_rus, }
         recruit_pool "war galley"  1   0.25   2  0  requires factions { hungary, jerusalem, }
@@ -5274,14 +5274,14 @@ building castle_port
   convert_to port
   levels c_port c_shipwright c_dockyard c_naval_drydock
   {
-    c_port castle requires factions { northern_european, moors, turks, kwarezm, egypt, mongols, eastern_european, greek, southern_european, }
+    c_port castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 0
       capability
       {
         recruit_pool "cog"  1   0.17   1  0  requires factions { hre, teutonic_order, france, scotland, england,  }
         recruit_pool "longboat"  1   0.17   1  0  requires factions { denmark, norway, }
-        recruit_pool "dhow"  1   0.17   1  0  requires factions { moors, turks, egypt, kwarezm, }
+        recruit_pool "dhow"  1   0.17   1  0  requires factions { moors, turks, egypt, kwarezm, timurids, }
         recruit_pool "dhow"  1   0.125   1  0  requires factions { mongols, }
         recruit_pool "cog"  1   0.17   1  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.17   1  0  requires factions { russia, cumans, kievan_rus, }
@@ -5301,7 +5301,7 @@ building castle_port
         c_shipwright
       }
     }
-    c_shipwright castle requires factions { northern_european, moors, turks, kwarezm, egypt, mongols, eastern_european, greek, southern_european, }
+    c_shipwright castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
     {
       convert_to 1
       capability
@@ -5310,9 +5310,9 @@ building castle_port
         recruit_pool "longboat"  1   0.125   1  0  requires factions { denmark, norway, }
         recruit_pool "holk"  1   0.17   1  0  requires factions { hre, scotland, france, england,  teutonic_order, }
         recruit_pool "dragon boat"  1   0.17   1  0  requires factions { denmark, norway, }
-        recruit_pool "dhow"  1   0.125   1  0  requires factions { moors, turks, egypt, kwarezm, }
+        recruit_pool "dhow"  1   0.125   1  0  requires factions { moors, turks, egypt, kwarezm, timurids, }
         recruit_pool "dhow"  1   0.17   1  0  requires factions { mongols, }
-        recruit_pool "war galley"  1   0.17   1  0  requires factions { egypt, moors, turks, kwarezm, }
+        recruit_pool "war galley"  1   0.17   1  0  requires factions { egypt, moors, turks, kwarezm, timurids, }
         recruit_pool "cog"  1   0.125   1  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.125   1  0  requires factions { russia, cumans, kievan_rus, }
         recruit_pool "war galley"  1   0.17   1  0  requires factions { hungary, jerusalem, }
@@ -5335,7 +5335,7 @@ building castle_port
         c_dockyard
       }
     }
-    c_dockyard castle requires factions { northern_european, moors, turks, kwarezm, egypt, mongols, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
+    c_dockyard castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
     {
       convert_to 2
       capability
@@ -5344,9 +5344,9 @@ building castle_port
         recruit_pool "longboat"  1   0.125   2  0  requires factions { denmark, norway, }
         recruit_pool "holk"  1   0.17   2  0  requires factions { hre, scotland, france, england,  teutonic_order, }
         recruit_pool "dragon boat"  1   0.17   2  0  requires factions { denmark, norway, }
-        recruit_pool "dhow"  1   0.125   2  0  requires factions { moors, turks, egypt, kwarezm, }
+        recruit_pool "dhow"  1   0.125   2  0  requires factions { moors, turks, egypt, kwarezm, timurids, }
         recruit_pool "dhow"  1   0.17   3  0  requires factions { mongols, }
-        recruit_pool "war galley"  1   0.17   2  0  requires factions { egypt, moors, turks, kwarezm, }
+        recruit_pool "war galley"  1   0.17   2  0  requires factions { egypt, moors, turks, kwarezm, timurids, }
         recruit_pool "cog"  1   0.125   2  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.125   2  0  requires factions { russia, cumans, kievan_rus, }
         recruit_pool "war galley"  1   0.17   2  0  requires factions { hungary, jerusalem, }
@@ -5370,7 +5370,7 @@ building castle_port
         c_naval_drydock
       }
     }
-    c_naval_drydock castle requires factions { northern_european, moors, turks, kwarezm, egypt, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
+    c_naval_drydock castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }  and event_counter CANNONS 1
     {
       convert_to 3
       capability
@@ -5380,7 +5380,7 @@ building castle_port
         recruit_pool "holk"  1   0.17   2  0  requires factions { hre, scotland, france, england,  teutonic_order, }
         recruit_pool "dragon boat"  1   0.17   2  0  requires factions { denmark, norway, }
         recruit_pool "dhow"  1   0.125   1  0  requires factions { moors, turks, egypt, kwarezm, }
-        recruit_pool "war galley"  1   0.17   2  0  requires factions { egypt, moors, turks, kwarezm, }
+        recruit_pool "war galley"  1   0.17   2  0  requires factions { egypt, moors, turks, kwarezm, timurids, }
         recruit_pool "cog"  1   0.125   1  0  requires factions { hungary, lithuania, poland, }
         recruit_pool "ladya"  1   0.125   1  0  requires factions { russia, cumans, kievan_rus, }
         recruit_pool "war galley"  1   0.17   2  0  requires factions { hungary, jerusalem, }

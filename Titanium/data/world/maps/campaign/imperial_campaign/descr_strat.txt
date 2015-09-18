@@ -56,7 +56,7 @@ rebelling_characters_active
 gladiator_uprising_disabled
 night_battles_enabled
 show_date_as_turns
-brigand_spawn_value 30
+brigand_spawn_value 35
 pirate_spawn_value 80
 free_upkeep_forts 2
 
@@ -882,7 +882,7 @@ settlement castle
 
 ;Venice
 character	Vitale Michele, named character, male, leader, age 57, x 168, y 173 
-traits Factionleader 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , GoodAdministrator 2 , GoodTrader 2 , ReligionStarter 1 
+traits Venice_Factionleader 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , GoodAdministrator 2 , GoodTrader 2 , ReligionStarter 1 
 ancillaries apothecary
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -891,7 +891,7 @@ unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 
 ;Ragusa
 character	Ordelafo Falier, named character, male, heir, age 40, x 205, y 155 
-traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodAdministrator 2 , Energetic 2 , ReligionStarter 1 
+traits Venice_Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodAdministrator 2 , Energetic 2 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -1195,7 +1195,7 @@ settlement castle
 
 ;Genoa
 character	Martino di_Oria, named character, male, leader, age 67, x 142, y 166 
-traits Factionleader 1 , GovernorInclination 1 , Western_Edu 1 , GoodAdministrator 2 , Austere 1 , ReligionStarter 1 
+traits Genoa_Factionleader 1 , GovernorInclination 1 , Western_Edu 1 , GoodAdministrator 2 , Austere 1 , ReligionStarter 1 
 ancillaries apothecary
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -1208,7 +1208,7 @@ unit		Urban Crossbow Militia			exp 1 armour 0 weapon_lvl 0
 
 ;Pisa
 character	Ansaldo di_Oria, named character, male, heir, age 36, x 153, y 160 
-traits Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 2 , ReligiousActivity 1 , ReligionStarter 1 
+traits Genoa_Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 2 , ReligiousActivity 1 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -1721,7 +1721,7 @@ unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
-;Al Aqaba
+;Al_Aqaba
 character	Isma_il al-Ra_is, general, male, age 23, x 331, y 59 
 army
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -1749,6 +1749,7 @@ character	Tahir al-Diwanji, spy, male, age 20, x 325, y 70
 traits NaturalSpySkill 2 , GoodSpy 1 
 ancillaries poisoner
 
+;Luxor Province
 character	Umar al-Khashshab, general, male, age 20, x 313, y 42 
 army
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -3214,8 +3215,8 @@ settlement
 	}
 }
 
-;Staufen
-character	Heinrich von_Hohenstaufen, named character, male, leader, age 50, x 133, y 191, label hre4leader 
+;Frankfurt
+character	Heinrich Salier, named character, male, leader, age 44, x 140, y 206, label hre4leader 
 traits Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 2 , BattleDread 1 , HighPersonalSecurity 1 , HarshJustice 2 , Girls 1 , Liar 1 , HatesPapal_States 1 , ReligionStarter 1 
 ancillaries adultress
 army
@@ -3231,9 +3232,11 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
-;Frankfurt
-character	Dietrich, general, male, age 35, x 140, y 206 
+;Staufen
+character	Friedrich von_Hohenstaufen, named character, male, age 50, x 133, y 191 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Intelligent 2 , WifeIsHRE 1 , Fertile 3 , ReligionStarter 1 
 army
+unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 2 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
@@ -3257,9 +3260,9 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
-;Bologna
-character	Heinrich, named character, male, heir, age 14, x 161, y 165, label hre4heir 
-traits Factionheir 1 , LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , GoodCommander 1 , HaleAndHearty 1 , Infertile 1 , Disloyal 1 , Hates_Father 1 
+;Hamburg
+character	Heinrich, named character, male, heir, age 14, x 146, y 230, label hre4heir 
+traits Factionheir 1 , LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , GoodCommander 1 , HaleAndHearty 1 , Infertile 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 2 armour 0 weapon_lvl 0
@@ -3295,9 +3298,9 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
-;Hamburg
-character	Conrad, named character, male, age 26, x 146, y 230 
-traits LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , Exheir 1 , PublicFaith 1 
+;Bologna
+character	Conrad, named character, male, age 26, x 161, y 165 
+traits LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , EnviousOfHeir 1 , Disloyal 3 , Hates_Father 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Mailed Knights				exp 1 armour 0 weapon_lvl 0
@@ -3318,11 +3321,15 @@ traits NaturalSpySkill 1
 character	Peter von_Koln, priest, male, age 45, x 136, y 214 
 traits NaturalPriestSkill 1 , StrongFaith 3 , PriestLevel 1 
 
-character_record		Bertrada, 	female, age 42, dead 13, never_a_leader
-character_record		Agnes von_Hohenstaufen, 	female, age 28, alive, never_a_leader
+character_record		Bertha von_Savoyen, 	female, age 42, dead 13, never_a_leader
+character_record		Agnes Salier, 	female, age 28, alive, never_a_leader
+character_record		Matilde, 	female, age 12, alive, never_a_leader
+character_record		Friedrich, 	male, age 10, alive, never_a_leader
+character_record		Conrad von_Hohenstaufen, 	male, age 7, alive, never_a_leader
+character_record		Bertha, 	female, age 0, alive, never_a_leader
 
-relative 	Heinrich von_Hohenstaufen,	Bertrada,	Agnes von_Hohenstaufen,	Conrad,	Heinrich,	end
-relative 	Leopold Babenberg,	Agnes von_Hohenstaufen,	end
+relative 	Heinrich Salier,	Bertha von_Savoyen,	Agnes Salier,	Conrad,	Heinrich,	Matilde,	end
+relative 	Friedrich von_Hohenstaufen,	Agnes Salier,	Friedrich,	Conrad von_Hohenstaufen,	Bertha,	end
 
 faction	england, trader smith
 ai_label		catholic
@@ -3557,16 +3564,16 @@ traits NaturalDiplomatSkill 1 , GoodDiplomat 1
 character	Anselm of_Canterbury, priest, male, age 40, x 61, y 224 
 traits NaturalPriestSkill 3 , StrongFaith 2 , Dogmatic 1 , PriestLevel 1 
 
-character_record		William, 	male, age 73, dead 13, past_leader
-character_record		Matilda, 	female, age 61, dead 10, never_a_leader
+character_record		Stephen, 	male, age 4, alive, never_a_leader
+character_record		Edyth, 	female, age 27, alive, never_a_leader
 character_record		Rufus, 	male, age 44, dead 0, past_leader
 character_record		Adela, 	female, age 46, alive, never_a_leader
-character_record		Edyth, 	female, age 27, alive, never_a_leader
-character_record		Stephen, 	male, age 4, alive, never_a_leader
+character_record		Matilda, 	female, age 61, dead 10, never_a_leader
+character_record		William de_Normandie, 	male, age 73, dead 13, past_leader
 
 relative 	Henry Beauclerc,	Edyth,	end
-relative 	William,	Matilda,	Robert Curthose,	Adela,	Rufus,	Henry Beauclerc,	end
 relative 	Stephen de_Blois,	Adela,	Stephen,	end
+relative 	William de_Normandie,	Matilda,	Robert Curthose,	Adela,	Rufus,	Henry Beauclerc,	end
 
 faction	portugal, sailor smith
 ai_label		catholic
@@ -4788,7 +4795,7 @@ settlement
 
 ;Novgorod
 character	Svyatopolk Novgorodskii, named character, male, leader, age 50, x 303, y 267 
-traits Factionleader 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 1 , Energetic 2 , Intelligent 1 , Bloodthirsty 2 , WifeIsHRE 1 , ReligionStarter 1 
+traits Novgorod_Factionleader 1 , GovernorInclination 1 , GoodCommander 1 , GoodTrader 1 , Energetic 2 , Intelligent 1 , Bloodthirsty 2 , WifeIsHRE 1 , ReligionStarter 1 
 army
 unit		EE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
@@ -4799,7 +4806,7 @@ unit		Pechenegs				exp 0 armour 0 weapon_lvl 0
 
 ;Yaroslavl
 character	Iaroslav Novgorodskii, named character, male, heir, age 28, x 365, y 258 
-traits Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , Energetic 1 , Intelligent 1 , Drink 1 , ReligiousActivity 2 , ReligionStarter 1 
+traits Novgorod_Factionheir 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 1 , Energetic 1 , Intelligent 1 , Drink 1 , ReligiousActivity 2 , ReligionStarter 1 
 army
 unit		EE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Junior Militia				exp 0 armour 0 weapon_lvl 0
@@ -5449,7 +5456,7 @@ traits NaturalSpySkill 2
 character	Margiris, priest, male, age 34, x 156, y 232 
 traits NaturalPriestSkill 1 , PaganPriest 1 
 
-character_record		Godzimir, 	male, age 70, dead 34, past_leader
+character_record		Gottschalk, 	male, age 70, dead 34, past_leader
 character_record		Dzieslawa, 	female, age 67, dead 0, never_a_leader
 character_record		Morta, 	female, age 37, alive, never_a_leader
 character_record		Jiera, 	female, age 21, alive, never_a_leader
@@ -5458,7 +5465,7 @@ character_record		Przemyslaw, 	male, age 13, alive, never_a_leader
 
 relative 	Henryk,	Morta,	Przemyslaw,	end
 relative 	Izbor,	Jiera,	Nyklot,	end
-relative 	Godzimir,	Dzieslawa,	Henryk,	Izbor,	end
+relative 	Gottschalk,	Dzieslawa,	Henryk,	Izbor,	end
 
 faction	kievan_rus, balanced smith
 ai_label		default
@@ -5988,7 +5995,8 @@ settlement
 
 ;Jerusalem
 character	Baudouin de_Boulogne, named character, male, leader, age 47, x 330, y 74 
-traits Factionleader 1 , MilitaryInclination 1 , GoodCommander 3 , Intelligent 2 , TourneyKnight 3 , StrategyChivalry 4 , CrusaderHistory 2 , Infertile 3 , PublicFaith 2 , HatesIslam 2 , HatesTurks 1 , HatesEgypt 1 , ReligionStarter 1 
+traits Crusader_Factionleader 3 , Jerusalem_Ruler 1 , MilitaryInclination 1 , GoodCommander 3 , Intelligent 2 , TourneyKnight 3 , StrategyChivalry 4 , CrusaderHistory 2 , Infertile 3 , PublicFaith 2 , HatesIslam 2 , HatesTurks 1 , HatesEgypt 1 , ReligionStarter 1 , Crusader_General_Levels 3 
+ancillaries crusader_jerusalem 
 army
 unit		NE Bodyguard				exp 3 armour 0 weapon_lvl 0
 unit		Crusader Knights			exp 3 armour 0 weapon_lvl 0
@@ -5999,7 +6007,7 @@ unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
 
 ;Edessa
 character	Joscelin d_Edesse, named character, male, age 38, x 356, y 114 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligiousActivity 1 , CrusaderHistory 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , ReligiousActivity 1 , CrusaderHistory 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 , Edessa_Heir 1 
 army
 unit		NE Bodyguard				exp 2 armour 0 weapon_lvl 0
 unit		Crusader Knights			exp 3 armour 0 weapon_lvl 0
@@ -6009,8 +6017,8 @@ unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Antioch
 character	Bohemond d_Antioche, named character, male, age 40, x 338, y 106 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, StrategyDread 1 , CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
-ancillaries holy_lance 
+traits Antioch_Ruler 1 , LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, StrategyDread 1 , CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 , Crusader_General_Levels 2 
+ancillaries holy_lance , crusader_antioch 
 army
 unit		NE Bodyguard				exp 6 armour 0 weapon_lvl 0
 unit		Norman Cavalry				exp 6 armour 0 weapon_lvl 0
@@ -6020,7 +6028,7 @@ unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Antioch Province
 character	Tancred de_Galilee, named character, male, age 25, x 340, y 106 
-traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , BattleDread 2, CrusaderHistory 1 , Disloyal 2 , HaleAndHearty 6 , HatesByzantium 1 , HatesTurks 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 , Antioch_Heir 1 
 army
 unit		NE Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Norman Cavalry				exp 6 armour 0 weapon_lvl 0
@@ -6029,7 +6037,8 @@ unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Acre Province
 character	Baudouini de_Bourcq, named character, male, heir, age 33, x 329, y 80 
-traits LoyaltyStarter 1 , Factionheir 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , CrusaderHistory 1 , PublicFaith 1 , HatesIslam 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
+traits Edessa_Ruler 1 , LoyaltyStarter 1 , Crusader_Factionleader 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , GoodCommander 1 , CrusaderHistory 1 , PublicFaith 1 , HatesIslam 1 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 , Jerusalem_Heir 1
+ancillaries crusader_edessa 
 army
 unit		NE Bodyguard				exp 3 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
@@ -6064,9 +6073,8 @@ unit		NE Bodyguard				exp 0 armour 0 weapon_lvl 0
 
 character	Claude de_Pise, admiral, male, age 39, x 327, y 79, label crusader4admiral 
 army
-unit		galley					exp 2 armour 0 weapon_lvl 0
-unit		galley					exp 1 armour 0 weapon_lvl 0
-unit		galley					exp 1 armour 0 weapon_lvl 0
+unit		galley					exp 6 armour 0 weapon_lvl 0
+unit		galley					exp 3 armour 0 weapon_lvl 0
 
 character	Foucaud, spy, male, age 23, x 335, y 77 
 traits NaturalSpySkill 2 
@@ -8679,7 +8687,7 @@ unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
 
 ;Bern Province Fort (Zurich)
-character	sub_faction hre, Friedrich, general, male, age 21, x 140, y 185 
+character	sub_faction hre, Friedrich von_Schweiz, general, male, age 21, x 140, y 185 
 army
 unit		Sergeant Spearmen			exp 1 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 0 armour 0 weapon_lvl 0
@@ -8722,12 +8730,13 @@ army
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 ;Extra added through script if needed
-;unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 ;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 ;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 ;unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
@@ -9158,7 +9167,7 @@ unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Magyar Cavalry				exp 0 armour 0 weapon_lvl 0
 
 ;Dublin Province Fort (Galway)
-character	sub_faction england, Nigel, general, male, age 26, x 9, y 230 
+character	sub_faction scotland, Eogan, general, male, age 26, x 9, y 230 
 army
 unit		Yeoman Archers				exp 1 armour 0 weapon_lvl 0
 unit		Yeoman Archers				exp 1 armour 0 weapon_lvl 0
@@ -9202,7 +9211,7 @@ unit		Lithuanian Archers			exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Dublin
-character	sub_faction england, Harold, general, male, age 24, x 32, y 229 
+character	sub_faction scotland, Leod, general, male, age 24, x 32, y 229 
 army
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
@@ -9219,7 +9228,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 
 ;Dublin Province Fort (Dundalk)
-character	sub_faction england, Harold, general, male, age 24, x 31, y 233 
+character	sub_faction scotland, Leod, general, male, age 24, x 31, y 233 
 army
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
@@ -9369,7 +9378,7 @@ unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Archers			exp 1 armour 0 weapon_lvl 0
 
 ;Hrodna
-character	sub_faction poland, Firlej, general, male, age 25, x 247, y 232 
+character	sub_faction kievan_rus, Vyshemir, general, male, age 25, x 249, y 233 
 army
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 0 armour 0 weapon_lvl 0
@@ -9382,16 +9391,17 @@ unit		Lithuanian Archers			exp 0 armour 0 weapon_lvl 0
 unit		Lithuanian Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Zhytomyr
-character	sub_faction poland, Lestek, general, male, age 26, x 282, y 208 
+character	sub_faction kievan_rus, Vyshemir, general, male, age 25, x 282, y 208 
 army
 unit		Polish Shooters				exp 0 armour 0 weapon_lvl 0
 unit		Polish Shooters				exp 0 armour 0 weapon_lvl 0
 unit		Woodsmen				exp 1 armour 0 weapon_lvl 0
-unit		EE Peasants				exp 2 armour 0 weapon_lvl 0
-unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
-unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
-unit		EE Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		EE Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		EE Archer Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
+unit		EE Archer Militia			exp 0 armour 0 weapon_lvl 0
+unit		Junior Militia				exp 0 armour 0 weapon_lvl 0
+unit		Junior Militia				exp 1 armour 0 weapon_lvl 0
+unit		Junior Militia				exp 1 armour 0 weapon_lvl 0
 
 ;Zhytomyr Province Fort (Zhytkavichy)
 character	sub_faction kievan_rus, Zhiroslav, general, male, age 26, x 276, y 221
@@ -9655,7 +9665,7 @@ unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 
-;Raska
+;Ras
 character	sub_faction hungary, Mihaly, general, male, age 24, x 225, y 157 
 army
 unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0

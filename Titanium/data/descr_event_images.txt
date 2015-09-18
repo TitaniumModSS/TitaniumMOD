@@ -109,7 +109,7 @@ settlement_taken
 		string		 center verdana_med	black
 		image	 center	settlement_occupied
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 settlement_besieged
@@ -122,7 +122,7 @@ settlement_besieged
 		string		 center verdana_med	black
 		image	 center	settlement_besieged
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 settlement_destroyed
@@ -135,7 +135,7 @@ settlement_destroyed
 		string		 center verdana_med	black
 		image	 center	settlement_exterminated
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -149,7 +149,7 @@ naval_blockade
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_leader_dies
@@ -162,7 +162,7 @@ faction_leader_dies
 		string		 center verdana_med	black
 		image	 center familyevent_deathimportant
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_leader_killed
@@ -175,7 +175,7 @@ faction_leader_killed
 		string		 center verdana_med	black
 		image	 center familyevent_deathimportant
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_richest
@@ -187,7 +187,7 @@ faction_richest
 		string		 center verdana_med	black
 		image	 center	year_end_report
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_largest
@@ -199,7 +199,7 @@ faction_largest
 		string		 center verdana_med	black
 		image	 center	faction_prosperous_other
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_strongest
@@ -211,7 +211,7 @@ faction_strongest
 		string		 center verdana_med	black
 		image	 center	foreign_strongest
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_advanced
@@ -223,7 +223,7 @@ faction_advanced
 		string		 center verdana_med	black
 		image	 center	faction_most_advanced_other
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 army_revolt
@@ -237,8 +237,8 @@ army_revolt
 		string		 center verdana_med	black
 		image	 center	military_revolt
 		spacer		 8
-		bodystring  left verdana_sml khaki left
-		multistring	 center   verdana_sml khaki center
+		bodystring  left verdana_sml 30,30,30,255 left
+		multistring	 center   verdana_sml 30,30,30,255 center
 	}
 
 settlement_unrest
@@ -251,7 +251,7 @@ settlement_unrest
 		string		 center verdana_med	black
 		image	 center	settlement_unrest
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 settlement_revolts
@@ -261,10 +261,10 @@ settlement_revolts
 	format
 	{
 		title        center verdana		black
-		string       center verdana_sml khaki
+		string       center verdana_sml 30,30,30,255
 		image	 center	settlement_unrest
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 		spacer		 8
 		condition    ;; was anyone hurt
 		{
@@ -275,7 +275,7 @@ settlement_revolts
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -283,24 +283,24 @@ settlement_revolts
 					true
 					{
 						string left	verdana_sml black   buildings_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group left 4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left 4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 			false
 			{
-				multistring	 left   verdana_sml khaki left	nobody_harmed
+				multistring	 left   verdana_sml 30,30,30,255 left	nobody_harmed
 			}
 		}
 	}
@@ -311,12 +311,12 @@ building_completed
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
-		bodystring	left   verdana_sml  khaki	left
+		string		center verdana_med	30,30,30,255
+		bodystring	left   verdana_sml  30,30,30,255	left
 		image		center
 		spacer		 8
 		string		center verdana_med	black
-		multistring left verdana_sml  khaki	left
+		multistring left verdana_sml  30,30,30,255	left
 	}
 
 unit_completed
@@ -325,13 +325,13 @@ unit_completed
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
+		string		center verdana_med	30,30,30,255
 		image		center
 		spacer		8
 		string		center verdana_med	black
-		bodystring	left   verdana_sml  khaki	left
+		bodystring	left   verdana_sml  30,30,30,255	left
 		spacer		8
-		multistring left   verdana_sml  khaki	left
+		multistring left   verdana_sml  30,30,30,255	left
 	}
 
 retraining_complete
@@ -340,13 +340,13 @@ retraining_complete
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
+		string		center verdana_med	30,30,30,255
 		image		center
 		spacer		8
 		string		center verdana_med	black
-		bodystring	left   verdana_sml  khaki	left
+		bodystring	left   verdana_sml  30,30,30,255	left
 		spacer		8
-		multistring left verdana_sml  khaki	left
+		multistring left verdana_sml  30,30,30,255	left
 	}
 
 agent_recruited
@@ -355,10 +355,10 @@ agent_recruited
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
+		string		center verdana_med	30,30,30,255
 		image		center
 		string		center verdana_med	black
-		bodystring	left   verdana_sml  khaki	left
+		bodystring	left   verdana_sml  30,30,30,255	left
 	}
 
 character_dies_natural
@@ -368,10 +368,10 @@ character_dies_natural
 	{
 		title        center verdana		black
 		string		 center verdana_med	black
-		string		 center verdana_sml	khaki
+		string		 center verdana_sml	30,30,30,255
 		image	 center	familyevent_death
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 character_dies_heroic
@@ -383,7 +383,7 @@ character_dies_heroic
 		string		 center verdana_med	black
 		image	 center battle_generaldeathfriendly
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -397,7 +397,7 @@ settlement_surrender
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 general_appointed
@@ -410,7 +410,7 @@ general_appointed
 		string		 center verdana_med	black
 		image	 center	militarypromotion
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 general_promoted
@@ -422,7 +422,7 @@ general_promoted
 		string		 center verdana_med	black
 		image	 center	militarypromotion
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 general_dies
@@ -435,7 +435,7 @@ general_dies
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 new_faction_leader
@@ -447,7 +447,7 @@ new_faction_leader
 		string		 center verdana_med	black
 		image	 center	familyevent_newleader
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 new_faction_heir
@@ -459,7 +459,7 @@ new_faction_heir
 		string		 center verdana_med	black
 		image	 center	familyevent_newleader
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 new_bouncing_baby
@@ -472,7 +472,7 @@ new_bouncing_baby
 		string		 center verdana_med	black
 		image	 center	familyevent_birth
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 coming_of_age
@@ -484,7 +484,7 @@ coming_of_age
 		string		 center verdana_med	black
 		image	 center	militarypromotion
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 marriage
@@ -497,7 +497,7 @@ marriage
 		string		 center verdana_med	black
 		image	 center	marriage_celebrations
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 princess_marriage
@@ -511,7 +511,7 @@ princess_marriage
 		string		 center verdana_med	black
 		movie		 center 536 304	event/princess_marriage.bik
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 adoption
@@ -524,7 +524,7 @@ adoption
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_defeated
@@ -538,7 +538,7 @@ faction_defeated
 ;		movie		 center 320 240
 
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 faction_defeated_by_player
@@ -555,7 +555,7 @@ mission_spy_character
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 mission_spy_settlement
@@ -567,7 +567,7 @@ mission_spy_settlement
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 		ui_element	 center ;; movie option
 	}
 
@@ -581,7 +581,7 @@ mission_assassinate
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 		ui_element	 center ;; movie option
 	}
 
@@ -597,7 +597,7 @@ mission_sabotage
 		spacer	8
 		string		 center verdana_sml	black
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 		ui_element	 center ;; movie option
 	}
 
@@ -618,7 +618,7 @@ hidden_agent_detected_in_settlement
 		string		 center verdana_med	black
 		image	 center	agent_detected
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 agent_movie
@@ -652,7 +652,7 @@ reinforcements_arrived
 		string		 center verdana_med	black
 		image	 center	battle_reinforcement
 		spacer		16
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 year_end_report
@@ -679,7 +679,7 @@ chat_message
 		string		 center verdana_med	black
 		title_image	 center
 		spacer		 8
-		multistring  left verdana_sml khaki left
+		multistring  left verdana_sml 30,30,30,255 left
 	}
 
 disaster_earthquake
@@ -688,10 +688,10 @@ disaster_earthquake
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		title_image	 center
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 		condition    ;; If anyone was hurt
 		{
 			true
@@ -702,7 +702,7 @@ disaster_earthquake
 					true
 					{
 						string left	verdana_sml black   settlements_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -710,7 +710,7 @@ disaster_earthquake
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any buildings are affected
@@ -718,24 +718,24 @@ disaster_earthquake
 					true
 					{
 						string left	verdana_sml black   buildings_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group  left  4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left  4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 			false
 			{
-				multistring	 left   verdana_sml khaki left	nobody_harmed
+				multistring	 left   verdana_sml 30,30,30,255 left	nobody_harmed
 			}
 		}
 	}
@@ -746,10 +746,10 @@ disaster_volcano
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		title_image	 center
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 		condition    ;; If anyone was hurt
 		{
 			true
@@ -760,7 +760,7 @@ disaster_volcano
 					true
 					{
 						string left	verdana_sml black   settlements_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -768,7 +768,7 @@ disaster_volcano
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any buildings are affected
@@ -776,24 +776,24 @@ disaster_volcano
 					true
 					{
 						string left	verdana_sml black   buildings_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group left  4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left  4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 			false
 			{
-				multistring	 left   verdana_sml khaki left	nobody_harmed
+				multistring	 left   verdana_sml 30,30,30,255 left	nobody_harmed
 			}
 		}
 	}
@@ -804,10 +804,10 @@ disaster_flood
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		title_image	 center
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 		condition    ;; If anyone was hurt
 		{
 			true
@@ -818,7 +818,7 @@ disaster_flood
 					true
 					{
 						string left	verdana_sml black   settlements_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -826,7 +826,7 @@ disaster_flood
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any buildings are affected
@@ -834,24 +834,24 @@ disaster_flood
 					true
 					{
 						string left	verdana_sml black   buildings_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group left  4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left  4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 			false
 			{
-				multistring	 left   verdana_sml khaki left	nobody_harmed
+				multistring	 left   verdana_sml 30,30,30,255 left	nobody_harmed
 			}
 		}
 	}
@@ -862,10 +862,10 @@ disaster_storm
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		title_image	 center
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 		condition    ;; If anyone was hurt
 		{
 			true
@@ -876,7 +876,7 @@ disaster_storm
 					true
 					{
 						string left	verdana_sml black   settlements_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -884,7 +884,7 @@ disaster_storm
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any buildings are affected
@@ -892,24 +892,24 @@ disaster_storm
 					true
 					{
 						string left	verdana_sml black   buildings_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group left  4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left  4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 			false
 			{
-				multistring	 left   verdana_sml khaki left	nobody_harmed
+				multistring	 left   verdana_sml 30,30,30,255 left	nobody_harmed
 			}
 		}
 	}
@@ -921,10 +921,10 @@ disaster_riot
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		image	 center	settlement_unrest
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 		spacer		 8
 		condition    ;; was anyone hurt
 		{
@@ -935,7 +935,7 @@ disaster_riot
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -943,24 +943,24 @@ disaster_riot
 					true
 					{
 						string left	verdana_sml black   buildings_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group left  4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left  4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 			false
 			{
-				multistring	 left   verdana_sml khaki left	nobody_harmed
+				multistring	 left   verdana_sml 30,30,30,255 left	nobody_harmed
 			}
 		}
 	}
@@ -973,7 +973,7 @@ disaster_plague
 		title        center verdana		black
 		title_image	 center
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 		condition    ;; If anyone was hurt
 		{
 			true
@@ -984,7 +984,7 @@ disaster_plague
 					true
 					{
 						string left	verdana_sml black   settlements_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -992,24 +992,24 @@ disaster_plague
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group left  4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left  4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 			false
 			{
-				multistring	 left   verdana_sml khaki left	nobody_harmed
+				multistring	 left   verdana_sml 30,30,30,255 left	nobody_harmed
 			}
 		}
 	}
@@ -1020,10 +1020,10 @@ disaster_barbarian_horde
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		image	 center	horde_nearby
 		spacer		 8
-		bodystring	 left   verdana_sml khaki left
+		bodystring	 left   verdana_sml 30,30,30,255 left
 	}
 
 building_repair_complete
@@ -1031,12 +1031,12 @@ building_repair_complete
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
-		bodystring	left   verdana_sml  khaki	left
+		string		center verdana_med	30,30,30,255
+		bodystring	left   verdana_sml  30,30,30,255	left
 		image		center
 		spacer		8
 		string		center verdana_med	black
-		multistring left verdana_sml  khaki	left
+		multistring left verdana_sml  30,30,30,255	left
 	}
 
 construction_complete_many
@@ -1045,7 +1045,7 @@ construction_complete_many
 	format right
 	{
 		title		center verdana black
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 		spacer		8
 		collated_queue_display verdana_sml 4
 	}
@@ -1056,7 +1056,7 @@ recruitment_complete_many
 	format right
 	{
 		title		center verdana black
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 		spacer		8
 		collated_queue_display verdana_sml 4
 	}
@@ -1067,13 +1067,13 @@ character_trait_gained
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
+		string		 center verdana_med 30,30,30,255
 		image	 center	vnv_traitchange
 		spacer		 8
-		multistring  left verdana_sml khaki left
+		multistring  left verdana_sml 30,30,30,255 left
 		spacer		 4
-		multistring  left verdana_sml khaki left
+		multistring  left verdana_sml 30,30,30,255 left
 	}
 
 character_trait_lost
@@ -1082,11 +1082,11 @@ character_trait_lost
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
+		string		 center verdana_med 30,30,30,255
 		image	 center	vnv_traitchange
 		spacer		 8
-		multistring  left verdana_sml khaki left
+		multistring  left verdana_sml 30,30,30,255 left
 	}
 
 mission_gift
@@ -1200,7 +1200,7 @@ unit_routs_in_battle
 		string		center verdana_med black
 		image center	battle_unitrouts
 		spacer		16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 building_captured_battle
@@ -1212,7 +1212,7 @@ building_captured_battle
 		string		center verdana_med black
 		image center	battle_capturebuilding
 		spacer		16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 building_lost_battle
@@ -1224,7 +1224,7 @@ building_lost_battle
 		string		center verdana_med black
 		image center	battle_lostbuilding
 		spacer		16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 general_killed_ally
@@ -1234,10 +1234,10 @@ general_killed_ally
 	{
 		title        center verdana		black
 		string		 center verdana_med	black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		image		 center	battle_generaldeathfriendly
 		spacer		16
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 general_killed_enemy
@@ -1247,10 +1247,10 @@ general_killed_enemy
 	{
 		title        center verdana		black
 		string		 center verdana_med	black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		image		 center	battle_generaldeathenemy
 		spacer		16
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 settlement_surrenders_own
@@ -1262,7 +1262,7 @@ settlement_surrenders_own
 		string	center verdana_med black
 		title_image	center
 		spacer		 8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 settlement_surrenders_enemy
@@ -1274,7 +1274,7 @@ settlement_surrenders_enemy
 		string	center verdana_med black
 		title_image	center
 		spacer		 8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 advisor_dummy_msg
@@ -1282,7 +1282,7 @@ advisor_dummy_msg
 	format
 	{
 		multistring	left verdana_sml black left
-		multistring	left verdana_sml khaki left
+		multistring	left verdana_sml 30,30,30,255 left
 ;		condition								;; Do we want accept/decline buttons
 ;		{
 ;			true
@@ -1305,10 +1305,10 @@ new_ancillary_character
 		string	center verdana_med black
 		image	center	vnv_new_ancillaries
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		string		center verdana_sml black
-		multistring	left verdana_sml khaki left
+		multistring	left verdana_sml 30,30,30,255 left
 	}
 
 female_dies
@@ -1320,7 +1320,7 @@ female_dies
 		string		 center verdana_med	black
 		image	 center familyevent_death
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 games_held
@@ -1332,7 +1332,7 @@ games_held
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 races_held
@@ -1344,7 +1344,7 @@ races_held
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 character_dies_suspicious
@@ -1354,10 +1354,10 @@ character_dies_suspicious
 	{
 		title	center verdana black
 		string	center verdana_med black
-		string	center verdana_sml	khaki
+		string	center verdana_sml	30,30,30,255
 		image	center familyevent_death_sus
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1368,10 +1368,10 @@ character_dies_disaster
 	{
 		title	center verdana black
 		string	center verdana_med black
-		string		 center verdana_sml	khaki
+		string		 center verdana_sml	30,30,30,255
 		image	center familyevent_death
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1383,7 +1383,7 @@ family_report
 	{
 		title	center verdana black
 		spacer	4
-		bodystring	 left verdana_sml khaki left
+		bodystring	 left verdana_sml 30,30,30,255 left
 		condition ;; any character deaths
 		{
 			true
@@ -1563,72 +1563,72 @@ diplomacy_report
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  war_declared_multi
-				faction_pair_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  war_declared_multi
+				faction_pair_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; anyone betraying an alliance
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  betrayal_multi
-				faction_pair_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  betrayal_multi
+				faction_pair_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; any alliances broken
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  alliance_broken_multi
-				faction_pair_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  alliance_broken_multi
+				faction_pair_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; anyone declaring an alliance
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  alliance_declared_multi
-				faction_pair_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  alliance_declared_multi
+				faction_pair_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; anyone signing peace treaty
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  treaty_declared_multi
-				faction_pair_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  treaty_declared_multi
+				faction_pair_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; anyone declaring a ceasefire
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  ceasefire_declared_multi
-				faction_pair_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  ceasefire_declared_multi
+				faction_pair_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; any protectorates established
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  protectorates_established_multi
-				faction_pair_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  protectorates_established_multi
+				faction_pair_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; any excommunications
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  excommunicated_multi
-				faction_second_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  excommunicated_multi
+				faction_second_list verdana_sml 30,30,30,255
 			}
 		}
 		condition ;; any recommunications
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left  recommunicated_multi
-				faction_second_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  recommunicated_multi
+				faction_second_list verdana_sml 30,30,30,255
 			}
 		}
 	}
@@ -1643,7 +1643,7 @@ war_declared
 		string		 center verdana_med	black
 		image	 center diplomacy_war_declared
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 alliance_declared
@@ -1656,7 +1656,7 @@ alliance_declared
 		string		 center verdana_med	black
 		image	center	diplomacy_alliance
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 ceasefire_declared
@@ -1669,7 +1669,7 @@ ceasefire_declared
 		string	center verdana_med black
 		image	center	diplomacy_alliance
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 peacy_treaty_signed
@@ -1682,7 +1682,7 @@ peacy_treaty_signed
 		string	center verdana_med black
 		image	center	diplomacy_alliance
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 alliance_broken
@@ -1695,7 +1695,7 @@ alliance_broken
 		string	center verdana_med black
 		image	center	diplomacy_worsenedrelations
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 protectorate_established
@@ -1708,7 +1708,7 @@ protectorate_established
 		string	center verdana_med black
 		image	center	diplomacy_alliance
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 ally_declared_alliance_with_enemy
@@ -1722,7 +1722,7 @@ ally_declared_alliance_with_enemy
 		string	center verdana_med black
 		image	center	diplomacy_worsenedrelations
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -1742,7 +1742,7 @@ war_declared_on_ally
 		string	center verdana_med black
 		image	center	diplomacy_war_declared
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -1769,7 +1769,7 @@ suitor_available_for_daughter
 		character_trait_list					;; List of traits
 		partition
 		spacer 8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -1796,7 +1796,7 @@ suitor_available_for_princess
 		character_trait_list					;; List of traits
 		partition
 		spacer 8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -1814,7 +1814,7 @@ daughter_retired
 		string	center verdana_med black
 		image	center	familyevent_woman_retires
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1830,7 +1830,7 @@ adopta_general_offer
 		character_trait_list					;; List of traits
 		partition
 		spacer 8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -1858,7 +1858,7 @@ character_available_for_adoption
 		character_trait_list					;; List of traits
 		partition
 		spacer 8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -1877,7 +1877,7 @@ adoption_failed
 		string	center verdana_med black
 		image	center	familyevent_death
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1890,7 +1890,7 @@ mission_spy_fail_and_killed
 		string	center verdana_med black
 		image	center spy_killed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1903,7 +1903,7 @@ mission_spy_fail
 		string	center verdana_med black
 		image	center agent_expelled
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1916,7 +1916,7 @@ mission_assassinate_fail_and_killed
 		string	center verdana_med black
 		image	center assassin_slain
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1929,7 +1929,7 @@ mission_assassinate_fail
 		string	center verdana_med black
 		image	center  assassin_failed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1944,7 +1944,7 @@ mission_sabotage_fail_and_killed
 		spacer	8
 		string	center verdana_sml black
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1959,7 +1959,7 @@ mission_sabotage_fail
 		spacer	8
 		string	center verdana_sml black
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1976,11 +1976,11 @@ settlement_occupied
 			true
 			{
 				spacer 8
-				multistring left verdana_sml khaki left siege_ended
+				multistring left verdana_sml 30,30,30,255 left siege_ended
 			}
 		}
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -1997,11 +1997,11 @@ settlement_sacked
 			true
 			{
 				spacer 8
-				multistring left verdana_sml khaki left siege_ended
+				multistring left verdana_sml 30,30,30,255 left siege_ended
 			}
 		}
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2018,11 +2018,11 @@ settlement_exterminated
 			true
 			{
 				spacer 8
-				multistring left verdana_sml khaki left siege_ended
+				multistring left verdana_sml 30,30,30,255 left siege_ended
 			}
 		}
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2034,7 +2034,7 @@ historic_event
 		string	center verdana black
 		image	center
 		spacer	8
-		multistring	left verdana_sml khaki left
+		multistring	left verdana_sml 30,30,30,255 left
 		condition
 		{
 			true
@@ -2064,7 +2064,7 @@ historic_event_movie
 		string	center verdana black
 		movie		 center 536 304
 		spacer	8
-		multistring	left verdana_sml khaki left
+		multistring	left verdana_sml 30,30,30,255 left
 	}
 
 player_faction_richest
@@ -2074,7 +2074,7 @@ player_faction_richest
 		title	center verdana black
 		image	center	year_end_report
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2085,7 +2085,7 @@ player_faction_strongest
 		title	center verdana black
 		image	center militaryunithired
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2096,7 +2096,7 @@ player_faction_advanced
 		title	center verdana black
 		image	center	faction_most_advanced
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2107,7 +2107,7 @@ player_faction_largest
 		title	center verdana black
 		image	center	faction_prosperous
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 building_sabotaged
@@ -2118,9 +2118,9 @@ building_sabotaged
 		title_image	center
 		spacer	8
 		string	center verdana_med black
-		string	center verdana_sml khaki
+		string	center verdana_sml 30,30,30,255
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2131,7 +2131,7 @@ players_army_destroyed
 		title	center verdana black
 		image	center militaryarmydestroyed
 		spacer		16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2145,7 +2145,7 @@ exterminate_populace
 		string	center verdana_med black
 		image	center	settlement_exterminated
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2158,7 +2158,7 @@ upgrade_settlement_to_town
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2171,7 +2171,7 @@ upgrade_settlement_to_large_town
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2184,7 +2184,7 @@ upgrade_settlement_to_city
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2197,7 +2197,7 @@ upgrade_settlement_to_large_city
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2210,7 +2210,7 @@ upgrade_settlement_to_huge_city
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 upgrade_settlement_to_wooden_castle
@@ -2222,7 +2222,7 @@ upgrade_settlement_to_wooden_castle
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2235,7 +2235,7 @@ upgrade_settlement_to_castle
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2248,7 +2248,7 @@ upgrade_settlement_to_fortress
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2261,7 +2261,7 @@ upgrade_settlement_to_citadel
 		string	center verdana_med black
 		title_image	center
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 multiturn_path_blocked
@@ -2273,7 +2273,7 @@ multiturn_path_blocked
 		string	center verdana_med black
 		image	center	militarypathblocked
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2287,7 +2287,7 @@ war_declared_non_player
 		string		 center verdana_med	black
 		image	 center	diplomacy_war_declared
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2307,7 +2307,7 @@ agent_detected_and_expelled
 		string		 center verdana_med	black
 		image		 center	agent_enemy_detected
 		spacer		 8
-		bodystring   left verdana_sml khaki left
+		bodystring   left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2320,7 +2320,7 @@ building_captured_by_allies
 		string	center verdana_med black
 		image center	battle_capturebuilding
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2332,7 +2332,7 @@ marian_reform
 		string	center verdana black
 		image	center
 		spacer	8
-		multistring	left verdana_sml khaki left
+		multistring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2346,7 +2346,7 @@ settlement_bribed
 		string	center verdana_med black
 		image	center	bribery
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2360,7 +2360,7 @@ army_bribed
 		string	center verdana_med black
 		image	center	bribery
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2374,7 +2374,7 @@ character_bribed
 		string	center verdana_med black
 		image	center	bribery
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2387,7 +2387,7 @@ betrayed
 		string	center verdana_med black
 		image	center	diplomacy_worsenedrelations
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2401,7 +2401,7 @@ fort_bribed
 		string	center verdana_med black
 		image	center	bribery
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2415,7 +2415,7 @@ player_lose_warning
 		string	center verdana_med black
 		image	center	faction_troubled
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2428,7 +2428,7 @@ transgression
 		string	center verdana_med black
 		image	center	diplomacy_worsenedrelations
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2439,7 +2439,7 @@ your_machine_needs_upgrading
 		title	center verdana black
 		image	center	battle_deployment
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 your_machine_needs_upgrading_ai_to_reinforce
@@ -2449,7 +2449,7 @@ your_machine_needs_upgrading_ai_to_reinforce
 		title	center verdana black
 		image	center	battle_deployment
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 small_army_disbands
@@ -2467,7 +2467,7 @@ small_army_disbands
 		}
 		image	center	militaryenemydisband
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2486,7 +2486,7 @@ small_army_disbands_loser
 		}
 		image	center	militarydisband
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2499,7 +2499,7 @@ new_eastern_emperor
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2512,7 +2512,7 @@ new_western_emperor
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2525,7 +2525,7 @@ new_eastern_ceasar
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2538,7 +2538,7 @@ new_western_ceasar
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2551,7 +2551,7 @@ shadow_faction_appears
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2564,7 +2564,7 @@ eastern_shadow_faction
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2577,7 +2577,7 @@ western_shadow_faction
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2590,7 +2590,7 @@ shadow_faction_destroyed
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2603,7 +2603,7 @@ emergent_faction_appears
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2616,7 +2616,7 @@ new_barbarian_horde
 		string	center verdana_med black
 		image	center	horde_rehorde
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2627,10 +2627,10 @@ horde_settles
 	{
 		title	center verdana black
 		string	center verdana_med black
-		string	center verdana_sml khaki
+		string	center verdana_sml 30,30,30,255
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2643,7 +2643,7 @@ horde_in_your_region
 		string	center verdana_med black
 		image	center	horde_nearby
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2656,7 +2656,7 @@ city_sacked
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2669,7 +2669,7 @@ dominant_religion
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2682,7 +2682,7 @@ roman_empire_reunited
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2692,10 +2692,10 @@ settlement_razed
 	format
 	{
 		title        center verdana		black
-		string		 center verdana_med khaki
+		string		 center verdana_med 30,30,30,255
 		title_image	 center
 		spacer		 8
-		bodystring	 left    verdana_sml khaki left
+		bodystring	 left    verdana_sml 30,30,30,255 left
 		spacer		 8
 		condition    ;; was anyone hurt
 		{
@@ -2706,7 +2706,7 @@ settlement_razed
 					true
 					{
 						string left	verdana_sml black   characters_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				condition ;; If any characters are affected
@@ -2714,19 +2714,19 @@ settlement_razed
 					true
 					{
 						string left	verdana_sml black   buildings_affected
-						list   1		verdana_sml khaki
+						list   1		verdana_sml 30,30,30,255
 					}
 				}
 				spacer		 8
 				group left 4
 				{
-					string left verdana_sml khaki your_citizens_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_citizens_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 				group left 4
 				{
-					string left verdana_sml khaki your_soldiers_killed
-					integer		 left verdana_sml khaki
+					string left verdana_sml 30,30,30,255 your_soldiers_killed
+					integer		 left verdana_sml 30,30,30,255
 				}
 			}
 		}
@@ -2741,7 +2741,7 @@ rebels_victorious
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2753,7 +2753,7 @@ huns_hording
 		title	center verdana black
 		image	center new_barbarian_horde
 		spacer	16
-		multistring	left verdana_sml khaki left hun_hording
+		multistring	left verdana_sml 30,30,30,255 left hun_hording
 	}
 
 
@@ -2767,7 +2767,7 @@ disaster_report
 		title	center verdana black
 		image	center	disaster_plague
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		damage_report
 	}
 
@@ -2780,7 +2780,7 @@ city_gained_through_revolt
 		string	center verdana_med black
 		image	center	settlement_occupied
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 
@@ -2793,7 +2793,7 @@ rebel_revolt_surpressed
 		string	center verdana_med black
 		title_image	center
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 queues_stalled
@@ -2803,7 +2803,7 @@ queues_stalled
 		title	center verdana black
 		image	center queues_stalled
 		spacer		16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 mission_acquire
@@ -2815,7 +2815,7 @@ mission_acquire
 		string		center verdana_med	black
 		title_image	center
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 mission_acquire_fail
@@ -2827,7 +2827,7 @@ mission_acquire_fail
 		string	center verdana_med black
 		image	center acquisition_failed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 mission_acquire_fail_and_removed
@@ -2839,7 +2839,7 @@ mission_acquire_fail_and_removed
 		string	center verdana_med black
 		image	center acquisition_failed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 acquisition_attempt
@@ -2851,7 +2851,7 @@ acquisition_attempt
 		string		center verdana_med	black
 		image	center	acquisition_success
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 acquisition_attempt_fail
@@ -2863,7 +2863,7 @@ acquisition_attempt_fail
 		string	center verdana_med black
 		image	center acquisition_failed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 acquisition_attempt_fail_and_removed
 	icon	merchant
@@ -2874,7 +2874,7 @@ acquisition_attempt_fail_and_removed
 		string	center verdana_med black
 		image	center acquisition_failed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 mission_marriage
@@ -2886,7 +2886,7 @@ mission_marriage
 		string		center verdana_med	black
 		image	center	marriage_accepted
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 mission_marriage_fail
@@ -2898,7 +2898,7 @@ mission_marriage_fail
 		string	center verdana_med black
 		image	center	marriage_rejected
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 mission_marriage_fail_and_removed
@@ -2910,7 +2910,7 @@ mission_marriage_fail_and_removed
 		string	center verdana_med black
 		image	center	marriage_reversed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 marriage_attempt
@@ -2922,7 +2922,7 @@ marriage_attempt
 		string		center verdana_med	black
 		image	center	marriage_accepted
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 marriage_attempt_fail
@@ -2934,7 +2934,7 @@ marriage_attempt_fail
 		string	center verdana_med black
 		image	center	marriage_rejected
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 marriage_attempt_fail_and_removed
 	icon	princess
@@ -2945,7 +2945,7 @@ marriage_attempt_fail_and_removed
 		string	center verdana_med black
 		image	center	marriage_reversed
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 mission_denounce
@@ -2957,7 +2957,7 @@ mission_denounce
 		string		center verdana_med	black
 		title_image	center
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 mission_denounce_fail
@@ -2969,7 +2969,7 @@ mission_denounce_fail
 		string	center verdana_med black
 		image	center denouncement_hereticescapes
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 denouncement_attempt
@@ -2982,7 +2982,7 @@ denouncement_attempt
 		string		center verdana_med	black
 		movie	center 536 304	event/inquisition.bik
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 denouncement_attempt_fail
@@ -2994,7 +2994,7 @@ denouncement_attempt_fail
 		string	center verdana_med black
 		image	center denouncement_playerescapesinquisior
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 priest_mission_denounce
@@ -3006,7 +3006,7 @@ priest_mission_denounce
 		string		center verdana_med	black
 		image	center	denouncement_priestkillsheretic
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 priest_mission_denounce_fail
@@ -3018,7 +3018,7 @@ priest_mission_denounce_fail
 		string	center verdana_med black
 		image	center	denouncement_hereticescapes
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 priest_mission_denounce_fail_and_removed
@@ -3030,7 +3030,7 @@ priest_mission_denounce_fail_and_removed
 		string	center verdana_med black
 		image	center	denouncement_priestkilled
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 priest_mission_denounce_fail_and_converted
@@ -3042,7 +3042,7 @@ priest_mission_denounce_fail_and_converted
 		string	center verdana_med black
 		image	center	denouncement_priestconverted
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 priest_denouncement_attempt
@@ -3054,7 +3054,7 @@ priest_denouncement_attempt
 		string		center verdana_med	black
 		image	center	denouncement_priestkillsheretic
 		spacer		8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 priest_denouncement_attempt_fail
@@ -3066,7 +3066,7 @@ priest_denouncement_attempt_fail
 		string	center verdana_med black
 		image	center	denouncement_hereticescapes
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 priest_denouncement_attempt_fail_and_removed
@@ -3078,7 +3078,7 @@ priest_denouncement_attempt_fail_and_removed
 		string	center verdana_med black
 		image	center	denouncement_priestkilled
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 priest_denouncement_attempt_fail_and_converted
@@ -3090,7 +3090,7 @@ priest_denouncement_attempt_fail_and_converted
 		string	center verdana_med black
 		image	center	denouncement_priestconverted
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 bride_available_for_family_member
@@ -3107,9 +3107,9 @@ bride_available_for_family_member
 		}
 		string	center verdana_med	black
 		image	center marriage_bride_available
-		divider		khaki
+		divider		30,30,30,255
 		spacer 8
-		bodystring	center verdana_sml khaki center
+		bodystring	center verdana_sml 30,30,30,255 center
 		spacer	8
 		group center 8
 		{
@@ -3129,7 +3129,7 @@ create_guild
 		spacer	8
 		ui_element	center						;; Guild info panel
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -3149,7 +3149,7 @@ upgrade_guild
 		spacer	8
 		ui_element	center						;; Guild info panel
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
 		group center 8
 		{
@@ -3172,11 +3172,11 @@ crusade_called
 		{
 			true
 			{
-                 	    multistring  left verdana_sml khaki left crusade_called_catholic
+                 	    multistring  left verdana_sml 30,30,30,255 left crusade_called_catholic
 			}
 			false
 			{
-			    multistring  left verdana_sml khaki left crusade_called_non_catholic
+			    multistring  left verdana_sml 30,30,30,255 left crusade_called_non_catholic
 			}
 		}
 	}
@@ -3195,11 +3195,11 @@ jihad_called
 		{
 			true
 			{
-                 	    multistring  left verdana_sml khaki left jihad_called_islam
+                 	    multistring  left verdana_sml 30,30,30,255 left jihad_called_islam
 			}
 			false
 			{
-			    multistring  left verdana_sml khaki left jihad_called_non_islam
+			    multistring  left verdana_sml 30,30,30,255 left jihad_called_non_islam
 			}
 		}
 	}
@@ -3213,9 +3213,9 @@ crusade_succeed
 		string  center verdana_med black
 		image center crusade_succeeded
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 		spacer	8
-		multistring left verdana_sml khaki left
+		multistring left verdana_sml 30,30,30,255 left
 	}
 
 jihad_succeed
@@ -3227,9 +3227,9 @@ jihad_succeed
 		string  center verdana_med black
 		image center jihad_succeeded
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 		spacer	8
-		multistring left verdana_sml khaki left
+		multistring left verdana_sml 30,30,30,255 left
 	}
 
 crusade_failed
@@ -3241,7 +3241,7 @@ crusade_failed
 		string  center verdana_med black
 		image center crusade_failed
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 jihad_failed
@@ -3253,7 +3253,7 @@ jihad_failed
 		string  center verdana_med black
 		image center jihad_failed
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 crusade_canceled
@@ -3265,7 +3265,7 @@ crusade_canceled
 		string  center verdana_med black
 		image center crusade_cancelled
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 jihad_canceled
@@ -3277,7 +3277,7 @@ jihad_canceled
 		string  center verdana_med black
 		image center jihad_cancelled
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 crusade_factions_joined
@@ -3290,9 +3290,9 @@ crusade_factions_joined
 		string  center verdana_med black
 		image center crusade_called
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
-		multistring left verdana_sml khaki left
+		multistring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3306,9 +3306,9 @@ jihad_factions_joined
 		string  center verdana_med black
 		image center jihad_called
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 		spacer	8
-		multistring left verdana_sml khaki left
+		multistring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3321,7 +3321,7 @@ pope_accepts_crusade
 		string  center verdana_med black
 		image center pope_mission
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 pope_rejects_crusade
@@ -3333,7 +3333,7 @@ pope_rejects_crusade
 		string  center verdana_med black
 		image center pope_disapproval
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 crusade_units_desert_warning
@@ -3345,7 +3345,7 @@ crusade_units_desert_warning
 		title	center verdana black
                 image center crusade_desertion
 		spacer 16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3358,7 +3358,7 @@ jihad_units_desert_warning
 		title	center verdana black
                 image center jihad_desertion
 		spacer 16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3371,9 +3371,9 @@ crusade_units_deserted_removed
 		title	center verdana black
   		image center crusade_desertion
   		spacer 16
-  		bodystring left verdana_sml khaki left
+  		bodystring left verdana_sml 30,30,30,255 left
 		spacer 8
-       	        multistring left verdana_sml khaki left
+       	        multistring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3386,9 +3386,9 @@ jihad_units_deserted_removed
 		title	center verdana black
 		image center jihad_desertion
 		spacer 16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 		spacer 8
-       	        multistring left verdana_sml khaki left
+       	        multistring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3402,9 +3402,9 @@ crusade_units_deserted_no_progress
 		title	center verdana black
   		image center crusade_desertion
   		spacer 16
-  		bodystring left verdana_sml khaki left
+  		bodystring left verdana_sml 30,30,30,255 left
 		spacer 8
-       	        multistring left verdana_sml khaki left
+       	        multistring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3417,9 +3417,9 @@ jihad_units_deserted_no_progress
 		title	center verdana black
 		image center jihad_desertion
 		spacer 16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 		spacer 8
-       	        multistring left verdana_sml khaki left
+       	        multistring left verdana_sml 30,30,30,255 left
 		spacer	35
 	}
 
@@ -3432,7 +3432,7 @@ crusade_will_end
 		string  center verdana_med black
 		image center crusade_nearsend
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 jihad_will_end
@@ -3444,7 +3444,7 @@ jihad_will_end
 		string  center verdana_med black
 		image center jihad_nearsend
 		spacer	16
-		bodystring left verdana_sml khaki left
+		bodystring left verdana_sml 30,30,30,255 left
 	}
 
 pope_dies
@@ -3457,7 +3457,7 @@ pope_dies
 		string		 center verdana_med	black
 		image	 center pope_dead
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
         }
 
 papal_election
@@ -3468,7 +3468,7 @@ papal_election
 		title        center verdana		black
 		image	 center pope_approval
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 		spacer		2
 		accept	center
 	}
@@ -3484,9 +3484,9 @@ pope_elected
 		string		 center verdana_med	black
 		movie	center 536 304	event/papal_coronation.bik
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
                 spacer	2
-       	        multistring left verdana_sml khaki left
+       	        multistring left verdana_sml 30,30,30,255 left
 	}
 
 excommunicate
@@ -3524,7 +3524,7 @@ recommunicate
 		string		 center verdana_med	black
 		image	 center	pope_approval
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 player_excommunicate
@@ -3537,7 +3537,7 @@ player_excommunicate
 		string		 center verdana_med	black
 		image	 center	pope_disapproval
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 player_recommunicate
@@ -3550,7 +3550,7 @@ player_recommunicate
 		string		 center verdana_med	black
 		image	 center	pope_approval
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 pope_assassin_caught
@@ -3560,7 +3560,7 @@ pope_assassin_caught
 		title        center verdana		black
 		image	 center	pope_disapproval
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 cardinal_promoted
@@ -3573,7 +3573,7 @@ cardinal_promoted
 		string		 center verdana_med	black
 		image	 center pope_cardinal_promotion
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 cardinal_dies
@@ -3586,7 +3586,7 @@ cardinal_dies
 		string		 center verdana_med	black
 		image	center	 familyevent_deathimportant
 		spacer		 8
-		bodystring  left verdana_sml khaki left
+		bodystring  left verdana_sml 30,30,30,255 left
 	}
 
 cardinal_report
@@ -3596,7 +3596,7 @@ cardinal_report
 	{
 		title	center verdana black
 		spacer	4
-		bodystring	 left verdana_sml khaki left
+		bodystring	 left verdana_sml 30,30,30,255 left
 		condition ; any cardinal deaths
 		{
 			true
@@ -3621,8 +3621,8 @@ wonder_approval
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
-		bodystring	left   verdana_sml  khaki	left
+		string		center verdana_med	30,30,30,255
+		bodystring	left   verdana_sml  30,30,30,255	left
 		image		center
 		spacer		 8
 		string		center verdana_med	black
@@ -3634,8 +3634,8 @@ construction_approval
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
-		bodystring	left   verdana_sml  khaki	left
+		string		center verdana_med	30,30,30,255
+		bodystring	left   verdana_sml  30,30,30,255	left
 		image		center
 		spacer		 8
 		string		center verdana_med	black
@@ -3647,8 +3647,8 @@ construction_disapproval
 	format
 	{
 		title		center verdana		black
-		string		center verdana_med	khaki
-		bodystring	left   verdana_sml  khaki	left
+		string		center verdana_med	30,30,30,255
+		bodystring	left   verdana_sml  30,30,30,255	left
 		image		center
 		spacer		 8
 		string		center verdana_med	black
@@ -3661,7 +3661,7 @@ approval_report
 	{
 		title	center verdana black
 		spacer	4
-		bodystring	 left verdana_sml khaki left
+		bodystring	 left verdana_sml 30,30,30,255 left
 		condition ; any approvals
 		{
 			true
@@ -3694,7 +3694,7 @@ relations_improved
 		string		 center verdana_med	black
 		image	center	diplomacy_improvedrelations
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 relations_worsened
@@ -3707,7 +3707,7 @@ relations_worsened
 		string		 center verdana_med	black
 		image	center	diplomacy_worsenedrelations
 		spacer	8
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 
 relations_report
@@ -3717,14 +3717,14 @@ relations_report
 	{
 		title	center verdana black
 		spacer	4
-		bodystring	 left verdana_sml khaki left
+		bodystring	 left verdana_sml 30,30,30,255 left
 		condition ; any improvements
 		{
 			true
 			{
 				spacer	4
-				multistring	left verdana_sml khaki left  relations_improved_multi
-				faction_standing_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  relations_improved_multi
+				faction_standing_list verdana_sml 30,30,30,255
 				spacer	4
 			}
 		}
@@ -3733,8 +3733,8 @@ relations_report
 			true
 			{
 				spacer	4
-				multistring	left verdana_sml khaki left  relations_worsened_multi
-				faction_standing_list verdana_sml khaki
+				multistring	left verdana_sml 30,30,30,255 left  relations_worsened_multi
+				faction_standing_list verdana_sml 30,30,30,255
 				spacer	4
 			}
 		}
@@ -3746,10 +3746,10 @@ prisoners_released
 	format right
 	{
 		title	center verdana black
-		string	left verdana_med khaki
+		string	left verdana_med 30,30,30,255
 		image	center	militaryunithired
 		spacer	4
-       	        multistring left verdana_sml khaki left
+       	        multistring left verdana_sml 30,30,30,255 left
 		condition ;; any characters released
 		{
 			true
@@ -3757,7 +3757,7 @@ prisoners_released
 				spacer	16
 				string	left verdana_med black	characters_released
 				spacer	4
-				list   1		verdana_sml khaki
+				list   1		verdana_sml 30,30,30,255
 			}
 		}
 	}
@@ -3768,10 +3768,10 @@ prisoners_executed
 	format right
 	{
 		title	center verdana black
-		string	left verdana_med khaki
+		string	left verdana_med 30,30,30,255
 		image	center	militaryarmydestroyed
 		spacer	4
-       	        multistring left verdana_sml khaki left
+       	        multistring left verdana_sml 30,30,30,255 left
 		condition ;; any characters executed
 		{
 			true
@@ -3779,7 +3779,7 @@ prisoners_executed
 				spacer	16
 				string	left verdana_med black	characters_executed
 				spacer	4
-				list   1		verdana_sml khaki
+				list   1		verdana_sml 30,30,30,255
 			}
 		}
 	}
@@ -3797,7 +3797,7 @@ character_rebels
 		{
 			true
 			{
-				multistring	left verdana_sml khaki left	character_rebels_excommunication
+				multistring	left verdana_sml 30,30,30,255 left	character_rebels_excommunication
 			}
 			false
 			{
@@ -3805,11 +3805,11 @@ character_rebels
 				{
 					true
 					{
-						multistring	left verdana_sml khaki left	character_rebels_newleader
+						multistring	left verdana_sml 30,30,30,255 left	character_rebels_newleader
 					}
 					false
 					{
-						bodystring	left verdana_sml khaki left
+						bodystring	left verdana_sml 30,30,30,255 left
 					}
 				}
 			}
@@ -3826,6 +3826,6 @@ character_joins_through_rebellion
 		string	center verdana_med black
 		image	center militarypromotion
 		spacer	16
-		bodystring	left verdana_sml khaki left
+		bodystring	left verdana_sml 30,30,30,255 left
 	}
 

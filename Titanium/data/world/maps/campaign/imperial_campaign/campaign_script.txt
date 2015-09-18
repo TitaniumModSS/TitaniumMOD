@@ -594,15 +594,13 @@ monitor_event PreFactionTurnStart
 		console_command create_unit "Bertrand de_Toulouse" "Peasant Archers" 1 0 2 0
 		console_command create_unit "Bertrand de_Toulouse" "Crossbow Militia" 1 0 2 0
 		console_command create_unit "Bertrand de_Toulouse" "Pisan and Geonese sailors" 2 3 0 0
-		;Increase rebel Acre garrison if Hard+
-		if I_EventCounter DifficultyLevel = 3
-			console_command create_unit Acre "Turkomans" 1 0 0 0
-			console_command create_unit Acre "ME Spear Militia" 1 0 0 0
+		;Increase rebel Acre garrison if Medium+
+		if I_EventCounter DifficultyLevel = 2
+			console_command create_unit Acre "ME Spear Militia" 2 0 0 0
 			console_command create_unit Acre "Desert Archers" 1 0 0 0
 		end_if
-		if I_EventCounter DifficultyLevel > 3
-			console_command create_unit Acre "Turkomans" 1 0 0 0
-			console_command create_unit Acre "ME Spear Militia" 2 0 0 0
+		if I_EventCounter DifficultyLevel > 2
+			console_command create_unit Acre "ME Spear Militia" 3 0 0 0
 			console_command create_unit Acre "Desert Archers" 2 0 0 0
 		end_if
 	 end_if
@@ -1372,7 +1370,7 @@ monitor_event FactionTurnStart
 		spawn_army
 		faction venice
 		character	Barbus Selvo, named character, age 20, x 161, y 173, family
-		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Venetian 1 , BiologicalSon 1
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 		unit	SE Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
 	end_if
@@ -1388,7 +1386,7 @@ monitor_event FactionTurnStart
 		spawn_army
 		faction milan
 		character	Azolino Rossi, named character, age 20, x 137, y 168, family
-		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Milanese 1 , BiologicalSon 1
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 		unit	SE Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
 	end_if
@@ -1420,7 +1418,7 @@ monitor_event FactionTurnStart
 		spawn_army
 		faction russia
 		character	Domazhir Novgorodskii, named character, age 20, x 301, y 275, family
-		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Russian 1 , BiologicalSon 1
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 		unit	EE Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
 	end_if
@@ -1601,7 +1599,7 @@ monitor_event FactionTurnStart
 		spawn_army
 		faction venice
 		character	Barbus Selvo, named character, age 30, x 165, y 173, family
-		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Venetian 1 , BiologicalSon 1
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 		unit	SE Bodyguard	exp 1 armour 1 weapon_lvl 0
 		unit	Urban Spear Militia	exp 1 armour 0 weapon_lvl 0
 		unit	Urban Spear Militia	exp 0 armour 0 weapon_lvl 0
@@ -1631,7 +1629,7 @@ monitor_event FactionTurnStart
 		spawn_army
 		faction milan
 		character	Azolino Rossi, named character, age 30, x 139, y 168, family
-		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 3 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Milanese 1 , BiologicalSon 1
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 3 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 		unit	SE Bodyguard	exp 1 armour 1 weapon_lvl 0
 		unit	Urban Spear Militia	exp 1 armour 0 weapon_lvl 0
 		unit	Urban Spear Militia	exp 0 armour 0 weapon_lvl 0
@@ -1691,7 +1689,7 @@ monitor_event FactionTurnStart
 		spawn_army
 		faction russia
 		character	Domazhir Novgorodskii, named character, age 30, x 301, y 269, family
-		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Russian 1 , BiologicalSon 1
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 		unit	EE Bodyguard	exp 1 armour 1 weapon_lvl 0
 		unit	Pechenegs		exp 1 armour 0 weapon_lvl 0
 		unit	Junior Militia	exp 0 armour 0 weapon_lvl 0
@@ -2430,7 +2428,7 @@ monitor_event PreFactionTurnStart FactionType slave
 		spawn_army
 			faction venice
 			character	Bucello Selvo, named character, age 30, x 165, y 173, family
-			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Venetian 1 , BiologicalSon 1
+			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 			unit	SE Bodyguard		exp 1 armour 1 weapon_lvl 0
 			unit	Urban Spear Militia	exp 1 armour 0 weapon_lvl 0
 			unit	Urban Spear Militia	exp 0 armour 0 weapon_lvl 0
@@ -2458,7 +2456,7 @@ monitor_event PreFactionTurnStart FactionType slave
 		spawn_army
 			faction milan
 			character	Lapo Rossi, named character, age 30, x 139, y 168, family
-			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Milanese 1 , BiologicalSon 1
+			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 			unit	SE Bodyguard		exp 1 armour 1 weapon_lvl 0
 			unit	Urban Spear Militia	exp 1 armour 0 weapon_lvl 0
 			unit	Urban Spear Militia	exp 0 armour 0 weapon_lvl 0
@@ -2511,7 +2509,7 @@ monitor_event PreFactionTurnStart FactionType slave
 		spawn_army
 			faction russia
 			character	Gorislav Novgorodskii, named character, age 30, x 301, y 269, family
-			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Russian 1 , BiologicalSon 1
+			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1
 			unit	EE Bodyguard		exp 1 armour 1 weapon_lvl 0
 			unit	Pechenegs			exp 1 armour 0 weapon_lvl 0
 			unit	Pechenegs			exp 1 armour 0 weapon_lvl 0
@@ -4942,11 +4940,10 @@ end_monitor
 ;JERUSALEM/CRUSADER STATES
 	monitor_event CeasedFactionLeader FactionType jerusalem
 		if I_IsFactionAIControlled jerusalem
-			if I_FactionLeaderTrait jerusalem FactionUsurper < 1
-			and I_FactionLeaderTrait jerusalem FactionRegent < 1
+			if I_FactionLeaderTrait jerusalem Crusader_Factionleader = 2
 				set_counter jerusalem_king 1
 			end_if
-			if I_FactionLeaderTrait jerusalem Factionleader < 1
+			if I_FactionLeaderTrait jerusalem Crusader_Factionleader < 2
 				set_counter jerusalem_king 2
 			end_if
 		end_if
@@ -5059,7 +5056,7 @@ end_monitor
 	end_monitor
 
 ;***TRIGGER EVENTS***
-monitor_event FactionTurnStart
+monitor_event FactionTurnStart not IsFactionAIControlled
 ;MOORS
 	if I_CompareCounter turn_fid = 5; check only once per round
 		if I_FactionLeaderTrait moors Civil_Unrest >= 1
@@ -6620,80 +6617,51 @@ monitor_event FactionTurnStart
 		end_if
 		set_counter jerusalem_anarchy 0
 		if I_CompareCounter jerusalem_king = 0
-			if I_CompareCounter jerusalem_civil_war_counter = 1
-			and I_FactionLeaderTrait jerusalem Offensive_To_Nobles < 1
-				set_counter jerusalem_civil_war_counter 0
-				historic_event jerusalem_civil_war_end
+			if I_CompareCounter jerusalem_civil_war_counter < 1
+			and I_FactionLeaderTrait jerusalem Offensive_To_Nobles = 2
+				set_counter jerusalem_civil_war_counter 1
+				historic_event jerusalem_civil_war_start
 			end_if
-			if I_CompareCounter jerusalem_civil_war_counter = 2
-				if I_FactionLeaderTrait jerusalem Offensive_To_Nobles = 2
-					set_counter jerusalem_civil_war_counter 3
-				end_if
-				if I_FactionLeaderTrait jerusalem Offensive_To_Nobles = 1
-					historic_event jerusalem_civil_war_continue2 factions { jerusalem, }
+			if I_CompareCounter jerusalem_civil_war_counter = 1
+				if I_FactionLeaderTrait jerusalem Offensive_To_Nobles >= 1
+				and I_EventCounter is_the_ai = 0
+					historic_event jerusalem_civil_war_continue factions { jerusalem, }
 				end_if
 				if I_FactionLeaderTrait jerusalem Offensive_To_Nobles < 1
 					set_counter jerusalem_civil_war_counter 0
 					historic_event jerusalem_civil_war_end
 				end_if
 			end_if
-			if I_CompareCounter jerusalem_civil_war_counter = 3
-				if I_FactionLeaderTrait jerusalem FactionUsurper < 1
-				and I_FactionLeaderTrait jerusalem Offensive_To_Nobles = 1
-					set_counter jerusalem_civil_war_counter 2
-					historic_event jerusalem_civil_war_continue2 factions { jerusalem, }
-				end_if
-				if I_FactionLeaderTrait jerusalem FactionUsurper < 1
-				and I_FactionLeaderTrait jerusalem Offensive_To_Nobles < 1
-					set_counter jerusalem_civil_war_counter 0
-					historic_event jerusalem_civil_war_end_usurper
-				end_if
-			end_if
-			if I_CompareCounter jerusalem_civil_war_counter = 0
-			and I_FactionLeaderTrait jerusalem Offensive_To_Nobles = 2
-				historic_event jerusalem_civil_war_start
-				set_counter jerusalem_civil_war_counter 1
-			end_if
 		end_if
 	end_if
 	if I_CompareCounter jerusalem_king >= 1
 	and I_EventCounter is_the_ai = 0
-		if I_FactionLeaderTrait jerusalem FactionUsurper < 1
-		and I_FactionLeaderTrait jerusalem FactionRegent < 1
+		if I_FactionLeaderTrait jerusalem Offensive_To_Nobles < 1
 			if I_CompareCounter jerusalem_civil_war_counter < 1
-			and I_CompareCounter jerusalem_king = 1
-				historic_event jerusalem_king_event
+				if I_CompareCounter jerusalem_king = 1
+					historic_event jerusalem_king_event
+				end_if
+				if I_CompareCounter jerusalem_king = 2
+					historic_event jerusalem_regent_event
+				end_if
 			end_if
-			if I_CompareCounter jerusalem_civil_war_counter < 1
-			and I_CompareCounter jerusalem_king = 2
-				historic_event jerusalem_king_event2
-			end_if
-			if I_CompareCounter jerusalem_civil_war_counter >= 1
-				historic_event jerusalem_civil_war_end_king
+			if I_CompareCounter jerusalem_civil_war_counter = 1
+				if I_CompareCounter jerusalem_king = 1
+					historic_event jerusalem_civil_war_end_king
+				end_if
+				if I_CompareCounter jerusalem_king = 2
+					historic_event jerusalem_civil_war_end_regent
+				end_if
 				set_counter jerusalem_civil_war_counter 0
 			end_if
 		end_if
-		if I_FactionLeaderTrait jerusalem FactionRegent >= 1
-			if I_CompareCounter jerusalem_civil_war_counter < 1
-			and I_CompareCounter jerusalem_king = 1
-				historic_event jerusalem_regent_event
-			end_if
-			if I_CompareCounter jerusalem_civil_war_counter < 1
-			and I_CompareCounter jerusalem_king = 2
-				historic_event jerusalem_regent_event2
-			end_if
-			if I_CompareCounter jerusalem_civil_war_counter >= 1
-				historic_event jerusalem_civil_war_end_regent
-				set_counter jerusalem_civil_war_counter 0
-			end_if
-		end_if
-		if I_FactionLeaderTrait jerusalem FactionUsurper >= 1
-			if I_CompareCounter jerusalem_civil_war_counter >= 1
+		if I_FactionLeaderTrait jerusalem Offensive_To_Nobles >= 1
+			if I_CompareCounter jerusalem_civil_war_counter = 1
 				historic_event jerusalem_civil_war_continue
 			end_if
 			if I_CompareCounter jerusalem_civil_war_counter < 1
 				historic_event jerusalem_civil_war
-				set_counter jerusalem_civil_war_counter 3
+				set_counter jerusalem_civil_war_counter 1
 			end_if
 		end_if
 		set_counter jerusalem_king 0
@@ -7529,7 +7497,7 @@ monitor_event GameReloaded I_CompareCounter awaiting_answer_ie > 0
 	if I_CompareCounter awaiting_answer_great_tourney = 1
 		set_event_counter HS_Great_Tourney 0
 	end_if
-	if I_CompareCounter awaiting_answer_troubadours_event = 1
+	if I_CompareCounter awaiting_answer_troubadours = 1
 		set_event_counter HS_Troubadours_Event 0
 	end_if
 	if I_CompareCounter awaiting_answer_great_council = 1
@@ -7544,7 +7512,7 @@ monitor_event GameReloaded I_CompareCounter awaiting_answer_ie > 0
 	if I_CompareCounter awaiting_answer_great_tourney = 1
 		historic_event great_tourney true
 	end_if
-	if I_CompareCounter awaiting_answer_troubadours_event = 1
+	if I_CompareCounter awaiting_answer_troubadours = 1
 		historic_event troubadours_event true
 	end_if
 	if I_CompareCounter awaiting_answer_great_council = 1
@@ -7839,7 +7807,7 @@ monitor_event FactionTurnStart not IsFactionAIControlled
    inc_event_counter HS_Troubadours_Event 1
 	end_if
 
-	set_counter awaiting_answer_troubadours_event 1
+	set_counter awaiting_answer_troubadours 1
 	inc_counter awaiting_answer_ie 1
 end_monitor
 
@@ -7946,7 +7914,7 @@ monitor_event EventCounter EventCounterType troubadours_event_accepted
 
 	console_command add_money -2500
 
-	set_counter awaiting_answer_troubadours_event 0
+	set_counter awaiting_answer_troubadours 0
 	inc_counter awaiting_answer_ie -1
 end_monitor
 
@@ -7954,7 +7922,7 @@ end_monitor
 monitor_event EventCounter EventCounterType troubadours_event_declined
 	and EventCounter = 1
 
-	set_counter awaiting_answer_troubadours_event 0
+	set_counter awaiting_answer_troubadours 0
 	inc_counter awaiting_answer_ie -1
 end_monitor 
 

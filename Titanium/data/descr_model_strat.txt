@@ -652,6 +652,7 @@ skeleton			strat_named_with_army
 scale				0.7
 indiv_range			40
 texture				scotland, models_strat/textures/William_Wallace.tga
+texture				slave, models_strat/textures/William_Wallace_rebels.tga
 model_flexi_m			models_strat/william_wallace.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
@@ -662,6 +663,25 @@ indiv_range			40
 texture				byzantium, models_strat/textures/byzantine_general.tga
 texture				slave, models_strat/textures/byzantine_general_rebels.tga
 model_flexi_m			models_strat/byzantine_general.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
+type				teutonic_general
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				teutonic_order, models_strat/textures/teutonic_general_teutonic.tga
+texture				slave, models_strat/textures/teutonic_general_rebels.tga
+model_flexi_m			models_strat/teutonic_general.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
+type				crusader_general
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				teutonic_order, models_strat/textures/teutonic_general_early_teutonic.tga
+texture				jerusalem, models_strat/textures/teutonic_general_early_jerusalem.tga
+texture				slave, models_strat/textures/teutonic_general_rebels.tga
+model_flexi_m			models_strat/teutonic_general_early.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
 ;;;;;;;;;;;
@@ -695,6 +715,42 @@ texture				cumans, models_strat/textures/northern_generic_king_lithuania.tga
 model_flexi_m			models_strat/northern_generic_king.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
+type				count_tripoli
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				jerusalem, models_strat/textures/teutonic_general_early_tripoli.tga
+texture				slave, models_strat/textures/teutonic_general_rebels.tga
+model_flexi_m			models_strat/teutonic_general_early.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
+type				prince_antioch
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				jerusalem, models_strat/textures/northern_king_early_antioch.tga
+texture				slave, models_strat/textures/northern_king_early.tga
+model_flexi_m			models_strat/northern_king_early.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
+type				king_jerusalem
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				jerusalem, models_strat/textures/northern_king_early_jerusalem.tga
+texture				slave, models_strat/textures/northern_king_early.tga
+model_flexi_m			models_strat/northern_king_early.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
+type				emperor_constantinople
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				jerusalem, models_strat/textures/northern_king_early_constantinople.tga
+texture				slave, models_strat/textures/northern_king_early.tga
+model_flexi_m			models_strat/northern_king_early.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
 type				byzantine_emperor
 skeleton			strat_named_with_army
 scale				0.7
@@ -719,15 +775,8 @@ texture				venice, models_strat/textures/Fancy_General_venice.tga
 texture				milan, models_strat/textures/Fancy_General_milan.tga
 texture				papal_states, models_strat/textures/Fancy_General_papal_states.tga
 texture				jerusalem, models_strat/textures/Fancy_General_jerusalem.tga
+texture				slave, models_strat/textures/fancy_general_rebels.tga
 model_flexi_m			models_strat/Fancy_General.CAS, max
-shadow_model_flexi		models_strat/shadow_sword.CAS, max
-
-type				teutonic_general
-skeleton			strat_named_with_army
-scale				0.7
-indiv_range			40
-texture				teutonic_order, models_strat/textures/teutonic_general_teutonic.tga
-model_flexi_m			models_strat/teutonic_general.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
 type				teutonic_grand_master
@@ -869,7 +918,6 @@ texture				cumans, models_strat/textures/crusader_captain_aztecs.tga
 ;texture				lithuania, models_strat/textures/crusader_captain_lithuania.tga
 texture				lithuania, models_strat/textures/crusader_captain_byzantium.tga
 texture				teutonic_order, models_strat/textures/crusader_captain_teutonics.tga
-texture				slave, models_strat/textures/crusader_captain_rebels.tga
 texture				byzantium, models_strat/textures/crusader_captain_byzantium.tga
 texture				sicily, models_strat/textures/crusader_captain_sicily.tga
 texture				aragon, models_strat/textures/crusader_captain_aragon.tga
@@ -877,6 +925,7 @@ texture				spain, models_strat/textures/crusader_captain_spain.tga
 texture				portugal, models_strat/textures/crusader_captain_portugal.tga
 texture				russia, models_strat/textures/crusader_captain_russia.tga
 texture				kievan_rus, models_strat/textures/crusader_captain_kievan.tga
+texture				slave, models_strat/textures/crusader_captain_rebels.tga
 model_flexi_m			models_strat/crusader_captain.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 

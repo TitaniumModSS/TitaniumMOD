@@ -8755,6 +8755,9 @@ Ancillary hre_elector_metz ; Archbishop of Trier
 ; Image tokus_heir_orb.tga
 ; Description hre_elector_orb_desc
 ; EffectsDescription hre_elector_orb_effects_desc
+;	Effect Loyalty 4 
+;	Effect LocalPopularity 2 
+;	Effect TroopMorale  1 
 ;------------------------------------------ 
 ;------------------------------------------ 
 Ancillary byzantium_heir_orb
@@ -8763,19 +8766,21 @@ Ancillary byzantium_heir_orb
  Image tokus_heir_orb.tga
  Description byzantium_heir_orb_desc
  EffectsDescription byzantium_heir_orb_effects_desc
+	Effect Loyalty 4 
+	Effect LocalPopularity 2 
+	Effect TroopMorale  1 
 ;------------------------------------------ 
 ;NHM
 ;------------------------------------------
 Ancillary Heir_Crown 
 	Type NextHeirCrown
 	Transferable  1
-	Image tokus_kingmaker.tga
+	Image NHA_ring.tga
 	Description Heir_Crown_desc
 	EffectsDescription Heir_Crown_effects_desc
-;	Effect Loyalty 2 
-;	Effect Authority 8 
-;	Effect LocalPopularity 2 
-;	Effect TroopMorale  1 
+	Effect Loyalty 4 
+	Effect LocalPopularity 2 
+	Effect TroopMorale  1 
 
 ;------------------------------------------
 ;**************************************************
@@ -9470,8 +9475,7 @@ Trigger averroes_anc_trigger
  and SettlementBuildingExists >= library 
  and SettlementBuildingExists >= school 
  and CultureType middle_eastern 
- and I_TurnNumber >= 70 
- and I_TurnNumber <= 118 
+ and I_EventCounter averroes_in = 1
  
  AcquireAncillary averroes chance 100 
 ;------------------------------------------ 
@@ -9482,8 +9486,7 @@ Trigger maimonides_anc_trigger
  and SettlementBuildingExists >= library
  and SettlementBuildingExists >= school
  and CultureType middle_eastern
- and I_TurnNumber >= 70
- and I_TurnNumber <= 124
+ and I_EventCounter maimonides_in = 1
  
  AcquireAncillary maimonides chance 100 
 ;------------------------------------------ 
@@ -9494,8 +9497,7 @@ Trigger ptochoprodromus_anc_trigger
  and SettlementName Constantinople
  and SettlementBuildingExists >= library
  and CultureType greek
- and I_TurnNumber >= 40
- and I_TurnNumber <= 86
+ and I_EventCounter ptochoprodromus_in = 1
 
  AcquireAncillary ptochoprodromus chance 20 
 ;------------------------------------------
@@ -9572,7 +9574,7 @@ Trigger merchant_book_mercatura
  WhenToTest AgentCreated 
  Condition AgentType = merchant 
  and SettlementBuildingExists >= library 
- and I_TurnNumber >= 260 
+ and I_EventCounter world_is_round > 0 
  
  AcquireAncillary mercatura chance 25 
 ;------------------------------------------ 
@@ -9581,7 +9583,7 @@ Trigger merchant_book_rihla
  Condition AgentType = merchant 
  and SettlementBuildingExists >= library 
  and CultureType middle_eastern 
- and I_TurnNumber >= 270 
+ and I_EventCounter HANDGUN > 0 
  
  AcquireAncillary rihla chance 25 
 ;------------------------------------------ 
@@ -9590,7 +9592,7 @@ Trigger merchant_book_rihla
  Condition AgentType = merchant 
  and SettlementBuildingExists >= library 
  and not CultureType middle_eastern 
- and I_TurnNumber >= 320 
+ and I_EventCounter world_is_round > 0 
  
  AcquireAncillary rihla chance 15 
 ;------------------------------------------ 
@@ -28584,51 +28586,6 @@ Trigger Heir_Crown_Trigger
 ;******************************************
 ;CRUSADER STATES HEREDITARY TITLES
 ;******************************************
-;------------------------------------------
-;Starting Ancillary Titles, Different for Late Era
-;------------------------------------------
-Trigger crusader_jerusalem_trigger_start
- WhenToTest CharacterTurnStart
- Condition IsFactionLeader
- and I_TurnNumber < 1
- and not I_EventCounter lateran_council4 > 0
- and FactionType jerusalem
- 
- AcquireAncillary crusader_jerusalem chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_antioch_trigger_start
- WhenToTest CharacterTurnStart
- Condition IsGeneral
- and I_TurnNumber < 1
- and HasAncType Relic
- and not I_EventCounter lateran_council4 > 0
- and FactionType jerusalem
- 
- AcquireAncillary crusader_antioch chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_edessa_trigger_start
- WhenToTest CharacterTurnStart
- Condition IsFactionHeir
- and I_TurnNumber < 1
- and not I_EventCounter lateran_council4 > 0
- and FactionType jerusalem
- 
- AcquireAncillary crusader_edessa chance 100 
- 
-;------------------------------------------ 
-Trigger crusader_tortosa_trigger_start
- WhenToTest CharacterTurnStart
- Condition IsGeneral
- and I_TurnNumber < 1
- and HasAncType Military
- and not I_EventCounter lateran_council4 > 0
- and FactionType jerusalem
- 
- AcquireAncillary crusader_tortosa chance 100 
- 
-;------------------------------------------ 
 ;------------------------------------------ 
 Trigger crusader_jerusalem_inherited1_trigger
  WhenToTest FatherDiesNatural

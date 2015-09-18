@@ -152,7 +152,7 @@ Thorn_Province
 	lithuania
 	Polabian_Rebels
 	41 41 203
-	poland, teutonic_knights_chapter_house, teutonic_hq
+	poland, lithuania, teutonic_knights_chapter_house, teutonic_hq
 	5
 	5
 	religions { catholic 40 orthodox 0 islam 0 pagan 55 heretic 5 }
@@ -170,7 +170,7 @@ Stettin_Province
 	lithuania
 	Polabian_Rebels
 	203 41 232
-	hre, no_pirates, teutonic_knights_chapter_house
+	hre, lithuania, poland, no_pirates, teutonic_knights_chapter_house
 	5
 	4
 	religions { catholic 40 orthodox 0 islam 0 pagan 55 heretic 5 }
@@ -212,10 +212,10 @@ Magdeburg_Province
 	religions { catholic 85 orthodox 0 islam 0 pagan 12 heretic 3 }
 Halych_Province
 	Halych
-	poland
-	Polish_Rebels
+	kievan_rus
+	Rus_Rebels
 	78 232 51
-	poland
+	poland, kievan_rus
 	5
 	4
 	religions { catholic 75 orthodox 6 islam 0 pagan 17 heretic 2 }
@@ -242,7 +242,7 @@ Wroclaw_Province
 	poland
 	Silesian_Rebels
 	141 160 233
-	poland, river
+	poland, lithuania, river
 	5
 	4
 	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
@@ -993,7 +993,7 @@ Sinop_Province
 	5
 	4
 	religions { catholic 0 orthodox 20 islam 70 pagan 10 heretic 0 }
-Belgrade_Province; Naissus 
+Belgrade_Province; Naissus
 	Belgrade; Nysos ; City
 	hungary
 	Serbian_Rebels
@@ -1308,15 +1308,15 @@ Burgos_Province
 	5
 	5
 	religions { catholic 65 orthodox 0 islam 25 pagan 5 heretic 5 }
-Mensk_Province
-	Mensk
-	lithuania
+Mensk_Province; Zhytkavichy
+	Mensk; Turov
+	kievan_rus
 	Rus_Rebels
 	222 90 37
-	lithuania
+	kievan_rus, river
 	5
 	5
-	religions { catholic 0 orthodox 60 islam 6 pagan 34 heretic 0 }
+	religions { catholic 3 orthodox 67 islam 0 pagan 20 heretic 10 }
 Cologne_Province
 	Cologne
 	hre
@@ -1385,7 +1385,7 @@ Palanga_Province
 	lithuania
 	Prussian_Rebels
 	39 151 47
-	prussia, horde_target, teutonic_knights_chapter_house
+	prussia, lithuania, horde_target, teutonic_knights_chapter_house
 	5
 	5
 	religions { catholic 20 orthodox 5 islam 0 pagan 70 heretic 5 }
@@ -1560,8 +1560,8 @@ Al-Mahdiya_Province
 	5
 	5
 	religions { catholic 0 orthodox 0 islam 90 pagan 10 heretic 0 }
-Zhytomyr_Province
-	Zhytomyr
+Zhytomyr_Province; Volhynia
+	Zhytomyr; Volodymyr
 	kievan_rus
 	Rus_Rebels
 	83 78 127
@@ -1592,7 +1592,7 @@ Damghan_Province; Mecklenburg
 	hre
 	Obodrite_Rebels
 	102 33 85
-	hre, teutonic_knights_chapter_house
+	hre, lithuania, teutonic_knights_chapter_house
 	5
 	5
 	religions { catholic 30 orthodox 0 islam 0 pagan 60 heretic 10 }
@@ -1691,7 +1691,7 @@ Hrodna_Province
 	lithuania
 	Hrodna_Rebels
 	233 39 153
-	lithuania
+	lithuania, poland, kievan_rus
 	5
 	5
 	religions { catholic 20 orthodox 34 islam 0 pagan 45 heretic 1 }
