@@ -6,6 +6,8 @@
 ;* 1) CAMP PREPARE
 ;---- Setup AI
 ;---- Setup Events
+;------ Pirate Cleanup Script
+;------ TEUTONIC AND REPUBLICS DEATH SCRIPT WORKAROUND
 ;* 2) PREPARE FOR NEW FACTION'S TURN
 ;---- Reset counters
 ;---- Whose turn is on?
@@ -39,10 +41,11 @@
 ;---- KINGDOM EMPIRE AND REPUBLICS SCRIPTS
 ;---- Settlements Auto-Rename
 ;---- Re-emerging Factions
-;------ Pirate Cleanup Script
 ;---- Royal Ladies of the Court
 ;---- Faction Leader Religion Excomunication Script
 ;---- Religion Change Script
+;---- DIPLOMACY FACTION DESTROYED WORK AROUND
+;---- Conquered Crowns Script (TBD)
 ;* 8) ADDITIONAL SCRIPTS
 ;---- Hotseat Treasurer
 
@@ -528,27 +531,6 @@ monitor_event PreFactionTurnStart
  terminate_monitor
 end_monitor
 
-;Checking Factions, Settlements, Crusades
-;Used in:
-;	KINGDOM EMPIRE AND REPUBLICS SCRIPTS
-;	Re-Emerging Factions script
-;
-	declare_counter orleans_exists
-	set_event_counter obotrites_exist 0; For use in other files
-	set_event_counter abbasids_exist 0; For use in other files
-	monitor_event PreFactionTurnStart I_TurnNumber = 0
-		if I_SettlementOwner Damghan = lithuania
-			set_event_counter obotrites_exist 1
-		end_if
-		if I_SettlementOwner Baghdad = timurids
-			set_event_counter abbasids_exist 1
-		end_if
-		if I_SettlementOwner Khlynov = france	;Check if Orleans is replacing Khlynov
-			set_counter orleans_exists 1
-		end_if
-		terminate_monitor
-	end_monitor
-
 ;==================== Setup Events ======================
 monitor_event PreFactionTurnStart
 
@@ -601,9 +583,103 @@ monitor_event PreFactionTurnStart
 		end_if
 	end_if
 
+	 ;Crusader States "Historical Character Relocation" for player only
+	 if not I_IsFactionAIControlled jerusalem ; Moves Bertrand de Toulouse and fleet to Toulouse_Province
+		console_command move_character "Bertrand de_Toulouse" 100,157 ;to toulouse province
+		console_command move_character "Claude de_Pise" 102,157 ;to toulouse coast
+		console_command create_unit "Bertrand de_Toulouse" "Knights Hospitaller" 1 1 0 0
+		console_command create_unit "Bertrand de_Toulouse" "Dismounted Knights Hospitaller" 1 1 0 0
+		console_command create_unit "Bertrand de_Toulouse" "Sergeant Spearmen" 2 1 3 0
+		console_command create_unit "Bertrand de_Toulouse" "Pilgrims" 1 0 0 0
+		console_command create_unit "Bertrand de_Toulouse" "Peasant Archers" 1 0 2 0
+		console_command create_unit "Bertrand de_Toulouse" "Crossbow Militia" 1 0 2 0
+		console_command create_unit "Bertrand de_Toulouse" "Pisan and Geonese sailors" 2 3 0 0
+		;Increase rebel Acre garrison if Hard+
+		if I_EventCounter DifficultyLevel = 3
+			console_command create_unit Acre "Turkomans" 1 0 0 0
+			console_command create_unit Acre "ME Spear Militia" 1 0 0 0
+			console_command create_unit Acre "Desert Archers" 1 0 0 0
+		end_if
+		if I_EventCounter DifficultyLevel > 3
+			console_command create_unit Acre "Turkomans" 1 0 0 0
+			console_command create_unit Acre "ME Spear Militia" 2 0 0 0
+			console_command create_unit Acre "Desert Archers" 2 0 0 0
+		end_if
+	 end_if
+	 
+;Checking Factions and Settlements
+;Used in:
+;	KINGDOM EMPIRE AND REPUBLICS SCRIPTS
+;	Re-Emerging Factions script
+;
+	declare_counter orleans_exist
+	set_event_counter obotrites_exist 0; For use in other files
+	set_event_counter abbasids_exist 0; For use in other files
+	if I_SettlementOwner Damghan = lithuania
+		set_event_counter obotrites_exist 1
+	end_if
+	if I_SettlementOwner Baghdad = timurids
+		set_event_counter abbasids_exist 1
+	end_if
+	if I_SettlementOwner Khlynov = france	;Check if Orleans is replacing Khlynov
+		set_counter orleans_exist 1
+	end_if
+
  terminate_monitor
 end_monitor
 
+declare_counter pirate_cleanup
+;declare_counter status_teutonic_order; used in Re-emerging factions script
+set_event_counter status_teutonic_order -1; Faction does not exist at campaign start
+declare_counter status_mongols
+set_counter status_mongols -1; Faction does not exist at campaign start
+declare_counter status_timurids
+set_counter status_timurids -1; Faction does not exist at campaign start
+monitor_event CeasedFactionLeader FactionType teutonic_order
+	set_event_counter status_teutonic_order 0
+end_monitor
+monitor_event BecomesFactionLeader FactionType teutonic_order
+	set_event_counter status_teutonic_order 1
+end_monitor
+monitor_event CeasedFactionLeader FactionType mongols
+	set_counter status_mongols 0
+end_monitor
+monitor_event BecomesFactionLeader FactionType mongols
+	set_counter status_mongols 1
+end_monitor
+monitor_event CeasedFactionLeader FactionType timurids
+	set_counter status_timurids 0
+end_monitor
+monitor_event BecomesFactionLeader FactionType timurids; even if abbasids they'll get this at campaign start
+	set_counter status_timurids 1
+end_monitor
+monitor_event FactionTurnEnd FactionType slave
+	;--- Pirate Cleanup Script --- 
+
+		inc_counter pirate_cleanup 1
+		if I_CompareCounter pirate_cleanup = 20
+			set_counter pirate_cleanup 0
+			destroy_units slave pirate ship
+		end_if
+	;TEUTONIC AND REPUBLICS DEATH SCRIPT WORKAROUND, Might be obsolete needs check
+	;---- Venice ----
+		if I_NumberOfSettlements venice < 1
+			console_command kill_faction venice
+		end_if
+	;---- Genoa ----
+		if I_NumberOfSettlements milan < 1
+			console_command kill_faction milan
+		end_if
+	;---- Novgorod ----
+		if I_NumberOfSettlements russia < 1
+			console_command kill_faction russia
+		end_if
+	;---- Teutonic Order ----
+		if I_EventCounter status_teutonic_order = 0
+		and I_NumberOfSettlements teutonic_order < 1
+			console_command kill_faction teutonic_order
+		end_if
+end_monitor
 
 ;========================================================
 ;********************************************************
@@ -618,7 +694,8 @@ end_monitor
 
 declare_counter new_fturn
 declare_counter christian_faction
-set_event_counter lithuania_catholic 0; Used in descr_faction_standing.txt
+set_event_counter lithuania_catholic 0 ; Used in descr_faction_standing.txt
+set_event_counter PaganLithuania 1 ; Used in the EDU
 
 monitor_event PreFactionTurnStart not IsFactionAIControlled
 	set_counter new_fturn 0
@@ -629,10 +706,7 @@ end_monitor
 monitor_event PreFactionTurnStart
 
 	set_counter turn_fid 0
-	set_event_counter muslim_faction 0
-	set_event_counter pagan_faction 0
-	set_event_counter orthodox_faction 0
-	set_event_counter catholic_faction 0
+	set_event_counter CatholicLithuania 0
 	set_counter christian_faction 0
 
  if I_CompareCounter new_fturn = 1
@@ -694,140 +768,137 @@ declare_counter turn_fid
 
 monitor_event PreFactionTurnStart FactionType egypt
 	set_counter turn_fid 1
-	set_event_counter muslim_faction 1
+	set_counter dead_diplomacy_egypt 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType turks
 	set_counter turn_fid 2
-	set_event_counter muslim_faction 1
+	set_counter dead_diplomacy_turks 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType timurids
 	set_counter turn_fid 3
-	set_event_counter muslim_faction 1
+	set_counter dead_diplomacy_timurids 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType kwarezm
 	set_counter turn_fid 4
-	set_event_counter muslim_faction 1
+	set_counter dead_diplomacy_kwarezm 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType moors
 	set_counter turn_fid 5
-	set_event_counter muslim_faction 1
+	set_counter dead_diplomacy_moors 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType lithuania
 	set_counter turn_fid 6
-	if I_EventCounter lithuania_catholic != 1
-		set_event_counter pagan_faction 1
-	end_if
-	if I_EventCounter lithuania_catholic = 1
-		set_event_counter catholic_faction 1
+	if I_EventCounter lithuania_conversion_accepted = 1
+		set_event_counter CatholicLithuania 1
 		set_counter christian_faction 1
 	end_if
+	set_counter dead_diplomacy_lithuania 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType cumans
 	set_counter turn_fid 7
-	set_event_counter pagan_faction 1
+	set_counter dead_diplomacy_cumans 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType mongols
 	set_counter turn_fid 8
-	set_event_counter pagan_faction 1
+	set_counter dead_diplomacy_mongols 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType byzantium
 	set_counter turn_fid 9
-	set_event_counter orthodox_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_byzantium 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType russia
 	set_counter turn_fid 10
-	set_event_counter orthodox_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_russia 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType kievan_rus
 	set_counter turn_fid 11
-	set_event_counter orthodox_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_kievan_rus 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType venice
 	set_counter turn_fid 12
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_venice 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType sicily
 	set_counter turn_fid 13
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_sicily 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType milan
 	set_counter turn_fid 14
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_milan 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType denmark
 	set_counter turn_fid 15
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_denmark 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType scotland
 	set_counter turn_fid 16
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_scotland 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType france
 	set_counter turn_fid 17
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_france 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType hre
 	set_counter turn_fid 18
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_hre 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType england
 	set_counter turn_fid 19
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_england 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType portugal
 	set_counter turn_fid 20
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_portugal 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType poland
 	set_counter turn_fid 21
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_poland 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType spain
 	set_counter turn_fid 22
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_spain 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType hungary
 	set_counter turn_fid 23
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_hungary 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType aragon
 	set_counter turn_fid 24
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_aragon 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType teutonic_order
 	set_counter turn_fid 25
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_teutonic_order 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType norway
 	set_counter turn_fid 26
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_norway 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType jerusalem
 	set_counter turn_fid 27
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
+	set_counter dead_diplomacy_jerusalem 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType papal_states
 	set_counter turn_fid 28
-	set_event_counter catholic_faction 1
 	set_counter christian_faction 1
 end_monitor
 
@@ -1263,7 +1334,6 @@ monitor_event FactionTurnStart
 	end
 	add_money turks 8000
  end_if
-
 
  if I_EventCounter DifficultyLevel <= 2
 	if I_IsFactionAIControlled england
@@ -4883,17 +4953,11 @@ end_monitor
 		set_counter jerusalem_anarchy 1
 	end_monitor
 ;TEUTONIC ORDER
-	declare_counter status_teutonic_order; used in Re-emerging factions script
-	set_counter status_teutonic_order -1; Faction does not exist at campaign start
 	monitor_event CeasedFactionLeader FactionType teutonic_order
 		if I_IsFactionAIControlled teutonic_order
 			set_counter teutonic_order_king 1
 		end_if
 		set_counter teutonic_order_anarchy 1
-		set_counter status_teutonic_order 0; used in Re-emerging factions script
-	end_monitor
-	monitor_event BecomesFactionLeader FactionType teutonic_order
-		set_counter status_teutonic_order 1; used in Re-emerging factions script
 	end_monitor
 ;POLAND
 	monitor_event CeasedFactionLeader FactionType poland
@@ -32281,7 +32345,7 @@ add_events
 end_add_events
 
 ;Interests payment included in this monitor
-monitor_event FactionTurnEnd FactionIsLocal
+monitor_event FactionTurnEnd not IsFactionAIControlled
 	;reset to allow loan panel for next turn
 		set_counter finances_panel_open 0
 		set_counter finances_panel_open2 0
@@ -32305,810 +32369,811 @@ monitor_event FactionTurnEnd FactionIsLocal
 	if I_HotseatEnabled
 	;Venice
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount_venice 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount_venice 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount_venice 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount_venice 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount_venice 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount_venice 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Genoa/Milan
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount_milan 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount_milan 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount_milan 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount_milan 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount_milan 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount_milan 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Sicily
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount_sicily 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount_sicily 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount_sicily 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount_sicily 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount_sicily 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount_sicily 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Spain
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount_spain 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount_spain 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount_spain 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount_spain 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount_spain 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount_spain 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Aragon
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount_aragon 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount_aragon 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount_aragon 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount_aragon 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount_aragon 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount_aragon 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Portugal
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount_portugal 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount_portugal 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount_portugal 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount_portugal 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount_portugal 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount_portugal 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Byzantium
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount_byzantium 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount_byzantium 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount_byzantium 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount_byzantium 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount_byzantium 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount_byzantium 5
 			set_counter loan_refund_amount 0
 		end_if
 	;France
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount_france 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount_france 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount_france 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount_france 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount_france 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount_france 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Jerusalem
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount_jerusalem 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount_jerusalem 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount_jerusalem 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount_jerusalem 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount_jerusalem 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount_jerusalem 5
 			set_counter loan_refund_amount 0
 		end_if
 	;HRE
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount_hre 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount_hre 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount_hre 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount_hre 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount_hre 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount_hre 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Teutonic Order
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount_teutonic_order 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount_teutonic_order 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount_teutonic_order 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount_teutonic_order 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount_teutonic_order 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount_teutonic_order 5
 			set_counter loan_refund_amount 0
 		end_if
 	;England
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount_england 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount_england 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount_england 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount_england 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount_england 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount_england 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Scotland
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount_scotland 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount_scotland 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount_scotland 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount_scotland 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount_scotland 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount_scotland 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Denmark
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount_denmark 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount_denmark 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount_denmark 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount_denmark 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount_denmark 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount_denmark 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Norway
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount_norway 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount_norway 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount_norway 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount_norway 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount_norway 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount_norway 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Hungary
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount_hungary 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount_hungary 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount_hungary 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount_hungary 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount_hungary 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount_hungary 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Poland
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount_poland 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount_poland 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount_poland 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount_poland 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount_poland 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount_poland 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Lithuania
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount_lithuania 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount_lithuania 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount_lithuania 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount_lithuania 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount_lithuania 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount_lithuania 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Cumans
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount_cumans 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount_cumans 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount_cumans 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount_cumans 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount_cumans 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount_cumans 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Novgorod/Russia
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount_russia 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount_russia 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount_russia 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount_russia 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount_russia 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount_russia 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Kievan Rus
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount_kievan_rus 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount_kievan_rus 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount_kievan_rus 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount_kievan_rus 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount_kievan_rus 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount_kievan_rus 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Mongols
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount_mongols 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount_mongols 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount_mongols 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount_mongols 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount_mongols 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount_mongols 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Turks
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount_turks 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount_turks 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount_turks 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount_turks 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount_turks 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount_turks 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Egypt
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount_egypt 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount_egypt 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount_egypt 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount_egypt 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount_egypt 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount_egypt 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Kwarezm
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount_kwarezm 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount_kwarezm 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount_kwarezm 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount_kwarezm 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount_kwarezm 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount_kwarezm 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Moors
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount_moors 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount_moors 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount_moors 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount_moors 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount_moors 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount_moors 5
 			set_counter loan_refund_amount 0
 		end_if
 	;Abbasids
 		if I_CompareCounter loan_refund_amount = 0
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount_abbasids 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 1
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount_abbasids 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 2
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount_abbasids 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 3
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount_abbasids 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 4
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount_abbasids 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount = 5
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount_abbasids 5
 			set_counter loan_refund_amount 0
 		end_if
@@ -33124,677 +33189,677 @@ monitor_event PreFactionTurnStart FactionIsLocal
 	if I_HotseatEnabled
 	;Venice
 		if I_CompareCounter loan_refund_amount_venice = 0
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_venice = 1
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_venice = 2
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_venice = 3
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_venice = 4
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_venice = 5
-		and I_LocalFaction venice
+		and I_CompareCounter turn_fid = 12
 			set_counter loan_refund_amount 5
 		end_if
 	;Genoa/Milan
 		if I_CompareCounter loan_refund_amount_milan = 0
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_milan = 1
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_milan = 2
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_milan = 3
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_milan = 4
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_milan = 5
-		and I_LocalFaction milan
+		and I_CompareCounter turn_fid = 14
 			set_counter loan_refund_amount 5
 		end_if
 	;Sicily
 		if I_CompareCounter loan_refund_amount_sicily = 0
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_sicily = 1
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_sicily = 2
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_sicily = 3
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_sicily = 4
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_sicily = 5
-		and I_LocalFaction sicily
+		and I_CompareCounter turn_fid = 13
 			set_counter loan_refund_amount 5
 		end_if
 	;Spain
 		if I_CompareCounter loan_refund_amount_spain = 0
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_spain = 1
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_spain = 2
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_spain = 3
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_spain = 4
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_spain = 5
-		and I_LocalFaction spain
+		and I_CompareCounter turn_fid = 22
 			set_counter loan_refund_amount 5
 		end_if
 	;Aragon
 		if I_CompareCounter loan_refund_amount_aragon = 0
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_aragon = 1
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_aragon = 2
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_aragon = 3
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_aragon = 4
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_aragon = 5
-		and I_LocalFaction aragon
+		and I_CompareCounter turn_fid = 24
 			set_counter loan_refund_amount 5
 		end_if
 	;Portugal
 		if I_CompareCounter loan_refund_amount_portugal = 0
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_portugal = 1
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_portugal = 2
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_portugal = 3
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_portugal = 4
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_portugal = 5
-		and I_LocalFaction portugal
+		and I_CompareCounter turn_fid = 20
 			set_counter loan_refund_amount 5
 		end_if
 	;Byzantium
 		if I_CompareCounter loan_refund_amount_byzantium = 0
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_byzantium = 1
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_byzantium = 2
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_byzantium = 3
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_byzantium = 4
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_byzantium = 5
-		and I_LocalFaction byzantium
+		and I_CompareCounter turn_fid = 9
 			set_counter loan_refund_amount 5
 		end_if
 	;France
 		if I_CompareCounter loan_refund_amount_france = 0
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_france = 1
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_france = 2
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_france = 3
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_france = 4
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_france = 5
-		and I_LocalFaction france
+		and I_CompareCounter turn_fid = 17
 			set_counter loan_refund_amount 5
 		end_if
 	;Jerusalem
 		if I_CompareCounter loan_refund_amount_jerusalem = 0
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_jerusalem = 1
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_jerusalem = 2
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_jerusalem = 3
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_jerusalem = 4
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_jerusalem = 5
-		and I_LocalFaction jerusalem
+		and I_CompareCounter turn_fid = 27
 			set_counter loan_refund_amount 5
 		end_if
 	;HRE
 		if I_CompareCounter loan_refund_amount_hre = 0
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_hre = 1
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_hre = 2
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_hre = 3
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_hre = 4
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_hre = 5
-		and I_LocalFaction hre
+		and I_CompareCounter turn_fid = 18
 			set_counter loan_refund_amount 5
 		end_if
 	;Teutonic Order
 		if I_CompareCounter loan_refund_amount_teutonic_order = 0
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_teutonic_order = 1
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_teutonic_order = 2
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_teutonic_order = 3
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_teutonic_order = 4
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_teutonic_order = 5
-		and I_LocalFaction teutonic_order
+		and I_CompareCounter turn_fid = 25
 			set_counter loan_refund_amount 5
 		end_if
 	;England
 		if I_CompareCounter loan_refund_amount_england = 0
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_england = 1
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_england = 2
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_england = 3
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_england = 4
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_england = 5
-		and I_LocalFaction england
+		and I_CompareCounter turn_fid = 19
 			set_counter loan_refund_amount 5
 		end_if
 	;Scotland
 		if I_CompareCounter loan_refund_amount_scotland = 0
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_scotland = 1
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_scotland = 2
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_scotland = 3
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_scotland = 4
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_scotland = 5
-		and I_LocalFaction scotland
+		and I_CompareCounter turn_fid = 16
 			set_counter loan_refund_amount 5
 		end_if
 	;Denmark
 		if I_CompareCounter loan_refund_amount_denmark = 0
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_denmark = 1
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_denmark = 2
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_denmark = 3
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_denmark = 4
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_denmark = 5
-		and I_LocalFaction denmark
+		and I_CompareCounter turn_fid = 15
 			set_counter loan_refund_amount 5
 		end_if
 	;Norway
 		if I_CompareCounter loan_refund_amount_norway = 0
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_norway = 1
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_norway = 2
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_norway = 3
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_norway = 4
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_norway = 5
-		and I_LocalFaction norway
+		and I_CompareCounter turn_fid = 26
 			set_counter loan_refund_amount 5
 		end_if
 	;Hungary
 		if I_CompareCounter loan_refund_amount_hungary = 0
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_hungary = 1
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_hungary = 2
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_hungary = 3
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_hungary = 4
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_hungary = 5
-		and I_LocalFaction hungary
+		and I_CompareCounter turn_fid = 23
 			set_counter loan_refund_amount 5
 		end_if
 	;Poland
 		if I_CompareCounter loan_refund_amount_poland = 0
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_poland = 1
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_poland = 2
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_poland = 3
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_poland = 4
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_poland = 5
-		and I_LocalFaction poland
+		and I_CompareCounter turn_fid = 21
 			set_counter loan_refund_amount 5
 		end_if
 	;Lithuania
 		if I_CompareCounter loan_refund_amount_lithuania = 0
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_lithuania = 1
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_lithuania = 2
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_lithuania = 3
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_lithuania = 4
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_lithuania = 5
-		and I_LocalFaction lithuania
+		and I_CompareCounter turn_fid = 6
 			set_counter loan_refund_amount 5
 		end_if
 	;Cumans
 		if I_CompareCounter loan_refund_amount_cumans = 0
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_cumans = 1
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_cumans = 2
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_cumans = 3
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_cumans = 4
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_cumans = 5
-		and I_LocalFaction cumans
+		and I_CompareCounter turn_fid = 7
 			set_counter loan_refund_amount 5
 		end_if
 	;Novgorod/Russia
 		if I_CompareCounter loan_refund_amount_russia = 0
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_russia = 1
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_russia = 2
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_russia = 3
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_russia = 4
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_russia = 5
-		and I_LocalFaction russia
+		and I_CompareCounter turn_fid = 10
 			set_counter loan_refund_amount 5
 		end_if
 	;Kievan Rus
 		if I_CompareCounter loan_refund_amount_kievan_rus = 0
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_kievan_rus = 1
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_kievan_rus = 2
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_kievan_rus = 3
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_kievan_rus = 4
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_kievan_rus = 5
-		and I_LocalFaction kievan_rus
+		and I_CompareCounter turn_fid = 11
 			set_counter loan_refund_amount 5
 		end_if
 	;Mongols
 		if I_CompareCounter loan_refund_amount_mongols = 0
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_mongols = 1
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_mongols = 2
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_mongols = 3
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_mongols = 4
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_mongols = 5
-		and I_LocalFaction mongols
+		and I_CompareCounter turn_fid = 8
 			set_counter loan_refund_amount 5
 		end_if
 	;Turks
 		if I_CompareCounter loan_refund_amount_turks = 0
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_turks = 1
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_turks = 2
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_turks = 3
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_turks = 4
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_turks = 5
-		and I_LocalFaction turks
+		and I_CompareCounter turn_fid = 2
 			set_counter loan_refund_amount 5
 		end_if
 	;Egypt
 		if I_CompareCounter loan_refund_amount_egypt = 0
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_egypt = 1
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_egypt = 2
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_egypt = 3
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_egypt = 4
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_egypt = 5
-		and I_LocalFaction egypt
+		and I_CompareCounter turn_fid = 1
 			set_counter loan_refund_amount 5
 		end_if
 	;Kwarezm
 		if I_CompareCounter loan_refund_amount_kwarezm = 0
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_kwarezm = 1
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_kwarezm = 2
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_kwarezm = 3
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_kwarezm = 4
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_kwarezm = 5
-		and I_LocalFaction kwarezm
+		and I_CompareCounter turn_fid = 4
 			set_counter loan_refund_amount 5
 		end_if
 	;Moors
 		if I_CompareCounter loan_refund_amount_moors = 0
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_moors = 1
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_moors = 2
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_moors = 3
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_moors = 4
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_moors = 5
-		and I_LocalFaction moors
+		and I_CompareCounter turn_fid = 5
 			set_counter loan_refund_amount 5
 		end_if
 	;Abbasids
 		if I_CompareCounter loan_refund_amount_abbasids = 0
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount 0
 		end_if
 		if I_CompareCounter loan_refund_amount_abbasids = 1
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount 1
 		end_if
 		if I_CompareCounter loan_refund_amount_abbasids = 2
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount 2
 		end_if
 		if I_CompareCounter loan_refund_amount_abbasids = 3
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount 3
 		end_if
 		if I_CompareCounter loan_refund_amount_abbasids = 4
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount 4
 		end_if
 		if I_CompareCounter loan_refund_amount_abbasids = 5
-		and I_LocalFaction timurids
+		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount 5
 		end_if
 	end_if
@@ -35657,7 +35722,7 @@ declare_counter conversion_tunis
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Khlynov; Orleans
 	and not FactionType france
-	and I_CompareCounter orleans_exists = 1
+	and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 	end_monitor
 ;BRITISH ISLES
@@ -35705,7 +35770,7 @@ declare_counter conversion_tunis
 			add_settlement_turmoil Palermo 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Nykoeping; Florence
-	and I_CompareCounter orleans_exists = 1
+	and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 8
 	end_monitor
 ;IBERIA
@@ -35768,7 +35833,7 @@ declare_counter conversion_tunis
 			add_settlement_turmoil Constantinople 10
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Ryazan; Ras
-	and I_CompareCounter orleans_exists = 1
+	and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Sofia
@@ -35888,7 +35953,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = turks
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -35967,7 +36032,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = turks
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -36048,7 +36113,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = turks
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -36185,7 +36250,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = egypt
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -36264,7 +36329,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = egypt
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -36345,7 +36410,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = egypt
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -36482,7 +36547,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = moors
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -36561,7 +36626,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = moors
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -36642,7 +36707,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = moors
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -36779,7 +36844,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = kwarezm
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -36858,7 +36923,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = kwarezm
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -36939,7 +37004,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = kwarezm
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -37076,7 +37141,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = timurids
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -37155,7 +37220,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = timurids
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -37236,7 +37301,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = timurids
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -37373,7 +37438,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = venice
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -37452,7 +37517,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = venice
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -37533,7 +37598,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = venice
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -37670,7 +37735,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = sicily
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -37749,7 +37814,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = sicily
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -37830,7 +37895,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = sicily
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -37967,7 +38032,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = milan
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -38046,7 +38111,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = milan
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -38127,7 +38192,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = milan
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -38264,7 +38329,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = spain
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -38343,7 +38408,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = spain
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -38424,7 +38489,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = spain
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -38561,7 +38626,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = aragon
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -38640,7 +38705,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = aragon
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -38721,7 +38786,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = aragon
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -38858,7 +38923,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = portugal
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -38937,7 +39002,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = portugal
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -39018,7 +39083,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = portugal
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -39155,7 +39220,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = france
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -39234,7 +39299,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = france
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -39315,7 +39380,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = france
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -39452,7 +39517,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = england
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -39531,7 +39596,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = england
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -39612,7 +39677,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = england
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -39749,7 +39814,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = scotland
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -39828,7 +39893,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = scotland
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -39909,7 +39974,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = scotland
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -40046,7 +40111,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = hre
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -40125,7 +40190,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = hre
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -40206,7 +40271,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = hre
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -40343,7 +40408,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = denmark
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -40422,7 +40487,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = denmark
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -40503,7 +40568,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = denmark
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -40640,7 +40705,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = norway
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -40719,7 +40784,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = norway
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -40800,7 +40865,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = norway
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -40937,7 +41002,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = hungary
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -41016,7 +41081,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = hungary
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -41097,7 +41162,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = hungary
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -41234,7 +41299,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = poland
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -41313,7 +41378,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = poland
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -41394,7 +41459,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = poland
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -41531,7 +41596,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = jerusalem
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -41610,7 +41675,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = jerusalem
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -41691,7 +41756,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = jerusalem
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -41828,7 +41893,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = teutonic_order
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -41907,7 +41972,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = teutonic_order
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -41988,7 +42053,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = teutonic_order
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -42125,7 +42190,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = byzantium
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -42204,7 +42269,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = byzantium
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -42285,7 +42350,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = byzantium
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -42422,7 +42487,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = kievan_rus
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -42501,7 +42566,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = kievan_rus
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -42582,7 +42647,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = kievan_rus
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -42719,7 +42784,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = russia
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -42798,7 +42863,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = russia
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -42879,7 +42944,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = russia
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -43016,7 +43081,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = lithuania
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -43095,7 +43160,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = lithuania
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -43176,7 +43241,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = lithuania
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -43313,7 +43378,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = cumans
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -43392,7 +43457,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = cumans
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -43473,7 +43538,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = cumans
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -43610,7 +43675,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = mongols
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -43689,7 +43754,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = mongols
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -43770,7 +43835,7 @@ declare_counter conversion_tunis
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = mongols
-			and I_CompareCounter orleans_exists = 1
+			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -44275,15 +44340,12 @@ end_monitor
 	declare_counter faction_emerge_id
 	set_counter faction_emerge_id 0
 	
-	declare_counter turn_vlr
-	declare_counter pirate_cleanup; part of Pirate Cleanup script
-	
 	declare_counter me_crusader
 	set_counter me_crusader 0
 	declare_counter eu_crusader
 	set_counter eu_crusader 0
-	declare_counter lithuania_crusade_target
-	set_counter lithuania_crusade_target 0
+	
+	declare_counter turn_vlr
 
 ;Scotland
 	declare_counter edinburgh_riot
@@ -44544,10 +44606,9 @@ end_monitor
 ;giving more chance to the other factions.
 
 ;Global
-	monitor_event CrusadeEnds TrueCondition
+	monitor_event CrusadeEnds
 		set_counter eu_crusader 0
 		set_counter me_crusader 0
-		set_counter lithuania_crusade_target 0	;used in religion conversion script
 	end_monitor
 
 ;Scotland
@@ -45128,34 +45189,34 @@ end_monitor
 ;Jerusalem/Crusader States
 	;Check for Middle East Crusades in Progress
 	monitor_event CrusadeCalled TargetSettlementName Jerusalem
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Antioch
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Acre
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Gaza
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Medina
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Baghdad
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Alexandria
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Cairo
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
-	monitor_event CrusadeCalled TargetSettlementName Demietta
-	    set_event_counter me_crusader 1
+	monitor_event CrusadeCalled TargetSettlementName Damietta
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Constantinople
-	    set_event_counter me_crusader 1
+	    set_counter me_crusader 1
 	end_monitor
 	monitor_event CityRiots SettlementName Rhodes
 	  and I_NumberOfSettlements jerusalem = 0
@@ -45204,20 +45265,20 @@ end_monitor
 ;Teutonic Order
 	;Check for Northern Europe Crusades in Progress
 	monitor_event CrusadeCalled TargetSettlementName Riga
-	    set_event_counter eu_crusader 1
+	    set_counter eu_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Vilnius
-	    set_event_counter eu_crusader 1
+	    set_counter eu_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Frankfurt
-	    set_event_counter eu_crusader 1
+	    set_counter eu_crusader 1
 	end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Vienna
-	    set_event_counter eu_crusader 1
+	    set_counter eu_crusader 1
 	end_monitor
 	monitor_event CityRiots SettlementName Thorn
 	  and I_NumberOfSettlements teutonic_order = 0
-	  and I_CompareCounter status_teutonic_order = 0
+	  and I_EventCounter status_teutonic_order = 0
 	  and I_IsFactionAIControlled teutonic_order
 	  and not I_SettlementOwner Thorn = teutonic_order
 	  and I_CrusadeInProgress
@@ -45228,7 +45289,7 @@ end_monitor
 	end_monitor
 	monitor_event CityRiots SettlementName Palanga
 	  and I_NumberOfSettlements teutonic_order = 0
-	  and I_CompareCounter status_teutonic_order = 0
+	  and I_EventCounter status_teutonic_order = 0
 	  and I_IsFactionAIControlled teutonic_order
 	  and not I_SettlementOwner Palanga = teutonic_order
 	  and I_CrusadeInProgress
@@ -45239,7 +45300,7 @@ end_monitor
 	end_monitor
 	monitor_event CityRiots SettlementName Riga
 	  and I_NumberOfSettlements teutonic_order = 0
-	  and I_CompareCounter status_teutonic_order = 0
+	  and I_EventCounter status_teutonic_order = 0
 	  and I_IsFactionAIControlled teutonic_order
 	  and not I_SettlementOwner Riga = teutonic_order
 	  and I_CrusadeInProgress
@@ -45276,120 +45337,140 @@ end_monitor
 		if I_SettlementOwner Edinburgh = slave
 		and I_NumberOfSettlements scotland = 0
 		and I_CompareCounter scotland_emerge = 0
+		and RandomPercent > 50
 			set_counter edinburgh_riot 1
 			set_counter faction_emerge_id 1
 		end_if
 		if I_SettlementOwner Venice = slave
 		and I_NumberOfSettlements venice = 0
 		and I_CompareCounter venice_emerge = 0
+		and RandomPercent > 50
 			set_counter venice_riot 1
 			set_counter faction_emerge_id 2
 		end_if
 		if I_SettlementOwner Palermo = slave
 		and I_NumberOfSettlements sicily = 0
 		and I_CompareCounter sicily_emerge = 0
+		and RandomPercent > 50
 			set_counter palermo_riot 1
 			set_counter faction_emerge_id 3
 		end_if
 		if I_SettlementOwner Genoa = slave
 		and I_NumberOfSettlements milan = 0
 		and I_CompareCounter milan_emerge = 0
+		and RandomPercent > 50
 			set_counter genoa_riot 1
 			set_counter faction_emerge_id 4
 		end_if
 		if I_SettlementOwner Arhus = slave
 		and I_NumberOfSettlements denmark = 0
 		and I_CompareCounter denmark_emerge = 0
+		and RandomPercent > 50
 			set_counter arhus_riot 1
 			set_counter faction_emerge_id 5
 		end_if
 		if I_SettlementOwner Jaiksk = slave
 		and I_NumberOfSettlements cumans = 0
 		and I_CompareCounter cumans_emerge = 0
+		and RandomPercent > 50
 			set_counter jaiksk_riot 1
 			set_counter faction_emerge_id 6
 		end_if
 		if I_SettlementOwner Caesarea = slave
 		and I_NumberOfSettlements turks = 0
 		and I_CompareCounter turks_emerge = 0
+		and RandomPercent > 50
 			set_counter caesarea_riot 1
 			set_counter faction_emerge_id 7
 		end_if
 		if I_SettlementOwner Paris = slave
 		and I_NumberOfSettlements france = 0
 		and I_CompareCounter france_emerge = 0
+		and RandomPercent > 50
 			set_counter paris_riot 1
 			set_counter faction_emerge_id 8
 		end_if
 		if I_SettlementOwner Frankfurt = slave
 		and I_NumberOfSettlements hre = 0
 		and I_CompareCounter hre_emerge = 0
+		and RandomPercent > 50
 			set_counter frankfurt_riot 1
 			set_counter faction_emerge_id 9
 		end_if
 		if I_SettlementOwner Vienna = slave
 		and I_NumberOfSettlements hre = 0
 		and I_CompareCounter hre_emerge = 0
+		and RandomPercent > 50
 			set_counter vienna_riot 1
 			set_counter faction_emerge_id 9
 		end_if
 		if I_SettlementOwner London = slave
 		and I_NumberOfSettlements england = 0
 		and I_CompareCounter england_emerge = 0
+		and RandomPercent > 50
 			set_counter london_riot 1
 			set_counter faction_emerge_id 10
 		end_if
 		if I_SettlementOwner Oporto = slave
 		and I_NumberOfSettlements portugal = 0
 		and I_CompareCounter portugal_emerge = 0
+		and RandomPercent > 50
 			set_counter oporto_riot 1
 			set_counter faction_emerge_id 11
 		end_if
 		if I_SettlementOwner Krakow = slave
 		and I_NumberOfSettlements poland = 0
 		and I_CompareCounter poland_emerge = 0
+		and RandomPercent > 50
 			set_counter krakow_riot 1
 			set_counter faction_emerge_id 12
 		end_if
 		if I_SettlementOwner Constantinople = slave
 		and I_NumberOfSettlements byzantium = 0
 		and I_CompareCounter byzantium_emerge = 0
+		and RandomPercent > 50
 			set_counter constantinople_riot 1
 			set_counter faction_emerge_id 13
 		end_if
 		if I_SettlementOwner Nicaea = slave
 		and I_NumberOfSettlements byzantium = 0
 		and I_CompareCounter byzantium_emerge = 0
+		and RandomPercent > 50
 			set_counter nicaea_riot 1
 			set_counter faction_emerge_id 13
 		end_if
 		if I_SettlementOwner Marrakesh = slave
 		and I_NumberOfSettlements moors = 0
 		and I_CompareCounter moors_emerge = 0
+		and RandomPercent > 50
 			set_counter marrakesh_riot 1
 			set_counter faction_emerge_id 14
 		end_if
 		if I_SettlementOwner Novgorod = slave
 		and I_NumberOfSettlements russia = 0
 		and I_CompareCounter russia_emerge = 0
+		and RandomPercent > 50
 			set_counter novgorod_riot 1
 			set_counter faction_emerge_id 15
 		end_if
 		if I_SettlementOwner Toledo = slave
 		and I_NumberOfSettlements spain = 0
 		and I_CompareCounter spain_emerge = 0
+		and RandomPercent > 50
 			set_counter toledo_riot 1
 			set_counter faction_emerge_id 16
 		end_if
 		if I_SettlementOwner Esztergom = slave
 		and I_NumberOfSettlements hungary = 0
 		and I_CompareCounter hungary_emerge = 0
+		and RandomPercent > 50
 			set_counter esztergom_riot 1
 			set_counter faction_emerge_id 17
 		end_if
 		if I_SettlementOwner Zaragoza = slave
 		and I_NumberOfSettlements aragon = 0
 		and I_CompareCounter aragon_emerge = 0
+		and RandomPercent > 50
 			set_counter zaragoza_riot 1
 			set_counter faction_emerge_id 18
 		end_if
@@ -45397,6 +45478,7 @@ end_monitor
 		and I_EventCounter obotrites_exist != 1
 		and I_NumberOfSettlements lithuania = 0
 		and I_CompareCounter lithuania_emerge = 0
+		and RandomPercent > 50
 			set_counter vilnius_riot 1
 			set_counter faction_emerge_id 19
 		end_if
@@ -45404,43 +45486,50 @@ end_monitor
 		and I_EventCounter obotrites_exist = 1
 		and I_NumberOfSettlements lithuania = 0
 		and I_CompareCounter lithuania_emerge = 0
+		and RandomPercent > 50
 			set_counter lubeck_riot 1
 			set_counter faction_emerge_id 19
 		end_if
 		if I_SettlementOwner Kiev = slave
 		and I_NumberOfSettlements kievan_rus = 0
 		and I_CompareCounter kievan_rus_emerge = 0
+		and RandomPercent > 50
 			set_counter kiev_riot 1
 			set_counter faction_emerge_id 20
 		end_if
 		if I_SettlementOwner Bergen = slave
 		and I_NumberOfSettlements norway = 0
 		and I_CompareCounter norway_emerge = 0
+		and RandomPercent > 50
 			set_counter bergen_riot 1
 			set_counter faction_emerge_id 21
 		end_if
 		if I_SettlementOwner Urgench = slave
 		and I_NumberOfSettlements kwarezm = 0
 		and I_CompareCounter kwarezm_emerge = 0
+		and RandomPercent > 50
 			set_counter urgench_riot 1
 			set_counter faction_emerge_id 22
 		end_if
 		if I_SettlementOwner Cairo = slave
 		and I_NumberOfSettlements egypt = 0
 		and I_CompareCounter egypt_emerge = 0
+		and RandomPercent > 50
 			set_counter cairo_riot 1
 			set_counter faction_emerge_id 23
 		end_if
 		if I_SettlementOwner Acre = slave
 		and I_NumberOfSettlements jerusalem = 0
 		and I_CompareCounter jerusalem_emerge = 0
+		and RandomPercent > 50
 			set_counter acre_riot 1
 			set_counter faction_emerge_id 24
 		end_if
 		if I_SettlementOwner Thorn = slave
 		and I_NumberOfSettlements teutonic_order = 0
-		and I_CompareCounter status_teutonic_order = 0
+		and I_EventCounter status_teutonic_order = 0
 		and I_CompareCounter teutonic_order_emerge = 0
+		and RandomPercent > 50
 			set_counter thorn_riot 1
 			set_counter faction_emerge_id 25
 		end_if
@@ -45448,6 +45537,7 @@ end_monitor
 		and I_NumberOfSettlements timurids = 0
 		and I_EventCounter abbasids_exist = 1
 		and I_CompareCounter abbasids_emerge = 0
+		and RandomPercent > 50
 			set_counter baghdad_riot 1
 			set_counter faction_emerge_id 26
 		end_if
@@ -45458,36 +45548,11 @@ end_monitor
 ;------------------------------------------------------------------
 
 ;Global
+;monitor_event FactionTurnEnd FactionType slave ; For normalizing emerge counters every turn regardless if a faction emerged or not
+;	set_counter turn_vlr 1
+;if I_CompareCounter faction_emerge_id >= 1
 monitor_event FactionTurnEnd FactionType slave
-	;NON RE-EMERGING scripts merged here to not repeat another monitor
-	;--- Pirate Cleanup Script --- 
-
-		inc_counter pirate_cleanup 1
-		if I_CompareCounter pirate_cleanup = 20
-			set_counter pirate_cleanup 0
-			destroy_units slave pirate ship
-		end_if
-	;TEUTONIC AND REPUBLICS DEATH SCRIPT WORKAROUND, Might be obsolete needs check
-	;---- Venice ----
-		if I_NumberOfSettlements venice < 1
-			console_command kill_faction venice
-		end_if
-	;---- Genoa ----
-		if I_NumberOfSettlements milan < 1
-			console_command kill_faction milan
-		end_if
-	;---- Novgorod ----
-		if I_NumberOfSettlements russia < 1
-			console_command kill_faction russia
-		end_if
-	;---- Teutonic Order ----
-		if I_CompareCounter status_teutonic_order = 0
-		and I_NumberOfSettlements teutonic_order < 1
-			console_command kill_faction teutonic_order
-		end_if
-
-	set_counter turn_vlr 1
-if I_CompareCounter faction_emerge_id >= 1
+and I_CompareCounter faction_emerge_id >= 1
 	set_counter ros_po_building 1
 	console_command create_building Oslo ros_po_bonus
 	console_command create_building Nykoeping ros_po_bonus
@@ -56960,16 +57025,17 @@ if I_CompareCounter faction_emerge_id >= 1
 	add_money timurids 40000
   end_if
   set_counter faction_emerge_id 0
-end_if
+;end_if
 end_monitor
 
 ;--------------------------------------------------------------------------------
 ;---------------------Destroy PO Buildings, Reset Counter------------------------
 ;--------------------------------------------------------------------------------
 
-monitor_event PreFactionTurnStart I_CompareCounter turn_vlr = 1
-	set_counter turn_vlr 0
-	if I_CompareCounter ros_po_building = 1
+;monitor_event PreFactionTurnStart I_CompareCounter turn_vlr = 1 ; For normalizing emerge counters every turn regardless if a faction emerged or not
+;	set_counter turn_vlr 0
+;	if I_CompareCounter ros_po_building = 1
+monitor_event PreFactionTurnStart I_CompareCounter ros_po_building = 1
 		destroy_buildings venice ros_temp_buildings false
 		destroy_buildings sicily ros_temp_buildings false
 		destroy_buildings milan ros_temp_buildings false
@@ -57030,7 +57096,7 @@ monitor_event PreFactionTurnStart I_CompareCounter turn_vlr = 1
 		destroy_buildings timurids ros_temp_buildings false
 		destroy_buildings slave ros_temp_buildings false
 		set_counter ros_po_building 0
-	end_if
+	;end_if
 	;Normalize emerge counters
 		if I_CompareCounter scotland_emerge > 0
 			inc_counter scotland_emerge -1
@@ -57398,41 +57464,62 @@ monitor_event FactionTurnStart FactionType papal_states
 end_monitor
 
 ;==================================================================================;
-;-------------------------- ;Religion Change Script -------------------------;
+;-------------------------- Religion Change Script -------------------------;
 ;==================================================================================;
 
+declare_counter convert_lithuania
+set_counter convert_lithuania 5
+declare_counter lithuania_crusade_target
+set_counter lithuania_crusade_target 0
+monitor_event CrusadeEnds IsCrusade
+	set_counter lithuania_crusade_target 0
+end_monitor
 monitor_event CrusadeCalled TargetFactionType lithuania
+	and IsCrusade
+
+	if I_EventCounter lithuania_catholic = 1 ;that is, lithuania excommunicated
+		terminate_monitor
+	end_if
+
 	set_counter lithuania_crusade_target 1
 end_monitor
 monitor_event FactionTurnStart FactionType lithuania
 	and I_CompareCounter lithuania_crusade_target = 0
+	and I_FactionLeaderTrait lithuania Catholic >= 1
+	
 	if I_EventCounter lithuania_catholic = 1
 		terminate_monitor
 	end_if
 	
-	if I_IsFactionAIControlled lithuania
-	and I_FactionLeaderTrait lithuania Catholic >= 1
-	and I_NumberOfSettlements lithuania > 3
-	and RandomPercent > 50
-		set_event_counter lithuania_conversion_accepted 1
-		terminate_monitor
-	end_if
+	inc_counter convert_lithuania 1
 	
-	if not I_IsFactionAIControlled lithuania
-	and I_FactionLeaderTrait lithuania Catholic >= 1
-	and I_NumberOfSettlements lithuania > 3
+	if I_NumberOfSettlements lithuania > 3
+	and I_CompareCounter convert_lithuania >= 5; asked every 5 turns at max
 	and RandomPercent > 50
+		set_counter convert_lithuania 0
+		if I_IsFactionAIControlled lithuania
+			set_event_counter lithuania_conversion_accepted 1
+			terminate_monitor
+		end_if
 		historic_event lithuania_conversion true factions { lithuania, }
 	end_if
 	
 end_monitor
 monitor_event EventCounter EventCounterType lithuania_conversion_accepted
-and EventCounter = 1
+
 	;Convert the people
 	set_religion lithuania catholic
 	change_population_religion lithuania catholic 40 pagan
-	set_event_counter pagan_faction 0
-	set_event_counter catholic_faction 1
+	set_event_counter CatholicLithuania 1
+	set_event_counter PaganLithuania 0
+	
+	;Destroy the pagan buildings
+	destroy_buildings lithuania temple_dievas true
+	destroy_buildings lithuania temple_dievas_castle true
+	destroy_buildings lithuania temple_perkunas true
+	destroy_buildings lithuania temple_perkunas_castle true
+	destroy_buildings lithuania temple_giltine true
+	destroy_buildings lithuania temple_giltine_castle true
 	
 	;Disband the pagan units
 	retire_characters Lithuania priest
@@ -57445,14 +57532,886 @@ and EventCounter = 1
 		link_faction_ai lithuania catholic
 	end_if
 	
+	;Improve relations with the pope
+	set_faction_standing papal_states lithuania 0.0 ; they still have to prove they're "good christians"
+	
 	terminate_monitor
 end_monitor
-monitor_event EventCounter EventCounterType lithuania_conversion_declined
-and EventCounter = 1
-	set_event_counter lithuania_conversion_declined 0
+
+;--- DIPLOMACY FACTION DESTROYED WORK AROUND ---
+	declare_counter dead_diplomacy_venice
+	declare_counter dead_diplomacy_sicily
+	declare_counter dead_diplomacy_milan
+	;declare_counter dead_diplomacy_papal_states ; teh pope always respawn
+	declare_counter dead_diplomacy_denmark
+	declare_counter dead_diplomacy_egypt
+	declare_counter dead_diplomacy_scotland
+	declare_counter dead_diplomacy_cumans
+	declare_counter dead_diplomacy_mongols
+	declare_counter dead_diplomacy_turks
+	declare_counter dead_diplomacy_france
+	declare_counter dead_diplomacy_hre
+	declare_counter dead_diplomacy_england
+	declare_counter dead_diplomacy_portugal
+	declare_counter dead_diplomacy_poland
+	declare_counter dead_diplomacy_byzantium
+	declare_counter dead_diplomacy_moors
+	declare_counter dead_diplomacy_russia
+	declare_counter dead_diplomacy_spain
+	declare_counter dead_diplomacy_hungary
+	declare_counter dead_diplomacy_aragon
+	declare_counter dead_diplomacy_lithuania
+	declare_counter dead_diplomacy_kievan_rus
+	declare_counter dead_diplomacy_teutonic_order
+	declare_counter dead_diplomacy_timurids
+	declare_counter dead_diplomacy_norway
+	declare_counter dead_diplomacy_jerusalem
+	declare_counter dead_diplomacy_kwarezm
+monitor_event FactionTurnEnd FactionType slave
+	if I_NumberOfSettlements venice < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_venice != 1
+		set_counter dead_diplomacy_venice 1
+		console_command diplomatic_stance sicily venice neutral
+		console_command diplomatic_stance milan venice neutral
+		console_command diplomatic_stance spain venice neutral
+		console_command diplomatic_stance portugal venice neutral
+		console_command diplomatic_stance aragon venice neutral
+		console_command diplomatic_stance hre venice neutral
+		console_command diplomatic_stance france venice neutral
+		console_command diplomatic_stance england venice neutral
+		console_command diplomatic_stance scotland venice neutral
+		console_command diplomatic_stance denmark venice neutral
+		console_command diplomatic_stance norway venice neutral
+		console_command diplomatic_stance poland venice neutral
+		console_command diplomatic_stance hungary venice neutral
+		console_command diplomatic_stance jerusalem venice neutral
+		console_command diplomatic_stance teutonic_order venice neutral
+		console_command diplomatic_stance byzantium venice neutral
+		console_command diplomatic_stance russia venice neutral
+		console_command diplomatic_stance kievan_rus venice neutral
+		console_command diplomatic_stance turks venice neutral
+		console_command diplomatic_stance egypt venice neutral
+		console_command diplomatic_stance moors venice neutral
+		console_command diplomatic_stance kwarezm venice neutral
+		console_command diplomatic_stance lithuania venice neutral
+		console_command diplomatic_stance cumans venice neutral
+		console_command diplomatic_stance mongols venice neutral
+		console_command diplomatic_stance timurids venice neutral
+		console_command diplomatic_stance papal_states venice neutral
+	end_if
+	if I_NumberOfSettlements sicily < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_sicily != 1
+		set_counter dead_diplomacy_sicily 1
+		console_command diplomatic_stance venice sicily neutral
+		console_command diplomatic_stance milan sicily neutral
+		console_command diplomatic_stance spain sicily neutral
+		console_command diplomatic_stance portugal sicily neutral
+		console_command diplomatic_stance aragon sicily neutral
+		console_command diplomatic_stance hre sicily neutral
+		console_command diplomatic_stance france sicily neutral
+		console_command diplomatic_stance england sicily neutral
+		console_command diplomatic_stance scotland sicily neutral
+		console_command diplomatic_stance denmark sicily neutral
+		console_command diplomatic_stance norway sicily neutral
+		console_command diplomatic_stance poland sicily neutral
+		console_command diplomatic_stance hungary sicily neutral
+		console_command diplomatic_stance jerusalem sicily neutral
+		console_command diplomatic_stance teutonic_order sicily neutral
+		console_command diplomatic_stance byzantium sicily neutral
+		console_command diplomatic_stance russia sicily neutral
+		console_command diplomatic_stance kievan_rus sicily neutral
+		console_command diplomatic_stance turks sicily neutral
+		console_command diplomatic_stance egypt sicily neutral
+		console_command diplomatic_stance moors sicily neutral
+		console_command diplomatic_stance kwarezm sicily neutral
+		console_command diplomatic_stance lithuania sicily neutral
+		console_command diplomatic_stance cumans sicily neutral
+		console_command diplomatic_stance mongols sicily neutral
+		console_command diplomatic_stance timurids sicily neutral
+		console_command diplomatic_stance papal_states sicily neutral
+	end_if
+	if I_NumberOfSettlements milan < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_milan != 1
+		set_counter dead_diplomacy_milan 1
+		console_command diplomatic_stance venice milan neutral
+		console_command diplomatic_stance sicily milan neutral
+		console_command diplomatic_stance spain milan neutral
+		console_command diplomatic_stance portugal milan neutral
+		console_command diplomatic_stance aragon milan neutral
+		console_command diplomatic_stance hre milan neutral
+		console_command diplomatic_stance france milan neutral
+		console_command diplomatic_stance england milan neutral
+		console_command diplomatic_stance scotland milan neutral
+		console_command diplomatic_stance denmark milan neutral
+		console_command diplomatic_stance norway milan neutral
+		console_command diplomatic_stance poland milan neutral
+		console_command diplomatic_stance hungary milan neutral
+		console_command diplomatic_stance jerusalem milan neutral
+		console_command diplomatic_stance teutonic_order milan neutral
+		console_command diplomatic_stance byzantium milan neutral
+		console_command diplomatic_stance russia milan neutral
+		console_command diplomatic_stance kievan_rus milan neutral
+		console_command diplomatic_stance turks milan neutral
+		console_command diplomatic_stance egypt milan neutral
+		console_command diplomatic_stance moors milan neutral
+		console_command diplomatic_stance kwarezm milan neutral
+		console_command diplomatic_stance lithuania milan neutral
+		console_command diplomatic_stance cumans milan neutral
+		console_command diplomatic_stance mongols milan neutral
+		console_command diplomatic_stance timurids milan neutral
+		console_command diplomatic_stance papal_states milan neutral
+	end_if
+	if I_NumberOfSettlements spain < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_spain != 1
+		set_counter dead_diplomacy_spain 1
+		console_command diplomatic_stance venice spain neutral
+		console_command diplomatic_stance sicily spain neutral
+		console_command diplomatic_stance milan spain neutral
+		console_command diplomatic_stance portugal spain neutral
+		console_command diplomatic_stance aragon spain neutral
+		console_command diplomatic_stance hre spain neutral
+		console_command diplomatic_stance france spain neutral
+		console_command diplomatic_stance england spain neutral
+		console_command diplomatic_stance scotland spain neutral
+		console_command diplomatic_stance denmark spain neutral
+		console_command diplomatic_stance norway spain neutral
+		console_command diplomatic_stance poland spain neutral
+		console_command diplomatic_stance hungary spain neutral
+		console_command diplomatic_stance jerusalem spain neutral
+		console_command diplomatic_stance teutonic_order spain neutral
+		console_command diplomatic_stance byzantium spain neutral
+		console_command diplomatic_stance russia spain neutral
+		console_command diplomatic_stance kievan_rus spain neutral
+		console_command diplomatic_stance turks spain neutral
+		console_command diplomatic_stance egypt spain neutral
+		console_command diplomatic_stance moors spain neutral
+		console_command diplomatic_stance kwarezm spain neutral
+		console_command diplomatic_stance lithuania spain neutral
+		console_command diplomatic_stance cumans spain neutral
+		console_command diplomatic_stance mongols spain neutral
+		console_command diplomatic_stance timurids spain neutral
+		console_command diplomatic_stance papal_states spain neutral
+	end_if
+	if I_NumberOfSettlements portugal < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_portugal != 1
+		set_counter dead_diplomacy_portugal 1
+		console_command diplomatic_stance venice portugal neutral
+		console_command diplomatic_stance sicily portugal neutral
+		console_command diplomatic_stance milan portugal neutral
+		console_command diplomatic_stance spain portugal neutral
+		console_command diplomatic_stance aragon portugal neutral
+		console_command diplomatic_stance hre portugal neutral
+		console_command diplomatic_stance france portugal neutral
+		console_command diplomatic_stance england portugal neutral
+		console_command diplomatic_stance scotland portugal neutral
+		console_command diplomatic_stance denmark portugal neutral
+		console_command diplomatic_stance norway portugal neutral
+		console_command diplomatic_stance poland portugal neutral
+		console_command diplomatic_stance hungary portugal neutral
+		console_command diplomatic_stance jerusalem portugal neutral
+		console_command diplomatic_stance teutonic_order portugal neutral
+		console_command diplomatic_stance byzantium portugal neutral
+		console_command diplomatic_stance russia portugal neutral
+		console_command diplomatic_stance kievan_rus portugal neutral
+		console_command diplomatic_stance turks portugal neutral
+		console_command diplomatic_stance egypt portugal neutral
+		console_command diplomatic_stance moors portugal neutral
+		console_command diplomatic_stance kwarezm portugal neutral
+		console_command diplomatic_stance lithuania portugal neutral
+		console_command diplomatic_stance cumans portugal neutral
+		console_command diplomatic_stance mongols portugal neutral
+		console_command diplomatic_stance timurids portugal neutral
+		console_command diplomatic_stance papal_states portugal neutral
+	end_if
+	if I_NumberOfSettlements aragon < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_aragon != 1
+		set_counter dead_diplomacy_aragon 1
+		console_command diplomatic_stance venice aragon neutral
+		console_command diplomatic_stance sicily aragon neutral
+		console_command diplomatic_stance milan aragon neutral
+		console_command diplomatic_stance spain aragon neutral
+		console_command diplomatic_stance portugal aragon neutral
+		console_command diplomatic_stance hre aragon neutral
+		console_command diplomatic_stance france aragon neutral
+		console_command diplomatic_stance england aragon neutral
+		console_command diplomatic_stance scotland aragon neutral
+		console_command diplomatic_stance denmark aragon neutral
+		console_command diplomatic_stance norway aragon neutral
+		console_command diplomatic_stance poland aragon neutral
+		console_command diplomatic_stance hungary aragon neutral
+		console_command diplomatic_stance jerusalem aragon neutral
+		console_command diplomatic_stance teutonic_order aragon neutral
+		console_command diplomatic_stance byzantium aragon neutral
+		console_command diplomatic_stance russia aragon neutral
+		console_command diplomatic_stance kievan_rus aragon neutral
+		console_command diplomatic_stance turks aragon neutral
+		console_command diplomatic_stance egypt aragon neutral
+		console_command diplomatic_stance moors aragon neutral
+		console_command diplomatic_stance kwarezm aragon neutral
+		console_command diplomatic_stance lithuania aragon neutral
+		console_command diplomatic_stance cumans aragon neutral
+		console_command diplomatic_stance mongols aragon neutral
+		console_command diplomatic_stance timurids aragon neutral
+		console_command diplomatic_stance papal_states aragon neutral
+	end_if
+	if I_NumberOfSettlements hre < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_hre != 1
+		set_counter dead_diplomacy_hre 1
+		console_command diplomatic_stance venice hre neutral
+		console_command diplomatic_stance sicily hre neutral
+		console_command diplomatic_stance milan hre neutral
+		console_command diplomatic_stance spain hre neutral
+		console_command diplomatic_stance portugal hre neutral
+		console_command diplomatic_stance aragon hre neutral
+		console_command diplomatic_stance france hre neutral
+		console_command diplomatic_stance england hre neutral
+		console_command diplomatic_stance scotland hre neutral
+		console_command diplomatic_stance denmark hre neutral
+		console_command diplomatic_stance norway hre neutral
+		console_command diplomatic_stance poland hre neutral
+		console_command diplomatic_stance hungary hre neutral
+		console_command diplomatic_stance jerusalem hre neutral
+		console_command diplomatic_stance teutonic_order hre neutral
+		console_command diplomatic_stance byzantium hre neutral
+		console_command diplomatic_stance russia hre neutral
+		console_command diplomatic_stance kievan_rus hre neutral
+		console_command diplomatic_stance turks hre neutral
+		console_command diplomatic_stance egypt hre neutral
+		console_command diplomatic_stance moors hre neutral
+		console_command diplomatic_stance kwarezm hre neutral
+		console_command diplomatic_stance lithuania hre neutral
+		console_command diplomatic_stance cumans hre neutral
+		console_command diplomatic_stance mongols hre neutral
+		console_command diplomatic_stance timurids hre neutral
+		console_command diplomatic_stance papal_states hre neutral
+	end_if
+	if I_NumberOfSettlements france < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_france != 1
+		set_counter dead_diplomacy_france 1
+		console_command diplomatic_stance venice france neutral
+		console_command diplomatic_stance sicily france neutral
+		console_command diplomatic_stance milan france neutral
+		console_command diplomatic_stance spain france neutral
+		console_command diplomatic_stance portugal france neutral
+		console_command diplomatic_stance aragon france neutral
+		console_command diplomatic_stance hre france neutral
+		console_command diplomatic_stance england france neutral
+		console_command diplomatic_stance scotland france neutral
+		console_command diplomatic_stance denmark france neutral
+		console_command diplomatic_stance norway france neutral
+		console_command diplomatic_stance poland france neutral
+		console_command diplomatic_stance hungary france neutral
+		console_command diplomatic_stance jerusalem france neutral
+		console_command diplomatic_stance teutonic_order france neutral
+		console_command diplomatic_stance byzantium france neutral
+		console_command diplomatic_stance russia france neutral
+		console_command diplomatic_stance kievan_rus france neutral
+		console_command diplomatic_stance turks france neutral
+		console_command diplomatic_stance egypt france neutral
+		console_command diplomatic_stance moors france neutral
+		console_command diplomatic_stance kwarezm france neutral
+		console_command diplomatic_stance lithuania france neutral
+		console_command diplomatic_stance cumans france neutral
+		console_command diplomatic_stance mongols france neutral
+		console_command diplomatic_stance timurids france neutral
+		console_command diplomatic_stance papal_states france neutral
+	end_if
+	if I_NumberOfSettlements england < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_england != 1
+		set_counter dead_diplomacy_england 1
+		console_command diplomatic_stance venice england neutral
+		console_command diplomatic_stance sicily england neutral
+		console_command diplomatic_stance milan england neutral
+		console_command diplomatic_stance spain england neutral
+		console_command diplomatic_stance portugal england neutral
+		console_command diplomatic_stance aragon england neutral
+		console_command diplomatic_stance hre england neutral
+		console_command diplomatic_stance france england neutral
+		console_command diplomatic_stance scotland england neutral
+		console_command diplomatic_stance denmark england neutral
+		console_command diplomatic_stance norway england neutral
+		console_command diplomatic_stance poland england neutral
+		console_command diplomatic_stance hungary england neutral
+		console_command diplomatic_stance jerusalem england neutral
+		console_command diplomatic_stance teutonic_order england neutral
+		console_command diplomatic_stance byzantium england neutral
+		console_command diplomatic_stance russia england neutral
+		console_command diplomatic_stance kievan_rus england neutral
+		console_command diplomatic_stance turks england neutral
+		console_command diplomatic_stance egypt england neutral
+		console_command diplomatic_stance moors england neutral
+		console_command diplomatic_stance kwarezm england neutral
+		console_command diplomatic_stance lithuania england neutral
+		console_command diplomatic_stance cumans england neutral
+		console_command diplomatic_stance mongols england neutral
+		console_command diplomatic_stance timurids england neutral
+		console_command diplomatic_stance papal_states england neutral
+	end_if
+	if I_NumberOfSettlements scotland < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_scotland != 1
+		set_counter dead_diplomacy_scotland 1
+		console_command diplomatic_stance venice scotland neutral
+		console_command diplomatic_stance sicily scotland neutral
+		console_command diplomatic_stance milan scotland neutral
+		console_command diplomatic_stance spain scotland neutral
+		console_command diplomatic_stance portugal scotland neutral
+		console_command diplomatic_stance aragon scotland neutral
+		console_command diplomatic_stance hre scotland neutral
+		console_command diplomatic_stance france scotland neutral
+		console_command diplomatic_stance england scotland neutral
+		console_command diplomatic_stance denmark scotland neutral
+		console_command diplomatic_stance norway scotland neutral
+		console_command diplomatic_stance poland scotland neutral
+		console_command diplomatic_stance hungary scotland neutral
+		console_command diplomatic_stance jerusalem scotland neutral
+		console_command diplomatic_stance teutonic_order scotland neutral
+		console_command diplomatic_stance byzantium scotland neutral
+		console_command diplomatic_stance russia scotland neutral
+		console_command diplomatic_stance kievan_rus scotland neutral
+		console_command diplomatic_stance turks scotland neutral
+		console_command diplomatic_stance egypt scotland neutral
+		console_command diplomatic_stance moors scotland neutral
+		console_command diplomatic_stance kwarezm scotland neutral
+		console_command diplomatic_stance lithuania scotland neutral
+		console_command diplomatic_stance cumans scotland neutral
+		console_command diplomatic_stance mongols scotland neutral
+		console_command diplomatic_stance timurids scotland neutral
+		console_command diplomatic_stance papal_states scotland neutral
+	end_if
+	if I_NumberOfSettlements denmark < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_denmark != 1
+		set_counter dead_diplomacy_denmark 1
+		console_command diplomatic_stance venice denmark neutral
+		console_command diplomatic_stance sicily denmark neutral
+		console_command diplomatic_stance milan denmark neutral
+		console_command diplomatic_stance spain denmark neutral
+		console_command diplomatic_stance portugal denmark neutral
+		console_command diplomatic_stance aragon denmark neutral
+		console_command diplomatic_stance hre denmark neutral
+		console_command diplomatic_stance france denmark neutral
+		console_command diplomatic_stance england denmark neutral
+		console_command diplomatic_stance scotland denmark neutral
+		console_command diplomatic_stance norway denmark neutral
+		console_command diplomatic_stance poland denmark neutral
+		console_command diplomatic_stance hungary denmark neutral
+		console_command diplomatic_stance jerusalem denmark neutral
+		console_command diplomatic_stance teutonic_order denmark neutral
+		console_command diplomatic_stance byzantium denmark neutral
+		console_command diplomatic_stance russia denmark neutral
+		console_command diplomatic_stance kievan_rus denmark neutral
+		console_command diplomatic_stance turks denmark neutral
+		console_command diplomatic_stance egypt denmark neutral
+		console_command diplomatic_stance moors denmark neutral
+		console_command diplomatic_stance kwarezm denmark neutral
+		console_command diplomatic_stance lithuania denmark neutral
+		console_command diplomatic_stance cumans denmark neutral
+		console_command diplomatic_stance mongols denmark neutral
+		console_command diplomatic_stance timurids denmark neutral
+		console_command diplomatic_stance papal_states denmark neutral
+	end_if
+	if I_NumberOfSettlements norway < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_norway != 1
+		set_counter dead_diplomacy_norway 1
+		console_command diplomatic_stance venice norway neutral
+		console_command diplomatic_stance sicily norway neutral
+		console_command diplomatic_stance milan norway neutral
+		console_command diplomatic_stance spain norway neutral
+		console_command diplomatic_stance portugal norway neutral
+		console_command diplomatic_stance aragon norway neutral
+		console_command diplomatic_stance hre norway neutral
+		console_command diplomatic_stance france norway neutral
+		console_command diplomatic_stance england norway neutral
+		console_command diplomatic_stance scotland norway neutral
+		console_command diplomatic_stance denmark norway neutral
+		console_command diplomatic_stance poland norway neutral
+		console_command diplomatic_stance hungary norway neutral
+		console_command diplomatic_stance jerusalem norway neutral
+		console_command diplomatic_stance teutonic_order norway neutral
+		console_command diplomatic_stance byzantium norway neutral
+		console_command diplomatic_stance russia norway neutral
+		console_command diplomatic_stance kievan_rus norway neutral
+		console_command diplomatic_stance turks norway neutral
+		console_command diplomatic_stance egypt norway neutral
+		console_command diplomatic_stance moors norway neutral
+		console_command diplomatic_stance kwarezm norway neutral
+		console_command diplomatic_stance lithuania norway neutral
+		console_command diplomatic_stance cumans norway neutral
+		console_command diplomatic_stance mongols norway neutral
+		console_command diplomatic_stance timurids norway neutral
+		console_command diplomatic_stance papal_states norway neutral
+	end_if
+	if I_NumberOfSettlements poland < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_poland != 1
+		set_counter dead_diplomacy_poland 1
+		console_command diplomatic_stance venice poland neutral
+		console_command diplomatic_stance sicily poland neutral
+		console_command diplomatic_stance milan poland neutral
+		console_command diplomatic_stance spain poland neutral
+		console_command diplomatic_stance portugal poland neutral
+		console_command diplomatic_stance aragon poland neutral
+		console_command diplomatic_stance hre poland neutral
+		console_command diplomatic_stance france poland neutral
+		console_command diplomatic_stance england poland neutral
+		console_command diplomatic_stance scotland poland neutral
+		console_command diplomatic_stance denmark poland neutral
+		console_command diplomatic_stance norway poland neutral
+		console_command diplomatic_stance hungary poland neutral
+		console_command diplomatic_stance jerusalem poland neutral
+		console_command diplomatic_stance teutonic_order poland neutral
+		console_command diplomatic_stance byzantium poland neutral
+		console_command diplomatic_stance russia poland neutral
+		console_command diplomatic_stance kievan_rus poland neutral
+		console_command diplomatic_stance turks poland neutral
+		console_command diplomatic_stance egypt poland neutral
+		console_command diplomatic_stance moors poland neutral
+		console_command diplomatic_stance kwarezm poland neutral
+		console_command diplomatic_stance lithuania poland neutral
+		console_command diplomatic_stance cumans poland neutral
+		console_command diplomatic_stance mongols poland neutral
+		console_command diplomatic_stance timurids poland neutral
+		console_command diplomatic_stance papal_states poland neutral
+	end_if
+	if I_NumberOfSettlements hungary < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_hungary != 1
+		set_counter dead_diplomacy_hungary 1
+		console_command diplomatic_stance venice hungary neutral
+		console_command diplomatic_stance sicily hungary neutral
+		console_command diplomatic_stance milan hungary neutral
+		console_command diplomatic_stance spain hungary neutral
+		console_command diplomatic_stance portugal hungary neutral
+		console_command diplomatic_stance aragon hungary neutral
+		console_command diplomatic_stance hre hungary neutral
+		console_command diplomatic_stance france hungary neutral
+		console_command diplomatic_stance england hungary neutral
+		console_command diplomatic_stance scotland hungary neutral
+		console_command diplomatic_stance denmark hungary neutral
+		console_command diplomatic_stance norway hungary neutral
+		console_command diplomatic_stance poland hungary neutral
+		console_command diplomatic_stance jerusalem hungary neutral
+		console_command diplomatic_stance teutonic_order hungary neutral
+		console_command diplomatic_stance byzantium hungary neutral
+		console_command diplomatic_stance russia hungary neutral
+		console_command diplomatic_stance kievan_rus hungary neutral
+		console_command diplomatic_stance turks hungary neutral
+		console_command diplomatic_stance egypt hungary neutral
+		console_command diplomatic_stance moors hungary neutral
+		console_command diplomatic_stance kwarezm hungary neutral
+		console_command diplomatic_stance lithuania hungary neutral
+		console_command diplomatic_stance cumans hungary neutral
+		console_command diplomatic_stance mongols hungary neutral
+		console_command diplomatic_stance timurids hungary neutral
+		console_command diplomatic_stance papal_states hungary neutral
+	end_if
+	if I_NumberOfSettlements jerusalem < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_jerusalem != 1
+		set_counter dead_diplomacy_jerusalem 1
+		console_command diplomatic_stance venice jerusalem neutral
+		console_command diplomatic_stance sicily jerusalem neutral
+		console_command diplomatic_stance milan jerusalem neutral
+		console_command diplomatic_stance spain jerusalem neutral
+		console_command diplomatic_stance portugal jerusalem neutral
+		console_command diplomatic_stance aragon jerusalem neutral
+		console_command diplomatic_stance hre jerusalem neutral
+		console_command diplomatic_stance france jerusalem neutral
+		console_command diplomatic_stance england jerusalem neutral
+		console_command diplomatic_stance scotland jerusalem neutral
+		console_command diplomatic_stance denmark jerusalem neutral
+		console_command diplomatic_stance norway jerusalem neutral
+		console_command diplomatic_stance poland jerusalem neutral
+		console_command diplomatic_stance hungary jerusalem neutral
+		console_command diplomatic_stance teutonic_order jerusalem neutral
+		console_command diplomatic_stance byzantium jerusalem neutral
+		console_command diplomatic_stance russia jerusalem neutral
+		console_command diplomatic_stance kievan_rus jerusalem neutral
+		console_command diplomatic_stance turks jerusalem neutral
+		console_command diplomatic_stance egypt jerusalem neutral
+		console_command diplomatic_stance moors jerusalem neutral
+		console_command diplomatic_stance kwarezm jerusalem neutral
+		console_command diplomatic_stance lithuania jerusalem neutral
+		console_command diplomatic_stance cumans jerusalem neutral
+		console_command diplomatic_stance mongols jerusalem neutral
+		console_command diplomatic_stance timurids jerusalem neutral
+		console_command diplomatic_stance papal_states jerusalem neutral
+	end_if
+	if  I_EventCounter status_teutonic_order = 0 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_teutonic_order != 1
+		set_counter dead_diplomacy_teutonic_order 1
+		console_command diplomatic_stance venice teutonic_order neutral
+		console_command diplomatic_stance sicily teutonic_order neutral
+		console_command diplomatic_stance milan teutonic_order neutral
+		console_command diplomatic_stance spain teutonic_order neutral
+		console_command diplomatic_stance portugal teutonic_order neutral
+		console_command diplomatic_stance aragon teutonic_order neutral
+		console_command diplomatic_stance hre teutonic_order neutral
+		console_command diplomatic_stance france teutonic_order neutral
+		console_command diplomatic_stance england teutonic_order neutral
+		console_command diplomatic_stance scotland teutonic_order neutral
+		console_command diplomatic_stance denmark teutonic_order neutral
+		console_command diplomatic_stance norway teutonic_order neutral
+		console_command diplomatic_stance poland teutonic_order neutral
+		console_command diplomatic_stance hungary teutonic_order neutral
+		console_command diplomatic_stance jerusalem teutonic_order neutral
+		console_command diplomatic_stance byzantium teutonic_order neutral
+		console_command diplomatic_stance russia teutonic_order neutral
+		console_command diplomatic_stance kievan_rus teutonic_order neutral
+		console_command diplomatic_stance turks teutonic_order neutral
+		console_command diplomatic_stance egypt teutonic_order neutral
+		console_command diplomatic_stance moors teutonic_order neutral
+		console_command diplomatic_stance kwarezm teutonic_order neutral
+		console_command diplomatic_stance lithuania teutonic_order neutral
+		console_command diplomatic_stance cumans teutonic_order neutral
+		console_command diplomatic_stance mongols teutonic_order neutral
+		console_command diplomatic_stance timurids teutonic_order neutral
+		console_command diplomatic_stance papal_states teutonic_order neutral
+	end_if
+	if I_NumberOfSettlements byzantium < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_byzantium != 1
+		set_counter dead_diplomacy_byzantium 1
+		console_command diplomatic_stance venice byzantium neutral
+		console_command diplomatic_stance sicily byzantium neutral
+		console_command diplomatic_stance milan byzantium neutral
+		console_command diplomatic_stance spain byzantium neutral
+		console_command diplomatic_stance portugal byzantium neutral
+		console_command diplomatic_stance aragon byzantium neutral
+		console_command diplomatic_stance hre byzantium neutral
+		console_command diplomatic_stance france byzantium neutral
+		console_command diplomatic_stance england byzantium neutral
+		console_command diplomatic_stance scotland byzantium neutral
+		console_command diplomatic_stance denmark byzantium neutral
+		console_command diplomatic_stance norway byzantium neutral
+		console_command diplomatic_stance poland byzantium neutral
+		console_command diplomatic_stance hungary byzantium neutral
+		console_command diplomatic_stance jerusalem byzantium neutral
+		console_command diplomatic_stance teutonic_order byzantium neutral
+		console_command diplomatic_stance russia byzantium neutral
+		console_command diplomatic_stance kievan_rus byzantium neutral
+		console_command diplomatic_stance turks byzantium neutral
+		console_command diplomatic_stance egypt byzantium neutral
+		console_command diplomatic_stance moors byzantium neutral
+		console_command diplomatic_stance kwarezm byzantium neutral
+		console_command diplomatic_stance lithuania byzantium neutral
+		console_command diplomatic_stance cumans byzantium neutral
+		console_command diplomatic_stance mongols byzantium neutral
+		console_command diplomatic_stance timurids byzantium neutral
+		console_command diplomatic_stance papal_states byzantium neutral
+	end_if
+	if I_NumberOfSettlements russia < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_russia != 1
+		set_counter dead_diplomacy_russia 1
+		console_command diplomatic_stance venice russia neutral
+		console_command diplomatic_stance sicily russia neutral
+		console_command diplomatic_stance milan russia neutral
+		console_command diplomatic_stance spain russia neutral
+		console_command diplomatic_stance portugal russia neutral
+		console_command diplomatic_stance aragon russia neutral
+		console_command diplomatic_stance hre russia neutral
+		console_command diplomatic_stance france russia neutral
+		console_command diplomatic_stance england russia neutral
+		console_command diplomatic_stance scotland russia neutral
+		console_command diplomatic_stance denmark russia neutral
+		console_command diplomatic_stance norway russia neutral
+		console_command diplomatic_stance poland russia neutral
+		console_command diplomatic_stance hungary russia neutral
+		console_command diplomatic_stance jerusalem russia neutral
+		console_command diplomatic_stance teutonic_order russia neutral
+		console_command diplomatic_stance byzantium russia neutral
+		console_command diplomatic_stance kievan_rus russia neutral
+		console_command diplomatic_stance turks russia neutral
+		console_command diplomatic_stance egypt russia neutral
+		console_command diplomatic_stance moors russia neutral
+		console_command diplomatic_stance kwarezm russia neutral
+		console_command diplomatic_stance lithuania russia neutral
+		console_command diplomatic_stance cumans russia neutral
+		console_command diplomatic_stance mongols russia neutral
+		console_command diplomatic_stance timurids russia neutral
+		console_command diplomatic_stance papal_states russia neutral
+	end_if
+	if I_NumberOfSettlements kievan_rus < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_kievan_rus != 1
+		set_counter dead_diplomacy_kievan_rus 1
+		console_command diplomatic_stance venice kievan_rus neutral
+		console_command diplomatic_stance sicily kievan_rus neutral
+		console_command diplomatic_stance milan kievan_rus neutral
+		console_command diplomatic_stance spain kievan_rus neutral
+		console_command diplomatic_stance portugal kievan_rus neutral
+		console_command diplomatic_stance aragon kievan_rus neutral
+		console_command diplomatic_stance hre kievan_rus neutral
+		console_command diplomatic_stance france kievan_rus neutral
+		console_command diplomatic_stance england kievan_rus neutral
+		console_command diplomatic_stance scotland kievan_rus neutral
+		console_command diplomatic_stance denmark kievan_rus neutral
+		console_command diplomatic_stance norway kievan_rus neutral
+		console_command diplomatic_stance poland kievan_rus neutral
+		console_command diplomatic_stance hungary kievan_rus neutral
+		console_command diplomatic_stance jerusalem kievan_rus neutral
+		console_command diplomatic_stance teutonic_order kievan_rus neutral
+		console_command diplomatic_stance byzantium kievan_rus neutral
+		console_command diplomatic_stance russia kievan_rus neutral
+		console_command diplomatic_stance turks kievan_rus neutral
+		console_command diplomatic_stance egypt kievan_rus neutral
+		console_command diplomatic_stance moors kievan_rus neutral
+		console_command diplomatic_stance kwarezm kievan_rus neutral
+		console_command diplomatic_stance lithuania kievan_rus neutral
+		console_command diplomatic_stance cumans kievan_rus neutral
+		console_command diplomatic_stance mongols kievan_rus neutral
+		console_command diplomatic_stance timurids kievan_rus neutral
+		console_command diplomatic_stance papal_states kievan_rus neutral
+	end_if
+	if I_NumberOfSettlements turks < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_turks != 1
+		set_counter dead_diplomacy_turks 1
+		console_command diplomatic_stance venice turks neutral
+		console_command diplomatic_stance sicily turks neutral
+		console_command diplomatic_stance milan turks neutral
+		console_command diplomatic_stance spain turks neutral
+		console_command diplomatic_stance portugal turks neutral
+		console_command diplomatic_stance aragon turks neutral
+		console_command diplomatic_stance hre turks neutral
+		console_command diplomatic_stance france turks neutral
+		console_command diplomatic_stance england turks neutral
+		console_command diplomatic_stance scotland turks neutral
+		console_command diplomatic_stance denmark turks neutral
+		console_command diplomatic_stance norway turks neutral
+		console_command diplomatic_stance poland turks neutral
+		console_command diplomatic_stance hungary turks neutral
+		console_command diplomatic_stance jerusalem turks neutral
+		console_command diplomatic_stance teutonic_order turks neutral
+		console_command diplomatic_stance byzantium turks neutral
+		console_command diplomatic_stance russia turks neutral
+		console_command diplomatic_stance kievan_rus turks neutral
+		console_command diplomatic_stance egypt turks neutral
+		console_command diplomatic_stance moors turks neutral
+		console_command diplomatic_stance kwarezm turks neutral
+		console_command diplomatic_stance lithuania turks neutral
+		console_command diplomatic_stance cumans turks neutral
+		console_command diplomatic_stance mongols turks neutral
+		console_command diplomatic_stance timurids turks neutral
+		console_command diplomatic_stance papal_states turks neutral
+	end_if
+	if I_NumberOfSettlements egypt < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_egypt != 1
+		set_counter dead_diplomacy_egypt 1
+		console_command diplomatic_stance venice egypt neutral
+		console_command diplomatic_stance sicily egypt neutral
+		console_command diplomatic_stance milan egypt neutral
+		console_command diplomatic_stance spain egypt neutral
+		console_command diplomatic_stance portugal egypt neutral
+		console_command diplomatic_stance aragon egypt neutral
+		console_command diplomatic_stance hre egypt neutral
+		console_command diplomatic_stance france egypt neutral
+		console_command diplomatic_stance england egypt neutral
+		console_command diplomatic_stance scotland egypt neutral
+		console_command diplomatic_stance denmark egypt neutral
+		console_command diplomatic_stance norway egypt neutral
+		console_command diplomatic_stance poland egypt neutral
+		console_command diplomatic_stance hungary egypt neutral
+		console_command diplomatic_stance jerusalem egypt neutral
+		console_command diplomatic_stance teutonic_order egypt neutral
+		console_command diplomatic_stance byzantium egypt neutral
+		console_command diplomatic_stance russia egypt neutral
+		console_command diplomatic_stance kievan_rus egypt neutral
+		console_command diplomatic_stance turks egypt neutral
+		console_command diplomatic_stance moors egypt neutral
+		console_command diplomatic_stance kwarezm egypt neutral
+		console_command diplomatic_stance lithuania egypt neutral
+		console_command diplomatic_stance cumans egypt neutral
+		console_command diplomatic_stance mongols egypt neutral
+		console_command diplomatic_stance timurids egypt neutral
+		console_command diplomatic_stance papal_states egypt neutral
+	end_if
+	if I_NumberOfSettlements  moors < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_moors != 1
+		set_counter dead_diplomacy_moors 1
+		console_command diplomatic_stance venice  moors neutral
+		console_command diplomatic_stance sicily  moors neutral
+		console_command diplomatic_stance milan  moors neutral
+		console_command diplomatic_stance spain  moors neutral
+		console_command diplomatic_stance portugal  moors neutral
+		console_command diplomatic_stance aragon  moors neutral
+		console_command diplomatic_stance hre  moors neutral
+		console_command diplomatic_stance france  moors neutral
+		console_command diplomatic_stance england  moors neutral
+		console_command diplomatic_stance scotland  moors neutral
+		console_command diplomatic_stance denmark  moors neutral
+		console_command diplomatic_stance norway  moors neutral
+		console_command diplomatic_stance poland  moors neutral
+		console_command diplomatic_stance hungary  moors neutral
+		console_command diplomatic_stance jerusalem  moors neutral
+		console_command diplomatic_stance teutonic_order  moors neutral
+		console_command diplomatic_stance byzantium  moors neutral
+		console_command diplomatic_stance russia  moors neutral
+		console_command diplomatic_stance kievan_rus  moors neutral
+		console_command diplomatic_stance turks  moors neutral
+		console_command diplomatic_stance egypt  moors neutral
+		console_command diplomatic_stance kwarezm  moors neutral
+		console_command diplomatic_stance lithuania  moors neutral
+		console_command diplomatic_stance cumans  moors neutral
+		console_command diplomatic_stance mongols  moors neutral
+		console_command diplomatic_stance timurids  moors neutral
+		console_command diplomatic_stance papal_states  moors neutral
+	end_if
+	if I_NumberOfSettlements kwarezm < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_kwarezm != 1
+		set_counter dead_diplomacy_kwarezm 1
+		console_command diplomatic_stance venice kwarezm neutral
+		console_command diplomatic_stance sicily kwarezm neutral
+		console_command diplomatic_stance milan kwarezm neutral
+		console_command diplomatic_stance spain kwarezm neutral
+		console_command diplomatic_stance portugal kwarezm neutral
+		console_command diplomatic_stance aragon kwarezm neutral
+		console_command diplomatic_stance hre kwarezm neutral
+		console_command diplomatic_stance france kwarezm neutral
+		console_command diplomatic_stance england kwarezm neutral
+		console_command diplomatic_stance scotland kwarezm neutral
+		console_command diplomatic_stance denmark kwarezm neutral
+		console_command diplomatic_stance norway kwarezm neutral
+		console_command diplomatic_stance poland kwarezm neutral
+		console_command diplomatic_stance hungary kwarezm neutral
+		console_command diplomatic_stance jerusalem kwarezm neutral
+		console_command diplomatic_stance teutonic_order kwarezm neutral
+		console_command diplomatic_stance byzantium kwarezm neutral
+		console_command diplomatic_stance russia kwarezm neutral
+		console_command diplomatic_stance kievan_rus kwarezm neutral
+		console_command diplomatic_stance turks kwarezm neutral
+		console_command diplomatic_stance egypt kwarezm neutral
+		console_command diplomatic_stance moors kwarezm neutral
+		console_command diplomatic_stance lithuania kwarezm neutral
+		console_command diplomatic_stance cumans kwarezm neutral
+		console_command diplomatic_stance mongols kwarezm neutral
+		console_command diplomatic_stance timurids kwarezm neutral
+		console_command diplomatic_stance papal_states kwarezm neutral
+	end_if
+	if I_NumberOfSettlements lithuania < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_lithuania != 1
+		set_counter dead_diplomacy_lithuania 1
+		console_command diplomatic_stance venice lithuania neutral
+		console_command diplomatic_stance sicily lithuania neutral
+		console_command diplomatic_stance milan lithuania neutral
+		console_command diplomatic_stance spain lithuania neutral
+		console_command diplomatic_stance portugal lithuania neutral
+		console_command diplomatic_stance aragon lithuania neutral
+		console_command diplomatic_stance hre lithuania neutral
+		console_command diplomatic_stance france lithuania neutral
+		console_command diplomatic_stance england lithuania neutral
+		console_command diplomatic_stance scotland lithuania neutral
+		console_command diplomatic_stance denmark lithuania neutral
+		console_command diplomatic_stance norway lithuania neutral
+		console_command diplomatic_stance poland lithuania neutral
+		console_command diplomatic_stance hungary lithuania neutral
+		console_command diplomatic_stance jerusalem lithuania neutral
+		console_command diplomatic_stance teutonic_order lithuania neutral
+		console_command diplomatic_stance byzantium lithuania neutral
+		console_command diplomatic_stance russia lithuania neutral
+		console_command diplomatic_stance kievan_rus lithuania neutral
+		console_command diplomatic_stance turks lithuania neutral
+		console_command diplomatic_stance egypt lithuania neutral
+		console_command diplomatic_stance moors lithuania neutral
+		console_command diplomatic_stance kwarezm lithuania neutral
+		console_command diplomatic_stance cumans lithuania neutral
+		console_command diplomatic_stance mongols lithuania neutral
+		console_command diplomatic_stance timurids lithuania neutral
+		console_command diplomatic_stance papal_states lithuania neutral
+	end_if
+	if I_NumberOfSettlements cumans < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_cumans != 1
+		set_counter dead_diplomacy_cumans 1
+		console_command diplomatic_stance venice cumans neutral
+		console_command diplomatic_stance sicily cumans neutral
+		console_command diplomatic_stance milan cumans neutral
+		console_command diplomatic_stance spain cumans neutral
+		console_command diplomatic_stance portugal cumans neutral
+		console_command diplomatic_stance aragon cumans neutral
+		console_command diplomatic_stance hre cumans neutral
+		console_command diplomatic_stance france cumans neutral
+		console_command diplomatic_stance england cumans neutral
+		console_command diplomatic_stance scotland cumans neutral
+		console_command diplomatic_stance denmark cumans neutral
+		console_command diplomatic_stance norway cumans neutral
+		console_command diplomatic_stance poland cumans neutral
+		console_command diplomatic_stance hungary cumans neutral
+		console_command diplomatic_stance jerusalem cumans neutral
+		console_command diplomatic_stance teutonic_order cumans neutral
+		console_command diplomatic_stance byzantium cumans neutral
+		console_command diplomatic_stance russia cumans neutral
+		console_command diplomatic_stance kievan_rus cumans neutral
+		console_command diplomatic_stance turks cumans neutral
+		console_command diplomatic_stance egypt cumans neutral
+		console_command diplomatic_stance moors cumans neutral
+		console_command diplomatic_stance kwarezm cumans neutral
+		console_command diplomatic_stance lithuania cumans neutral
+		console_command diplomatic_stance mongols cumans neutral
+		console_command diplomatic_stance timurids cumans neutral
+		console_command diplomatic_stance papal_states cumans neutral
+	end_if
+	if I_CompareCounter status_mongols = 0 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_mongols != 1
+		set_counter dead_diplomacy_mongols 1
+		console_command diplomatic_stance venice mongols war
+		console_command diplomatic_stance sicily mongols war
+		console_command diplomatic_stance milan mongols war
+		console_command diplomatic_stance spain mongols war
+		console_command diplomatic_stance portugal mongols war
+		console_command diplomatic_stance aragon mongols war
+		console_command diplomatic_stance hre mongols war
+		console_command diplomatic_stance france mongols war
+		console_command diplomatic_stance england mongols war
+		console_command diplomatic_stance scotland mongols war
+		console_command diplomatic_stance denmark mongols war
+		console_command diplomatic_stance norway mongols war
+		console_command diplomatic_stance poland mongols war
+		console_command diplomatic_stance hungary mongols war
+		console_command diplomatic_stance jerusalem mongols war
+		console_command diplomatic_stance teutonic_order mongols war
+		console_command diplomatic_stance byzantium mongols war
+		console_command diplomatic_stance russia mongols war
+		console_command diplomatic_stance kievan_rus mongols war
+		console_command diplomatic_stance turks mongols war
+		console_command diplomatic_stance egypt mongols war
+		console_command diplomatic_stance moors mongols war
+		console_command diplomatic_stance kwarezm mongols war
+		console_command diplomatic_stance lithuania mongols war
+		console_command diplomatic_stance cumans mongols war
+		console_command diplomatic_stance timurids mongols war
+		console_command diplomatic_stance papal_states mongols war
+	end_if
+	if I_CompareCounter status_timurids = 0 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_timurids != 1
+		set_counter dead_diplomacy_timurids 1
+		console_command diplomatic_stance venice timurids neutral
+		console_command diplomatic_stance sicily timurids neutral
+		console_command diplomatic_stance milan timurids neutral
+		console_command diplomatic_stance spain timurids neutral
+		console_command diplomatic_stance portugal timurids neutral
+		console_command diplomatic_stance aragon timurids neutral
+		console_command diplomatic_stance hre timurids neutral
+		console_command diplomatic_stance france timurids neutral
+		console_command diplomatic_stance england timurids neutral
+		console_command diplomatic_stance scotland timurids neutral
+		console_command diplomatic_stance denmark timurids neutral
+		console_command diplomatic_stance norway timurids neutral
+		console_command diplomatic_stance poland timurids neutral
+		console_command diplomatic_stance hungary timurids neutral
+		console_command diplomatic_stance jerusalem timurids neutral
+		console_command diplomatic_stance teutonic_order timurids neutral
+		console_command diplomatic_stance byzantium timurids neutral
+		console_command diplomatic_stance russia timurids neutral
+		console_command diplomatic_stance kievan_rus timurids neutral
+		console_command diplomatic_stance turks timurids neutral
+		console_command diplomatic_stance egypt timurids neutral
+		console_command diplomatic_stance moors timurids neutral
+		console_command diplomatic_stance kneutralezm timurids neutral
+		console_command diplomatic_stance lithuania timurids neutral
+		console_command diplomatic_stance cumans timurids neutral
+		console_command diplomatic_stance mongols timurids neutral
+		console_command diplomatic_stance papal_states timurids neutral
+	end_if
 end_monitor
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;--- Conquered Crowns Script (TBD)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;=======================================================;
 ;================= ADDITIONAL SCRIPTS ==================;

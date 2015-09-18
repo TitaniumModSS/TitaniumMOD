@@ -3247,7 +3247,7 @@ Trait MerchantSkillsBonus
 Trait StrictlyReligious
  Characters family
  NoGoingBackLevel 1
- AntiTraits Genocide , Feck , Perverted
+ AntiTraits Genocide, Feck ,Perverted
 
  Level Strictly_Religious
    Description Strictly_Religious_desc
@@ -3286,7 +3286,7 @@ Trait StrictlyReligiousGeneral
 Trait ThinksOfHisPeople
  Characters family
  NoGoingBackLevel 1
- AntiTraits BadAdministrator , Slothful , Arse , Feck , StrategyDread
+ AntiTraits BadAdministrator, Slothful, Arse, Feck, StrategyDread
 
  Level Thinks_Of_His_People
    Description Thinks_Of_His_People_desc
@@ -3299,7 +3299,7 @@ Trait ThinksOfHisPeople
 Trait GreedyRuler
  Characters family
  NoGoingBackLevel 1
- AntiTraits Just , KindRuler
+ AntiTraits Just, KindRuler
 
  Level Greedy_Ruler
    Description Greedy_Ruler_desc
@@ -4018,7 +4018,7 @@ Trait SeverelyWounded
 ;------------------------------------------
 Trait FactionFutureRegent
  Characters family
- AntiTraits Next_Heir_Trait, Desinherited_Trait
+ AntiTraits FactionRegent, Next_Heir_Trait, Desinherited_Trait
 
  Level FactionFutureRegent
    Description FactionFutureRegent_desc
@@ -4030,6 +4030,7 @@ Trait FactionFutureRegent
 ;------------------------------------------
 Trait FactionRegent
  Characters family
+ AntiTraits FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
 
  Level FactionRegent
    Description FactionRegent_desc
@@ -4040,16 +4041,29 @@ Trait FactionRegent
    Effect PersonalSecurity 2
 
 ;------------------------------------------
-Trait NoHeirYet
+Trait NoHeirYet ; FIXED
  Characters family
+ AntiTraits IsFather
 
  Level NoHeirYet
    Description NoHeirYet_desc
    EffectsDescription NoHeirYet_effects_desc
-   Threshold 1 
+   Threshold 1
 
    Effect Authority -2
    Effect LocalPopularity -1
+
+;------------------------------------------
+Trait IsFather
+ Characters family
+ Hidden
+ NoGoingBackLevel 1 
+ AntiTraits NoHeirYet
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 1
 
 ;------------------------------------------
 Trait EnviousOfHeir
@@ -4634,7 +4648,7 @@ Trait Factionleader
 ;------------------------------------------
 Trait Factionheir
  Characters family
- AntiTraits Next_Heir_Trait, Desinherited_Trait
+ AntiTraits Factionleader, Next_Heir_Trait, Desinherited_Trait
 
  Level Heir_Apparent
    Description Heir_Apparent_desc
@@ -14228,7 +14242,7 @@ Trait Byzantium_Triumph
 ;------------------------------------------
 Trait FactionFutureUsurper
  Characters family
- AntiTraits FactionUsurper, Next_Heir_Trait, Desinherited_Trait
+ AntiTraits Factionleader, FactionUsurper, Next_Heir_Trait, Desinherited_Trait
 
  Level ThroneClaimant
    Description ThroneClaimant_desc
@@ -14241,7 +14255,7 @@ Trait FactionFutureUsurper
 Trait FactionUsurper
  Characters family
  NoGoingBackLevel 1
- AntiTraits FactionFutureUsurper, FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
+ AntiTraits Factionleader, FactionFutureUsurper, FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
 
  Level Usurper
    Description Usurper_desc
@@ -15118,7 +15132,7 @@ Trait Novgorod_Veche_Approval
 ;------------------------------------------
 Trait Next_Heir_Trait
  Characters family
- AntiTraits Desinherited_Trait
+ AntiTraits Desinherited_Trait, Factionleader, Factionheir, FactionRegent, FactionFutureRegent, FactionUsurper, FactionFutureUsurper
 
  Level Next_Heir
    Description Next_Heir_desc
@@ -15134,7 +15148,7 @@ Trait Next_Heir_Trait
 ;------------------------------------------
 Trait Desinherited_Trait
  Characters family
- AntiTraits Next_Heir_Trait
+ AntiTraits Next_Heir_Trait, Factionleader, Factionheir, FactionRegent, FactionFutureRegent, FactionUsurper, FactionFutureUsurper
 
  Level Former_Next_Heir
    Description Former_Next_Heir_desc
@@ -20240,14 +20254,12 @@ Trigger family_generalmarries_1
  Affects Cuckold 2 Chance 85
 
 ;------------------------------------------
-
 Trigger family_generalmarries_royalty
  WhenToTest CharacterMarriesPrincess
 
  Condition not SpouseTrait RoyalLady > 0; Marrying a Courtesan should not give Royal Family Ties
 
  Affects MarriedAPrincess 1 Chance 100 
-
 
 ;------------------------------------------
 Trigger family_generalmarries_charming_1
@@ -21576,7 +21588,7 @@ Trigger GrandsonOfKing
  WhenToTest CharacterComesOfAge
 
  Condition FatherTrait Factionheir > 0
-       and not FatherTrait Factionleader > 0
+       and FatherTrait Factionleader = 0
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -21590,7 +21602,7 @@ Trigger GrandsonOfKingOrPrince_NoHeir
  WhenToTest CharacterComesOfAge
 
  Condition FatherTrait SonofKingPrince > 0
-       and not FatherTrait Factionleader > 0
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir > 0
        and not FactionType papal_states
        and not FactionType teutonic_order
@@ -21605,7 +21617,7 @@ Trigger GrandsonOfKingOrPrince_NoSalicLaw
  WhenToTest CharacterComesOfAge
 
  Condition FatherTrait WifeIsDaughterofKingPrince > 0
-       and not FatherTrait Factionleader > 0
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir > 0
        and not FactionType papal_states
        and not FactionType teutonic_order
@@ -21629,7 +21641,7 @@ Trigger GrandsonOfKingOrPrince_NoSalicLaw
 Trigger SonOfKing_Adult
  WhenToTest CharacterTurnEnd
 
- Condition FatherTrait Factionleader = 1
+ Condition FatherTrait factionleader > 0
        and Trait BiologicalSon = 1
        and not Trait SonofKingPrince > 0
        and I_TurnNumber < 1
@@ -21662,7 +21674,7 @@ Trigger GrandsonOfKingOrPrince_NoHeir_Adult
  WhenToTest CharacterTurnEnd
 
  Condition FatherTrait SonofKingPrince > 0
-       and not FatherTrait Factionleader > 0
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir > 0
        and Trait BiologicalSon = 1
        and not Trait SonofKingPrince > 0
@@ -21690,7 +21702,7 @@ Trigger GranddaughterOfKing
  WhenToTest CharacterComesOfAge
 
  Condition FatherTrait Factionheir > 0
-       and not FatherTrait Factionleader > 0
+       and FatherTrait Factionleader = 0
        and AgentType = princess
 
  Affects DaughterofKingPrince 1 Chance 100
@@ -21699,7 +21711,7 @@ Trigger GranddaughterOfKing
 Trigger DaughterOfKing_Adult
  WhenToTest CharacterTurnEnd
 
- Condition FatherTrait Factionleader = 1
+ Condition FatherTrait factionleader > 0
        and not Trait DaughterofKingPrince > 0
        and I_TurnNumber < 1
        and AgentType = princess
@@ -21711,7 +21723,7 @@ Trigger GranddaughterOfKing_Adult
  WhenToTest CharacterTurnEnd
 
  Condition FatherTrait Factionheir = 1
-       and not FatherTrait Factionleader > 0
+       and FatherTrait Factionleader = 0
        and not Trait DaughterofKingPrince > 0
        and I_TurnNumber < 1
        and AgentType = princess
@@ -24895,7 +24907,7 @@ Trigger becomesheir_TO
 
  Condition FactionType teutonic_order
 
- Affects FactionheirTO 1 Chance 100 
+ Affects FactionheirTO 2 Chance 100 
  Affects MinorRanksTO -5 Chance 100 
 
 ;------------------------------------------
@@ -24904,8 +24916,7 @@ Trigger factionleader_TO
 
  Condition FactionType teutonic_order
 
- Affects FactionleaderTO 1 Chance 100 
- Affects FactionheirTO -1 Chance 100 
+ Affects FactionleaderTO 2 Chance 100
 
 ;------------------------------------------
 
@@ -24919,7 +24930,7 @@ Trigger factionleader_normalfactions
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionleader 1 Chance 100 
+ Affects Factionleader 2 Chance 100 
 
 
 ;==========================================
@@ -25010,7 +25021,7 @@ Trigger becomesheirdaddyheir
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger becomesheirdaddyleader
@@ -25018,13 +25029,13 @@ Trigger becomesheirdaddyleader
 
  Condition Trait BiologicalSon = 1
        and not Trait SonofKingPrince > 0
-       and FatherTrait Factionleader = 1
+       and FatherTrait factionleader > 0
        and not FactionType teutonic_order
        and not FactionType venice
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger bastardbecomesheirdaddyheir
@@ -25038,7 +25049,7 @@ Trigger bastardbecomesheirdaddyheir
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger bastardbecomesheirdaddyleader
@@ -25046,13 +25057,13 @@ Trigger bastardbecomesheirdaddyleader
 
  Condition Trait BastardSon = 1
        and not Trait SonofKingPrince > 0
-       and FatherTrait Factionleader = 1
+       and FatherTrait factionleader > 0
        and not FactionType teutonic_order
        and not FactionType venice
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger adoptedbecomesfutureregent
@@ -25070,14 +25081,14 @@ Trigger adoptedbecomesfutureregent
        and not FactionType byzantium; no regents for empires
        and not FactionType hre; no regents for empires
 
- Affects FactionFutureRegent 1 Chance 100
+ Affects FactionFutureRegent 2 Chance 100
 
 ;------------------------------------------
 Trigger anybody1becomesfutureregent
  WhenToTest BecomesFactionHeir
 
  Condition Trait BiologicalSon = 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not FatherTrait FactionRegent = 1
        and not FatherTrait FactionUsurper = 1
@@ -25090,14 +25101,14 @@ Trigger anybody1becomesfutureregent
        and not FactionType byzantium; no regents for empires
        and not FactionType hre; no regents for empires
 
- Affects FactionFutureRegent 1 Chance 100
+ Affects FactionFutureRegent 2 Chance 100
 
 ;------------------------------------------
 Trigger anobody2becomesfutureregent
  WhenToTest BecomesFactionHeir
 
  Condition Trait BastardSon = 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not FatherTrait FactionRegent = 1
        and not FatherTrait FactionUsurper = 1
@@ -25110,7 +25121,7 @@ Trigger anobody2becomesfutureregent
        and not FactionType byzantium; no regents for empires
        and not FactionType hre; no regents for empires
 
- Affects FactionFutureRegent 1 Chance 100
+ Affects FactionFutureRegent 2 Chance 100
 
 ;------------------------------------------
 Trigger sonofadoptedbecomesheir
@@ -25124,7 +25135,7 @@ Trigger sonofadoptedbecomesheir
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger bastardsonofadoptedbecomesheir
@@ -25138,7 +25149,7 @@ Trigger bastardsonofadoptedbecomesheir
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger sonofkingprincebecomesheir
@@ -25151,7 +25162,7 @@ Trigger sonofkingprincebecomesheir
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger becomesfactionregent
@@ -25165,448 +25176,43 @@ Trigger becomesfactionregent
        and not FactionType byzantium; no regents for empires
        and not FactionType hre; no regents for empires
 
- Affects FactionRegent 1 Chance 100 
- Affects FactionFutureRegent -1 Chance 100
+ Affects FactionRegent 2 Chance 100
 
-
-;********* NoHeirYet ********* 
+;********* NoHeirYet ********* FIXED and Simplified
 ;------------------------------------------
-Trigger EnglishKing_NoHeirYet
- WhenToTest CharacterTurnEnd
+Trigger IsFather_Trigger
+WhenToTest CharacterBecomesAFather
 
- Condition IsFactionLeader
-       and FactionType england
-       and I_NumberOfHeirs england < 1
+Condition Trait IsFather = 0
 
- Affects NoHeirYet 1 Chance 10 ; should gain the trait by the tenth year
+Affects IsFather 2 Chance 100 ; not sure if like this works to remove any trace of NoHeirYet
+;Affects NoHeirYet -1 Chance 100 ; else use this
 
 ;------------------------------------------
-Trigger FrenchKing_NoHeirYet
- WhenToTest CharacterTurnEnd
+Trigger NoHeirYet_Trigger
+WhenToTest CharacterTurnEnd
 
- Condition IsFactionLeader
-       and FactionType france
-       and I_NumberOfHeirs france < 1
+Condition IsFactionLeader
+and Trait IsFather = 0
+and Trait NoHeirYet < 1
 
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger HREKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType hre
-       and I_NumberOfHeirs hre < 1
-
- Affects NoHeirYet 1 Chance 10
+Affects NoHeirYet 1 Chance 10 ; or with greater chance?
 
 ;------------------------------------------
-Trigger SpanishKing_NoHeirYet
- WhenToTest CharacterTurnEnd
+Trigger IsFather_Remove1
+WhenToTest AcceptBribe
 
- Condition IsFactionLeader
-       and FactionType spain
-       and I_NumberOfHeirs spain < 1
+Condition Trait IsFather = 1
 
- Affects NoHeirYet 1 Chance 10
+Affects IsFather -1 Chance 100
 
 ;------------------------------------------
-Trigger SicilianKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType sicily
-       and I_NumberOfHeirs sicily < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-;Trigger VenetianKing_NoHeirYet
-; WhenToTest CharacterTurnEnd
-;
-; Condition IsFactionLeader
-;       and FactionType venice
-;       and I_NumberOfHeirs venice < 1
-;
-; Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-;Trigger MilaneseKing_NoHeirYet
-; WhenToTest CharacterTurnEnd
-;
-; Condition IsFactionLeader
-;       and FactionType milan
-;       and I_NumberOfHeirs milan < 1
-;
-; Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger RomanKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType byzantium
-       and I_NumberOfHeirs byzantium < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-;Trigger RussianKing_NoHeirYet
-; WhenToTest CharacterTurnEnd
-;
-; Condition IsFactionLeader
-;       and FactionType russia
-;       and I_NumberOfHeirs russia < 1
-;
-; Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger MoorsKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType moors
-       and I_NumberOfHeirs moors < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger TurksKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType turks
-       and I_NumberOfHeirs turks < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger EgyptianKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType egypt
-       and I_NumberOfHeirs egypt < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger DanishKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType denmark
-       and I_NumberOfHeirs denmark < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger PortugueseKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType portugal
-       and I_NumberOfHeirs portugal < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger PolishKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType poland
-       and I_NumberOfHeirs poland < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger HungarianKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType hungary
-       and I_NumberOfHeirs hungary < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger kievan_rusKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType kievan_rus
-       and I_NumberOfHeirs kievan_rus < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger aragonKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType aragon
-       and I_NumberOfHeirs aragon < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger TimuridKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType timurids
-       and I_NumberOfHeirs timurids < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger norwayKing_NoHeirYet
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType norway 
-       and I_NumberOfHeirs norway < 1
-
- Affects NoHeirYet 1 Chance 10
- 
-;------------------------------------------
-Trigger kwarezmKing_NoHeirYet 
- WhenToTest CharacterTurnEnd 
- 
- Condition IsFactionLeader 
-       and FactionType kwarezm 
-       and I_NumberOfHeirs kwarezm < 1
-
- Affects NoHeirYet 1 Chance 10
-
-;------------------------------------------
-Trigger EnglishKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType england
-       and I_NumberOfHeirs england > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger FrenchKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType france
-       and I_NumberOfHeirs france > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger HREKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType hre
-       and I_NumberOfHeirs hre > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger SpanishKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType spain
-       and I_NumberOfHeirs spain > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-;Trigger VenetianKing_HasHeirNow
-; WhenToTest CharacterTurnEnd
-;
-; Condition IsFactionLeader
-;       and FactionType venice
-;       and I_NumberOfHeirs venice > 0
-;       and Trait NoHeirYet = 1
-;
-; Affects NoHeirYet -1 Chance 100
-;
-;------------------------------------------
-;Trigger MilaneseKing_HasHeirNow
-; WhenToTest CharacterTurnEnd
-;
-; Condition IsFactionLeader
-;       and FactionType milan
-;       and I_NumberOfHeirs milan > 0
-;       and Trait NoHeirYet = 1
-;
-; Affects NoHeirYet -1 Chance 100
-;
-;------------------------------------------
-Trigger RomanKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType byzantium
-       and I_NumberOfHeirs byzantium > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-;Trigger RussianKing_HasHeirNow
-; WhenToTest CharacterTurnEnd
-;
-; Condition IsFactionLeader
-;       and FactionType russia
-;       and I_NumberOfHeirs russia > 0
-;       and Trait NoHeirYet = 1
-;
-; Affects NoHeirYet -1 Chance 100
-;
-;------------------------------------------
-Trigger MoorsKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType moors
-       and I_NumberOfHeirs moors > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger TurksKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType turks
-       and I_NumberOfHeirs turks > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger EgyptianKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType egypt
-       and I_NumberOfHeirs egypt > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger DanishKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType denmark
-       and I_NumberOfHeirs denmark > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger PortugueseKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType portugal
-       and I_NumberOfHeirs portugal > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger PolishKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType poland
-       and I_NumberOfHeirs poland > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger HungarianKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType hungary
-       and I_NumberOfHeirs hungary > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger kievan_rusKing_HasHeirNow
- WhenToTest CharacterTurnEnd 
-
- Condition IsFactionLeader
-       and FactionType kievan_rus
-       and I_NumberOfHeirs kievan_rus > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger aragonKing_HasHeirNow
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and FactionType aragon
-       and I_NumberOfHeirs aragon > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger TimuridKing_HasHeirNow
- WhenToTest CharacterTurnEnd 
-
- Condition IsFactionLeader
-       and FactionType timurids
-       and I_NumberOfHeirs timurids > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger norwayKing_HasHeirNow
- WhenToTest CharacterTurnEnd 
-
- Condition IsFactionLeader
-       and FactionType norway
-       and I_NumberOfHeirs norway > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-;------------------------------------------
-Trigger kwarezmKing_HasHeirNow
- WhenToTest CharacterTurnEnd 
-
- Condition IsFactionLeader
-       and FactionType kwarezm
-       and I_NumberOfHeirs kwarezm > 0
-       and Trait NoHeirYet = 1
-
- Affects NoHeirYet -1 Chance 100
-
-
 ;********* ENVIOUSOFHEIR TRIGGERS *********
 ;------------------------------------------
 Trigger SonofKing_EnviesHeir
  WhenToTest CharacterTurnEnd
 
- Condition FatherTrait Factionleader = 1
+ Condition FatherTrait factionleader > 0
        and not IsFactionHeir
        and Attribute Loyalty <= 4
 
@@ -37652,192 +37258,7 @@ Affects Senile 1 Chance 2
 ;******************************************************
 ;**********************RLC TRIGGERS*********************
 ;******************************************************
-;------------------------------------------
-Trigger royal_lady_humble_trigger
- WhenToTest CharacterTurnStart
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 0
- 	and Trait RoyalLadyC = 0
-
- Affects HumbleWomanRLC 1 Chance 2 
- Affects PretentiousWomanRLC 1 Chance 1
-
-;------------------------------------------
-Trigger royal_lady_pretty_trigger
- WhenToTest CharacterTurnStart
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 0
- 	and Trait RoyalLadyC = 0
-
- Affects PrettyWomanRLC 1 Chance 100 
- Affects PrettyWomanRLC 2 Chance 29 
- Affects UglyWomanRLC 1 Chance 15 
- Affects UglyWomanRLC 1 Chance 3 
-
-;------------------------------------------
-Trigger royal_lady_trigger
- WhenToTest CharacterTurnStart
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 0
- 	and Trait RoyalLadyC = 0
-
- Affects RoyalLadyC 1 Chance 100 
- Affects RoyalLady 1 Chance 100 
- Affects AgentPiety 1 Chance 100
-;
- Affects NaturalPrincess 1 Chance 5 
- Affects GoodPrincess 1 Chance 7 
- Affects UnchasteWomanRLC 1 Chance 3 
- Affects SpiritedWomanRLC 1 Chance 16 
-
-;------------------------------------------
-Trigger royal_lady_brave_trigger
- WhenToTest CharacterTurnStart
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 0
- 	and Trait BraveWoman = 0
-
- Affects BraveWoman 1 Chance 39 
- Affects BraveWoman 2 Chance 75 
-
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger2
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and Treasury > 25000
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= pleasure_palace
-and RemainingMPPercentage = 100
-
-Affects DykeWomanRLC 1 Chance 10
-
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger3
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= church
-and RemainingMPPercentage = 100
-
-Affects EducatedWomanRLC 1 Chance 15
-
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger4
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= inn
-and RemainingMPPercentage = 100
-
-Affects UnchasteWomanRLC 1 Chance 5
-
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger5
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= cathedral
-and RemainingMPPercentage = 100
-
-Affects FaithfulWomanRLC 1 Chance 20 
-
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_troubadours_accepted_princess
- WhenToTest CharacterTurnEnd
-
- Condition AgentType = princess
-       and I_EventCounter troubadours_event_accepted = 1
-       and Trait RoyalLadyC = 1
-       and DistanceCapital <= 50
-
- Affects FairWoman 1 Chance 50
- Affects FaithfulWomanRLC 1 Chance 50
-
-;------------------------------------------
-Trigger RLC_troubadours_refused_princess
- WhenToTest CharacterTurnEnd
-
- Condition AgentType = princess
-       and I_EventCounter troubadours_event_declined = 1
-       and Trait RoyalLadyC = 1
-       and DistanceCapital <= 50
-
- Affects VapidWomanRLC 1 Chance 50
- 
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_selfperpetuating54
- WhenToTest CharacterTurnEnd
-
- Condition Trait PassionateWomanRLC >= 1
-
- Affects PassionateWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating55
- WhenToTest CharacterTurnEnd
-
- Condition Trait ColdWomanRLC >= 1
-
- Affects ColdWomanRLC 1 Chance 4 
-
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_selfperpetuating60
- WhenToTest CharacterTurnEnd
-
- Condition Trait DesperateWomanRLC >= 1
-
- Affects DesperateWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating61
- WhenToTest CharacterTurnEnd
-
- Condition Trait SpiritedWomanRLC >= 1
-
- Affects SpiritedWomanRLC 1 Chance 4 
-
-
-;------------------------------------------
-Trigger RLC_selfperpetuating62
- WhenToTest CharacterTurnEnd
-
- Condition Trait FaithfulWomanRLC >= 1
-
- Affects FaithfulWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating63
- WhenToTest CharacterTurnEnd
-
- Condition Trait UnchasteWomanRLC >= 1
-
- Affects UnchasteWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating64
- WhenToTest CharacterTurnEnd
-
- Condition Trait EducatedWomanRLC >= 1
-
- Affects EducatedWomanRLC 1 Chance 4 
-
-;------------------------------------------
+;Space for CLR submod triggers
 ;==========================================
 ;===========Adoption triggers==============
 ;==========================================
@@ -38363,6 +37784,15 @@ and Attribute Piety < 4
 Affects WifeIsCatholic 1 Chance 100
 
 ;------------------------------------------
+Trigger WifeIsCatholic_remove
+WhenToTest CharacterTurnEnd
+
+Condition Trait WifeIsCatholic = 1
+and FactionReligion catholic
+
+Affects WifeIsCatholic -1 Chance 100
+
+;------------------------------------------
 ;------------------------------------------
 Trigger family_general_marries_orthodox1
 WhenToTest CharacterMarriesPrincess
@@ -38412,6 +37842,15 @@ and SpouseTrait Princess_Orthodox = 1
 and Attribute Piety < 4
 
 Affects WifeIsOrthodox 1 Chance 100
+
+;------------------------------------------
+Trigger WifeIsOrthodox_remove
+WhenToTest CharacterTurnEnd
+
+Condition Trait WifeIsOrthodox = 1
+and FactionReligion orthodox
+
+Affects WifeIsOrthodox -1 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
@@ -38465,6 +37904,15 @@ and Attribute Piety < 4
 Affects WifeIsPagan 1 Chance 100
 
 ;------------------------------------------
+Trigger WifeIsPagan_remove
+WhenToTest CharacterTurnEnd
+
+Condition Trait WifeIsPagan = 1
+and FactionReligion pagan
+
+Affects WifeIsPagan -1 Chance 100
+
+;------------------------------------------
 ;------------------------------------------
 Trigger family_general_marries_muslim1
 WhenToTest CharacterMarriesPrincess
@@ -38514,6 +37962,15 @@ and SpouseTrait Princess_Muslim = 1
 and Attribute Piety < 4
        
 Affects WifeIsMuslim 1 Chance 100
+
+;------------------------------------------
+Trigger WifeIsMulsim_remove
+WhenToTest CharacterTurnEnd
+
+Condition Trait WifeIsMuslim = 1
+and FactionReligion islam
+
+Affects WifeIsMuslim -1 Chance 100
 
 ;------------------------------------------
 ;CONVERSION
@@ -40540,7 +39997,7 @@ Trigger adoptedbecomesclaimant
        and not FactionType byzantium; no regents for empires
        and not FactionType hre; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 10
 
 ;------------------------------------------
@@ -40548,7 +40005,7 @@ Trigger anybody1becomesclaimant
  WhenToTest BecomesFactionHeir
 
  Condition Trait BiologicalSon = 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not FatherTrait FactionRegent = 1
        and not FatherTrait FactionUsurper = 1
@@ -40561,7 +40018,7 @@ Trigger anybody1becomesclaimant
        and not FactionType byzantium; no regents for empires
        and not FactionType hre; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
@@ -40569,7 +40026,7 @@ Trigger anobody2becomesclaimant
  WhenToTest BecomesFactionHeir
 
  Condition Trait BastardSon = 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not FatherTrait FactionRegent = 1
        and not FatherTrait FactionUsurper = 1
@@ -40582,7 +40039,7 @@ Trigger anobody2becomesclaimant
        and not FactionType byzantium; no regents for empires
        and not FactionType hre; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 20
 
 ;------------------------------------------
@@ -40597,7 +40054,7 @@ Trigger sonofusurperbecomesheir
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger bastardsonofusurperbecomesheir
@@ -40611,7 +40068,7 @@ Trigger bastardsonofusurperbecomesheir
        and not FactionType milan
        and not FactionType russia
 
- Affects Factionheir 1 Chance 100
+ Affects Factionheir 2 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
@@ -40626,7 +40083,7 @@ Trigger UsurperTakesThrone
        and not FactionType byzantium; no auto civil war for empires
        and not FactionType hre; no auto civil war for empires
 
- Affects FactionUsurper 1 Chance 100 
+ Affects FactionUsurper 2 Chance 100 
  Affects Offensive_To_Nobles 1 Chance 100
 
 ;------------------------------------------
@@ -40657,8 +40114,7 @@ Trigger UsurperRecognized
        and not FactionType milan
        and not FactionType russia
 
- Affects FactionUsurper -1 Chance 100 
- Affects Factionleader 1 Chance 100 
+ Affects Factionleader 2 Chance 100 
 
 ;------------------------------------------
 ;RELIGION CONVERTED KINGDOMS
@@ -40678,7 +40134,7 @@ Trigger Catholic_Lithuanian_King2
 
  Condition FactionType lithuania
        and CharacterReligion catholic
-       and Trait Factionleader < 2
+       and Trait Factionleader = 1
 
  Affects Factionleader 3 Chance 100 
 
@@ -40694,7 +40150,7 @@ Trigger adoptedbecomesclaimant_BYZ
        and I_TurnNumber > 0
        and FactionType byzantium; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
@@ -40702,12 +40158,12 @@ Trigger anybody1becomesclaimant_BYZ
  WhenToTest BecomesFactionHeir
 
  Condition Trait BiologicalSon = 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not Trait SonofKingPrince > 0
        and FactionType byzantium; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
@@ -40715,12 +40171,12 @@ Trigger anobody2becomesclaimant_BYZ
  WhenToTest BecomesFactionHeir
 
  Condition Trait BastardSon = 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not Trait SonofKingPrince > 0
        and FactionType byzantium; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
@@ -40731,8 +40187,7 @@ Trigger UsurperbecomesFactionLeader_BYZ
  Condition Trait FactionFutureUsurper = 1
        and FactionType byzantium
 
- Affects Factionleader 1 Chance 100 
- Affects FactionFutureUsurper -1 Chance 100 
+ Affects Factionleader 2 Chance 100 
  Affects Offensive_To_Nobles 1 Chance 50
 
 ;------------------------------------------
@@ -40748,7 +40203,7 @@ Trigger adoptedbecomesclaimant_HRE
        and I_TurnNumber > 0
        and FactionType hre; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 10
 
 ;------------------------------------------
@@ -40757,13 +40212,13 @@ Trigger anybody1becomesclaimant_HRE
 
  Condition Trait BiologicalSon = 1
        and not Trait HRE_Elector_Prince >= 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not FatherTrait FactionUsurper = 1
        and not Trait SonofKingPrince > 0
        and FactionType hre; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
@@ -40772,13 +40227,13 @@ Trigger anobody2becomesclaimant_HRE
 
  Condition Trait BastardSon = 1
        and not Trait HRE_Elector_Prince >= 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not FatherTrait FactionUsurper = 1
        and not Trait SonofKingPrince > 0
        and FactionType hre; no regents for empires
 
- Affects FactionFutureUsurper 1 Chance 100
+ Affects FactionFutureUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 20
 
 ;------------------------------------------
@@ -40786,7 +40241,7 @@ Trigger anobody_electorbecomesheir_HRE
  WhenToTest BecomesFactionHeir
 
  Condition Trait HRE_Elector_Prince >= 1
-       and not FatherTrait Factionleader = 1
+       and FatherTrait Factionleader = 0
        and not FatherTrait Factionheir = 1
        and not FatherTrait FactionUsurper = 1
        and not Trait SonofKingPrince = 1
@@ -40803,8 +40258,7 @@ Trigger Usurperbecomesfactionleader_HRE
        and not Trait HRE_Elector_Prince >= 1
        and FactionType hre
 
- Affects FactionUsurper 1 Chance 100 
- Affects FactionFutureUsurper -1 Chance 100 
+ Affects FactionUsurper 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 50
 
 ;------------------------------------------
@@ -40815,8 +40269,7 @@ Trigger UsurperElectorbecomesfactionleader_HRE
        and Trait HRE_Elector_Prince >= 1
        and FactionType hre
 
- Affects Factionleader 1 Chance 100 
- Affects FactionFutureUsurper -1 Chance 100 
+ Affects Factionleader 2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
@@ -41624,7 +41077,7 @@ Trigger jerusalem_ruler_trigger
  Condition Trait Jerusalem_Ruler = 0
        and HasAncType crusader_fief1
 
- Affects Jerusalem_Ruler 1 Chance 100
+ Affects Jerusalem_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger antioch_ruler_trigger
@@ -41633,7 +41086,7 @@ Trigger antioch_ruler_trigger
  Condition Trait Antioch_Ruler = 0
        and HasAncType crusader_fief2
 
- Affects Antioch_Ruler 1 Chance 100
+ Affects Antioch_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger edessa_ruler_trigger
@@ -41642,7 +41095,7 @@ Trigger edessa_ruler_trigger
  Condition Trait Edessa_Ruler = 0
        and HasAncType crusader_fief3
 
- Affects Edessa_Ruler 1 Chance 100
+ Affects Edessa_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger tortosa_ruler_trigger
@@ -41651,7 +41104,7 @@ Trigger tortosa_ruler_trigger
  Condition Trait Tortosa_Ruler = 0
        and HasAncType crusader_fief4
 
- Affects Tortosa_Ruler 1 Chance 100
+ Affects Tortosa_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger nicosia_ruler_trigger
@@ -41660,7 +41113,7 @@ Trigger nicosia_ruler_trigger
  Condition Trait Nicosia_Ruler = 0
        and HasAncType crusader_fief5
 
- Affects Nicosia_Ruler 1 Chance 100
+ Affects Nicosia_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger rhodes_ruler_trigger
@@ -41669,7 +41122,7 @@ Trigger rhodes_ruler_trigger
  Condition Trait Rhodes_Ruler = 0
        and HasAncType crusader_fief6
 
- Affects Rhodes_Ruler 1 Chance 100
+ Affects Rhodes_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger constantinople_ruler_trigger
@@ -41678,7 +41131,7 @@ Trigger constantinople_ruler_trigger
  Condition Trait Constantinople_Ruler = 0
        and HasAncType crusader_fief7
 
- Affects Constantinople_Ruler 1 Chance 100
+ Affects Constantinople_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger athens_ruler_trigger
@@ -41687,7 +41140,7 @@ Trigger athens_ruler_trigger
  Condition Trait Athens_Ruler = 0
        and HasAncType crusader_fief8
 
- Affects Athens_Ruler 1 Chance 100
+ Affects Athens_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger corinth_ruler_trigger
@@ -41696,7 +41149,7 @@ Trigger corinth_ruler_trigger
  Condition Trait Corinth_Ruler = 0
        and HasAncType crusader_fief9
 
- Affects Corinth_Ruler 1 Chance 100
+ Affects Corinth_Ruler 2 Chance 100
 
 ;------------------------------------------
 Trigger thessalonica_ruler_trigger
@@ -41705,7 +41158,7 @@ Trigger thessalonica_ruler_trigger
  Condition Trait Thessalonica_Ruler = 0
        and HasAncType crusader_fief10
 
- Affects Thessalonica_Ruler 1 Chance 100
+ Affects Thessalonica_Ruler 2 Chance 100
 
 ;------------------------------------------
 ;------------------------------------------
@@ -42534,7 +41987,7 @@ Trigger Venice_Factionleader_Trigger
 
  Condition FactionType venice
 
- Affects Venice_Factionleader 1 Chance 100
+ Affects Venice_Factionleader 2 Chance 100
  Affects Venice_Consiglio_Member -3 Chance 100
  Affects Venice_Public_Office -2 Chance 100
  Affects Venice_Podesta -2 Chance 100
@@ -42546,7 +41999,7 @@ Trigger Venice_FactionHeir_Trigger
 
  Condition FactionType venice
 
- Affects Venice_Factionheir 1 Chance 100
+ Affects Venice_Factionheir 2 Chance 100
  Affects Venice_Consiglio_Member 3 Chance 100
  Affects Venice_Public_Office -2 Chance 100
  Affects Venice_Podesta -2 Chance 100
@@ -42561,7 +42014,7 @@ Trigger Venice_Factionleader_Trigger_Turn0
  and FactionType venice
  and Trait Factionleader >= 1
 
- Affects Venice_Factionleader 1 Chance 100
+ Affects Venice_Factionleader 2 Chance 100
  Affects Factionleader -1 Chance 100
 
 ;------------------------------------------
@@ -42573,7 +42026,7 @@ Trigger Venice_FactionHeir_Trigger_Turn0
  and FactionType venice
  and Trait Factionheir >= 1
 
- Affects Venice_Factionheir 1 Chance 100
+ Affects Venice_Factionheir 2 Chance 100
  Affects Factionheir -1 Chance 100
 
 ;------------------------------------------
@@ -43199,7 +42652,7 @@ Trigger Genoa_Factionleader_Trigger
 
  Condition FactionType milan
 
- Affects Genoa_Factionleader 1 Chance 100
+ Affects Genoa_Factionleader 2 Chance 100
  Affects Genoa_Public_Office -2 Chance 100
  Affects Genoa_Public_Person -2 Chance 100
  Affects Genoa_Consul -4 Chance 100 
@@ -43210,7 +42663,7 @@ Trigger Genoa_FactionHeir_Trigger
 
  Condition FactionType milan
 
- Affects Genoa_Factionheir 1 Chance 100
+ Affects Genoa_Factionheir 2 Chance 100
  Affects Genoa_Public_Office -2 Chance 100
  Affects Genoa_Public_Person -2 Chance 100 
 
@@ -43223,7 +42676,7 @@ Trigger Genoa_Factionleader_Trigger_Turn0
  and FactionType milan
  and Trait Factionleader >= 1
 
- Affects Genoa_Factionleader 1 Chance 100
+ Affects Genoa_Factionleader 2 Chance 100
  Affects Factionleader -1 Chance 100
 
 ;------------------------------------------
@@ -43235,7 +42688,7 @@ Trigger Genoa_FactionHeir_Trigger_Turn0
  and FactionType milan
  and Trait Factionheir >= 1
 
- Affects Genoa_Factionheir 1 Chance 100
+ Affects Genoa_Factionheir 2 Chance 100
  Affects Factionheir -1 Chance 100
 
 ;------------------------------------------
@@ -43782,7 +43235,7 @@ Trigger Novgorod_Factionleader_Trigger
 
  Condition FactionType russia
 
- Affects Novgorod_Factionleader 1 Chance 100
+ Affects Novgorod_Factionleader 2 Chance 100
 
 ;------------------------------------------
 Trigger Novgorod_FactionHeir_Trigger
@@ -43790,7 +43243,7 @@ Trigger Novgorod_FactionHeir_Trigger
 
  Condition FactionType russia
 
- Affects Novgorod_Factionheir 1 Chance 100
+ Affects Novgorod_Factionheir 2 Chance 100
 
 ;------------------------------------------
 Trigger Novgorod_Factionleader_Trigger_Turn0
@@ -43801,7 +43254,7 @@ Trigger Novgorod_Factionleader_Trigger_Turn0
  and FactionType russia
  and Trait Factionleader >= 1
 
- Affects Novgorod_Factionleader 1 Chance 100
+ Affects Novgorod_Factionleader 2 Chance 100
  Affects Factionleader -1 Chance 100
 
 ;------------------------------------------
@@ -43813,7 +43266,7 @@ Trigger Novgorod_FactionHeir_Trigger_Turn0
  and FactionType russia
  and Trait Factionheir >= 1
 
- Affects Novgorod_Factionheir 1 Chance 100
+ Affects Novgorod_Factionheir 2 Chance 100
  Affects Factionheir -1 Chance 100
 
 ;------------------------------------------
@@ -44125,7 +43578,7 @@ Trigger kingdoms_factionheir_turn0_catch
  WhenToTest CharacterTurnEnd
 
  Condition IsFactionHeir
-       and I_TurnNumber 0
+       and I_TurnNumber = 0
        and not FactionType teutonic_order
        and not FactionType venice
        and not FactionType milan
@@ -44142,6 +43595,15 @@ Trigger kingdoms_factionheir_turn0_catch
 ;------------------------------------------
 ;NHM
 ;------------------------------------------
+Trigger Next_Heir_Trait_Ancillary_Remove
+WhenToTest CharacterTurnEnd
+
+Condition Trait Next_Heir_Trait = 1
+and not HasAncType NextHeirCrown
+
+Affects Desinherited_Trait 2 Chance 100
+
+;------------------------------------------
 Trigger Next_Heir_Trait_Trigger
 WhenToTest CharacterTurnEnd
 
@@ -44149,18 +43611,9 @@ Condition IsGeneral
 and not IsFactionLeader
 and not IsFactionHeir
 and HasAncType NextHeirCrown
+and Trait Next_Heir_Trait = 0
 
 Affects Next_Heir_Trait 1 Chance 100
-
-;------------------------------------------
-;------------------------------------------
-Trigger Next_Heir_Trait_Ancillary_Remove
-WhenToTest CharacterTurnEnd
-
-Condition Trait Next_Heir_Trait = 1
-and not HasAncType NextHeirCrown
-
-Affects Desinherited_Trait 1 Chance 100
 
 ;------------------------------------------
 ;===============================================================
@@ -44170,14 +43623,11 @@ Affects Desinherited_Trait 1 Chance 100
 Trigger Civil_Unrest_trigger1
 WhenToTest BecomesFactionLeader
 
-Condition Attribute Authority < 7
-and Attribute Authority > 3
-and not Trait Civil_Unrest > 0
-and not Trait FactionUsurper > 0
-and not Trait FactionFutureUsurper > 0
-and I_TurnNumber > 0
+Condition Attribute Authority < 8
+and Attribute Authority > 5
+and Trait FactionUsurper = 0
+and Trait FactionFutureUsurper = 0
 and SettlementsTaken >= 2
-and not FactionType slave
 
 Affects Civil_Unrest 1 Chance 25
 
@@ -44185,14 +43635,11 @@ Affects Civil_Unrest 1 Chance 25
 Trigger Civil_Unrest_trigger2
 WhenToTest BecomesFactionLeader
 
-Condition Attribute Authority < 4
-and Attribute Authority > 0
-and not Trait Civil_Unrest > 0
-and not Trait FactionUsurper > 0
-and not Trait FactionFutureUsurper > 0
-and I_TurnNumber > 0
+Condition Attribute Authority < 6
+and Attribute Authority > 3
+and Trait FactionUsurper = 0
+and Trait FactionFutureUsurper = 0
 and SettlementsTaken >= 4
-and not FactionType slave
 
 Affects Civil_Unrest 2 Chance 50
 
@@ -44200,63 +43647,57 @@ Affects Civil_Unrest 2 Chance 50
 Trigger Civil_Unrest_trigger3
 WhenToTest BecomesFactionLeader
 
-Condition Attribute Authority < 1
-and not Trait Civil_Unrest > 0
-and not Trait FactionUsurper > 0
-and not Trait FactionFutureUsurper > 0
-and I_TurnNumber > 0
+Condition Attribute Authority < 4
+and Trait FactionUsurper = 0
+and Trait FactionFutureUsurper = 0
 and SettlementsTaken >= 6
-and not FactionType slave
 
 Affects Civil_Unrest 3 Chance 75
 Affects Offensive_To_Nobles 1 Chance 25
 
 ;----------------------------------------------------
+; Every Unrest level lasts at least 1 turn
 ;----------------------------------------------------
 Trigger Civil_Unrest_recover1
 WhenToTest CharacterTurnEnd
 
-Condition Trait Civil_Unrest = 3
-and IsFactionLeader
-and not Attribute Authority > 2
-and I_TurnNumber > 0
+Condition IsFactionLeader
 and FactionIsLocal
+and Trait Civil_Unrest = 1
+and Attribute Authority < 8
 
-Affects Civil_Unrest -1 Chance 55
+Affects Civil_Unrest -1 Chance 85
 
 ;----------------------------------------------------
 Trigger Civil_Unrest_recover2
 WhenToTest CharacterTurnEnd
 
-Condition Trait Civil_Unrest = 2
-and IsFactionLeader
-and not Attribute Authority > 5
-and I_TurnNumber > 0
+Condition IsFactionLeader
 and FactionIsLocal
+and Trait Civil_Unrest = 1
+and Attribute Authority >= 8
 
-Affects Civil_Unrest -1 Chance 70
+Affects Civil_Unrest -1 Chance 100
 
 ;----------------------------------------------------
 Trigger Civil_Unrest_recover3
 WhenToTest CharacterTurnEnd
 
-Condition Trait Civil_Unrest = 1
-and IsFactionLeader
-and not Attribute Authority > 8
-and I_TurnNumber > 0
+Condition IsFactionLeader
 and FactionIsLocal
+and Trait Civil_Unrest = 2
+and Attribute Authority < 6
 
-Affects Civil_Unrest -1 Chance 85
+Affects Civil_Unrest -1 Chance 70
 
 ;----------------------------------------------------
 Trigger Civil_Unrest_recover4
 WhenToTest CharacterTurnEnd
 
-Condition Trait Civil_Unrest = 3
-and IsFactionLeader
-and Attribute Authority > 2
-and I_TurnNumber > 0
+Condition IsFactionLeader
 and FactionIsLocal
+and Trait Civil_Unrest = 2
+and Attribute Authority >= 6
 
 Affects Civil_Unrest -1 Chance 100
 
@@ -44264,56 +43705,33 @@ Affects Civil_Unrest -1 Chance 100
 Trigger Civil_Unrest_recover5
 WhenToTest CharacterTurnEnd
 
-Condition Trait Civil_Unrest = 2
-and IsFactionLeader
-and Attribute Authority > 5
-and I_TurnNumber > 0
+Condition IsFactionLeader
 and FactionIsLocal
+and Trait Civil_Unrest = 3
+and Attribute Authority < 4
 
-Affects Civil_Unrest -1 Chance 100
+Affects Civil_Unrest -1 Chance 55
 
 ;----------------------------------------------------
 Trigger Civil_Unrest_recover6
 WhenToTest CharacterTurnEnd
 
-Condition Trait Civil_Unrest = 1
-and IsFactionLeader
-and Attribute Authority > 8
-and I_TurnNumber > 0
+Condition IsFactionLeader
 and FactionIsLocal
+and Trait Civil_Unrest = 3
+and Attribute Authority >= 4
 
 Affects Civil_Unrest -1 Chance 100
 
 ;----------------------------------------------------
-Trigger Civil_Unrest_recover7
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest = 3
-and IsFactionLeader
-and I_TurnNumber > 0
-and not FactionIsLocal
-
-Affects Civil_Unrest -1 Chance 85
-
+;Simplified for the AI
 ;----------------------------------------------------
-Trigger Civil_Unrest_recover8
+Trigger AI_Civil_Unrest_recover
 WhenToTest CharacterTurnEnd
 
-Condition Trait Civil_Unrest = 2
-and IsFactionLeader
-and I_TurnNumber > 0
+Condition IsFactionLeader
 and not FactionIsLocal
-
-Affects Civil_Unrest -1 Chance 85
-
-;----------------------------------------------------
-Trigger Civil_Unrest_recover9
-WhenToTest CharacterTurnEnd
-
-Condition Trait Civil_Unrest = 1
-and IsFactionLeader
-and I_TurnNumber > 0
-and not FactionIsLocal
+and Trait Civil_Unrest > 0
 
 Affects Civil_Unrest -1 Chance 85
 

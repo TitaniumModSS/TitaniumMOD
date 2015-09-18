@@ -6048,29 +6048,25 @@ unit		Sergeant Spearmen			exp 6 armour 3 weapon_lvl 0
 unit		Pilgrims				exp 3 armour 0 weapon_lvl 0
 unit		Pilgrims				exp 3 armour 0 weapon_lvl 0
 
-;Toulouse Coast
-character	Bertrand de_Toulouse, named character, male, age 33, x 100, y 157 
+;Acre Coast (moved to Toulouse Coast for human player)
+character	Bertrand de_Toulouse, named character, male, age 33, x 328, y 79, label crusader4toulouse 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 3 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Jerusalem 1 
 army
 unit		NE Bodyguard				exp 0 armour 0 weapon_lvl 0
-unit		Knights Hospitaller			exp 1 armour 0 weapon_lvl 0
-unit		Dismounted Knights Hospitaller		exp 1 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
-unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
-unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 2 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 2 weapon_lvl 0
+;Extra added through script for human player only
+;unit		Knights Hospitaller			exp 1 armour 0 weapon_lvl 0
+;unit		Dismounted Knights Hospitaller		exp 1 armour 0 weapon_lvl 0
+;unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
+;unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
+;unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
+;unit		Peasant Archers				exp 0 armour 2 weapon_lvl 0
+;unit		Crossbow Militia			exp 0 armour 2 weapon_lvl 0
 
-character	Claude, admiral, male, age 39, x 102, y 156 
+character	Claude de_Pise, admiral, male, age 39, x 327, y 79, label crusader4admiral 
 army
 unit		galley					exp 2 armour 0 weapon_lvl 0
 unit		galley					exp 1 armour 0 weapon_lvl 0
 unit		galley					exp 1 armour 0 weapon_lvl 0
-
-character	Charles, general, male, age 21, x 102, y 156 
-army
-unit		Pisan and Geonese sailors		exp 3 armour 0 weapon_lvl 0
-unit		Pisan and Geonese sailors		exp 3 armour 0 weapon_lvl 0
 
 character	Foucaud, spy, male, age 23, x 335, y 77 
 traits NaturalSpySkill 2 
@@ -6786,7 +6782,7 @@ settlement
 	year_founded 0
 	population 2200
 	plan_set default_set
-	faction_creator france
+	faction_creator england
 	building
 	{
 		type core_building wooden_pallisade
@@ -8726,13 +8722,14 @@ army
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Arab Cavalry				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 0 armour 0 weapon_lvl 0
-;unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
-;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
-;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+;Extra added through script if needed
+;unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+;unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 ;unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 ;unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 

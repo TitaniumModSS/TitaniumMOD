@@ -10,6 +10,13 @@ translate data\text\missions.txt with text\rlc_missions.txt
 translate data\text\shared.txt with text\rlc_shared.txt
 translate data\text\strat.txt with text\rlc_strat.txt
 translate data\text\tooltips.txt with text\rlc_tooltips.txt
+replace data\export_descr_character_traits.txt with rlc_export_descr_character_traits_triggers.txt from:
+;******************************************************
+;**********************RLC TRIGGERS*********************
+;******************************************************
+to:
+;Space for CLR submod triggers
+append data\export_descr_ancillaries.txt with rlc_export_descr_ancillaries_triggers.txt
 append data\world\maps\campaign\imperial_campaign\campaign_script.txt with rlc_scriptAI.txt after:
 ;=======================================================;
 ;================= ADDITIONAL SCRIPTS ==================;

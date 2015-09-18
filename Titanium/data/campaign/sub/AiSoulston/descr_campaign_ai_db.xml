@@ -8558,9 +8558,9 @@
 	-->
 
 	<!--
-	/////////////////////////////////////////////////////////////
-	// SLAVE FACTION AI PARAMS.  THEY DON'T REALLY DO ANYTHING //
-	/////////////////////////////////////////////////////////////
+	///////////////////////
+	// SLAVE AI PARAMS. MORE AGRESSIVE SLAVE AI FROM MWY's SSHIP AI + BEERMUGCARL's FORTIFIED//
+	///////////////////////
 	-->
 
 	<faction_ai_label name="slave_faction">
@@ -8584,29 +8584,29 @@
 
 			<decision_entry>
 				<!--
-					IF AT WAR AND NEIGHBOUR > DEFEND NORMAL
+					IF AT WAR AND NEIGHBOUR > DEFEND FORTIFIED
 				-->
 				<min_entry	is_neighbour="true"/>
 				<max_entry	is_neighbour="true"/>
-				<faction_attitude	at_war="true" defense="defend_normal" continue="true"/>
+				<faction_attitude	at_war="true" defense="defend_fortified" continue="true"/>
 			</decision_entry>
 
 			<decision_entry>
 				<!--
-					IF NOT NEIGHBOUR > DEFEND MINIMAL
+					IF NOT NEIGHBOUR > DEFEND NORMAL
 				-->
 				<min_entry	is_neighbour="false"/>
 				<max_entry	is_neighbour="false"/>
-				<faction_attitude	defense="defend_minimal" continue="true"/>
+				<faction_attitude	defense="defend_normal" continue="true"/>
 			</decision_entry>
       
 			<decision_entry>
 				<!--
-					IF NOT NEIGHBOUR, THEY DONT LIKE US > DEFEND NORMAL
+					IF NOT NEIGHBOUR, THEY DONT LIKE US > DEFEND FORTIFIED
 				-->
 				<min_entry	is_neighbour="false"/>
 				<max_entry	is_neighbour="false" target_faction_standing="-0.5"/>
-				<faction_attitude	defense="defend_normal" continue="true"/>
+				<faction_attitude	defense="defend_fortified" continue="true"/>
 			</decision_entry>
      
 

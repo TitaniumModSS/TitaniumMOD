@@ -10178,76 +10178,25 @@ Trigger black_stallion_for_princess
  
  AcquireAncillary black_stallion chance 50 
  
-
-;================ RLC triggers ================
-;------------------------------------------
-Trigger rl_envoy_trigger
-    WhenToTest CharacterTurnStart
-
-    Condition AgentType = princess
-       and Trait RoyalLady > 0
-
- AcquireAncillary rl_envoy chance 100
-;------------------------------------------
-Trigger rl_cosmetics_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and SettlementBuildingExists >= market 
-		and AgentType = princess
-        and Trait RoyalLady > 0
-
- AcquireAncillary fine_cosmetics chance 15
 ;------------------------------------------ 
-Trigger rl_faithful_servant_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and AgentType = princess
-		and RemainingMPPercentage = 100 
-		and Trait RoyalLady > 0
+Trigger royal_escort_far_away 
+ WhenToTest CharacterTurnEnd 
+ Condition DistanceCapital > 25 
+ and AgentType = princess 
+ and Trait GoodPrincess > 2 
+ and Trait IAmPrincess = 1 
  
- AcquireAncillary faithful_servant chance 6
-;------------------------------------------
-Trigger rl_black_stallion_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and SettlementBuildingExists >= dockyard 
- 		and AgentType = princess
-        and Trait RoyalLady > 0
-
- AcquireAncillary black_stallion chance 4
- ;------------------------------------------
- Trigger rl_smothering_bodyguard_trigger
-	WhenToTest CharacterTurnEnd 
+ AcquireAncillary royal_escort chance 15 
  
-	Condition DistanceCapital > 25 
-		and AgentType = princess 
-        and Trait RoyalLady > 0
+;------------------------------------------ 
+Trigger royal_escort_assassination 
+ WhenToTest SufferAssassinationAttempt 
+ Condition AgentType = princess 
+ and Trait IAmPrincess = 1 
  
- AcquireAncillary smothering_bodyguard chance 3
-  ;------------------------------------------
-Trigger rl_delicate_blade_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and SettlementBuildingExists >= coaching_house 
- 		and AgentType = princess
-        and Trait RoyalLady > 0
+ AcquireAncillary royal_escort chance 50 
  
- AcquireAncillary delicate_blade chance 9
-;------------------------------------------
- Trigger rl_strapping_stallion_trigger
-    WhenToTest CharacterTurnEnd 
-	
-	Condition AgentType = princess 
-		and Trait RoyalLady > 0
-		and FactionBuildingExists >= barons_stables 
- 
- AcquireAncillary strapping_stallion chance 11 
-;=============end of RLC anc triggers =============
-
+;------------------------------------------ 
 Trigger swift_steed_vnv_trigger 
  WhenToTest AgentCreated 
  Condition AgentType = diplomat 
@@ -21958,74 +21907,7 @@ Trigger emperors_seal_ai
  and CharFactionType byzantium
 
  AcquireAncillary emperors_seal chance 33
-;================ RLC triggers ================
-;------------------------------------------
-Trigger rl_envoy_trigger
-    WhenToTest CharacterTurnStart
 
-    Condition AgentType = princess
-       and Trait RoyalLady > 0
-
- AcquireAncillary rl_envoy chance 100
-;------------------------------------------
-Trigger rl_cosmetics_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and SettlementBuildingExists >= market 
-		and AgentType = princess
-        and Trait RoyalLady > 0
-
- AcquireAncillary fine_cosmetics chance 15
-;------------------------------------------ 
-Trigger rl_faithful_servant_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and AgentType = princess
-		and RemainingMPPercentage = 100 
-		and Trait RoyalLady > 0
- 
- AcquireAncillary faithful_servant chance 6
-;------------------------------------------
-Trigger rl_black_stallion_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and SettlementBuildingExists >= dockyard 
- 		and AgentType = princess
-        and Trait RoyalLady > 0
-
- AcquireAncillary black_stallion chance 4
- ;------------------------------------------
- Trigger rl_smothering_bodyguard_trigger
-	WhenToTest CharacterTurnEnd 
- 
-	Condition DistanceCapital > 25 
-		and AgentType = princess 
-        and Trait RoyalLady > 0
- 
- AcquireAncillary smothering_bodyguard chance 3
-  ;------------------------------------------
-Trigger rl_delicate_blade_trigger
-    WhenToTest CharacterTurnEnd 
-
-	Condition EndedInSettlement 
-		and SettlementBuildingExists >= coaching_house 
- 		and AgentType = princess
-        and Trait RoyalLady > 0
- 
- AcquireAncillary delicate_blade chance 9
-;------------------------------------------
- Trigger rl_strapping_stallion_trigger
-    WhenToTest CharacterTurnEnd 
-	
-	Condition AgentType = princess 
-		and Trait RoyalLady > 0
-		and FactionBuildingExists >= barons_stables 
- 
- AcquireAncillary strapping_stallion chance 11 
-;=============end of RLC anc triggers =============
 ;===============================================================
 ;== CONQUERED CROWNS TRIGGERS START HERE ==
 ;===============================================================

@@ -6036,16 +6036,16 @@ building temple_dievas
   religion pagan
   levels dievas_altar dievas_sanctuary dievas_temple
   {
-    dievas_altar city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine and not building_present temple_perkunas
+    dievas_altar city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_perkunas 
     {
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        religion_level bonus 2 requires event_counter pagan_faction 1 
-        law_bonus bonus 1 requires event_counter pagan_faction 1 
-        happiness_bonus bonus 1 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        religion_level bonus 2 
+        law_bonus bonus 1 
+        happiness_bonus bonus 1 
+        agent_limit priest 1 
       }
       material wooden
       construction  4
@@ -6056,15 +6056,15 @@ building temple_dievas
         dievas_sanctuary
       }
     }
-    dievas_sanctuary city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine and not building_present temple_perkunas
+    dievas_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_perkunas 
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        religion_level bonus 3 requires event_counter pagan_faction 1 
-        law_bonus bonus 2 requires event_counter pagan_faction 1 
-        happiness_bonus bonus 2 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        religion_level bonus 3 
+        law_bonus bonus 2 
+        happiness_bonus bonus 2 
+        agent_limit priest 1 
       }
       material wooden
       construction  6
@@ -6075,17 +6075,17 @@ building temple_dievas
         dievas_temple
       }
     }
-    dievas_temple city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine and not building_present temple_perkunas
+    dievas_temple city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_perkunas 
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        recruit_pool "Dievas Guard"  1   0.084   1  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        religion_level bonus 4 requires event_counter pagan_faction 1 
-        law_bonus bonus 3 requires event_counter pagan_faction 1 
-        happiness_bonus 3 requires event_counter pagan_faction 1 
-        agent_limit priest 2 requires event_counter pagan_faction 1 
-        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 and event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        recruit_pool "Dievas Guard"  1   0.084   1  0  requires factions { lithuania, } 
+        religion_level bonus 4 
+        law_bonus bonus 3 
+        happiness_bonus 3 
+        agent_limit priest 2 
+        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 
       }
       material wooden
       construction  8
@@ -6106,16 +6106,16 @@ building temple_dievas_castle
   religion pagan
   levels c_dievas_altar
   {
-    c_dievas_altar castle requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine_castle and not building_present temple_perkunas_castle
+    c_dievas_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine_castle and not building_present temple_perkunas_castle 
     {
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        religion_level bonus 2 requires event_counter pagan_faction 1 
-        happiness_bonus bonus 2 requires event_counter pagan_faction 1 
-        law_bonus bonus 1 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        religion_level bonus 2 
+        happiness_bonus bonus 2 
+        law_bonus bonus 1 
+        agent_limit priest 1 
       }
       material wooden
       construction  4
@@ -6136,16 +6136,16 @@ building temple_perkunas
   religion pagan
   levels perkunas_altar perkunas_sanctuary perkunas_temple
   {
-    perkunas_altar city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine and not building_present temple_dievas
+    perkunas_altar city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_dievas
     {
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        population_health_bonus 1 requires event_counter pagan_faction 1 
-        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 and event_counter pagan_faction 1 
-        religion_level bonus 1 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        population_health_bonus 1 
+        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 
+        religion_level bonus 1 
+        agent_limit priest 1 
       }
       material wooden
       construction  4
@@ -6156,16 +6156,16 @@ building temple_perkunas
         perkunas_sanctuary
       }
     }
-    perkunas_sanctuary city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine and not building_present temple_dievas
+    perkunas_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_dievas 
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        recruit_pool "Followers of Perkunas"  1   0.084   1  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        population_health_bonus 2 requires event_counter pagan_faction 1 
-        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 and event_counter pagan_faction 1 
-        religion_level bonus 2 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        recruit_pool "Followers of Perkunas"  1   0.084   1  0  requires factions { lithuania, } 
+        population_health_bonus 2 
+        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 
+        religion_level bonus 2 
+        agent_limit priest 1 
       }
       material wooden
       construction  6
@@ -6176,17 +6176,17 @@ building temple_perkunas
         perkunas_temple
       }
     }
-    perkunas_temple city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine and not building_present temple_dievas
+    perkunas_temple city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_dievas 
     {
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        recruit_pool "Followers of Perkunas"  1   0.125   2  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        population_health_bonus 3 requires event_counter pagan_faction 1 
-        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 and event_counter pagan_faction 1 
-        religion_level bonus 3 requires event_counter pagan_faction 1 
-        agent_limit priest 2 requires event_counter pagan_faction 1 
-        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 and event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        recruit_pool "Followers of Perkunas"  1   0.125   2  0  requires factions { lithuania, } 
+        population_health_bonus 3 
+        population_growth_bonus bonus 1 requires event_counter is_the_ai 1 
+        religion_level bonus 3 
+        agent_limit priest 2 
+        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 
       }
       material wooden
       construction  8
@@ -6207,17 +6207,17 @@ building temple_perkunas_castle
   religion pagan
   levels c_perkunas_altar
   {
-    c_perkunas_altar castle requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_giltine_castle and not building_present temple_dievas_castle
+    c_perkunas_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine_castle and not building_present temple_dievas_castle 
     {
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         recruit_pool "Lettish Crossbowmen"  1   0.084   1  0  requires factions { lithuania, }
-        population_health_bonus 1 requires event_counter pagan_faction 1 
-        population_growth_bonus bonus 1 requires event_counter pagan_faction 1 
-        religion_level bonus 1 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        population_health_bonus 1 
+        population_growth_bonus bonus 1 
+        religion_level bonus 1 
+        agent_limit priest 1 
       }
       material wooden
       construction  4
@@ -6238,15 +6238,15 @@ building temple_giltine
   religion pagan
   levels giltine_altar giltine_sanctuary giltine_temple
   {
-    giltine_altar city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_perkunas and not building_present temple_dievas
+    giltine_altar city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas and not building_present temple_dievas 
     {
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        law_bonus bonus 1 requires event_counter pagan_faction 1 
-        religion_level bonus 1 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
+        law_bonus bonus 1 
+        religion_level bonus 1 
+        agent_limit priest 1 
       }
       material wooden
       construction  4
@@ -6257,14 +6257,14 @@ building temple_giltine
         giltine_sanctuary
       }
     }
-    giltine_sanctuary city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_perkunas and not building_present temple_dievas
+    giltine_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas and not building_present temple_dievas 
     {
       capability
       {
-        agent priest  0  requires factions {  lithuania, } and event_counter pagan_faction 1 
-        law_bonus bonus 2 requires event_counter pagan_faction 1 
-        religion_level bonus 2 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions {  lithuania, } 
+        law_bonus bonus 2 
+        religion_level bonus 2 
+        agent_limit priest 1 
       }
       material wooden
       construction  6
@@ -6275,16 +6275,16 @@ building temple_giltine
         giltine_temple
       }
     }
-    giltine_temple city requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_perkunas and not building_present temple_dievas
+    giltine_temple city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas and not building_present temple_dievas 
     {
       capability
       {
-        agent priest  0  requires factions {  lithuania, } and event_counter pagan_faction 1 
-        recruit_pool "Giltines Chosen"  1   0.084   1  0  requires factions { lithuania, } and event_counter pagan_faction 1 
-        law_bonus bonus 3 requires event_counter pagan_faction 1 
-        religion_level bonus 3 requires event_counter pagan_faction 1 
-        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 and event_counter pagan_faction 1 
-        agent_limit priest 2 requires event_counter pagan_faction 1 
+        agent priest  0  requires factions {  lithuania, } 
+        recruit_pool "Giltines Chosen"  1   0.084   1  0  requires factions { lithuania, } 
+        law_bonus bonus 3 
+        religion_level bonus 3 
+        recruits_morale_bonus bonus 1 requires event_counter is_the_ai 1 
+        agent_limit priest 2 
       }
       material wooden
       construction  8
@@ -6305,16 +6305,16 @@ building temple_giltine_castle
   religion pagan
   levels c_giltine_altar
   {
-    c_giltine_altar castle requires factions { lithuania, } and event_counter pagan_faction 1 and not building_present temple_perkunas_castle and not building_present temple_dievas_castle
+    c_giltine_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas_castle and not building_present temple_dievas_castle 
     {
       convert_to 0
       capability
       {
-        agent priest  0  requires factions { lithuania, } and event_counter pagan_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         recruit_pool "Lettish Crossbowmen"  1   0.084   1  0  requires factions { lithuania, }
-        law_bonus bonus 1 requires event_counter pagan_faction 1 
-        religion_level bonus 1 requires event_counter pagan_faction 1 
-        agent_limit priest 1 requires event_counter pagan_faction 1 
+        law_bonus bonus 1 
+        religion_level bonus 1 
+        agent_limit priest 1 
       }
       material wooden
       construction  4
@@ -6335,7 +6335,7 @@ building temple_tengir
   religion pagan
   levels tengir_altar tengir_sanctuary tengir_temple
   {
-    tengir_altar city requires factions { cumans, mongols, } and event_counter pagan_faction 1 
+    tengir_altar city requires factions { cumans, mongols, } 
     {
       convert_to 0
       capability
@@ -6357,7 +6357,7 @@ building temple_tengir
         tengir_sanctuary
       }
     }
-    tengir_sanctuary city requires factions { cumans, mongols, } and event_counter pagan_faction 1 
+    tengir_sanctuary city requires factions { cumans, mongols, } 
     {
       capability
       {
@@ -6378,7 +6378,7 @@ building temple_tengir
         tengir_temple
       }
     }
-    tengir_temple city requires factions { cumans, mongols, } and event_counter pagan_faction 1 
+    tengir_temple city requires factions { cumans, mongols, } 
     {
       capability
       {
@@ -6410,7 +6410,7 @@ building temple_tengir_castle
   religion pagan
   levels c_tengir_altar
   {
-    c_tengir_altar castle requires factions { cumans, mongols, } and event_counter pagan_faction 1 
+    c_tengir_altar castle requires factions { cumans, mongols, } 
     {
       convert_to 0
       capability
@@ -6442,7 +6442,7 @@ building temple_catholic
   religion catholic
   levels small_church church abbey cathedral huge_cathedral
   {
-    small_church city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, lithuania, } and event_counter catholic_faction 1 
+    small_church city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, } or event_counter CatholicLithuania 1 
     {
       convert_to 0
       capability
@@ -6450,7 +6450,7 @@ building temple_catholic
         agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, }
         agent priest  0  requires factions { hungary, poland, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
-        agent priest  0  requires factions { lithuania, } and event_counter catholic_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         happiness_bonus bonus 1
         religion_level bonus 2
         pope_disapproval 1
@@ -6466,7 +6466,7 @@ building temple_catholic
         church
       }
     }
-    church city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, lithuania, } and event_counter catholic_faction 1 
+    church city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, } or event_counter CatholicLithuania 1 
     {
       convert_to 1
       capability
@@ -6474,7 +6474,7 @@ building temple_catholic
         agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, }
         agent priest  0  requires factions { hungary, poland, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
-        agent priest  0  requires factions { lithuania, } and event_counter catholic_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         happiness_bonus bonus 1
         religion_level bonus 3
         agent_limit priest 1 requires not event_counter strictly_religious 1
@@ -6490,14 +6490,14 @@ building temple_catholic
         abbey
       }
     }
-    abbey city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, lithuania, } and event_counter catholic_faction 1 
+    abbey city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, } or event_counter CatholicLithuania 1 
     {
       capability
       {
         agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, }
         agent priest  0  requires factions { hungary, poland, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
-        agent priest  0  requires factions { lithuania, } and event_counter catholic_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         recruit_pool "Dismounted Armored Clergy"  1   0.042   1  0  requires factions { denmark, norway, } and event_counter HALF_PLATE_ARMOR 1
         happiness_bonus bonus 2
         religion_level bonus 4
@@ -6516,14 +6516,14 @@ building temple_catholic
         cathedral
       }
     }
-    cathedral city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, lithuania, } and event_counter catholic_faction 1 
+    cathedral city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, } or event_counter CatholicLithuania 1 
     {
       capability
       {
         agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, }
         agent priest  0  requires factions { hungary, poland, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
-        agent priest  0  requires factions { lithuania, } and event_counter catholic_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         recruit_pool "Armored Clergy"  1   0.042   1  0  requires factions { denmark, norway, } and event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Dismounted Armored Clergy"  1   0.0625   2  0  requires factions { denmark, norway, } and event_counter HALF_PLATE_ARMOR 1
         happiness_bonus bonus 2
@@ -6544,14 +6544,14 @@ building temple_catholic
         huge_cathedral
       }
     }
-    huge_cathedral city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, lithuania, } and event_counter catholic_faction 1 
+    huge_cathedral city requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, } or event_counter CatholicLithuania 1 
     {
       capability
       {
         agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, }
         agent priest  0  requires factions { hungary, poland, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
-        agent priest  0  requires factions { lithuania, } and event_counter catholic_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         recruit_pool "Armored Clergy"  1   0.0625   2  0  requires factions { denmark, norway, } and event_counter HALF_PLATE_ARMOR 1
         recruit_pool "Dismounted Armored Clergy"  1   0.084   3  0  requires factions { denmark, norway, } and event_counter HALF_PLATE_ARMOR 1
         happiness_bonus bonus 3
@@ -6582,7 +6582,7 @@ building temple_catholic_castle
   religion catholic
   levels small_chapel chapel
   {
-    small_chapel castle requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, lithuania, } and event_counter catholic_faction 1 
+    small_chapel castle requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, } or event_counter CatholicLithuania 1 
     {
       convert_to 0
       capability
@@ -6590,7 +6590,7 @@ building temple_catholic_castle
         agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, }
         agent priest  0  requires factions { hungary, poland, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
-        agent priest  0  requires factions { lithuania, } and event_counter catholic_faction 1 
+        agent priest  0  requires factions { lithuania, } 
         happiness_bonus bonus 1
         religion_level bonus 2
         pope_disapproval 1
@@ -6606,12 +6606,12 @@ building temple_catholic_castle
         chapel
       }
     }
-    chapel castle requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, lithuania, } and event_counter catholic_faction 1 
+    chapel castle requires factions { denmark, teutonic_order, jerusalem, norway,  hre, scotland, france, england, hungary, poland, venice, papal_states, portugal, spain, aragon, sicily, milan, } or event_counter CatholicLithuania 1 
     {
       convert_to 1
       capability
       {
-        agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, } and event_counter catholic_faction 1 
+        agent priest  0  requires factions { denmark, teutonic_order, jerusalem, norway,  scotland, hre, france, england, } 
         agent priest  0  requires factions { hungary, poland, lithuania, }
         agent priest  0  requires factions { papal_states, portugal, spain, aragon, sicily, milan, venice, }
         happiness_bonus bonus 1
@@ -6640,7 +6640,7 @@ building temple_orthodox
   religion orthodox
   levels small_church_o church_o abbey_o cathedral_o huge_cathedral_o
   {
-    small_church_o city requires factions { russia, kievan_rus, byzantium, } and event_counter orthodox_faction 1 
+    small_church_o city requires factions { russia, kievan_rus, byzantium, }
     {
       convert_to 0
       capability
@@ -6661,7 +6661,7 @@ building temple_orthodox
         church_o
       }
     }
-    church_o city requires factions { russia, kievan_rus, byzantium, } and event_counter orthodox_faction 1 
+    church_o city requires factions { russia, kievan_rus, byzantium, }
     {
       convert_to 1
       capability
@@ -6682,7 +6682,7 @@ building temple_orthodox
         abbey_o
       }
     }
-    abbey_o city requires factions { russia, kievan_rus, byzantium, } and event_counter orthodox_faction 1 
+    abbey_o city requires factions { russia, kievan_rus, byzantium, }
     {
       capability
       {
@@ -6704,7 +6704,7 @@ building temple_orthodox
         cathedral_o
       }
     }
-    cathedral_o city requires factions { russia, kievan_rus, byzantium, } and event_counter orthodox_faction 1 
+    cathedral_o city requires factions { russia, kievan_rus, byzantium, }
     {
       capability
       {
@@ -6726,7 +6726,7 @@ building temple_orthodox
         huge_cathedral_o
       }
     }
-    huge_cathedral_o city requires factions { russia, kievan_rus, byzantium, } and event_counter orthodox_faction 1 
+    huge_cathedral_o city requires factions { russia, kievan_rus, byzantium, }
     {
       capability
       {
@@ -6758,7 +6758,7 @@ building temple_orthodox_castle
   religion orthodox
   levels small_chapel_o chapel_o
   {
-    small_chapel_o castle requires factions { russia, kievan_rus, byzantium, } and event_counter orthodox_faction 1 
+    small_chapel_o castle requires factions { russia, kievan_rus, byzantium, }
     {
       convert_to 0
       capability
@@ -6779,7 +6779,7 @@ building temple_orthodox_castle
         chapel_o
       }
     }
-    chapel_o castle requires factions { russia, kievan_rus, byzantium, } and event_counter orthodox_faction 1 
+    chapel_o castle requires factions { russia, kievan_rus, byzantium, }
     {
       convert_to 1
       capability
@@ -6811,7 +6811,7 @@ building temple_muslim
   religion islam
   levels small_masjid masjid minareted_masjid jama great_jama
   {
-    small_masjid city requires factions { egypt, moors, turks, kwarezm, timurids, } and event_counter muslim_faction 1 
+    small_masjid city requires factions { egypt, moors, turks, kwarezm, timurids, }
     {
       convert_to 0
       capability
@@ -6831,7 +6831,7 @@ building temple_muslim
         masjid
       }
     }
-    masjid city requires factions { egypt, moors, turks, kwarezm, timurids, } and event_counter muslim_faction 1 
+    masjid city requires factions { egypt, moors, turks, kwarezm, timurids, }
     {
       convert_to 1
       capability
@@ -6851,7 +6851,7 @@ building temple_muslim
         minareted_masjid
       }
     }
-    minareted_masjid city requires factions { egypt, moors, turks, kwarezm, timurids, } and event_counter muslim_faction 1 
+    minareted_masjid city requires factions { egypt, moors, turks, kwarezm, timurids, }
     {
       capability
       {
@@ -6872,7 +6872,7 @@ building temple_muslim
         jama
       }
     }
-    jama city requires factions { egypt, moors, turks, kwarezm, timurids, } and event_counter muslim_faction 1 
+    jama city requires factions { egypt, moors, turks, kwarezm, timurids, }
     {
       capability
       {
@@ -6893,7 +6893,7 @@ building temple_muslim
         great_jama
       }
     }
-    great_jama city requires factions { egypt, moors, turks, kwarezm, timurids, } and event_counter muslim_faction 1 
+    great_jama city requires factions { egypt, moors, turks, kwarezm, timurids, }
     {
       capability
       {
@@ -6924,7 +6924,7 @@ building temple_muslim_castle
   religion islam
   levels c_small_masjid c_masjid
   {
-    c_small_masjid castle requires factions { egypt, moors, turks, kwarezm, timurids, } and event_counter muslim_faction 1 
+    c_small_masjid castle requires factions { egypt, moors, turks, kwarezm, timurids, }
     {
       convert_to 0
       capability
@@ -6944,7 +6944,7 @@ building temple_muslim_castle
         c_masjid
       }
     }
-    c_masjid castle requires factions { egypt, moors, turks, kwarezm, timurids, } and event_counter muslim_faction 1 
+    c_masjid castle requires factions { egypt, moors, turks, kwarezm, timurids, }
     {
       convert_to 1
       capability
@@ -7976,9 +7976,9 @@ building teutonic_knights_chapter_house
       convert_to 0
       capability
       {
-        recruit_pool "Ritterbruder"  0.50   0.0358   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0.50   0.0358   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and event_counter status_teutonic_order 0
         recruit_pool "Ritterbruder"  0   0.0125   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  0.50   0.0173   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0.50   0.0173   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and event_counter status_teutonic_order 0
         recruit_pool "Dismounted Ritterbruder"  0   0.005   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter status_teutonic_order 1
 
         ;****Teutonic Order Special****
@@ -8007,9 +8007,9 @@ building teutonic_knights_chapter_house
       convert_to 1
       capability
       {
-        recruit_pool "Ritterbruder"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and event_counter status_teutonic_order 0
         recruit_pool "Ritterbruder"  0   0.0173   1  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  1   0.0358   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  1   0.0358   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and event_counter status_teutonic_order 0
         recruit_pool "Dismounted Ritterbruder"  0   0.0125   1  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter status_teutonic_order 1
 
         ;****Teutonic Order Special****
@@ -8039,9 +8039,9 @@ building teutonic_knights_chapter_house
       convert_to 2
       capability
       {
-        recruit_pool "Ritterbruder"  1   0.072   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  1   0.072   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and event_counter status_teutonic_order 0
         recruit_pool "Ritterbruder"  0   0.025   1  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  1   0.05   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  1   0.05   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter teutonic_order 1 and event_counter status_teutonic_order 0
         recruit_pool "Dismounted Ritterbruder"  0   0.0173   1  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, portugal, hre, } and event_counter status_teutonic_order 1
 
         ;****Teutonic Order Special****
