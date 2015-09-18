@@ -1,4 +1,5 @@
 ;SS6.4 descr_character edited by gracul: Jan-2011
+;TEMPLATE FILE FOR CAMPAIGNS, NOT actually used in game
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 starting_action_points	140	; default value for all characters and pathfinding calculations
@@ -231,6 +232,22 @@ strat_model		northern_generic_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
+faction			norway
+dictionary		2
+strat_model		northern_general
+strat_model		northern_general				; heir
+strat_model		northern_generic_king			; leader
+battle_model	Northern_General
+battle_equip	gladius, chainmail shirt helmet and rectangular shield
+
+faction			dummies
+dictionary		2
+strat_model		northern_general
+strat_model		northern_general				; heir
+strat_model		northern_general				; leader
+battle_model	Northern_General
+battle_equip	gladius, chainmail shirt helmet and rectangular shield
+
 faction			slave
 dictionary		2
 strat_model		northern_general
@@ -239,14 +256,6 @@ strat_model		northern_general				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
-
-faction			norway
-dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
-battle_model	Northern_General
-battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 type			general
@@ -417,13 +426,19 @@ strat_model		fancy_captain
 battle_model	Fancy_Captain
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
-faction			slave
+faction			norway
 dictionary		2
 strat_model		fancy_captain
 battle_model	Fancy_Captain
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
-faction			norway
+faction			dummies
+dictionary		2
+strat_model		fancy_captain
+battle_model	Fancy_Captain
+battle_equip	gladius, chainmail shirt helmet and rectangular shield
+
+faction			slave
 dictionary		2
 strat_model		fancy_captain
 battle_model	Fancy_Captain
@@ -545,17 +560,19 @@ faction			aragon
 dictionary		2
 strat_model		southern_spy
 
-
 faction			hungary
 dictionary		2
 strat_model		northern_spy
+
+faction			dummies
+dictionary		2
+strat_model		southern_spy
 
 faction			slave
 dictionary		2
 strat_model		southern_spy
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 type			assassin
 
@@ -676,13 +693,16 @@ faction			hungary
 dictionary		2
 strat_model		northern_assassin
 
+faction			dummies
+dictionary		2
+strat_model		southern_assassin
+
 faction			slave
 dictionary		2
 strat_model		southern_assassin
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 type			diplomat
 
@@ -799,6 +819,10 @@ dictionary		2
 strat_model		southern_ambassador
 
 faction			hungary
+dictionary		2
+strat_model		northern_ambassador
+
+faction			dummies
 dictionary		2
 strat_model		northern_ambassador
 
@@ -926,6 +950,10 @@ strat_model		spain_admiral
 faction			hungary
 dictionary		2
 strat_model		thrace_admiral
+
+faction			dummies
+dictionary		2
+strat_model		slave_admiral
 
 faction			slave
 dictionary		2
@@ -1072,8 +1100,8 @@ strat_model		royal_lady2
 ;dictionary		2
 ;strat_model		princess
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 type			merchant
 
@@ -1193,9 +1221,14 @@ faction			hungary
 dictionary		2
 strat_model		northern_merchant
 
+faction			dummies
+dictionary		2
+strat_model		southern_merchant
+
 faction			slave
 dictionary		2
 strat_model		southern_merchant
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1387,11 +1420,18 @@ strat_model		catholic_priest						; default model
 strat_model		catholic_bishop						; medium level priest
 strat_model		catholic_cardinal					; advanced priest
 
+faction			dummies
+dictionary		2
+strat_model		muslim_iman						; default model
+strat_model		muslim_iman						; medium level priest
+strat_model		muslim_iman					        ; advanced priest
+
 ;faction		slave
 ;dictionary		2
 ;strat_model		priest						        ; default model
 ;strat_model		bishop						        ; medium level priest
 ;strat_model		cardinal					        ; advanced priest
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

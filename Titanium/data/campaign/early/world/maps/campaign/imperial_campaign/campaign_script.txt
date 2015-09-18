@@ -8385,7 +8385,7 @@ monitor_event CharacterTurnStart CharFactionType scotland
 		terminate_monitor
 	end_if
 
-	if not I_CharacterTypeNearTile scotland, named_character, 5, 59, 248 ;if character not standing where it should, avoid ctd
+	if not I_CharacterTypeNearTile scotland, named_character, 5, 57, 248 ;if character not standing where it should, avoid ctd
 		terminate_monitor
 	end_if
 
@@ -9896,29 +9896,144 @@ monitor_event EventCounter EventCounterType is_mongol_character
 end_monitor
 
 ;================= BULGARIAN UPRISING ===================
-declare_counter bulgarian_uprising
+declare_counter bulgarians_rebel
+declare_counter bu_test
 add_events
 		event	counter	BulgarianUprisingSet
 		date	50
 end_add_events
 
-monitor_event PreFactionTurnStart FactionType slave
+monitor_event MultiTurnMove I_CompareCounter bu_test = 1
+	and HighestAttAdjacentChar Unorthodoxy named_character = 1
+
+	if I_CompareCounter bulgarians_rebel = -1
+		terminate_monitor
+	end_if
+	set_counter bulgarians_rebel 0
+end_monitor
+
+monitor_event FactionTurnStart FactionType slave
+;	and I_TurnNumber > 49
 	and I_EventCounter BulgarianUprisingSet = 1
 
-	if not I_SettlementOwner Sofia = slave
-		spawn_army 
-			faction slave
-			character Peter, named character, age 30, x 250, y 157, label Peter_of_Bulgaria
-			traits GoodCommander 4 , BattleDread 3 , StrategyDread 2 , PublicFaith 1 , NaturalMilitarySkill 2 , ofBulgariaName 1
+	;###### "Turn" 51
+	if I_CompareCounter bulgarians_rebel = 1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character Temporary 9,223
+		console_command mp Temporary -1
+
+		if I_CharacterExists peter4bulgaria
+		and I_SettlementOwner Sofia != slave
+		and I_SettlementUnderSiege Sofia
+		and I_CharacterTypeNearTile slave, named_character, 2, 248, 155 ;Sofia
+			;set_counter bulgarians_rebel 1
+			console_command move_character Temporary 248,155
+			set_counter bu_test 1
+			move Temporary, 248, 156
+
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 248,156
+				move Temporary, 248, 155
+			end_if
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 248,154
+				move Temporary, 248, 155
+			end_if
+			set_counter bu_test 0
+			console_command move_character Temporary 9,223
+
+			if I_CompareCounter bulgarians_rebel = 0
+				siege_settlement peter4bulgaria, Sofia, attack
+			end_if
+		end_if
+
+		if I_CharacterExists ivan4slave
+		and I_SettlementOwner Scopia != slave
+		and I_SettlementUnderSiege Scopia
+		and I_CharacterTypeNearTile slave, named_character, 2, 233, 149 ;Scopia
+			console_command move_character Temporary 233,149
+			set_counter bulgarians_rebel 1
+			set_counter bu_test 1
+			move Temporary, 234, 149
+
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 233,150
+				move Temporary, 233, 149
+			end_if
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 233,148
+				move Temporary, 233, 149
+			end_if
+			set_counter bu_test 0
+			console_command move_character Temporary 9,223
+
+			if I_CompareCounter bulgarians_rebel = 0
+				siege_settlement ivan4slave, Scopia, attack
+			end_if
+		end_if
+
+		if I_CharacterExists kalman4slave
+		and I_SettlementOwner Adrianople != slave
+		and I_SettlementUnderSiege Adrianople
+		and I_CharacterTypeNearTile slave, named_character, 2, 269, 146 ;Adrianople
+			set_counter bulgarians_rebel 1
+			console_command move_character Temporary 269, 146
+			set_counter bu_test 1
+			move Temporary, 269, 147
+
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 269,147
+				move Temporary, 269, 146
+			end_if
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 269,145
+				move Temporary, 269, 146
+			end_if
+			set_counter bu_test 0
+			console_command move_character Temporary 9,223
+
+			if I_CompareCounter bulgarians_rebel = 0
+				siege_settlement kalman4slave, Adrianople, attack
+			end_if
+		end_if
+
+		spawn_army
+			faction dummies
+			character	Peter, named character, x 19, y 20, label end4bus
+			traits	ofBulgariaName 2
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character end4bus 10,223
+		set_counter bulgarians_rebel -1
+		set_counter bu_test 1
+		move Temporary, 8, 223
+		kill_character Temporary
+		kill_character end4bus
+	 terminate_monitor
+	end_if
+
+	;###### "Turn" 50
+	if I_SettlementOwner Sofia != slave
+		set_counter bulgarians_rebel 1
+		spawn_army
+			faction dummies
+			character 	Peter, named character, age 30, x 250, y 157, label peter4bulgaria
+			traits 	GoodCommander 4, BattleDread 3, StrategyDread 2, PublicFaith 1, NaturalMilitarySkill 2, ofBulgariaName 1
 			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0      
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
@@ -9927,24 +10042,24 @@ monitor_event PreFactionTurnStart FactionType slave
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 		end
-		set_event_counter bulgarians_rebel1 1
+		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
-
-	if not I_SettlementOwner Scopia = slave
-		spawn_army 
-			faction slave
-			character Ivan, named character, age 30, x 236, y 151, label Ivan_Slave
-			traits GoodCommander 2 , BattleChivalry 3 , StrategyChivalry 2 , PublicFaith 1 , NaturalMilitarySkill 1 , InvasionCharacterCounter 1 
-			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
+	if I_SettlementOwner Scopia != slave
+		set_counter bulgarians_rebel 1
+		spawn_army
+			faction dummies
+			character	Ivan, named character, age 30, x 236, y 151, label ivan4slave
+			traits	GoodCommander 2, BattleChivalry 3, StrategyChivalry 2, PublicFaith 1, NaturalMilitarySkill 1, ofBulgariaName 1
+			unit    	EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0  
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0      
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
@@ -9953,24 +10068,24 @@ monitor_event PreFactionTurnStart FactionType slave
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 		end
-		set_event_counter bulgarians_rebel2 1
+		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
-
-	if not I_SettlementOwner Adrianople = slave
+	if I_SettlementOwner Adrianople != slave
+		set_counter bulgarians_rebel 1
 		spawn_army 
-			faction slave
-			character Kalman, named character, age 30, x 267, y 147, label Kalman_Slave
-			traits GoodCommander 2 , Bloodthirsty 2 , BattleDread 3 , InvasionCharacterCounter 2 
+			faction dummies
+			character Kalman, named character, age 30, x 267, y 147, label kalman4slave
+			traits GoodCommander 2, Bloodthirsty 2, BattleDread 3, ofBulgariaName 1
 			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0  
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0      
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
@@ -9979,121 +10094,47 @@ monitor_event PreFactionTurnStart FactionType slave
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 		end
-		set_event_counter bulgarians_rebel3 1
+		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
 
-	if I_EventCounter bulgarians_rebel = 1
+	if I_CompareCounter bulgarians_rebel = 1
 		historic_event bulgarian_uprising
 	end_if
+	set_counter bulgarians_rebel 1
 
-	terminate_monitor
+	if I_SettlementOwner Sofia != slave
+	and ! I_SettlementUnderSiege Sofia
+		siege_settlement peter4bulgaria, Sofia, maintain
+		if ! I_SettlementUnderSiege Sofia
+			move peter4bulgaria, 250,157
+		end_if
+		if I_SettlementUnderSiege Sofia
+			console_command give_trait peter4bulgaria ofBulgariaName 2
+		end_if
+	end_if
+	if I_SettlementOwner Scopia != slave
+	and ! I_SettlementUnderSiege Scopia
+		siege_settlement ivan4slave, Scopia, maintain
+		if ! I_SettlementUnderSiege Scopia
+			move ivan4slave, 236,151
+		end_if
+		if I_SettlementUnderSiege Scopia
+			console_command give_trait ivan4slave ofBulgariaName 2
+		end_if
+	end_if
+	if I_SettlementOwner Adrianople != slave
+	and ! I_SettlementUnderSiege Adrianople
+		siege_settlement kalman4slave, Adrianople, maintain
+		if ! I_SettlementUnderSiege Adrianople
+			move kalman4slave, 267,147
+		end_if
+		if I_SettlementUnderSiege Adrianople
+			console_command give_trait kalman4slave ofBulgariaName 2
+		end_if
+	end_if
 end_monitor
 
-declare_counter bulgaria_sofia_siege
-set_counter bulgaria_sofia_siege 0
-;monitor_event FactionTurnStart FactionType slave
-monitor_event CharacterTurnStart Trait ofBulgariaName = 1
-	and CharFactionType slave
-	and I_EventCounter bulgarians_rebel1 = 1
-	and I_IsFactionAIControlled slave
-	;and I_CharacterExists Peter_of_Bulgaria
-
-	if I_SettlementOwner Sofia = slave
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Sofia
-	and I_CompareCounter bulgaria_sofia_siege < 1 ;if settlement under siege already, avoid ctd.
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile slave, named_character, 1, 250, 157 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Sofia
-	and I_CompareCounter bulgaria_sofia_siege = 1
-		siege_settlement Peter_of_Bulgaria, Sofia, attack
-		terminate_monitor
-	end_if
-
-	if I_CompareCounter bulgaria_sofia_siege < 1
-		set_counter bulgaria_sofia_siege 1
-		siege_settlement Peter_of_Bulgaria, Sofia, maintain
-	end_if
-
-end_monitor
-
-declare_counter bulgaria_scopia_siege
-set_counter bulgaria_scopia_siege 0
-;monitor_event FactionTurnStart FactionType slave
-monitor_event CharacterTurnStart Trait InvasionCharacterCounter = 1
-	and CharFactionType slave
-	and I_EventCounter bulgarians_rebel2 = 1
-	and I_IsFactionAIControlled slave
-	;and I_CharacterExists Ivan_Slave
-
-	if I_SettlementOwner Scopia = slave
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Scopia
-	and I_CompareCounter bulgaria_scopia_siege < 1 ;if settlement under siege already, avoid ctd.
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile slave, named_character, 1, 236, 151 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Scopia
-	and I_CompareCounter bulgaria_scopia_siege = 1
-		siege_settlement Ivan_Slave, Scopia, attack
-		terminate_monitor
-	end_if
-
-	if I_CompareCounter bulgaria_scopia_siege < 1
-		set_counter bulgaria_scopia_siege 1
-		siege_settlement Ivan_Slave, Scopia, maintain
-	end_if
-
-end_monitor
-
-declare_counter bulgaria_adrianople_siege
-set_counter bulgaria_adrianople_siege 0
-;monitor_event FactionTurnStart FactionType slave
-monitor_event CharacterTurnStart Trait InvasionCharacterCounter = 2
-	and CharFactionType slave
-	and I_EventCounter bulgarians_rebel3 = 1
-	and I_IsFactionAIControlled slave
-	;and I_CharacterExists Kalman_Slave
-
-	if I_SettlementOwner Adrianople = slave
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Adrianople
-	and I_CompareCounter bulgaria_adrianople_siege < 1 ;if settlement under siege already, avoid ctd.
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile slave, named_character, 1, 267, 147 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Adrianople
-	and I_CompareCounter bulgaria_adrianople_siege = 1
-		siege_settlement Kalman_Slave, Adrianople, attack
-		terminate_monitor
-	end_if
-
-	if I_CompareCounter bulgaria_adrianople_siege < 1
-		set_counter bulgaria_adrianople_siege 1
-		siege_settlement Kalman_Slave, Adrianople, maintain
-	end_if
-
-end_monitor
 
 ;================== TIMURIDS INVASION ===================
 ;;;;;;;;;;;;;;;;;;;;;;;;DISABLED;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -44436,8 +44477,6 @@ end_monitor
 	set_counter constantinople_riot 0
 	declare_counter nicaea_riot
 	set_counter nicaea_riot 0
-	declare_counter athens_riot
-	set_counter athens_riot 0
 	declare_counter arta_riot
 	set_counter arta_riot 0
 	declare_counter trebizond_riot
@@ -44511,8 +44550,6 @@ end_monitor
 ;Norway
 	declare_counter bergen_riot
 	set_counter bergen_riot 0
-	declare_counter eikundarsund_riot
-	set_counter eikundarsund_riot 0
 	declare_counter norway_emerge
 	set_counter norway_emerge 0
 
@@ -44898,14 +44935,6 @@ end_monitor
 	    set_counter nicaea_riot 1
 	    set_counter faction_emerge_id 13
 	end_monitor
-	monitor_event CityRiots SettlementName Athens
-	  and I_NumberOfSettlements byzantium = 0
-	  and I_IsFactionAIControlled byzantium
-	  and not I_SettlementOwner Athens = byzantium
-	  and I_CompareCounter byzantium_emerge = 0
-	    set_counter athens_riot 1
-	    set_counter faction_emerge_id 13
-	end_monitor
 	monitor_event CityRiots SettlementName Arta
 	  and I_NumberOfSettlements byzantium = 0
 	  and I_IsFactionAIControlled byzantium
@@ -45085,14 +45114,6 @@ end_monitor
 	  and not I_SettlementOwner Bergen = norway
 	  and I_CompareCounter norway_emerge = 0
 	    set_counter bergen_riot 1
-	    set_counter faction_emerge_id 21
-	end_monitor
-	monitor_event CityRiots SettlementName Eikundarsund
-	  and I_NumberOfSettlements norway = 0
-	  and I_IsFactionAIControlled norway
-	  and not I_SettlementOwner Eikundarsund = norway
-	  and I_CompareCounter norway_emerge = 0
-	    set_counter eikundarsund_riot 1
 	    set_counter faction_emerge_id 21
 	end_monitor
 
@@ -45649,6 +45670,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	console_command create_building Kutaisi ros_po_bonus
 	console_command create_building Ahvaz ros_po_bonus
 	console_command create_building Serdobinskaya ros_po_bonus
+	console_command create_building Eikundarsund ros_po_bonus
+	console_command create_building Athens ros_po_bonus
 	if I_CompareCounter faction_emerge_id != 1
 		console_command create_building Edinburgh ros_po_bonus
 		console_command create_building Aberdeen ros_po_bonus
@@ -45710,7 +45733,6 @@ and I_CompareCounter faction_emerge_id >= 1
 	if I_CompareCounter faction_emerge_id != 13
 		console_command create_building Constantinople ros_po_bonus
 		console_command create_building Nicaea ros_po_bonus
-		console_command create_building Athens ros_po_bonus
 		console_command create_building Arta ros_po_bonus
 		console_command create_building Trebizond ros_po_bonus
 	end_if
@@ -45747,7 +45769,6 @@ and I_CompareCounter faction_emerge_id >= 1
 	end_if
 	if I_CompareCounter faction_emerge_id != 21
 		console_command create_building Bergen ros_po_bonus
-		console_command create_building Eikundarsund ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 22
 		console_command create_building Urgench ros_po_bonus
@@ -50774,9 +50795,6 @@ and I_CompareCounter faction_emerge_id >= 1
 	if I_CompareCounter nicaea_riot = 0
 		console_command create_building Nicaea ros_po_bonus
 	end_if
-	if I_CompareCounter athens_riot = 0
-		console_command create_building Athens ros_po_bonus
-	end_if
 	if I_CompareCounter arta_riot = 0
 		console_command create_building Arta ros_po_bonus
 	end_if
@@ -51204,93 +51222,6 @@ and I_CompareCounter faction_emerge_id >= 1
 			faction_emerge byzantium slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	if I_CompareCounter athens_riot = 1
-		console_command create_building Athens ros_target
-		if I_SettlementOwner Athens = venice
-			faction_emerge byzantium venice 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = sicily
-			faction_emerge byzantium sicily 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = milan
-			faction_emerge byzantium milan 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = denmark
-			faction_emerge byzantium denmark 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = egypt
-			faction_emerge byzantium egypt 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = cumans
-			faction_emerge byzantium cumans 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = turks
-			faction_emerge byzantium turks 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = scotland
-			faction_emerge byzantium scotland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = hre
-			faction_emerge byzantium hre 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = england
-			faction_emerge byzantium england 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = portugal
-			faction_emerge byzantium portugal 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = poland
-			faction_emerge byzantium poland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = france
-			faction_emerge byzantium france 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = moors
-			faction_emerge byzantium moors 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = russia
-			faction_emerge byzantium russia 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = spain
-			faction_emerge byzantium spain 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = hungary
-			faction_emerge byzantium hungary 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = aragon
-			faction_emerge byzantium aragon 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = lithuania
-			faction_emerge byzantium lithuania 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = kievan_rus
-			faction_emerge byzantium kievan_rus 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = norway
-			faction_emerge byzantium norway 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = jerusalem
-			faction_emerge byzantium jerusalem 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = kwarezm
-			faction_emerge byzantium kwarezm 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = papal_states
-			faction_emerge byzantium papal_states 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = mongols
-			faction_emerge byzantium mongols 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = teutonic_order
-			faction_emerge byzantium teutonic_order 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = timurids
-			faction_emerge byzantium timurids 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Athens = slave
-			faction_emerge byzantium slave 1 400.0 0.0 1.2 town true
-		end_if
-	end_if
 	if I_CompareCounter arta_riot = 1
 		console_command create_building Arta ros_target
 		if I_SettlementOwner Arta = venice
@@ -51468,7 +51399,6 @@ and I_CompareCounter faction_emerge_id >= 1
 	historic_event byzantium_emerged
 	set_counter constantinople_riot 0
 	set_counter nicaea_riot 0
-	set_counter athens_riot 0
 	set_counter arta_riot 0
 	set_counter trebizond_riot 0
 	set_counter byzantium_emerge 5
@@ -54141,9 +54071,6 @@ and I_CompareCounter faction_emerge_id >= 1
 	if I_CompareCounter bergen_riot = 0
 		console_command create_building Bergen ros_po_bonus
 	end_if
-	if I_CompareCounter eikundarsund_riot = 0
-		console_command create_building Eikundarsund ros_po_bonus
-	end_if
 		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army; Bergen
 			faction norway
@@ -54334,96 +54261,8 @@ and I_CompareCounter faction_emerge_id >= 1
 			faction_emerge norway slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	if I_CompareCounter eikundarsund_riot = 1
-		console_command create_building Eikundarsund ros_target
-		if I_SettlementOwner Eikundarsund = venice
-			faction_emerge norway venice 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = sicily
-			faction_emerge norway sicily 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = milan
-			faction_emerge norway milan 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = denmark
-			faction_emerge norway denmark 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = egypt
-			faction_emerge norway egypt 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = cumans
-			faction_emerge norway cumans 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = turks
-			faction_emerge norway turks 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = scotland
-			faction_emerge norway scotland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = hre
-			faction_emerge norway hre 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = england
-			faction_emerge norway england 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = portugal
-			faction_emerge norway portugal 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = poland
-			faction_emerge norway poland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = byzantium
-			faction_emerge norway byzantium 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = moors
-			faction_emerge norway moors 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = russia
-			faction_emerge norway russia 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = spain
-			faction_emerge norway spain 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = hungary
-			faction_emerge norway hungary 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = aragon
-			faction_emerge norway aragon 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = lithuania
-			faction_emerge norway lithuania 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = kievan_rus
-			faction_emerge norway kievan_rus 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = france
-			faction_emerge norway france 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = jerusalem
-			faction_emerge norway jerusalem 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = kwarezm
-			faction_emerge norway kwarezm 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = papal_states
-			faction_emerge norway papal_states 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = mongols
-			faction_emerge norway mongols 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = teutonic_order
-			faction_emerge norway teutonic_order 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = timurids
-			faction_emerge norway timurids 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Eikundarsund = slave
-			faction_emerge norway slave 1 400.0 0.0 1.2 town true
-		end_if
-	end_if
 	historic_event norway_emerged
 	set_counter bergen_riot 0
-	set_counter eikundarsund_riot 0
 	set_counter norway_emerge 5
 	add_money norway 40000
   end_if

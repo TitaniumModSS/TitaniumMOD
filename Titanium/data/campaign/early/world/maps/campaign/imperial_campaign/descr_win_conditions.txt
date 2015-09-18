@@ -1,3 +1,4 @@
+; SS6.4 - TITANIUM Early Era
 venice
 hold_regions Venice_Province Constantinople_Province Genoa_Province Iraklion_Province Ragusa_Province Yelabuga_Province Beleb_el_Anab_Province Skara_Province ; Verona Giulia Duklja
 take_regions 45
@@ -166,14 +167,6 @@ short_campaign hold_regions Jerusalem_Province Granada_Province
 take_regions 20
 outlive moors sicily
 
-;lithuania
-;hold_regions Vilnius_Province Thorn_Province Reval_Province Varad_Province Riga_Province Palanga_Province Hrodna_Province Novgorod_Province Kiev_Province  
-;take_regions 45
-;outlive russia kievan_rus poland
-;short_campaign hold_regions Kiev_Province Novgorod_Province 
-;take_regions 20
-;outlive russia kievan_rus
-
 ;OBOTRITES
 lithuania
 hold_regions Damghan_Province Vilnius_Province Thorn_Province Reval_Province Riga_Province Palanga_Province Hrodna_Province 
@@ -198,14 +191,6 @@ outlive lithuania russia kievan_rus poland
 short_campaign hold_regions Novgorod_Province Vilnius_Province 
 take_regions 20
 outlive lithuania russia
-
-;timurids
-;hold_regions Jerusalem_Province Antioch_Province Gaza_Province Constantinople_Province Tmutarakan_Province 
-;take_regions 45
-;outlive turks mongols
-;short_campaign hold_regions Constantinople_Province 
-;take_regions 20
-;outlive turks
 
 ;ABBASIDS
 timurids
@@ -239,6 +224,12 @@ outlive turks mongols
 short_campaign hold_regions Jerusalem_Province Baghdad_Province 
 take_regions 20
 outlive turks
+
+dummies
+hold_regions
+take_regions 150
+short_campaign hold_regions
+take_regions 100
 
 slave
 hold_regions Rome_Province 

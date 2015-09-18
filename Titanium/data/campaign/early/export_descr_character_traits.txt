@@ -11036,6 +11036,13 @@ Trait ofBulgariaName
    Epithet of_Bulgaria_Name_epithet_desc
    Threshold 1
 
+ Level of_Bulgaria_Name_epithet_desc
+   Description of_Bulgaria_Name_epithet_desc
+   EffectsDescription of_Bulgaria_Name_epithet_desc
+   Epithet of_Bulgaria_Name_epithet_desc
+   Threshold 2
+
+   Effect Unorthodoxy 1 
 ;==========================================
 
 ;------------------------------------------
@@ -25466,7 +25473,7 @@ Trigger Visit_Rome
 Trigger Visit_Santiago
  WhenToTest CharacterTurnEnd
  Condition EndedInSettlement
-       and SettlementName Leon
+       and SettlementName Salamanca
        and IsGeneral
        and CharacterReligion catholic
        and not Trait Visit_Santiago >= 1
@@ -25544,7 +25551,7 @@ Trigger Visit_RomeRegion
 ;------------------------------------------
 Trigger Visit_GaliciaRegion
  WhenToTest CharacterTurnEnd
- Condition IsRegionOneOf 106 Leon_Province
+ Condition IsRegionOneOf 106 Salamanca_Province
        and IsGeneral
        and not EndedInEnemyZOC
        and CharacterReligion catholic

@@ -2109,7 +2109,7 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			historic_event royal_lady factions { byzantium, }
 		end_if
 		if I_CompareCounter frankfurt_courtesan_id = 2
-			spawn_character 1byzantium random_name, princess, age 19, x 140, y 206
+			spawn_character england random_name, princess, age 19, x 140, y 206
 			historic_event royal_lady factions { england, }
 		end_if
 		if I_CompareCounter frankfurt_courtesan_id = 3
@@ -2168,7 +2168,7 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			historic_event royal_lady factions { sicily, }
 		end_if
 		if I_CompareCounter frankfurt_courtesan_id = 14
-			spawn_character 10byzantium random_name, princess, age 19, x 140, y 206
+			spawn_character hungary random_name, princess, age 19, x 140, y 206
 			historic_event royal_lady factions { hungary, }
 		end_if
 		if I_CompareCounter frankfurt_courtesan_id = 15

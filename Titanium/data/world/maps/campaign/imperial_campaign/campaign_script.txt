@@ -1,4 +1,5 @@
-; Titanium - Early Era Campaign Script
+; Titanium - Template Campaign Script
+; TEMPLATE FILE FOR CAMPAIGNS, NOT actually used in game
 ;========================================================
 ;===================== CONTENTS =========================
 ;========================================================
@@ -34,7 +35,7 @@
 ;---- Teutonic Order Emergent
 ;---- Golden Horde Emergent
 ;---- Bulgarian Uprising
-;---x Timurids Invasion
+;---- Timurids Invasion
 ;* 6) G5 BAI STUFF
 ;* 7) TITANIUM ADDITIONAL SCRIPTS
 ;---- Loan Script
@@ -9896,29 +9897,144 @@ monitor_event EventCounter EventCounterType is_mongol_character
 end_monitor
 
 ;================= BULGARIAN UPRISING ===================
-declare_counter bulgarian_uprising
+declare_counter bulgarians_rebel
+declare_counter bu_test
 add_events
 		event	counter	BulgarianUprisingSet
 		date	50
 end_add_events
 
-monitor_event PreFactionTurnStart FactionType slave
+monitor_event MultiTurnMove I_CompareCounter bu_test = 1
+	and HighestAttAdjacentChar Unorthodoxy named_character = 1
+
+	if I_CompareCounter bulgarians_rebel = -1
+		terminate_monitor
+	end_if
+	set_counter bulgarians_rebel 0
+end_monitor
+
+monitor_event FactionTurnStart FactionType slave
+;	and I_TurnNumber > 49
 	and I_EventCounter BulgarianUprisingSet = 1
 
-	if not I_SettlementOwner Sofia = slave
-		spawn_army 
-			faction slave
-			character Peter, named character, age 30, x 250, y 157, label Peter_of_Bulgaria
-			traits GoodCommander 4 , BattleDread 3 , StrategyDread 2 , PublicFaith 1 , NaturalMilitarySkill 2 , ofBulgariaName 1
+	;###### "Turn" 51
+	if I_CompareCounter bulgarians_rebel = 1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character Temporary 9,223
+		console_command mp Temporary -1
+
+		if I_CharacterExists peter4bulgaria
+		and I_SettlementOwner Sofia != slave
+		and I_SettlementUnderSiege Sofia
+		and I_CharacterTypeNearTile slave, named_character, 2, 248, 155 ;Sofia
+			;set_counter bulgarians_rebel 1
+			console_command move_character Temporary 248,155
+			set_counter bu_test 1
+			move Temporary, 248, 156
+
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 248,156
+				move Temporary, 248, 155
+			end_if
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 248,154
+				move Temporary, 248, 155
+			end_if
+			set_counter bu_test 0
+			console_command move_character Temporary 9,223
+
+			if I_CompareCounter bulgarians_rebel = 0
+				siege_settlement peter4bulgaria, Sofia, attack
+			end_if
+		end_if
+
+		if I_CharacterExists ivan4slave
+		and I_SettlementOwner Scopia != slave
+		and I_SettlementUnderSiege Scopia
+		and I_CharacterTypeNearTile slave, named_character, 2, 233, 149 ;Scopia
+			console_command move_character Temporary 233,149
+			set_counter bulgarians_rebel 1
+			set_counter bu_test 1
+			move Temporary, 234, 149
+
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 233,150
+				move Temporary, 233, 149
+			end_if
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 233,148
+				move Temporary, 233, 149
+			end_if
+			set_counter bu_test 0
+			console_command move_character Temporary 9,223
+
+			if I_CompareCounter bulgarians_rebel = 0
+				siege_settlement ivan4slave, Scopia, attack
+			end_if
+		end_if
+
+		if I_CharacterExists kalman4slave
+		and I_SettlementOwner Adrianople != slave
+		and I_SettlementUnderSiege Adrianople
+		and I_CharacterTypeNearTile slave, named_character, 2, 269, 146 ;Adrianople
+			set_counter bulgarians_rebel 1
+			console_command move_character Temporary 269, 146
+			set_counter bu_test 1
+			move Temporary, 269, 147
+
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 269,147
+				move Temporary, 269, 146
+			end_if
+			if I_CompareCounter bulgarians_rebel = 1
+				console_command move_character Temporary 269,145
+				move Temporary, 269, 146
+			end_if
+			set_counter bu_test 0
+			console_command move_character Temporary 9,223
+
+			if I_CompareCounter bulgarians_rebel = 0
+				siege_settlement kalman4slave, Adrianople, attack
+			end_if
+		end_if
+
+		spawn_army
+			faction dummies
+			character	Peter, named character, x 19, y 20, label end4bus
+			traits	ofBulgariaName 2
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character end4bus 10,223
+		set_counter bulgarians_rebel -1
+		set_counter bu_test 1
+		move Temporary, 8, 223
+		kill_character Temporary
+		kill_character end4bus
+	 terminate_monitor
+	end_if
+
+	;###### "Turn" 50
+	if I_SettlementOwner Sofia != slave
+		set_counter bulgarians_rebel 1
+		spawn_army
+			faction dummies
+			character 	Peter, named character, age 30, x 250, y 157, label peter4bulgaria
+			traits 	GoodCommander 4, BattleDread 3, StrategyDread 2, PublicFaith 1, NaturalMilitarySkill 2, ofBulgariaName 1
 			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0      
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
@@ -9927,24 +10043,24 @@ monitor_event PreFactionTurnStart FactionType slave
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 		end
-		set_event_counter bulgarians_rebel1 1
+		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
-
-	if not I_SettlementOwner Scopia = slave
-		spawn_army 
-			faction slave
-			character Ivan, named character, age 30, x 236, y 151, label Ivan_Slave
-			traits GoodCommander 2 , BattleChivalry 3 , StrategyChivalry 2 , PublicFaith 1 , NaturalMilitarySkill 1 , InvasionCharacterCounter 1 
-			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
+	if I_SettlementOwner Scopia != slave
+		set_counter bulgarians_rebel 1
+		spawn_army
+			faction dummies
+			character	Ivan, named character, age 30, x 236, y 151, label ivan4slave
+			traits	GoodCommander 2, BattleChivalry 3, StrategyChivalry 2, PublicFaith 1, NaturalMilitarySkill 1, ofBulgariaName 1
+			unit    	EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0  
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0      
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
@@ -9953,24 +10069,24 @@ monitor_event PreFactionTurnStart FactionType slave
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 		end
-		set_event_counter bulgarians_rebel2 1
+		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
-
-	if not I_SettlementOwner Adrianople = slave
+	if I_SettlementOwner Adrianople != slave
+		set_counter bulgarians_rebel 1
 		spawn_army 
-			faction slave
-			character Kalman, named character, age 30, x 267, y 147, label Kalman_Slave
-			traits GoodCommander 2 , Bloodthirsty 2 , BattleDread 3 , InvasionCharacterCounter 2 
+			faction dummies
+			character Kalman, named character, age 30, x 267, y 147, label kalman4slave
+			traits GoodCommander 2, Bloodthirsty 2, BattleDread 3, ofBulgariaName 1
 			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0
-			unit		Bulgarian Brigands		exp 2 armour 0 weapon_lvl 0  
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
-			unit		Slav Levies		exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0      
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+			unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
 			unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
@@ -9979,124 +10095,834 @@ monitor_event PreFactionTurnStart FactionType slave
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 			unit		Magyar Cavalry		exp 2 armour 0 weapon_lvl 0
 		end
-		set_event_counter bulgarians_rebel3 1
+		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
 
-	if I_EventCounter bulgarians_rebel = 1
+	if I_CompareCounter bulgarians_rebel = 1
 		historic_event bulgarian_uprising
+	end_if
+	set_counter bulgarians_rebel 1
+
+	if I_SettlementOwner Sofia != slave
+	and ! I_SettlementUnderSiege Sofia
+		siege_settlement peter4bulgaria, Sofia, maintain
+		if ! I_SettlementUnderSiege Sofia
+			move peter4bulgaria, 250,157
+		end_if
+		if I_SettlementUnderSiege Sofia
+			console_command give_trait peter4bulgaria ofBulgariaName 2
+		end_if
+	end_if
+	if I_SettlementOwner Scopia != slave
+	and ! I_SettlementUnderSiege Scopia
+		siege_settlement ivan4slave, Scopia, maintain
+		if ! I_SettlementUnderSiege Scopia
+			move ivan4slave, 236,151
+		end_if
+		if I_SettlementUnderSiege Scopia
+			console_command give_trait ivan4slave ofBulgariaName 2
+		end_if
+	end_if
+	if I_SettlementOwner Adrianople != slave
+	and ! I_SettlementUnderSiege Adrianople
+		siege_settlement kalman4slave, Adrianople, maintain
+		if ! I_SettlementUnderSiege Adrianople
+			move kalman4slave, 267,147
+		end_if
+		if I_SettlementUnderSiege Adrianople
+			console_command give_trait kalman4slave ofBulgariaName 2
+		end_if
+	end_if
+end_monitor
+
+
+;================== TIMURIDS INVASION ===================
+monitor_event EventCounter EventCounterType timurids_invasion_warn
+	and EventCounter = 1
+
+	add_events
+		event	emergent_faction	timurids
+		date	1
+		event	counter	timurids_invasion
+		date	1
+		event	counter	timurids_invasion
+		date	4
+		event	counter	timurids_invasion
+		date	15
+	end_add_events
+terminate_monitor
+end_monitor
+
+monitor_event EventCounter EventCounterType timurids_invasion
+	and EventCounter = 1
+	and I_IsFactionAIControlled timurids
+
+	historic_event the_timurids_emerge event/timurids_invade.bik
+
+	spawn_army ;Urgench
+		faction timurids
+		character	Timur, named character, age 30, x 500, y 153, label timurids4timur, family
+		traits Factionleader 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 3 , StrategyDread 2 , PublicFaith 4 , Loyal 1 , ContentGeneral 3
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	add_money timurids 15000
+
+	spawn_army ;Urgench
+		faction timurids
+		character	Husayn, named character, age 24, x 501, y 154, label timurids4husayn, family
+		traits Factionheir 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , Anger 3 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 2 
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	spawn_army ;Khiva
+		faction timurids
+		character	Umar_Shaykh, named character, age 23, x 504, y 147, label timurids4umar, family
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , Anger 3 , BattleDread 3 , StrategyDread 2 , PublicFaith 4, Loyal 1, ContentGeneral 3 , InvasionCharacterCounter 1 
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Naffatun		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	add_money timurids 15000
+
+	spawn_army ;Khiva
+		faction timurids
+		character	Miran, named character, age 22, x 505, y 146, label timurids4miran, family
+		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , Bloodthirsty 2 , GoodCommander 1 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3 , InvasionCharacterCounter 2 
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Naffatun		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+	end
+
+	spawn_army ;Konjikala
+		faction timurids
+		character	Batutai, named character, age 30, x 490, y 125, label timurids4batutai, family
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 3 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 3 
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	add_money timurids 5000
+
+	spawn_army ;Konjikala
+		faction timurids
+		character	Ghazatai, named character, age 24, x 491, y 126, label timurids4ghazatai, family
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 4 
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	spawn_army ;support
+		faction timurids
+		character	random_name, named character, age 21, x 500, y 147
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , Anger 3 , BattleDread 3 , StrategyDread 2 , PublicFaith 4, Loyal 1, ContentGeneral 3
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Naffatun		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	add_money timurids 15000
+
+	spawn_army ;support
+		faction timurids
+		character	random_name, named character, age 25, x 500, y 146
+		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , Bloodthirsty 2 , GoodCommander 1 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Naffatun		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+	end
+
+	spawn_army ;support
+		faction timurids
+		character	random_name, named character, age 30, x 500, y 125
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 3 , ContentGeneral 3 , ReligionStarter 1
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	add_money timurids 5000
+
+	spawn_army ;support
+		faction timurids
+		character	random_name, named character, age 24, x 500, y 126
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+
+	add_money timurids 5000
+
+	spawn_character timurids random_name, priest, age 23, x 480, y 140 
+	spawn_character timurids random_name, priest, age 24, x 500, y 98 
+	spawn_character timurids random_name, priest, age 27, x 470, y 120
+	spawn_character timurids random_name, spy, age 22, x 500, y 135 
+	spawn_character timurids random_name, spy, age 21, x 493, y 178 
+	spawn_character timurids random_name, spy, age 29, x 489, y 110 
+	spawn_character timurids random_name, assassin, age 31, x 504, y 132 
+	spawn_character timurids random_name, assassin, age 33, x 485, y 189 
+	spawn_character timurids random_name, assassin, age 31, x 504, y 132 
+	spawn_character timurids random_name, assassin, age 33, x 485, y 189 
+	spawn_character timurids random_name, assassin, age 31, x 504, y 132 
+	spawn_character timurids random_name, assassin, age 33, x 485, y 189 
+	spawn_character timurids random_name, assassin, age 31, x 504, y 132 
+	spawn_character timurids random_name, assassin, age 33, x 485, y 189 
+
+	console_command diplomatic_stance timurids kwarezm war
+	console_command diplomatic_stance timurids mongols war
+	add_money timurids 20000
+terminate_monitor
+end_monitor
+
+monitor_event EventCounter EventCounterType timurids_invasion
+	and I_IsFactionAIControlled timurids
+	and EventCounter = 2
+	and not I_SettlementOwner Urgench = timurids
+
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 26, x 500, y 153, label timurids4supportgen1, family
+		traits MilitaryInclination 1 , Military_Edu 4 , NaturalMilitarySkill 4 , GoodCommander 5 , Bloodthirsty 3 , BattleDread 5 , StrategyDread 5 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 , Drink 4 , Genocide 3
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 25, x 499, y 154, label timurids4supportgen2, family
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Anger 3 , BattleDread 3 , StrategyDread 3 , PublicFaith 2 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 24, x 499, y 153, label timurids4supportgen3
+		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 3 , GoodCommander 5 , Bloodthirsty 3 , BattleDread 5 , StrategyDread 5 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 , Drink 2
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Naffatun		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 25, x 501, y 153, label timurids4supportgen4
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Nukeri Horse Archers		exp 6 armour 1 weapon_lvl 0
+		unit		Naffatun		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+		unit		AS Rocket Launcher		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	if not I_SettlementUnderSiege Urgench
+		if I_CharacterTypeNearTile timurids, named_character, 0, 501, 153
+			siege_settlement timurids4supportgen4, Urgench, maintain
+		end_if
+
+		if I_CharacterTypeNearTile timurids, named_character, 0, 499, 154
+			siege_settlement timurids4supportgen2, Urgench, maintain
+		end_if
+
+		if I_CharacterTypeNearTile timurids, named_character, 0, 499, 153
+			siege_settlement timurids4supportgen3, Urgench, maintain
+		end_if
+
+		if I_CharacterTypeNearTile timurids, named_character, 0, 500, 153
+			siege_settlement timurids4supportgen1, Urgench, attack
+		end_if
 	end_if
 
 	terminate_monitor
 end_monitor
 
-declare_counter bulgaria_sofia_siege
-set_counter bulgaria_sofia_siege 0
-;monitor_event FactionTurnStart FactionType slave
-monitor_event CharacterTurnStart Trait ofBulgariaName = 1
-	and CharFactionType slave
-	and I_EventCounter bulgarians_rebel1 = 1
-	and I_IsFactionAIControlled slave
-	;and I_CharacterExists Peter_of_Bulgaria
+monitor_event EventCounter EventCounterType timurids_invasion
+	and I_IsFactionAIControlled timurids
+	and EventCounter = 2
 
-	if I_SettlementOwner Sofia = slave
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 26, x 505, y 145, family
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Genocide 2 , BattleDread 2 , StrategyDread 1 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 25, x 507, y 140, family
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 3 , StrategyDread 3 , PublicFaith 2 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 24, x 500, y 150,
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 4, TouchedByTheGods 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	spawn_army
+		faction timurids
+		character	random_name, named character, age 25, x 504, y 144
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
+		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Khorchi Horse Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		Disamounted Turhagut			exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		ME Halberd Militia	exp 6 armour 1 weapon_lvl 0
+		unit		Merguen Archers	exp 6 armour 1 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		Elephants		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+		unit		ME Grand Bombard		exp 6 armour 0 weapon_lvl 0
+	end
+	add_money timurids 5000
+
+	spawn_character timurids random_name, priest, age 22, x 480, y 140
+	spawn_character timurids random_name, priest, age 27, x 500, y 98
+	spawn_character timurids random_name, priest, age 32, x 470, y 120
+	spawn_character timurids random_name, priest, age 33, x 490, y 150
+	spawn_character timurids random_name, spy, age 20, x 500, y 135
+	spawn_character timurids random_name, spy, age 20, x 490, y 135
+	spawn_character timurids random_name, spy, age 29, x 489, y 110 
+	spawn_character timurids random_name, assassin, age 31, x 504, y 132 
+	spawn_character timurids random_name, assassin, age 33, x 491, y 144 
+	spawn_character timurids random_name, assassin, age 21, x 495, y 135
+terminate_monitor
+end_monitor
+
+monitor_event PreFactionTurnStart FactionType timurids
+	and not FactionIsLocal
+
+	if I_EventCounter timurids_invasion = 3
+		spawn_character timurids random_name, priest, age 22, x 480, y 140
+		spawn_character timurids random_name, priest, age 27, x 500, y 98
+		spawn_character timurids random_name, priest, age 32, x 470, y 120
+		spawn_character timurids random_name, priest, age 33, x 490, y 150
+		spawn_character timurids random_name, spy, age 20, x 500, y 135
+		spawn_character timurids random_name, spy, age 20, x 490, y 135
+		spawn_character timurids random_name, spy, age 29, x 489, y 110 
+		spawn_character timurids random_name, assassin, age 31, x 504, y 132 
+		spawn_character timurids random_name, assassin, age 33, x 491, y 144 
+		spawn_character timurids random_name, assassin, age 21, x 495, y 135
 		terminate_monitor
 	end_if
 
-	if I_SettlementUnderSiege Sofia
-	and I_CompareCounter bulgaria_sofia_siege < 1 ;if settlement under siege already, avoid ctd.
-		terminate_monitor
+	if I_SettlementOwner Urgench = timurids
+		create_unit Urgench, Elephants, num 3, exp 3, arm 0, wep 0
+		create_unit Urgench, Disamounted Turhagut, num 1, exp 4, arm 0, wep 0
+		create_unit Urgench, Turhagut Lancers, num 2, exp 4, arm 0, wep 0
+		create_unit Urgench, ME Grand Bombard, num 2, exp 5, arm 0, wep 0
+		add_money timurids 3000
 	end_if
 
-	if not I_CharacterTypeNearTile slave, named_character, 1, 250, 157 ;if character not standing where it should, avoid ctd
-		terminate_monitor
+	if I_SettlementOwner Khiva = timurids
+		create_unit Khiva, Merguen Archers, num 8, exp 5, arm 0, wep 0
+		add_money timurids 3000
 	end_if
 
-	if I_SettlementUnderSiege Sofia
-	and I_CompareCounter bulgaria_sofia_siege = 1
-		siege_settlement Peter_of_Bulgaria, Sofia, attack
-		terminate_monitor
+	if I_SettlementOwner Konjikala = timurids
+		create_unit Konjikala, Khorchi Horse Archers, num 4, exp 3, arm 0, wep 0
+		create_unit Konjikala, Turhagut Lancers, num 4, exp 4, arm 0, wep 0
+		add_money timurids 5000
 	end_if
 
-	if I_CompareCounter bulgaria_sofia_siege < 1
-		set_counter bulgaria_sofia_siege 1
-		siege_settlement Peter_of_Bulgaria, Sofia, maintain
+	if I_SettlementOwner Embi = timurids
+		create_unit Embi, Disamounted Turhagut, num 5, exp 4, arm 0, wep 0
+		add_money timurids 5000
+	end_if
+
+	if I_SettlementOwner Gorgan = timurids
+		create_unit Gorgan, Disamounted Turhagut, num 4, exp 4, arm 0, wep 0
+		create_unit Gorgan, Merguen Archers, num 4, exp 5, arm 0, wep 0
+		add_money timurids 5000
+	end_if
+
+	if I_SettlementOwner Mashhad = timurids
+		create_unit Mashhad, Turhagut Lancers, num 1, exp 2, arm 0, wep 0
+		create_unit Mashhad, ME Grand Bombard, num 2, exp 4, arm 0, wep 0
+		add_money timurids 5000
+	end_if
+
+	if I_SettlementOwner Damghan = timurids
+		create_unit Damghan, Turhagut Lancers, num 5, exp 2, arm 0, wep 0
+		add_money timurids 5000
 	end_if
 
 end_monitor
 
-declare_counter bulgaria_scopia_siege
-set_counter bulgaria_scopia_siege 0
-;monitor_event FactionTurnStart FactionType slave
-monitor_event CharacterTurnStart Trait InvasionCharacterCounter = 1
-	and CharFactionType slave
-	and I_EventCounter bulgarians_rebel2 = 1
-	and I_IsFactionAIControlled slave
-	;and I_CharacterExists Ivan_Slave
+declare_counter attack_urgench_timurids
+set_counter attack_urgench_timurids 0
 
-	if I_SettlementOwner Scopia = slave
+;monitor_event FactionTurnStart FactionType timurids
+monitor_event CharacterTurnStart CharFactionType timurids
+	and Trait Factionleader = 1
+	and not I_SettlementOwner Urgench = timurids
+	and I_IsFactionAIControlled timurids
+	;and I_CharacterExists timurids4timur
+	and I_CharacterExists timurids4husayn
+	
+	if I_SettlementUnderSiege Urgench;if settlement under siege already, avoid ctd.
+	and  I_CompareCounter attack_urgench_timurids = 0
 		terminate_monitor
 	end_if
 
-	if I_SettlementUnderSiege Scopia
-	and I_CompareCounter bulgaria_scopia_siege < 1 ;if settlement under siege already, avoid ctd.
+	if not I_CharacterTypeNearTile timurids, named_character, 5, 500, 154 ;if character not standing where it should, avoid ctd
 		terminate_monitor
 	end_if
 
-	if not I_CharacterTypeNearTile slave, named_character, 1, 236, 151 ;if character not standing where it should, avoid ctd
+	if I_SettlementUnderSiege Urgench
+	and I_CompareCounter attack_urgench_timurids = 1
+		siege_settlement timurids4timur, Urgench, attack
+		siege_settlement timurids4husayn, Urgench, maintain
+		set_counter attack_urgench_timurids 2
+		if I_CharacterExists timurids4husayn
+			move timurids4husayn, 453, 207;for jaiksk
+		end_if
 		terminate_monitor
 	end_if
 
-	if I_SettlementUnderSiege Scopia
-	and I_CompareCounter bulgaria_scopia_siege = 1
-		siege_settlement Ivan_Slave, Scopia, attack
-		terminate_monitor
-	end_if
-
-	if I_CompareCounter bulgaria_scopia_siege < 1
-		set_counter bulgaria_scopia_siege 1
-		siege_settlement Ivan_Slave, Scopia, maintain
+	if not I_SettlementUnderSiege Urgench
+		if I_CompareCounter attack_urgench_timurids = 0
+			siege_settlement timurids4timur, Urgench, maintain
+			siege_settlement timurids4husayn, Urgench, maintain
+			set_counter attack_urgench_timurids 1
+		end_if
 	end_if
 
 end_monitor
 
-declare_counter bulgaria_adrianople_siege
-set_counter bulgaria_adrianople_siege 0
-;monitor_event FactionTurnStart FactionType slave
-monitor_event CharacterTurnStart Trait InvasionCharacterCounter = 2
-	and CharFactionType slave
-	and I_EventCounter bulgarians_rebel3 = 1
-	and I_IsFactionAIControlled slave
-	;and I_CharacterExists Kalman_Slave
+declare_counter attack_khiva_timurids
+set_counter attack_khiva_timurids 0
 
-	if I_SettlementOwner Adrianople = slave
+;monitor_event FactionTurnStart FactionType timurids
+monitor_event CharacterTurnStart CharFactionType timurids
+	and Trait InvasionCharacterCounter = 1; Umar
+	and I_CharacterExists timurids4umar
+
+	if I_CompareCounter attack_khiva_timurids = 2
+		terminate_monitor
+	end_if
+	set_event_counter is_timurid_character 1
+end_monitor
+monitor_event CharacterTurnStart CharFactionType timurids
+	and Trait InvasionCharacterCounter = 2; Miran
+	and I_CharacterExists timurids4miran
+
+	if I_CompareCounter attack_khiva_timurids = 2
+		terminate_monitor
+	end_if
+	set_event_counter is_timurid_character 2
+end_monitor
+monitor_event EventCounter EventCounterType is_timurid_character
+	and EventCounter = 2
+	and not I_SettlementOwner Khiva = timurids
+	and I_IsFactionAIControlled timurids
+	
+	if I_SettlementUnderSiege Khiva;if settlement under siege already, avoid ctd.
+	and  I_CompareCounter attack_khiva_timurids = 0
 		terminate_monitor
 	end_if
 
-	if I_SettlementUnderSiege Adrianople
-	and I_CompareCounter bulgaria_adrianople_siege < 1 ;if settlement under siege already, avoid ctd.
+	if not I_CharacterTypeNearTile timurids, named_character, 5, 505, 147 ;if character not standing where it should, avoid ctd
 		terminate_monitor
 	end_if
 
-	if not I_CharacterTypeNearTile slave, named_character, 1, 267, 147 ;if character not standing where it should, avoid ctd
+	if I_SettlementUnderSiege Khiva
+	and I_CompareCounter attack_khiva_timurids = 1
+		siege_settlement timurids4umar, Khiva, attack
+		siege_settlement timurids4miran, Khiva, maintain
+		set_counter attack_khiva_timurids 2
 		terminate_monitor
 	end_if
 
-	if I_SettlementUnderSiege Adrianople
-	and I_CompareCounter bulgaria_adrianople_siege = 1
-		siege_settlement Kalman_Slave, Adrianople, attack
-		terminate_monitor
-	end_if
-
-	if I_CompareCounter bulgaria_adrianople_siege < 1
-		set_counter bulgaria_adrianople_siege 1
-		siege_settlement Kalman_Slave, Adrianople, maintain
+	if not I_SettlementUnderSiege Khiva
+		if I_CompareCounter attack_khiva_timurids = 0
+			siege_settlement timurids4umar, Khiva, maintain
+			siege_settlement timurids4miran, Khiva, maintain
+			set_counter attack_khiva_timurids 1
+			set_event_counter is_timurid_character 0
+		end_if
 	end_if
 
 end_monitor
 
-;================== TIMURIDS INVASION ===================
-;;;;;;;;;;;;;;;;;;;;;;;;DISABLED;;;;;;;;;;;;;;;;;;;;;;;;;
+declare_counter attack_konjikala_timurids
+set_counter attack_konjikala_timurids 0
+
+;monitor_event FactionTurnStart FactionType timurids
+monitor_event CharacterTurnStart CharFactionType timurids
+	and Trait InvasionCharacterCounter = 3; Batutai
+	and I_CharacterExists timurids4batutai
+
+	if I_CompareCounter attack_konjikala_timurids = 2
+		terminate_monitor
+	end_if
+	set_event_counter is_timurid_character2 1
+end_monitor
+monitor_event CharacterTurnStart CharFactionType timurids
+	and Trait InvasionCharacterCounter = 4; Ghazatai
+	and I_CharacterExists timurids4ghazatai
+
+	if I_CompareCounter attack_konjikala_timurids = 2
+		terminate_monitor
+	end_if
+	set_event_counter is_timurid_character2 2
+end_monitor
+monitor_event EventCounter EventCounterType is_timurid_character2
+	and EventCounter = 2
+	and not I_SettlementOwner Konjikala = timurids
+	and I_IsFactionAIControlled timurids
+	
+	if I_SettlementUnderSiege Konjikala;if settlement under siege already, avoid ctd.
+	and  I_CompareCounter attack_konjikala_timurids = 0
+		terminate_monitor
+	end_if
+
+	if not I_CharacterTypeNearTile timurids, named_character, 5, 490, 126 ;if character not standing where it should, avoid ctd
+		terminate_monitor
+	end_if
+
+	if I_SettlementUnderSiege Konjikala
+	and I_CompareCounter attack_konjikala_timurids = 1
+		siege_settlement timurids4batutai, Konjikala, attack
+		siege_settlement timurids4ghazatai, Konjikala, maintain
+		set_counter attack_konjikala_timurids 2
+		terminate_monitor
+	end_if
+
+	if not I_SettlementUnderSiege Konjikala
+		if I_CompareCounter attack_konjikala_timurids = 0
+			siege_settlement timurids4batutai, Konjikala, maintain
+			siege_settlement timurids4ghazatai, Konjikala, maintain
+			set_counter attack_konjikala_timurids 1
+			set_event_counter is_timurid_character2 0
+		end_if
+	end_if
+
+end_monitor
+
 ;========================================================
 ;===================== G5 BAI STUFF =====================
 ;========================================================
@@ -32272,7 +33098,7 @@ end_monitor
 ;-------------------------------- Loan Script -------------------------------------;
 ;==================================================================================;
 ;Counters
-	set_event_counter italian_bankers_event 0
+set_event_counter italian_bankers_event 0
 	declare_counter loan_refund_amount
 	declare_counter finances_panel_open
 	declare_counter finances_panel_open2

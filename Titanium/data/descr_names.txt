@@ -1,5 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Names Database Entries
+;; TEMPLATE FILE FOR CAMPAIGNS, NOT actually used in game
 ;;
 ;; Holds non-localised Latin names for settlements and characters
 ;;
@@ -8740,6 +8741,14 @@ faction: byzantium
 		Tho#mas
 		Timotheos
 		Tiverios
+		;FOEDERATI
+		Vukan
+		Mihaly
+		Petrislav
+		Jovan
+		Ivan
+		Stefan
+		Marko
 	;byzantium add more names
 
 	surnames
@@ -9553,6 +9562,11 @@ faction: byzantium
 		Komnenos_Laskaris
 		Laskaris_Kantakouzenos
 		Philanthropenos_Laskaris
+		;FOEDERATI
+		Bodin
+		Vladimir
+		Vladislav
+		Vojislav
 	;byzantium add more surnames
 
 	women
@@ -14713,6 +14727,17 @@ faction: timurids
 		Yaba
 		Yesukai
 	;timurids add more female names
+
+faction: dummies
+
+	characters
+		Ivan
+		Kalman
+		Peter
+		Temporary
+
+	women
+		TemporaryWoman
 
 faction: slave
 
