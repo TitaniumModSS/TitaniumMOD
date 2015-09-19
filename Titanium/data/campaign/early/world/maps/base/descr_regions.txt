@@ -207,7 +207,7 @@ Polotsk_Province
 	russia
 	Rus_Rebels
 	164 46 46
-	russia, no_pirates
+	russia, no_pirates, river
 	5
 	6
 	religions { catholic 12 orthodox 74 islam 2 pagan 10 heretic 2 }
@@ -216,7 +216,7 @@ Hrodna_Province
 	lithuania
 	Hrodna_Rebels
 	233 39 153
-	lithuania, poland, kievan_rus
+	lithuania, poland, kievan_rus, river
 	5
 	5
 	religions { catholic 20 orthodox 34 islam 0 pagan 45 heretic 1 }
@@ -243,7 +243,7 @@ Halych_Province
 	kievan_rus
 	Rus_Rebels
 	78 232 51
-	poland, kievan_rus
+	poland, kievan_rus, river
 	5
 	4
 	religions { catholic 75 orthodox 6 islam 0 pagan 17 heretic 2 }
@@ -270,7 +270,7 @@ Pereyaslav_Province
 	kievan_rus
 	Rus_Rebels
 	13 38 109
-	kievan_rus
+	kievan_rus, river
 	5
 	5
 	religions { catholic 2 orthodox 76 islam 2 pagan 18 heretic 2 }
@@ -279,7 +279,7 @@ Smolensk_Province
 	russia
 	Rus_Rebels
 	177 110 83
-	russia, no_pirates
+	russia, no_pirates, river
 	5
 	5
 	religions { catholic 2 orthodox 74 islam 2 pagan 20 heretic 2 }
@@ -288,7 +288,7 @@ Yaroslavl_Province; Sarskoye Province
 	russia
 	Rus_Rebels
 	247 93 93
-	russia, no_pirates, river
+	russia, no_pirates
 	5
 	6
 	religions { catholic 2 orthodox 70 islam 6 pagan 20 heretic 2 }
@@ -297,7 +297,7 @@ Murom_Province
 	russia
 	Rus_Rebels
 	154 104 104
-	russia
+	russia, river
 	5
 	5
 	religions { catholic 5 orthodox 70 islam 3 pagan 20 heretic 2 }
@@ -342,7 +342,7 @@ Serdobinskaya_Province; Burtaslaria Province
 	kievan_rus
 	Steppe_Rebels
 	36 104 35
-	cumans
+	cumans, river
 	5
 	4
 	religions { catholic 0 orthodox 48 islam 10 pagan 40 heretic 2 }
@@ -498,7 +498,7 @@ Brasov_Province
 	hungary
 	Wallachian_Rebels
 	72 177 58
-	hungary, teutonic_knights_chapter_house
+	hungary, teutonic_knights_chapter_house, river
 	5
 	6
 	religions { catholic 46 orthodox 2 islam 0 pagan 50 heretic 2 }
@@ -528,7 +528,7 @@ Magdeburg_Province; Brandenburg Province
 	hre
 	Saxony_Rebels
 	64 41 52
-	hre, river, teutonic_knights_chapter_house
+	hre, teutonic_knights_chapter_house
 	5
 	4
 	religions { catholic 85 orthodox 0 islam 0 pagan 12 heretic 3 }
@@ -546,7 +546,7 @@ Embi_Province; Thuringia Province
 	hre
 	German_Rebels
 	104 160 104
-	cumans
+	hre
 	5
 	5
 	religions { catholic 87 orthodox 0 islam 0 pagan 6 heretic 7 }
@@ -591,7 +591,7 @@ Staufen_Province
 	hre
 	German_Rebels
 	253 180 10
-	hre, no_pirates
+	hre, no_pirates, river
 	5
 	5
 	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
@@ -627,7 +627,7 @@ Bern_Province; Zürichgau Province
 	hre
 	Swiss_Rebels
 	175 175 175
-	hre, no_pirates
+	hre, no_pirates, river
 	5
 	6
 	religions { catholic 85 orthodox 0 islam 0 pagan 5 heretic 10 }
@@ -675,7 +675,7 @@ Metz_Province
 	hre
 	Burgundian_Rebels
 	72 41 232
-	hre, river, st_johns_chapter_house, teutonic_knights_chapter_house
+	hre, france, river, st_johns_chapter_house, teutonic_knights_chapter_house
 	5
 	5
 	religions { catholic 75 orthodox 0 islam 0 pagan 5 heretic 20 }
@@ -912,7 +912,7 @@ Turku_Province; Bosnia Province
 	hungary
 	Serbian_Rebels
 	66 47 85
-	hungary, no_pirates
+	hungary, river
 	5
 	5
 	religions { catholic 37 orthodox 45 islam 0 pagan 3 heretic 15 }
@@ -921,7 +921,7 @@ Moscow_Province; Duklja Province
 	venice
 	Serbian_Rebels
 	58 89 177
-	byzantium
+	byzantium, no_pirates
 	5
 	5
 	religions { catholic 45 orthodox 51 islam 0 pagan 2 heretic 2 }
@@ -930,7 +930,7 @@ Scopia_Province; Eastern Bulgaria Province
 	byzantium
 	Bulgarian_Rebels
 	128 196 174
-	byzantium, river
+	byzantium
 	5
 	4
 	religions { catholic 40 orthodox 25 islam 0 pagan 35 heretic 0 }
@@ -1125,7 +1125,7 @@ Toledo_Province
 	spain
 	Castile_Rebels
 	198 13 35
-	jihad, spain, montesa_chapter_house, knights_of_santiago_chapter_house, chapter_hq
+	jihad, spain, river, montesa_chapter_house, knights_of_santiago_chapter_house, chapter_hq
 	5
 	5
 	religions { catholic 62 orthodox 0 islam 35 pagan 2 heretic 1 }
@@ -1224,28 +1224,28 @@ Cordoba_Province
 	moors
 	Andalus_Rebels
 	17 13 198
-	wonder8, spain, knights_of_santiago_chapter_house
+	wonder8, spain, river, knights_of_santiago_chapter_house
 	5
 	8
 	religions { catholic 25 orthodox 0 islam 65 pagan 5 heretic 5 }
-Seville_Province; Extremadura Province
-	Seville; Badajoz
-	spain
-	Badajoz_Rebels
-	108 101 27
-	spain
-	5
-	5
-	religions { catholic 62 orthodox 0 islam 28 pagan 5 heretic 5 }
-Oran_Province; Western Andalusia Province
-	Oran; Sevilla ; City
+Seville_Province; Western Andalusia Province
+	Seville; Sevilla ; City
 	moors
 	Andalus_Rebels
 	149 22 22
-	moors, river
+	moors
 	5
 	7
 	religions { catholic 21 orthodox 0 islam 70 pagan 0 heretic 9 }
+Oran_Province; Extremadura Province
+	Oran; Badajoz
+	spain
+	Badajoz_Rebels
+	108 101 27
+	spain, river
+	5
+	5
+	religions { catholic 62 orthodox 0 islam 28 pagan 5 heretic 5 }
 ;
 ; AFRICA
 ;
@@ -1509,10 +1509,10 @@ Ankara_Province
 	religions { catholic 0 orthodox 10 islam 80 pagan 8 heretic 2 }
 Rhodes_Province; Chaldia Province
 	Rhodes; Sivas
-	byzantium
+	turks
 	Danishmend_Rebels
 	131 33 77
-	turks, no_pirates
+	turks, no_pirates, river
 	5
 	5
 	religions { catholic 0 orthodox 70 islam 20 pagan 10 heretic 0 }
@@ -1557,7 +1557,7 @@ Diyarbakir_Province;
 	turks
 	Kurd_Rebels
 	252 3 140
-	turks, no_pirates, silk_road
+	turks, no_pirates, silk_road, river
 	5
 	4
 	religions { catholic 0 orthodox 15 islam 80 pagan 2 heretic 3 }
@@ -1653,7 +1653,7 @@ Baghdad_Province
 	timurids
 	Abbasid_Rebels
 	177 58 167
-	jihad, crusade, turks, no_pirates, horde_target, river, silk_road
+	jihad, turks, no_pirates, horde_target, river, silk_road ;, crusade
 	5
 	8
 	religions { catholic 0 orthodox 0 islam 90 pagan 0 heretic 10 }
@@ -1677,7 +1677,7 @@ Medina_Province; Sumer
 	religions { catholic 0 orthodox 0 islam 99 pagan 0 heretic 1 }
 Mosul_Province
 	Mosul
-	turks
+	timurids
 	Kurd_Rebels
 	41 232 225
 	turks, no_pirates
@@ -1689,7 +1689,7 @@ Tayma_Province; Jazira Province
 	turks
 	Kurd_Rebels
 	175 44 118, no_pirates
-	turks, no_pirates
+	turks, no_pirates, river
 	5
 	4
 	religions { catholic 0 orthodox 3 islam 80 pagan 14 heretic 3 }
@@ -1698,7 +1698,7 @@ Tayma_Province; Jazira Province
 ;
 Mecca_Province
 	Mecca
-	egypt
+	timurids
 	Arab_Rebels
 	128 128 192
 	jihad, egypt, wonder5
@@ -1809,7 +1809,7 @@ Yazd_Province
 	religions { catholic 0 orthodox 13 islam 72 pagan 12 heretic 3 }
 Alamut_Province
 	Alamut
-	turks
+	kwarezm
 	Alamut_Rebels
 	18 142 36
 	turks
@@ -1818,7 +1818,7 @@ Alamut_Province
 	religions { catholic 0 orthodox 2 islam 58 pagan 0 heretic 40 }
 Kermanshah_Province
 	Kermanshah
-	turks
+	kwarezm
 	Seljuk_Rebels
 	72 75 228
 	jihad, turks, silk_road
@@ -1827,7 +1827,7 @@ Kermanshah_Province
 	religions { catholic 0 orthodox 0 islam 87 pagan 3 heretic 10 }
 Ahvaz_Province
 	Ahvaz
-	turks
+	timurids
 	Saharan_Rebels
 	224 105 73
 	turks, no_pirates
@@ -1839,7 +1839,7 @@ Ahvaz_Province
 ;
 Kazan_Province; Uninhabited Regions
 	Kazan; Tamanrasset
-	timurids
+	dummies
 	Native_Rebels
 	242 46 46
 	no_pirates

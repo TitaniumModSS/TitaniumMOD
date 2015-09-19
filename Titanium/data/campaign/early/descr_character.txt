@@ -42,7 +42,7 @@ faction			venice
 dictionary		15
 strat_model		early_southern_general
 strat_model		early_southern_general					; heir
-strat_model		fancy_general						; leader
+strat_model		early_southern_leader					; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
@@ -58,7 +58,7 @@ faction			milan
 dictionary		15
 strat_model		early_southern_general
 strat_model		early_southern_general					; heir
-strat_model		fancy_general						; leader
+strat_model		early_southern_leader					; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
@@ -1056,7 +1056,8 @@ strat_model		royal_lady
 
 faction			cumans
 dictionary		1
-strat_model		princess
+strat_model		northern_princess
+strat_model		royal_lady2
 
 faction			mongols
 dictionary		2

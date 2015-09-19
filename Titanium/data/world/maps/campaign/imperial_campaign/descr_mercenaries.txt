@@ -64,9 +64,9 @@ pool Scandinavia
 	unit Viking Mercenaries			exp 1 cost 395 replenish 0.04 - 0.13 max 2 initial 0 end_year 1200
 	unit Hunters				exp 0 cost 180 replenish 0.03 - 0.09 max 1 initial 0
 
-;removed Nykoeping_Province Skara_Province
+;removed Nykoeping_Province
 pool Norway
-	regions Oslo_Province Bergen_Province Uppsala_Province Eikundarsund_Province
+	regions Oslo_Province Bergen_Province Uppsala_Province Eikundarsund_Province Skara_Province
 	unit merc cog,				exp 0 cost 200 replenish 0.36 - 1.0 max 2 initial 1 religions { catholic } crusading
 	unit merc cog,				exp 1 cost 1000 replenish 0.03 - 0.15 max 2 initial 1
 	unit Mercenary Crossbowmen		exp 1 cost 290 replenish 0.02 - 0.06 max 1 initial 0 end_year 1300
@@ -81,11 +81,23 @@ pool Norway
 	unit Viking Mercenaries			exp 2 cost 395 replenish 0.06 - 0.18 max 2 initial 0 end_year 1250
 	unit Hunters				exp 0 cost 180 replenish 0.03 - 0.09 max 1 initial 0
 
-pool Russia
-	regions Novgorod_Province Moscow_Province Smolensk_Province Oleshe_Province Kiev_Province Bryansk_Province Yaroslavl_Province Polotsk_Province Pereyaslav_Province Murom_Province
+pool Russia_North
+	regions Novgorod_Province Pskov_Province
 	unit merc cog,				exp 0 cost 200 replenish 0.36 - 1.0 max 1 initial 1 religions { catholic } crusading
 	unit merc cog,				exp 1 cost 1000 replenish 0.02 - 0.10 max 1 initial 1
 	unit Mercenary German Knights		exp 2 cost 980 replenish 0.06 - 0.18 max 2 initial 1 start_year 1380 religions { catholic orthodox }
+	unit Mercenary Crossbowmen		exp 1 cost 265 replenish 0.03 - 0.09 max 1 initial 0 end_year 1300
+	unit Mercenary Pavise Crossbowmen	exp 1 cost 305 replenish 0.04 - 0.13 max 1 initial 1 start_year 1300
+	unit Mercenary Arquebusiers		exp 0 cost 205 replenish 0.02 - 0.06 max 1 initial 0 start_year 1450 events { gunpowder_discovered }
+	unit Mercenary Spearmen			exp 1 cost 350 replenish 0.04 - 0.13 max 2 initial 0
+	unit Mercenary Ribault			exp 0 cost 450 replenish 0.02 - 0.04 max 1 initial 0 events { gunpowder_discovered }
+	unit Mercenary Rocket Launcher		exp 0 cost 875 replenish 0.02 - 0.04 max 1 initial 0 events { gunpowder_discovered mongols_invasion_warn }
+	unit Axemen				exp 0 cost 255 replenish 0.04 - 0.13 max 2 initial 0
+	unit Viking Mercenaries			exp 1 cost 395 replenish 0.05 - 0.15 max 3 initial 0
+	unit Hunters				exp 0 cost 180 replenish 0.03 - 0.09 max 1 initial 0
+
+pool Russia_East
+	regions Bryansk_Province Smolensk_Province Murom_Province Yaroslavl_Province Polotsk_Province
 	unit Mercenary Crossbowmen		exp 1 cost 265 replenish 0.03 - 0.09 max 1 initial 0 end_year 1300
 	unit Mercenary Pavise Crossbowmen	exp 1 cost 305 replenish 0.04 - 0.13 max 1 initial 1 start_year 1300
 	unit Mercenary Arquebusiers		exp 0 cost 205 replenish 0.02 - 0.06 max 1 initial 0 start_year 1450 events { gunpowder_discovered }
@@ -95,6 +107,22 @@ pool Russia
 	unit Axemen				exp 0 cost 255 replenish 0.04 - 0.13 max 2 initial 0
 	unit Viking Mercenaries			exp 1 cost 395 replenish 0.04 - 0.13 max 2 initial 0
 	unit Hunters				exp 0 cost 180 replenish 0.03 - 0.09 max 1 initial 0
+
+pool Russia_South
+	regions Kiev_Province Pereyaslav_Province Oleshe_Province
+	unit merc cog,				exp 0 cost 200 replenish 0.36 - 1.0 max 1 initial 1 religions { catholic } crusading
+	unit merc cog,				exp 1 cost 1000 replenish 0.02 - 0.10 max 1 initial 1
+	unit Steppe Kazaks			exp 1 cost 605 replenish 0.03 - 0.07 max 2 initial 0
+	unit Aldari Druzhina			exp 2 cost 700 replenish 0.02 - 0.07 max 1 initial 0
+	unit Mercenary Crossbowmen		exp 1 cost 265 replenish 0.03 - 0.09 max 1 initial 0 end_year 1300
+	unit Mercenary Pavise Crossbowmen	exp 1 cost 305 replenish 0.04 - 0.13 max 1 initial 1 start_year 1300
+	unit Mercenary Arquebusiers		exp 0 cost 205 replenish 0.02 - 0.06 max 1 initial 0 start_year 1450 events { gunpowder_discovered }
+	unit Mercenary Spearmen			exp 1 cost 350 replenish 0.04 - 0.13 max 2 initial 0
+	unit Mercenary Ribault			exp 0 cost 450 replenish 0.02 - 0.04 max 1 initial 0 events { gunpowder_discovered }
+	unit Mercenary Rocket Launcher		exp 1 cost 875 replenish 0.03 - 0.06 max 1 initial 0 events { gunpowder_discovered mongols_invasion_warn }
+	unit Axemen				exp 0 cost 255 replenish 0.04 - 0.13 max 2 initial 0
+	unit Viking Mercenaries			exp 1 cost 395 replenish 0.03 - 0.10 max 1 initial 0
+	unit Hunters				exp 0 cost 180 replenish 0.03 - 0.07 max 1 initial 0
 
 pool Netherlands
 	regions Antwerp_Province Bruges_Province Groningen_Province
@@ -157,7 +185,7 @@ pool Southern_Germany
 	unit Doppelsoldner			exp 4 cost 720 replenish 0.06 - 0.18 max 2 initial 1 start_year 1460
 
 pool Poland
-	regions Riga_Province Vilnius_Province Thorn_Province Halych_Province Krakow_Province Plock_Province
+	regions Thorn_Province Halych_Province Krakow_Province Plock_Province Zhytomyr_Province
 	unit merc cog,				exp 0 cost 200 replenish 0.36 - 1.0 max 1 initial 1 religions { catholic } crusading
 	unit merc cog,				exp 0 cost 1000 replenish 0.02 - 0.10 max 1 initial 1
 	unit Mercenary Frankish Knights		exp 1 cost 720 replenish 0.03 - 0.13 max 1 initial 0 start_year 1130 end_year 1379 religions { catholic orthodox }
@@ -174,7 +202,7 @@ pool Poland
 	unit Hunters				exp 0 cost 180 replenish 0.03 - 0.09 max 1 initial 0
 
 pool Prussia
-	regions Mensk_Province Palanga_Province Pskov_Province Zhytomyr_Province Hrodna_Province Reval_Province
+	regions Palanga_Province Reval_Province Riga_Province Vilnius_Province Hrodna_Province Mensk_Province
 	unit merc cog,				exp 0 cost 200 replenish 0.36 - 1.0 max 1 initial 1 religions { catholic } crusading
 	unit merc cog,				exp 0 cost 1000 replenish 0.02 - 0.10 max 1 initial 1
 	unit Mercenary Frankish Knights		exp 1 cost 720 replenish 0.03 - 0.13 max 1 initial 0 start_year 1130 end_year 1300 religions { catholic orthodox }
@@ -190,8 +218,8 @@ pool Prussia
 	unit Hunters				exp 0 cost 180 replenish 0.03 - 0.09 max 1 initial 0
 
 ;removed Ryazan_Province
-pool Steppes
-	regions Bulgar_Province Sarkel_Province Caffa_Province Astrakhan_Province Tmutarakan_Province
+pool Steppes_NE
+	regions Bulgar_Province Jaiksk_Province Serdobinskaya_Province Astrakhan_Province Kazan_Province
 	unit Steppe Kazaks			exp 2 cost 605 replenish 0.04 - 0.13 max 2 initial 0
 	unit Aldari Druzhina			exp 2 cost 700 replenish 0.03 - 0.09 max 1 initial 0
 	unit Aldari				exp 1 cost 655 replenish 0.06 - 0.13 max 2 initial 0
@@ -199,19 +227,18 @@ pool Steppes
 	unit Axemen				exp 0 cost 255 replenish 0.04 - 0.13 max 2 initial 0
 
 ;removed Khlynov_Province Yelabuga_Province
-pool Steppes2
-	regions Jaiksk_Province Embi_Province Azaq_Province Serdobinskaya_Province Kazan_Province
+pool Steppes_SW
+	regions Azaq_Province Sarkel_Province Caffa_Province Tmutarakan_Province
 	unit Steppe Kazaks			exp 2 cost 605 replenish 0.04 - 0.13 max 2 initial 0
 	unit Aldari Druzhina			exp 2 cost 700 replenish 0.03 - 0.09 max 1 initial 0
 	unit Aldari				exp 1 cost 655 replenish 0.06 - 0.13 max 2 initial 0
 	unit Mercenary Rocket Launcher		exp 0 cost 875 replenish 0.02 - 0.06 max 1 initial 0 events { gunpowder_discovered mongols_invasion_warn }
 	unit Axemen				exp 0 cost 255 replenish 0.04 - 0.13 max 2 initial 0
 
-pool Steppes3
-	regions Urgench_Province Khiva_Province
+pool Steppes_Aral
+	regions Urgench_Province Khiva_Province Embi_Province
 	unit Steppe Kazaks			exp 2 cost 605 replenish 0.04 - 0.13 max 2 initial 0
-	unit Aldari Druzhina			exp 2 cost 700 replenish 0.03 - 0.09 max 1 initial 0
-	unit Aldari				exp 1 cost 655 replenish 0.06 - 0.13 max 2 initial 0
+	unit Aldari Druzhina			exp 2 cost 700 replenish 0.03 - 0.06 max 1 initial 0
 	unit Mercenary Rocket Launcher		exp 0 cost 875 replenish 0.02 - 0.06 max 1 initial 0 events { gunpowder_discovered mongols_invasion_warn }
 	unit Kwarizmian Cavalry			exp 1 cost 755 replenish 0.03 - 0.9 max 2 initial 0 end_year 1400 events { mongols_invasion_warn }
 	unit Turkomans Mercs			exp 1 cost 425 replenish 0.03 - 0.9 max 2 initial 0 religions { islam }
@@ -269,9 +296,9 @@ pool Switzerland
 	unit Mercenary Spearmen			exp 1 cost 350 replenish 0.04 - 0.13 max 2 initial 0
 	unit Doppelsoldner			exp 2 cost 620 replenish 0.04 - 0.13 max 2 initial 0 start_year 1460
 
-;added Ryazan=Rascia Belgrade=Naissus Skara=Shkoder Turku=Vrhbosna
+;added Ryazan=Rascia Belgrade=Nysos Turku=Vrhbosna Moscow=Shkoder
 pool West Balkans
-	regions Esztergom_Province Zagreb_Province Ragusa_Province Belgrade_Province Varad_Province Ryazan_Province Skara_Province Turku_Province
+	regions Esztergom_Province Zagreb_Province Ragusa_Province Belgrade_Province Varad_Province Ryazan_Province Moscow_Province Turku_Province
 	unit merc galley,			exp 0 cost 200 replenish 0.36 - 1.0 max 1 initial 1 religions { catholic } crusading
 	unit merc galley,			exp 0 cost 200 replenish 0.36 - 1.0 max 1 initial 1 religions { islam } crusading
 	unit merc galley,			exp 0 cost 1040 replenish 0.02 - 0.10 max 1 initial 1
@@ -441,7 +468,7 @@ pool West_Greece
 	unit Sergeant Swordsmen			exp 1 cost 305 replenish 0.03 - 0.09 max 1 initial 0 end_year 1200
 
 pool Anatolia
-	regions Trebizond_Province Nicaea_Province Caesarea_Province Iconium_Province Smyrna_Province Nicosia_Province Sinop_Province Ankara_Province Isparta_Province
+	regions Trebizond_Province Smyrna_Province Nicosia_Province Sinop_Province
 	unit merc galley,			exp 0 cost 200 replenish 0.36 - 1.0 max 2 initial 1 religions { islam } crusading
 	unit merc galley,			exp 0 cost 1040 replenish 0.06 - 0.18 max 1 initial 0
 	unit Aldari Druzhina			exp 2 cost 700 replenish 0.03 - 0.09 max 1 initial 0
@@ -457,6 +484,20 @@ pool Anatolia
 	unit Mercenary Saracens			exp 1 cost 460 replenish 0.06 - 0.18 max 2 initial 0 start_year 1240
 	unit Armenian Infantry			exp 0 cost 270 replenish 0.04 - 0.13 max 1 initial 0 start_year 1150
 
+pool Anatolia_no_ships
+	regions Nicaea_Province Caesarea_Province Iconium_Province Ankara_Province Isparta_Province Rhodes_Province
+	unit Aldari Druzhina			exp 2 cost 700 replenish 0.03 - 0.09 max 1 initial 0
+	unit Aldari				exp 1 cost 655 replenish 0.06 - 0.13 max 2 initial 0
+	unit Armenian Archers			exp 1 cost 280 replenish 0.04 - 0.10 max 1 initial 0
+	unit Armenian Cavalry			exp 1 cost 695 replenish 0.08 - 0.18 max 2 initial 0
+	unit Turkopoles				exp 1 cost 370 replenish 0.06 - 0.18 max 2 initial 0 religions { catholic orthodox }
+	unit Pilgrims				exp 1 cost 35 replenish 0.18 - 0.25 max 2 initial 1 religions { catholic } crusading
+	unit Ghazis				exp 1 cost 100 replenish 0.18 - 0.5 max 4 initial 1 religions { islam } crusading
+	unit Akinjis				exp 1 cost 285 replenish 0.18 - 0.5 max 4 initial 0 religions { islam }
+	unit Mutatawwi'a			exp 1 cost 60 replenish 0.08 - 0.25 max 4 initial 1 religions { islam } crusading
+	unit Turkomans Mercs			exp 2 cost 460 replenish 0.06 - 0.18 max 2 initial 0 religions { islam orthodox }
+	unit Mercenary Saracens			exp 1 cost 460 replenish 0.06 - 0.18 max 2 initial 0 start_year 1240
+	unit Armenian Infantry			exp 0 cost 270 replenish 0.04 - 0.13 max 1 initial 0 start_year 1150
 pool Armenia
 	regions Tbilisi_Province Yerevan_Province Adana_Province Diyarbakir_Province Baku_Province Tabriz_Province Kutaisi_Province
 	unit Aldari Druzhina			exp 2 cost 700 replenish 0.03 - 0.09 max 1 initial 0

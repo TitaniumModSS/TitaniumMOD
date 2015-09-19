@@ -1,4 +1,4 @@
-22 serialization::archive 3 0 0 0 0 1266 0 0 
+22 serialization::archive 3 0 0 0 0 1267 0 0 
 10 mount_pony 
 1.12 0 0 3 0 0 
 52 unit_models/Mounts/Medium_Horse/mount_pony_lod0.mesh 121 
@@ -6711,6 +6711,58 @@
 21 MTW2_HR_Lance_Primary 1 
 18 MTW2_Sword_Primary 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+29 italian_cavalry_militia_early 
+1 4 
+58 unit_models/_Units/EN_Lmail_Hmail/feudal_knights_lod0.mesh 121 
+58 unit_models/_Units/EN_Lmail_Hmail/feudal_knights_lod1.mesh 900 
+58 unit_models/_Units/EN_Lmail_Hmail/feudal_knights_lod2.mesh 2500 
+58 unit_models/_Units/EN_Lmail_Hmail/feudal_knights_lod3.mesh 20000 
+5 
+5 milan 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_milan.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+60 unit_sprites/papal_states_Italian_Cavalry_Militia_sprite.spr 
+6 venice 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_venice.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+54 unit_sprites/venice_Italian_Cavalry_Militia_sprite.spr 
+12 papal_states 
+78 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_papal_states.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+60 unit_sprites/papal_states_Italian_Cavalry_Militia_sprite.spr 
+6 sicily 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_sicily.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+54 unit_sprites/sicily_Italian_Cavalry_Militia_sprite.spr 
+5 slave 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+52 unit_sprites/hre_Merchant_Cavalry_Militia_sprite.spr 
+5 
+5 milan 
+58 unit_models/AttachmentSets/Final Heater_milan_diff.texture 
+58 unit_models/AttachmentSets/Final Heater_milan_norm.texture 0 
+6 venice 
+59 unit_models/AttachmentSets/Final Heater_venice_diff.texture 
+59 unit_models/AttachmentSets/Final Heater_venice_norm.texture 0 
+12 papal_states 
+65 unit_models/AttachmentSets/Final Heater_papal_states_diff.texture 
+65 unit_models/AttachmentSets/Final Heater_papal_states_norm.texture 0 
+6 sicily 
+59 unit_models/AttachmentSets/Final heater_sicily_diff.texture 
+59 unit_models/AttachmentSets/Final heater_sicily_norm.texture 0 
+5 slave 
+57 unit_models/AttachmentSets/Final Heater_merc_diff.texture 
+57 unit_models/AttachmentSets/Final Heater_merc_norm.texture 0 
+1 
+5 Horse 
+13 MTW2_HR_Lance 
+13 MTW2_HR_Sword 2 
+21 MTW2_HR_Lance_Primary 
+14 fs_test_shield 2 
+18 MTW2_Sword_Primary 
+14 fs_test_shield 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 23 italian_cavalry_militia 
 1 4 
 67 unit_models/_Units/LN_Lmail_Hmail/italian_cavalry_militia_lod0.mesh 121 
@@ -10726,7 +10778,7 @@
 64 unit_models/_Units/EN_Peasant_Padded/mounted_sergeants_lod1.mesh 900 
 64 unit_models/_Units/EN_Peasant_Padded/mounted_sergeants_lod2.mesh 2500 
 64 unit_models/_Units/EN_Peasant_Padded/mounted_sergeants_lod3.mesh 20000 
-11 
+32 
 6 france 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_france.texture 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
@@ -10771,7 +10823,91 @@
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_rebels.texture 
 79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
 49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
-11 
+7 england 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_england.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal5.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+8 scotland 
+80 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_scotland.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal4.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+8 portugal 
+80 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_portugal.texture 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+5 spain 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_spain.texture 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+6 aragon 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_aragon.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+5 moors 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+6 norway 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_norway.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+7 denmark 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_denmark.texture 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+6 poland 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_poland.texture 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+9 lithuania 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_poland.texture 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+6 cumans 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+7 kwarezm 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+5 turks 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+5 egypt 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+9 byzantium 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+7 hungary 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_hungary.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+6 russia 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+10 kievan_rus 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+7 mongols 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+8 timurids 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+7 georgia 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture
+49 unit_sprites/normans_Mounted_Sergeants_sprite.spr 
+32 
 6 france 
 57 unit_models/AttachmentSets/Final Kite_france_diff.texture 
 57 unit_models/AttachmentSets/Final Kite_france_norm.texture 0 
@@ -10805,6 +10941,69 @@
 5 slave 
 56 unit_models/AttachmentSets/Final kite_slave_diff.texture 
 56 unit_models/AttachmentSets/Final kite_slave_norm.texture 0 
+7 england 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 scotland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 portugal 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 spain 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 aragon 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 moors 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 norway 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 denmark 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 poland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+9 lithuania 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 cumans 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 kwarezm 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 turks 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 egypt 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+9 byzantium 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 hungary 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 russia 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+10 kievan_rus 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 mongols 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 timurids 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 georgia 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
 1 
 5 Horse 
 13 MTW2_HR_Spear 
@@ -10820,7 +11019,7 @@
 65 unit_models/_Units/EN_Lmail_Hmail/mounted_sergeants_ug1_lod1.mesh 900 
 65 unit_models/_Units/EN_Lmail_Hmail/mounted_sergeants_ug1_lod2.mesh 2500 
 65 unit_models/_Units/EN_Lmail_Hmail/mounted_sergeants_ug1_lod3.mesh 20000 
-11 
+32 
 6 france 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_france.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
@@ -10865,7 +11064,91 @@
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_rebels.texture 
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
 53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
-11 
+7 england 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_england.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal3.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+8 scotland 
+74 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_scotland.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+8 portugal 
+74 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_portugal.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+5 spain 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_spain.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+6 aragon 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_spain.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+5 moors 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+6 norway 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norway.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal3.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+7 denmark 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_denmark.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+6 poland 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_poland.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+9 lithuania 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_poland.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+6 cumans 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+7 kwarezm 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+5 turks 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+5 egypt 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+9 byzantium 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+7 hungary 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_hungary.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal0.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+6 russia 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+10 kievan_rus 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+7 mongols 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+8 timurids 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+7 georgia 
+71 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_mercs.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/normans_Mounted_Sergeants_ug1_sprite.spr 
+32 
 6 france 
 57 unit_models/AttachmentSets/Final Kite_france_diff.texture 
 57 unit_models/AttachmentSets/Final Kite_france_norm.texture 0 
@@ -10899,6 +11182,69 @@
 5 slave 
 56 unit_models/AttachmentSets/Final kite_slave_diff.texture 
 56 unit_models/AttachmentSets/Final kite_slave_norm.texture 0 
+7 england 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 scotland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 portugal 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 spain 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 aragon 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 moors 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 norway 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 denmark 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 poland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+9 lithuania 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 cumans 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 kwarezm 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 turks 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 egypt 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+9 byzantium 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 hungary 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 russia 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+10 kievan_rus 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 mongols 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 timurids 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 georgia 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
 1 
 5 Horse 
 13 MTW2_HR_Spear 
@@ -20183,7 +20529,7 @@
 61 unit_models/_Units/EN_Lmail_Hmail/armored_sergeants_lod1.mesh 900 
 61 unit_models/_Units/EN_Lmail_Hmail/armored_sergeants_lod2.mesh 2500 
 61 unit_models/_Units/EN_Lmail_Hmail/armored_sergeants_lod3.mesh 20000 
-10 
+31 
 7 england 
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_englana.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Haail_normal.texture 
@@ -20220,11 +20566,95 @@
 73 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_england.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
 53 unit_sprites/normans_Dummy_EN_Spearmen_ug2_sprite.spr 
-15 knights_templar 
+14 teutonic_order 
+69 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_hre.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+49 unit_sprites/hre_Dummy_EN_Spearmen_ug2_sprite.spr 
+9 jerusalem 
 81 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_knights_templar.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
 58 unit_sprites/papal_states_Dummy_EN_Spearmen_ug2_sprite.spr 
-10 
+8 scotland 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_france.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/france_Dummy_EN_Spearmen_ug2_sprite.spr 
+8 portugal 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+5 spain 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Smail_Smail_aragon.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+6 aragon 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Smail_Smail_aragon.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+5 moors 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+6 norway 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_venice.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/venice_Dummy_EN_Spearmen_ug2_sprite.spr 
+7 denmark 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_france.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/france_Dummy_EN_Spearmen_ug2_sprite.spr 
+6 poland 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_venice.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/venice_Dummy_EN_Spearmen_ug2_sprite.spr 
+9 lithuania 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_venice.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/venice_Dummy_EN_Spearmen_ug2_sprite.spr 
+6 cumans 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+7 kwarezm 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+5 turks 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+5 egypt 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+9 byzantium 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+7 hungary 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+6 russia 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_france.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/france_Dummy_EN_Spearmen_ug2_sprite.spr 
+10 kievan_rus 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_france.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/france_Dummy_EN_Spearmen_ug2_sprite.spr 
+7 mongols 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+8 timurids 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+51 unit_sprites/slave_Dummy_EN_Spearmen_ug2_sprite.spr 
+7 georgia 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_venice.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+52 unit_sprites/venice_Dummy_EN_Spearmen_ug2_sprite.spr 
+31 
 7 england 
 58 unit_models/AttachmentSets/Final Kite_england_diff.texture 
 58 unit_models/AttachmentSets/Final Kite_england_norm.texture 0 
@@ -20252,9 +20682,72 @@
 7 normans 
 58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
 58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
-15 knights_templar 
+14 teutonic_order 
+65 unit_models/AttachmentSets/Final Kite_teutonic_order_diff.texture 
+65 unit_models/AttachmentSets/Final Kite_teutonic_order_norm.texture 0 
+9 jerusalem 
 66 unit_models/AttachmentSets/Final Kite_knights_templar_diff.texture 
 57 unit_models/AttachmentSets/Final Kite_sicily_norm.texture 0 
+8 scotland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 portugal 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 spain 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 aragon 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 moors 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+6 norway 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 denmark 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 poland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+9 lithuania 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 cumans 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+7 kwarezm 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+5 turks 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+5 egypt 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+9 byzantium 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+7 hungary 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 russia 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+10 kievan_rus 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 mongols 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+8 timurids 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+7 georgia 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
 1 
 4 None 
 10 MTW2_Spear 0 
@@ -20268,7 +20761,7 @@
 65 unit_models/_Units/EN_Lmail_Hmail/armored_sergeants_ug1_lod1.mesh 900 
 65 unit_models/_Units/EN_Lmail_Hmail/armored_sergeants_ug1_lod2.mesh 2500 
 65 unit_models/_Units/EN_Lmail_Hmail/armored_sergeants_ug1_lod3.mesh 20000 
-11 
+31 
 7 england 
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_englana.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Haail_normal.texture 
@@ -20313,7 +20806,87 @@
 81 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_knights_templar.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
 58 unit_sprites/papal_states_Dummy_EN_Spearmen_ug2_sprite.spr 
-11 
+8 scotland 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+8 portugal 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+5 spain 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+6 aragon 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+5 moors 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+6 norway 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+7 denmark 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+6 poland 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+9 lithuania 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+6 cumans 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+7 kwarezm 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+5 turks 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+5 egypt 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+9 byzantium 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+7 hungary 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+6 russia 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+10 kievan_rus 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+7 mongols 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+8 timurids 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+7 georgia 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_rebels.texture 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/en_smail_smail_normal.texture 
+53 unit_sprites/normans_Dummy_EN_Spearmen_ug3_sprite.spr 
+31 
 7 england 
 58 unit_models/AttachmentSets/Final Kite_england_diff.texture 
 58 unit_models/AttachmentSets/Final Kite_england_norm.texture 0 
@@ -20347,6 +20920,66 @@
 9 jerusalem 
 60 unit_models/AttachmentSets/Final Kite_jerusalem_diff.texture 
 60 unit_models/AttachmentSets/Final Kite_jerusalem_norm.texture 0 
+8 scotland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+8 portugal 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 spain 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 aragon 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+5 moors 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+6 norway 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 denmark 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 poland 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+9 lithuania 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 cumans 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+7 kwarezm 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+5 turks 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+5 egypt 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+9 byzantium 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+7 hungary 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+6 russia 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+10 kievan_rus 
+58 unit_models/AttachmentSets/Final Kite_normans_diff.texture 
+58 unit_models/AttachmentSets/Final Kite_normans_norm.texture 0 
+7 mongols 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+8 timurids 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
+7 georgia 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
 1 
 4 None 
 10 MTW2_Spear 0 
@@ -36633,7 +37266,7 @@
 15 eastern_captain 
 1 1 
 76 unit_models/_Generals_and_Captains/Islamic_Captain/eastern_captain_lod0.mesh 20000 
-10 
+31 
 5 moors 
 89 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_moors.texture 
 90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
@@ -36664,7 +37297,70 @@
 6 cumans 
 89 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_moors.texture 
 90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
-10 
+5 spain 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 aragon 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 france 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+3 hre 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 england 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+8 scotland 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 denmark 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 norway 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+5 milan 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 venice 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+12 papal_states 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 sicily 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 poland 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 hungary 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+9 lithuania 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 russia 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+10 kievan_rus 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 georgia 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+9 jerusalem 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+9 byzantium 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+14 teutonic_order 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+31 
 5 moors 
 59 unit_models/AttachmentSets/Final General_moors_diff.texture 
 59 unit_models/AttachmentSets/Final General_moors_norm.texture 0 
@@ -36695,6 +37391,69 @@
 6 cumans 
 59 unit_models/AttachmentSets/Final General_moors_diff.texture 
 59 unit_models/AttachmentSets/Final General_moors_norm.texture 0 
+5 spain 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+6 aragon 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+6 france 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+3 hre 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+7 england 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+8 scotland 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+7 denmark 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+6 norway 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+5 milan 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+6 venice 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+12 papal_states 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+6 sicily 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+6 poland 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+7 hungary 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+9 lithuania 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+6 russia 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+10 kievan_rus 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+7 georgia 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+9 jerusalem 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+9 byzantium 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
+14 teutonic_order 
+58 unit_models/AttachmentSets/Final General_merc_diff.texture 
+58 unit_models/AttachmentSets/Final General_merc_norm.texture 0 
 4 
 4 None 
 20 MTW2_Swordsman_Slash 0 
@@ -51243,7 +52002,7 @@
 27 northern_captain_early_flag 
 1 1 
 95 unit_models/_Generals_and_Captains/northern_captain_early/northern_captain_flag_early_lod0.mesh 50000 
-24 
+32 
 9 jerusalem 
 104 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_templar.texture 
 103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
@@ -51316,7 +52075,31 @@
 9 lithuania 
 88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_russia.texture 
 88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_normal.texture 0 
-24 
+6 cumans 
+88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_russia.texture 
+88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_normal.texture 0 
+7 kwarezm 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 turks 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 egypt 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 moors 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+8 timurids 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 mongols 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+9 byzantium 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+32 
 9 jerusalem 
 67 unit_models/AttachmentSets/final general_papal_states_Early.texture 
 72 unit_models/AttachmentSets/final general_papal_states_norm_Early.texture 0 
@@ -51389,6 +52172,30 @@
 9 lithuania 
 61 unit_models/AttachmentSets/final general_lithua_Early.texture 
 66 unit_models/AttachmentSets/final general_lithua_norm_Early.texture 0 
+6 cumans 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
+7 kwarezm 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
+5 turks 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
+5 egypt 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
+5 moors 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
+8 timurids 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
+7 mongols 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
+9 byzantium 
+66 unit_models/AttachmentSets/final general_slave_evrop_Early.texture 
+71 unit_models/AttachmentSets/final general_slave_evrop_norm_Early.texture 0 
 4 
 4 None 
 14 MTW2_Spear_new 0 
@@ -51413,7 +52220,7 @@
 26 eastern_captain_early_flag 
 1 1 
 87 unit_models\_generals_and_captains\islamic_captain/eastern_captain_early_flag_lod0.mesh 50000 
-10 
+31 
 7 kwarezm 
 91 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_kwarezm.texture 
 90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
@@ -51444,7 +52251,70 @@
 8 portugal 
 90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
 90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
-10 
+5 spain 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 aragon 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 france 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+3 hre 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 england 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+8 scotland 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 denmark 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 norway 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+5 milan 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 venice 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+12 papal_states 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 sicily 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 poland 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 hungary 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+9 lithuania 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+6 russia 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+10 kievan_rus 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+7 georgia 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+9 jerusalem 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+9 byzantium 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+14 teutonic_order 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_rebels.texture 
+90 unit_models/_Generals_and_Captains/Islamic_Captain/textures/islamic_captain_normal.texture 0 
+31 
 7 kwarezm 
 60 unit_models/AttachmentSets/final general_egypt_Early.texture 
 65 unit_models/AttachmentSets/final general_egypt_norm_Early.texture 0 
@@ -51475,6 +52345,69 @@
 8 portugal 
 60 unit_models/AttachmentSets/final general_moors_Early.texture 
 65 unit_models/AttachmentSets/final general_moors_norm_Early.texture 0 
+5 spain 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+6 aragon 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+6 france 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+3 hre 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+7 england 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+8 scotland 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+7 denmark 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+6 norway 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+5 milan 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+6 venice 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+12 papal_states 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+6 sicily 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+6 poland 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+7 hungary 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+9 lithuania 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+6 russia 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+10 kievan_rus 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+7 georgia 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+9 jerusalem 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+9 byzantium 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
+14 teutonic_order 
+68 unit_models/AttachmentSets/final general_slave_islamic_Early.texture 
+73 unit_models/AttachmentSets/final general_slave_islamic_norm_Early.texture 0 
 4 
 4 None 
 14 MTW2_Spear_new 0 
@@ -51499,7 +52432,7 @@
 28 byzantium_captain_early_flag 
 1 1 
 96 unit_models/_Generals_and_Captains/northern_captain_early/byzantium_captain_flag_early_lod0.mesh 50000 
-3 
+31 
 9 byzantium 
 106 unit_models/_generals_and_captains/northern_captain_early/textures/late_northern_captain_byzantium.texture 
 103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
@@ -51509,7 +52442,91 @@
 4 merc 
 103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
 103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
-3 
+6 russia 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+10 kievan_rus 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+9 lithuania 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 denmark 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 cumans 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 kwarezm 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 moors 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 egypt 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 turks 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 mongols 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+8 timurids 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+8 portugal 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 spain 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 aragon 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 france 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+3 hre 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 england 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+8 scotland 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 norway 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 milan 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 venice 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+12 papal_states 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 sicily 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 poland 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 hungary 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 georgia 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+9 jerusalem 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+14 teutonic_order 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+31 
 9 byzantium 
 64 unit_models/AttachmentSets/final general_byzantium_Early.texture 
 69 unit_models/AttachmentSets/final general_byzantium_norm_Early.texture 0 
@@ -51517,6 +52534,90 @@
 71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
 76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
 4 merc 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 russia 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+10 kievan_rus 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+9 lithuania 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 denmark 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 cumans 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 kwarezm 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 moors 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 egypt 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 turks 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 mongols 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+8 timurids 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+8 portugal 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 spain 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 aragon 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 france 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+3 hre 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 england 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+8 scotland 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 norway 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 milan 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 venice 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+12 papal_states 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 sicily 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 poland 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 hungary 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 georgia 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+9 jerusalem 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+14 teutonic_order 
 71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
 76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
 4 
@@ -51543,7 +52644,7 @@
 25 russia_captain_early_flag 
 1 1 
 93 unit_models/_Generals_and_Captains/northern_captain_early/russia_captain_flag_early_lod0.mesh 50000 
-7 
+31 
 6 russia 
 88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_russia.texture 
 88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_normal.texture 0 
@@ -51565,7 +52666,79 @@
 6 cumans 
 88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_russia.texture 
 88 unit_models/_Generals_and_Captains/russia_captain/textures/russia_captain_normal.texture 0 
-7 
+7 kwarezm 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 moors 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 egypt 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 turks 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 mongols 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+8 timurids 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+8 portugal 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 spain 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 aragon 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 france 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+3 hre 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 england 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+8 scotland 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 norway 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+5 milan 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 venice 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+12 papal_states 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 sicily 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+6 poland 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 hungary 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+7 georgia 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+9 jerusalem 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+9 byzantium 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+14 teutonic_order 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_rebels.texture 
+103 unit_models/_Generals_and_Captains/northern_captain_early/textures/late_northern_captain_normal.texture 0 
+31 
 6 russia 
 61 unit_models/AttachmentSets/final general_russia_Early.texture 
 66 unit_models/AttachmentSets/final general_russia_norm_Early.texture 0 
@@ -51587,6 +52760,78 @@
 6 cumans 
 61 unit_models/AttachmentSets/final general_russia_Early.texture 
 66 unit_models/AttachmentSets/final general_russia_norm_Early.texture 0 
+7 kwarezm 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 moors 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 egypt 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 turks 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 mongols 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+8 timurids 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+8 portugal 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 spain 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 aragon 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 france 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+3 hre 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 england 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+8 scotland 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 norway 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+5 milan 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 venice 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+12 papal_states 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 sicily 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+6 poland 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 hungary 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+7 georgia 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+9 jerusalem 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+9 byzantium 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
+14 teutonic_order 
+71 unit_models/AttachmentSets/final general_slave_east_evrop_Early.texture 
+76 unit_models/AttachmentSets/final general_slave_east_evrop_norm_Early.texture 0 
 4 
 4 None 
 14 MTW2_Spear_new 0 

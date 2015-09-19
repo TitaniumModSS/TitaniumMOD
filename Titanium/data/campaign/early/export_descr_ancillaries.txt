@@ -4425,12 +4425,12 @@ Ancillary king_adrianople
  Effect Loyalty 1
  
 ;------------------------------------------ 
-Ancillary king_seville 
+Ancillary king_oran 
  Type dearmad_her
  Transferable 1
- Image king_seville.tga
- Description king_seville_desc
- EffectsDescription king_seville_effects_desc
+ Image king_oran.tga
+ Description king_oran_desc
+ EffectsDescription king_oran_effects_desc
  Effect Trading 5
  Effect SiegeDefence 1
  
@@ -4445,12 +4445,12 @@ Ancillary king_aberdeen
  Effect TroopMorale 1
  
 ;------------------------------------------ 
-Ancillary king_oran ;Seville
+Ancillary king_seville ;Seville
  Type dearmad_her
  Transferable 1
  Image govern_seville.tga
- Description king_oran_desc
- EffectsDescription king_oran_effects_desc
+ Description king_seville_desc
+ EffectsDescription king_seville_effects_desc
  Effect TaxCollection 5
  Effect Loyalty 1
  Effect Piety 2
@@ -5831,10 +5831,11 @@ Ancillary iking_fez
  Effect Loyalty 1
  Effect Law 1
 ;------------------------------------------ 
-Ancillary iking_galway ;Coimbra
+Ancillary iking_galway ;Qusantinah
  Type dearmad_her
  Transferable 1
- Image govern_coimbra.tga
+; Image govern_coimbra.tga
+ Image govern_qusantina.tga
  Description iking_galway_desc
  EffectsDescription iking_galway_effects_desc
  Effect TaxCollection 5
@@ -6363,12 +6364,12 @@ Ancillary iking_adrianople
  Effect Loyalty 1
  
 ;------------------------------------------ 
-Ancillary iking_seville 
+Ancillary iking_oran 
  Type dearmad_her
  Transferable 1
- Image king_seville.tga
- Description iking_seville_desc
- EffectsDescription iking_seville_effects_desc
+ Image king_oran.tga
+ Description iking_oran_desc
+ EffectsDescription iking_oran_effects_desc
  Effect Trading 5
  Effect SiegeDefence 1
  
@@ -6383,12 +6384,12 @@ Ancillary iking_aberdeen
  Effect TroopMorale 1
  
 ;------------------------------------------ 
-Ancillary iking_oran ;Seville
+Ancillary iking_seville ;Seville
  Type dearmad_her
  Transferable 1
  Image govern_seville.tga
- Description iking_oran_desc
- EffectsDescription iking_oran_effects_desc
+ Description iking_seville_desc
+ EffectsDescription iking_seville_effects_desc
  Effect TaxCollection 5
  Effect Loyalty 1
  Effect Piety 2
@@ -7782,10 +7783,11 @@ Ancillary oking_fez
  Effect Loyalty 1
  Effect Law 1
 ;------------------------------------------ 
-Ancillary oking_galway ;Coimbra
+Ancillary oking_galway ;Qusantinah
  Type dearmad_her
  Transferable 1
- Image govern_coimbra.tga
+; Image govern_coimbra.tga
+ Image govern_qusantina.tga
  Description oking_galway_desc
  EffectsDescription oking_galway_effects_desc
  Effect TaxCollection 5
@@ -8313,12 +8315,12 @@ Ancillary oking_adrianople
  Effect Loyalty 1
  
 ;------------------------------------------ 
-Ancillary oking_seville 
+Ancillary oking_oran 
  Type dearmad_her
  Transferable 1
- Image king_seville.tga
- Description oking_seville_desc
- EffectsDescription oking_seville_effects_desc
+ Image king_oran.tga
+ Description oking_oran_desc
+ EffectsDescription oking_oran_effects_desc
  Effect Trading 5
  Effect SiegeDefence 1
  
@@ -8333,12 +8335,12 @@ Ancillary oking_aberdeen
  Effect TroopMorale 1
  
 ;------------------------------------------ 
-Ancillary oking_oran ;Seville
+Ancillary oking_seville ;Seville
  Type dearmad_her
  Transferable 1
  Image govern_seville.tga
- Description oking_oran_desc
- EffectsDescription oking_oran_effects_desc
+ Description oking_seville_desc
+ EffectsDescription oking_seville_effects_desc
  Effect TaxCollection 5
  Effect Loyalty 1
  Effect Piety 2
@@ -9062,8 +9064,8 @@ Trigger crown_spain_spain
  and I_SettlementOwner Granada = spain
  and I_SettlementOwner Zaragoza = spain
  and I_SettlementOwner Barcelona = spain
- and I_SettlementOwner Seville = spain; Badajoz
- and I_SettlementOwner Oran = spain; Seville
+ and I_SettlementOwner Oran = spain; Badajoz
+ and I_SettlementOwner Seville = spain; Seville
  and not I_WorldwideAncillaryExists crown_spain
  
  AcquireAncillary crown_spain chance 100 
@@ -9085,8 +9087,8 @@ Trigger crown_spain2
  and I_SettlementOwner Granada = aragon
  and I_SettlementOwner Zaragoza = aragon
  and I_SettlementOwner Barcelona = aragon
- and I_SettlementOwner Seville = aragon; Badajoz
- and I_SettlementOwner Oran = aragon; Seville
+ and I_SettlementOwner Oran = aragon; Badajoz
+ and I_SettlementOwner Seville = aragon; Seville
  and not I_WorldwideAncillaryExists crown_spain
  
  AcquireAncillary crown_spain chance 100 
@@ -9109,8 +9111,8 @@ Trigger crown_spain3
  and I_SettlementOwner Granada = portugal
  and I_SettlementOwner Zaragoza = portugal
  and I_SettlementOwner Barcelona = portugal
- and I_SettlementOwner Seville = portugal; Badajoz
- and I_SettlementOwner Oran = portugal; Seville
+ and I_SettlementOwner Oran = portugal; Badajoz
+ and I_SettlementOwner Seville = portugal; Seville
  and not I_WorldwideAncillaryExists crown_spain
  
  AcquireAncillary crown_spain chance 100 
@@ -9133,8 +9135,8 @@ Trigger crown_spain3_zirids
  and I_SettlementOwner Granada = portugal
  and I_SettlementOwner Zaragoza = portugal
  and I_SettlementOwner Barcelona = portugal
- and I_SettlementOwner Seville = portugal; Badajoz
- and I_SettlementOwner Oran = portugal; Seville
+ and I_SettlementOwner Oran = portugal; Badajoz
+ and I_SettlementOwner Seville = portugal; Seville
  and not I_WorldwideAncillaryExists crown_spain_2
  
  AcquireAncillary crown_spain_2 chance 100 
@@ -9156,8 +9158,8 @@ Trigger crown_spain4
  and I_SettlementOwner Granada = moors
  and I_SettlementOwner Zaragoza = moors
  and I_SettlementOwner Barcelona = moors
- and I_SettlementOwner Seville = moors; Badajoz
- and I_SettlementOwner Oran = moors; Seville
+ and I_SettlementOwner Oran = moors; Badajoz
+ and I_SettlementOwner Seville = moors; Seville
  and not I_WorldwideAncillaryExists crown_spain
  
  AcquireAncillary crown_spain chance 100 
@@ -9379,7 +9381,7 @@ Trigger crown_turks
  and I_SettlementOwner Mashhad = turks
  and I_SettlementOwner Gorgan = turks
  and I_SettlementOwner Konjikala = turks
- and I_SettlementOwner Khiva = turks
+ ;and I_SettlementOwner Khiva = turks
  and I_SettlementOwner Urgench = turks
  and not I_WorldwideAncillaryExists crown_turks
  
@@ -9408,7 +9410,7 @@ Trigger crown_turks2
  and I_SettlementOwner Mashhad = kwarezm
  and I_SettlementOwner Gorgan = kwarezm
  and I_SettlementOwner Konjikala = kwarezm
- and I_SettlementOwner Khiva = kwarezm
+ ;and I_SettlementOwner Khiva = kwarezm
  and I_SettlementOwner Urgench = kwarezm
  and not I_WorldwideAncillaryExists crown_turks
  
@@ -9431,7 +9433,7 @@ Trigger crown_egypt
  and I_SettlementOwner Damascus = egypt
  and I_SettlementOwner Antioch = egypt
  and I_SettlementOwner Aleppo = egypt
- and I_SettlementOwner Qarisiya = egypt
+ ;and I_SettlementOwner Qarisiya = egypt
  and I_SettlementOwner Baghdad = egypt
  and I_SettlementOwner Ahvaz = egypt
  and I_SettlementOwner Basra = egypt
@@ -16602,18 +16604,18 @@ Trigger king_adrianople
  AcquireAncillary king_adrianople chance 100 
  
 ;------------------------------------------ 
-Trigger king_seville 
+Trigger king_oran 
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
  
- and SettlementName Seville
+ and SettlementName Oran
  and IsGeneral
  and not CharacterReligion islam
  and not CultureType greek
  and not HasAncType dearmad_her
- and not FactionwideAncillaryExists king_seville
+ and not FactionwideAncillaryExists king_oran
  
- AcquireAncillary king_seville chance 100 
+ AcquireAncillary king_oran chance 100 
  
 ;------------------------------------------ 
 Trigger king_aberdeen 
@@ -16630,18 +16632,18 @@ Trigger king_aberdeen
  AcquireAncillary king_aberdeen chance 100 
  
 ;------------------------------------------ 
-Trigger king_oran 
+Trigger king_seville 
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
  
- and SettlementName Oran
+ and SettlementName Seville
  and IsGeneral
  and not CharacterReligion islam
  and not CultureType greek
  and not HasAncType dearmad_her
- and not FactionwideAncillaryExists king_oran
+ and not FactionwideAncillaryExists king_seville
  
- AcquireAncillary king_oran chance 100 
+ AcquireAncillary king_seville chance 100 
  
 ;------------------------------------------ 
 Trigger king_hrodna 
@@ -19046,17 +19048,17 @@ Trigger iking_adrianople
  AcquireAncillary iking_adrianople chance 100 
  
 ;------------------------------------------ 
-Trigger iking_seville 
+Trigger iking_oran 
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
  
- and SettlementName Seville
+ and SettlementName Oran
  and IsGeneral
  and CharacterReligion islam
  and not HasAncType dearmad_her
- and not FactionwideAncillaryExists iking_seville
+ and not FactionwideAncillaryExists iking_oran
  
- AcquireAncillary iking_seville chance 100 
+ AcquireAncillary iking_oran chance 100 
  
 ;------------------------------------------ 
 Trigger iking_aberdeen 
@@ -19072,17 +19074,17 @@ Trigger iking_aberdeen
  AcquireAncillary iking_aberdeen chance 100 
  
 ;------------------------------------------ 
-Trigger iking_oran 
+Trigger iking_seville 
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
  
- and SettlementName Oran
+ and SettlementName Seville
  and IsGeneral
  and CharacterReligion islam
  and not HasAncType dearmad_her
- and not FactionwideAncillaryExists iking_oran
+ and not FactionwideAncillaryExists iking_seville
  
- AcquireAncillary iking_oran chance 100 
+ AcquireAncillary iking_seville chance 100 
  
 ;------------------------------------------ 
 Trigger iking_hrodna 
@@ -21609,17 +21611,17 @@ Trigger oking_adrianople
  AcquireAncillary oking_adrianople chance 100 
  
 ;------------------------------------------ 
-Trigger oking_seville 
+Trigger oking_oran 
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
  
- and SettlementName Seville
+ and SettlementName Oran
  and IsGeneral
  and CultureType greek
  and not HasAncType dearmad_her
- and not FactionwideAncillaryExists oking_seville
+ and not FactionwideAncillaryExists oking_oran
  
- AcquireAncillary oking_seville chance 100 
+ AcquireAncillary oking_oran chance 100 
  
 ;------------------------------------------ 
 Trigger oking_aberdeen 
@@ -21635,17 +21637,17 @@ Trigger oking_aberdeen
  AcquireAncillary oking_aberdeen chance 100 
  
 ;------------------------------------------ 
-Trigger oking_oran 
+Trigger oking_seville 
  WhenToTest CharacterTurnEnd 
  Condition EndedInSettlement 
  
- and SettlementName Oran
+ and SettlementName Seville
  and IsGeneral
  and CultureType greek
  and not HasAncType dearmad_her
- and not FactionwideAncillaryExists oking_oran
+ and not FactionwideAncillaryExists oking_seville
  
- AcquireAncillary oking_oran chance 100 
+ AcquireAncillary oking_seville chance 100 
  
 ;------------------------------------------ 
 Trigger oking_hrodna 
@@ -22570,6 +22572,7 @@ Trigger conquer_spain
  and I_SettlementOwner Granada = france
  and I_SettlementOwner Zaragoza = france
  and I_SettlementOwner Barcelona = france
+ and I_SettlementOwner Oran = france
  and I_SettlementOwner Seville = france
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22593,6 +22596,7 @@ Trigger conquer_spain2
  and I_SettlementOwner Granada = milan
  and I_SettlementOwner Zaragoza = milan
  and I_SettlementOwner Barcelona = milan
+ and I_SettlementOwner Oran = milan
  and I_SettlementOwner Seville = milan
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22616,6 +22620,7 @@ Trigger conquer_spain3
  and I_SettlementOwner Granada = sicily
  and I_SettlementOwner Zaragoza = sicily
  and I_SettlementOwner Barcelona = sicily
+ and I_SettlementOwner Oran = sicily
  and I_SettlementOwner Seville = sicily
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22639,6 +22644,7 @@ Trigger conquer_spain4
  and I_SettlementOwner Granada = england
  and I_SettlementOwner Zaragoza = england
  and I_SettlementOwner Barcelona = england
+ and I_SettlementOwner Oran = england
  and I_SettlementOwner Seville = england
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22662,6 +22668,7 @@ Trigger conquer_spain5
  and I_SettlementOwner Granada = hre
  and I_SettlementOwner Zaragoza = hre
  and I_SettlementOwner Barcelona = hre
+ and I_SettlementOwner Oran = hre
  and I_SettlementOwner Seville = hre
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22685,6 +22692,7 @@ Trigger conquer_spain6
  and I_SettlementOwner Granada = scotland
  and I_SettlementOwner Zaragoza = scotland
  and I_SettlementOwner Barcelona = scotland
+ and I_SettlementOwner Oran = scotland
  and I_SettlementOwner Seville = scotland
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22708,6 +22716,7 @@ Trigger conquer_spain7
  and I_SettlementOwner Granada = venice
  and I_SettlementOwner Zaragoza = venice
  and I_SettlementOwner Barcelona = venice
+ and I_SettlementOwner Oran = venice
  and I_SettlementOwner Seville = venice
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22731,6 +22740,7 @@ Trigger conquer_spain8
  and I_SettlementOwner Granada = poland
  and I_SettlementOwner Zaragoza = poland
  and I_SettlementOwner Barcelona = poland
+ and I_SettlementOwner Oran = poland
  and I_SettlementOwner Seville = poland
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22754,6 +22764,7 @@ Trigger conquer_spain9
  and I_SettlementOwner Granada = hungary
  and I_SettlementOwner Zaragoza = hungary
  and I_SettlementOwner Barcelona = hungary
+ and I_SettlementOwner Oran = hungary
  and I_SettlementOwner Seville = hungary
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22777,6 +22788,7 @@ Trigger conquer_spain10
  and I_SettlementOwner Granada = lithuania
  and I_SettlementOwner Zaragoza = lithuania
  and I_SettlementOwner Barcelona = lithuania
+ and I_SettlementOwner Oran = lithuania
  and I_SettlementOwner Seville = lithuania
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22800,6 +22812,7 @@ Trigger conquer_spain11
  and I_SettlementOwner Granada = denmark
  and I_SettlementOwner Zaragoza = denmark
  and I_SettlementOwner Barcelona = denmark
+ and I_SettlementOwner Oran = denmark
  and I_SettlementOwner Seville = denmark
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22823,6 +22836,7 @@ Trigger conquer_spain12
  and I_SettlementOwner Granada = norway
  and I_SettlementOwner Zaragoza = norway
  and I_SettlementOwner Barcelona = norway
+ and I_SettlementOwner Oran = norway
  and I_SettlementOwner Seville = norway
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22846,6 +22860,7 @@ Trigger conquer_spain13
  and I_SettlementOwner Granada = russia
  and I_SettlementOwner Zaragoza = russia
  and I_SettlementOwner Barcelona = russia
+ and I_SettlementOwner Oran = russia
  and I_SettlementOwner Seville = russia
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22869,6 +22884,7 @@ Trigger conquer_spain14
  and I_SettlementOwner Granada = kievan_rus
  and I_SettlementOwner Zaragoza = kievan_rus
  and I_SettlementOwner Barcelona = kievan_rus
+ and I_SettlementOwner Oran = kievan_rus
  and I_SettlementOwner Seville = kievan_rus
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22892,6 +22908,7 @@ Trigger conquer_spain15
  and I_SettlementOwner Granada = cumans
  and I_SettlementOwner Zaragoza = cumans
  and I_SettlementOwner Barcelona = cumans
+ and I_SettlementOwner Oran = cumans
  and I_SettlementOwner Seville = cumans
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22915,6 +22932,7 @@ Trigger conquer_spain16
  and I_SettlementOwner Granada = byzantium
  and I_SettlementOwner Zaragoza = byzantium
  and I_SettlementOwner Barcelona = byzantium
+ and I_SettlementOwner Oran = byzantium
  and I_SettlementOwner Seville = byzantium
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22938,6 +22956,7 @@ Trigger conquer_spain17
  and I_SettlementOwner Granada = egypt
  and I_SettlementOwner Zaragoza = egypt
  and I_SettlementOwner Barcelona = egypt
+ and I_SettlementOwner Oran = egypt
  and I_SettlementOwner Seville = egypt
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22961,6 +22980,7 @@ Trigger conquer_spain18
  and I_SettlementOwner Granada = turks
  and I_SettlementOwner Zaragoza = turks
  and I_SettlementOwner Barcelona = turks
+ and I_SettlementOwner Oran = turks
  and I_SettlementOwner Seville = turks
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -22984,6 +23004,7 @@ Trigger conquer_spain19
  and I_SettlementOwner Granada = kwarezm
  and I_SettlementOwner Zaragoza = kwarezm
  and I_SettlementOwner Barcelona = kwarezm
+ and I_SettlementOwner Oran = kwarezm
  and I_SettlementOwner Seville = kwarezm
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -23007,6 +23028,7 @@ Trigger conquer_spain20
  and I_SettlementOwner Granada = mongols
  and I_SettlementOwner Zaragoza = mongols
  and I_SettlementOwner Barcelona = mongols
+ and I_SettlementOwner Oran = mongols
  and I_SettlementOwner Seville = mongols
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -23030,6 +23052,7 @@ Trigger conquer_spain21
  and I_SettlementOwner Granada = georgia
  and I_SettlementOwner Zaragoza = georgia
  and I_SettlementOwner Barcelona = georgia
+ and I_SettlementOwner Oran = georgia
  and I_SettlementOwner Seville = georgia
  and not I_WorldwideAncillaryExists crown_spain_2
  
@@ -25657,7 +25680,7 @@ Trigger conquer_turks
  and I_SettlementOwner Mashhad = mongols
  and I_SettlementOwner Gorgan = mongols
  and I_SettlementOwner Konjikala = mongols
- and I_SettlementOwner Khiva = mongols
+ ;and I_SettlementOwner Khiva = mongols
  and I_SettlementOwner Urgench = mongols
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25688,7 +25711,7 @@ Trigger conquer_turks2
  and I_SettlementOwner Mashhad = byzantium
  and I_SettlementOwner Gorgan = byzantium
  and I_SettlementOwner Konjikala = byzantium
- and I_SettlementOwner Khiva = byzantium
+ ;and I_SettlementOwner Khiva = byzantium
  and I_SettlementOwner Urgench = byzantium
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25719,7 +25742,7 @@ Trigger conquer_turks3
  and I_SettlementOwner Mashhad = cumans
  and I_SettlementOwner Gorgan = cumans
  and I_SettlementOwner Konjikala = cumans
- and I_SettlementOwner Khiva = cumans
+ ;and I_SettlementOwner Khiva = cumans
  and I_SettlementOwner Urgench = cumans
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25750,7 +25773,7 @@ Trigger conquer_turks4
  and I_SettlementOwner Mashhad = egypt
  and I_SettlementOwner Gorgan = egypt
  and I_SettlementOwner Konjikala = egypt
- and I_SettlementOwner Khiva = egypt
+ ;and I_SettlementOwner Khiva = egypt
  and I_SettlementOwner Urgench = egypt
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25781,7 +25804,7 @@ Trigger conquer_turks5
  and I_SettlementOwner Mashhad = moors
  and I_SettlementOwner Gorgan = moors
  and I_SettlementOwner Konjikala = moors
- and I_SettlementOwner Khiva = moors
+ ;and I_SettlementOwner Khiva = moors
  and I_SettlementOwner Urgench = moors
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25812,7 +25835,7 @@ Trigger conquer_turks6
  and I_SettlementOwner Mashhad = kievan_rus
  and I_SettlementOwner Gorgan = kievan_rus
  and I_SettlementOwner Konjikala = kievan_rus
- and I_SettlementOwner Khiva = kievan_rus
+ ;and I_SettlementOwner Khiva = kievan_rus
  and I_SettlementOwner Urgench = kievan_rus
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25843,7 +25866,7 @@ Trigger conquer_turks7
  and I_SettlementOwner Mashhad = russia
  and I_SettlementOwner Gorgan = russia
  and I_SettlementOwner Konjikala = russia
- and I_SettlementOwner Khiva = russia
+ ;and I_SettlementOwner Khiva = russia
  and I_SettlementOwner Urgench = russia
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25874,7 +25897,7 @@ Trigger conquer_turks8
  and I_SettlementOwner Mashhad = poland
  and I_SettlementOwner Gorgan = poland
  and I_SettlementOwner Konjikala = poland
- and I_SettlementOwner Khiva = poland
+ ;and I_SettlementOwner Khiva = poland
  and I_SettlementOwner Urgench = poland
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25905,7 +25928,7 @@ Trigger conquer_turks9
  and I_SettlementOwner Mashhad = lithuania
  and I_SettlementOwner Gorgan = lithuania
  and I_SettlementOwner Konjikala = lithuania
- and I_SettlementOwner Khiva = lithuania
+ ;and I_SettlementOwner Khiva = lithuania
  and I_SettlementOwner Urgench = lithuania
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25936,7 +25959,7 @@ Trigger conquer_turks10
  and I_SettlementOwner Mashhad = sicily
  and I_SettlementOwner Gorgan = sicily
  and I_SettlementOwner Konjikala = sicily
- and I_SettlementOwner Khiva = sicily
+ ;and I_SettlementOwner Khiva = sicily
  and I_SettlementOwner Urgench = sicily
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25967,7 +25990,7 @@ Trigger conquer_turks11
  and I_SettlementOwner Mashhad = venice
  and I_SettlementOwner Gorgan = venice
  and I_SettlementOwner Konjikala = venice
- and I_SettlementOwner Khiva = venice
+ ;and I_SettlementOwner Khiva = venice
  and I_SettlementOwner Urgench = venice
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -25998,7 +26021,7 @@ Trigger conquer_turks12
  and I_SettlementOwner Mashhad = milan
  and I_SettlementOwner Gorgan = milan
  and I_SettlementOwner Konjikala = milan
- and I_SettlementOwner Khiva = milan
+ ;and I_SettlementOwner Khiva = milan
  and I_SettlementOwner Urgench = milan
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26029,7 +26052,7 @@ Trigger conquer_turks13
  and I_SettlementOwner Mashhad = hre
  and I_SettlementOwner Gorgan = hre
  and I_SettlementOwner Konjikala = hre
- and I_SettlementOwner Khiva = hre
+ ;and I_SettlementOwner Khiva = hre
  and I_SettlementOwner Urgench = hre
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26060,7 +26083,7 @@ Trigger conquer_turks14
  and I_SettlementOwner Mashhad = denmark
  and I_SettlementOwner Gorgan = denmark
  and I_SettlementOwner Konjikala = denmark
- and I_SettlementOwner Khiva = denmark
+ ;and I_SettlementOwner Khiva = denmark
  and I_SettlementOwner Urgench = denmark
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26091,7 +26114,7 @@ Trigger conquer_turks15
  and I_SettlementOwner Mashhad = norway
  and I_SettlementOwner Gorgan = norway
  and I_SettlementOwner Konjikala = norway
- and I_SettlementOwner Khiva = norway
+ ;and I_SettlementOwner Khiva = norway
  and I_SettlementOwner Urgench = norway
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26122,7 +26145,7 @@ Trigger conquer_turks16
  and I_SettlementOwner Mashhad = france
  and I_SettlementOwner Gorgan = france
  and I_SettlementOwner Konjikala = france
- and I_SettlementOwner Khiva = france
+ ;and I_SettlementOwner Khiva = france
  and I_SettlementOwner Urgench = france
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26153,7 +26176,7 @@ Trigger conquer_turks17
  and I_SettlementOwner Mashhad = england
  and I_SettlementOwner Gorgan = england
  and I_SettlementOwner Konjikala = england
- and I_SettlementOwner Khiva = england
+ ;and I_SettlementOwner Khiva = england
  and I_SettlementOwner Urgench = england
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26184,7 +26207,7 @@ Trigger conquer_turks18
  and I_SettlementOwner Mashhad = scotland
  and I_SettlementOwner Gorgan = scotland
  and I_SettlementOwner Konjikala = scotland
- and I_SettlementOwner Khiva = scotland
+ ;and I_SettlementOwner Khiva = scotland
  and I_SettlementOwner Urgench = scotland
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26215,7 +26238,7 @@ Trigger conquer_turks19
  and I_SettlementOwner Mashhad = spain
  and I_SettlementOwner Gorgan = spain
  and I_SettlementOwner Konjikala = spain
- and I_SettlementOwner Khiva = spain
+ ;and I_SettlementOwner Khiva = spain
  and I_SettlementOwner Urgench = spain
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26246,7 +26269,7 @@ Trigger conquer_turks20
  and I_SettlementOwner Mashhad = aragon
  and I_SettlementOwner Gorgan = aragon
  and I_SettlementOwner Konjikala = aragon
- and I_SettlementOwner Khiva = aragon
+ ;and I_SettlementOwner Khiva = aragon
  and I_SettlementOwner Urgench = aragon
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26277,7 +26300,7 @@ Trigger conquer_turks21
  and I_SettlementOwner Mashhad = portugal
  and I_SettlementOwner Gorgan = portugal
  and I_SettlementOwner Konjikala = portugal
- and I_SettlementOwner Khiva = portugal
+ ;and I_SettlementOwner Khiva = portugal
  and I_SettlementOwner Urgench = portugal
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26308,7 +26331,7 @@ Trigger conquer_turks22
  and I_SettlementOwner Mashhad = hungary
  and I_SettlementOwner Gorgan = hungary
  and I_SettlementOwner Konjikala = hungary
- and I_SettlementOwner Khiva = hungary
+ ;and I_SettlementOwner Khiva = hungary
  and I_SettlementOwner Urgench = hungary
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26339,7 +26362,7 @@ Trigger conquer_turks23
  and I_SettlementOwner Mashhad = georgia
  and I_SettlementOwner Gorgan = georgia
  and I_SettlementOwner Konjikala = georgia
- and I_SettlementOwner Khiva = georgia
+ ;and I_SettlementOwner Khiva = georgia
  and I_SettlementOwner Urgench = georgia
  and not I_WorldwideAncillaryExists crown_turks_2
  
@@ -26364,7 +26387,7 @@ Trigger conquer_egypt
  and I_SettlementOwner Damascus = turks
  and I_SettlementOwner Antioch = turks
  and I_SettlementOwner Aleppo = turks
- and I_SettlementOwner Qarisiya = turks
+ ;and I_SettlementOwner Qarisiya = turks
  and I_SettlementOwner Baghdad = turks
  and I_SettlementOwner Ahvaz = turks
  and I_SettlementOwner Basra = turks
@@ -26394,7 +26417,7 @@ Trigger conquer_egypt2
  and I_SettlementOwner Damascus = moors
  and I_SettlementOwner Antioch = moors
  and I_SettlementOwner Aleppo = moors
- and I_SettlementOwner Qarisiya = moors
+ ;and I_SettlementOwner Qarisiya = moors
  and I_SettlementOwner Baghdad = moors
  and I_SettlementOwner Ahvaz = moors
  and I_SettlementOwner Basra = moors
@@ -26424,7 +26447,7 @@ Trigger conquer_egypt3
  and I_SettlementOwner Damascus = kwarezm
  and I_SettlementOwner Antioch = kwarezm
  and I_SettlementOwner Aleppo = kwarezm
- and I_SettlementOwner Qarisiya = kwarezm
+ ;and I_SettlementOwner Qarisiya = kwarezm
  and I_SettlementOwner Baghdad = kwarezm
  and I_SettlementOwner Ahvaz = kwarezm
  and I_SettlementOwner Basra = kwarezm
@@ -26454,7 +26477,7 @@ Trigger conquer_egypt4
  and I_SettlementOwner Damascus = mongols
  and I_SettlementOwner Antioch = mongols
  and I_SettlementOwner Aleppo = mongols
- and I_SettlementOwner Qarisiya = mongols
+ ;and I_SettlementOwner Qarisiya = mongols
  and I_SettlementOwner Baghdad = mongols
  and I_SettlementOwner Ahvaz = mongols
  and I_SettlementOwner Basra = mongols
@@ -26484,7 +26507,7 @@ Trigger conquer_egypt5
  and I_SettlementOwner Damascus = byzantium
  and I_SettlementOwner Antioch = byzantium
  and I_SettlementOwner Aleppo = byzantium
- and I_SettlementOwner Qarisiya = byzantium
+ ;and I_SettlementOwner Qarisiya = byzantium
  and I_SettlementOwner Baghdad = byzantium
  and I_SettlementOwner Ahvaz = byzantium
  and I_SettlementOwner Basra = byzantium
@@ -26514,7 +26537,7 @@ Trigger conquer_egypt6
  and I_SettlementOwner Damascus = cumans
  and I_SettlementOwner Antioch = cumans
  and I_SettlementOwner Aleppo = cumans
- and I_SettlementOwner Qarisiya = cumans
+ ;and I_SettlementOwner Qarisiya = cumans
  and I_SettlementOwner Baghdad = cumans
  and I_SettlementOwner Ahvaz = cumans
  and I_SettlementOwner Basra = cumans
@@ -26544,7 +26567,7 @@ Trigger conquer_egypt7
  and I_SettlementOwner Damascus = kievan_rus
  and I_SettlementOwner Antioch = kievan_rus
  and I_SettlementOwner Aleppo = kievan_rus
- and I_SettlementOwner Qarisiya = kievan_rus
+ ;and I_SettlementOwner Qarisiya = kievan_rus
  and I_SettlementOwner Baghdad = kievan_rus
  and I_SettlementOwner Ahvaz = kievan_rus
  and I_SettlementOwner Basra = kievan_rus
@@ -26574,7 +26597,7 @@ Trigger conquer_egypt8
  and I_SettlementOwner Damascus = russia
  and I_SettlementOwner Antioch = russia
  and I_SettlementOwner Aleppo = russia
- and I_SettlementOwner Qarisiya = russia
+ ;and I_SettlementOwner Qarisiya = russia
  and I_SettlementOwner Baghdad = russia
  and I_SettlementOwner Ahvaz = russia
  and I_SettlementOwner Basra = russia
@@ -26604,7 +26627,7 @@ Trigger conquer_egypt9
  and I_SettlementOwner Damascus = hungary
  and I_SettlementOwner Antioch = hungary
  and I_SettlementOwner Aleppo = hungary
- and I_SettlementOwner Qarisiya = hungary
+ ;and I_SettlementOwner Qarisiya = hungary
  and I_SettlementOwner Baghdad = hungary
  and I_SettlementOwner Ahvaz = hungary
  and I_SettlementOwner Basra = hungary
@@ -26634,7 +26657,7 @@ Trigger conquer_egypt10
  and I_SettlementOwner Damascus = poland
  and I_SettlementOwner Antioch = poland
  and I_SettlementOwner Aleppo = poland
- and I_SettlementOwner Qarisiya = poland
+ ;and I_SettlementOwner Qarisiya = poland
  and I_SettlementOwner Baghdad = poland
  and I_SettlementOwner Ahvaz = poland
  and I_SettlementOwner Basra = poland
@@ -26664,7 +26687,7 @@ Trigger conquer_egypt11
  and I_SettlementOwner Damascus = lithuania
  and I_SettlementOwner Antioch = lithuania
  and I_SettlementOwner Aleppo = lithuania
- and I_SettlementOwner Qarisiya = lithuania
+ ;and I_SettlementOwner Qarisiya = lithuania
  and I_SettlementOwner Baghdad = lithuania
  and I_SettlementOwner Ahvaz = lithuania
  and I_SettlementOwner Basra = lithuania
@@ -26694,7 +26717,7 @@ Trigger conquer_egypt12
  and I_SettlementOwner Damascus = hre
  and I_SettlementOwner Antioch = hre
  and I_SettlementOwner Aleppo = hre
- and I_SettlementOwner Qarisiya = hre
+ ;and I_SettlementOwner Qarisiya = hre
  and I_SettlementOwner Baghdad = hre
  and I_SettlementOwner Ahvaz = hre
  and I_SettlementOwner Basra = hre
@@ -26724,7 +26747,7 @@ Trigger conquer_egypt13
  and I_SettlementOwner Damascus = denmark
  and I_SettlementOwner Antioch = denmark
  and I_SettlementOwner Aleppo = denmark
- and I_SettlementOwner Qarisiya = denmark
+ ;and I_SettlementOwner Qarisiya = denmark
  and I_SettlementOwner Baghdad = denmark
  and I_SettlementOwner Ahvaz = denmark
  and I_SettlementOwner Basra = denmark
@@ -26754,7 +26777,7 @@ Trigger conquer_egypt14
  and I_SettlementOwner Damascus = norway
  and I_SettlementOwner Antioch = norway
  and I_SettlementOwner Aleppo = norway
- and I_SettlementOwner Qarisiya = norway
+ ;and I_SettlementOwner Qarisiya = norway
  and I_SettlementOwner Baghdad = norway
  and I_SettlementOwner Ahvaz = norway
  and I_SettlementOwner Basra = norway
@@ -26784,7 +26807,7 @@ Trigger conquer_egypt15
  and I_SettlementOwner Damascus = sicily
  and I_SettlementOwner Antioch = sicily
  and I_SettlementOwner Aleppo = sicily
- and I_SettlementOwner Qarisiya = sicily
+ ;and I_SettlementOwner Qarisiya = sicily
  and I_SettlementOwner Baghdad = sicily
  and I_SettlementOwner Ahvaz = sicily
  and I_SettlementOwner Basra = sicily
@@ -26814,7 +26837,7 @@ Trigger conquer_egypt16
  and I_SettlementOwner Damascus = milan
  and I_SettlementOwner Antioch = milan
  and I_SettlementOwner Aleppo = milan
- and I_SettlementOwner Qarisiya = milan
+ ;and I_SettlementOwner Qarisiya = milan
  and I_SettlementOwner Baghdad = milan
  and I_SettlementOwner Ahvaz = milan
  and I_SettlementOwner Basra = milan
@@ -26844,7 +26867,7 @@ Trigger conquer_egypt17
  and I_SettlementOwner Damascus = venice
  and I_SettlementOwner Antioch = venice
  and I_SettlementOwner Aleppo = venice
- and I_SettlementOwner Qarisiya = venice
+ ;and I_SettlementOwner Qarisiya = venice
  and I_SettlementOwner Baghdad = venice
  and I_SettlementOwner Ahvaz = venice
  and I_SettlementOwner Basra = venice
@@ -26874,7 +26897,7 @@ Trigger conquer_egypt18
  and I_SettlementOwner Damascus = france
  and I_SettlementOwner Antioch = france
  and I_SettlementOwner Aleppo = france
- and I_SettlementOwner Qarisiya = france
+ ;and I_SettlementOwner Qarisiya = france
  and I_SettlementOwner Baghdad = france
  and I_SettlementOwner Ahvaz = france
  and I_SettlementOwner Basra = france
@@ -26904,7 +26927,7 @@ Trigger conquer_egypt19
  and I_SettlementOwner Damascus = england
  and I_SettlementOwner Antioch = england
  and I_SettlementOwner Aleppo = england
- and I_SettlementOwner Qarisiya = england
+ ;and I_SettlementOwner Qarisiya = england
  and I_SettlementOwner Baghdad = england
  and I_SettlementOwner Ahvaz = england
  and I_SettlementOwner Basra = england
@@ -26934,7 +26957,7 @@ Trigger conquer_egypt20
  and I_SettlementOwner Damascus = scotland
  and I_SettlementOwner Antioch = scotland
  and I_SettlementOwner Aleppo = scotland
- and I_SettlementOwner Qarisiya = scotland
+ ;and I_SettlementOwner Qarisiya = scotland
  and I_SettlementOwner Baghdad = scotland
  and I_SettlementOwner Ahvaz = scotland
  and I_SettlementOwner Basra = scotland
@@ -26964,7 +26987,7 @@ Trigger conquer_egypt21
  and I_SettlementOwner Damascus = spain
  and I_SettlementOwner Antioch = spain
  and I_SettlementOwner Aleppo = spain
- and I_SettlementOwner Qarisiya = spain
+ ;and I_SettlementOwner Qarisiya = spain
  and I_SettlementOwner Baghdad = spain
  and I_SettlementOwner Ahvaz = spain
  and I_SettlementOwner Basra = spain
@@ -26994,7 +27017,7 @@ Trigger conquer_egypt22
  and I_SettlementOwner Damascus = aragon
  and I_SettlementOwner Antioch = aragon
  and I_SettlementOwner Aleppo = aragon
- and I_SettlementOwner Qarisiya = aragon
+ ;and I_SettlementOwner Qarisiya = aragon
  and I_SettlementOwner Baghdad = aragon
  and I_SettlementOwner Ahvaz = aragon
  and I_SettlementOwner Basra = aragon
@@ -27024,7 +27047,7 @@ Trigger conquer_egypt23
  and I_SettlementOwner Damascus = portugal
  and I_SettlementOwner Antioch = portugal
  and I_SettlementOwner Aleppo = portugal
- and I_SettlementOwner Qarisiya = portugal
+ ;and I_SettlementOwner Qarisiya = portugal
  and I_SettlementOwner Baghdad = portugal
  and I_SettlementOwner Ahvaz = portugal
  and I_SettlementOwner Basra = portugal
@@ -27054,7 +27077,7 @@ Trigger conquer_egypt24
  and I_SettlementOwner Damascus = georgia
  and I_SettlementOwner Antioch = georgia
  and I_SettlementOwner Aleppo = georgia
- and I_SettlementOwner Qarisiya = georgia
+ ;and I_SettlementOwner Qarisiya = georgia
  and I_SettlementOwner Baghdad = georgia
  and I_SettlementOwner Ahvaz = georgia
  and I_SettlementOwner Basra = georgia

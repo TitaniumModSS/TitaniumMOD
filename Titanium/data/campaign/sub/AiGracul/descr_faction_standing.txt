@@ -127,10 +127,9 @@ Trigger Catholic_Build_Church
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = church
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.03
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.002
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.002
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.004
 
@@ -139,10 +138,9 @@ Trigger Catholic_Build_Abbey
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = abbey
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.04
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.004
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.004
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.004
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.008
 
@@ -151,10 +149,9 @@ Trigger Catholic_Build_Cathedral
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = cathedral
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.1
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.01
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.01
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.01
     FactionStanding factions { moors, egypt, turks, kwarezm ,cumans, lithuania, timurids, mongols } -0.02
 
@@ -163,10 +160,9 @@ Trigger Catholic_Build_Huge_Cathedral
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = huge_cathedral
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.03
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.03
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.03
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.06
 
@@ -182,10 +178,9 @@ Trigger Catholic_Build_Chapel
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = chapel
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.02
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.002
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.004
 
@@ -230,11 +225,10 @@ Trigger Catholic_Build_First_Huge_Cathedral_Faction
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction huge_cathedral = 1
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.8
     FactionStanding factions { teutonic_order } 0.06
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.012
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.012
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.02
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.04
 
@@ -267,10 +261,9 @@ Trigger Catholic_Build_First_Cathedral_World
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted cathedral = 1
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.2
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.02
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.02
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.04
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.08
 
@@ -279,7 +272,6 @@ Trigger Catholic_Build_First_Huge_Cathedral_World
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted huge_cathedral = 1
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.3
     FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.036
@@ -292,10 +284,9 @@ Trigger Orthodox_Build_Church
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = church_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.02
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.002
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.004
 
@@ -304,10 +295,9 @@ Trigger Orthodox_Build_Abbey
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = abbey_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.04
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.004
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.004
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.004
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.008
 
@@ -316,10 +306,9 @@ Trigger Orthodox_Build_Cathedral
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = cathedral_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.1
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.01
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.01
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.01
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.02
 
@@ -328,10 +317,9 @@ Trigger Orthodox_Build_Huge_Cathedral
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = huge_cathedral_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.03
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.03
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.03
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.06
 
@@ -347,10 +335,9 @@ Trigger Orthodox_Build_Chapel
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = chapel_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } -0.01
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.002
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.004
 
@@ -383,11 +370,10 @@ Trigger Orthodox_Build_First_Cathedral_Faction
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction cathedral_o = 1
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } -0.12
     FactionStanding factions { teutonic_order } -0.04
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.01
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.01
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.02
 
 ;------------------------------------------
@@ -395,11 +381,10 @@ Trigger Orthodox_Build_First_Huge_Cathedral_Faction
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction huge_cathedral_o = 1
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } -0.2
     FactionStanding factions { teutonic_order } -0.06
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem }  -0.012
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem }  -0.012
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.02
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.04
 
@@ -424,10 +409,9 @@ Trigger Orthodox_Build_First_Cathedral_World
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted cathedral_o = 1
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } -0.2
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order }  -0.04
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order }  -0.04
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.02
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.08
 
@@ -436,10 +420,9 @@ Trigger Orthodox_Build_First_Huge_Cathedral_World
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted huge_cathedral_o = 1
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.036
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.036
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.08
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.16
 
@@ -452,14 +435,13 @@ Trigger Muslim_Build_Small_Church
     Condition SettlementBuildingFinished = small_masjid
 
     FactionStanding factions { papal_states } -0.01
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.001
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.001
 
 ;------------------------------------------
 Trigger Muslim_Build_Church
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.02
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.004
@@ -470,7 +452,6 @@ Trigger Muslim_Build_Abbey
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = minareted_masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.06
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.004
@@ -481,7 +462,6 @@ Trigger Muslim_Build_Cathedral
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = jama
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.1
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.01
@@ -492,7 +472,6 @@ Trigger Muslim_Build_Huge_Cathedral
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = great_jama
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.3
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.03
@@ -510,7 +489,6 @@ Trigger Muslim_Build_Chapel
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = c_masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.02
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.002
@@ -549,14 +527,13 @@ Trigger Muslim_Build_First_Cathedral_Faction
 
     FactionStanding factions { papal_states } -0.12
     FactionStanding factions { teutonic_order } -0.04
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.01
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.01
 
 ;------------------------------------------
 Trigger Muslim_Build_First_Huge_Cathedral_Faction
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction great_jama = 1
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } -0.2
     FactionStanding factions { teutonic_order } -0.06
@@ -584,7 +561,6 @@ Trigger Muslim_Build_First_Cathedral_World
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted jama = 1
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } -0.2
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.04
@@ -595,7 +571,6 @@ Trigger Muslim_Build_First_Huge_Cathedral_World
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted great_jama = 1
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } -0.3
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.16
@@ -636,7 +611,6 @@ Trigger Pagan_Build_Church4
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = tengir_sanctuary
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.04
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids } -0.004
@@ -673,7 +647,6 @@ Trigger Pagan_Build_Cathedral4
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = tengir_temple
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.1
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids } -0.01
@@ -754,10 +727,9 @@ Trigger Catholic_Destroy_Small_Church
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_church
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.05
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.005
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.005
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.001
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } 0.003
 
@@ -766,10 +738,9 @@ Trigger Catholic_Destroy_Church
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = church
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.008
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.008
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } 0.006
 
@@ -778,10 +749,9 @@ Trigger Catholic_Destroy_Abbey
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = abbey
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.16
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.016
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.016
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.008
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } 0.016
 
@@ -790,10 +760,9 @@ Trigger Catholic_Destroy_Cathedral
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = cathedral
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.03
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.03
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.015
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } 0.03
 
@@ -802,10 +771,9 @@ Trigger Catholic_Destroy_Huge_Cathedral
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = huge_cathedral
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.7
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.07
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.07
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.03
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } 0.07
 
@@ -814,7 +782,6 @@ Trigger Catholic_Destroy_Small_Chapel
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_chapel
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.08
     FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.008
@@ -826,10 +793,9 @@ Trigger Catholic_Destroy_Chapel
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = chapel
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } -0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.008
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.008
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } 0.006
 
@@ -840,11 +806,10 @@ Trigger Orthodox_Destroy_Small_Church
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_church_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.05
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.001
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.005
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.001
+    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.005
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, mongols, timurids } 0.003
 
 ;------------------------------------------
@@ -852,11 +817,10 @@ Trigger Orthodox_Destroy_Church
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = church_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
+    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.008
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, mongols, timurids } 0.006
 
 ;------------------------------------------
@@ -864,10 +828,9 @@ Trigger Orthodox_Destroy_Abbey
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = abbey_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.16
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.008
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.008
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.016
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, mongols, timurids } 0.016
 
@@ -876,10 +839,9 @@ Trigger Orthodox_Destroy_Cathedral
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = cathedral_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.015
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.015
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.015
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, mongols, timurids } 0.03
 
@@ -888,10 +850,9 @@ Trigger Orthodox_Destroy_Huge_Cathedral
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = huge_cathedral_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.7
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.03
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.03
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.07
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, mongols, timurids } 0.07
 
@@ -900,10 +861,9 @@ Trigger Orthodox_Destroy_Small_Chapel
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_chapel_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.008
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, mongols, timurids } 0.006
 
@@ -912,10 +872,9 @@ Trigger Orthodox_Destroy_Chapel
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = chapel_o
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } 0.002
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.008
     FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, mongols, timurids } 0.006
 
@@ -926,7 +885,6 @@ Trigger Islamic_Destroy_Small_Church
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } 0.05
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.005
@@ -937,7 +895,6 @@ Trigger Islamic_Destroy_Church
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } 0.08
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.008
@@ -948,7 +905,6 @@ Trigger Islamic_Destroy_Abbey
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = minareted_masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } 0.16
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.016
@@ -959,7 +915,6 @@ Trigger Islamic_Destroy_Cathedral
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = jama
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } 0.3
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.03
@@ -970,7 +925,6 @@ Trigger Islamic_Destroy_Huge_Cathedral
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = great_jama
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } 0.7
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.07
@@ -981,7 +935,6 @@ Trigger Islamic_Destroy_Small_Chapel
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = c_small_masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } 0.05
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.005
@@ -992,7 +945,6 @@ Trigger Islamic_Destroy_Chapel
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = c_masjid
-	and I_EventCounter zirids_exist != 1
 
     FactionStanding factions { papal_states } 0.08
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.008
@@ -1005,7 +957,6 @@ Trigger Pagan_Destroy_Small_Church1
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = dievas_altar
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.02
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.001
@@ -1016,7 +967,6 @@ Trigger Pagan_Destroy_Small_Church2
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = perkunas_altar
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.02
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.001
@@ -1027,7 +977,6 @@ Trigger Pagan_Destroy_Small_Church3
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = giltine_altar
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.02
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.001
@@ -1038,7 +987,6 @@ Trigger Pagan_Destroy_Small_Church4
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = tengir_altar
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.02
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.001
@@ -1049,7 +997,6 @@ Trigger Pagan_Destroy_Church1
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = dievas_sanctuary
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.05
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.005
@@ -1060,7 +1007,6 @@ Trigger Pagan_Destroy_Church2
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = perkunas_sanctuary
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.05
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.005
@@ -1071,7 +1017,6 @@ Trigger Pagan_Destroy_Church3
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = giltine_sanctuary
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.05
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.005
@@ -1082,7 +1027,6 @@ Trigger Pagan_Destroy_Church4
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = tengir_sanctuary
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.05
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.005
@@ -1093,7 +1037,6 @@ Trigger Pagan_Destroy_Cathedral1
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = dievas_temple
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.1
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.01
@@ -1104,7 +1047,6 @@ Trigger Pagan_Destroy_Cathedral2
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = perkunas_temple
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.1
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.01
@@ -1115,7 +1057,6 @@ Trigger Pagan_Destroy_Cathedral3
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = giltine_temple
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.1
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.01
@@ -1126,7 +1067,6 @@ Trigger Pagan_Destroy_Cathedral4
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = tengir_temple
-	and I_EventCounter lithuania_catholic != 1
 
     FactionStanding factions { papal_states, teutonic_order } 0.1
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids }  0.01
@@ -3156,55 +3096,22 @@ Trigger Georgia
 ;=========== CATHOLIC =====================
 ;------------------------------------------
 ;------------------------------------------
-Trigger Catholic_Build_Church_Alt
+Trigger Catholic_Build_Church_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = church
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.03
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } 0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.004
+    FactionStanding factions { lithuania } 0.006
 
 ;------------------------------------------
-Trigger Catholic_Build_Small_Church_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = small_church
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.002
-
-;------------------------------------------
-Trigger Catholic_Build_Small_Church_Zirids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = small_church
-	and I_EventCounter zirids_exist = 1
-
-    FactionStanding factions { portugal } -0.004
-
-;------------------------------------------
-Trigger Catholic_Build_Abbey_Alt
+Trigger Catholic_Build_Abbey_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = abbey
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.04
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } 0.004
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.004
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.008
-
-;------------------------------------------
-Trigger Catholic_Build_Abbey_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = abbey
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.004
+    FactionStanding factions { lithuania } 0.012
 
 ;------------------------------------------
 Trigger Catholic_Build_Abbey_Zirids
@@ -3213,28 +3120,16 @@ Trigger Catholic_Build_Abbey_Zirids
     Condition SettlementBuildingFinished = abbey
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.008
+    FactionStanding factions { portugal } -0.012
 
 ;------------------------------------------
-Trigger Catholic_Build_Cathedral_Alt
+Trigger Catholic_Build_Cathedral_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = cathedral
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.1
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } 0.01
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.01
-    FactionStanding factions { moors, egypt, turks, kwarezm ,cumans, timurids, mongols } -0.02
-
-;------------------------------------------
-Trigger Catholic_Build_Cathedral_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = cathedral
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.01
+    FactionStanding factions { lithuania } 0.03
 
 ;------------------------------------------
 Trigger Catholic_Build_Cathedral_Zirids
@@ -3243,28 +3138,16 @@ Trigger Catholic_Build_Cathedral_Zirids
     Condition SettlementBuildingFinished = cathedral
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.02
+    FactionStanding factions { portugal } -0.03
 
 ;------------------------------------------
-Trigger Catholic_Build_Huge_Cathedral_Alt
+Trigger Catholic_Build_Huge_Cathedral_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = huge_cathedral
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } 0.03
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.03
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.06
-
-;------------------------------------------
-Trigger Catholic_Build_Huge_Cathedral_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = huge_cathedral
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.03
+    FactionStanding factions { lithuania } 0.09
 
 ;------------------------------------------
 Trigger Catholic_Build_Huge_Cathedral_Zirids
@@ -3273,28 +3156,16 @@ Trigger Catholic_Build_Huge_Cathedral_Zirids
     Condition SettlementBuildingFinished = huge_cathedral
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.06
+    FactionStanding factions { portugal } -0.09
 
 ;------------------------------------------
-Trigger Catholic_Build_Chapel_Alt
+Trigger Catholic_Build_Chapel_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = chapel
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.02
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.004
-
-;------------------------------------------
-Trigger Catholic_Build_Chapel_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = chapel
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.002
+    FactionStanding factions { lithuania } 0.006
 
 ;------------------------------------------
 Trigger Catholic_Build_Chapel_Zirids
@@ -3303,7 +3174,7 @@ Trigger Catholic_Build_Chapel_Zirids
     Condition SettlementBuildingFinished = chapel
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.004
+    FactionStanding factions { portugal } -0.006
 
 ;------------------------------------------
 ;------------------------------------------
@@ -3318,26 +3189,13 @@ Trigger Catholic_Build_First_Cathedral_Faction_Lithuania
     FactionStanding factions { lithuania } -0.02
 
 ;------------------------------------------
-Trigger Catholic_Build_First_Huge_Cathedral_Faction_Alt
+Trigger Catholic_Build_First_Huge_Cathedral_Faction_Lithuania
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction huge_cathedral = 1
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.8
-    FactionStanding factions { teutonic_order } 0.06
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.012
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.02
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.04
-
-;------------------------------------------
-Trigger Catholic_Build_First_Huge_Cathedral_Faction_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction huge_cathedral = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.012
+    FactionStanding factions { lithuania } 0.028
 
 ;------------------------------------------
 Trigger Catholic_Build_First_Huge_Cathedral_Faction_Zirids
@@ -3346,31 +3204,19 @@ Trigger Catholic_Build_First_Huge_Cathedral_Faction_Zirids
     Condition NumBuildingsCompletedFaction huge_cathedral = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.04
+    FactionStanding factions { portugal } -0.028
 
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
-Trigger Catholic_Build_First_Cathedral_World_Alt
+Trigger Catholic_Build_First_Cathedral_World_Lithuania
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted cathedral = 1
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.2
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } -0.02
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.04
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.08
-
-;------------------------------------------
-Trigger Catholic_Build_First_Cathedral_World_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted cathedral = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.02
+    FactionStanding factions { lithuania } 0.06
 
 ;------------------------------------------
 Trigger Catholic_Build_First_Cathedral_World_Zirids
@@ -3379,28 +3225,16 @@ Trigger Catholic_Build_First_Cathedral_World_Zirids
     Condition NumBuildingsCompleted cathedral = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.08
+    FactionStanding factions { portugal } -0.06
 
 ;------------------------------------------
-Trigger Catholic_Build_First_Huge_Cathedral_World_Alt
+Trigger Catholic_Build_First_Huge_Cathedral_World_Lithuania
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted huge_cathedral = 1
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } -0.036
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.08
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.16
-
-;------------------------------------------
-Trigger Catholic_Build_First_Huge_Cathedral_World_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted huge_cathedral = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.036
+    FactionStanding factions { lithuania } 0.124
 
 ;------------------------------------------
 Trigger Catholic_Build_First_Huge_Cathedral_World_Zirids
@@ -3409,30 +3243,18 @@ Trigger Catholic_Build_First_Huge_Cathedral_World_Zirids
     Condition NumBuildingsCompleted huge_cathedral = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.16
+    FactionStanding factions { portugal } -0.124
     
 ;=========== ORTHODOX =====================
 ;------------------------------------------
 ;------------------------------------------
-Trigger Orthodox_Build_Church_Alt
+Trigger Orthodox_Build_Church_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = church_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.02
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.004
-
-;------------------------------------------
-Trigger Orthodox_Build_Church_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = church_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.002
+    FactionStanding factions { lithuania } 0.002
 
 ;------------------------------------------
 Trigger Orthodox_Build_Church_Zirids
@@ -3441,28 +3263,16 @@ Trigger Orthodox_Build_Church_Zirids
     Condition SettlementBuildingFinished = church_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.004
+    FactionStanding factions { portugal } -0.002
 
 ;------------------------------------------
-Trigger Orthodox_Build_Abbey_Alt
+Trigger Orthodox_Build_Abbey_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = abbey_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.04
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.004
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.004
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.008
-
-;------------------------------------------
-Trigger Orthodox_Build_Abbey_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = abbey_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.004
+    FactionStanding factions { lithuania } 0.004
 
 ;------------------------------------------
 Trigger Orthodox_Build_Abbey_Zirids
@@ -3471,28 +3281,16 @@ Trigger Orthodox_Build_Abbey_Zirids
     Condition SettlementBuildingFinished = abbey_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.008
+    FactionStanding factions { portugal } -0.004
 
 ;------------------------------------------
-Trigger Orthodox_Build_Cathedral_Alt
+Trigger Orthodox_Build_Cathedral_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = cathedral_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.1
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.01
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.01
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.02
-
-;------------------------------------------
-Trigger Orthodox_Build_Cathedral_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = cathedral_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.01
+    FactionStanding factions { lithuania } 0.01
 
 ;------------------------------------------
 Trigger Orthodox_Build_Cathedral_Zirids
@@ -3501,28 +3299,16 @@ Trigger Orthodox_Build_Cathedral_Zirids
     Condition SettlementBuildingFinished = cathedral_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.02
+    FactionStanding factions { portugal } -0.01
 
 ;------------------------------------------
-Trigger Orthodox_Build_Huge_Cathedral_Alt
+Trigger Orthodox_Build_Huge_Cathedral_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = huge_cathedral_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.03
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.03
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.06
-
-;------------------------------------------
-Trigger Orthodox_Build_Huge_Cathedral_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = huge_cathedral_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.03
+    FactionStanding factions { lithuania } 0.03
 
 ;------------------------------------------
 Trigger Orthodox_Build_Huge_Cathedral_Zirids
@@ -3531,29 +3317,17 @@ Trigger Orthodox_Build_Huge_Cathedral_Zirids
     Condition SettlementBuildingFinished = huge_cathedral_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.06
+    FactionStanding factions { portugal } -0.03
 
 ;------------------------------------------
 ;------------------------------------------
-Trigger Orthodox_Build_Chapel_Alt
+Trigger Orthodox_Build_Chapel_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = chapel_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } -0.01
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } -0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.004
-
-;------------------------------------------
-Trigger Orthodox_Build_Chapel_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = chapel_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.002
+    FactionStanding factions { lithuania } 0.002
 
 ;------------------------------------------
 Trigger Orthodox_Build_Chapel_Zirids
@@ -3562,31 +3336,19 @@ Trigger Orthodox_Build_Chapel_Zirids
     Condition SettlementBuildingFinished = chapel_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.004
+    FactionStanding factions { portugal } -0.002
 
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
-Trigger Orthodox_Build_First_Cathedral_Faction_Alt
+Trigger Orthodox_Build_First_Cathedral_Faction_Lithuania
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction cathedral_o = 1
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } -0.12
-    FactionStanding factions { teutonic_order } -0.04
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.01
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.02
-
-;------------------------------------------
-Trigger Orthodox_Build_First_Cathedral_Faction_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction cathedral_o = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.01
+    FactionStanding factions { lithuania } 0.01
 
 ;------------------------------------------
 Trigger Orthodox_Build_First_Cathedral_Faction_Zirids
@@ -3595,29 +3357,16 @@ Trigger Orthodox_Build_First_Cathedral_Faction_Zirids
     Condition NumBuildingsCompletedFaction cathedral_o = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.02
+    FactionStanding factions { portugal } -0.01
 
 ;------------------------------------------
-Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Alt
+Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Lithuania
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction huge_cathedral_o = 1
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } -0.2
-    FactionStanding factions { teutonic_order } -0.06
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania }  -0.012
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.02
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.04
-
-;------------------------------------------
-Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction huge_cathedral_o = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.012
+    FactionStanding factions { lithuania }  -0.028
 
 ;------------------------------------------
 Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Zirids
@@ -3626,30 +3375,18 @@ Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Zirids
     Condition NumBuildingsCompletedFaction huge_cathedral_o = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.04
+    FactionStanding factions { portugal } -0.028
 
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
-Trigger Orthodox_Build_First_Cathedral_World_Alt
+Trigger Orthodox_Build_First_Cathedral_World_Lithuania
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted cathedral_o = 1
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } -0.2
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania }  -0.04
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.02
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.08
-
-;------------------------------------------
-Trigger Orthodox_Build_First_Cathedral_World_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted cathedral_o = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.04
+    FactionStanding factions { lithuania }  0.04
 
 ;------------------------------------------
 Trigger Orthodox_Build_First_Cathedral_World_Zirids
@@ -3658,28 +3395,16 @@ Trigger Orthodox_Build_First_Cathedral_World_Zirids
     Condition NumBuildingsCompleted cathedral_o = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.08
+    FactionStanding factions { portugal } -0.04
 
 ;------------------------------------------
-Trigger Orthodox_Build_First_Huge_Cathedral_World_Alt
+Trigger Orthodox_Build_First_Huge_Cathedral_World_Lithuania
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted huge_cathedral_o = 1
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } -0.036
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.08
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } -0.16
-
-;------------------------------------------
-Trigger Orthodox_Build_First_Huge_Cathedral_World_Portugal
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted huge_cathedral_o = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.036
+    FactionStanding factions { lithuania } -0.124
 
 ;------------------------------------------
 Trigger Orthodox_Build_First_Huge_Cathedral_World_Zirids
@@ -3688,142 +3413,115 @@ Trigger Orthodox_Build_First_Huge_Cathedral_World_Zirids
     Condition NumBuildingsCompleted huge_cathedral_o = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.16
+    FactionStanding factions { portugal } -0.124
 
 ;=========== MUSLIM =====================
 ;------------------------------------------
-Trigger Muslim_Build_Small_Church_Portugal
+Trigger Muslim_Build_Small_Church_Zirids
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = small_masjid
-	and I_EventCounter zirids_exist != 1
+	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } -0.001
+    FactionStanding factions { portugal } 0.001
 
 ;------------------------------------------
-Trigger Muslim_Build_Church_Alt
+Trigger Muslim_Build_Church_Zirids
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.02
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.004
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } 0.002
+    FactionStanding factions { portugal } 0.006
 
 ;------------------------------------------
-Trigger Muslim_Build_Abbey_Alt
+Trigger Muslim_Build_Abbey_Zirids
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = minareted_masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.06
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.004
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } 0.008
+    FactionStanding factions { portugal } 0.012
 
 ;------------------------------------------
-Trigger Muslim_Build_Cathedral_Alt
+Trigger Muslim_Build_Cathedral_Zirids
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = jama
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.1
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.01
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } 0.02
+    FactionStanding factions { portugal } 0.03
 
 ;------------------------------------------
-Trigger Muslim_Build_Huge_Cathedral_Alt
+Trigger Muslim_Build_Huge_Cathedral_Zirids
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = great_jama
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } -0.03
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } 0.06
+    FactionStanding factions { portugal } 0.09
 
 ;------------------------------------------
 ;------------------------------------------
-Trigger Muslim_Build_Chapel_Alt
+Trigger Muslim_Build_Chapel_Zirids
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = c_masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.02
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } 0.004
+    FactionStanding factions { portugal } 0.006
 
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
-Trigger Muslim_Build_First_Cathedral_Faction_Portugal
+Trigger Muslim_Build_First_Cathedral_Faction_Zirids
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompletedFaction jama = 1
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal }  -0.01
-
-;------------------------------------------
-Trigger Muslim_Build_First_Huge_Cathedral_Faction_Alt
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction great_jama = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } -0.2
-    FactionStanding factions { teutonic_order } -0.06
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.012
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.012
+    FactionStanding factions { portugal }  0.01
 
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
-Trigger Muslim_Build_First_Cathedral_World_Alt
+;------------------------------------------
+Trigger Muslim_Build_First_Cathedral_World_Zirids
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted jama = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } -0.2
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.04
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.08
+    FactionStanding factions { portugal } -0.04
 
 ;------------------------------------------
-Trigger Muslim_Build_First_Huge_Cathedral_World_Alt
+Trigger Muslim_Build_First_Huge_Cathedral_World_Zirids
     WhenToTest BuildingCompleted
 
     Condition NumBuildingsCompleted great_jama = 1
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.16
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.036
+    FactionStanding factions { portugal } 0.124
 
 ;=========== PAGAN =====================
 ;------------------------------------------
-Trigger Pagan_Build_Church4_Alt
+Trigger Pagan_Build_Church4_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = tengir_sanctuary
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.04
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania } -0.004
+    FactionStanding factions { lithuania } -0.004
 
 ;------------------------------------------
-Trigger Pagan_Build_Cathedral4_Alt
+Trigger Pagan_Build_Cathedral4_Lithuania
     WhenToTest BuildingCompleted
 
     Condition SettlementBuildingFinished = tengir_temple
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.1
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania } -0.01
+    FactionStanding factions { lithuania } -0.01
 
 ;------------------------------------------
 Trigger Pagan_Build_First_Cathedral_World4_Lithuania
@@ -3838,25 +3536,13 @@ Trigger Pagan_Build_First_Cathedral_World4_Lithuania
 ;################## DESTROY RELIGIOUS STRUCTURES ############################
 ;=========== CATHOLIC =====================
 ;------------------------------------------
-Trigger Catholic_Destroy_Small_Church_Alt
+Trigger Catholic_Destroy_Small_Church_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_church
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.05
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.005
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.001
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } 0.003
-
-;------------------------------------------
-Trigger Catholic_Destroy_Small_Church_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_church
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.005
+    FactionStanding factions { lithuania } -0.008
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Small_Church_Zirids
@@ -3865,28 +3551,16 @@ Trigger Catholic_Destroy_Small_Church_Zirids
     Condition BuildingName = small_church
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.003
+    FactionStanding factions { portugal } 0.008
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Church_Alt
+Trigger Catholic_Destroy_Church_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = church
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.008
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } 0.006
-
-;------------------------------------------
-Trigger Catholic_Destroy_Church_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = church
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.008
+    FactionStanding factions { lithuania } -0.014
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Church_Zirids
@@ -3895,28 +3569,16 @@ Trigger Catholic_Destroy_Church_Zirids
     Condition BuildingName = church
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.006
+    FactionStanding factions { portugal } 0.014
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Abbey_Alt
+Trigger Catholic_Destroy_Abbey_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = abbey
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.16
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.016
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.008
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } 0.016
-
-;------------------------------------------
-Trigger Catholic_Destroy_Abbey_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = abbey
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.016
+    FactionStanding factions { lithuania } -0.032
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Abbey_Zirids
@@ -3925,28 +3587,16 @@ Trigger Catholic_Destroy_Abbey_Zirids
     Condition BuildingName = abbey
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.016
+    FactionStanding factions { portugal } 0.032
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Cathedral_Alt
+Trigger Catholic_Destroy_Cathedral_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = cathedral
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.03
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.015
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } 0.03
-
-;------------------------------------------
-Trigger Catholic_Destroy_Cathedral_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = cathedral
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.03
+    FactionStanding factions { lithuania } -0.06
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Cathedral_Zirids
@@ -3955,28 +3605,16 @@ Trigger Catholic_Destroy_Cathedral_Zirids
     Condition BuildingName = cathedral
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.03
+    FactionStanding factions { portugal } 0.06
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Huge_Cathedral_Alt
+Trigger Catholic_Destroy_Huge_Cathedral_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = huge_cathedral
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.7
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.07
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.03
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } 0.07
-
-;------------------------------------------
-Trigger Catholic_Destroy_Huge_Cathedral_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = huge_cathedral
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.07
+    FactionStanding factions { lithuania } -0.14
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Huge_Cathedral_Zirids
@@ -3985,28 +3623,16 @@ Trigger Catholic_Destroy_Huge_Cathedral_Zirids
     Condition BuildingName = huge_cathedral
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.07
+    FactionStanding factions { portugal } 0.14
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Small_Chapel_Alt
+Trigger Catholic_Destroy_Small_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_chapel
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.008
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } 0.006
-
-;------------------------------------------
-Trigger Catholic_Destroy_Small_Chapel_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_chapel
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.008
+    FactionStanding factions { lithuania } -0.014
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Small_Chapel_Zirids
@@ -4015,28 +3641,16 @@ Trigger Catholic_Destroy_Small_Chapel_Zirids
     Condition BuildingName = small_chapel
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.006
+    FactionStanding factions { portugal } 0.014
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Chapel_Alt
+Trigger Catholic_Destroy_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = chapel
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } -0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, lithuania } -0.008
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, timurids, mongols } 0.006
-
-;------------------------------------------
-Trigger Catholic_Destroy_Chapel_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = chapel
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } -0.008
+    FactionStanding factions { lithuania } -0.014
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Chapel_Zirids
@@ -4045,29 +3659,17 @@ Trigger Catholic_Destroy_Chapel_Zirids
     Condition BuildingName = chapel
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.006
+    FactionStanding factions { portugal } 0.014
 
 ;=========== ORTHODOX =====================
 ;------------------------------------------
-Trigger Orthodox_Destroy_Small_Church_Alt
+Trigger Orthodox_Destroy_Small_Church_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_church_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.05
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.001
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } 0.005
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, mongols, timurids } 0.003
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Small_Church_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_church_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.001
+    FactionStanding factions { lithuania } -0.002
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Small_Church_Zirids
@@ -4076,28 +3678,16 @@ Trigger Orthodox_Destroy_Small_Church_Zirids
     Condition BuildingName = small_church_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.003
+    FactionStanding factions { portugal } 0.002
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Church_Alt
+Trigger Orthodox_Destroy_Church_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = church_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.002
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, mongols, timurids } 0.006
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Church_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_church_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.002
+    FactionStanding factions { lithuania } -0.004
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Church_Zirids
@@ -4106,28 +3696,16 @@ Trigger Orthodox_Destroy_Church_Zirids
     Condition BuildingName = small_church_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.006
+    FactionStanding factions { portugal } 0.004
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Abbey_Alt
+Trigger Orthodox_Destroy_Abbey_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = abbey_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.16
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.008
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.016
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, mongols, timurids } 0.016
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Abbey_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = abbey_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.008
+    FactionStanding factions { lithuania } -0.008
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Abbey_Zirids
@@ -4136,28 +3714,16 @@ Trigger Orthodox_Destroy_Abbey_Zirids
     Condition BuildingName = abbey_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.016
+    FactionStanding factions { portugal } 0.008
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Cathedral_Alt
+Trigger Orthodox_Destroy_Cathedral_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = cathedral_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.015
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.015
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, mongols, timurids } 0.03
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Cathedral_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = cathedral_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.015
+    FactionStanding factions { lithuania } -0.015
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Cathedral_Zirids
@@ -4166,58 +3732,34 @@ Trigger Orthodox_Destroy_Cathedral_Zirids
     Condition BuildingName = cathedral_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.03
+    FactionStanding factions { portugal } 0.015
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Huge_Cathedral_Alt
+Trigger Orthodox_Destroy_Huge_Cathedral_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = huge_cathedral_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.7
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.03
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.07
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, mongols, timurids } 0.07
+    FactionStanding factions { ithuania } -0.04
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Huge_Cathedral_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = huge_cathedral_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.03
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Huge_Cathedral_Portugal
+Trigger Orthodox_Destroy_Huge_Cathedral_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = huge_cathedral_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.07
+    FactionStanding factions { portugal } 0.0
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Small_Chapel_Alt
+Trigger Orthodox_Destroy_Small_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_chapel_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.008
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, mongols, timurids } 0.006
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Small_Chapel_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_chapel_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.002
+    FactionStanding factions { lithuania } -0.004
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Small_Chapel_Zirids
@@ -4226,28 +3768,16 @@ Trigger Orthodox_Destroy_Small_Chapel_Zirids
     Condition BuildingName = small_chapel_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.006
+    FactionStanding factions { portugal } 0.004
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Chapel_Alt
+Trigger Orthodox_Destroy_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = chapel_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, lithuania } 0.002
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.008
-    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, mongols, timurids } 0.006
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Chapel_Portugal
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = chapel_o
-	and I_EventCounter zirids_exist != 1
-
-    FactionStanding factions { portugal } 0.002
+    FactionStanding factions { lithuania } -0.004
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Chapel_Zirids
@@ -4256,218 +3786,180 @@ Trigger Orthodox_Destroy_Chapel_Zirids
     Condition BuildingName = chapel_o
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { portugal } 0.006
+    FactionStanding factions { portugal } 0.004
 
 ;=========== ISLAMIC =====================
 ;------------------------------------------
-Trigger Islamic_Destroy_Small_Church_Alt
+Trigger Islamic_Destroy_Small_Church_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = small_masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } 0.05
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.005
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.005
+    FactionStanding factions { portugal } -0.01
 
 ;------------------------------------------
-Trigger Islamic_Destroy_Church_Alt
+Trigger Islamic_Destroy_Church_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.008
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.008
+    FactionStanding factions { portugal } -0.016
 
 ;------------------------------------------
-Trigger Islamic_Destroy_Abbey_Alt
+Trigger Islamic_Destroy_Abbey_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = minareted_masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } 0.16
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.016
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.016
+    FactionStanding factions { portugal } -0.032
 
 ;------------------------------------------
-Trigger Islamic_Destroy_Cathedral_Alt
+Trigger Islamic_Destroy_Cathedral_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = jama
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } 0.3
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.03
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.03
+    FactionStanding factions { portugal } -0.06
 
 ;------------------------------------------
-Trigger Islamic_Destroy_Huge_Cathedral_Alt
+Trigger Islamic_Destroy_Huge_Cathedral_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = great_jama
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } 0.7
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.07
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.07
+    FactionStanding factions { portugal } -0.14
 
 ;------------------------------------------
-Trigger Islamic_Destroy_Small_Chapel_Alt
+Trigger Islamic_Destroy_Small_Chapel_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = c_small_masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } 0.05
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.005
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.005
+    FactionStanding factions { portugal } -0.01
 
 ;------------------------------------------
-Trigger Islamic_Destroy_Chapel_Alt
+Trigger Islamic_Destroy_Chapel_Zirids
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = c_masjid
 	and I_EventCounter zirids_exist = 1
 
-    FactionStanding factions { papal_states } 0.08
-    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols } 0.008
-    FactionStanding factions { moors, egypt, turks, kwarezm, timurids, portugal } -0.008
+    FactionStanding factions { portugal } -0.016
 
 ;=========== PAGAN =====================
 ;------------------------------------------
-Trigger Pagan_Destroy_Small_Church1_Alt
+Trigger Pagan_Destroy_Small_Church1_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = dievas_altar
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.02
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.001
-    FactionStanding factions { cumans, mongols } -0.002
+    FactionStanding factions { lithuania }  0.003
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Small_Church2_Alt
+Trigger Pagan_Destroy_Small_Church2_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = perkunas_altar
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.02
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.001
-    FactionStanding factions { cumans, mongols } -0.002
+    FactionStanding factions { lithuania }  0.003
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Small_Church3_Alt
+Trigger Pagan_Destroy_Small_Church3_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = giltine_altar
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.02
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.001
-    FactionStanding factions { cumans, mongols } -0.002
+    FactionStanding factions { lithuania }  0.003
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Small_Church4_Alt
+Trigger Pagan_Destroy_Small_Church4_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = tengir_altar
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.02
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.001
-    FactionStanding factions { cumans, mongols } -0.002
+    FactionStanding factions { lithuania }  0.003
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Church1_Alt
+Trigger Pagan_Destroy_Church1_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = dievas_sanctuary
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.05
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.005
-    FactionStanding factions { cumans, mongols } -0.005
+    FactionStanding factions { lithuania }  0.01
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Church2_Alt
+Trigger Pagan_Destroy_Church2_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = perkunas_sanctuary
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.05
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.005
-    FactionStanding factions { cumans, mongols } -0.005
+    FactionStanding factions { lithuania }  0.01
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Church3_Alt
+Trigger Pagan_Destroy_Church3_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = giltine_sanctuary
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.05
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.005
-    FactionStanding factions { cumans, mongols } -0.005
+    FactionStanding factions { lithuania }  0.01
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Church4_Alt
+Trigger Pagan_Destroy_Church4_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = tengir_sanctuary
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.05
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.005
-    FactionStanding factions { cumans, mongols } -0.005
+    FactionStanding factions { lithuania }  0.01
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Cathedral1_Alt
+Trigger Pagan_Destroy_Cathedral1_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = dievas_temple
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.1
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.01
-    FactionStanding factions { cumans, mongols } -0.01
+    FactionStanding factions { lithuania }  0.02
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Cathedral2_Alt
+Trigger Pagan_Destroy_Cathedral2_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = perkunas_temple
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.1
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.01
-    FactionStanding factions { cumans, mongols } -0.01
+    FactionStanding factions { lithuania }  0.02
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Cathedral3_Alt
+Trigger Pagan_Destroy_Cathedral3_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = giltine_temple
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.1
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.01
-    FactionStanding factions { cumans, mongols } -0.01
+    FactionStanding factions { lithuania }  0.02
 
 ;------------------------------------------
-Trigger Pagan_Destroy_Cathedral4_Alt
+Trigger Pagan_Destroy_Cathedral4_Lithuania
     WhenToTest BuildingDestroyed
 
     Condition BuildingName = tengir_temple
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { papal_states, teutonic_order } 0.1
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, byzantium, russia, kievan_rus, georgia, moors, egypt, turks, kwarezm, timurids, lithuania }  0.01
-    FactionStanding factions { cumans, mongols } -0.01
+    FactionStanding factions { lithuania }  0.02
 
 ;####################### CRUSADES / JIHADS ###############################
 ;================== CRUSADES ==============

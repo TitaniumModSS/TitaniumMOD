@@ -102,12 +102,12 @@ climate unused1 ;SNOW MOUNTAINS
 climate highland ;IRAN STEPPE
 {
 	cultivated_low		steppe_arid_farm_low.tga				steppe_arid_low_winter.tga
-	cultivated_medium	steppe_arid_farm_med.tga				steppe_arid_low_winter.tga
-	cultivated_high		steppe_arid_farm_high.tga				steppe_arid_low_winter.tga
+	cultivated_medium	steppe_arid_farm_med.tga				steppe_arid_med_winter.tga
+	cultivated_high		steppe_arid_farm_high.tga				steppe_arid_high_winter.tga
 	fertility_low		steppe_arid_wilderness.tga				steppe_arid_low_winter.tga
-	fertility_medium	steppe_arid_wilderness.tga				steppe_arid_low_winter.tga
-	fertility_high		steppe_arid_wilderness.tga				steppe_arid_low_winter.tga
-	forest_dense		arid_fertile.tga					snow_light.tga
+	fertility_medium	steppe_arid_wilderness.tga				steppe_arid_med_winter.tga
+	fertility_high		steppe_arid_wilderness.tga				steppe_arid_high_winter.tga
+	forest_dense		arid_forest.tga						snow_light.tga
 	forest_sparse		arid_fertile.tga					steppe_arid_low_winter.tga
 	hills			steppe_arid_hills.tga					steppe_arid_hills_winter.tga
 	mountains_high		arid_mountains.tga					arid_snow_mountains.tga
@@ -142,10 +142,10 @@ climate alpine
 climate steppe ;STEPPE
 {
 	cultivated_low		steppe_farm_low.tga					steppe_fertility_low_winter.tga
-	cultivated_medium	steppe_farm_med.tga					steppe_fertility_high_winter.tga
+	cultivated_medium	steppe_farm_med.tga					steppe_fertility_med_winter.tga
 	cultivated_high		steppe_farm_high.tga					steppe_fertility_high_winter.tga
 	fertility_low		steppe_wilderness.tga					steppe_fertility_low_winter.tga
-	fertility_medium	steppe_fertile.tga					steppe_fertility_high_winter.tga
+	fertility_medium	steppe_fertile.tga					steppe_fertility_med_winter.tga
 	fertility_high		steppe_fertile_h.tga					steppe_fertility_high_winter.tga
 	forest_dense		steppe_forest.tga					snow_light_dd.tga
 	forest_sparse		steppe_wilderness.tga					steppe_fertility_high_winter.tga
@@ -187,7 +187,7 @@ climate semi_arid
 	fertility_low		arid_wilderness.tga
 	fertility_medium	arid_fertile.tga
 	fertility_high		arid_fertile_h.tga
-	forest_dense		arid_fertile_h.tga
+	forest_dense		arid_forest.tga
 	forest_sparse		arid_fertile.tga
 	hills			arid_hills.tga
 	mountains_high		arid_mountains.tga
@@ -255,6 +255,6 @@ climate sandy_desert
 	swamp			swamp.tga
 	beach			beach.tga
 	scorched		scorched.tga
-	impassable_land		desert_sandy.tga
+	impassable_land		desert_sandy_impassable.tga
 	impassable_sea		impassable_sea.tga
 }

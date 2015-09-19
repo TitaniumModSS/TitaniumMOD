@@ -127,7 +127,6 @@ texture				moors, models_strat/textures/islamic_ambassador_moors.tga
 texture				turks, models_strat/textures/islamic_ambassador_seljuk.tga
 texture				portugal, models_strat/textures/islamic_ambassador_zirids.tga
 texture				mongols, models_strat/textures/islamic_ambassador_mongals.tga
-;texture				timurids, models_strat/textures/islamic_ambassador_timurids.tga
 texture				timurids, models_strat/textures/islamic_ambassador_abbasids.tga
 model_flexi_m			models_strat/islamic_ambassador.cas, max
 shadow_model_flexi		models_strat/shadow_hand.CAS, max
@@ -184,7 +183,6 @@ texture				kwarezm, models_strat/textures/islamic_spy_kwarezm.tga
 texture				egypt, models_strat/textures/islamic_spy_egypt.tga
 texture				moors, models_strat/textures/islamic_spy_moors.tga
 texture				portugal, models_strat/textures/islamic_spy_zirids.tga
-;texture				timurids, models_strat/textures/islamic_spy_timurids.tga
 texture				timurids, models_strat/textures/islamic_spy_abbasids.tga
 texture				turks, models_strat/textures/islamic_spy_seljuk.tga
 texture				mongols, models_strat/textures/islamic_spy_mongals.tga
@@ -245,7 +243,6 @@ texture				moors, models_strat/textures/muslim_assassin_moors.tga
 texture				portugal, models_strat/textures/muslim_assassin_zirids.tga
 texture				mongols, models_strat/textures/muslim_assassin_mongal.tga
 texture				egypt, models_strat/textures/muslim_assassin_egypt.tga
-;texture				timurids, models_strat/textures/muslim_assassin.tga
 texture				timurids, models_strat/textures/muslim_assassin_abbasids.tga
 model_flexi			models_strat/muslim_assassin.cas, max
 shadow_model_flexi		models_strat/shadow_hand.CAS, max
@@ -270,6 +267,7 @@ texture				hre, models_strat/textures/princess_hre.tga
 texture				england, models_strat/textures/princess_england.tga
 texture				poland, models_strat/textures/princess_poland.tga
 texture				hungary, models_strat/textures/princess_hungary.tga
+texture				cumans, models_strat/textures/princess_bulgaria.tga
 texture				russia, models_strat/textures/princess_russia.tga
 texture				kievan_rus, models_strat/textures/princess_novgorod.tga
 model_flexi_m			models_strat/northern_princess.cas, max
@@ -320,6 +318,7 @@ indiv_range			40
 texture				russia, models_strat/textures/royal_lady_russia.tga
 texture				poland, models_strat/textures/royal_lady_poland.tga
 texture				hungary, models_strat/textures/royal_lady_hungary.tga
+texture				cumans, models_strat/textures/royal_lady_bulgaria.tga
 texture				kievan_rus, models_strat/textures/royal_lady_kievan_rus.tga
 texture				lithuania, models_strat/textures/royal_lady_lithuania.tga
 model_flexi_m			models_strat/royal_lady2.cas, max
@@ -392,7 +391,6 @@ texture				egypt, models_strat/textures/merchant_egypt.tga
 texture				moors, models_strat/textures/merchant_moor.tga
 texture				portugal, models_strat/textures/merchant_zirids.tga
 texture				mongols, models_strat/textures/merchant_mongal.tga
-;texture				timurids, models_strat/textures/merchant_timurids.tga
 texture				timurids, models_strat/textures/merchant_abbasids.tga
 model_flexi_m			models_strat/islamic_merchant.cas, max
 shadow_model_flexi		models_strat/shadow_hand.CAS, max
@@ -510,6 +508,7 @@ texture				byzantium, models_strat/textures/orthodox_priest_byzantium.tga
 texture				russia, models_strat/textures/orthodox_priest_russia.tga
 texture				kievan_rus, models_strat/textures/orthodox_priest_novgorod.tga
 texture				georgia, models_strat/textures/orthodox_priest_georgia.tga
+texture				cumans, models_strat/textures/orthodox_priest_bulgaria.tga
 model_flexi_m			models_strat/orthodox_priest.cas, max
 shadow_model_flexi		models_strat/shadow_staff.CAS, max
 
@@ -521,6 +520,7 @@ texture				byzantium, models_strat/textures/orthodox_bishop_byzantium.tga
 texture				russia, models_strat/textures/orthodox_bishop_russia.tga
 texture				kievan_rus, models_strat/textures/orthodox_bishop_novgorod.tga
 texture				georgia, models_strat/textures/orthodox_bishop_georgia.tga
+texture				cumans, models_strat/textures/orthodox_bishop_bulgaria.tga
 model_flexi_m			models_strat/orthodox_bishop.cas, max
 shadow_model_flexi		models_strat/shadow_staff.CAS, max
 
@@ -532,6 +532,7 @@ texture				byzantium, models_strat/textures/orthodox_patriarch_byzantium.tga
 texture				russia, models_strat/textures/orthodox_patriarch_russia.tga
 texture				kievan_rus, models_strat/textures/orthodox_patriarch_novgorod.tga
 texture				georgia, models_strat/textures/orthodox_patriarch_georgia.tga
+texture				cumans, models_strat/textures/orthodox_patriarch_bulgaria.tga
 model_flexi_m			models_strat/orthodox_patriarch.cas, max
 shadow_model_flexi		models_strat/shadow_staff.CAS, max
 
@@ -544,7 +545,6 @@ texture				turks, models_strat/textures/muslim_iman_seljuk.tga
 texture				egypt, models_strat/textures/muslim_iman_egypt.tga
 texture				moors, models_strat/textures/muslim_iman_moor.tga
 texture				portugal, models_strat/textures/muslim_iman_zirids.tga
-;texture				timurids, models_strat/textures/muslim_iman_timurids.tga
 texture				timurids, models_strat/textures/muslim_iman_abbasids.tga
 texture				dummies, models_strat/textures/muslim_iman_abbasids.tga
 model_flexi_m			models_strat/muslim_iman.cas, max
@@ -687,7 +687,7 @@ texture				spain, models_strat/textures/early_general_spain.tga
 texture				venice, models_strat/textures/early_general_venice.tga
 texture				dummies, models_strat/textures/early_general_rebels.tga
 texture				slave, models_strat/textures/early_general_rebels.tga
-model_flexi_m			models_strat/early_general_northern.CAS, max
+model_flexi_m			models_strat/early_general_southern.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
 type				islamic_general
@@ -698,7 +698,6 @@ texture				kwarezm, models_strat/textures/islamic_general_kwarezm.tga
 texture				egypt, models_strat/textures/islamic_general_egypt.tga
 texture				moors, models_strat/textures/islamic_general_moors.tga
 texture				portugal, models_strat/textures/islamic_general_zirids.tga
-;texture				timurids, models_strat/textures/islamic_general_timurids.tga
 texture				timurids, models_strat/textures/islamic_general_abbasids.tga
 texture				turks, models_strat/textures/islamic_general_seljuk.tga
 texture				mongols, models_strat/textures/islamic_general_mongols.tga
@@ -803,12 +802,12 @@ type				early_northern_king
 skeleton			strat_named_with_army
 scale				0.7
 indiv_range			40
-texture				france, models_strat/textures/northern_generic_king_france.tga
-texture				england, models_strat/textures/northern_generic_king_england.tga
-texture				hre, models_strat/textures/northern_generic_king_hre.tga
-texture				scotland, models_strat/textures/northern_generic_king_scotland.tga
-texture				denmark, models_strat/textures/northern_generic_king_denmark.tga
-texture				norway, models_strat/textures/northern_generic_king_norway.tga
+texture				france, models_strat/textures/northern_king_early_france.tga
+texture				england, models_strat/textures/northern_king_early_england.tga
+texture				hre, models_strat/textures/northern_king_early_hre.tga
+texture				scotland, models_strat/textures/northern_king_early_scotland.tga
+texture				denmark, models_strat/textures/northern_king_early_denmark.tga
+texture				norway, models_strat/textures/northern_king_early_norway.tga
 texture				sicily, models_strat/textures/northern_king_early_sicily.tga
 texture				jerusalem, models_strat/textures/northern_king_early_jerusalem.tga
 texture				spain, models_strat/textures/northern_king_early_spain.tga
@@ -876,6 +875,16 @@ texture				slave, models_strat/textures/fancy_general_rebels.tga
 model_flexi_m			models_strat/Fancy_General.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
+type				early_southern_leader
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				milan, models_strat/textures/early_general_genoa.tga
+texture				venice, models_strat/textures/early_general_venice_doge.tga
+texture				slave, models_strat/textures/early_general_rebels.tga
+model_flexi_m			models_strat/early_general_southern.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
 type				teutonic_grand_master
 skeleton			strat_named_with_army
 scale				0.7
@@ -893,7 +902,6 @@ texture				egypt, models_strat/textures/middle_eastern_sultan_egypt.tga
 texture				turks, models_strat/textures/middle_eastern_sultan_seljuk.tga
 texture				moors, models_strat/textures/middle_eastern_sultan_moors.tga
 texture				portugal, models_strat/textures/middle_eastern_sultan_zirids.tga
-;texture				timurids, models_strat/textures/middle_eastern_sultan_timurids.tga
 texture				timurids, models_strat/textures/middle_eastern_sultan_abbasids.tga
 model_flexi_m			models_strat/middle_eastern_sultan.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
@@ -965,7 +973,6 @@ texture				kwarezm, models_strat/textures/islamic_captain_kwarezm.tga
 texture				egypt, models_strat/textures/islamic_captain_egypt.tga
 texture				moors, models_strat/textures/islamic_captain_moors.tga
 texture				portugal, models_strat/textures/islamic_captain_zirids.tga
-;texture				timurids, models_strat/textures/islamic_captain_timurid.tga
 texture				timurids, models_strat/textures/islamic_captain_abbasids.tga
 texture				turks, models_strat/textures/islamic_captain_seljuk.tga
 texture				mongols, models_strat/textures/islamic_captain_mongols.tga

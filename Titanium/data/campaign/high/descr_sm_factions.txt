@@ -26,17 +26,18 @@ has_family_tree					teutonic
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						Hafsids
 faction						sicily
-culture						southern_european
-religion					catholic
-symbol						models_strat/symbol_sicily.CAS
-rebel_symbol					models_strat/symbol_rebels_se.CAS
-primary_colour					red 70, green 70, blue 70
-secondary_colour				red 250, green 250, blue 255
-loading_logo					loading_screen/symbols/symbol128_sicily.tga
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_zirids.CAS
+rebel_symbol					models_strat/symbol_rebels_me.CAS
+primary_colour					red 255, green 255, blue 255
+secondary_colour				red 76, green 182, blue 126
+loading_logo					loading_screen/symbols/symbol128_portugal.tga
 standard_index					1
-logo_index					FACTION_LOGO_SICILY
-small_logo_index				SMALL_FACTION_LOGO_SICILY
+logo_index					FACTION_LOGO_ZIRIDS
+small_logo_index				SMALL_FACTION_LOGO_ZIRIDS
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
@@ -149,21 +150,22 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						Bulgaria
 faction						cumans
-culture						eastern_european
-religion					pagan
-symbol						models_strat/symbol_cumans.CAS
+culture						greek
+religion					orthodox
+symbol						models_strat/symbol_bulgaria.CAS
 rebel_symbol					models_strat/symbol_rebels_ee.CAS
 primary_colour					red 116, green 45, blue 13
 secondary_colour				red 18, green 189, blue 250
 loading_logo					loading_screen/symbols/symbol128_aztecs.tga
 standard_index					7
-logo_index					FACTION_LOGO_CUMANS
-small_logo_index				SMALL_FACTION_LOGO_CUMANS
+logo_index					FACTION_LOGO_BULGARIA
+small_logo_index				SMALL_FACTION_LOGO_BULGARIA
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				no
 has_family_tree					yes
 
@@ -189,22 +191,22 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;							rum
+;						Rum
 faction						turks
 culture						middle_eastern
 religion					islam
-symbol						models_strat/symbol_turks.CAS
+symbol						models_strat/symbol_rum.CAS
 rebel_symbol					models_strat/symbol_rebels_me.CAS
 primary_colour					red 34, green 107, blue 9
 secondary_colour				red 255, green 191, blue 0
 loading_logo					loading_screen/symbols/symbol128_turks.tga
 standard_index					9
-logo_index					FACTION_LOGO_TURKS
-small_logo_index				SMALL_FACTION_LOGO_TURKS
+logo_index					FACTION_LOGO_RUM
+small_logo_index				SMALL_FACTION_LOGO_RUM
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -225,7 +227,7 @@ small_logo_index				SMALL_FACTION_LOGO_FRANCE
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -245,7 +247,7 @@ small_logo_index				SMALL_FACTION_LOGO_HRE
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -305,7 +307,7 @@ small_logo_index				SMALL_FACTION_LOGO_POLAND
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -407,7 +409,7 @@ small_logo_index				SMALL_FACTION_LOGO_HUNGARY
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -447,7 +449,7 @@ small_logo_index				SMALL_FACTION_LOGO_LITHUANIA
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -586,12 +588,12 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;						serbia
+;						Serbia
 faction						georgia
 culture						greek
 religion					orthodox
 symbol						models_strat/symbol_serbia.CAS
-rebel_symbol					models_strat/symbol_rebels_g.CAS
+rebel_symbol					models_strat/symbol_rebels_ee.CAS
 primary_colour					red 188, green 28, blue 28
 secondary_colour				red 123, green 0, blue 0
 loading_logo					loading_screen/symbols/symbol128_byzantium.tga
