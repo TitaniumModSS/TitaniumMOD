@@ -9,6 +9,7 @@ declare_counter paris_courtesan_id
 declare_counter arhus_courtesan_id
 declare_counter oslo_courtesan_id
 declare_counter leon_courtesan_id
+declare_counter lisbon_courtesan_id
 declare_counter naples_courtesan_id
 declare_counter genoa_courtesan_id
 declare_counter novgorod_courtesan_id
@@ -22,7 +23,7 @@ declare_counter zaragoza_courtesan_id
 declare_counter cordoba_courtesan_id
 declare_counter rome_courtesan_id
 declare_counter jerusalem_courtesan_id
-declare_counter tbilisi_courtesan_id
+declare_counter kutaisi_courtesan_id
 declare_counter vilnius_courtesan_id
 
 ;Cities where courtesans are available:
@@ -36,6 +37,7 @@ monitor_event PreFactionTurnStart TrueCondition
 	console_command create_building Arhus royal_court
 	console_command create_building Oslo royal_court
 	console_command create_building Leon royal_court
+	console_command create_building Lisbon royal_court
 	console_command create_building Naples royal_court
 	console_command create_building Genoa royal_court
 	console_command create_building Novgorod royal_court
@@ -49,7 +51,7 @@ monitor_event PreFactionTurnStart TrueCondition
 	console_command create_building Cordoba royal_court
 	console_command create_building Rome royal_court
 	console_command create_building Jerusalem royal_court
-	console_command create_building Tbilisi royal_court
+	console_command create_building Kutaisi royal_court
 	console_command create_building Vilnius royal_court
 	terminate_monitor
 end_monitor
@@ -96,6 +98,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Constantinople = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter constantinople_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -134,6 +137,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Constantinople = jerusalem
 		set_counter constantinople_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Constantinople = georgia
+		set_counter constantinople_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Constantinople_Province 0 Royal Envoy
 end_monitor
@@ -179,6 +186,7 @@ monitor_event UnitTrained UnitType Royal Envoy
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner London = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter london_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -217,6 +225,10 @@ monitor_event UnitTrained UnitType Royal Envoy
 	if I_SettlementOwner London = jerusalem
 		set_counter london_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner London = georgia
+		set_counter london_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool London_Province 0 Royal Envoy
 end_monitor
@@ -263,6 +275,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Frankfurt = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter frankfurt_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -301,6 +314,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Frankfurt = jerusalem
 		set_counter frankfurt_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Frankfurt = georgia
+		set_counter frankfurt_courtesan_id 20
+		destroy_units jerusalem georgia
 	end_if
 	set_recruit_pool Frankfurt_Province 0 Royal Envoy
 end_monitor
@@ -347,6 +364,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Paris = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter paris_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -385,6 +403,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Paris = jerusalem
 		set_counter paris_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Paris = georgia
+		set_counter paris_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Paris_Province 0 Royal Envoy
 end_monitor
@@ -431,6 +453,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Arhus = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter arhus_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -469,6 +492,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Arhus = jerusalem
 		set_counter arhus_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Arhus = georgia
+		set_counter arhus_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Arhus_Province 0 Royal Envoy
 end_monitor
@@ -515,6 +542,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Oslo = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter oslo_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -554,6 +582,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		set_counter oslo_courtesan_id 19
 		destroy_units jerusalem princess
 	end_if
+	if I_SettlementOwner Oslo = georgia
+		set_counter oslo_courtesan_id 20
+		destroy_units georgia princess
+	end_if
 	set_recruit_pool Oslo_Province 0 Royal Envoy
 end_monitor
 
@@ -562,8 +594,8 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and SettlementIsLocal
 	and SettlementName Leon
 	set_counter courtesan_lady 1
-	if I_SettlementOwner Constantinople = byzantium
-		set_counter constantinople_courtesan_id 1
+	if I_SettlementOwner Leon = byzantium
+		set_counter leon_courtesan_id 1
 		destroy_units byzantium princess
 	end_if
 	if I_SettlementOwner Leon = england
@@ -599,6 +631,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Leon = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter leon_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -638,7 +671,100 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		set_counter leon_courtesan_id 19
 		destroy_units jerusalem princess
 	end_if
+	if I_SettlementOwner Leon = georgia
+		set_counter leon_courtesan_id 20
+		destroy_units georgia princess
+	end_if
 	set_recruit_pool Leon_Province 0 Royal Envoy
+end_monitor
+
+monitor_event UnitTrained TrainedUnitCategory non_combatant
+	and TrainedUnitClass spearmen
+	and SettlementIsLocal
+	and SettlementName Lisbon
+	set_counter courtesan_lady 1
+	if I_SettlementOwner Lisbon = byzantium
+		set_counter lisbon_courtesan_id 1
+		destroy_units byzantium princess
+	end_if
+	if I_SettlementOwner Lisbon = england
+		set_counter lisbon_courtesan_id 2
+		destroy_units england princess
+	end_if
+	if I_SettlementOwner Lisbon = scotland
+		set_counter lisbon_courtesan_id 3
+		destroy_units scotland princess
+	end_if
+	if I_SettlementOwner Lisbon = hre
+		set_counter lisbon_courtesan_id 4
+		destroy_units hre princess
+	end_if
+	if I_SettlementOwner Lisbon = france
+		set_counter lisbon_courtesan_id 5
+		destroy_units france princess
+	end_if
+	if I_SettlementOwner Lisbon = denmark
+		set_counter lisbon_courtesan_id 6
+		destroy_units denmark princess
+	end_if
+	if I_SettlementOwner Lisbon = norway
+		set_counter lisbon_courtesan_id 7
+		destroy_units norway princess
+	end_if
+	if I_SettlementOwner Lisbon = spain
+		set_counter lisbon_courtesan_id 8
+		destroy_units spain princess
+	end_if
+	if I_SettlementOwner Lisbon = aragon
+		set_counter lisbon_courtesan_id 9
+		destroy_units aragon princess
+	end_if
+	if I_SettlementOwner Lisbon = portugal
+	and I_EventCounter zirids_exist != 1
+		set_counter lisbon_courtesan_id 10
+		destroy_units portugal princess
+	end_if
+	if I_SettlementOwner Lisbon = venice
+		set_counter lisbon_courtesan_id 11
+		destroy_units venice princess
+	end_if
+	if I_SettlementOwner Lisbon = milan
+		set_counter lisbon_courtesan_id 12
+		destroy_units milan princess
+	end_if
+	if I_SettlementOwner Lisbon = sicily
+		set_counter lisbon_courtesan_id 13
+		destroy_units sicily princess
+	end_if
+	if I_SettlementOwner Lisbon = hungary
+		set_counter lisbon_courtesan_id 14
+		destroy_units hungary princess
+	end_if
+	if I_SettlementOwner Lisbon = poland
+		set_counter lisbon_courtesan_id 15
+		destroy_units poland princess
+	end_if
+	if I_SettlementOwner Lisbon = lithuania
+		set_counter lisbon_courtesan_id 16
+		destroy_units lithuania princess
+	end_if
+	if I_SettlementOwner Lisbon = kievan_rus
+		set_counter lisbon_courtesan_id 17
+		destroy_units kievan_rus princess
+	end_if
+	if I_SettlementOwner Lisbon = russia
+		set_counter lisbon_courtesan_id 18
+		destroy_units russia princess
+	end_if
+	if I_SettlementOwner Lisbon = jerusalem
+		set_counter lisbon_courtesan_id 19
+		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Lisbon = georgia
+		set_counter lisbon_courtesan_id 20
+		destroy_units georgia princess
+	end_if
+	set_recruit_pool Lisbon_Province 0 Royal Envoy
 end_monitor
 
 monitor_event UnitTrained TrainedUnitCategory non_combatant
@@ -683,6 +809,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Naples = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter naples_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -721,6 +848,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Naples = jerusalem
 		set_counter naples_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Naples = georgia
+		set_counter naples_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Naples_Province 0 Royal Envoy
 end_monitor
@@ -767,6 +898,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Genoa = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter genoa_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -805,6 +937,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Genoa = jerusalem
 		set_counter genoa_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Genoa = georgia
+		set_counter genoa_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Genoa_Province 0 Royal Envoy
 end_monitor
@@ -851,6 +987,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Novgorod = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter novgorod_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -889,6 +1026,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Novgorod = jerusalem
 		set_counter novgorod_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Novgorod = georgia
+		set_counter novgorod_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Novgorod_Province 0 Royal Envoy
 end_monitor
@@ -935,6 +1076,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Krakow = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter krakow_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -973,6 +1115,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Krakow = jerusalem
 		set_counter krakow_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Krakow = georgia
+		set_counter krakow_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Krakow_Province 0 Royal Envoy
 end_monitor
@@ -1019,6 +1165,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Kiev = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter kiev_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1057,6 +1204,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Kiev = jerusalem
 		set_counter kiev_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Kiev = georgia
+		set_counter kiev_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Kiev_Province 0 Royal Envoy
 end_monitor
@@ -1103,6 +1254,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Venice = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter venice_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1141,6 +1293,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Venice = jerusalem
 		set_counter venice_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Venice = georgia
+		set_counter venice_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Venice_Province 0 Royal Envoy
 end_monitor
@@ -1187,6 +1343,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Esztergom = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter esztergom_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1225,6 +1382,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Esztergom = jerusalem
 		set_counter esztergom_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Esztergom = georgia
+		set_counter esztergom_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Esztergom_Province 0 Royal Envoy
 end_monitor
@@ -1271,6 +1432,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Milan = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter milan_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1309,6 +1471,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Milan = jerusalem
 		set_counter milan_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Milan = georgia
+		set_counter milan_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Milan_Province 0 Royal Envoy
 end_monitor
@@ -1355,6 +1521,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Edinburgh = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter edinburgh_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1393,6 +1560,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Edinburgh = jerusalem
 		set_counter edinburgh_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Edinburgh = georgia
+		set_counter edinburgh_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Edinburgh_Province 0 Royal Envoy
 end_monitor
@@ -1439,6 +1610,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Zaragoza = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter zaragoza_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1477,6 +1649,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Zaragoza = jerusalem
 		set_counter zaragoza_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Zaragoza = georgia
+		set_counter zaragoza_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Zaragoza_Province 0 Royal Envoy
 end_monitor
@@ -1523,6 +1699,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Cordoba = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter cordoba_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1561,6 +1738,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Cordoba = jerusalem
 		set_counter cordoba_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Cordoba = georgia
+		set_counter cordoba_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Cordoba_Province 0 Royal Envoy
 end_monitor
@@ -1607,6 +1788,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Rome = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter rome_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1645,6 +1827,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Rome = jerusalem
 		set_counter rome_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Rome = georgia
+		set_counter rome_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Rome_Province 0 Royal Envoy
 end_monitor
@@ -1691,6 +1877,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Jerusalem = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter jerusalem_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1730,91 +1917,100 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		set_counter jerusalem_courtesan_id 19
 		destroy_units jerusalem princess
 	end_if
+	if I_SettlementOwner Jerusalem = georgia
+		set_counter jerusalem_courtesan_id 20
+		destroy_units georgia princess
+	end_if
 	set_recruit_pool Jerusalem_Province 0 Royal Envoy
 end_monitor
 
 monitor_event UnitTrained TrainedUnitCategory non_combatant
 	and TrainedUnitClass spearmen
 	and SettlementIsLocal
-	and SettlementName Tbilisi
+	and SettlementName Kutaisi
 	set_counter courtesan_lady 1
-	if I_SettlementOwner Tbilisi = byzantium
-		set_counter tbilisi_courtesan_id 1
+	if I_SettlementOwner Kutaisi = byzantium
+		set_counter kutaisi_courtesan_id 1
 		destroy_units byzantium princess
 	end_if
-	if I_SettlementOwner Tbilisi = england
-		set_counter tbilisi_courtesan_id 2
+	if I_SettlementOwner Kutaisi = england
+		set_counter kutaisi_courtesan_id 2
 		destroy_units england princess
 	end_if
-	if I_SettlementOwner Tbilisi = scotland
-		set_counter tbilisi_courtesan_id 3
+	if I_SettlementOwner Kutaisi = scotland
+		set_counter kutaisi_courtesan_id 3
 		destroy_units scotland princess
 	end_if
-	if I_SettlementOwner Tbilisi = hre
-		set_counter tbilisi_courtesan_id 4
+	if I_SettlementOwner Kutaisi = hre
+		set_counter kutaisi_courtesan_id 4
 		destroy_units hre princess
 	end_if
-	if I_SettlementOwner Tbilisi = france
-		set_counter tbilisi_courtesan_id 5
+	if I_SettlementOwner Kutaisi = france
+		set_counter kutaisi_courtesan_id 5
 		destroy_units france princess
 	end_if
-	if I_SettlementOwner Tbilisi = denmark
-		set_counter tbilisi_courtesan_id 6
+	if I_SettlementOwner Kutaisi = denmark
+		set_counter kutaisi_courtesan_id 6
 		destroy_units denmark princess
 	end_if
-	if I_SettlementOwner Tbilisi = norway
-		set_counter tbilisi_courtesan_id 7
+	if I_SettlementOwner Kutaisi = norway
+		set_counter kutaisi_courtesan_id 7
 		destroy_units norway princess
 	end_if
-	if I_SettlementOwner Tbilisi = spain
-		set_counter tbilisi_courtesan_id 8
+	if I_SettlementOwner Kutaisi = spain
+		set_counter kutaisi_courtesan_id 8
 		destroy_units spain princess
 	end_if
-	if I_SettlementOwner Tbilisi = aragon
-		set_counter tbilisi_courtesan_id 9
+	if I_SettlementOwner Kutaisi = aragon
+		set_counter kutaisi_courtesan_id 9
 		destroy_units aragon princess
 	end_if
-	if I_SettlementOwner Tbilisi = portugal
-		set_counter tbilisi_courtesan_id 10
+	if I_SettlementOwner Kutaisi = portugal
+	and I_EventCounter zirids_exist != 1
+		set_counter kutaisi_courtesan_id 10
 		destroy_units portugal princess
 	end_if
-	if I_SettlementOwner Tbilisi = venice
-		set_counter tbilisi_courtesan_id 11
+	if I_SettlementOwner Kutaisi = venice
+		set_counter kutaisi_courtesan_id 11
 		destroy_units venice princess
 	end_if
-	if I_SettlementOwner Tbilisi = milan
-		set_counter tbilisi_courtesan_id 12
+	if I_SettlementOwner Kutaisi = milan
+		set_counter kutaisi_courtesan_id 12
 		destroy_units milan princess
 	end_if
-	if I_SettlementOwner Tbilisi = sicily
-		set_counter tbilisi_courtesan_id 13
+	if I_SettlementOwner Kutaisi = sicily
+		set_counter kutaisi_courtesan_id 13
 		destroy_units sicily princess
 	end_if
-	if I_SettlementOwner Tbilisi = hungary
-		set_counter tbilisi_courtesan_id 14
+	if I_SettlementOwner Kutaisi = hungary
+		set_counter kutaisi_courtesan_id 14
 		destroy_units hungary princess
 	end_if
-	if I_SettlementOwner Tbilisi = poland
-		set_counter tbilisi_courtesan_id 15
+	if I_SettlementOwner Kutaisi = poland
+		set_counter kutaisi_courtesan_id 15
 		destroy_units poland princess
 	end_if
-	if I_SettlementOwner Tbilisi = lithuania
-		set_counter tbilisi_courtesan_id 16
+	if I_SettlementOwner Kutaisi = lithuania
+		set_counter kutaisi_courtesan_id 16
 		destroy_units lithuania princess
 	end_if
-	if I_SettlementOwner Tbilisi = kievan_rus
-		set_counter tbilisi_courtesan_id 17
+	if I_SettlementOwner Kutaisi = kievan_rus
+		set_counter kutaisi_courtesan_id 17
 		destroy_units kievan_rus princess
 	end_if
-	if I_SettlementOwner Tbilisi = russia
-		set_counter tbilisi_courtesan_id 18
+	if I_SettlementOwner Kutaisi = russia
+		set_counter kutaisi_courtesan_id 18
 		destroy_units russia princess
 	end_if
-	if I_SettlementOwner Tbilisi = jerusalem
-		set_counter tbilisi_courtesan_id 19
+	if I_SettlementOwner Kutaisi = jerusalem
+		set_counter kutaisi_courtesan_id 19
 		destroy_units jerusalem princess
 	end_if
-	set_recruit_pool Tbilisi_Province 0 Royal Envoy
+	if I_SettlementOwner Kutaisi = georgia
+		set_counter kutaisi_courtesan_id 20
+		destroy_units georgia princess
+	end_if
+	set_recruit_pool Kutaisi_Province 0 Royal Envoy
 end_monitor
 
 monitor_event UnitTrained TrainedUnitCategory non_combatant
@@ -1859,6 +2055,7 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 		destroy_units aragon princess
 	end_if
 	if I_SettlementOwner Vilnius = portugal
+	and I_EventCounter zirids_exist != 1
 		set_counter vilnius_courtesan_id 10
 		destroy_units portugal princess
 	end_if
@@ -1897,6 +2094,10 @@ monitor_event UnitTrained TrainedUnitCategory non_combatant
 	if I_SettlementOwner Vilnius = jerusalem
 		set_counter vilnius_courtesan_id 19
 		destroy_units jerusalem princess
+	end_if
+	if I_SettlementOwner Vilnius = georgia
+		set_counter vilnius_courtesan_id 20
+		destroy_units georgia princess
 	end_if
 	set_recruit_pool Vilnius_Province 0 Royal Envoy
 end_monitor
@@ -2000,6 +2201,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 284, y 142
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter constantinople_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 284, y 142
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter constantinople_courtesan_id 0
 	end_if
 ;
@@ -2099,6 +2305,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 80, y 217
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter london_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 80, y 217
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter london_courtesan_id 0
 	end_if
 ;
@@ -2195,6 +2406,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 140, y 206
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter frankfurt_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 140, y 206
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter frankfurt_courtesan_id 0
 	end_if
@@ -2295,6 +2511,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 93, y 197
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter paris_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 93, y 197
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter paris_courtesan_id 0
 	end_if
 ;
@@ -2393,6 +2614,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 150, y 250
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter arhus_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 150, y 250
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter arhus_courtesan_id 0
 	end_if
@@ -2493,6 +2719,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 154, y 276
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter oslo_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 154, y 276
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter oslo_courtesan_id 0
 	end_if
 ;
@@ -2592,7 +2823,116 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 37, y 152
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter leon_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 37, y 152
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter leon_courtesan_id 0
+	end_if
+;
+	if I_CompareCounter lisbon_courtesan_id >= 1
+		if I_CompareCounter lisbon_courtesan_id = 1
+		and I_CompareCounter turn_fid = 9
+			spawn_character byzantium random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { byzantium, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 2
+		and I_CompareCounter turn_fid = 19
+			spawn_character england random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { england, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 3
+		and I_CompareCounter turn_fid = 16
+			spawn_character scotland random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { scotland, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 4
+		and I_CompareCounter turn_fid = 18
+			spawn_character hre random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { hre, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 5
+		and I_CompareCounter turn_fid = 17
+			spawn_character france random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { france, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 6
+		and I_CompareCounter turn_fid = 15
+			spawn_character denmark random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { denmark, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 7
+		and I_CompareCounter turn_fid = 26
+			spawn_character norway random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { norway, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 8
+		and I_CompareCounter turn_fid = 22
+			spawn_character spain random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { spain, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 9
+		and I_CompareCounter turn_fid = 24
+			spawn_character aragon random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { aragon, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 10
+		and I_CompareCounter turn_fid = 20
+			spawn_character portugal random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { portugal, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 11
+		and I_CompareCounter turn_fid = 12
+			spawn_character venice random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { venice, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 12
+		and I_CompareCounter turn_fid = 14
+			spawn_character milan random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { milan, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 13
+		and I_CompareCounter turn_fid = 13
+			spawn_character sicily random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { sicily, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 14
+		and I_CompareCounter turn_fid = 23
+			spawn_character hungary random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { hungary, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 15
+		and I_CompareCounter turn_fid = 21
+			spawn_character poland random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { poland, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 16
+		and I_CompareCounter turn_fid = 6
+			spawn_character lithuania random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { lithuania, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 17
+		and I_CompareCounter turn_fid = 11
+			spawn_character kievan_rus random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { kievan_rus, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 18
+		and I_CompareCounter turn_fid = 10
+			spawn_character russia random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { russia, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 19
+		and I_CompareCounter turn_fid = 27
+			spawn_character jerusalem random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter lisbon_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 13, y 127
+			historic_event royal_lady factions { georgia, }
+		end_if
+		set_counter lisbon_courtesan_id 0
 	end_if
 ;
 	if I_CompareCounter naples_courtesan_id >= 1
@@ -2690,6 +3030,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 182, y 139
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter naples_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 182, y 139
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter naples_courtesan_id 0
 	end_if
@@ -2790,6 +3135,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 142, y 166
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter genoa_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 142, y 166
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter genoa_courtesan_id 0
 	end_if
 ;
@@ -2888,6 +3238,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 303, y 267
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter novgorod_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 303, y 267
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter novgorod_courtesan_id 0
 	end_if
@@ -2988,6 +3343,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 217, y 208
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter krakow_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 217, y 208
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter krakow_courtesan_id 0
 	end_if
 ;
@@ -3086,6 +3446,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 297, y 209
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter kiev_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 297, y 209
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter kiev_courtesan_id 0
 	end_if
@@ -3186,6 +3551,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 168, y 173
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter venice_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 168, y 173
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter venice_courtesan_id 0
 	end_if
 ;
@@ -3284,6 +3654,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 213, y 191
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter esztergom_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 213, y 191
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter esztergom_courtesan_id 0
 	end_if
@@ -3384,6 +3759,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 144, y 175
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter milan_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 144, y 175
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter milan_courtesan_id 0
 	end_if
 ;
@@ -3482,6 +3862,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 59, y 248
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter edinburgh_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 59, y 248
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter edinburgh_courtesan_id 0
 	end_if
@@ -3582,6 +3967,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 78, y 147
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter zaragoza_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 78, y 147
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter zaragoza_courtesan_id 0
 	end_if
 ;
@@ -3680,6 +4070,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 27
 			spawn_character jerusalem random_name, princess, age 19, x 42, y 117
 			historic_event royal_lady factions { jerusalem, }
+		end_if
+		if I_CompareCounter cordoba_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 42, y 117
+			historic_event royal_lady factions { georgia, }
 		end_if
 		set_counter cordoba_courtesan_id 0
 	end_if
@@ -3780,6 +4175,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 169, y 146
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter rome_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 169, y 146
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter rome_courtesan_id 0
 	end_if
 ;
@@ -3879,106 +4279,116 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 330, y 74
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter jerusalem_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 330, y 74
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter jerusalem_courtesan_id 0
 	end_if
 ;
-	if I_CompareCounter tbilisi_courtesan_id >= 1
-		if I_CompareCounter tbilisi_courtesan_id = 1
+	if I_CompareCounter kutaisi_courtesan_id >= 1
+		if I_CompareCounter kutaisi_courtesan_id = 1
 		and I_CompareCounter turn_fid = 9
-			spawn_character byzantium random_name, princess, age 19, x 401, y 148
+			spawn_character byzantium random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { byzantium, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 2
+		if I_CompareCounter kutaisi_courtesan_id = 2
 		and I_CompareCounter turn_fid = 19
-			spawn_character england random_name, princess, age 19, x 401, y 148
+			spawn_character england random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { england, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 3
+		if I_CompareCounter kutaisi_courtesan_id = 3
 		and I_CompareCounter turn_fid = 16
-			spawn_character scotland random_name, princess, age 19, x 401, y 148
+			spawn_character scotland random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { scotland, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 4
+		if I_CompareCounter kutaisi_courtesan_id = 4
 		and I_CompareCounter turn_fid = 18
-			spawn_character hre random_name, princess, age 19, x 401, y 148
+			spawn_character hre random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { hre, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 5
+		if I_CompareCounter kutaisi_courtesan_id = 5
 		and I_CompareCounter turn_fid = 17
-			spawn_character france random_name, princess, age 19, x 401, y 148
+			spawn_character france random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { france, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 6
+		if I_CompareCounter kutaisi_courtesan_id = 6
 		and I_CompareCounter turn_fid = 15
-			spawn_character denmark random_name, princess, age 19, x 401, y 148
+			spawn_character denmark random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { denmark, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 7
+		if I_CompareCounter kutaisi_courtesan_id = 7
 		and I_CompareCounter turn_fid = 26
-			spawn_character norway random_name, princess, age 19, x 401, y 148
+			spawn_character norway random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { norway, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 8
+		if I_CompareCounter kutaisi_courtesan_id = 8
 		and I_CompareCounter turn_fid = 22
-			spawn_character spain random_name, princess, age 19, x 401, y 148
+			spawn_character spain random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { spain, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 9
+		if I_CompareCounter kutaisi_courtesan_id = 9
 		and I_CompareCounter turn_fid = 24
-			spawn_character aragon random_name, princess, age 19, x 401, y 148
+			spawn_character aragon random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { aragon, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 10
+		if I_CompareCounter kutaisi_courtesan_id = 10
 		and I_CompareCounter turn_fid = 20
-			spawn_character portugal random_name, princess, age 19, x 401, y 148
+			spawn_character portugal random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { portugal, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 11
+		if I_CompareCounter kutaisi_courtesan_id = 11
 		and I_CompareCounter turn_fid = 12
-			spawn_character venice random_name, princess, age 19, x 401, y 148
+			spawn_character venice random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { venice, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 12
+		if I_CompareCounter kutaisi_courtesan_id = 12
 		and I_CompareCounter turn_fid = 14
-			spawn_character milan random_name, princess, age 19, x 401, y 148
+			spawn_character milan random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { milan, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 13
+		if I_CompareCounter kutaisi_courtesan_id = 13
 		and I_CompareCounter turn_fid = 13
-			spawn_character sicily random_name, princess, age 19, x 401, y 148
+			spawn_character sicily random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { sicily, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 14
+		if I_CompareCounter kutaisi_courtesan_id = 14
 		and I_CompareCounter turn_fid = 23
-			spawn_character hungary random_name, princess, age 19, x 401, y 148
+			spawn_character hungary random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { hungary, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 15
+		if I_CompareCounter kutaisi_courtesan_id = 15
 		and I_CompareCounter turn_fid = 21
-			spawn_character poland random_name, princess, age 19, x 401, y 148
+			spawn_character poland random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { poland, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 16
+		if I_CompareCounter kutaisi_courtesan_id = 16
 		and I_CompareCounter turn_fid = 6
-			spawn_character lithuania random_name, princess, age 19, x 401, y 148
+			spawn_character lithuania random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { lithuania, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 17
+		if I_CompareCounter kutaisi_courtesan_id = 17
 		and I_CompareCounter turn_fid = 11
-			spawn_character kievan_rus random_name, princess, age 19, x 401, y 148
+			spawn_character kievan_rus random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { kievan_rus, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 18
+		if I_CompareCounter kutaisi_courtesan_id = 18
 		and I_CompareCounter turn_fid = 10
-			spawn_character russia random_name, princess, age 19, x 401, y 148
+			spawn_character russia random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { russia, }
 		end_if
-		if I_CompareCounter tbilisi_courtesan_id = 19
+		if I_CompareCounter kutaisi_courtesan_id = 19
 		and I_CompareCounter turn_fid = 27
-			spawn_character jerusalem random_name, princess, age 19, x 401, y 148
+			spawn_character jerusalem random_name, princess, age 19, x 385, y 151
 			historic_event royal_lady factions { jerusalem, }
 		end_if
-		set_counter tbilisi_courtesan_id 0
+		if I_CompareCounter kutaisi_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 385, y 151
+			historic_event royal_lady factions { georgia, }
+		end_if
+		set_counter kutaisi_courtesan_id 0
 	end_if
 ;
 	if I_CompareCounter vilnius_courtesan_id >= 1
@@ -4077,6 +4487,11 @@ monitor_event PreFactionTurnStart FactionIsLocal
 			spawn_character jerusalem random_name, princess, age 19, x 260, y 239
 			historic_event royal_lady factions { jerusalem, }
 		end_if
+		if I_CompareCounter vilnius_courtesan_id = 20
+		and I_CompareCounter turn_fid = 29
+			spawn_character georgia random_name, princess, age 19, x 260, y 239
+			historic_event royal_lady factions { georgia, }
+		end_if
 		set_counter vilnius_courtesan_id 0
 	end_if
 	
@@ -4087,6 +4502,7 @@ monitor_event PreFactionTurnStart FactionIsLocal
 	and I_CompareCounter arhus_courtesan_id = 0
 	and I_CompareCounter oslo_courtesan_id = 0
 	and I_CompareCounter leon_courtesan_id = 0
+	and I_CompareCounter lisbon_courtesan_id = 0
 	and I_CompareCounter naples_courtesan_id = 0
 	and I_CompareCounter genoa_courtesan_id = 0
 	and I_CompareCounter novgorod_courtesan_id = 0
@@ -4100,7 +4516,7 @@ monitor_event PreFactionTurnStart FactionIsLocal
 	and I_CompareCounter cordoba_courtesan_id = 0
 	and I_CompareCounter rome_courtesan_id = 0
 	and I_CompareCounter jerusalem_courtesan_id = 0
-	and I_CompareCounter tbilisi_courtesan_id = 0
+	and I_CompareCounter kutaisi_courtesan_id = 0
 	and I_CompareCounter vilnius_courtesan_id = 0
 		set_counter courtesan_lady 0
 	end_if

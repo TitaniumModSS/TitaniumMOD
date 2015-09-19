@@ -2235,7 +2235,7 @@ Ancillary bertrand_du_guesclin
  Effect Command 2 
  Effect TroopMorale 2 
  Effect Combat_V_Faction_England 2 
- Effect Combat_V_Faction_Portugal 1 
+ ;Effect Combat_V_Faction_Portugal 1 
  Effect Combat_V_Faction_Spain 1 
 ;------------------------------------------ 
 Ancillary chevalier_de_bayard 
@@ -2657,10 +2657,11 @@ Ancillary dearmad_inverness
  Effect Trading 5 
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary dearmad_bern 
+Ancillary dearmad_bern ;Zurich
  Type dearmad_her
  Transferable 1
- Image tokus_bern.tga
+; Image tokus_bern.tga
+ Image govern_zurich.tga
  Description dearmad_bern_desc
  EffectsDescription dearmad_bern_effects_desc
  Effect TaxCollection 5 
@@ -2724,10 +2725,11 @@ Ancillary dearmad_london
  Effect Law 1
  Effect Loyalty 1
 ;------------------------------------------ 
-Ancillary dearmad_bruges 
+Ancillary dearmad_bruges ;Arras
  Type dearmad_her
  Transferable 1
- Image tokus_bruges.tga
+; Image tokus_bruges.tga
+ Image govern_arras.tga
  Description dearmad_bruges_desc
  EffectsDescription dearmad_bruges_effects_desc
  Effect TaxCollection 10 
@@ -2808,10 +2810,11 @@ Ancillary dearmad_toulouse
  Effect Piety -2
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary dearmad_marseille 
+Ancillary dearmad_marseille ;Arles
  Type dearmad_her
  Transferable 1
- Image tokus_marseille.tga
+; Image tokus_marseille.tga
+ Image govern_arles.tga
  Description dearmad_marseille_desc
  EffectsDescription dearmad_marseille_effects_desc
  Effect TaxCollection 5
@@ -2837,10 +2840,11 @@ Ancillary dearmad_innsbruck
  EffectsDescription dearmad_innsbruck_effects_desc
  Effect TaxCollection 5 
 ;------------------------------------------ 
-Ancillary dearmad_hamburg 
+Ancillary dearmad_hamburg ;Bremen
  Type dearmad_her
  Transferable 1
- Image tokus_hamburg.tga
+; Image tokus_hamburg.tga
+ Image govern_bremen.tga
  Description dearmad_hamburg_desc
  EffectsDescription dearmad_hamburg_effects_desc
  Effect TaxCollection 10 
@@ -2974,10 +2978,11 @@ Ancillary dearmad_novgorod
  Effect Piety 1
  Effect Law 1
 ;------------------------------------------ 
-Ancillary dearmad_moscow 
+Ancillary dearmad_moscow ;Shkoder
  Type dearmad_her
  Transferable 1
- Image tokus_moscow.tga
+; Image tokus_moscow.tga
+ Image govern_shkoder.tga
  Description dearmad_moscow_desc
  EffectsDescription dearmad_moscow_effects_desc
  Effect TaxCollection 5 
@@ -3016,10 +3021,11 @@ Ancillary dearmad_bulgar
  Effect Chivalry -1
  Effect MovementPoints 5
 ;------------------------------------------ 
-Ancillary dearmad_vilnius 
+Ancillary dearmad_vilnius ; Kaunas
  Type dearmad_her
  Transferable 1
- Image tokus_vilnius.tga
+; Image tokus_vilnius.tga
+ Image govern_kaunas.tga
  Description dearmad_vilnius_desc
  EffectsDescription dearmad_vilnius_effects_desc
  Effect Chivalry -2
@@ -3043,10 +3049,11 @@ Ancillary dearmad_ryazan ;Ras
  Effect TroopMorale 1
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary dearmad_thorn 
+Ancillary dearmad_thorn ;Kdanzk
  Type dearmad_her
  Transferable 1
- Image tokus_thorn.tga
+; Image tokus_thorn.tga
+ Image govern_gdansk.tga
  Description dearmad_thorn_desc
  EffectsDescription dearmad_thorn_effects_desc
  Effect Chivalry 2
@@ -3060,10 +3067,11 @@ Ancillary dearmad_stettin
  EffectsDescription dearmad_stettin_effects_desc
  Effect TaxCollection 10
 ;------------------------------------------ 
-Ancillary dearmad_antwerp 
+Ancillary dearmad_antwerp ;Ghent
  Type dearmad_her
  Transferable 1
- Image tokus_antwerp.tga
+; Image tokus_antwerp.tga
+ Image govern_ghent.tga
  Description dearmad_antwerp_desc
  EffectsDescription dearmad_antwerp_effects_desc
  Effect TaxCollection 5 
@@ -3176,10 +3184,11 @@ Ancillary dearmad_esztergom
  Effect Loyalty 1
  Effect SiegeDefence 1 
 ;------------------------------------------ 
-Ancillary dearmad_brasov 
+Ancillary dearmad_brasov ; Gyulafehevar
  Type dearmad_her
  Transferable 1
- Image tokus_brasov.tga
+; Image tokus_brasov.tga
+ Image govern_gyulafehevar.tga
  Description dearmad_brasov_desc
  EffectsDescription dearmad_brasov_effects_desc
  Effect Command 1 
@@ -3298,10 +3307,11 @@ Ancillary dearmad_bologna
  Effect Command -1
  Effect Piety -1 
 ;------------------------------------------ 
-Ancillary dearmad_yerevan 
+Ancillary dearmad_yerevan ;Ani
  Type dearmad_her
  Transferable 1
- Image tokus_yerevan.tga
+; Image tokus_yerevan.tga
+ Image govern_ani.tga
  Description dearmad_yerevan_desc
  EffectsDescription dearmad_yerevan_effects_desc
  Effect TaxCollection 5 
@@ -3338,13 +3348,17 @@ Ancillary dearmad_thessalonica
  Effect TaxCollection 10 
  Effect Trading 5 
 ;------------------------------------------ 
-Ancillary dearmad_ajaccio 
+Ancillary dearmad_ajaccio ;Nice
  Type dearmad_her
  Transferable 1
- Image tokus_ajaccio.tga
+; Image tokus_ajaccio.tga
+ Image govern_nice.tga
  Description dearmad_ajaccio_desc
  EffectsDescription dearmad_ajaccio_effects_desc
- Effect TaxCollection 5
+ ;Effect TaxCollection 5
+ Effect TaxCollection 10 ;Nice
+ Effect Loyalty 2 ;Nice
+ Effect LocalPopularity 1 ;Nice
 ;------------------------------------------ 
 Ancillary dearmad_rome 
  Type dearmad_her
@@ -3438,10 +3452,11 @@ Ancillary dearmad_edessa
  Effect TaxCollection 5 
  Effect Piety 2 
 ;------------------------------------------ 
-Ancillary dearmad_adana 
+Ancillary dearmad_adana ; Sis
  Type dearmad_her
  Transferable 1
- Image tokus_adana.tga
+; Image tokus_adana.tga
+ Image govern_sis.tga
  Description dearmad_adana_desc
  EffectsDescription dearmad_adana_effects_desc
  Effect TaxCollection 5 
@@ -3535,14 +3550,15 @@ Ancillary dearmad_tunis
  Effect Trading 5 
  Effect Law 1 
 ;------------------------------------------ 
-Ancillary dearmad_rhodes 
+Ancillary dearmad_rhodes ;Sivas
  Type dearmad_her
  Transferable 1
  Image tokus_rhodes.tga
  Description dearmad_rhodes_desc
  EffectsDescription dearmad_rhodes_effects_desc
  Effect TaxCollection 5 
- Effect Command 1
+ ;Effect Command 1
+ Effect Farming 1 ; Sivas
 ;------------------------------------------ 
 Ancillary dearmad_damascus 
  Type dearmad_her
@@ -3635,10 +3651,11 @@ Ancillary dearmad_cairo
  Effect LocalPopularity 1
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary dearmad_dongola 
+Ancillary dearmad_dongola ;Van
  Type dearmad_her
  Transferable 1
- Image tokus_dongola.tga
+; Image tokus_dongola.tga
+ Image govern_van.tga
  Description dearmad_dongola_desc
  EffectsDescription dearmad_dongola_effects_desc
  Effect TaxCollection 5 
@@ -3694,15 +3711,20 @@ Ancillary king_astrakhan
  Effect Loyalty -1 
  Effect LocalPopularity -1
 ;------------------------------------------ 
-Ancillary king_athens 
+Ancillary king_athens ;Zara
  Type dearmad_her
  Transferable 1
- Image king_athens.tga
+; Image king_athens.tga
+ Image govern_zara.tga
  Description king_athens_desc
  EffectsDescription king_athens_effects_desc
- Effect TaxCollection 10
- Effect Loyalty 2
- Effect LocalPopularity 1
+ ;Effect TaxCollection 10
+ ;Effect Loyalty 2
+ ;Effect LocalPopularity 1
+ Effect TaxCollection 5 ;Zara
+ Effect Trading 5 ;Zara
+ Effect Law 1 ;Zara
+ Effect Loyalty -1 ;Zara
 ;------------------------------------------ 
 Ancillary king_baku 
  Type dearmad_her
@@ -3772,10 +3794,11 @@ Ancillary king_bergen
  Effect Loyalty 1
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary king_bryansk 
+Ancillary king_bryansk ;Chernigov
  Type dearmad_her
  Transferable 1
- Image king_bryansk.tga
+; Image king_bryansk.tga
+ Image govern_chernigov.tga
  Description king_bryansk_desc
  EffectsDescription king_bryansk_effects_desc
  Effect TaxCollection 5 
@@ -3802,10 +3825,11 @@ Ancillary king_canakkale
  EffectsDescription king_canakkale_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary king_cardiff 
+Ancillary king_cardiff ;Bristol
  Type dearmad_her
  Transferable 1
- Image king_cardiff.tga
+; Image king_cardiff.tga
+ Image govern_bristol.tga
  Description king_cardiff_desc
  EffectsDescription king_cardiff_effects_desc
  Effect TaxCollection 5
@@ -3830,10 +3854,11 @@ Ancillary king_diyarbakir
  EffectsDescription king_diyarbakir_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary king_eikundarsund 
+Ancillary king_eikundarsund ;Kirkjuvagr
  Type dearmad_her
  Transferable 1
- Image king_eikundarsund.tga
+; Image king_eikundarsund.tga
+ Image govern_kirkwall.tga
  Description king_eikundarsund_desc
  EffectsDescription king_eikundarsund_effects_desc
  Effect TaxCollection 5
@@ -3866,19 +3891,21 @@ Ancillary king_fez
  Effect Loyalty 1
  Effect Law 1
 ;------------------------------------------ 
-Ancillary king_galway ;Coimbra
+Ancillary king_galway ;Qusantinah
  Type dearmad_her
  Transferable 1
- Image govern_coimbra.tga
+; Image govern_coimbra.tga
+ Image govern_qusantina.tga
  Description king_galway_desc
  EffectsDescription king_galway_effects_desc
  Effect TaxCollection 5
  Effect Loyalty 1
 ;------------------------------------------ 
-Ancillary king_groningen 
+Ancillary king_groningen ;Utrecht
  Type dearmad_her
  Transferable 1
- Image king_groningen.tga
+; Image king_groningen.tga
+ Image govern_utrecht.tga
  Description king_groningen_desc
  EffectsDescription king_groningen_effects_desc
  Effect TaxCollection 5
@@ -3959,26 +3986,29 @@ Ancillary king_mecca
  EffectsDescription king_mecca_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary king_medina 
+Ancillary king_medina ;Wasit
  Type dearmad_her
  Transferable 1
- Image king_medina.tga
+; Image king_medina.tga
+ Image govern_wasit.tga
  Description king_medina_desc
  EffectsDescription king_medina_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary king_melilla 
+Ancillary king_melilla ;Tlemcen
  Type dearmad_her
  Transferable 1
- Image king_melilla.tga
+; Image king_melilla.tga
+ Image govern_tlemcen.tga
  Description king_melilla_desc
  EffectsDescription king_melilla_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary king_mensk 
+Ancillary king_mensk ; Turov
  Type dearmad_her
  Transferable 1
- Image king_mensk.tga
+; Image king_mensk.tga
+ Image govern_turov.tga
  Description king_mensk_desc
  EffectsDescription king_mensk_effects_desc
  Effect TaxCollection 5
@@ -4034,10 +4064,11 @@ Ancillary king_tmutarakan
  Effect TaxCollection 5
  Effect Piety 1
 ;------------------------------------------ 
-Ancillary king_salamanca 
+Ancillary king_salamanca ;Santiago
  Type dearmad_her
  Transferable 1
- Image king_salamanca.tga
+; Image king_salamanca.tga
+ Image govern_santiago.tga
  Description king_salamanca_desc
  EffectsDescription king_salamanca_effects_desc
  Effect TaxCollection 5
@@ -4062,10 +4093,11 @@ Ancillary king_kassa
  EffectsDescription king_kassa_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary king_scopia 
+Ancillary king_scopia ; Tarnovo
  Type dearmad_her
  Transferable 1
- Image king_scopia.tga
+; Image king_scopia.tga
+ Image govern_tarnovo.tga
  Description king_scopia_desc
  EffectsDescription king_scopia_effects_desc
  Effect TaxCollection 5
@@ -4090,10 +4122,10 @@ Ancillary king_sinop
  Effect Trading 5 
  Effect Loyalty -1 
 ;------------------------------------------ 
-Ancillary king_skara ;Shkoder
+Ancillary king_skara
  Type dearmad_her
  Transferable 1
- Image govern_shkoder.tga
+ Image king_skara.tga
  Description king_skara_desc
  EffectsDescription king_skara_effects_desc
  Effect TaxCollection 5
@@ -4165,7 +4197,7 @@ Ancillary king_cologne
  Effect TaxCollection 5
  Effect Piety 2
 ;------------------------------------------ 
-Ancillary king_yaroslavl 
+Ancillary king_yaroslavl ;Rostov
  Type dearmad_her
  Transferable 1
  Image king_yaroslavl.tga
@@ -4243,20 +4275,22 @@ Ancillary king_shiraz
  Effect TaxCollection 5
  
 ;------------------------------------------ 
-Ancillary king_sharjah 
+Ancillary king_sharjah ;Leuven
  Type dearmad_her
  Transferable 1
- Image king_sharjah.tga
+; Image king_sharjah.tga
+ Image govern_leuven.tga
  Description king_sharjah_desc
  EffectsDescription king_sharjah_effects_desc
  Effect TaxCollection 5
  Effect Loyalty -1
  
 ;------------------------------------------ 
-Ancillary king_khiva 
+Ancillary king_khiva ;Poznan
  Type dearmad_her
  Transferable 1
- Image king_khiva.tga
+; Image king_khiva.tga
+ Image govern_poznan.tga
  Description king_khiva_desc
  EffectsDescription king_khiva_effects_desc
  Effect TaxCollection 5
@@ -4273,7 +4307,7 @@ Ancillary king_kazan
  Effect MovementPoints 10
  
 ;------------------------------------------ 
-Ancillary king_hajr 
+Ancillary king_hajr ;Ar-Raqqah
  Type dearmad_her
  Transferable 1
  Image king_hajr.tga
@@ -4321,10 +4355,11 @@ Ancillary king_al-mahdiya
  Effect Farming 1
  
 ;------------------------------------------ 
-Ancillary king_zhytomyr 
+Ancillary king_zhytomyr ; Volodymyr
  Type dearmad_her
  Transferable 1
- Image king_zhytomyr.tga
+; Image king_zhytomyr.tga
+ Image govern_volodymyr.tga
  Description king_zhytomyr_desc
  EffectsDescription king_zhytomyr_effects_desc
  Effect TaxCollection 5
@@ -4370,7 +4405,7 @@ Ancillary king_tabriz
  Effect TaxCollection 5
  
 ;------------------------------------------ 
-Ancillary king_pereyaslav 
+Ancillary king_pereyaslav ;Poltava
  Type dearmad_her
  Transferable 1
  Image king_pereyaslav.tga
@@ -4530,7 +4565,7 @@ Ancillary king_ahvaz
  Effect Farming 1
  
 ;------------------------------------------ 
-Ancillary king_serdobinskaya 
+Ancillary king_serdobinskaya ;Voronezh
  Type dearmad_her
  Transferable 1
  Image king_serdobinskaya.tga
@@ -4540,10 +4575,11 @@ Ancillary king_serdobinskaya
  Effect Farming 1
 
 ;------------------------------------------
-Ancillary king_embi
+Ancillary king_embi ; Erfurt
  Type dearmad_her
  Transferable 1
- Image king_embi.tga
+; Image king_embi.tga
+ Image govern_erfurt.tga
  Description king_embi_desc
  EffectsDescription king_embi_effects_desc
  Effect TaxCollection 5
@@ -4571,10 +4607,11 @@ Ancillary idearmad_inverness
  Effect Trading 5 
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary idearmad_bern 
+Ancillary idearmad_bern ;Zurich
  Type dearmad_her
  Transferable 1
- Image tokus_bern.tga
+; Image tokus_bern.tga
+ Image govern_zurich.tga
  Description idearmad_bern_desc
  EffectsDescription idearmad_bern_effects_desc
  Effect TaxCollection 5 
@@ -4635,10 +4672,11 @@ Ancillary idearmad_london
  Effect Law 1
  Effect Loyalty -2
 ;------------------------------------------ 
-Ancillary idearmad_bruges 
+Ancillary idearmad_bruges ;Arras
  Type dearmad_her
  Transferable 1
- Image tokus_bruges.tga
+; Image tokus_bruges.tga
+ Image govern_arras.tga
  Description idearmad_bruges_desc
  EffectsDescription idearmad_bruges_effects_desc
  Effect TaxCollection 10 
@@ -4718,10 +4756,11 @@ Ancillary idearmad_toulouse
  Effect Piety -2
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary idearmad_marseille 
+Ancillary idearmad_marseille ;Arles
  Type dearmad_her
  Transferable 1
- Image tokus_marseille.tga
+; Image tokus_marseille.tga
+ Image govern_arles.tga
  Description idearmad_marseille_desc
  EffectsDescription idearmad_marseille_effects_desc
  Effect TaxCollection 5
@@ -4745,10 +4784,11 @@ Ancillary idearmad_innsbruck
  EffectsDescription idearmad_innsbruck_effects_desc
  Effect TaxCollection 5 
 ;------------------------------------------ 
-Ancillary idearmad_hamburg 
+Ancillary idearmad_hamburg ;Bremen
  Type dearmad_her
  Transferable 1
- Image tokus_hamburg.tga
+; Image tokus_hamburg.tga
+ Image govern_bremen.tga
  Description idearmad_hamburg_desc
  EffectsDescription idearmad_hamburg_effects_desc
  Effect TaxCollection 10 
@@ -4878,10 +4918,11 @@ Ancillary idearmad_novgorod
  Effect Law 1
  Effect Loyalty -1 
 ;------------------------------------------ 
-Ancillary idearmad_moscow 
+Ancillary idearmad_moscow ;Shkoder
  Type dearmad_her
  Transferable 1
- Image tokus_moscow.tga
+; Image tokus_moscow.tga
+ Image govern_shkoder.tga
  Description idearmad_moscow_desc
  EffectsDescription idearmad_moscow_effects_desc
  Effect TaxCollection 5 
@@ -4920,10 +4961,11 @@ Ancillary idearmad_bulgar
  Effect Chivalry -1
  Effect MovementPoints 5
 ;------------------------------------------ 
-Ancillary idearmad_vilnius 
+Ancillary idearmad_vilnius ; Kaunas
  Type dearmad_her
  Transferable 1
- Image tokus_vilnius.tga
+; Image tokus_vilnius.tga
+ Image govern_kaunas.tga
  Description idearmad_vilnius_desc
  EffectsDescription idearmad_vilnius_effects_desc
  Effect Chivalry -2
@@ -4947,10 +4989,11 @@ Ancillary idearmad_ryazan ;Ras
  Effect TroopMorale 1
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary idearmad_thorn 
+Ancillary idearmad_thorn ;Kdanzk
  Type dearmad_her
  Transferable 1
- Image tokus_thorn.tga
+; Image tokus_thorn.tga
+ Image govern_gdansk.tga
  Description idearmad_thorn_desc
  EffectsDescription idearmad_thorn_effects_desc
  Effect Chivalry 2
@@ -4964,10 +5007,11 @@ Ancillary idearmad_stettin
  EffectsDescription idearmad_stettin_effects_desc
  Effect TaxCollection 10
 ;------------------------------------------ 
-Ancillary idearmad_antwerp 
+Ancillary idearmad_antwerp ;Ghent
  Type dearmad_her
  Transferable 1
- Image tokus_antwerp.tga
+; Image tokus_antwerp.tga
+ Image govern_ghent.tga
  Description idearmad_antwerp_desc
  EffectsDescription idearmad_antwerp_effects_desc
  Effect TaxCollection 5 
@@ -5078,10 +5122,11 @@ Ancillary idearmad_esztergom
  Effect Loyalty 1
  Effect SiegeDefence 1 
 ;------------------------------------------ 
-Ancillary idearmad_brasov 
+Ancillary idearmad_brasov ; Gyulafehevar
  Type dearmad_her
  Transferable 1
- Image tokus_brasov.tga
+; Image tokus_brasov.tga
+ Image govern_gyulafehevar.tga
  Description idearmad_brasov_desc
  EffectsDescription idearmad_brasov_effects_desc
  Effect Command 1 
@@ -5201,10 +5246,11 @@ Ancillary idearmad_bologna
  Effect Loyalty -1
  Effect Piety -1 
 ;------------------------------------------ 
-Ancillary idearmad_yerevan 
+Ancillary idearmad_yerevan ;Ani
  Type dearmad_her
  Transferable 1
- Image tokus_yerevan.tga
+; Image tokus_yerevan.tga
+ Image govern_ani.tga
  Description idearmad_yerevan_desc
  EffectsDescription idearmad_yerevan_effects_desc
  Effect TaxCollection 5 
@@ -5244,13 +5290,15 @@ Ancillary idearmad_thessalonica
  Effect TaxCollection 10 
  Effect Trading 5 
 ;------------------------------------------ 
-Ancillary idearmad_ajaccio 
+Ancillary idearmad_ajaccio ;Nice
  Type dearmad_her
  Transferable 1
- Image tokus_ajaccio.tga
+; Image tokus_ajaccio.tga
+ Image govern_nice.tga
  Description idearmad_ajaccio_desc
  EffectsDescription idearmad_ajaccio_effects_desc
- Effect TaxCollection 5
+ ;Effect TaxCollection 5
+ Effect TaxCollection 10 ;Nice
 ;------------------------------------------ 
 Ancillary idearmad_rome 
  Type dearmad_her
@@ -5347,10 +5395,11 @@ Ancillary idearmad_edessa
  Effect TaxCollection 5 
  Effect Piety 2 
 ;------------------------------------------ 
-Ancillary idearmad_adana 
+Ancillary idearmad_adana ; Sis
  Type dearmad_her
  Transferable 1
- Image tokus_adana.tga
+; Image tokus_adana.tga
+ Image govern_sis.tga
  Description idearmad_adana_desc
  EffectsDescription idearmad_adana_effects_desc
  Effect TaxCollection 5 
@@ -5447,13 +5496,15 @@ Ancillary idearmad_tunis
  Effect Trading 5 
  Effect Law 1 
 ;------------------------------------------ 
-Ancillary idearmad_rhodes 
+Ancillary idearmad_rhodes ;Sivas
  Type dearmad_her
  Transferable 1
  Image tokus_rhodes.tga
  Description idearmad_rhodes_desc
  EffectsDescription idearmad_rhodes_effects_desc
  Effect TaxCollection 5 
+ ;Effect Command 1
+ Effect Farming 1 ; Sivas
 ;------------------------------------------ 
 Ancillary idearmad_damascus 
  Type dearmad_her
@@ -5545,10 +5596,11 @@ Ancillary idearmad_cairo
  Effect LocalPopularity 1
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary idearmad_dongola 
+Ancillary idearmad_dongola ;Van
  Type dearmad_her
  Transferable 1
- Image tokus_dongola.tga
+; Image tokus_dongola.tga
+ Image govern_van.tga
  Description idearmad_dongola_desc
  EffectsDescription idearmad_dongola_effects_desc
  Effect TaxCollection 5 
@@ -5603,13 +5655,18 @@ Ancillary iking_astrakhan
  Effect Loyalty -1 
  Effect LocalPopularity -1
 ;------------------------------------------ 
-Ancillary iking_athens 
+Ancillary iking_athens ;Zara
  Type dearmad_her
  Transferable 1
- Image king_athens.tga
+; Image king_athens.tga
+ Image govern_zara.tga
  Description iking_athens_desc
  EffectsDescription iking_athens_effects_desc
- Effect TaxCollection 10
+ ;Effect TaxCollection 10
+ Effect TaxCollection 5 ;Zara
+ Effect Trading 5 ;Zara
+ Effect Law 1 ;Zara
+ Effect Loyalty -1 ;Zara
 ;------------------------------------------ 
 Ancillary iking_baku 
  Type dearmad_her
@@ -5679,10 +5736,11 @@ Ancillary iking_bergen
  Effect Loyalty 1
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary iking_bryansk 
+Ancillary iking_bryansk ;Chernigov
  Type dearmad_her
  Transferable 1
- Image king_bryansk.tga
+; Image king_bryansk.tga
+ Image govern_chernigov.tga
  Description iking_bryansk_desc
  EffectsDescription iking_bryansk_effects_desc
  Effect TaxCollection 5 
@@ -5707,10 +5765,11 @@ Ancillary iking_canakkale
  EffectsDescription iking_canakkale_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary iking_cardiff 
+Ancillary iking_cardiff ;Bristol
  Type dearmad_her
  Transferable 1
- Image king_cardiff.tga
+; Image king_cardiff.tga
+ Image govern_bristol.tga
  Description iking_cardiff_desc
  EffectsDescription iking_cardiff_effects_desc
  Effect TaxCollection 5
@@ -5735,10 +5794,11 @@ Ancillary iking_diyarbakir
  EffectsDescription iking_diyarbakir_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary iking_eikundarsund 
+Ancillary iking_eikundarsund ;Kirkjuvagr
  Type dearmad_her
  Transferable 1
- Image king_eikundarsund.tga
+; Image king_eikundarsund.tga
+ Image govern_kirkwall.tga
  Description iking_eikundarsund_desc
  EffectsDescription iking_eikundarsund_effects_desc
  Effect TaxCollection 5
@@ -5780,10 +5840,11 @@ Ancillary iking_galway ;Coimbra
  Effect TaxCollection 5
  Effect Loyalty 1
 ;------------------------------------------ 
-Ancillary iking_groningen 
+Ancillary iking_groningen ;Utrecht
  Type dearmad_her
  Transferable 1
- Image king_groningen.tga
+; Image king_groningen.tga
+ Image govern_utrecht.tga
  Description iking_groningen_desc
  EffectsDescription iking_groningen_effects_desc
  Effect TaxCollection 5
@@ -5863,10 +5924,11 @@ Ancillary iking_mecca
  Effect Piety 3
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary iking_medina 
+Ancillary iking_medina ;Wasit
  Type dearmad_her
  Transferable 1
- Image king_medina.tga
+; Image king_medina.tga
+ Image govern_wasit.tga
  Description iking_medina_desc
  EffectsDescription iking_medina_effects_desc
  Effect TaxCollection 5
@@ -5874,18 +5936,20 @@ Ancillary iking_medina
  Effect Piety 1
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary iking_melilla 
+Ancillary iking_melilla ;Tlemcen
  Type dearmad_her
  Transferable 1
- Image king_melilla.tga
+; Image king_melilla.tga
+ Image govern_tlemcen.tga
  Description iking_melilla_desc
  EffectsDescription iking_melilla_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary iking_mensk 
+Ancillary iking_mensk ; Turov
  Type dearmad_her
  Transferable 1
- Image king_mensk.tga
+; Image king_mensk.tga
+ Image govern_turov.tga
  Description iking_mensk_desc
  EffectsDescription iking_mensk_effects_desc
  Effect TaxCollection 5
@@ -5940,10 +6004,11 @@ Ancillary iking_tmutarakan
  EffectsDescription iking_tmutarakan_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary iking_salamanca 
+Ancillary iking_salamanca ;Santiago
  Type dearmad_her
  Transferable 1
- Image king_salamanca.tga
+; Image king_salamanca.tga
+ Image govern_santiago.tga
  Description iking_salamanca_desc
  EffectsDescription iking_salamanca_effects_desc
  Effect TaxCollection 5
@@ -5967,10 +6032,11 @@ Ancillary iking_kassa
  EffectsDescription iking_kassa_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary iking_scopia 
+Ancillary iking_scopia ; Tarnovo
  Type dearmad_her
  Transferable 1
- Image king_scopia.tga
+; Image king_scopia.tga
+ Image govern_tarnovo.tga
  Description iking_scopia_desc
  EffectsDescription iking_scopia_effects_desc
  Effect TaxCollection 5
@@ -5995,10 +6061,10 @@ Ancillary iking_sinop
  Effect Trading 5 
  Effect Loyalty -1 
 ;------------------------------------------ 
-Ancillary iking_skara ;Shkoder
+Ancillary iking_skara 
  Type dearmad_her
  Transferable 1
- Image govern_shkoder.tga
+ Image king_skara.tga
  Description iking_skara_desc
  EffectsDescription iking_skara_effects_desc
  Effect TaxCollection 5
@@ -6070,7 +6136,7 @@ Ancillary iking_cologne
  Effect TaxCollection 5
  Effect Piety 2
 ;------------------------------------------ 
-Ancillary iking_yaroslavl 
+Ancillary iking_yaroslavl ;Rostov
  Type dearmad_her
  Transferable 1
  Image king_yaroslavl.tga
@@ -6148,20 +6214,22 @@ Ancillary iking_shiraz
  Effect TaxCollection 5
  
 ;------------------------------------------ 
-Ancillary iking_sharjah 
+Ancillary iking_sharjah ;Leuven
  Type dearmad_her
  Transferable 1
- Image king_sharjah.tga
+; Image king_sharjah.tga
+ Image govern_leuven.tga
  Description iking_sharjah_desc
  EffectsDescription iking_sharjah_effects_desc
  Effect TaxCollection 5
  Effect Loyalty -1
  
 ;------------------------------------------ 
-Ancillary iking_khiva 
+Ancillary iking_khiva ;Poznan
  Type dearmad_her
  Transferable 1
- Image king_khiva.tga
+; Image king_khiva.tga
+ Image govern_poznan.tga
  Description iking_khiva_desc
  EffectsDescription iking_khiva_effects_desc
  Effect TaxCollection 5
@@ -6178,7 +6246,7 @@ Ancillary iking_kazan
  Effect MovementPoints 10
  
 ;------------------------------------------ 
-Ancillary iking_hajr 
+Ancillary iking_hajr ;Ar-Raqqah
  Type dearmad_her
  Transferable 1
  Image king_hajr.tga
@@ -6226,10 +6294,11 @@ Ancillary iking_al-mahdiya
  Effect Farming 1
  
 ;------------------------------------------ 
-Ancillary iking_zhytomyr 
+Ancillary iking_zhytomyr ; Volodymyr
  Type dearmad_her
  Transferable 1
- Image king_zhytomyr.tga
+; Image king_zhytomyr.tga
+ Image govern_volodymyr.tga
  Description iking_zhytomyr_desc
  EffectsDescription iking_zhytomyr_effects_desc
  Effect TaxCollection 5
@@ -6274,7 +6343,7 @@ Ancillary iking_tabriz
  Effect TaxCollection 5
  
 ;------------------------------------------ 
-Ancillary iking_pereyaslav 
+Ancillary iking_pereyaslav ;Poltava
  Type dearmad_her
  Transferable 1
  Image king_pereyaslav.tga
@@ -6434,7 +6503,7 @@ Ancillary iking_ahvaz
  Effect Farming 1
  
 ;------------------------------------------ 
-Ancillary iking_serdobinskaya 
+Ancillary iking_serdobinskaya ;Voronezh
  Type dearmad_her
  Transferable 1
  Image king_serdobinskaya.tga
@@ -6444,10 +6513,11 @@ Ancillary iking_serdobinskaya
  Effect Farming 1
 
 ;------------------------------------------
-Ancillary iking_embi
+Ancillary iking_embi ; Erfurt
  Type dearmad_her
  Transferable 1
- Image king_embi.tga
+; Image king_embi.tga
+ Image govern_erfurt.tga
  Description iking_embi_desc
  EffectsDescription iking_embi_effects_desc
  Effect TaxCollection 5
@@ -6475,10 +6545,11 @@ Ancillary odearmad_inverness
  Effect Trading 5 
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary odearmad_bern 
+Ancillary odearmad_bern ;Zurich
  Type dearmad_her
  Transferable 1
- Image tokus_bern.tga
+; Image tokus_bern.tga
+ Image govern_zurich.tga
  Description odearmad_bern_desc
  EffectsDescription odearmad_bern_effects_desc
  Effect TaxCollection 5 
@@ -6542,10 +6613,11 @@ Ancillary odearmad_london
  Effect Law 1
  Effect Loyalty 1
 ;------------------------------------------ 
-Ancillary odearmad_bruges 
+Ancillary odearmad_bruges ;Arras
  Type dearmad_her
  Transferable 1
- Image tokus_bruges.tga
+; Image tokus_bruges.tga
+ Image govern_arras.tga
  Description odearmad_bruges_desc
  EffectsDescription odearmad_bruges_effects_desc
  Effect TaxCollection 10 
@@ -6625,10 +6697,11 @@ Ancillary odearmad_toulouse
  Effect Piety -2
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary odearmad_marseille 
+Ancillary odearmad_marseille ;Arles
  Type dearmad_her
  Transferable 1
- Image tokus_marseille.tga
+; Image tokus_marseille.tga
+ Image govern_arles.tga
  Description odearmad_marseille_desc
  EffectsDescription odearmad_marseille_effects_desc
  Effect TaxCollection 5
@@ -6654,11 +6727,11 @@ Ancillary odearmad_innsbruck
  EffectsDescription odearmad_innsbruck_effects_desc
  Effect TaxCollection 5 
 ;------------------------------------------ 
-Ancillary odearmad_hamburg 
+Ancillary odearmad_hamburg ;Bremen
  Type dearmad_her
  Transferable 1
- Image tokus_hamburg.tga
- Description odearmad_hamburg_desc
+; Image tokus_hamburg.tga
+ Image govern_bremen.tga
  EffectsDescription odearmad_hamburg_effects_desc
  Effect TaxCollection 10 
 ;------------------------------------------ 
@@ -6790,10 +6863,11 @@ Ancillary odearmad_novgorod
  Effect Piety 1
  Effect Law 1
 ;------------------------------------------ 
-Ancillary odearmad_moscow 
+Ancillary odearmad_moscow ;Shkoder
  Type dearmad_her
  Transferable 1
- Image tokus_moscow.tga
+; Image tokus_moscow.tga
+ Image govern_shkoder.tga
  Description odearmad_moscow_desc
  EffectsDescription odearmad_moscow_effects_desc
  Effect TaxCollection 5 
@@ -6832,10 +6906,11 @@ Ancillary odearmad_bulgar
  Effect Chivalry -1
  Effect MovementPoints 5
 ;------------------------------------------ 
-Ancillary odearmad_vilnius 
+Ancillary odearmad_vilnius ; Kaunas
  Type dearmad_her
  Transferable 1
- Image tokus_vilnius.tga
+; Image tokus_vilnius.tga
+ Image govern_kaunas.tga
  Description odearmad_vilnius_desc
  EffectsDescription odearmad_vilnius_effects_desc
  Effect Chivalry -2
@@ -6859,10 +6934,11 @@ Ancillary odearmad_ryazan ;Ras
  Effect TroopMorale 1
  Effect Loyalty -1
 ;------------------------------------------ 
-Ancillary odearmad_thorn 
+Ancillary odearmad_thorn ;Kdanzk
  Type dearmad_her
  Transferable 1
- Image tokus_thorn.tga
+; Image tokus_thorn.tga
+ Image govern_gdansk.tga
  Description odearmad_thorn_desc
  EffectsDescription odearmad_thorn_effects_desc
  Effect Chivalry 2
@@ -6876,10 +6952,11 @@ Ancillary odearmad_stettin
  EffectsDescription odearmad_stettin_effects_desc
  Effect TaxCollection 10
 ;------------------------------------------ 
-Ancillary odearmad_antwerp 
+Ancillary odearmad_antwerp ;Ghent
  Type dearmad_her
  Transferable 1
- Image tokus_antwerp.tga
+; Image tokus_antwerp.tga
+ Image govern_ghent.tga
  Description odearmad_antwerp_desc
  EffectsDescription odearmad_antwerp_effects_desc
  Effect TaxCollection 5 
@@ -6991,10 +7068,11 @@ Ancillary odearmad_esztergom
  Effect Loyalty 1
  Effect SiegeDefence 1 
 ;------------------------------------------ 
-Ancillary odearmad_brasov 
+Ancillary odearmad_brasov ; Gyulafehevar
  Type dearmad_her
  Transferable 1
- Image tokus_brasov.tga
+; Image tokus_brasov.tga
+ Image govern_gyulafehevar.tga
  Description odearmad_brasov_desc
  EffectsDescription odearmad_brasov_effects_desc
  Effect Command 1 
@@ -7114,10 +7192,11 @@ Ancillary odearmad_bologna
  Effect Loyalty -1
  Effect Piety -1 
 ;------------------------------------------ 
-Ancillary odearmad_yerevan 
+Ancillary odearmad_yerevan ;Ani
  Type dearmad_her
  Transferable 1
- Image tokus_yerevan.tga
+; Image tokus_yerevan.tga
+ Image govern_ani.tga
  Description odearmad_yerevan_desc
  EffectsDescription odearmad_yerevan_effects_desc
  Effect TaxCollection 5 
@@ -7160,13 +7239,17 @@ Ancillary odearmad_thessalonica
  Effect TaxCollection 10 
  Effect Trading 5 
 ;------------------------------------------ 
-Ancillary odearmad_ajaccio 
+Ancillary odearmad_ajaccio ;Nice
  Type dearmad_her
  Transferable 1
- Image tokus_ajaccio.tga
+; Image tokus_ajaccio.tga
+ Image govern_nice.tga
  Description odearmad_ajaccio_desc
  EffectsDescription odearmad_ajaccio_effects_desc
- Effect TaxCollection 5
+ ;Effect TaxCollection 5
+ Effect TaxCollection 10
+ Effect Loyalty 2
+ Effect LocalPopularity 1
 ;------------------------------------------ 
 Ancillary odearmad_rome 
  Type dearmad_her
@@ -7259,10 +7342,11 @@ Ancillary odearmad_edessa
  Effect TaxCollection 5 
  Effect Piety 2 
 ;------------------------------------------ 
-Ancillary odearmad_adana 
+Ancillary odearmad_adana ; Sis
  Type dearmad_her
  Transferable 1
- Image tokus_adana.tga
+; Image tokus_adana.tga
+ Image govern_sis.tga
  Description odearmad_adana_desc
  EffectsDescription odearmad_adana_effects_desc
  Effect TaxCollection 5 
@@ -7356,7 +7440,7 @@ Ancillary odearmad_tunis
  Effect Trading 5 
  Effect Law 1 
 ;------------------------------------------ 
-Ancillary odearmad_rhodes 
+Ancillary odearmad_rhodes ;Sivas
  Type dearmad_her
  Transferable 1
  Image tokus_rhodes.tga
@@ -7364,7 +7448,8 @@ Ancillary odearmad_rhodes
  EffectsDescription odearmad_rhodes_effects_desc
  Effect TaxCollection 5 
  Effect LocalPopularity 1 
- Effect Command 1
+ ;Effect Command 1 
+ Effect Farming 1 ; Sivas
 ;------------------------------------------ 
 Ancillary odearmad_damascus 
  Type dearmad_her
@@ -7457,10 +7542,11 @@ Ancillary odearmad_cairo
  Effect LocalPopularity 1
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary odearmad_dongola 
+Ancillary odearmad_dongola ;Van
  Type dearmad_her
  Transferable 1
- Image tokus_dongola.tga
+; Image tokus_dongola.tga
+ Image govern_van.tga
  Description odearmad_dongola_desc
  EffectsDescription odearmad_dongola_effects_desc
  Effect TaxCollection 5 
@@ -7516,15 +7602,20 @@ Ancillary oking_astrakhan
  Effect Loyalty -1 
  Effect LocalPopularity -1
 ;------------------------------------------ 
-Ancillary oking_athens 
+Ancillary oking_athens ;Zara
  Type dearmad_her
  Transferable 1
- Image king_athens.tga
+; Image king_athens.tga
+ Image govern_zara.tga
  Description oking_athens_desc
  EffectsDescription oking_athens_effects_desc
- Effect TaxCollection 10
- Effect Loyalty 2
- Effect LocalPopularity 1
+ ;Effect TaxCollection 10
+ ;Effect Loyalty 2
+ ;Effect LocalPopularity 1
+ Effect TaxCollection 5 ;Zara
+ Effect Trading 5 ;Zara
+ Effect Law 1 ;Zara
+ Effect Loyalty -1 ;Zara
 ;------------------------------------------ 
 Ancillary oking_baku 
  Type dearmad_her
@@ -7594,10 +7685,11 @@ Ancillary oking_bergen
  Effect Loyalty 1
  Effect TroopMorale 1
 ;------------------------------------------ 
-Ancillary oking_bryansk 
+Ancillary oking_bryansk ;Chernigov
  Type dearmad_her
  Transferable 1
- Image king_bryansk.tga
+; Image king_bryansk.tga
+ Image govern_chernigov.tga
  Description oking_bryansk_desc
  EffectsDescription oking_bryansk_effects_desc
  Effect TaxCollection 5 
@@ -7624,10 +7716,11 @@ Ancillary oking_canakkale
  EffectsDescription oking_canakkale_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary oking_cardiff 
+Ancillary oking_cardiff ;Bristol
  Type dearmad_her
  Transferable 1
- Image king_cardiff.tga
+; Image king_cardiff.tga
+ Image govern_bristol.tga
  Description oking_cardiff_desc
  EffectsDescription oking_cardiff_effects_desc
  Effect TaxCollection 5
@@ -7652,10 +7745,11 @@ Ancillary oking_diyarbakir
  EffectsDescription oking_diyarbakir_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary oking_eikundarsund 
+Ancillary oking_eikundarsund ;Kirkjuvagr
  Type dearmad_her
  Transferable 1
- Image king_eikundarsund.tga
+; Image king_eikundarsund.tga
+ Image govern_kirkwall.tga
  Description oking_eikundarsund_desc
  EffectsDescription oking_eikundarsund_effects_desc
  Effect TaxCollection 5
@@ -7697,10 +7791,11 @@ Ancillary oking_galway ;Coimbra
  Effect TaxCollection 5
  Effect Loyalty 1
 ;------------------------------------------ 
-Ancillary oking_groningen 
+Ancillary oking_groningen ;Utrecht
  Type dearmad_her
  Transferable 1
- Image king_groningen.tga
+; Image king_groningen.tga
+ Image govern_utrecht.tga
  Description oking_groningen_desc
  EffectsDescription oking_groningen_effects_desc
  Effect TaxCollection 5
@@ -7780,26 +7875,29 @@ Ancillary oking_mecca
  EffectsDescription oking_mecca_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary oking_medina 
+Ancillary oking_medina ;Wasit
  Type dearmad_her
  Transferable 1
- Image king_medina.tga
+; Image king_medina.tga
+ Image govern_wasit.tga
  Description oking_medina_desc
  EffectsDescription oking_medina_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary oking_melilla 
+Ancillary oking_melilla ;Tlemcen
  Type dearmad_her
  Transferable 1
- Image king_melilla.tga
+; Image king_melilla.tga
+ Image govern_tlemcen.tga
  Description oking_melilla_desc
  EffectsDescription oking_melilla_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary oking_mensk 
+Ancillary oking_mensk ; Turov
  Type dearmad_her
  Transferable 1
- Image king_mensk.tga
+; Image king_mensk.tga
+ Image govern_turov.tga
  Description oking_mensk_desc
  EffectsDescription oking_mensk_effects_desc
  Effect TaxCollection 5
@@ -7855,10 +7953,11 @@ Ancillary oking_tmutarakan
  Effect TaxCollection 5
  Effect Piety 1
 ;------------------------------------------ 
-Ancillary oking_salamanca 
+Ancillary oking_salamanca ;Santiago
  Type dearmad_her
  Transferable 1
- Image king_salamanca.tga
+; Image king_salamanca.tga
+ Image govern_santiago.tga
  Description oking_salamanca_desc
  EffectsDescription oking_salamanca_effects_desc
  Effect TaxCollection 5
@@ -7883,10 +7982,11 @@ Ancillary oking_kassa
  EffectsDescription oking_kassa_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary oking_scopia 
+Ancillary oking_scopia ; Tarnovo
  Type dearmad_her
  Transferable 1
- Image king_scopia.tga
+; Image king_scopia.tga
+ Image govern_tarnovo.tga
  Description oking_scopia_desc
  EffectsDescription oking_scopia_effects_desc
  Effect TaxCollection 5
@@ -7911,10 +8011,10 @@ Ancillary oking_sinop
  Effect Trading 5 
  Effect Loyalty -1 
 ;------------------------------------------ 
-Ancillary oking_skara ;Shkoder
+Ancillary oking_skara 
  Type dearmad_her
  Transferable 1
- Image govern_shkoder.tga
+ Image king_skara.tga
  Description oking_skara_desc
  EffectsDescription oking_skara_effects_desc
  Effect TaxCollection 5
@@ -7986,7 +8086,7 @@ Ancillary oking_cologne
  Effect TaxCollection 5
  Effect Piety 2
 ;------------------------------------------ 
-Ancillary oking_yaroslavl 
+Ancillary oking_yaroslavl ;Rostov
  Type dearmad_her
  Transferable 1
  Image king_yaroslavl.tga
@@ -8064,20 +8164,22 @@ Ancillary oking_shiraz
  Effect TaxCollection 5
  
 ;------------------------------------------ 
-Ancillary oking_sharjah 
+Ancillary oking_sharjah ;Leuven
  Type dearmad_her
  Transferable 1
- Image king_sharjah.tga
+; Image king_sharjah.tga
+ Image govern_leuven.tga
  Description oking_sharjah_desc
  EffectsDescription oking_sharjah_effects_desc
  Effect TaxCollection 5
  Effect Loyalty -1
  
 ;------------------------------------------ 
-Ancillary oking_khiva 
+Ancillary oking_khiva ;Poznan
  Type dearmad_her
  Transferable 1
- Image king_khiva.tga
+; Image king_khiva.tga
+ Image govern_poznan.tga
  Description oking_khiva_desc
  EffectsDescription oking_khiva_effects_desc
  Effect TaxCollection 5
@@ -8094,7 +8196,7 @@ Ancillary oking_kazan
  Effect MovementPoints 10
  
 ;------------------------------------------ 
-Ancillary oking_hajr 
+Ancillary oking_hajr ;Ar-Raqqah
  Type dearmad_her
  Transferable 1
  Image king_hajr.tga
@@ -8142,10 +8244,11 @@ Ancillary oking_al-mahdiya
  Effect Farming 1
  
 ;------------------------------------------ 
-Ancillary oking_zhytomyr 
+Ancillary oking_zhytomyr ; Volodymyr
  Type dearmad_her
  Transferable 1
- Image king_zhytomyr.tga
+; Image king_zhytomyr.tga
+ Image govern_volodymyr.tga
  Description oking_zhytomyr_desc
  EffectsDescription oking_zhytomyr_effects_desc
  Effect TaxCollection 5
@@ -8190,7 +8293,7 @@ Ancillary oking_tabriz
  Effect TaxCollection 5
  
 ;------------------------------------------ 
-Ancillary oking_pereyaslav 
+Ancillary oking_pereyaslav ;Poltava
  Type dearmad_her
  Transferable 1
  Image king_pereyaslav.tga
@@ -8350,7 +8453,7 @@ Ancillary oking_ahvaz
  Effect Farming 1
  
 ;------------------------------------------ 
-Ancillary oking_serdobinskaya 
+Ancillary oking_serdobinskaya ;Voronezh
  Type dearmad_her
  Transferable 1
  Image king_serdobinskaya.tga
@@ -8360,10 +8463,11 @@ Ancillary oking_serdobinskaya
  Effect Farming 1
 
 ;------------------------------------------
-Ancillary oking_embi
+Ancillary oking_embi ; Erfurt
  Type dearmad_her
  Transferable 1
- Image king_embi.tga
+; Image king_embi.tga
+ Image govern_erfurt.tga
  Description oking_embi_desc
  EffectsDescription oking_embi_effects_desc
  Effect TaxCollection 5
@@ -8991,6 +9095,7 @@ Trigger crown_spain3
  WhenToTest CharacterTurnEnd 
 
  Condition IsFactionLeader 
+ and I_EventCounter zirids_exist = 0
  and EndedInSettlement 
  and FactionType portugal
  and I_SettlementOwner Leon = portugal
@@ -9010,6 +9115,30 @@ Trigger crown_spain3
  
  AcquireAncillary crown_spain chance 100 
 ;------------------------------------------ 
+Trigger crown_spain3_zirids
+ WhenToTest CharacterTurnEnd 
+
+ Condition IsFactionLeader 
+ and I_EventCounter zirids_exist = 1
+ and EndedInSettlement 
+ and FactionType portugal
+ and I_SettlementOwner Leon = portugal
+ and I_SettlementOwner Toledo = portugal
+ and I_SettlementOwner Pamplona = portugal
+ and I_SettlementOwner Valencia = portugal
+ and I_SettlementOwner Salamanca = portugal
+ and I_SettlementOwner Murcia = portugal
+ and I_SettlementOwner Burgos = portugal
+ and I_SettlementOwner Cordoba = portugal
+ and I_SettlementOwner Granada = portugal
+ and I_SettlementOwner Zaragoza = portugal
+ and I_SettlementOwner Barcelona = portugal
+ and I_SettlementOwner Seville = portugal; Badajoz
+ and I_SettlementOwner Oran = portugal; Seville
+ and not I_WorldwideAncillaryExists crown_spain_2
+ 
+ AcquireAncillary crown_spain_2 chance 100 
+;------------------------------------------ 
 Trigger crown_spain4
  WhenToTest CharacterTurnEnd 
 
@@ -9027,8 +9156,8 @@ Trigger crown_spain4
  and I_SettlementOwner Granada = moors
  and I_SettlementOwner Zaragoza = moors
  and I_SettlementOwner Barcelona = moors
- and I_SettlementOwner Seville = portugal; Badajoz
- and I_SettlementOwner Oran = portugal; Seville
+ and I_SettlementOwner Seville = moors; Badajoz
+ and I_SettlementOwner Oran = moors; Seville
  and not I_WorldwideAncillaryExists crown_spain
  
  AcquireAncillary crown_spain chance 100 
@@ -9050,7 +9179,7 @@ Trigger crown_russia
  and I_SettlementOwner Kiev = russia
  and I_SettlementOwner Tmutarakan = russia
  and I_SettlementOwner Polotsk = russia
- and I_SettlementOwner Moscow = russia
+ ;and I_SettlementOwner Moscow = russia
  and I_SettlementOwner Azaq = russia
  and I_SettlementOwner Sarkel = russia
  and I_SettlementOwner Bulgar = russia
@@ -9078,7 +9207,7 @@ Trigger crown_russia2
  and I_SettlementOwner Kiev = kievan_rus
  and I_SettlementOwner Tmutarakan = kievan_rus
  and I_SettlementOwner Polotsk = kievan_rus
- and I_SettlementOwner Moscow = kievan_rus
+ ;and I_SettlementOwner Moscow = kievan_rus
  and I_SettlementOwner Azaq = kievan_rus
  and I_SettlementOwner Sarkel = kievan_rus
  and I_SettlementOwner Bulgar = kievan_rus
@@ -9106,7 +9235,7 @@ Trigger crown_russia3
  and I_SettlementOwner Kiev = cumans
  and I_SettlementOwner Tmutarakan = cumans
  and I_SettlementOwner Polotsk = cumans
- and I_SettlementOwner Moscow = cumans
+ ;and I_SettlementOwner Moscow = cumans
  and I_SettlementOwner Azaq = cumans
  and I_SettlementOwner Sarkel = cumans
  and I_SettlementOwner Bulgar = cumans
@@ -9125,7 +9254,7 @@ Trigger crown_scandinavia
  and I_SettlementOwner Arhus = denmark
  and I_SettlementOwner Lund = denmark
  and I_SettlementOwner Visby = denmark
- ;and I_SettlementOwner Skara = denmark
+ and I_SettlementOwner Skara = denmark
  ;and I_SettlementOwner Nykoeping = denmark
  and I_SettlementOwner Uppsala = denmark
  and I_SettlementOwner Roskilde = denmark
@@ -9144,7 +9273,7 @@ Trigger crown_scandinavia2
  and I_SettlementOwner Arhus = norway
  and I_SettlementOwner Lund = norway
  and I_SettlementOwner Visby = norway
- ;and I_SettlementOwner Skara = norway
+ and I_SettlementOwner Skara = norway
  ;and I_SettlementOwner Nykoeping = norway
  and I_SettlementOwner Uppsala = norway
  and I_SettlementOwner Roskilde = norway
@@ -9330,7 +9459,7 @@ Trigger crown_poland
  and I_SettlementOwner Kiev = poland
  and I_SettlementOwner Pereyaslav = poland
  and I_SettlementOwner Bryansk = poland
- and I_SettlementOwner Moscow = poland
+ ;and I_SettlementOwner Moscow = poland
  and I_SettlementOwner Smolensk = poland
  and I_SettlementOwner Novgorod = poland
  and I_SettlementOwner Polotsk = poland
@@ -9357,7 +9486,7 @@ Trigger crown_lith
  and I_SettlementOwner Kiev = lithuania
  and I_SettlementOwner Pereyaslav = lithuania
  and I_SettlementOwner Bryansk = lithuania
- and I_SettlementOwner Moscow = lithuania
+ ;and I_SettlementOwner Moscow = lithuania
  and I_SettlementOwner Smolensk = lithuania
  and I_SettlementOwner Novgorod = lithuania
  and I_SettlementOwner Polotsk = lithuania
@@ -10329,6 +10458,7 @@ Trigger crusader_santiago1
 Trigger crusader_santiago2 
  WhenToTest GeneralTakesCrusadeTarget 
  Condition IsCrusade 
+ and I_EventCounter zirids_exist = 0
  and CharFactionType portugal 
  
  AcquireAncillary knight_santiago chance 70 
@@ -10728,6 +10858,7 @@ Trigger knight_santiago_vnv_trigger2
  and GeneralFoughtInCombat 
  and BattleOdds >= 0.5 
  and BattleOdds < 1.5 
+ and I_EventCounter zirids_exist = 0
  and FactionType portugal 
  
  AcquireAncillary knight_santiago chance 40 
@@ -12822,6 +12953,7 @@ Trigger chancellor_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and Attribute Loyalty >= 6
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -12845,6 +12977,7 @@ Trigger chancellor_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and Attribute Loyalty >= 5
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -12993,6 +13126,7 @@ Trigger seneschal_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13010,6 +13144,7 @@ Trigger seneschal_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13101,6 +13236,7 @@ Trigger chamberlain_mongol
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and SettlementBuildingExists >= council_chambers 
@@ -13400,6 +13536,7 @@ Trigger marshall_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids; abbasids
+ and not CharFactionType portugal; zirids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13424,6 +13561,7 @@ Trigger marshall_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids; abbasids
+ and not CharFactionType portugal; zirids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13603,6 +13741,7 @@ Trigger moh_mongol
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13708,6 +13847,7 @@ Trigger steward_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and SettlementBuildingExists >= council_chambers 
  and FactionIsLocal ;for player only
@@ -13724,6 +13864,7 @@ Trigger steward_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and not IsFactionLeader
  and not IsFactionHeir
  and EndedInSettlement
@@ -13849,6 +13990,7 @@ Trigger treasurer_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and IsFactionLeader
@@ -13871,6 +14013,7 @@ Trigger treasurer_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
+ and not CharFactionType portugal ;zirids
  and not IsFactionLeader
  and not IsFactionHeir
  and Treasury > 10000
@@ -22389,6 +22532,27 @@ Trigger conquer_britain22
  AcquireAncillary crown_england_2 chance 100
 
 ;------------------------------------------
+Trigger conquer_britain23 
+ WhenToTest CharacterTurnEnd
+
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner London = georgia
+ and I_SettlementOwner Nottingham = georgia
+ and I_SettlementOwner York = georgia
+ ;and I_SettlementOwner Exeter = georgia
+ and I_SettlementOwner Winchester = georgia
+ and I_SettlementOwner Caernarvon = georgia
+ and I_SettlementOwner Edinburgh = georgia
+ and I_SettlementOwner Aberdeen = georgia
+ and I_SettlementOwner Inverness = georgia
+ and I_SettlementOwner Dublin = georgia
+ and not I_WorldwideAncillaryExists crown_england_2
+ 
+ AcquireAncillary crown_england_2 chance 100
+
+;------------------------------------------
 Trigger conquer_spain 
  WhenToTest CharacterTurnEnd 
 
@@ -22844,6 +23008,29 @@ Trigger conquer_spain20
  and I_SettlementOwner Zaragoza = mongols
  and I_SettlementOwner Barcelona = mongols
  and I_SettlementOwner Seville = mongols
+ and not I_WorldwideAncillaryExists crown_spain_2
+ 
+ AcquireAncillary crown_spain_2 chance 100 
+
+;------------------------------------------ 
+Trigger conquer_spain21 
+ WhenToTest CharacterTurnEnd 
+
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Leon = georgia
+ and I_SettlementOwner Toledo = georgia
+ and I_SettlementOwner Pamplona = georgia
+ and I_SettlementOwner Valencia = georgia
+ and I_SettlementOwner Salamanca = georgia
+ and I_SettlementOwner Murcia = georgia
+ and I_SettlementOwner Burgos = georgia
+ and I_SettlementOwner Cordoba = georgia
+ and I_SettlementOwner Granada = georgia
+ and I_SettlementOwner Zaragoza = georgia
+ and I_SettlementOwner Barcelona = georgia
+ and I_SettlementOwner Seville = georgia
  and not I_WorldwideAncillaryExists crown_spain_2
  
  AcquireAncillary crown_spain_2 chance 100 
@@ -23378,6 +23565,29 @@ Trigger conquer_france23
  AcquireAncillary crown_france_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_france24 
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Paris = georgia
+ and I_SettlementOwner Rheims = georgia
+ and I_SettlementOwner Clermont = georgia
+ and I_SettlementOwner Bordeaux = georgia
+ and I_SettlementOwner Toulouse = georgia
+ and I_SettlementOwner Rennes = georgia
+ and I_SettlementOwner Caen = georgia
+ and I_SettlementOwner Bruges = georgia
+ and I_SettlementOwner Metz = georgia
+ and I_SettlementOwner Dijon = georgia
+ and I_SettlementOwner Lyon = georgia
+ and I_SettlementOwner Marseille = georgia
+ and not FactionwideAncillaryExists crown_france_2
+ 
+ AcquireAncillary crown_france_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_hre 
  WhenToTest CharacterTurnEnd
  
@@ -23907,6 +24117,29 @@ Trigger conquer_hre23
  AcquireAncillary crown_hre_2 chance 100 
 
 ;------------------------------------------ 
+Trigger conquer_hre24 
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Stettin = georgia
+ and I_SettlementOwner Hamburg = georgia
+ and I_SettlementOwner Magdeburg = georgia
+ and I_SettlementOwner Frankfurt = georgia
+ and I_SettlementOwner Metz = georgia
+ and I_SettlementOwner Nuremburg = georgia
+ and I_SettlementOwner Staufen = georgia
+ and I_SettlementOwner Vienna = georgia
+ and I_SettlementOwner Salzburg = georgia
+ and I_SettlementOwner Cologne = georgia
+ and I_SettlementOwner Innsbruck = georgia
+ and I_SettlementOwner Prague = georgia
+ and not FactionwideAncillaryExists crown_hre_2
+ 
+ AcquireAncillary crown_hre_2 chance 100 
+
+;------------------------------------------ 
 Trigger conquer_italy 
  WhenToTest CharacterTurnEnd
  
@@ -24390,6 +24623,29 @@ Trigger conquer_italy21
  AcquireAncillary crown_italy_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_italy22 
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Milan = georgia
+ and I_SettlementOwner Genoa = georgia
+ and I_SettlementOwner Bologna = georgia
+ and I_SettlementOwner Pisa = georgia
+ and I_SettlementOwner georgia = georgia
+ and I_SettlementOwner Ancona = georgia
+ and I_SettlementOwner Naples = georgia
+ and I_SettlementOwner Bari = georgia
+ and I_SettlementOwner Syracuse = georgia
+ and I_SettlementOwner Palermo = georgia
+ and I_SettlementOwner Ajaccio = georgia
+ and I_SettlementOwner Cagliari = georgia
+ and not I_WorldwideAncillaryExists crown_italy_2
+ 
+ AcquireAncillary crown_italy_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_scandinavia
  WhenToTest CharacterTurnEnd
  
@@ -24847,6 +25103,27 @@ Trigger conquer_scandinavia22
  and I_SettlementOwner Oslo = mongols
  and I_SettlementOwner Bergen = mongols
  and I_SettlementOwner Eikundarsund = mongols
+ and not I_WorldwideAncillaryExists crown_scandinavia_2
+ 
+ AcquireAncillary crown_scandinavia_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_scandinavia23
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Arhus = georgia
+ and I_SettlementOwner Lund = georgia
+ and I_SettlementOwner Visby = georgia
+ ;and I_SettlementOwner Skara = georgia
+ ;and I_SettlementOwner Nykoeping = georgia
+ and I_SettlementOwner Uppsala = georgia
+ and I_SettlementOwner Roskilde = georgia
+ and I_SettlementOwner Oslo = georgia
+ and I_SettlementOwner Bergen = georgia
+ and I_SettlementOwner Eikundarsund = georgia
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25330,6 +25607,27 @@ Trigger conquer_hungary23
  and I_SettlementOwner Varad = kwarezm
  and I_SettlementOwner Sofia = kwarezm
  and I_SettlementOwner Scopia = kwarezm
+ and not FactionwideAncillaryExists crown_hungary_2
+ 
+ AcquireAncillary crown_hungary_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_hungary24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Esztergom = georgia
+ and I_SettlementOwner Brasov = georgia
+ and I_SettlementOwner Kassa = georgia
+ and I_SettlementOwner Zagreb = georgia
+ and I_SettlementOwner Baia = georgia
+ and I_SettlementOwner Targoviste = georgia
+ and I_SettlementOwner Belgrade = georgia
+ and I_SettlementOwner Varad = georgia
+ and I_SettlementOwner Sofia = georgia
+ and I_SettlementOwner Scopia = georgia
  and not FactionwideAncillaryExists crown_hungary_2
  
  AcquireAncillary crown_hungary_2 chance 100 
@@ -26012,6 +26310,37 @@ Trigger conquer_turks22
  and I_SettlementOwner Konjikala = hungary
  and I_SettlementOwner Khiva = hungary
  and I_SettlementOwner Urgench = hungary
+ and not I_WorldwideAncillaryExists crown_turks_2
+ 
+ AcquireAncillary crown_turks_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_turks23
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Iconium = georgia
+ and I_SettlementOwner Ankara = georgia
+ and I_SettlementOwner Adana = georgia
+ and I_SettlementOwner Caesarea = georgia
+ and I_SettlementOwner Edessa = georgia
+ and I_SettlementOwner Diyarbakir = georgia
+ and I_SettlementOwner Mosul = georgia
+ and I_SettlementOwner Tabriz = georgia
+ and I_SettlementOwner Kermanshah = georgia
+ and I_SettlementOwner Alamut = georgia
+ and I_SettlementOwner Baghdad = georgia
+ and I_SettlementOwner Ray = georgia
+ and I_SettlementOwner Isfahan = georgia
+ and I_SettlementOwner Yazd = georgia
+ ;and I_SettlementOwner Damghan = georgia
+ and I_SettlementOwner Mashhad = georgia
+ and I_SettlementOwner Gorgan = georgia
+ and I_SettlementOwner Konjikala = georgia
+ and I_SettlementOwner Khiva = georgia
+ and I_SettlementOwner Urgench = georgia
  and not I_WorldwideAncillaryExists crown_turks_2
  
  AcquireAncillary crown_turks_2 chance 100 
@@ -26707,6 +27036,36 @@ Trigger conquer_egypt23
  AcquireAncillary crown_egypt_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_egypt24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Luxor = georgia
+ and I_SettlementOwner Cairo = georgia
+ and I_SettlementOwner Damietta = georgia
+ and I_SettlementOwner Alexandria = georgia
+ and I_SettlementOwner Gaza = georgia
+ and I_SettlementOwner Kerak = georgia
+ and I_SettlementOwner Jerusalem = georgia
+ and I_SettlementOwner Acre = georgia
+ and I_SettlementOwner Tortosa = georgia
+ and I_SettlementOwner Damascus = georgia
+ and I_SettlementOwner Antioch = georgia
+ and I_SettlementOwner Aleppo = georgia
+ and I_SettlementOwner Qarisiya = georgia
+ and I_SettlementOwner Baghdad = georgia
+ and I_SettlementOwner Ahvaz = georgia
+ and I_SettlementOwner Basra = georgia
+ and I_SettlementOwner Mecca = georgia
+ and I_SettlementOwner Medina = georgia
+ and I_SettlementOwner Tayma = georgia
+ and not I_WorldwideAncillaryExists crown_egypt_2
+ 
+ AcquireAncillary crown_egypt_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_lith
  WhenToTest CharacterTurnEnd
  
@@ -27154,6 +27513,26 @@ Trigger conquer_lith23
  and I_SettlementOwner Thorn = mongols
  and I_SettlementOwner Plock = mongols
  and I_SettlementOwner Turku = mongols
+ and not I_WorldwideAncillaryExists crown_lithuania_2
+ 
+ AcquireAncillary crown_lithuania_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_lith24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Palanga = georgia
+ and I_SettlementOwner Vilnius = georgia
+ and I_SettlementOwner Riga = georgia
+ and I_SettlementOwner Reval = georgia
+ and I_SettlementOwner Hrodna = georgia
+ and I_SettlementOwner Pskov = georgia
+ and I_SettlementOwner Thorn = georgia
+ and I_SettlementOwner Plock = georgia
+ and I_SettlementOwner Turku = georgia
  and not I_WorldwideAncillaryExists crown_lithuania_2
  
  AcquireAncillary crown_lithuania_2 chance 100 
@@ -27748,6 +28127,34 @@ Trigger conquer_russia21
  AcquireAncillary crown_russia_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_russia22
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Novgorod = georgia
+ and I_SettlementOwner Yaroslavl = georgia
+ and I_SettlementOwner Smolensk = georgia
+ and I_SettlementOwner Mensk = georgia
+ ;and I_SettlementOwner Ryazan = georgia
+ and I_SettlementOwner Bryansk = georgia
+ and I_SettlementOwner Kiev = georgia
+ and I_SettlementOwner Tmutarakan = georgia
+ and I_SettlementOwner Polotsk = georgia
+ and I_SettlementOwner Pskov = georgia
+ and I_SettlementOwner Moscow = georgia
+ and I_SettlementOwner Azaq = georgia
+ and I_SettlementOwner Sarkel = georgia
+ and I_SettlementOwner Bulgar = georgia
+ and I_SettlementOwner Serdobinskaya = georgia
+ and I_SettlementOwner Murom = georgia
+ ;and I_SettlementOwner Kazan = georgia
+ and not I_WorldwideAncillaryExists crown_russia_2
+ 
+ AcquireAncillary crown_russia_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_poland
  WhenToTest CharacterTurnEnd
  
@@ -28208,6 +28615,26 @@ Trigger conquer_poland23
  AcquireAncillary crown_poland_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_poland24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Stettin = georgia
+ and I_SettlementOwner Wroclaw = georgia
+ and I_SettlementOwner Thorn = georgia
+ and I_SettlementOwner Plock = georgia
+ and I_SettlementOwner Krakow = georgia
+ and I_SettlementOwner Halych = georgia
+ and I_SettlementOwner Zhytomyr = georgia
+ and I_SettlementOwner Pereyaslav = georgia
+ and I_SettlementOwner Bryansk = georgia
+ and not I_WorldwideAncillaryExists crown_poland_2
+ 
+ AcquireAncillary crown_poland_2 chance 100 
+
+;------------------------------------------
 Trigger crown_jerusalem
  WhenToTest CharacterTurnEnd
  
@@ -28383,6 +28810,7 @@ Trigger crown_jerusalem14
  Condition IsFactionLeader 
  and EndedInSettlement
  and SettlementName Jerusalem
+ and I_EventCounter zirids_exist = 0
  and FactionType portugal
  and I_SettlementOwner Jerusalem = portugal
  and not I_WorldwideAncillaryExists crown_jerusalem

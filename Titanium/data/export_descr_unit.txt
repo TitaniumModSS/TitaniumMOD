@@ -1806,7 +1806,7 @@ stat_food        60, 300
 stat_cost        1, 555, 0, 60, 50, 555, 1, 100
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models NE_Bodyguard, NE_Bodyguard, NE_Bodyguard_ug1, NE_Bodyguard_ug1
-ownership        england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem
+ownership        england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem, georgia
 era 0            england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem
 era 1            england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem
 era 2            england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem
@@ -1843,7 +1843,7 @@ stat_food        60, 300
 stat_cost        14, 830, 0, 60, 50, 680, 1, 105
 armour_ug_levels 30, 37, 38, 40
 armour_ug_models NE_Late_Bodyguard, NE_Late_Bodyguard, NE_Late_Bodyguard_ug1, NE_Late_Bodyguard_ug1
-ownership        england, scotland, france, hre, denmark, poland, hungary, jerusalem, norway
+ownership        england, scotland, france, hre, denmark, poland, hungary, jerusalem, norway, georgia
 era 2            england, scotland, france, hre, denmark, poland, hungary, jerusalem, norway
 recruit_priority_offset    55
 
@@ -1951,10 +1951,10 @@ stat_food        60, 300
 stat_cost        1, 530, 0, 60, 50, 530, 1, 100
 armour_ug_levels 9, 14, 23
 armour_ug_models EE_Bodyguard, EE_Bodyguard_ug1, EE_Bodyguard_ug1
-ownership        russia, kievan_rus, slave
-era 0            russia, kievan_rus
-era 1            russia, kievan_rus
-era 2            russia, kievan_rus
+ownership        russia, kievan_rus, georgia, slave
+era 0            russia, kievan_rus, georgia
+era 1            russia, kievan_rus, georgia
+era 2            russia, kievan_rus, georgia
 recruit_priority_offset    20
 
 
@@ -3200,7 +3200,7 @@ stat_food        60, 300
 stat_cost        1, 80, 55, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models Peasant_Archers, Peasant_Archers_ug1
-ownership        england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily, slave
+ownership        england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily, georgia, slave
 era 0            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
 era 1            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
 era 2            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
@@ -3234,10 +3234,10 @@ stat_food        60, 300
 stat_cost        1, 95, 60, 65, 50, 80, 4, 50
 armour_ug_levels 0, 2, 2
 armour_ug_models S_Peasant_Archers, S_Peasant_Archers_ug1, S_Peasant_Archers_ug1
-ownership        byzantium, slave
-era 0            byzantium
-era 1            byzantium
-era 2            byzantium
+ownership        byzantium, georgia, slave
+era 0            byzantium, georgia
+era 1            byzantium, georgia
+era 2            byzantium, georgia
 recruit_priority_offset    -20 
 
 
@@ -4476,10 +4476,10 @@ stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 armour_ug_levels 0, 2
 armour_ug_models Southern_Peasants, southern_Peasants_ug1
-ownership        sicily, byzantium, slave
-era 0            sicily, byzantium
-era 1            sicily, byzantium
-era 2            sicily, byzantium
+ownership        sicily, byzantium, georgia, slave
+era 0            sicily, byzantium, georgia
+era 1            sicily, byzantium, georgia
+era 2            sicily, byzantium, georgia
 recruit_priority_offset    -50 
 
 
@@ -5307,7 +5307,7 @@ stat_food        60, 300
 stat_cost        1, 160, 115, 75, 60, 165, 4, 70
 armour_ug_levels 0, 1, 6, 10
 armour_ug_models Spear_Militia, Spear_Militia_ug1, Spear_Militia_ug2, Spear_Militia_ug3
-ownership        england, norway, scotland, france, hre, denmark, spain, aragon, portugal, teutonic_order, jerusalem, slave 
+ownership        england, norway, scotland, france, hre, denmark, spain, aragon, portugal, teutonic_order, jerusalem, georgia, slave 
 era 0            england, norway, scotland, france, hre, denmark, spain, aragon, portugal, teutonic_order, jerusalem
 recruit_priority_offset    0
 
@@ -14226,7 +14226,7 @@ dictionary       Canons_of_the_Holy_Sepulcher      ; Canons of the Holy Sepulche
 category         infantry
 class            heavy
 voice_type       Heavy
-accent         German
+;accent         German
 banner faction   main_hospitaller
 banner holy      crusade
 soldier          Canons_of_the_Holy_Sepulcher, 40, 0, 1.375, 0.55
@@ -17674,7 +17674,7 @@ stat_food        60, 300
 stat_cost        8, 6000, 125, 75, 60, 6000, 4, 70
 armour_ug_levels 11
 armour_ug_models NE_Bodyguard
-ownership        byzantium, england, scotland, france, hre, denmark, norway, spain, aragon, portugal, sicily, milan, venice, hungary, poland, lithuania, russia, kievan_rus, jerusalem
+ownership        byzantium, england, scotland, france, hre, denmark, norway, spain, aragon, portugal, sicily, milan, venice, hungary, poland, lithuania, russia, kievan_rus, jerusalem, georgia
 info_pic_dir	 RLC
 card_pic_dir	 RLC
 recruit_priority_offset    -75

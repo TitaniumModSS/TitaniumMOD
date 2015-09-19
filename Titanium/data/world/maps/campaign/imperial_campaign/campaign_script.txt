@@ -107,6 +107,7 @@ monitor_event PreFactionTurnStart CampaignDifficulty >= hard
 	link_faction_ai timurids islam
 	link_faction_ai teutonic_order catholic
 	link_faction_ai jerusalem catholic
+	link_faction_ai georgia default
 	link_faction_ai slave slave_faction
 
 	terminate_monitor
@@ -191,6 +192,9 @@ monitor_event PreFactionTurnStart CampaignDifficulty = very_hard
 	if I_IsFactionAIControlled cumans
 		increment_kings_purse cumans 1800
 	end_if
+	if I_IsFactionAIControlled georgia
+		increment_kings_purse georgia 1700
+	end_if
 	if I_IsFactionAIControlled timurids
 		increment_kings_purse timurids 2500
 	end_if
@@ -238,6 +242,7 @@ monitor_event PreFactionTurnStart CampaignDifficulty != medium
 	link_faction_ai timurids default
 	link_faction_ai teutonic_order default
 	link_faction_ai jerusalem default
+	link_faction_ai georgia default
 	link_faction_ai slave default
 
 	if I_IsFactionAIControlled england
@@ -311,6 +316,9 @@ monitor_event PreFactionTurnStart CampaignDifficulty != medium
 	end_if
 	if I_IsFactionAIControlled cumans
 		increment_kings_purse cumans 700
+	end_if
+	if I_IsFactionAIControlled georgia
+		increment_kings_purse georgia 600
 	end_if
 	if I_IsFactionAIControlled timurids
 		increment_kings_purse timurids 300
@@ -403,6 +411,9 @@ monitor_event PreFactionTurnStart
 	if I_IsFactionAIControlled cumans
 		increment_kings_purse cumans 1300
 	end_if
+	if I_IsFactionAIControlled georgia
+		increment_kings_purse georgia 1200
+	end_if
 	if I_IsFactionAIControlled timurids
 		increment_kings_purse timurids 1500
 	end_if
@@ -446,6 +457,7 @@ monitor_event PreFactionTurnStart
 	link_faction_ai timurids islam
 	link_faction_ai teutonic_order catholic
 	link_faction_ai jerusalem catholic
+	link_faction_ai georgia default
 	link_faction_ai slave slave_faction
 
 	if I_IsFactionAIControlled england
@@ -519,6 +531,9 @@ monitor_event PreFactionTurnStart
 	end_if
 	if I_IsFactionAIControlled cumans
 		increment_kings_purse cumans 800
+	end_if
+	if I_IsFactionAIControlled georgia
+		increment_kings_purse georgia 700
 	end_if
 	if I_IsFactionAIControlled timurids
 		increment_kings_purse timurids 500
@@ -614,11 +629,15 @@ monitor_event PreFactionTurnStart
 	declare_counter orleans_exist
 	set_event_counter obotrites_exist 0; For use in other files
 	set_event_counter abbasids_exist 0; For use in other files
+	set_event_counter georgia_exist 0; For use in other files
 	if I_SettlementOwner Damghan = lithuania
 		set_event_counter obotrites_exist 1
 	end_if
 	if I_SettlementOwner Baghdad = timurids
 		set_event_counter abbasids_exist 1
+	end_if
+	if I_SettlementOwner Kutaisi = georgia
+		set_counter georgia_exist 1
 	end_if
 	if I_SettlementOwner Khlynov = france	;Check if Orleans is replacing Khlynov
 		set_counter orleans_exist 1
@@ -899,6 +918,11 @@ end_monitor
 monitor_event PreFactionTurnStart FactionType papal_states
 	set_counter turn_fid 28
 	set_counter christian_faction 1
+end_monitor
+monitor_event PreFactionTurnStart FactionType georgia
+	set_counter turn_fid 29
+	set_counter christian_faction 1
+	set_counter dead_diplomacy_georgia 0
 end_monitor
 
 ;=================== AI Citadel check ===================
@@ -1220,6 +1244,7 @@ end_monitor
 
 ;========= Constantinople JIHAD garrison script =========
 declare_counter conple_jgs
+declare_counter delay_cjgs
 if not I_HotseatEnabled
 and I_LocalFaction byzantium
  set_counter conple_jgs 10
@@ -1252,18 +1277,24 @@ monitor_event Transgression TransgressionName = TC_INSTIGATE_SIEGE
  and I_IsFactionAIControlled byzantium
 
 	campaign_wait 0.1
-
+	
+	if I_CompareCounter delay_cjgs > 9
+		set_counter delay_cjgs 0
+	end_if
 	if I_SettlementUnderSiege Constantinople
+	and I_CompareCounter delay_cjgs < 5
 		console_command create_unit Constantinople "Contaratoi" 3 0 0 0
 		console_command create_unit Constantinople "Toxotae" 4 0 1 0
 	end_if
  end_if
 
 	set_counter conple_jgs 0
+	add_counter delay_cjgs 1
 end_monitor
 
 ;========= Jerusalem JIHAD garrison script =========
 declare_counter jeru_jgs
+declare_counter delay_jjgs
 if not I_HotseatEnabled
 and I_LocalFaction byzantium
  set_counter jeru_jgs 10
@@ -1296,14 +1327,19 @@ monitor_event Transgression TransgressionName = TC_INSTIGATE_SIEGE
  and I_IsFactionAIControlled jerusalem
 
 	campaign_wait 0.1
-
+	
+	if I_CompareCounter delay_jjgs > 9
+		set_counter delay_jjgs 0
+	end_if
 	if I_SettlementUnderSiege Jerusalem
+	and I_CompareCounter delay_jjgs < 5
 		console_command create_unit Jerusalem "Spear Militia" 4 2 3 0
 		console_command create_unit Jerusalem "Peasant Archers" 4 2 2 0
 	end_if
  end_if
 
 	set_counter jeru_jgs 0
+	add_counter delay_jjgs 1
 end_monitor
 
 ;================ Startup Reinforcements ================
@@ -1533,6 +1569,14 @@ monitor_event FactionTurnStart
 		character	Abdullah Al_Abbasi, named character, age 20, x 396, y 90, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Timurid 1 , BiologicalSon 1
 		unit	ME Bodyguard	exp 2 armour 0 weapon_lvl 0
+		end
+	end_if
+	if I_IsFactionAIControlled georgia
+		spawn_army
+		faction georgia
+		character	Basil Bagrationi, named character, age 20, x 400, y 149, family
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1 , Royal_Blood_Georgia 1 
+		unit	NE Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
 	end_if
  end_if
@@ -1913,6 +1957,21 @@ monitor_event FactionTurnStart
 		unit	Desert Archers	exp 0 armour 0 weapon_lvl 0
 		end
 	end_if
+	if I_IsFactionAIControlled georgia
+		spawn_army
+		faction georgia
+		character	Basil Bagrationi, named character, age 20, x 400, y 149, family
+		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , BiologicalSon 1 , Royal_Blood_Georgia 1 
+		unit	NE Bodyguard	exp 2 armour 0 weapon_lvl 0
+		unit	Spear Militia	exp 1 armour 0 weapon_lvl 0
+		unit	Spear Militia	exp 0 armour 0 weapon_lvl 0
+		unit	Spear Militia	exp 0 armour 0 weapon_lvl 0
+		unit	Spear Militia	exp 0 armour 0 weapon_lvl 0
+		unit	Peasant Archers	exp 1 armour 0 weapon_lvl 0
+		unit	Peasant Archers	exp 0 armour 0 weapon_lvl 0
+		unit	Peasant Archers	exp 0 armour 0 weapon_lvl 0
+		end
+	end_if
  end_if
 
  terminate_monitor
@@ -2131,6 +2190,12 @@ monitor_event PreFactionTurnStart FactionType slave
 		spawn_character jerusalem random_name, merchant, age 20, x 331, y 77
 		spawn_character jerusalem random_name, priest, age 20, x 331, y 77
 	end_if
+	if I_IsFactionAIControlled georgia
+	and I_NumberOfSettlements georgia > 1
+		spawn_character georgia random_name, merchant, age 20, x 400, y 145
+		spawn_character georgia random_name, merchant, age 20, x 400, y 145
+		spawn_character georgia random_name, priest, age 20, x 400, y 145
+	end_if
 
 	if I_CompareCounter rmpr_set = 5
 	 terminate_monitor
@@ -2258,6 +2323,10 @@ monitor_event PreFactionTurnStart FactionType slave
 	if I_IsFactionAIControlled jerusalem
 	and I_NumberOfSettlements jerusalem > 1
 		spawn_character jerusalem random_name, merchant, age 20, x 331, y 77
+	end_if
+	if I_IsFactionAIControlled georgia
+	and I_NumberOfSettlements georgia > 1
+		spawn_character georgia random_name, merchant, age 20, x 400, y 145
 	end_if
   set_event_counter Ranked_merchant_reinforcement 0
  end_if
@@ -2723,6 +2792,20 @@ monitor_event PreFactionTurnStart FactionType slave
 			unit	Knights of Jerusalem		exp 1 armour 0 weapon_lvl 0
 		end
 	end_if
+	if I_IsFactionAIControlled georgia
+		spawn_army
+			faction georgia
+			character	Varken Bagrationi, named character, age 30, x 395, y 147, family
+			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1, BiologicalSon 1 , Royal_Blood_Georgia 1 
+			unit	NE Bodyguard		exp 1 armour 1 weapon_lvl 0
+			unit	Spear Militia	exp 1 armour 0 weapon_lvl 0
+			unit	Spear Militia	exp 0 armour 0 weapon_lvl 0
+			unit	Spear Militia	exp 0 armour 0 weapon_lvl 0
+			unit	Peasant Archers	exp 1 armour 0 weapon_lvl 0
+			unit	Peasant Archers	exp 0 armour 0 weapon_lvl 0
+			unit	Peasant Archers	exp 0 armour 0 weapon_lvl 0
+		end
+	end_if
   set_event_counter Turn10Reinforcement 0
  end_if
 
@@ -2758,6 +2841,7 @@ declare_counter heir_timurids
 declare_counter heir_norway
 declare_counter heir_jerusalem
 declare_counter heir_kwarezm
+declare_counter heir_georgia
 declare_counter no_other_heir_spawn
 
 monitor_event FactionTurnStart FactionType slave
@@ -3112,6 +3196,20 @@ monitor_event FactionTurnStart FactionType slave
 		inc_counter no_other_heir_spawn 1
 	end_if
 
+	if I_IsFactionAIControlled georgia
+	and I_NumberOfHeirs georgia < 4
+	and I_CompareCounter heir_georgia < 3
+	and I_NumberOfSettlements georgia >= 1
+		spawn_army
+			faction georgia
+			character	random_name, named character, age 20, x 400, y 149, family
+			traits MilitaryInclination 2 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , Loyal 2 , ReligionStarter 1
+			unit	NE Bodyguard		exp 2 armour 0 weapon_lvl 0
+		end
+		inc_counter heir_georgia 1
+		inc_counter no_other_heir_spawn 1
+	end_if
+
 	if I_IsFactionAIControlled mongols
 	and I_FactionLeaderAttribute mongols Command < 999
 	and I_NumberOfHeirs mongols < 4
@@ -3164,6 +3262,7 @@ declare_counter freeze_mongols
 declare_counter freeze_byzantium
 declare_counter freeze_russia
 declare_counter freeze_kievan_rus
+declare_counter freeze_georgia
 ;--- FES religion catholic 
 declare_counter freeze_venice
 declare_counter freeze_sicily
@@ -3272,6 +3371,9 @@ monitor_event PreFactionTurnStart not FactionType slave
 	if I_CompareCounter turn_fid = 28
 		add_money papal_states -10000
 	end_if
+	if I_CompareCounter turn_fid = 29
+		add_money georgia -10000
+	end_if
 end_monitor
 
 ; Small FactionIncome at their TurnStart - prepare to freeze their recruitment pool if next turn they 'll start with small Treasury
@@ -3362,6 +3464,9 @@ monitor_event FactionTurnStart IsFactionAIControlled
 	end_if
 	if I_CompareCounter turn_fid = 28
 		set_counter freeze_papal_states 1
+	end_if
+	if I_CompareCounter turn_fid = 29
+		set_counter freeze_georgia 1
 	end_if
 end_monitor
 
@@ -3599,6 +3704,14 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 		set_counter freeze_papal_states 0
 		set_event_counter freeze_recr_pool 1
 	end_if
+	if I_CompareCounter turn_fid = 29
+		destroy_units georgia, mercenary_unit
+		add_money georgia -2147478647
+		add_money georgia 2147483647
+		add_money georgia 101
+		set_counter freeze_georgia 0
+		set_event_counter freeze_recr_pool 1
+	end_if
 end_monitor
 
 ;Small AI debt - don't disband their mercenaries
@@ -3807,6 +3920,13 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 		set_counter freeze_papal_states 0
 		set_event_counter freeze_recr_pool 1
 	end_if
+	if I_CompareCounter turn_fid = 29
+		add_money georgia -2147483647
+		add_money georgia 2147483647
+		add_money georgia 101
+		set_counter freeze_georgia 0
+		set_event_counter freeze_recr_pool 1
+	end_if
 end_monitor
 
 ; Poor AI faction
@@ -4011,6 +4131,13 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 		end_if
 		set_counter freeze_papal_states 0
 	end_if
+	if I_CompareCounter turn_fid = 29
+	and I_CompareCounter freeze_georgia = 1
+		if not I_FactionBesieged georgia
+			set_event_counter freeze_recr_pool 1
+		end_if
+		set_counter freeze_georgia 0
+	end_if
 end_monitor
 
 ;========================================================
@@ -4127,6 +4254,12 @@ monitor_event FactionTurnStart
 		if I_CompareCounter turn_fid = 9
 		reveal_tile 169, 146;	Rome
 		end_if
+	end_if
+
+	;georgia orthodox
+	if I_CompareCounter turn_fid = 29
+		reveal_tile 330, 74;	Jerusalem
+		reveal_tile 284, 142;	Constantinople
 	end_if
 
 	;pagan Cumans
@@ -4433,6 +4566,15 @@ monitor_event FactionTurnStart
 		send_character_off_map "Bohemond de_Toulouse"
 		console_command kill_character "Bohemond de_Toulouse"
 	end_if
+	if not I_IsFactionAIControlled georgia
+	and I_CompareCounter turn_fid != 29
+		spawn_character georgia Rati Gelovani, priest, age 30, x 284, y 142 ;	Constantinople
+		send_character_off_map "Rati Gelovani"
+		console_command kill_character "Rati Gelovani"
+		spawn_character georgia Saba Gelovani, priest, age 30, x 330, y 74 ;	Jerusalem
+		send_character_off_map "Saba Gelovani"
+		console_command kill_character "Saba Gelovani"
+	end_if
 	;if not I_IsFactionAIControlled papal_states
 	;and I_CompareCounter turn_fid != 28
 	;end_if
@@ -4469,6 +4611,7 @@ monitor_event GeneralCaptureSettlement SettlementName Jerusalem
 	and not I_SettlementOwner Jerusalem = norway
 	and not I_SettlementOwner Jerusalem = jerusalem
 	and not I_SettlementOwner Jerusalem = papal_states
+	and not I_SettlementOwner Jerusalem = georgia
 		if I_EventCounter lithuania_catholic != 1
 			historic_event jerusalem_christian event/Christians_Capture_Jerusalem.bik
 		end_if
@@ -4627,6 +4770,9 @@ monitor_event FactionNewCapital not IsFactionAIControlled
 	if I_LocalFaction papal_states
   historic_event capital_change false factions { papal_states, }
 	end_if
+	if I_LocalFaction georgia
+  historic_event capital_change false factions { georgia, }
+	end_if
  end_if
 
 	if I_EventCounter DifficultyLevel = 2
@@ -4671,6 +4817,7 @@ end_monitor
 	declare_counter timurids_civil_war_counter
 	declare_counter mongols_civil_war_counter
 	declare_counter cumans_civil_war_counter
+	declare_counter georgia_civil_war_counter
 	;
 	declare_counter moors_king;		1=King died		2=Regent/Usurper died
 	declare_counter turks_king
@@ -4699,6 +4846,7 @@ end_monitor
 	declare_counter timurids_king
 	declare_counter mongols_king
 	declare_counter cumans_king
+	declare_counter georgia_king
 	;
 	declare_counter moors_anarchy;	unlock Civil Unrest notification
 	declare_counter turks_anarchy
@@ -4727,6 +4875,7 @@ end_monitor
 	declare_counter timurids_anarchy
 	declare_counter mongols_anarchy
 	declare_counter cumans_anarchy
+	declare_counter georgia_anarchy
 
 ;***TRACK LEADER DEATHS***
 ;MOORS
@@ -5028,6 +5177,19 @@ end_monitor
 			end_if
 		end_if
 		set_counter cumans_anarchy 1
+	end_monitor
+;GEORGIA
+	monitor_event CeasedFactionLeader FactionType georgia
+		if I_IsFactionAIControlled georgia
+			if I_FactionLeaderTrait georgia FactionUsurper < 1
+			and I_FactionLeaderTrait georgia FactionRegent < 1
+				set_counter georgia_king 1
+			end_if
+			if I_FactionLeaderTrait england Factionleader < 1
+				set_counter georgia_king 2
+			end_if
+		end_if
+		set_counter georgia_anarchy 1
 	end_monitor
 ;TIMURIDS/ABBASIDS
 	monitor_event CeasedFactionLeader FactionType timurids
@@ -7275,6 +7437,104 @@ monitor_event FactionTurnStart not IsFactionAIControlled
 		end_if
 		set_counter cumans_king 0
 	end_if
+;GEORGIA
+	if I_CompareCounter turn_fid = 29; check only once per round
+		if I_FactionLeaderTrait georgia Civil_Unrest >= 1
+		and I_CompareCounter georgia_civil_war_counter < 1
+		and I_EventCounter is_the_ai = 0
+			if I_CompareCounter georgia_anarchy = 1
+				historic_event civil_unrest { georgia, }
+			end_if
+			if I_FactionLeaderTrait georgia Civil_Unrest = 1
+			historic_event civil_unrest1 factions { georgia, }
+			end_if
+			if I_FactionLeaderTrait georgia Civil_Unrest = 2
+			historic_event civil_unrest2 factions { georgia, }
+			end_if
+			if I_FactionLeaderTrait georgia Civil_Unrest = 3
+			historic_event civil_unrest3 factions { georgia, }
+			end_if
+		end_if
+		set_counter georgia_anarchy 0
+		if I_CompareCounter georgia_king = 0
+			if I_CompareCounter georgia_civil_war_counter = 1
+			and I_FactionLeaderTrait georgia Offensive_To_Nobles < 1
+				set_counter georgia_civil_war_counter 0
+				historic_event georgia_civil_war_end
+			end_if
+			if I_CompareCounter georgia_civil_war_counter = 2
+				if I_FactionLeaderTrait georgia Offensive_To_Nobles = 2
+					set_counter georgia_civil_war_counter 3
+				end_if
+				if I_FactionLeaderTrait georgia Offensive_To_Nobles = 1
+					historic_event georgia_civil_war_continue2 factions { georgia, }
+				end_if
+				if I_FactionLeaderTrait georgia Offensive_To_Nobles < 1
+					set_counter georgia_civil_war_counter 0
+					historic_event georgia_civil_war_end
+				end_if
+			end_if
+			if I_CompareCounter georgia_civil_war_counter = 3
+				if I_FactionLeaderTrait georgia FactionUsurper < 1
+				and I_FactionLeaderTrait georgia Offensive_To_Nobles = 1
+					set_counter georgia_civil_war_counter 2
+					historic_event georgia_civil_war_continue2 factions { georgia, }
+				end_if
+				if I_FactionLeaderTrait georgia FactionUsurper < 1
+				and I_FactionLeaderTrait georgia Offensive_To_Nobles < 1
+					set_counter georgia_civil_war_counter 0
+					historic_event georgia_civil_war_end_usurper
+				end_if
+			end_if
+			if I_CompareCounter georgia_civil_war_counter = 0
+			and I_FactionLeaderTrait georgia Offensive_To_Nobles = 2
+				historic_event georgia_civil_war_start
+				set_counter georgia_civil_war_counter 1
+			end_if
+		end_if
+	end_if
+	if I_CompareCounter georgia_king >= 1
+	and I_EventCounter is_the_ai = 0
+		if I_FactionLeaderTrait georgia FactionUsurper < 1
+		and I_FactionLeaderTrait georgia FactionRegent < 1
+			if I_CompareCounter georgia_civil_war_counter < 1
+			and I_CompareCounter georgia_king = 1
+				historic_event georgia_king_event
+			end_if
+			if I_CompareCounter georgia_civil_war_counter < 1
+			and I_CompareCounter georgia_king = 2
+				historic_event georgia_king_event2
+			end_if
+			if I_CompareCounter georgia_civil_war_counter >= 1
+				historic_event georgia_civil_war_end_king
+				set_counter georgia_civil_war_counter 0
+			end_if
+		end_if
+		if I_FactionLeaderTrait georgia FactionRegent >= 1
+			if I_CompareCounter georgia_civil_war_counter < 1
+			and I_CompareCounter georgia_king = 1
+				historic_event georgia_regent_event
+			end_if
+			if I_CompareCounter georgia_civil_war_counter < 1
+			and I_CompareCounter georgia_king = 2
+				historic_event georgia_regent_event2
+			end_if
+			if I_CompareCounter georgia_civil_war_counter >= 1
+				historic_event georgia_civil_war_end_regent
+				set_counter georgia_civil_war_counter 0
+			end_if
+		end_if
+		if I_FactionLeaderTrait georgia FactionUsurper >= 1
+			if I_CompareCounter georgia_civil_war_counter >= 1
+				historic_event georgia_civil_war_continue
+			end_if
+			if I_CompareCounter georgia_civil_war_counter < 1
+				historic_event georgia_civil_war
+				set_counter georgia_civil_war_counter 3
+			end_if
+		end_if
+		set_counter georgia_king 0
+	end_if
 ;TIMURIDS/ABBASIDS
 	if I_CompareCounter turn_fid = 3; check only once per round
 		if I_FactionLeaderTrait timurids Civil_Unrest >= 1
@@ -7631,6 +7891,9 @@ monitor_event EventCounter EventCounterType HS_Great_Fair
 	if I_LocalFaction jerusalem
   historic_event great_fair true factions { jerusalem, }
 	end_if
+	if I_LocalFaction georgia
+  historic_event great_fair true factions { georgia, }
+	end_if
 	if I_LocalFaction papal_states
   historic_event great_fair true factions { papal_states, }
 	end_if
@@ -7767,6 +8030,9 @@ monitor_event EventCounter EventCounterType HS_Great_Tourney
 	if I_LocalFaction jerusalem
   historic_event great_tourney true factions { jerusalem, }
 	end_if
+	if I_LocalFaction georgia
+  historic_event great_tourney true factions { georgia, }
+	end_if
 	if I_LocalFaction papal_states
   historic_event great_tourney true factions { papal_states, }
 	end_if
@@ -7901,6 +8167,9 @@ monitor_event EventCounter EventCounterType HS_Troubadours_Event
 	if I_LocalFaction jerusalem
   historic_event troubadours_event true factions { jerusalem, }
 	end_if
+	if I_LocalFaction georgia
+  historic_event troubadours_event true factions { georgia, }
+	end_if
 	if I_LocalFaction papal_states
   historic_event troubadours_event true factions { papal_states, }
 	end_if
@@ -7993,6 +8262,9 @@ monitor_event EventCounter EventCounterType HS_Great_Council
 	end_if
 	if I_LocalFaction jerusalem
   historic_event great_council true factions { jerusalem, }
+	end_if
+	if I_LocalFaction georgia
+  historic_event great_council true factions { georgia, }
 	end_if
 	if I_LocalFaction papal_states
   historic_event great_council true factions { papal_states, }
@@ -8226,6 +8498,9 @@ monitor_event EventCounter EventCounterType HS_Pirates
 	end_if
 	if I_LocalFaction jerusalem
   historic_event pirates true factions { jerusalem, }
+	end_if
+	if I_LocalFaction georgia
+  historic_event pirates true factions { georgia, }
 	end_if
 	if I_LocalFaction papal_states
   historic_event pirates true factions { papal_states, }
@@ -33098,7 +33373,7 @@ end_monitor
 ;-------------------------------- Loan Script -------------------------------------;
 ;==================================================================================;
 ;Counters
-set_event_counter italian_bankers_event 0
+	set_event_counter italian_bankers_event 0
 	declare_counter loan_refund_amount
 	declare_counter finances_panel_open
 	declare_counter finances_panel_open2
@@ -33131,6 +33406,7 @@ set_event_counter italian_bankers_event 0
 	declare_counter loan_refund_amount_egypt
 	declare_counter loan_refund_amount_moors
 	declare_counter loan_refund_amount_abbasids
+	declare_counter loan_refund_amount_georgia
 
 ;Italian Bankers Historical Event, allow larger loans
 add_events
@@ -33971,6 +34247,36 @@ monitor_event FactionTurnEnd not IsFactionAIControlled
 			set_counter loan_refund_amount_abbasids 5
 			set_counter loan_refund_amount 0
 		end_if
+	;Georgia
+		if I_CompareCounter loan_refund_amount = 0
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount_georgia 0
+		end_if
+		if I_CompareCounter loan_refund_amount = 1
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount_georgia 1
+			set_counter loan_refund_amount 0
+		end_if
+		if I_CompareCounter loan_refund_amount = 2
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount_georgia 2
+			set_counter loan_refund_amount 0
+		end_if
+		if I_CompareCounter loan_refund_amount = 3
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount_georgia 3
+			set_counter loan_refund_amount 0
+		end_if
+		if I_CompareCounter loan_refund_amount = 4
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount_georgia 4
+			set_counter loan_refund_amount 0
+		end_if
+		if I_CompareCounter loan_refund_amount = 5
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount_georgia 5
+			set_counter loan_refund_amount 0
+		end_if
 	end_if
 	end_monitor
 ;End of Hotseat Compatibility
@@ -34656,6 +34962,31 @@ monitor_event PreFactionTurnStart FactionIsLocal
 		and I_CompareCounter turn_fid = 3
 			set_counter loan_refund_amount 5
 		end_if
+	;Georgia
+		if I_CompareCounter loan_refund_amount_georgia = 0
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount 0
+		end_if
+		if I_CompareCounter loan_refund_amount_georgia = 1
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount 1
+		end_if
+		if I_CompareCounter loan_refund_amount_georgia = 2
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount 2
+		end_if
+		if I_CompareCounter loan_refund_amount_georgia = 3
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount 3
+		end_if
+		if I_CompareCounter loan_refund_amount_georgia = 4
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount 4
+		end_if
+		if I_CompareCounter loan_refund_amount_georgia = 5
+		and I_CompareCounter turn_fid = 29
+			set_counter loan_refund_amount 5
+		end_if
 	end_if
 ;End of Hotseat Compatibility
 
@@ -34821,6 +35152,9 @@ monitor_event ButtonPressed TrueCondition
 				if I_LocalFaction teutonic_order
 					historic_event loan_offer true factions { teutonic_order, }
 				end_if
+				if I_LocalFaction georgia
+					historic_event loan_offer true factions { georgia, }
+				end_if
 			end_if
 			set_counter finances_panel_open 2
 		end_if
@@ -34910,6 +35244,9 @@ monitor_event ButtonPressed TrueCondition
 				end_if
 				if I_LocalFaction teutonic_order
 					historic_event loan_repay true factions { teutonic_order, }
+				end_if
+				if I_LocalFaction georgia
+					historic_event loan_repay true factions { georgia, }
 				end_if
 			end_if
 			set_counter finances_panel_open 2
@@ -35001,6 +35338,9 @@ monitor_event ButtonPressed TrueCondition
 				end_if
 				if I_LocalFaction teutonic_order
 					historic_event loan_all_fail factions { teutonic_order, }
+				end_if
+				if I_LocalFaction georgia
+					historic_event loan_all_fail factions { georgia, }
 				end_if
 			end_if
 			play_sound_event loan_failure
@@ -35094,6 +35434,9 @@ monitor_event ButtonPressed TrueCondition
 				end_if
 				if I_LocalFaction teutonic_order
 					historic_event loan_denied true factions { teutonic_order, }
+				end_if
+				if I_LocalFaction georgia
+					historic_event loan_denied true factions { georgia, }
 				end_if
 			end_if
 			play_sound_event loan_failure
@@ -35189,6 +35532,9 @@ monitor_event ButtonPressed TrueCondition
 				if I_LocalFaction teutonic_order
 					historic_event loan_offer true factions { teutonic_order, }
 				end_if
+				if I_LocalFaction georgia
+					historic_event loan_offer true factions { georgia, }
+				end_if
 			end_if
 			set_counter finances_panel_open 2
 		end_if
@@ -35278,6 +35624,9 @@ monitor_event ButtonPressed TrueCondition
 				end_if
 				if I_LocalFaction teutonic_order
 					historic_event loan_repay true factions { teutonic_order, }
+				end_if
+				if I_LocalFaction georgia
+					historic_event loan_repay true factions { georgia, }
 				end_if
 			end_if
 			set_counter finances_panel_open 2
@@ -35369,6 +35718,9 @@ monitor_event ButtonPressed TrueCondition
 				end_if
 				if I_LocalFaction teutonic_order
 					historic_event loan_all_fail factions { teutonic_order, }
+				end_if
+				if I_LocalFaction georgia
+					historic_event loan_all_fail factions { georgia, }
 				end_if
 			end_if
 			play_sound_event loan_failure
@@ -35463,6 +35815,9 @@ monitor_event ButtonPressed TrueCondition
 				if I_LocalFaction teutonic_order
 					historic_event loan_denied true factions { teutonic_order, }
 				end_if
+				if I_LocalFaction georgia
+					historic_event loan_denied true factions { georgia, }
+				end_if
 			end_if
 			play_sound_event loan_failure
 			set_counter finances_panel_open 2
@@ -35553,6 +35908,9 @@ monitor_event ButtonPressed TrueCondition
 			end_if
 			if I_LocalFaction teutonic_order
 				historic_event loan_bankers_afraid factions { teutonic_order, }
+			end_if
+			if I_LocalFaction georgia
+				historic_event loan_bankers_afraid factions { georgia, }
 			end_if
 		end_if
 		play_sound_event loan_failure
@@ -35652,6 +36010,9 @@ monitor_event EventCounter EventCounterType loan_offer_accepted
 				if I_LocalFaction teutonic_order
 					historic_event loan_offer1 true factions { teutonic_order, }
 				end_if
+				if I_LocalFaction georgia
+					historic_event loan_offer1 true factions { georgia, }
+				end_if
 			end_if
 			play_sound_event loan_popup
 		end_if
@@ -35744,6 +36105,9 @@ monitor_event EventCounter EventCounterType loan_offer_accepted
 				if I_LocalFaction teutonic_order
 					historic_event loan_offer2 true factions { teutonic_order, }
 				end_if
+				if I_LocalFaction georgia
+					historic_event loan_offer2 true factions { georgia, }
+				end_if
 			end_if
 			play_sound_event loan_popup
 		end_if
@@ -35834,6 +36198,9 @@ monitor_event EventCounter EventCounterType loan_offer_accepted
 				end_if
 				if I_LocalFaction teutonic_order
 					historic_event loan_offer1 true factions { teutonic_order, }
+				end_if
+				if I_LocalFaction georgia
+					historic_event loan_offer1 true factions { georgia, }
 				end_if
 			end_if
 			play_sound_event loan_popup
@@ -35930,6 +36297,9 @@ monitor_event EventCounter EventCounterType loan_offer_declined
 			end_if
 			if I_LocalFaction teutonic_order
 				historic_event loan_repay true factions { teutonic_order, }
+			end_if
+			if I_LocalFaction georgia
+				historic_event loan_repay true factions { georgia, }
 			end_if
 		end_if
 	end_if
@@ -36069,6 +36439,9 @@ monitor_event EventCounter EventCounterType loan_repay_accepted
 			if I_LocalFaction teutonic_order
 				historic_event loan_repay1b true factions { teutonic_order, }
 			end_if
+			if I_LocalFaction georgia
+				historic_event loan_repay1b true factions { georgia, }
+			end_if
 		end_if
 end_monitor
 monitor_event EventCounter EventCounterType loan_repay_declined
@@ -36169,6 +36542,9 @@ monitor_event FactionTurnStart FactionIsLocal
 		end_if
 		if I_LocalFaction teutonic_order
 			historic_event loan_repay1b true factions { teutonic_order, }
+		end_if
+		if I_LocalFaction georgia
+			historic_event loan_repay1b true factions { georgia, }
 		end_if
 	end_if
 end_monitor
@@ -36282,6 +36658,9 @@ monitor_event EventCounter EventCounterType loan_denied_accepted
 				if I_LocalFaction teutonic_order
 					historic_event loan_denied2 factions { teutonic_order, }
 				end_if
+				if I_LocalFaction georgia
+					historic_event loan_denied2 factions { georgia, }
+				end_if
 			end_if
 			inc_counter loan_refund_amount -1
 			play_sound_event loan_dread_sfx
@@ -36389,6 +36768,9 @@ monitor_event EventCounter EventCounterType loan_denied_accepted
 				if I_LocalFaction teutonic_order
 					historic_event loan_denied1 factions { teutonic_order, }
 				end_if
+				if I_LocalFaction georgia
+					historic_event loan_denied1 factions { georgia, }
+				end_if
 			end_if
 			play_sound_event loan_dread_fail_sfx
 		end_if
@@ -36447,6 +36829,7 @@ declare_counter turmoil_russia
 declare_counter turmoil_lithuania
 declare_counter turmoil_cumans
 declare_counter turmoil_mongols
+declare_counter turmoil_georgia
 ;
 declare_counter conversion_paris
 declare_counter conversion_bordeaux
@@ -36654,6 +37037,7 @@ declare_counter conversion_tunis
 			add_settlement_turmoil Trebizond 5
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Kutaisi
+	and not FactionType georgia
 			add_settlement_turmoil Kutaisi 5
 	end_monitor
 ;LEVANT
@@ -44732,6 +45116,303 @@ declare_counter conversion_tunis
 			end_if
 		end_if
 
+	;GEORGIA
+		if I_CompareCounter turmoil_georgia = 0
+			if I_FactionLeaderTrait georgia Civil_Unrest >= 2
+			and RandomPercent >= 50
+				set_counter turmoil_georgia 1
+			end_if
+			if I_FactionLeaderTrait georgia Offensive_To_Nobles = 2
+				set_counter turmoil_georgia 1
+			end_if
+		end_if
+		if I_CompareCounter turmoil_georgia = -1
+		and I_FactionLeaderTrait georgia Civil_Unrest < 2
+		and I_FactionLeaderTrait georgia Offensive_To_Nobles < 2
+			set_counter turmoil_georgia 0
+		end_if
+		if I_CompareCounter turmoil_georgia = 1
+			set_counter turmoil_georgia -1
+		;WEST EUROPE
+			if I_SettlementOwner Paris = georgia
+			add_settlement_turmoil Paris 8
+			set_counter conversion_paris 8
+			set_settlement_founding_conversion_rate Paris 0.05
+			end_if
+			if I_SettlementOwner Bordeaux = georgia
+			add_settlement_turmoil Bordeaux 5
+			set_counter conversion_bordeaux 5
+			set_settlement_founding_conversion_rate Bordeaux 0.05
+			end_if
+			if I_SettlementOwner Toulouse = georgia
+			add_settlement_turmoil Toulouse 6
+			set_counter conversion_toulouse 6
+			set_settlement_founding_conversion_rate Toulouse 0.05
+			end_if
+			if I_SettlementOwner Khlynov = georgia
+			and I_CompareCounter orleans_exist = 1
+			add_settlement_turmoil Khlynov 5
+			set_counter conversion_orleans 5
+			set_settlement_founding_conversion_rate Khlynov 0.05
+			end_if
+		;BRITISH ISLES
+			if I_SettlementOwner London = georgia
+			add_settlement_turmoil London 8
+			set_counter conversion_london 8
+			set_settlement_founding_conversion_rate London 0.05
+			end_if
+			if I_SettlementOwner Edinburgh = georgia
+			add_settlement_turmoil Edinburgh 8
+			set_counter conversion_edinburgh 8
+			set_settlement_founding_conversion_rate Edinburgh 0.05
+			end_if
+		;CENTRAL EUROPE
+			if I_SettlementOwner Frankfurt = georgia
+			add_settlement_turmoil Frankfurt 8
+			set_counter conversion_frankfurt 8
+			set_settlement_founding_conversion_rate Frankfurt 0.05
+			end_if
+			if I_SettlementOwner Bern = georgia
+			add_settlement_turmoil Bern 6
+			set_counter conversion_bern 6
+			set_settlement_founding_conversion_rate Bern 0.05
+			end_if
+			if I_SettlementOwner Antwerp = georgia
+			add_settlement_turmoil Antwerp 5
+			set_counter conversion_antwerp 5
+			set_settlement_founding_conversion_rate Antwerp 0.05
+			end_if
+			if I_SettlementOwner Vienna = georgia
+			add_settlement_turmoil Vienna 6
+			set_counter conversion_vienna 6
+			set_settlement_founding_conversion_rate Hamburg 0.05
+			end_if
+			if I_SettlementOwner Hamburg = georgia
+			add_settlement_turmoil Hamburg 4
+			set_counter conversion_hamburg 4
+			set_settlement_founding_conversion_rate Hamburg 0.05
+			end_if
+			if I_SettlementOwner Nuremburg = georgia
+			add_settlement_turmoil Nuremburg 4
+			set_counter conversion_nuremburg 4
+			set_settlement_founding_conversion_rate Nuremburg 0.05
+			end_if
+			if I_SettlementOwner Cologne = georgia
+			add_settlement_turmoil Cologne 4
+			set_counter conversion_cologne 4
+			set_settlement_founding_conversion_rate Cologne 0.05
+			end_if
+		;ITALY
+			if I_SettlementOwner Milan = georgia
+			add_settlement_turmoil Milan 6
+			set_counter conversion_milan 6
+			set_settlement_founding_conversion_rate Milan 0.05
+			end_if
+			if I_SettlementOwner Genoa = georgia
+			add_settlement_turmoil Genoa 8
+			set_counter conversion_genoa 8
+			set_settlement_founding_conversion_rate Genoa 0.05
+			end_if
+			if I_SettlementOwner Venice = georgia
+			add_settlement_turmoil Venice 8
+			set_counter conversion_venice 8
+			set_settlement_founding_conversion_rate Venice 0.05
+			end_if
+			if I_SettlementOwner Rome = georgia
+			add_settlement_turmoil Rome 6
+			set_counter conversion_rome 6
+			set_settlement_founding_conversion_rate Rome 0.05
+			end_if
+			if I_SettlementOwner Palermo = georgia
+			add_settlement_turmoil Palermo 8
+			set_counter conversion_palermo 8
+			set_settlement_founding_conversion_rate Palermo 0.05
+			end_if
+			if I_SettlementOwner Nykoeping = georgia
+			and I_CompareCounter orleans_exist = 1
+			add_settlement_turmoil Nykoeping 6
+			set_counter conversion_florence 6
+			set_settlement_founding_conversion_rate Nykoeping 0.05
+			end_if
+		;IBERIA
+			if I_SettlementOwner Toledo = georgia
+			add_settlement_turmoil Toledo 8
+			set_counter conversion_toledo 8
+			set_settlement_founding_conversion_rate Toledo 0.05
+			end_if
+			if I_SettlementOwner Oporto = georgia
+			add_settlement_turmoil Oporto 8
+			set_counter conversion_oporto 8
+			set_settlement_founding_conversion_rate Oporto 0.05
+			end_if
+			if I_SettlementOwner Zaragoza = georgia
+			add_settlement_turmoil Zaragoza 8
+			set_counter conversion_zaragoza 8
+			set_settlement_founding_conversion_rate Zaragoza 0.05
+			end_if
+			if I_SettlementOwner Granada = georgia
+			add_settlement_turmoil Granada 8
+			set_counter conversion_granada 8
+			set_settlement_founding_conversion_rate Granada 0.05
+			end_if
+		;EASTERN EUROPE
+			if I_SettlementOwner Prague = georgia
+			add_settlement_turmoil Prague 6
+			set_counter conversion_prague 6
+			set_settlement_founding_conversion_rate Prague 0.05
+			end_if
+			if I_SettlementOwner Esztergom = georgia
+			add_settlement_turmoil Esztergom 8
+			set_counter conversion_esztergom 8
+			set_settlement_founding_conversion_rate Esztergom 0.05
+			end_if
+			if I_SettlementOwner Krakow = georgia
+			add_settlement_turmoil Krakow 8
+			set_counter conversion_krakow 8
+			set_settlement_founding_conversion_rate Krakow 0.05
+			end_if
+			if I_SettlementOwner Vilnius = georgia
+			add_settlement_turmoil Vilnius 8
+			set_counter conversion_vilnius 8
+			set_settlement_founding_conversion_rate Vilnius 0.05
+			end_if
+		;SCANDINAVIA
+			if I_SettlementOwner Arhus = georgia
+			add_settlement_turmoil Arhus 8
+			set_counter conversion_arhus 8
+			set_settlement_founding_conversion_rate Arhus 0.05
+			end_if
+			if I_SettlementOwner Bergen = georgia
+			add_settlement_turmoil Bergen 8
+			set_counter conversion_bergen 8
+			set_settlement_founding_conversion_rate Bergen 0.05
+			end_if
+			if I_SettlementOwner Kalmar = georgia
+			add_settlement_turmoil Kalmar 5
+			set_counter conversion_kalmar 5
+			set_settlement_founding_conversion_rate Kalmar 0.05
+			end_if
+		;RUSLAND
+			if I_SettlementOwner Novgorod = georgia
+			add_settlement_turmoil Novgorod 8
+			set_counter conversion_novgorod 8
+			set_settlement_founding_conversion_rate Novgorod 0.05
+			end_if
+			if I_SettlementOwner Kiev = georgia
+			add_settlement_turmoil Kiev 8
+			set_counter conversion_kiev 8
+			set_settlement_founding_conversion_rate Kiev 0.05
+			end_if
+		;BALKANS
+			if I_SettlementOwner Constantinople = georgia
+			add_settlement_turmoil Constantinople 10
+			set_counter conversion_constantinople 10
+			set_settlement_founding_conversion_rate Constantinople 0.05
+			end_if
+			if I_SettlementOwner Ryazan = georgia
+			and I_CompareCounter orleans_exist = 1
+			add_settlement_turmoil Ryazan 5
+			set_counter conversion_ras 5
+			set_settlement_founding_conversion_rate Ryazan 0.05
+			end_if
+			if I_SettlementOwner Sofia = georgia
+			add_settlement_turmoil Sofia 5
+			set_counter conversion_sofia 5
+			set_settlement_founding_conversion_rate Sofia 0.05
+			end_if
+			if I_SettlementOwner Zagreb = georgia
+			add_settlement_turmoil Zagreb 5
+			set_counter conversion_zagreb 5
+			set_settlement_founding_conversion_rate Zagreb 0.05
+			end_if
+			if I_SettlementOwner Arta = georgia
+			add_settlement_turmoil Arta 5
+			set_counter conversion_arta 5
+			set_settlement_founding_conversion_rate Arta 0.05
+			end_if
+		;ANATOLIA-CAUCASUS
+			if I_SettlementOwner Ankara = georgia
+			add_settlement_turmoil Ankara 6
+			set_counter conversion_ankara 6
+			set_settlement_founding_conversion_rate Ankara 0.05
+			end_if
+			if I_SettlementOwner Iconium = georgia
+			add_settlement_turmoil Iconium 8
+			set_counter conversion_iconium 8
+			set_settlement_founding_conversion_rate Iconium 0.05
+			end_if
+			if I_SettlementOwner Trebizond = georgia
+			add_settlement_turmoil Trebizond 5
+			set_counter conversion_trebizond 5
+			set_settlement_founding_conversion_rate Trebizond 0.05
+			end_if
+			if I_SettlementOwner Kutaisi = georgia
+			add_settlement_turmoil Kutaisi 5
+			set_counter conversion_kutaisi 5
+			set_settlement_founding_conversion_rate Kutaisi 0.05
+			end_if
+		;LEVANT
+			if I_SettlementOwner Jerusalem = georgia
+			add_settlement_turmoil Jerusalem 8
+			set_counter conversion_jerusalem 8
+			set_settlement_founding_conversion_rate Arta 0.05
+			end_if
+			if I_SettlementOwner Damascus = georgia
+			add_settlement_turmoil Damascus 6
+			set_counter conversion_damascus 6
+			set_settlement_founding_conversion_rate Damascus 0.05
+			end_if
+		;MESOPOTAMIA
+			if I_SettlementOwner Baghdad = georgia
+			add_settlement_turmoil Baghdad 8
+			set_counter conversion_baghdad 8
+			set_settlement_founding_conversion_rate Baghdad 0.05
+			end_if
+			if I_SettlementOwner Mosul = georgia
+			add_settlement_turmoil Mosul 5
+			set_counter conversion_mosul 5
+			set_settlement_founding_conversion_rate Mosul 0.05
+			end_if
+		;PERSIA-IRANIA
+			if I_SettlementOwner Ray = georgia
+			add_settlement_turmoil Ray 5
+			set_counter conversion_ray 5
+			set_settlement_founding_conversion_rate Ray 0.05
+			end_if
+			if I_SettlementOwner Urgench = georgia
+			add_settlement_turmoil Urgench 8
+			set_counter conversion_urgench 8
+			set_settlement_founding_conversion_rate Urgench 0.05
+			end_if
+			if I_SettlementOwner Isfahan = georgia
+			add_settlement_turmoil Isfahan 6
+			set_counter conversion_isfahan 6
+			set_settlement_founding_conversion_rate Isfahan 0.05
+			end_if
+		;ARABIA
+			if I_SettlementOwner Mecca = georgia
+			add_settlement_turmoil Mecca 6
+			set_counter conversion_mecca 6
+			set_settlement_founding_conversion_rate Mecca 0.05
+			end_if
+		;NORTH AFRICA
+			if I_SettlementOwner Marrakesh = georgia
+			add_settlement_turmoil Marrakesh 6
+			set_counter conversion_marrakesh 6
+			set_settlement_founding_conversion_rate Marrakesh 0.05
+			end_if
+			if I_SettlementOwner Cairo = georgia
+			add_settlement_turmoil Cairo 8
+			set_counter conversion_cairo 8
+			set_settlement_founding_conversion_rate Cairo 0.05
+			end_if
+			if I_SettlementOwner Tunis = georgia
+			add_settlement_turmoil Tunis 5
+			set_counter conversion_tunis 5
+			set_settlement_founding_conversion_rate Tunis 0.05
+			end_if
+		end_if
+
 	;Reset conversion rates
 		if I_CompareCounter conversion_paris > 0
 			inc_counter conversion_paris -1
@@ -45391,6 +46072,14 @@ end_monitor
 	set_counter basra_riot 0
 	declare_counter abbasids_emerge
 	set_counter abbasids_emerge 0
+	
+;Georgia
+	declare_counter kutaisi_riot
+	set_counter kutaisi_riot 0
+	declare_counter tbilisi_riot
+	set_counter tbilisi_riot 0
+	declare_counter georgia_emerge
+	set_counter georgia_emerge 0
 ;
 ;---------------------------------------------------------------------------------------
 ;-------Check if settlements are rioting and factions meet conditions to re-emerge--------
@@ -46125,6 +46814,24 @@ end_monitor
 	    set_counter faction_emerge_id 26
 	end_monitor
 
+;Georgia
+	monitor_event CityRiots SettlementName Kutaisi
+	  and I_NumberOfSettlements georgia = 0
+	  and I_EventCounter georgia_exist = 1
+	  and I_IsFactionAIControlled georgia
+	  and not I_SettlementOwner Kutaisi = georgia
+	    set_counter kutaisi_riot 1
+	    set_counter faction_emerge_id 27
+	end_monitor
+	monitor_event CityRiots SettlementName Tbilisi
+	  and I_NumberOfSettlements georgia = 0
+	  and I_EventCounter georgia_exist = 1
+	  and I_IsFactionAIControlled georgia
+	  and not I_SettlementOwner Tbilisi = georgia
+	    set_counter tbilisi_riot 1
+	    set_counter faction_emerge_id 27
+	end_monitor
+
 
 ;Experimental, make faction re-emerge if these settlement are in rebels control
 	monitor_event PreFactionTurnStart FactionType slave
@@ -46335,6 +47042,14 @@ end_monitor
 			set_counter baghdad_riot 1
 			set_counter faction_emerge_id 26
 		end_if
+		if I_SettlementOwner Kutaisi = slave
+		and I_NumberOfSettlements georgia = 0
+		and I_EventCounter georgia_exist = 1
+		and I_CompareCounter georgia_emerge = 0
+		and RandomPercent > 50
+			set_counter kutaisi_riot 1
+			set_counter faction_emerge_id 27
+		end_if
 	end_monitor
 ;
 ;------------------------------------------------------------------
@@ -46374,7 +47089,6 @@ and I_CompareCounter faction_emerge_id >= 1
 	console_command create_building Bern ros_po_bonus
 	console_command create_building Innsbruck ros_po_bonus
 	console_command create_building Bordeaux ros_po_bonus
-	console_command create_building Tbilisi ros_po_bonus
 	console_command create_building Targoviste ros_po_bonus
 	console_command create_building Milan ros_po_bonus
 	console_command create_building Toulouse ros_po_bonus
@@ -46472,7 +47186,6 @@ and I_CompareCounter faction_emerge_id >= 1
 	console_command create_building Alamut ros_po_bonus
 	console_command create_building Murom ros_po_bonus
 	console_command create_building Isparta ros_po_bonus
-	console_command create_building Kutaisi ros_po_bonus
 	console_command create_building Ahvaz ros_po_bonus
 	console_command create_building Serdobinskaya ros_po_bonus
 	if I_CompareCounter faction_emerge_id != 1
@@ -46599,6 +47312,10 @@ and I_CompareCounter faction_emerge_id >= 1
 	if I_CompareCounter faction_emerge_id != 26
 		console_command create_building Baghdad ros_po_bonus
 		console_command create_building Basra ros_po_bonus
+	end_if
+	if I_CompareCounter faction_emerge_id != 27
+		console_command create_building Kutaisi ros_po_bonus
+		console_command create_building Tbilisi ros_po_bonus
 	end_if
 
 ;Scotland
@@ -46846,6 +47563,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Edinburgh = timurids
 			faction_emerge scotland timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Edinburgh = georgia
+			faction_emerge scotland georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Edinburgh = slave
 			faction_emerge scotland slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -46933,6 +47653,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Aberdeen = timurids
 			faction_emerge scotland timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Aberdeen = georgia
+			faction_emerge scotland georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Aberdeen = slave
 			faction_emerge scotland slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -47019,6 +47742,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Inverness = timurids
 			faction_emerge scotland timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Inverness = georgia
+			faction_emerge scotland georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Inverness = slave
 			faction_emerge scotland slave 1 400.0 0.0 1.2 town true
@@ -47222,6 +47948,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Venice = timurids
 			faction_emerge venice timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Venice = georgia
+			faction_emerge venice georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Venice = slave
 			faction_emerge venice slave 1 400.0 0.0 1.2 town true
@@ -47478,6 +48207,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Palermo = timurids
 			faction_emerge sicily timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Palermo = georgia
+			faction_emerge sicily georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Palermo = slave
 			faction_emerge sicily slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -47565,6 +48297,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Syracuse = timurids
 			faction_emerge sicily timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Syracuse = georgia
+			faction_emerge sicily georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Syracuse = slave
 			faction_emerge sicily slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -47651,6 +48386,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Naples = timurids
 			faction_emerge sicily timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Naples = georgia
+			faction_emerge sicily georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Naples = slave
 			faction_emerge sicily slave 1 400.0 0.0 1.2 town true
@@ -47854,6 +48592,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Genoa = timurids
 			faction_emerge milan timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Genoa = georgia
+			faction_emerge milan georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Genoa = slave
 			faction_emerge milan slave 1 400.0 0.0 1.2 town true
@@ -48059,6 +48800,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Arhus = timurids
 			faction_emerge denmark timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Arhus = georgia
+			faction_emerge denmark georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Arhus = slave
 			faction_emerge denmark slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -48145,6 +48889,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Roskilde = timurids
 			faction_emerge denmark timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Roskilde = georgia
+			faction_emerge denmark georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Roskilde = slave
 			faction_emerge denmark slave 1 400.0 0.0 1.2 town true
@@ -48402,6 +49149,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Jaiksk = timurids
 			faction_emerge cumans timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Jaiksk = georgia
+			faction_emerge cumans georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Jaiksk = slave
 			faction_emerge cumans slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -48489,6 +49239,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Azaq = timurids
 			faction_emerge cumans timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Azaq = georgia
+			faction_emerge cumans georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Azaq = slave
 			faction_emerge cumans slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -48575,6 +49328,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Baia = timurids
 			faction_emerge cumans timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Baia = georgia
+			faction_emerge cumans georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Baia = slave
 			faction_emerge cumans slave 1 400.0 0.0 1.2 town true
@@ -48884,6 +49640,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Caesarea = timurids
 			faction_emerge turks timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Caesarea = georgia
+			faction_emerge turks georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Caesarea = slave
 			faction_emerge scotland slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -48970,6 +49729,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Ankara = timurids
 			faction_emerge turks timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ankara = georgia
+			faction_emerge turks georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Ankara = slave
 			faction_emerge scotland slave 1 400.0 0.0 1.2 town true
@@ -49058,6 +49820,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Iconium = timurids
 			faction_emerge turks timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Iconium = georgia
+			faction_emerge turks georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Iconium = slave
 			faction_emerge scotland slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -49144,6 +49909,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Diyarbakir = timurids
 			faction_emerge turks timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Diyarbakir = georgia
+			faction_emerge turks georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Diyarbakir = slave
 			faction_emerge scotland slave 1 400.0 0.0 1.2 town true
@@ -49454,6 +50222,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Paris = timurids
 			faction_emerge france timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Paris = georgia
+			faction_emerge france georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Paris = slave
 			faction_emerge france slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -49540,6 +50311,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Rheims = timurids
 			faction_emerge france timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Rheims = georgia
+			faction_emerge france georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Rheims = slave
 			faction_emerge france slave 1 400.0 0.0 1.2 town true
@@ -49628,6 +50402,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Clermont = timurids
 			faction_emerge france timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Clermont = georgia
+			faction_emerge france georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Clermont = slave
 			faction_emerge france slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -49714,6 +50491,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Angers = timurids
 			faction_emerge france timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Angers = georgia
+			faction_emerge france georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Angers = slave
 			faction_emerge france slave 1 400.0 0.0 1.2 town true
@@ -50075,6 +50855,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Frankfurt = timurids
 			faction_emerge hre timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Frankfurt = georgia
+			faction_emerge hre georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Frankfurt = slave
 			faction_emerge hre slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -50161,6 +50944,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Vienna = timurids
 			faction_emerge hre timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Vienna = georgia
+			faction_emerge hre georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Vienna = slave
 			faction_emerge hre slave 1 400.0 0.0 1.2 town true
@@ -50249,6 +51035,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Prague = timurids
 			faction_emerge hre timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Prague = georgia
+			faction_emerge hre georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Prague = slave
 			faction_emerge hre slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -50336,6 +51125,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Staufen = timurids
 			faction_emerge hre timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Staufen = georgia
+			faction_emerge hre georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Staufen = slave
 			faction_emerge hre slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -50422,6 +51214,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Nuremburg = timurids
 			faction_emerge hre timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Nuremburg = georgia
+			faction_emerge hre georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Nuremburg = slave
 			faction_emerge hre slave 1 400.0 0.0 1.2 town true
@@ -50683,6 +51478,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner London = timurids
 			faction_emerge england timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner London = georgia
+			faction_emerge england georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner London = slave
 			faction_emerge england slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -50770,6 +51568,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Nottingham = timurids
 			faction_emerge england timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Nottingham = georgia
+			faction_emerge england georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Nottingham = slave
 			faction_emerge england slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -50856,6 +51657,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Winchester = timurids
 			faction_emerge england timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Winchester = georgia
+			faction_emerge england georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Winchester = slave
 			faction_emerge england slave 1 400.0 0.0 1.2 town true
@@ -51063,6 +51867,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Oporto = timurids
 			faction_emerge portugal timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Oporto = georgia
+			faction_emerge portugal georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Oporto = slave
 			faction_emerge portugal slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -51149,6 +51956,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Lisbon = timurids
 			faction_emerge portugal timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Lisbon = georgia
+			faction_emerge portugal georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Lisbon = slave
 			faction_emerge portugal slave 1 400.0 0.0 1.2 town true
@@ -51406,6 +52216,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Krakow = timurids
 			faction_emerge poland timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Krakow = georgia
+			faction_emerge poland georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Krakow = slave
 			faction_emerge poland slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -51493,6 +52306,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Halych = timurids
 			faction_emerge poland timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Halych = georgia
+			faction_emerge poland georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Halych = slave
 			faction_emerge poland slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -51579,6 +52395,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Plock = timurids
 			faction_emerge poland timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Plock = georgia
+			faction_emerge poland georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Plock = slave
 			faction_emerge poland slave 1 400.0 0.0 1.2 town true
@@ -51939,6 +52758,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Constantinople = timurids
 			faction_emerge byzantium timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Constantinople = georgia
+			faction_emerge byzantium georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Constantinople = slave
 			faction_emerge byzantium slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -52025,6 +52847,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Nicaea = timurids
 			faction_emerge byzantium timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Nicaea = georgia
+			faction_emerge byzantium georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Nicaea = slave
 			faction_emerge byzantium slave 1 400.0 0.0 1.2 town true
@@ -52113,6 +52938,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Athens = timurids
 			faction_emerge byzantium timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Athens = georgia
+			faction_emerge byzantium georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Athens = slave
 			faction_emerge byzantium slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -52200,6 +53028,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Arta = timurids
 			faction_emerge byzantium timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Arta = georgia
+			faction_emerge byzantium georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Arta = slave
 			faction_emerge byzantium slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -52286,6 +53117,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Trebizond = timurids
 			faction_emerge byzantium timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Trebizond = georgia
+			faction_emerge byzantium georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Trebizond = slave
 			faction_emerge byzantium slave 1 400.0 0.0 1.2 town true
@@ -52546,6 +53380,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Marrakesh = timurids
 			faction_emerge moors timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Marrakesh = georgia
+			faction_emerge moors georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Marrakesh = slave
 			faction_emerge moors slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -52633,6 +53470,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Fes = timurids
 			faction_emerge moors timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Fes = georgia
+			faction_emerge moors georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Fes = slave
 			faction_emerge moors slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -52719,6 +53559,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Melilla = timurids
 			faction_emerge moors timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Melilla = georgia
+			faction_emerge moors georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Melilla = slave
 			faction_emerge moors slave 1 400.0 0.0 1.2 town true
@@ -52922,6 +53765,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Novgorod = timurids
 			faction_emerge russia timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Novgorod = georgia
+			faction_emerge russia georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Novgorod = slave
 			faction_emerge russia slave 1 400.0 0.0 1.2 town true
@@ -53229,6 +54075,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Leon = timurids
 			faction_emerge spain timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Leon = georgia
+			faction_emerge spain georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Leon = slave
 			faction_emerge spain slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -53315,6 +54164,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Toledo = timurids
 			faction_emerge spain timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Toledo = georgia
+			faction_emerge spain georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Toledo = slave
 			faction_emerge spain slave 1 400.0 0.0 1.2 town true
@@ -53403,6 +54255,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Salamanca = timurids
 			faction_emerge spain timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Salamanca = georgia
+			faction_emerge spain georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Salamanca = slave
 			faction_emerge spain slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -53489,6 +54344,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Burgos = timurids
 			faction_emerge spain timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Burgos = georgia
+			faction_emerge spain georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Burgos = slave
 			faction_emerge spain slave 1 400.0 0.0 1.2 town true
@@ -53748,6 +54606,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Varad = timurids
 			faction_emerge hungary timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Varad = georgia
+			faction_emerge hungary georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Varad = slave
 			faction_emerge hungary slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -53835,6 +54696,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Esztergom = timurids
 			faction_emerge hungary timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Esztergom = georgia
+			faction_emerge hungary georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Esztergom = slave
 			faction_emerge hungary slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -53921,6 +54785,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Kassa = timurids
 			faction_emerge hungary timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kassa = georgia
+			faction_emerge hungary georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Kassa = slave
 			faction_emerge hungary slave 1 400.0 0.0 1.2 town true
@@ -54179,6 +55046,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Zaragoza = timurids
 			faction_emerge aragon timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Zaragoza = georgia
+			faction_emerge aragon georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Zaragoza = slave
 			faction_emerge aragon slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -54266,6 +55136,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Pamplona = timurids
 			faction_emerge aragon timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Pamplona = georgia
+			faction_emerge aragon georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Pamplona = slave
 			faction_emerge aragon slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -54352,6 +55225,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Barcelona = timurids
 			faction_emerge aragon timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Barcelona = georgia
+			faction_emerge aragon georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Barcelona = slave
 			faction_emerge aragon slave 1 400.0 0.0 1.2 town true
@@ -54559,6 +55435,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Vilnius = timurids
 			faction_emerge lithuania timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Vilnius = georgia
+			faction_emerge lithuania georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Vilnius = slave
 			faction_emerge lithuania slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -54750,6 +55629,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Damghan = timurids
 			faction_emerge lithuania timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Damghan = georgia
+			faction_emerge lithuania georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Damghan = slave
 			faction_emerge lithuania slave 1 400.0 0.0 1.2 town true
@@ -54951,6 +55833,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Kiev = timurids
 			faction_emerge kievan_rus timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kiev = georgia
+			faction_emerge kievan_rus georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Kiev = slave
 			faction_emerge kievan_rus slave 1 400.0 0.0 1.2 town true
@@ -55156,6 +56041,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Bergen = timurids
 			faction_emerge norway timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Bergen = georgia
+			faction_emerge norway georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Bergen = slave
 			faction_emerge norway slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -55242,6 +56130,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Eikundarsund = timurids
 			faction_emerge norway timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Eikundarsund = georgia
+			faction_emerge norway georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Eikundarsund = slave
 			faction_emerge norway slave 1 400.0 0.0 1.2 town true
@@ -55499,6 +56390,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Urgench = timurids
 			faction_emerge kwarezm timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Urgench = georgia
+			faction_emerge kwarezm georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Urgench = slave
 			faction_emerge kwarezm slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -55586,6 +56480,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Khiva = timurids
 			faction_emerge kwarezm timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Khiva = georgia
+			faction_emerge kwarezm georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Khiva = slave
 			faction_emerge kwarezm slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -55672,6 +56569,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Konjikala = timurids
 			faction_emerge kwarezm timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Konjikala = georgia
+			faction_emerge kwarezm georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Konjikala = slave
 			faction_emerge kwarezm slave 1 400.0 0.0 1.2 town true
@@ -55930,6 +56830,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Cairo = timurids
 			faction_emerge egypt timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Cairo = georgia
+			faction_emerge egypt georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Cairo = slave
 			faction_emerge egypt slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -56017,6 +56920,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Alexandria = timurids
 			faction_emerge egypt timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Alexandria = georgia
+			faction_emerge egypt georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Alexandria = slave
 			faction_emerge egypt slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -56103,6 +57009,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Damietta = timurids
 			faction_emerge egypt timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Damietta = georgia
+			faction_emerge egypt georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Damietta = slave
 			faction_emerge egypt slave 1 400.0 0.0 1.2 town true
@@ -56600,6 +57509,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Rhodes = timurids
 			faction_emerge jerusalem timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Rhodes = georgia
+			faction_emerge jerusalem georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Rhodes = slave
 			faction_emerge jerusalem slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -56842,6 +57754,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Nicosia = timurids
 			faction_emerge jerusalem timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Nicosia = georgia
+			faction_emerge jerusalem georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Nicosia = slave
 			faction_emerge jerusalem slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -56930,6 +57845,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Jerusalem = timurids
 			faction_emerge jerusalem timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Jerusalem = georgia
+			faction_emerge jerusalem georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Jerusalem = slave
 			faction_emerge jerusalem slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -57017,6 +57935,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Acre = timurids
 			faction_emerge jerusalem timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Acre = georgia
+			faction_emerge jerusalem georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Acre = slave
 			faction_emerge jerusalem slave 1 400.0 0.0 1.2 town true
@@ -57197,6 +58118,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Thorn = timurids
 			faction_emerge teutonic_order timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Thorn = georgia
+			faction_emerge teutonic_order georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Thorn = slave
 			faction_emerge teutonic_order slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -57355,6 +58279,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_SettlementOwner Palanga = timurids
 			faction_emerge teutonic_order timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Palanga = georgia
+			faction_emerge teutonic_order georgia 2 400.0 0.0 1.2 town true
 		end_if
 		if I_SettlementOwner Palanga = slave
 			faction_emerge teutonic_order slave 1 400.0 0.0 1.2 town true
@@ -57515,6 +58442,9 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_SettlementOwner Riga = timurids
 			faction_emerge teutonic_order timurids 2 400.0 0.0 1.2 town true
 		end_if
+		if I_SettlementOwner Riga = georgia
+			faction_emerge teutonic_order georgia 2 400.0 0.0 1.2 town true
+		end_if
 		if I_SettlementOwner Riga = slave
 			faction_emerge teutonic_order slave 1 400.0 0.0 1.2 town true
 		end_if
@@ -57537,7 +58467,7 @@ and I_CompareCounter faction_emerge_id >= 1
 	end_if
 		if I_EventCounter HEAVY_MAIL_ARMOR = 0
 			spawn_army; Baghdad
-			faction egypt
+			faction timurids
 			character random_name, named character, age 30, x 396, y 89, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
@@ -57553,7 +58483,7 @@ and I_CompareCounter faction_emerge_id >= 1
 			unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
 			end
 			spawn_army; Basra
-			faction egypt
+			faction timurids
 			character random_name, named character, age 30, x 419, y 66, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
@@ -57572,7 +58502,7 @@ and I_CompareCounter faction_emerge_id >= 1
 		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
 		and I_EventCounter HALF_PLATE_ARMOR = 0
 			spawn_army; Baghdad
-			faction egypt
+			faction timurids
 			character random_name, named character, age 30, x 396, y 89, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
@@ -57588,7 +58518,7 @@ and I_CompareCounter faction_emerge_id >= 1
 			unit   Turkomans				exp 0 armour 0 weapon_lvl 0
 			end
 			spawn_army; Basra
-			faction egypt
+			faction timurids
 			character random_name, named character, age 30, x 419, y 66, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
@@ -57606,7 +58536,7 @@ and I_CompareCounter faction_emerge_id >= 1
 		end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 			spawn_army; Baghdad
-			faction egypt
+			faction timurids
 			character random_name, named character, age 30, x 396, y 89, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 1 weapon_lvl 0
@@ -57622,7 +58552,7 @@ and I_CompareCounter faction_emerge_id >= 1
 			unit   Turkomans				exp 0 armour 0 weapon_lvl 0
 			end
 			spawn_army; Basra
-			faction egypt
+			faction timurids
 			character random_name, named character, age 30, x 419, y 66, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 1 weapon_lvl 0
@@ -57818,6 +58748,304 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter abbasids_emerge 5
 	add_money timurids 40000
   end_if
+
+;Georgia
+  if I_CompareCounter faction_emerge_id = 27
+	if I_CompareCounter kutaisi_riot = 0
+		console_command create_building Kutaisi ros_po_bonus
+	end_if
+	if I_CompareCounter tbilisi_riot = 0
+		console_command create_building Tbilisi ros_po_bonus
+	end_if
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0
+			spawn_army; Kutaisi
+			faction georgia
+			character random_name, named character, age 30, x 385, y 151, family
+			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
+			unit   Royal Monaspa			exp 2 armour 0 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 2 armour 1 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Azenuri Infantry			exp 0 armour 0 weapon_lvl 0
+			unit   Azenuri Infantry			exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			end
+			spawn_army; Tbilisi
+			faction georgia
+			character random_name, named character, age 30, x 400, y 147, family
+			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
+			unit   Royal Monaspa			exp 2 armour 0 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 2 armour 1 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Azenuri Infantry			exp 0 armour 0 weapon_lvl 0
+			unit   Azenuri Infantry			exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			end
+		end_if
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
+		and I_EventCounter HALF_PLATE_ARMOR = 0
+			spawn_army; Kutaisi
+			faction georgia
+			character random_name, named character, age 30, x 385, y 151, family
+			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
+			unit   Royal Monaspa			exp 2 armour 0 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 2 armour 1 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 1 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			end
+			spawn_army; Tbilisi
+			faction georgia
+			character random_name, named character, age 30, x 400, y 147, family
+			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
+			unit   Royal Monaspa			exp 2 armour 0 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 2 armour 1 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 1 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			end
+		end_if
+		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
+			spawn_army; Kutaisi
+			faction georgia
+			character random_name, named character, age 30, x 385, y 151, family
+			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
+			unit   Royal Monaspa			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Archers			exp 1 armour 2 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 2 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 0 armour 2 weapon_lvl 0
+			unit   Pechenegs				exp 0 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			end
+			spawn_army; Tbilisi
+			faction georgia
+			character random_name, named character, age 30, x 400, y 147, family
+			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
+			unit   Royal Monaspa			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Archers			exp 1 armour 2 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 2 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 0 armour 2 weapon_lvl 0
+			unit   Pechenegs				exp 0 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			end
+		end_if
+	if I_CompareCounter kutaisi_riot = 1
+		console_command create_building Kutaisi ros_target
+		if I_SettlementOwner Kutaisi = venice
+			faction_emerge georgia venice 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = sicily
+			faction_emerge georgia sicily 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = milan
+			faction_emerge georgia milan 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = denmark
+			faction_emerge georgia denmark 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = egypt
+			faction_emerge georgia egypt 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = kwarezm
+			faction_emerge georgia kwarezm 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = cumans
+			faction_emerge georgia cumans 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = turks
+			faction_emerge georgia turks 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = scotland
+			faction_emerge georgia scotland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = hre
+			faction_emerge georgia hre 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = england
+			faction_emerge georgia england 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = portugal
+			faction_emerge georgia portugal 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = poland
+			faction_emerge georgia poland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = byzantium
+			faction_emerge georgia byzantium 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = moors
+			faction_emerge georgia moors 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = russia
+			faction_emerge georgia russia 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = spain
+			faction_emerge georgia spain 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = hungary
+			faction_emerge georgia hungary 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = aragon
+			faction_emerge georgia aragon 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = lithuania
+			faction_emerge georgia lithuania 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = kievan_rus
+			faction_emerge georgia kievan_rus 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = norway
+			faction_emerge georgia norway 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = jerusalem
+			faction_emerge georgia jerusalem 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = france
+			faction_emerge georgia france 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = papal_states
+			faction_emerge georgia papal_states 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = mongols
+			faction_emerge georgia mongols 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = teutonic_order
+			faction_emerge georgia teutonic_order 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = timurids
+			faction_emerge georgia timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Kutaisi = slave
+			faction_emerge georgia slave 1 400.0 0.0 1.2 town true
+		end_if
+	end_if
+	if I_CompareCounter tbilisi_riot = 1
+		console_command create_building Tbilisi ros_target
+		if I_SettlementOwner Tbilisi = venice
+			faction_emerge georgia venice 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = sicily
+			faction_emerge georgia sicily 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = milan
+			faction_emerge georgia milan 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = denmark
+			faction_emerge georgia denmark 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = egypt
+			faction_emerge georgia egypt 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = kwarezm
+			faction_emerge georgia kwarezm 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = cumans
+			faction_emerge georgia cumans 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = turks
+			faction_emerge georgia turks 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = scotland
+			faction_emerge georgia scotland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = hre
+			faction_emerge georgia hre 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = england
+			faction_emerge georgia england 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = portugal
+			faction_emerge georgia portugal 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = poland
+			faction_emerge georgia poland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = byzantium
+			faction_emerge georgia byzantium 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = moors
+			faction_emerge georgia moors 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = russia
+			faction_emerge georgia russia 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = spain
+			faction_emerge georgia spain 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = hungary
+			faction_emerge georgia hungary 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = aragon
+			faction_emerge georgia aragon 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = lithuania
+			faction_emerge georgia lithuania 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = kievan_rus
+			faction_emerge georgia kievan_rus 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = norway
+			faction_emerge georgia norway 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = jerusalem
+			faction_emerge georgia jerusalem 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = france
+			faction_emerge georgia france 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = papal_states
+			faction_emerge georgia papal_states 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = mongols
+			faction_emerge georgia mongols 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = teutonic_order
+			faction_emerge georgia teutonic_order 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = timurids
+			faction_emerge georgia timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Tbilisi = slave
+			faction_emerge georgia slave 1 400.0 0.0 1.2 town true
+		end_if
+	end_if
+	historic_event georgia_emerged
+	set_counter kutaisi_riot 0
+	set_counter tbilisi_riot 0
+	set_counter georgia_emerge 5
+	add_money georgia 40000
+  end_if
   set_counter faction_emerge_id 0
 ;end_if
 end_monitor
@@ -57858,6 +59086,7 @@ monitor_event PreFactionTurnStart I_CompareCounter ros_po_building = 1
 		destroy_buildings mongols ros_temp_buildings false
 		destroy_buildings teutonic_order ros_temp_buildings false
 		destroy_buildings timurids ros_temp_buildings false
+		destroy_buildings georgia ros_temp_buildings false
 		destroy_buildings slave ros_temp_buildings false
 		;Second swept as suggested by Withwnar
 		destroy_buildings venice ros_temp_buildings false
@@ -57888,6 +59117,7 @@ monitor_event PreFactionTurnStart I_CompareCounter ros_po_building = 1
 		destroy_buildings mongols ros_temp_buildings false
 		destroy_buildings teutonic_order ros_temp_buildings false
 		destroy_buildings timurids ros_temp_buildings false
+		destroy_buildings georgia ros_temp_buildings false
 		destroy_buildings slave ros_temp_buildings false
 		set_counter ros_po_building 0
 	;end_if
@@ -57969,6 +59199,9 @@ monitor_event PreFactionTurnStart I_CompareCounter ros_po_building = 1
 		end_if
 		if I_CompareCounter abbasids_emerge > 0
 			inc_counter abbasids_emerge -1
+		end_if
+		if I_CompareCounter georgia_emerge > 0
+			inc_counter georgia_emerge -1
 		end_if
 end_monitor
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -58361,6 +59594,7 @@ end_monitor
 	declare_counter dead_diplomacy_norway
 	declare_counter dead_diplomacy_jerusalem
 	declare_counter dead_diplomacy_kwarezm
+	declare_counter dead_diplomacy_georgia
 monitor_event FactionTurnEnd FactionType slave
 	if I_NumberOfSettlements venice < 1 ; checks if faction is dead
 	and I_CompareCounter dead_diplomacy_venice != 1
@@ -58389,6 +59623,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm venice neutral
 		console_command diplomatic_stance lithuania venice neutral
 		console_command diplomatic_stance cumans venice neutral
+		console_command diplomatic_stance georgia venice neutral
 		console_command diplomatic_stance mongols venice neutral
 		console_command diplomatic_stance timurids venice neutral
 		console_command diplomatic_stance papal_states venice neutral
@@ -58420,6 +59655,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm sicily neutral
 		console_command diplomatic_stance lithuania sicily neutral
 		console_command diplomatic_stance cumans sicily neutral
+		console_command diplomatic_stance georgia sicily neutral
 		console_command diplomatic_stance mongols sicily neutral
 		console_command diplomatic_stance timurids sicily neutral
 		console_command diplomatic_stance papal_states sicily neutral
@@ -58451,6 +59687,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm milan neutral
 		console_command diplomatic_stance lithuania milan neutral
 		console_command diplomatic_stance cumans milan neutral
+		console_command diplomatic_stance georgia milan neutral
 		console_command diplomatic_stance mongols milan neutral
 		console_command diplomatic_stance timurids milan neutral
 		console_command diplomatic_stance papal_states milan neutral
@@ -58482,6 +59719,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm spain neutral
 		console_command diplomatic_stance lithuania spain neutral
 		console_command diplomatic_stance cumans spain neutral
+		console_command diplomatic_stance georgia spain neutral
 		console_command diplomatic_stance mongols spain neutral
 		console_command diplomatic_stance timurids spain neutral
 		console_command diplomatic_stance papal_states spain neutral
@@ -58513,6 +59751,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm portugal neutral
 		console_command diplomatic_stance lithuania portugal neutral
 		console_command diplomatic_stance cumans portugal neutral
+		console_command diplomatic_stance georgia portugal neutral
 		console_command diplomatic_stance mongols portugal neutral
 		console_command diplomatic_stance timurids portugal neutral
 		console_command diplomatic_stance papal_states portugal neutral
@@ -58544,6 +59783,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm aragon neutral
 		console_command diplomatic_stance lithuania aragon neutral
 		console_command diplomatic_stance cumans aragon neutral
+		console_command diplomatic_stance georgia aragon neutral
 		console_command diplomatic_stance mongols aragon neutral
 		console_command diplomatic_stance timurids aragon neutral
 		console_command diplomatic_stance papal_states aragon neutral
@@ -58575,6 +59815,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm hre neutral
 		console_command diplomatic_stance lithuania hre neutral
 		console_command diplomatic_stance cumans hre neutral
+		console_command diplomatic_stance georgia hre neutral
 		console_command diplomatic_stance mongols hre neutral
 		console_command diplomatic_stance timurids hre neutral
 		console_command diplomatic_stance papal_states hre neutral
@@ -58606,6 +59847,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm france neutral
 		console_command diplomatic_stance lithuania france neutral
 		console_command diplomatic_stance cumans france neutral
+		console_command diplomatic_stance georgia france neutral
 		console_command diplomatic_stance mongols france neutral
 		console_command diplomatic_stance timurids france neutral
 		console_command diplomatic_stance papal_states france neutral
@@ -58637,6 +59879,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm england neutral
 		console_command diplomatic_stance lithuania england neutral
 		console_command diplomatic_stance cumans england neutral
+		console_command diplomatic_stance georgia england neutral
 		console_command diplomatic_stance mongols england neutral
 		console_command diplomatic_stance timurids england neutral
 		console_command diplomatic_stance papal_states england neutral
@@ -58668,6 +59911,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm scotland neutral
 		console_command diplomatic_stance lithuania scotland neutral
 		console_command diplomatic_stance cumans scotland neutral
+		console_command diplomatic_stance georgia scotland neutral
 		console_command diplomatic_stance mongols scotland neutral
 		console_command diplomatic_stance timurids scotland neutral
 		console_command diplomatic_stance papal_states scotland neutral
@@ -58699,6 +59943,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm denmark neutral
 		console_command diplomatic_stance lithuania denmark neutral
 		console_command diplomatic_stance cumans denmark neutral
+		console_command diplomatic_stance georgia denmark neutral
 		console_command diplomatic_stance mongols denmark neutral
 		console_command diplomatic_stance timurids denmark neutral
 		console_command diplomatic_stance papal_states denmark neutral
@@ -58730,6 +59975,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm norway neutral
 		console_command diplomatic_stance lithuania norway neutral
 		console_command diplomatic_stance cumans norway neutral
+		console_command diplomatic_stance georgia norway neutral
 		console_command diplomatic_stance mongols norway neutral
 		console_command diplomatic_stance timurids norway neutral
 		console_command diplomatic_stance papal_states norway neutral
@@ -58761,6 +60007,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm poland neutral
 		console_command diplomatic_stance lithuania poland neutral
 		console_command diplomatic_stance cumans poland neutral
+		console_command diplomatic_stance georgia poland neutral
 		console_command diplomatic_stance mongols poland neutral
 		console_command diplomatic_stance timurids poland neutral
 		console_command diplomatic_stance papal_states poland neutral
@@ -58792,6 +60039,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm hungary neutral
 		console_command diplomatic_stance lithuania hungary neutral
 		console_command diplomatic_stance cumans hungary neutral
+		console_command diplomatic_stance georgia hungary neutral
 		console_command diplomatic_stance mongols hungary neutral
 		console_command diplomatic_stance timurids hungary neutral
 		console_command diplomatic_stance papal_states hungary neutral
@@ -58823,6 +60071,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm jerusalem neutral
 		console_command diplomatic_stance lithuania jerusalem neutral
 		console_command diplomatic_stance cumans jerusalem neutral
+		console_command diplomatic_stance georgia jerusalem neutral
 		console_command diplomatic_stance mongols jerusalem neutral
 		console_command diplomatic_stance timurids jerusalem neutral
 		console_command diplomatic_stance papal_states jerusalem neutral
@@ -58854,6 +60103,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm teutonic_order neutral
 		console_command diplomatic_stance lithuania teutonic_order neutral
 		console_command diplomatic_stance cumans teutonic_order neutral
+		console_command diplomatic_stance georgia teutonic_order neutral
 		console_command diplomatic_stance mongols teutonic_order neutral
 		console_command diplomatic_stance timurids teutonic_order neutral
 		console_command diplomatic_stance papal_states teutonic_order neutral
@@ -58885,6 +60135,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm byzantium neutral
 		console_command diplomatic_stance lithuania byzantium neutral
 		console_command diplomatic_stance cumans byzantium neutral
+		console_command diplomatic_stance georgia byzantium neutral
 		console_command diplomatic_stance mongols byzantium neutral
 		console_command diplomatic_stance timurids byzantium neutral
 		console_command diplomatic_stance papal_states byzantium neutral
@@ -58916,6 +60167,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm russia neutral
 		console_command diplomatic_stance lithuania russia neutral
 		console_command diplomatic_stance cumans russia neutral
+		console_command diplomatic_stance georgia russia neutral
 		console_command diplomatic_stance mongols russia neutral
 		console_command diplomatic_stance timurids russia neutral
 		console_command diplomatic_stance papal_states russia neutral
@@ -58947,6 +60199,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm kievan_rus neutral
 		console_command diplomatic_stance lithuania kievan_rus neutral
 		console_command diplomatic_stance cumans kievan_rus neutral
+		console_command diplomatic_stance georgia kievan_rus neutral
 		console_command diplomatic_stance mongols kievan_rus neutral
 		console_command diplomatic_stance timurids kievan_rus neutral
 		console_command diplomatic_stance papal_states kievan_rus neutral
@@ -58978,6 +60231,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm turks neutral
 		console_command diplomatic_stance lithuania turks neutral
 		console_command diplomatic_stance cumans turks neutral
+		console_command diplomatic_stance georgia turks neutral
 		console_command diplomatic_stance mongols turks neutral
 		console_command diplomatic_stance timurids turks neutral
 		console_command diplomatic_stance papal_states turks neutral
@@ -59009,6 +60263,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm egypt neutral
 		console_command diplomatic_stance lithuania egypt neutral
 		console_command diplomatic_stance cumans egypt neutral
+		console_command diplomatic_stance georgia egypt neutral
 		console_command diplomatic_stance mongols egypt neutral
 		console_command diplomatic_stance timurids egypt neutral
 		console_command diplomatic_stance papal_states egypt neutral
@@ -59040,6 +60295,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm  moors neutral
 		console_command diplomatic_stance lithuania  moors neutral
 		console_command diplomatic_stance cumans  moors neutral
+		console_command diplomatic_stance georgia  moors neutral
 		console_command diplomatic_stance mongols  moors neutral
 		console_command diplomatic_stance timurids  moors neutral
 		console_command diplomatic_stance papal_states  moors neutral
@@ -59071,6 +60327,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance moors kwarezm neutral
 		console_command diplomatic_stance lithuania kwarezm neutral
 		console_command diplomatic_stance cumans kwarezm neutral
+		console_command diplomatic_stance georgia kwarezm neutral
 		console_command diplomatic_stance mongols kwarezm neutral
 		console_command diplomatic_stance timurids kwarezm neutral
 		console_command diplomatic_stance papal_states kwarezm neutral
@@ -59102,6 +60359,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance moors lithuania neutral
 		console_command diplomatic_stance kwarezm lithuania neutral
 		console_command diplomatic_stance cumans lithuania neutral
+		console_command diplomatic_stance georgia lithuania neutral
 		console_command diplomatic_stance mongols lithuania neutral
 		console_command diplomatic_stance timurids lithuania neutral
 		console_command diplomatic_stance papal_states lithuania neutral
@@ -59137,6 +60395,38 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance timurids cumans neutral
 		console_command diplomatic_stance papal_states cumans neutral
 	end_if
+	if I_NumberOfSettlements georgia < 1 ; checks if faction is dead
+	and I_CompareCounter dead_diplomacy_georgia != 1
+		set_counter dead_diplomacy_georgia 1
+		console_command diplomatic_stance venice georgia neutral
+		console_command diplomatic_stance sicily georgia neutral
+		console_command diplomatic_stance milan georgia neutral
+		console_command diplomatic_stance spain georgia neutral
+		console_command diplomatic_stance portugal georgia neutral
+		console_command diplomatic_stance aragon georgia neutral
+		console_command diplomatic_stance hre georgia neutral
+		console_command diplomatic_stance france georgia neutral
+		console_command diplomatic_stance england georgia neutral
+		console_command diplomatic_stance scotland georgia neutral
+		console_command diplomatic_stance denmark georgia neutral
+		console_command diplomatic_stance norway georgia neutral
+		console_command diplomatic_stance poland georgia neutral
+		console_command diplomatic_stance hungary georgia neutral
+		console_command diplomatic_stance jerusalem georgia neutral
+		console_command diplomatic_stance teutonic_order georgia neutral
+		console_command diplomatic_stance byzantium georgia neutral
+		console_command diplomatic_stance russia georgia neutral
+		console_command diplomatic_stance kievan_rus georgia neutral
+		console_command diplomatic_stance turks georgia neutral
+		console_command diplomatic_stance egypt georgia neutral
+		console_command diplomatic_stance moors georgia neutral
+		console_command diplomatic_stance kwarezm georgia neutral
+		console_command diplomatic_stance lithuania georgia neutral
+		console_command diplomatic_stance cumans georgia neutral
+		console_command diplomatic_stance mongols georgia neutral
+		console_command diplomatic_stance timurids georgia neutral
+		console_command diplomatic_stance papal_states georgia neutral
+	end_if
 	if I_CompareCounter status_mongols = 0 ; checks if faction is dead
 	and I_CompareCounter dead_diplomacy_mongols != 1
 		set_counter dead_diplomacy_mongols 1
@@ -59165,6 +60455,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kwarezm mongols war
 		console_command diplomatic_stance lithuania mongols war
 		console_command diplomatic_stance cumans mongols war
+		console_command diplomatic_stance georgia mongols war
 		console_command diplomatic_stance timurids mongols war
 		console_command diplomatic_stance papal_states mongols war
 	end_if
@@ -59196,6 +60487,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance kneutralezm timurids neutral
 		console_command diplomatic_stance lithuania timurids neutral
 		console_command diplomatic_stance cumans timurids neutral
+		console_command diplomatic_stance georgia timurids neutral
 		console_command diplomatic_stance mongols timurids neutral
 		console_command diplomatic_stance papal_states timurids neutral
 	end_if
@@ -59242,6 +60534,7 @@ if I_HotseatEnabled
  declare_counter teutonic_order_has_brain
  declare_counter norway_has_brain
  declare_counter jerusalem_has_brain
+ declare_counter georgia_has_brain
  declare_counter papal_states_has_brain
 
  if not I_IsFactionAIControlled egypt
@@ -59324,6 +60617,9 @@ if I_HotseatEnabled
  end_if
  if not I_IsFactionAIControlled jerusalem
 	set_counter jerusalem_has_brain 1
+ end_if
+ if not I_IsFactionAIControlled georgia
+	set_counter georgia_has_brain 1
  end_if
 ; if not I_IsFactionAIControlled papal_states
 ;	set_counter papal_states_has_brain 1
@@ -59675,6 +60971,17 @@ monitor_event FactionTurnEnd ;I_CompareCounter hs_console > 0
 		increment_kings_purse jerusalem -600
 	end_if
 
+	if I_CompareCounter georgia_has_brain = 1
+	and I_IsFactionAIControlled georgia
+		set_counter georgia_has_brain 0
+		increment_kings_purse georgia 600
+	end_if
+	if not I_IsFactionAIControlled georgia
+	and I_CompareCounter georgia_has_brain = 0
+		set_counter georgia_has_brain 1
+		increment_kings_purse georgia -600
+	end_if
+
 	if I_CompareCounter papal_states_has_brain = 1
 	and I_IsFactionAIControlled papal_states
 		set_counter papal_states_has_brain 0
@@ -59992,6 +61299,17 @@ monitor_event FactionTurnEnd ;I_CompareCounter hs_console > 0
 	and I_CompareCounter jerusalem_has_brain = 0
 		set_counter jerusalem_has_brain 1
 		increment_kings_purse jerusalem -800
+	end_if
+
+	if I_CompareCounter georgia_has_brain = 1
+	and I_IsFactionAIControlled georgia
+		set_counter georgia_has_brain 0
+		increment_kings_purse georgia 800
+	end_if
+	if not I_IsFactionAIControlled georgia
+	and I_CompareCounter georgia_has_brain = 0
+		set_counter georgia_has_brain 1
+		increment_kings_purse georgia -800
 	end_if
 
 	if I_CompareCounter papal_states_has_brain = 1
@@ -60313,6 +61631,17 @@ monitor_event FactionTurnEnd ;I_CompareCounter hs_console > 0
 		increment_kings_purse jerusalem -1200
 	end_if
 
+	if I_CompareCounter georgia_has_brain = 1
+	and I_IsFactionAIControlled georgia
+		set_counter georgia_has_brain 0
+		increment_kings_purse georgia 1200
+	end_if
+	if not I_IsFactionAIControlled georgia
+	and I_CompareCounter georgia_has_brain = 0
+		set_counter georgia_has_brain 1
+		increment_kings_purse georgia -1200
+	end_if
+
 	if I_CompareCounter papal_states_has_brain = 1
 	and I_IsFactionAIControlled papal_states
 		set_counter papal_states_has_brain 0
@@ -60630,6 +61959,17 @@ monitor_event FactionTurnEnd ;I_CompareCounter hs_console > 0
 	and I_CompareCounter jerusalem_has_brain = 0
 		set_counter jerusalem_has_brain 1
 		increment_kings_purse jerusalem -1900
+	end_if
+
+	if I_CompareCounter georgia_has_brain = 1
+	and I_IsFactionAIControlled georgia
+		set_counter georgia_has_brain 0
+		increment_kings_purse georgia 1900
+	end_if
+	if not I_IsFactionAIControlled georgia
+	and I_CompareCounter georgia_has_brain = 0
+		set_counter georgia_has_brain 1
+		increment_kings_purse georgia -1900
 	end_if
 
 	if I_CompareCounter papal_states_has_brain = 1

@@ -31,7 +31,7 @@ culture						southern_european
 religion					catholic
 symbol						models_strat/symbol_sicily.CAS
 rebel_symbol					models_strat/symbol_rebels_se.CAS
-primary_colour					red 70, green 70, blue 70
+primary_colour					red 30, green 50, blue 80
 secondary_colour				red 250, green 250, blue 255
 loading_logo					loading_screen/symbols/symbol128_sicily.tga
 standard_index					1
@@ -205,10 +205,10 @@ has_family_tree					yes
 faction						turks
 culture						middle_eastern
 religion					islam
-symbol						models_strat/symbol_turks.CAS
+symbol						models_strat/symbol_seljuk.CAS
 rebel_symbol					models_strat/symbol_rebels_me.CAS
-primary_colour					red 34, green 107, blue 9
-secondary_colour				red 255, green 191, blue 0
+primary_colour					red 25, green 102, blue 179
+secondary_colour				red 255, green 255, blue 255
 loading_logo					loading_screen/symbols/symbol128_turks.tga
 standard_index					9
 logo_index					FACTION_LOGO_TURKS
@@ -216,7 +216,7 @@ small_logo_index				SMALL_FACTION_LOGO_TURKS
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -237,7 +237,7 @@ small_logo_index				SMALL_FACTION_LOGO_FRANCE
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -257,7 +257,7 @@ small_logo_index				SMALL_FACTION_LOGO_HRE
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -283,17 +283,18 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						zirids
 faction						portugal
-culture						southern_european
-religion					catholic
-symbol						models_strat/symbol_portugal.CAS
-rebel_symbol					models_strat/symbol_rebels_se.CAS
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_zirids.CAS
+rebel_symbol					models_strat/symbol_rebels_me.CAS
 primary_colour					red 255, green 255, blue 255
-secondary_colour				red 0, green 69, blue 185
+secondary_colour				red 76, green 182, blue 126
 loading_logo					loading_screen/symbols/symbol128_portugal.tga
 standard_index					13
-logo_index					FACTION_LOGO_PORTUGAL
-small_logo_index				SMALL_FACTION_LOGO_PORTUGAL
+logo_index					FACTION_LOGO_ZIRIDS
+small_logo_index				SMALL_FACTION_LOGO_ZIRIDS
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
@@ -317,7 +318,7 @@ small_logo_index				SMALL_FACTION_LOGO_POLAND
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -419,7 +420,7 @@ small_logo_index				SMALL_FACTION_LOGO_HUNGARY
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -450,20 +451,17 @@ faction						lithuania
 culture						eastern_european
 religion					pagan
 symbol						models_strat/symbol_obotrites.cas
-;symbol						models_strat/symbol_lithuania.cas
 rebel_symbol					models_strat/symbol_rebels_ee.CAS
 primary_colour					red 128, green 55, blue 34
 secondary_colour				red 255, green 77, blue 26
 loading_logo					loading_screen/symbols/symbol128_scotland.tga
 standard_index					21
 logo_index					FACTION_LOGO_OBOTRITES
-;logo_index					FACTION_LOGO_LITHUANIA
 small_logo_index				SMALL_FACTION_LOGO_OBOTRITES
-;small_logo_index				SMALL_FACTION_LOGO_LITHUANIA
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
-prefers_naval_invasions				no
+prefers_naval_invasions				yes
 can_have_princess				yes
 has_family_tree					yes
 
@@ -525,36 +523,19 @@ has_family_tree					teutonic
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;						abbasids
-faction						timurids;, spawned_on_event
+faction						timurids
 culture						middle_eastern
 religion					islam
 symbol						models_strat/symbol_abbasids.CAS
-;symbol						models_strat/symbol_timurids.CAS
 rebel_symbol					models_strat/symbol_rebels_me.CAS
 primary_colour					red 31, green 20, blue 20
 secondary_colour				red 165, green 109, blue 0
-;primary_colour					red 1, green 1, blue 1
-;secondary_colour				red 215, green 167, blue 0
 loading_logo					loading_screen/symbols/symbol128_timurids.tga
 standard_index					24
 logo_index					FACTION_LOGO_ABBASIDS
-;logo_index					FACTION_LOGO_TIMURIDS
 small_logo_index				SMALL_FACTION_LOGO_ABBASIDS
-;small_logo_index				SMALL_FACTION_LOGO_TIMURIDS
 triumph_value					5
 custom_battle_availability			yes
-;horde_min_units				10
-;horde_max_units				20
-;horde_max_units_reduction_every_horde		10
-;horde_unit_per_settlement_population		250
-;horde_min_named_characters			2
-;horde_max_percent_army_stack			80
-;horde_disband_percent_on_settlement_capture	0
-;horde_unit					Hoshiga Horse Archers
-;horde_unit					Khorchi Horse Archers
-;horde_unit					Turhagut Lancers
-;horde_unit					ME Halberd Militia
-;horde_unit					Nukeri Horse Archers
 can_sap						no
 prefers_naval_invasions				yes
 can_have_princess				yes
@@ -623,6 +604,27 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						georgia
+faction						georgia
+culture						greek
+religion					orthodox
+symbol						models_strat/symbol_georgia.CAS
+rebel_symbol					models_strat/symbol_rebels_g.CAS
+primary_colour					red 188, green 28, blue 28
+secondary_colour				red 123, green 0, blue 0
+loading_logo					loading_screen/symbols/symbol128_byzantium.tga
+standard_index					28
+logo_index					FACTION_LOGO_GEORGIA
+small_logo_index				SMALL_FACTION_LOGO_GEORGIA
+triumph_value					5
+custom_battle_availability			yes
+can_sap						no
+prefers_naval_invasions				yes
+can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 faction						dummies
 culture						greek
 religion					heretic
@@ -631,8 +633,8 @@ rebel_symbol					models_strat/symbol_rebels.CAS
 primary_colour					red 0, green 0, blue 0
 secondary_colour				red 171, green 14, blue 9
 loading_logo					loading_screen/symbols/symbol128_byzantium.tga
-standard_index					15
-logo_index					FACTION_LOGO_BYZANTIUM
+standard_index					29
+logo_index					FACTION_LOGO_REBELS
 small_logo_index				SMALL_FACTION_LOGO_DUMMIES
 triumph_value					5
 custom_battle_availability			no
@@ -652,7 +654,7 @@ rebel_symbol					models_strat/symbol_rebels.CAS
 primary_colour					red 110, green 110, blue 110
 secondary_colour				red 239, green 239, blue 239
 loading_logo					loading_screen/symbols/symbol128_slaves.tga
-standard_index					28
+standard_index					30
 logo_index					FACTION_LOGO_REBELS
 small_logo_index				SMALL_FACTION_LOGO_REBELS
 triumph_value					5

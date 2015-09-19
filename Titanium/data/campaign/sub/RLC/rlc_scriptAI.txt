@@ -71,6 +71,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character byzantium random_name, princess, age 19, x 120, y 269
 			end_if
+			if I_SettlementOwner Lisbon = byzantium
+			and RandomPercent < 16
+				spawn_character byzantium random_name, princess, age 19, x 13, y 127
+			end_if
 			if I_SettlementOwner Naples = byzantium
 			and RandomPercent < 16
 				spawn_character byzantium random_name, princess, age 19, x 182, y 139
@@ -123,9 +127,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character byzantium random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = byzantium
+			if I_SettlementOwner Kutaisi = byzantium
 			and RandomPercent < 34
-				spawn_character byzantium random_name, princess, age 19, x 401, y 148
+				spawn_character byzantium random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = byzantium
 			and RandomPercent < 34
@@ -162,6 +166,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = hre
 			and RandomPercent < 34
 				spawn_character hre random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = hre
+			and RandomPercent < 16
+				spawn_character hre random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = hre
 			and RandomPercent < 16
@@ -215,9 +223,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character hre random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = hre
+			if I_SettlementOwner Kutaisi = hre
 			and RandomPercent < 34
-				spawn_character hre random_name, princess, age 19, x 401, y 148
+				spawn_character hre random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = hre
 			and RandomPercent < 34
@@ -254,6 +262,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = france
 			and RandomPercent < 34
 				spawn_character france random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = france
+			and RandomPercent < 16
+				spawn_character france random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = france
 			and RandomPercent < 16
@@ -307,9 +319,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character france random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = france
+			if I_SettlementOwner Kutaisi = france
 			and RandomPercent < 34
-				spawn_character france random_name, princess, age 19, x 401, y 148
+				spawn_character france random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = france
 			and RandomPercent < 34
@@ -346,6 +358,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = england
 			and RandomPercent < 34
 				spawn_character england random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = england
+			and RandomPercent < 16
+				spawn_character england random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = england
 			and RandomPercent < 16
@@ -399,9 +415,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character england random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = england
+			if I_SettlementOwner Kutaisi = england
 			and RandomPercent < 34
-				spawn_character england random_name, princess, age 19, x 401, y 148
+				spawn_character england random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = england
 			and RandomPercent < 34
@@ -438,6 +454,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = scotland
 			and RandomPercent < 34
 				spawn_character scotland random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = scotland
+			and RandomPercent < 16
+				spawn_character scotland random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = scotland
 			and RandomPercent < 16
@@ -491,9 +511,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character scotland random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = scotland
+			if I_SettlementOwner Kutaisi = scotland
 			and RandomPercent < 34
-				spawn_character scotland random_name, princess, age 19, x 401, y 148
+				spawn_character scotland random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = scotland
 			and RandomPercent < 34
@@ -530,6 +550,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = denmark
 			and RandomPercent < 34
 				spawn_character denmark random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = denmark
+			and RandomPercent < 16
+				spawn_character denmark random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = denmark
 			and RandomPercent < 16
@@ -583,9 +607,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character denmark random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = denmark
+			if I_SettlementOwner Kutaisi = denmark
 			and RandomPercent < 34
-				spawn_character denmark random_name, princess, age 19, x 401, y 148
+				spawn_character denmark random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = denmark
 			and RandomPercent < 34
@@ -622,6 +646,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = norway
 			and RandomPercent < 34
 				spawn_character norway random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = norway
+			and RandomPercent < 16
+				spawn_character norway random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = norway
 			and RandomPercent < 16
@@ -675,9 +703,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character norway random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = norway
+			if I_SettlementOwner Kutaisi = norway
 			and RandomPercent < 34
-				spawn_character norway random_name, princess, age 19, x 401, y 148
+				spawn_character norway random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = norway
 			and RandomPercent < 34
@@ -714,6 +742,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = spain
 			and RandomPercent < 51
 				spawn_character spain random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = spain
+			and RandomPercent < 16
+				spawn_character spain random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = spain
 			and RandomPercent < 16
@@ -767,9 +799,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character spain random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = spain
+			if I_SettlementOwner Kutaisi = spain
 			and RandomPercent < 34
-				spawn_character spain random_name, princess, age 19, x 401, y 148
+				spawn_character spain random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = spain
 			and RandomPercent < 34
@@ -806,6 +838,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = aragon
 			and RandomPercent < 34
 				spawn_character aragon random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = aragon
+			and RandomPercent < 16
+				spawn_character aragon random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = aragon
 			and RandomPercent < 34
@@ -859,9 +895,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character aragon random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = aragon
+			if I_SettlementOwner Kutaisi = aragon
 			and RandomPercent < 34
-				spawn_character aragon random_name, princess, age 19, x 401, y 148
+				spawn_character aragon random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = aragon
 			and RandomPercent < 34
@@ -871,6 +907,7 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 
 		if I_NumberOfSettlements portugal > 3
 		and I_CompareCounter turn_fid = 20
+		and I_EventCounter zirids_exist != 1
 			if I_SettlementOwner Constantinople = portugal
 			and RandomPercent < 34
 				spawn_character portugal random_name, princess, age 19, x 284, y 142
@@ -898,6 +935,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = portugal
 			and RandomPercent < 34
 				spawn_character portugal random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = portugal
+			and RandomPercent < 16
+				spawn_character portugal random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = portugal
 			and RandomPercent < 16
@@ -951,9 +992,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character portugal random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = portugal
+			if I_SettlementOwner Kutaisi = portugal
 			and RandomPercent < 34
-				spawn_character portugal random_name, princess, age 19, x 401, y 148
+				spawn_character portugal random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = portugal
 			and RandomPercent < 34
@@ -990,6 +1031,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = milan
 			and RandomPercent < 34
 				spawn_character milan random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = milan
+			and RandomPercent < 16
+				spawn_character milan random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = milan
 			and RandomPercent < 16
@@ -1043,9 +1088,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character milan random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = milan
+			if I_SettlementOwner Kutaisi = milan
 			and RandomPercent < 34
-				spawn_character milan random_name, princess, age 19, x 401, y 148
+				spawn_character milan random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = milan
 			and RandomPercent < 34
@@ -1082,6 +1127,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = venice
 			and RandomPercent < 34
 				spawn_character venice random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = venice
+			and RandomPercent < 16
+				spawn_character venice random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = venice
 			and RandomPercent < 16
@@ -1135,9 +1184,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character venice random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = venice
+			if I_SettlementOwner Kutaisi = venice
 			and RandomPercent < 34
-				spawn_character venice random_name, princess, age 19, x 401, y 148
+				spawn_character venice random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = venice
 			and RandomPercent < 34
@@ -1174,6 +1223,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = sicily
 			and RandomPercent < 34
 				spawn_character sicily random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = sicily
+			and RandomPercent < 16
+				spawn_character sicily random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = sicily
 			and RandomPercent < 51
@@ -1227,9 +1280,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character sicily random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = sicily
+			if I_SettlementOwner Kutaisi = sicily
 			and RandomPercent < 34
-				spawn_character sicily random_name, princess, age 19, x 401, y 148
+				spawn_character sicily random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = sicily
 			and RandomPercent < 34
@@ -1266,6 +1319,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = hungary
 			and RandomPercent < 34
 				spawn_character hungary random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = hungary
+			and RandomPercent < 16
+				spawn_character hungary random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = hungary
 			and RandomPercent < 16
@@ -1319,9 +1376,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character hungary random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = hungary
+			if I_SettlementOwner Kutaisi = hungary
 			and RandomPercent < 34
-				spawn_character hungary random_name, princess, age 19, x 401, y 148
+				spawn_character hungary random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = hungary
 			and RandomPercent < 34
@@ -1358,6 +1415,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = poland
 			and RandomPercent < 34
 				spawn_character poland random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = poland
+			and RandomPercent < 16
+				spawn_character poland random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = poland
 			and RandomPercent < 16
@@ -1411,9 +1472,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character poland random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = poland
+			if I_SettlementOwner Kutaisi = poland
 			and RandomPercent < 34
-				spawn_character poland random_name, princess, age 19, x 401, y 148
+				spawn_character poland random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = poland
 			and RandomPercent < 34
@@ -1450,6 +1511,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = lithuania
 			and RandomPercent < 34
 				spawn_character lithuania random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = lithuania
+			and RandomPercent < 16
+				spawn_character lithuania random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = lithuania
 			and RandomPercent < 16
@@ -1503,9 +1568,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character lithuania random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = lithuania
+			if I_SettlementOwner Kutaisi = lithuania
 			and RandomPercent < 34
-				spawn_character lithuania random_name, princess, age 19, x 401, y 148
+				spawn_character lithuania random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = lithuania
 			and RandomPercent < 51
@@ -1542,6 +1607,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = russia
 			and RandomPercent < 34
 				spawn_character russia random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = russia
+			and RandomPercent < 16
+				spawn_character russia random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = russia
 			and RandomPercent < 16
@@ -1595,9 +1664,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character russia random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = russia
+			if I_SettlementOwner Kutaisi = russia
 			and RandomPercent < 34
-				spawn_character russia random_name, princess, age 19, x 401, y 148
+				spawn_character russia random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = russia
 			and RandomPercent < 34
@@ -1634,6 +1703,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = kievan_rus
 			and RandomPercent < 34
 				spawn_character kievan_rus random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = kievan_rus
+			and RandomPercent < 16
+				spawn_character kievan_rus random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = kievan_rus
 			and RandomPercent < 16
@@ -1687,9 +1760,9 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 34
 				spawn_character kievan_rus random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = kievan_rus
+			if I_SettlementOwner Kutaisi = kievan_rus
 			and RandomPercent < 34
-				spawn_character kievan_rus random_name, princess, age 19, x 401, y 148
+				spawn_character kievan_rus random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = kievan_rus
 			and RandomPercent < 34
@@ -1726,6 +1799,10 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			if I_SettlementOwner Leon = jerusalem
 			and RandomPercent < 34
 				spawn_character jerusalem random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = jerusalem
+			and RandomPercent < 16
+				spawn_character jerusalem random_name, princess, age 19, x 13, y 127
 			end_if
 			if I_SettlementOwner Naples = jerusalem
 			and RandomPercent < 16
@@ -1779,13 +1856,109 @@ monitor_event PreFactionTurnStart IsFactionAIControlled
 			and RandomPercent < 51
 				spawn_character jerusalem random_name, princess, age 19, x 330, y 74
 			end_if
-			if I_SettlementOwner Tbilisi = jerusalem
+			if I_SettlementOwner Kutaisi = jerusalem
 			and RandomPercent < 34
-				spawn_character jerusalem random_name, princess, age 19, x 401, y 148
+				spawn_character jerusalem random_name, princess, age 19, x 385, y 151
 			end_if
 			if I_SettlementOwner Vilnius = jerusalem
 			and RandomPercent < 34
 				spawn_character jerusalem random_name, princess, age 19, x 260, y 239
+			end_if
+		end_if
+
+		if I_NumberOfSettlements georgia > 3
+		and I_CompareCounter turn_fid = 29
+			if I_SettlementOwner Constantinople = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner georgia = georgia
+			and RandomPercent < 51
+				spawn_character georgia random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Kutaisi = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 385, y 151
+			end_if
+			if I_SettlementOwner Vilnius = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 260, y 239
 			end_if
 		end_if
 		set_counter courtesan_ai 0

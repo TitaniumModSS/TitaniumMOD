@@ -40,6 +40,7 @@ nonplayable
 	mongols
 	teutonic_order
 ;	timurids
+	georgia
 	dummies
 	slave
 end
@@ -6473,6 +6474,12 @@ relative 	Atsiz Mohammed,	Huma,	Il_Arsla#n,	end
 
 
 faction	dummies, balanced smith
+ai_label		default
+dead_until_resurrected
+denari	0
+denari_kings_purse	0
+
+faction	georgia, balanced smith
 ai_label		default
 dead_until_resurrected
 denari	0

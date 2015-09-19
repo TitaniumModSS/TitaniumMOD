@@ -347,7 +347,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -1199,7 +1199,7 @@
 					DON'T ALLY ISLAMIC FACTIONS
 				-->
 				<min_entry	target_religion="islam"/>
-				<min_entry	target_religion="islam"/>
+				<max_entry	target_religion="islam"/>
 				<faction_attitude	want_ally="false" pts_alliance="-100" continue="false"/>
 			</decision_entry>
 
@@ -1217,7 +1217,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -1814,7 +1814,7 @@
 					IF CEASE HOSTILITIES, INVADE NONE, CANNOT FORCE INVADE, REDUCE INVADE PRIORITY
 				-->
 				<min_entry	has_ceasehostilities="true" global_standing="-0.1"/>
-				<min_entry	has_ceasehostilities="true" global_standing="1.0"/>
+				<max_entry	has_ceasehostilities="true" global_standing="1.0"/>
 				<faction_attitude	can_force_invade="false" invade="invade_none" invade_priority="-500" continue="true" want_peace="true"/>
 			</decision_entry>
 				
@@ -2042,7 +2042,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -2639,7 +2639,7 @@
 					IF CEASE HOSTILITIES, INVADE NONE, CANNOT FORCE INVADE, REDUCE INVADE PRIORITY
 				-->
 				<min_entry	has_ceasehostilities="true" global_standing="-0.1"/>
-				<min_entry	has_ceasehostilities="true" global_standing="1.0"/>
+				<max_entry	has_ceasehostilities="true" global_standing="1.0"/>
 				<faction_attitude	can_force_invade="false" invade="invade_none" invade_priority="-500" continue="true" want_peace="true"/>
 			</decision_entry>
 				
@@ -2965,7 +2965,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -3834,7 +3834,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -4694,7 +4694,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 

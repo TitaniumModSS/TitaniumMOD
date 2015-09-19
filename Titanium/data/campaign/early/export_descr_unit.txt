@@ -177,7 +177,7 @@ stat_food        60, 300
 stat_cost        2, 540, 150, 100, 100, 500, 4, 120
 armour_ug_levels 0
 armour_ug_models Peasants
-ownership        england, slave , hre, france, scotland, hungary, poland, portugal, spain, aragon, teutonic_order, lithuania
+ownership        england, slave , hre, france, scotland, hungary, poland, spain, aragon, teutonic_order, lithuania
 recruit_priority_offset    -60 
 
 
@@ -438,7 +438,7 @@ stat_food        60, 300
 stat_cost        2, 740, 200, 150, 150, 700, 4, 170
 armour_ug_levels 0
 armour_ug_models Peasants
-ownership        hungary, egypt, moors, turks, kwarezm, jerusalem, southern_european, timurids
+ownership        hungary, egypt, moors, turks, kwarezm, jerusalem, southern_european, timurids, portugal
 recruit_priority_offset    -55 
 
 
@@ -562,9 +562,9 @@ stat_food        60, 300
 stat_cost        1, 790, 450, 120, 95, 790, 4, 170
 armour_ug_levels 7, 11, 17, 22
 armour_ug_models Mailed_Knights, Mailed_Knights_ug1, Mailed_Knights_ug1, Mailed_Knights_ug1
-ownership        scotland, france, hre, spain, aragon, portugal, milan, venice, papal_states, slave
-era 0            scotland, france, hre, spain, aragon, portugal, milan, venice, papal_states 
-era 1            scotland, france, hre, spain, aragon, portugal, milan, venice, papal_states 
+ownership        scotland, france, hre, spain, aragon, milan, venice, papal_states, slave
+era 0            scotland, france, hre, spain, aragon, milan, venice, papal_states 
+era 1            scotland, france, hre, spain, aragon, milan, venice, papal_states 
 recruit_priority_offset    30
 
 
@@ -599,8 +599,8 @@ stat_food        60, 300
 stat_cost        1, 1110, 600, 120, 95, 1110, 4, 180
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Feudal_Knights, Feudal_Knights, Feudal_Knights_ug1, Feudal_Knights_ug1
-ownership        england, aragon, spain, portugal, milan, venice, papal_states, hungary, slave, hre, france, scotland, denmark, norway
-era 1            england, aragon, spain, portugal, milan, venice, hungary
+ownership        england, aragon, spain, milan, venice, papal_states, hungary, slave, hre, france, scotland, denmark, norway
+era 1            england, aragon, spain, milan, venice, hungary
 recruit_priority_offset    40
 
 
@@ -788,41 +788,41 @@ era 2            france
 recruit_priority_offset    50
 
 
-type             Portuguese Knights
-dictionary       Portuguese_Knights      ; Portuguese Knights, f
-category         cavalry
-class            heavy
-voice_type       Heavy
-banner faction   main_cavalry
-banner holy      crusade_cavalry
-soldier          Portuguese_Knights, 20, 0, 1
-officer          Portuguese_Knights
-officer          northern_captain_early_flag
-mount            barded horse brawler charger
-mount_effect     elephant -4, camel -4 
-attributes       sea_faring, hide_forest, can_withdraw, can_formed_charge, frighten_foot, knight, free_upkeep_unit, command
-move_speed_mod	 0.95
-formation        1.5, 4.4, 2.5, 6, 2, square ; , wedge
-stat_health      1, 3
-stat_pri         5, 13, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
-stat_pri_attr    no
-stat_sec         10, 5, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
-stat_sec_attr    no
-stat_pri_armour  15, 7, 3, metal
-stat_sec_armour  0, 0, flesh
-stat_heat        12
-stat_ground      -1, -1, -4, -2 
-stat_mental      17, low, untrained
-stat_charge_dist 45
-stat_fire_delay  0
-stat_food        60, 300
-stat_cost        1, 1175, 600, 120, 95, 1175, 4, 170
-armour_ug_levels 22, 30, 37, 40
-armour_ug_models Portuguese_Knights, Portuguese_Knights_ug1, Portuguese_Knights_ug1, Portuguese_Knights_ug1
-ownership        portugal
-era 1            portugal
-era 2            portugal
-recruit_priority_offset    50
+;type             Portuguese Knights
+;dictionary       Portuguese_Knights      ; Portuguese Knights, f
+;category         cavalry
+;class            heavy
+;voice_type       Heavy
+;banner faction   main_cavalry
+;banner holy      crusade_cavalry
+;soldier          Portuguese_Knights, 20, 0, 1
+;officer          Portuguese_Knights
+;officer          northern_captain_early_flag
+;mount            barded horse brawler charger
+;mount_effect     elephant -4, camel -4 
+;attributes       sea_faring, hide_forest, can_withdraw, can_formed_charge, frighten_foot, knight, free_upkeep_unit, command
+;move_speed_mod	 0.95
+;formation        1.5, 4.4, 2.5, 6, 2, square ; , wedge
+;stat_health      1, 3
+;stat_pri         5, 13, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+;stat_pri_attr    no
+;stat_sec         10, 5, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+;stat_sec_attr    no
+;stat_pri_armour  15, 7, 3, metal
+;stat_sec_armour  0, 0, flesh
+;stat_heat        12
+;stat_ground      -1, -1, -4, -2 
+;stat_mental      17, low, untrained
+;stat_charge_dist 45
+;stat_fire_delay  0
+;stat_food        60, 300
+;stat_cost        1, 1175, 600, 120, 95, 1175, 4, 170
+;armour_ug_levels 22, 30, 37, 40
+;armour_ug_models Portuguese_Knights, Portuguese_Knights_ug1, Portuguese_Knights_ug1, Portuguese_Knights_ug1
+;ownership        portugal
+;era 1            portugal
+;era 2            portugal
+;recruit_priority_offset    50
 
 
 type             Imperial Knights
@@ -1323,10 +1323,10 @@ stat_food        60, 300
 stat_cost        1, 555, 0, 60, 50, 555, 1, 100
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models SE_Bodyguard, SE_Bodyguard, SE_Bodyguard_ug1, SE_Bodyguard_ug1
-ownership        spain, aragon, portugal, milan, venice, papal_states, sicily
-era 0            spain, aragon, portugal, milan, venice, papal_states, sicily
-era 1            spain, aragon, portugal, milan, venice, papal_states, sicily
-era 2            spain, aragon, portugal, milan, venice, papal_states, sicily
+ownership        spain, aragon, milan, venice, papal_states, sicily
+era 0            spain, aragon, milan, venice, papal_states, sicily
+era 1            spain, aragon, milan, venice, papal_states, sicily
+era 2            spain, aragon, milan, venice, papal_states, sicily
 recruit_priority_offset    40
 
 
@@ -1435,7 +1435,7 @@ stat_food        60, 300
 stat_cost        1, 1450, 250, 130, 100, 1450, 4, 220
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Knights_Templar, Knights_Templar, Knights_Templar_ug1, Knights_Templar_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -1474,7 +1474,7 @@ stat_food        60, 300
 stat_cost        1, 1450, 250, 130, 100, 1450, 4, 220
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Knights_Hospitaller, Knights_Hospitaller, Knights_Hospitaller_ug1, Knights_Hospitaller_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -1513,9 +1513,9 @@ stat_food        60, 300
 stat_cost        1, 1320, 250, 130, 100, 1320, 4, 220
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Knights_of_Santiago, Knights_of_Santiago, Knights_of_Santiago_ug1, Knights_of_Santiago_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
-era 1            spain, aragon, portugal
-era 2            spain, aragon, portugal
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
+era 1            spain, aragon
+era 2            spain, aragon
 info_pic_dir	 KnightOrders
 card_pic_dir	 KnightOrders
 recruit_priority_offset    40
@@ -1551,7 +1551,7 @@ stat_food        60, 300
 stat_cost        1, 305, 170, 90, 70, 340, 4, 90
 armour_ug_levels 10, 19, 24, 34
 armour_ug_models Merchant_Cavalry_Militia, Merchant_Cavalry_Militia, Merchant_Cavalry_Militia_ug1, Merchant_Cavalry_Militia_ug2
-ownership        england, slave , norway, scotland, france, hre, denmark, spain, aragon, portugal, poland, hungary, teutonic_order
+ownership        england, slave , norway, scotland, france, hre, denmark, spain, aragon, poland, hungary, teutonic_order
 recruit_priority_offset    15
 
 
@@ -1726,7 +1726,7 @@ stat_food        60, 300
 stat_cost        1, 655, 655, 130, 100, 970, 4, 220
 armour_ug_levels 11, 17, 37
 armour_ug_models Crusader_Knights, Crusader_Knights, Crusader_Knights
-ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
+ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, poland, hungary, papal_states, jerusalem
 recruit_priority_offset    20
 
 
@@ -1904,9 +1904,9 @@ stat_food        60, 300
 stat_cost        1, 595, 595, 120, 95, 895, 4, 130
 armour_ug_levels 5
 armour_ug_models alan_aldary
-ownership        mongols, cumans, slave;; , timurids
-era 0            mongols, cumans;; , timurids
-era 1            mongols, cumans;; , timurids
+ownership        mongols, cumans, georgia, slave;; , timurids
+era 0            mongols, cumans, georgia;; , timurids
+era 1            mongols, cumans, georgia;; , timurids
 recruit_priority_offset    15
 
 
@@ -1939,9 +1939,9 @@ stat_food        60, 300
 stat_cost        1, 270, 185, 100, 75, 435, 4, 130
 armour_ug_levels 1, 6 
 armour_ug_models Jinetes, Jinetes_ug1
-ownership        spain, portugal, slave
-era 0            spain, portugal
-era 1            spain, portugal
+ownership        spain, slave
+era 0            spain
+era 1            spain
 recruit_priority_offset    20
 
 
@@ -1974,9 +1974,9 @@ stat_food        60, 300
 stat_cost        6, 825, 200, 90, 70, 625, 4, 110
 armour_ug_levels 4, 16, 23
 armour_ug_models Mounted_Crossbowmen, Mounted_Crossbowmen_ug1, Mounted_Crossbowmen_ug1
-ownership        hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order
-era 1            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order
-era 2            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order
+ownership        hre, denmark, norway, spain, aragon, milan, venice, papal_states, sicily, teutonic_order
+era 1            hre, denmark, norway, spain, aragon, milan, venice, papal_states, sicily, teutonic_order
+era 2            hre, denmark, norway, spain, aragon, milan, venice, papal_states, sicily, teutonic_order
 recruit_priority_offset    10
 
 
@@ -2260,7 +2260,7 @@ stat_food        60, 300
 stat_cost        1, 515, 150, 100, 75, 655, 4, 190
 armour_ug_levels 0
 armour_ug_models cum_militia_cav_a_sw_ug0
-ownership        slave, cumans 
+ownership        slave, cumans, georgia 
 era 0            cumans 
 era 1            cumans 
 era 2            cumans 
@@ -2294,10 +2294,10 @@ stat_food        60, 300
 stat_cost        1, 80, 55, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models Peasant_Archers, Peasant_Archers_ug1
-ownership        england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily, slave
-era 0            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
-era 1            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
-era 2            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+ownership        england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily, slave
+era 0            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+era 1            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+era 2            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
 recruit_priority_offset    -20 
 
 
@@ -2328,10 +2328,10 @@ stat_food        60, 300
 stat_cost        1, 95, 60, 65, 50, 80, 4, 50
 armour_ug_levels 0, 2, 2
 armour_ug_models S_Peasant_Archers, S_Peasant_Archers_ug1, S_Peasant_Archers_ug1
-ownership        byzantium, slave
-era 0            byzantium
-era 1            byzantium
-era 2            byzantium
+ownership        byzantium, georgia, slave
+era 0            byzantium, georgia
+era 1            byzantium, georgia
+era 2            byzantium, georgia
 recruit_priority_offset    -20 
 
 
@@ -2494,10 +2494,10 @@ stat_food        60, 300
 stat_cost        1, 80, 80, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1, 4 
 armour_ug_models Peasant_Crossbowmen, Peasant_Crossbowmen_ug1, Peasant_Crossbowmen_ug2
-ownership        france, hre, spain, aragon, portugal, milan, venice, papal_states, slave
-era 0            france, hre, spain, aragon, portugal, milan, venice, papal_states 
-era 1            france, hre, spain, aragon, portugal, milan, venice, papal_states 
-era 2            france, hre, spain, aragon, portugal, milan, venice, papal_states 
+ownership        france, hre, spain, aragon, milan, venice, papal_states, slave
+era 0            france, hre, spain, aragon, milan, venice, papal_states 
+era 1            france, hre, spain, aragon, milan, venice, papal_states 
+era 2            france, hre, spain, aragon, milan, venice, papal_states 
 recruit_priority_offset    -10 
 
 
@@ -2562,9 +2562,9 @@ stat_food        60, 300
 stat_cost        1, 240, 180, 65, 50, 360, 4, 120
 armour_ug_levels 4, 16 
 armour_ug_models Pavise_Crossbowmen, Pavise_Crossbowmen_ug1
-ownership        hre, spain, aragon, portugal, papal_states, sicily, poland, slave
-era 1            hre, spain, aragon, portugal, papal_states, sicily, poland
-era 2            hre, spain, aragon, portugal, papal_states, sicily, poland
+ownership        hre, spain, aragon, papal_states, sicily, poland, slave
+era 1            hre, spain, aragon, papal_states, sicily, poland
+era 2            hre, spain, aragon, papal_states, sicily, poland
 recruit_priority_offset    15
 
 
@@ -2726,7 +2726,7 @@ stat_food        60, 300
 stat_cost        1, 115, 100, 65, 50, 120, 4, 50
 armour_ug_levels 0, 1, 4 
 armour_ug_models Crossbow_Militia, Crossbow_Militia_ug1, Crossbow_Militia_ug2
-ownership        france, norway, hre, denmark, spain, aragon, portugal, teutonic_order, slave, jerusalem
+ownership        france, norway, hre, denmark, spain, aragon, teutonic_order, slave, jerusalem
 recruit_priority_offset    0
 
 
@@ -2758,9 +2758,9 @@ stat_food        60, 300
 stat_cost        1, 440, 180, 75, 55, 460, 4, 130
 armour_ug_levels 1, 6 
 armour_ug_models Sicilian_Muslim_Archers, Sicilian_Muslim_Archers_ug1
-ownership        all; sicily, slave
-era 0            sicily
-era 1            sicily
+ownership        all; sicily, portugal, slave
+era 0            sicily, portugal
+era 1            sicily, portugal
 recruit_priority_offset    10
 
 
@@ -3219,10 +3219,10 @@ stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 armour_ug_levels 0, 1
 armour_ug_models levy_infantry, town_militia_ug1
-ownership        england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, teutonic_order
-era 0            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
-era 1            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
-era 2            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
+ownership        england, slave , norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, teutonic_order
+era 0            england, slave , norway, france, hre, denmark, spain, aragon, milan, venice, papal_states
+era 1            england, slave , norway, france, hre, denmark, spain, aragon, milan, venice, papal_states
+era 2            england, slave , norway, france, hre, denmark, spain, aragon, milan, venice, papal_states
 recruit_priority_offset    -50 
 
 
@@ -3254,10 +3254,10 @@ stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 armour_ug_levels 0, 2
 armour_ug_models Southern_Peasants, southern_Peasants_ug1
-ownership        sicily, byzantium, slave
-era 0            sicily, byzantium
-era 1            sicily, byzantium
-era 2            sicily, byzantium
+ownership        sicily, byzantium, georgia, slave
+era 0            sicily, byzantium, georgia
+era 1            sicily, byzantium, georgia
+era 2            sicily, byzantium, georgia
 recruit_priority_offset    -50 
 
 
@@ -3426,9 +3426,9 @@ stat_food        60, 300
 stat_cost        1, 330, 180, 75, 55, 355, 4, 80
 armour_ug_levels 0, 1, 4
 armour_ug_models Lusitanian_Javelinmen, Lusitanian_Javelinmen_ug1, Lusitanian_Javelinmen_ug2
-ownership        all; portugal, spain
-era 0            portugal, spain
-era 1            portugal, spain
+ownership        all; spain
+era 0            spain
+era 1            spain
 recruit_priority_offset    0
 
 
@@ -3496,9 +3496,9 @@ stat_food        60, 300
 stat_cost        1, 295, 150, 75, 55, 380, 4, 100
 armour_ug_levels 7, 36, 36
 armour_ug_models Swordsmen_Militia, Swordsmen_Militia_ug1, Swordsmen_Militia_ug1
-ownership        spain, aragon, portugal
-era 1            spain, aragon, portugal
-era 2            spain, aragon, portugal
+ownership        spain, aragon
+era 1            spain, aragon
+era 2            spain, aragon
 recruit_priority_offset    20
 
 
@@ -4050,8 +4050,8 @@ stat_food        60, 300
 stat_cost        1, 160, 115, 75, 60, 165, 4, 70
 armour_ug_levels 0, 1, 6, 10
 armour_ug_models Spear_Militia, Spear_Militia_ug1, Spear_Militia_ug2, Spear_Militia_ug3
-ownership        england, norway, scotland, france, hre, denmark, spain, aragon, portugal, teutonic_order, jerusalem, slave 
-era 0            england, norway, scotland, france, hre, denmark, spain, aragon, portugal, teutonic_order, jerusalem
+ownership        england, norway, scotland, france, hre, denmark, spain, aragon, teutonic_order, jerusalem, slave 
+era 0            england, norway, scotland, france, hre, denmark, spain, aragon, teutonic_order, jerusalem
 recruit_priority_offset    0
 
 
@@ -4226,7 +4226,7 @@ stat_food        60, 300
 stat_cost        1, 290, 200, 85, 65, 300, 4, 90
 armour_ug_levels 1, 4, 16
 armour_ug_models Italian_Spear_Militia, Italian_Spear_Militia_ug1, Italian_Spear_Militia_ug2
-ownership        milan, venice, papal_states, sicily, slave, england, norway, scotland, france, hre, denmark, spain, aragon, portugal
+ownership        milan, venice, papal_states, sicily, slave, england, norway, scotland, france, hre, denmark, spain, aragon
 era 0            milan, venice, papal_states, sicily
 era 1            milan, venice, papal_states, sicily
 era 2            milan 
@@ -4441,7 +4441,7 @@ stat_food        60, 300
 stat_cost        1, 310, 310, 85, 65, 465, 4, 120
 armour_ug_levels 7
 armour_ug_models Crusader_Sergeants
-ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
+ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, poland, hungary, papal_states, jerusalem
 recruit_priority_offset    15
 
 
@@ -4922,7 +4922,7 @@ stat_food        60, 300
 stat_cost        1, 290, 150, 65, 50, 345, 4, 70
 armour_ug_levels 4, 16, 23, 33
 armour_ug_models Halberd_Militia_ug2, Halberd_Militia_ug3, Halberd_Militia_ug3, Obudshaer
-ownership        hre, papal_states, sicily, poland, hungary, slave, england, scotland, spain, aragon, portugal, milan, venice, russia, kievan_rus, teutonic_order, lithuania
+ownership        hre, papal_states, sicily, poland, hungary, slave, england, scotland, spain, aragon, milan, venice, russia, kievan_rus, teutonic_order, lithuania
 recruit_priority_offset    10
 
 
@@ -5132,8 +5132,8 @@ stat_food        60, 300
 stat_cost        1, 795, 480, 90, 70, 795, 4, 140
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Dismounted_Feudal_Knights, Dismounted_Feudal_Knights, Dismounted_Feudal_Knights_ug1, Dismounted_Feudal_Knights_ug1
-ownership        england, aragon, norway, scotland, france, denmark, spain, portugal, milan, venice, papal_states, hungary, hre
-era 0            england, aragon, norway, france, denmark, spain, portugal, milan, venice, papal_states, hungary, scotland, hre
+ownership        england, aragon, norway, scotland, france, denmark, spain, milan, venice, papal_states, hungary, hre
+era 0            england, aragon, norway, france, denmark, spain, milan, venice, papal_states, hungary, scotland, hre
 era 1            scotland
 recruit_priority_offset    25
 
@@ -5383,40 +5383,40 @@ era 1            denmark, norway
 recruit_priority_offset    10
 
 
-type             Dismounted Portuguese Knights
-dictionary       Dismounted_Portuguese_Knights      ; Dismounted Portuguese Knights, f
-category         infantry
-class            heavy
-voice_type       Heavy
-banner faction   main_infantry
-banner holy      crusade
-soldier          Dismounted_Portuguese_Knights, 40, 0, 1.4375, 0.45
-officer          Dismounted_Portuguese_Knights_ug1
-officer          northern_captain_early_flag
-officer          northern_captain_early_flag
-mount_effect     horse +2, camel +2
-attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
-formation        1.2, 1.0, 2.4, 2.0, 3, square
-stat_health      1, 1
-stat_pri         16, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
-stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-stat_sec_attr    no
-stat_pri_armour  13, 8, 0, metal
-stat_sec_armour  0, 0, flesh
-stat_heat        9
-stat_ground      -1, -2, -1, -3 
-stat_mental      15, low, untrained
-stat_charge_dist 6
-stat_fire_delay  0
-stat_food        60, 300
-stat_cost        1, 890, 480, 100, 75, 890, 4, 130
-armour_ug_levels 22, 30, 37, 40
-armour_ug_models Dismounted_Portuguese_Knights, Dismounted_Portuguese_Knights_ug1, Dismounted_Portuguese_Knights_ug1, Dismounted_Portuguese_Knights_ug1
-ownership        portugal
-era 1            portugal
-era 2            portugal
-recruit_priority_offset    30
+;type             Dismounted Portuguese Knights
+;dictionary       Dismounted_Portuguese_Knights      ; Dismounted Portuguese Knights, f
+;category         infantry
+;class            heavy
+;voice_type       Heavy
+;banner faction   main_infantry
+;banner holy      crusade
+;soldier          Dismounted_Portuguese_Knights, 40, 0, 1.4375, 0.45
+;officer          Dismounted_Portuguese_Knights_ug1
+;officer          northern_captain_early_flag
+;officer          northern_captain_early_flag
+;mount_effect     horse +2, camel +2
+;attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
+;formation        1.2, 1.0, 2.4, 2.0, 3, square
+;stat_health      1, 1
+;stat_pri         16, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+;stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
+;stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
+;stat_sec_attr    no
+;stat_pri_armour  13, 8, 0, metal
+;stat_sec_armour  0, 0, flesh
+;stat_heat        9
+;stat_ground      -1, -2, -1, -3 
+;stat_mental      15, low, untrained
+;stat_charge_dist 6
+;stat_fire_delay  0
+;stat_food        60, 300
+;stat_cost        1, 890, 480, 100, 75, 890, 4, 130
+;armour_ug_levels 22, 30, 37, 40
+;armour_ug_models Dismounted_Portuguese_Knights, Dismounted_Portuguese_Knights_ug1, Dismounted_Portuguese_Knights_ug1, Dismounted_Portuguese_Knights_ug1
+;ownership        portugal
+;era 1            portugal
+;era 2            portugal
+;recruit_priority_offset    30
 
 
 type             Dismounted Italian MAA
@@ -5700,10 +5700,10 @@ stat_food        60, 300
 stat_cost        1, 585, 585, 120, 95, 970, 4, 170
 armour_ug_levels 5, 9
 armour_ug_models alan_druzhina_aldarov, alan_druzhina_aldarov
-ownership        all ; slave, mongols, cumans;; , timurids
-era 0            mongols, cumans;; , timurids
-era 1            mongols, cumans;; , timurids
-era 2            mongols, cumans;; , timurids
+ownership        all ; slave, mongols, cumans, georgia;; , timurids
+era 0            mongols, cumans, georgia;; , timurids
+era 1            mongols, cumans, georgia;; , timurids
+era 2            mongols, cumans, georgia;; , timurids
 recruit_priority_offset 0
 
 
@@ -5911,10 +5911,10 @@ stat_food        60, 300
 stat_cost        1, 820, 375, 100, 75, 820, 4, 190
 armour_ug_levels 7, 11, 17, 37
 armour_ug_models Sipahis, Sipahis_ug1, Sipahis_ug2, Sipahis_ug2
-ownership        turks, moors, timurids
-era 0            turks, moors, timurids
-era 1            turks, moors, timurids
-era 2            turks, moors, timurids
+ownership        turks, moors, timurids, portugal
+era 0            turks, moors, timurids, portugal
+era 1            turks, moors, timurids, portugal
+era 2            turks, moors, timurids, portugal
 recruit_priority_offset    35
 
 
@@ -5984,10 +5984,10 @@ stat_food        60, 300
 stat_cost        1, 320, 175, 100, 75, 460, 4, 130
 armour_ug_levels 0, 1
 armour_ug_models Desert_Cavalry, Desert_Cavalry_ug1
-ownership        all; moors, egypt, timurids, slave
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        all; moors, egypt, timurids, portugal, slave
+era 0            moors, egypt, timurids, portugal
+era 1            moors, egypt, timurids, portugal
+era 2            moors, egypt, timurids, portugal
 recruit_priority_offset    0
 
 
@@ -6096,10 +6096,10 @@ stat_food        60, 300
 stat_cost        6, 955, 200, 100, 75, 755, 4, 120
 armour_ug_levels 2, 7, 14
 armour_ug_models Arab_Cavalry, Arab_Cavalry_ug1, Arab_Cavalry_ug2
-ownership        moors, egypt, timurids, slave
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        moors, egypt, timurids, portugal, slave
+era 0            moors, egypt, timurids, portugal
+era 1            moors, egypt, timurids, portugal
+era 2            moors, egypt, timurids, portugal
 recruit_priority_offset    15
 
 
@@ -6282,9 +6282,9 @@ stat_food        60, 300
 stat_cost        1, 620, 450, 130, 100, 1005, 4, 240
 armour_ug_levels 11, 17, 37
 armour_ug_models Christian_Guard, Christian_Guard, Christian_Guard
-ownership        moors
-era 1            moors
-era 2            moors
+ownership        moors, portugal
+era 1            moors, portugal
+era 2            moors, portugal
 recruit_priority_offset    50
 
 
@@ -6352,9 +6352,9 @@ stat_food        60, 300
 stat_cost        1, 460, 225, 120, 95, 585, 4, 150
 armour_ug_levels 0, 1
 armour_ug_models Tuareg_Camel_Spearmens, Tuareg_Camel_Spearmens_ug1
-ownership        all; moors, slave
-era 0            moors
-era 1            moors
+ownership        all; moors, portugal, slave
+era 0            moors, portugal
+era 1            moors, portugal
 recruit_priority_offset    0
 
 
@@ -6426,10 +6426,10 @@ stat_food        60, 300
 stat_cost        1, 520, 0, 60, 50, 520, 1, 110
 armour_ug_levels 11, 17, 37
 armour_ug_models ME_Bodyguard, ME_Bodyguard_ug1, ME_Bodyguard_ug1
-ownership        moors, egypt, turks, kwarezm, timurids, slave
-era 0            moors, egypt, turks, kwarezm, timurids
-era 1            moors, egypt, turks, kwarezm, timurids
-era 2            moors, egypt, turks, kwarezm, timurids
+ownership        moors, egypt, turks, kwarezm, timurids, portugal, slave
+era 0            moors, egypt, turks, kwarezm, timurids, portugal
+era 1            moors, egypt, turks, kwarezm, timurids, portugal
+era 2            moors, egypt, turks, kwarezm, timurids, portugal
 recruit_priority_offset    40
 
 
@@ -6537,7 +6537,7 @@ stat_food        60, 300
 stat_cost        1, 285, 285, 90, 70, 435, 4, 100
 armour_ug_levels 0
 armour_ug_models Akinjis
-ownership        slave, moors, egypt, turks, timurids
+ownership        slave, moors, egypt, turks, timurids, portugal
 recruit_priority_offset    5
 
 
@@ -6568,10 +6568,10 @@ stat_food        60, 300
 stat_cost        1, 80, 55, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models ME_Peasant_Archers, ME_Peasant_Archers_ug1
-ownership        egypt, turks, kwarezm, mongols, slave, timurids
-era 0            egypt, turks, kwarezm, timurids
-era 1            egypt, turks, kwarezm, timurids
-era 2            egypt, turks, kwarezm, timurids
+ownership        egypt, turks, kwarezm, mongols, slave, timurids, portugal
+era 0            egypt, turks, kwarezm, timurids, portugal
+era 1            egypt, turks, kwarezm, timurids, portugal
+era 2            egypt, turks, kwarezm, timurids, portugal
 recruit_priority_offset    -20 
 
 
@@ -6738,10 +6738,10 @@ stat_food        60, 300
 stat_cost        1, 480, 150, 65, 50, 505, 4, 90
 armour_ug_levels 0, 1
 armour_ug_models desert_archers, desert_archers_ug1
-ownership        all; moors, egypt, timurids, slave
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        all; moors, egypt, timurids, portugal, slave
+era 0            moors, egypt, timurids, portugal
+era 1            moors, egypt, timurids, portugal
+era 2            moors, egypt, timurids, portugal
 recruit_priority_offset    10
 
 
@@ -6803,7 +6803,7 @@ stat_food        60, 300
 stat_cost        1, 135, 70, 65, 50, 135, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models ME_Archer_Militia, ME_Archer_Militia_ug1
-ownership        egypt, kwarezm, timurids
+ownership        egypt, kwarezm, timurids, portugal, georgia
 recruit_priority_offset    0
 
 
@@ -6835,10 +6835,10 @@ stat_food        60, 300
 stat_cost        1, 195, 120, 65, 50, 220, 4, 80
 armour_ug_levels 0, 1
 armour_ug_models Sudanese_Javelinmen, Sudanese_Javelinmen_ug1
-ownership        all; moors, slave
-era 0            moors
-era 1            moors
-era 2            moors
+ownership        all; moors, portugal, slave
+era 0            moors, portugal
+era 1            moors, portugal
+era 2            moors, portugal
 recruit_priority_offset    -5 
 
 
@@ -6869,9 +6869,9 @@ stat_food        60, 300
 stat_cost        1, 80, 80, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models ME_Peasant_Crossbowmen, ME_Peasant_Crossbowmen_ug1
-ownership        moors, slave
-era 1            moors
-era 2            moors
+ownership        moors, portugal, slave
+era 1            moors, portugal
+era 2            moors, portugal
 recruit_priority_offset    0
 
 
@@ -6901,7 +6901,7 @@ stat_food        60, 300
 stat_cost        1, 155, 115, 65, 50, 200, 4, 80
 armour_ug_levels 7, 14
 armour_ug_models ME_Crossbow_Militia, ME_Crossbow_Militia_ug1
-ownership        moors, slave
+ownership        moors, portugal, slave
 recruit_priority_offset    10
 
 
@@ -6932,8 +6932,8 @@ stat_food        60, 300
 stat_cost        4, 255, 255, 65, 50, 405, 4, 90
 armour_ug_levels 0
 armour_ug_models Armenian_Archers
-ownership        slave, turks
-era 2            turks
+ownership        slave, turks, georgia
+era 2            turks, georgia
 recruit_priority_offset    10
 
 
@@ -6965,10 +6965,10 @@ stat_food        60, 300
 stat_cost        1, 120, 100, 65, 50, 120, 4, 20
 armour_ug_levels 0, 1
 armour_ug_models me_levy_infantry, me_levy_infantry_ug1
-ownership        moors, egypt, turks, mongols, kwarezm, timurids, slave
-era 0            moors, egypt, turks, mongols, kwarezm, timurids
-era 1            moors, egypt, turks, mongols, kwarezm, timurids
-era 2            moors, egypt, turks, mongols, kwarezm, timurids
+ownership        moors, egypt, turks, mongols, kwarezm, timurids, portugal, slave
+era 0            moors, egypt, turks, mongols, kwarezm, timurids, portugal
+era 1            moors, egypt, turks, mongols, kwarezm, timurids, portugal
+era 2            moors, egypt, turks, mongols, kwarezm, timurids, portugal
 recruit_priority_offset    -50 
 
 
@@ -7068,10 +7068,10 @@ stat_food        60, 300
 stat_cost        1, 160, 115, 75, 60, 170, 4, 70
 armour_ug_levels 0, 1
 armour_ug_models ME_Spear_Militia, ME_Spear_Militia_ug1
-ownership        kwarezm, moors, egypt, turks, timurids, slave
-era 0            kwarezm, moors, egypt, turks, timurids
-era 1            kwarezm, moors, egypt, turks, timurids
-era 2            kwarezm, timurids
+ownership        kwarezm, moors, egypt, turks, timurids, portugal, georgia, slave
+era 0            kwarezm, moors, egypt, turks, timurids, portugal, georgia
+era 1            kwarezm, moors, egypt, turks, timurids, portugal, georgia
+era 2            kwarezm, timurids, portugal, georgia
 recruit_priority_offset    0
 
 
@@ -7104,10 +7104,10 @@ stat_food        60, 300
 stat_cost        4, 575, 180, 85, 65, 395, 4, 100
 armour_ug_levels 0, 1
 armour_ug_models Nubian_Spearmen, Nubian_Spearmen_ug1
-ownership        moors, egypt, slave
-era 0            moors, egypt
-era 1            moors, egypt
-era 2            moors, egypt
+ownership        moors, egypt, portugal, slave
+era 0            moors, egypt, portugal
+era 1            moors, egypt, portugal
+era 2            moors, egypt, portugal
 recruit_priority_offset    0
 
 
@@ -7141,8 +7141,8 @@ stat_food        60, 300
 stat_cost        1, 580, 405, 105, 80, 585, 4, 140
 armour_ug_levels 0, 1, 6
 armour_ug_models Lamtuna_Spearmen, Lamtuna_Spearmen_ug1, Lamtuna_Spearmen_ug1
-ownership        all ;moors
-era 0            moors
+ownership        all ;moors, portugal
+era 0            moors, portugal
 recruit_priority_offset    20
 
 
@@ -7243,7 +7243,7 @@ stat_food        60, 300
 stat_cost        1, 255, 255, 75, 55, 330, 4, 60
 armour_ug_levels 0
 armour_ug_models Sudanese_Tribesmen
-ownership        slave, moors, egypt
+ownership        slave, moors, egypt, portugal
 recruit_priority_offset    0
 
 
@@ -7278,10 +7278,10 @@ stat_food        60, 300
 stat_cost        4, 595, 180, 75, 55, 415, 4, 100
 armour_ug_levels 2, 7, 11
 armour_ug_models Dismounted_Arab_Cavalry, Dismounted_Arab_Cavalry_ug1, Dismounted_Arab_Cavalry_ug2
-ownership        moors, egypt, timurids
-era 0            moors, egypt, timurids
-era 1            moors, egypt, timurids
-era 2            moors, egypt, timurids
+ownership        moors, egypt, timurids, portugal
+era 0            moors, egypt, timurids, portugal
+era 1            moors, egypt, timurids, portugal
+era 2            moors, egypt, timurids, portugal
 recruit_priority_offset    10
 
 
@@ -7313,7 +7313,7 @@ stat_food        60, 300
 stat_cost        1, 245, 245, 90, 70, 330, 4, 120
 armour_ug_levels 0
 armour_ug_models Ghazis
-ownership        slave, moors, egypt, turks, timurids
+ownership        slave, moors, egypt, turks, timurids, portugal
 recruit_priority_offset    0
 
 
@@ -7346,7 +7346,7 @@ stat_food        60, 300
 stat_cost        1, 125, 125, 90, 70, 175, 4, 40
 armour_ug_levels 0
 armour_ug_models Mutatawwi'a
-ownership        slave, moors, egypt, turks, timurids
+ownership        slave, moors, egypt, turks, timurids, portugal
 recruit_priority_offset    0
 
 
@@ -7378,9 +7378,9 @@ stat_food        60, 300
 stat_cost        1, 340, 180, 85, 65, 430, 4, 120
 armour_ug_levels 7, 14
 armour_ug_models Saracen_Militia, Saracen_Militia_ug1
-ownership        egypt, turks, kwarezm, timurids, slave
-era 1            egypt, turks, kwarezm, timurids
-era 2            egypt, turks, kwarezm, timurids
+ownership        egypt, turks, kwarezm, timurids, portugal, slave
+era 1            egypt, turks, kwarezm, timurids, portugal
+era 2            egypt, turks, kwarezm, timurids, portugal
 recruit_priority_offset    10
 
 
@@ -7414,8 +7414,8 @@ stat_food        60, 300
 stat_cost        1, 295, 150, 75, 55, 350, 4, 120
 armour_ug_levels 7, 14
 armour_ug_models ME_Halberd_Militia, ME_Halberd_Militia_ug1
-ownership        egypt, turks, kwarezm, timurids
-era 2            egypt, turks, kwarezm, timurids
+ownership        egypt, turks, kwarezm, timurids, georgia
+era 2            egypt, turks, kwarezm, timurids, georgia
 recruit_priority_offset    15
 
 
@@ -7445,9 +7445,9 @@ stat_food        60, 300
 stat_cost        12, 810, 190, 55, 45, 620, 4, 105
 armour_ug_levels 10, 37
 armour_ug_models Hashishim, Hashishim
-ownership        moors, egypt, turks, kwarezm, timurids, slave
-era 1            moors, egypt, turks, kwarezm, timurids
-era 2            moors, egypt, turks, kwarezm, timurids
+ownership        moors, egypt, turks, kwarezm, timurids, portugal, slave
+era 1            moors, egypt, turks, kwarezm, timurids, portugal
+era 2            moors, egypt, turks, kwarezm, timurids, portugal
 recruit_priority_offset    10
 
 
@@ -7481,9 +7481,9 @@ stat_food        60, 300
 stat_cost        10, 550, 275, 100, 75, 715, 4, 120
 armour_ug_levels 11, 17, 37
 armour_ug_models Tabardariyya, Tabardariyya_ug1, Tabardariyya_ug1
-ownership        egypt
-era 1            egypt
-era 2            egypt
+ownership        egypt, portugal
+era 1            egypt, portugal
+era 2            egypt, portugal
 recruit_priority_offset    30
 
 
@@ -7515,9 +7515,9 @@ stat_food        60, 300
 stat_cost        1, 330, 150, 75, 55, 415, 4, 100
 armour_ug_levels 7, 14
 armour_ug_models Urban_Militia, Urban_Militia_ug1
-ownership        moors
-era 1            moors
-era 2            moors
+ownership        moors, portugal
+era 1            moors, portugal
+era 2            moors, portugal
 recruit_priority_offset    25
 
 
@@ -7550,9 +7550,9 @@ stat_food        60, 300
 stat_cost        1, 550, 360, 100, 75, 850, 4, 170
 armour_ug_levels 11, 17, 37
 armour_ug_models Dismounted_Christian_Guard, Dismounted_Christian_Guard, Dismounted_Christian_Guard
-ownership        moors
-era 1            moors
-era 2            moors
+ownership        moors, portugal
+era 1            moors, portugal
+era 2            moors, portugal
 recruit_priority_offset    30
 
 
@@ -8079,7 +8079,7 @@ stat_food        60, 300
 stat_cost        2, 500, 150, 90, 70, 370, 4, 90
 armour_ug_levels 1
 armour_ug_models NE_Ballista_Crew
-ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, sicily, papal_states, teutonic_order, jerusalem, eastern_european, greek
+ownership        england,  norway, scotland, hre, france, denmark, spain, aragon, venice, milan, sicily, papal_states, teutonic_order, jerusalem, eastern_european, greek
 era 0            northern_european, southern_european
 era 1            northern_european, southern_european
 recruit_priority_offset    -25 
@@ -8145,9 +8145,9 @@ stat_food        60, 300
 stat_cost        1, 500, 150, 90, 70, 370, 4, 90
 armour_ug_levels 1
 armour_ug_models ME_Ballista_Crew
-ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 0            turks, moors, egypt, kwarezm, cumans, timurids
-era 1            turks, moors, egypt, kwarezm, cumans, timurids
+ownership        turks, moors, egypt, kwarezm, mongols, timurids, portugal, georgia, cumans
+era 0            turks, moors, egypt, kwarezm, cumans, timurids, portugal, georgia
+era 1            turks, moors, egypt, kwarezm, cumans, timurids, portugal, georgia
 recruit_priority_offset    -25 
 
 
@@ -8180,7 +8180,7 @@ stat_food        60, 300
 stat_cost        2, 600, 150, 90, 70, 400, 4, 100
 armour_ug_levels 1
 armour_ug_models NE_Catapult_Crew
-ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, sicily, eastern_european, greek, papal_states, teutonic_order, jerusalem
+ownership        england,  norway, scotland, hre, france, denmark, spain, aragon, venice, milan, sicily, eastern_european, greek, papal_states, teutonic_order, jerusalem
 era 0            northern_european, southern_european
 era 1            northern_european, southern_european
 recruit_priority_offset    -20 
@@ -8215,9 +8215,9 @@ stat_food        60, 300
 stat_cost        2, 600, 150, 90, 70, 400, 4, 100
 armour_ug_levels 1
 armour_ug_models ME_Catapult_Crew
-ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 0            turks, moors, egypt, kwarezm, cumans, timurids
-era 1            turks, moors, egypt, kwarezm, cumans, timurids
+ownership        turks, moors, egypt, kwarezm, mongols, timurids, portugal, georgia, cumans
+era 0            turks, moors, egypt, kwarezm, cumans, timurids, portugal, georgia
+era 1            turks, moors, egypt, kwarezm, cumans, timurids, portugal, georgia
 recruit_priority_offset    -20 
 
 
@@ -8252,7 +8252,7 @@ stat_food        60, 300
 stat_cost        2, 700, 250, 90, 70, 430, 4, 100
 armour_ug_levels 1
 armour_ug_models NE_Trebuchet_Crew
-ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, sicily, eastern_european, greek, papal_states, teutonic_order, jerusalem
+ownership        england,  norway, scotland, hre, france, denmark, spain, aragon, venice, milan, sicily, eastern_european, greek, papal_states, teutonic_order, jerusalem
 era 1            northern_european, southern_european
 recruit_priority_offset    -10 
 
@@ -8288,8 +8288,8 @@ stat_food        60, 300
 stat_cost        2, 700, 250, 90, 70, 430, 4, 100
 armour_ug_levels 1
 armour_ug_models ME_Trebuchet_Crew
-ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 1            turks, moors, egypt, kwarezm, cumans, timurids
+ownership        turks, moors, egypt, kwarezm, mongols, timurids, portugal, georgia, cumans
+era 1            turks, moors, egypt, kwarezm, cumans, timurids, portugal, georgia
 recruit_priority_offset    -10 
 
 
@@ -8397,9 +8397,9 @@ stat_food        60, 300
 stat_cost        4, 800, 180, 75, 55, 620, 4, 100
 armour_ug_levels 14, 19, 37
 armour_ug_models me_heavy_spearmen, me_heavy_spearmen_ug1, me_heavy_spearmen_ug1
-ownership        kwarezm, turks, egypt, moors, timurids
-era 1            kwarezm, turks, egypt, moors, timurids
-era 2            kwarezm, turks, egypt, moors, timurids
+ownership        kwarezm, turks, egypt, moors, portugal, timurids
+era 1            kwarezm, turks, egypt, moors, portugal, timurids
+era 2            kwarezm, turks, egypt, moors, portugal, timurids
 recruit_priority_offset    15
 
 
@@ -8434,9 +8434,9 @@ stat_food        60, 300
 stat_cost        1, 545, 360, 60, 140, 545, 4, 160
 armour_ug_levels 7, 11, 17, 22
 armour_ug_models Dismounted_Mailed_Knights, Dismounted_Mailed_Knights_ug1, Dismounted_Mailed_Knights_ug1, Dismounted_Feudal_Knights_ug1
-ownership        scotland, france, hre, spain, portugal, aragon, milan, venice, papal_states, slave
-era 0            scotland, france, hre, spain, portugal, aragon, milan, venice, papal_states 
-era 1            scotland, france, hre, spain, portugal, aragon, milan, venice, papal_states 
+ownership        scotland, france, hre, spain, aragon, milan, venice, papal_states, slave
+era 0            scotland, france, hre, spain, aragon, milan, venice, papal_states 
+era 1            scotland, france, hre, spain, aragon, milan, venice, papal_states 
 era 2            scotland
 recruit_priority_offset 10
 
@@ -8471,9 +8471,9 @@ stat_food        60, 300
 stat_cost        8, 1090, 185, 65, 50, 905, 4, 90
 armour_ug_levels 11, 17, 37
 armour_ug_models saracen_archers, saracen_archers_ug1
-ownership        kwarezm, turks, egypt, moors, timurids
-era 1            kwarezm, turks, egypt, moors, timurids
-era 2            kwarezm, turks, egypt, moors, timurids
+ownership        kwarezm, turks, egypt, moors, portugal, timurids
+era 1            kwarezm, turks, egypt, moors, portugal, timurids
+era 2            kwarezm, turks, egypt, moors, portugal, timurids
 recruit_priority_offset    25
 
 
@@ -8504,9 +8504,9 @@ stat_food        60, 300
 stat_cost        1, 230, 150, 75, 55, 250, 4, 60
 armour_ug_levels 7, 14
 armour_ug_models Moorish_Auxilliaries, Moorish_Auxilliaries
-ownership        moors
-era 0            moors
-era 1            moors
+ownership        moors, portugal
+era 0            moors, portugal
+era 1            moors, portugal
 ;unit_info        7, 0, 10
 recruit_priority_offset    0
 
@@ -8757,7 +8757,7 @@ stat_food        60, 300
 stat_cost        1, 520, 520, 100, 75, 795, 4, 170
 armour_ug_levels 11, 17, 37
 armour_ug_models Dismounted_Crusader_Knights, Dismounted_Crusader_Knights, Dismounted_Crusader_Knights
-ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
+ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, poland, hungary, papal_states, jerusalem
 recruit_priority_offset    15
 
 
@@ -8796,7 +8796,7 @@ stat_food        60, 300
 stat_cost        1, 1030, 200, 90, 70, 1030, 4, 150
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Dismounted_Knights_Templar, Dismounted_Knights_Templar, Dismounted_Knights_Templar_ug1, Dismounted_Knights_Templar_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -8835,7 +8835,7 @@ stat_food        60, 300
 stat_cost        1, 1030, 200, 90, 70, 1030, 4, 150
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Dismounted_Knights_Hospitaller, Dismounted_Knights_Hospitaller, Dismounted_Knights_Hospitaller_ug1, Dismounted_Knights_Hospitaller_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -8874,9 +8874,9 @@ stat_food        60, 300
 stat_cost        1, 1030, 200, 90, 70, 1030, 4, 150
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Dismounted_Knights_of_Santiago, Dismounted_Knights_of_Santiago, Dismounted_Knights_of_Santiago_ug1, Dismounted_Knights_of_Santiago_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
-era 1            spain, aragon, portugal
-era 2            spain, aragon, portugal
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
+era 1            spain, aragon
+era 2            spain, aragon
 info_pic_dir	 KnightOrders
 card_pic_dir	 KnightOrders
 recruit_priority_offset    25
@@ -9188,7 +9188,7 @@ stat_food        60, 300
 stat_cost        1, 390, 225, 130, 100, 400, 4, 270
 armour_ug_levels 0, 1
 armour_ug_models desert_raiders, desert_raiders_ug1
-ownership        all; egypt, moors, timurids
+ownership        all; egypt, moors, portugal, timurids
 recruit_priority_offset    -10 
 
 
@@ -9456,9 +9456,9 @@ stat_food        60, 300
 stat_cost        1, 785, 160, 75, 55, 755, 4, 130
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models dismounted_km, dismounted_km, dismounted_km_ug1, dismounted_km_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
-era 1            spain, aragon, portugal
-era 2            spain, aragon, portugal
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
+era 1            spain, aragon
+era 2            spain, aragon
 info_pic_dir	 KnightOrders
 card_pic_dir	 KnightOrders
 recruit_priority_offset    10
@@ -9496,9 +9496,9 @@ stat_food        60, 300
 stat_cost        1, 1165, 200, 130, 100, 1150, 4, 220
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Knights_of_Montesa, Knights_of_Montesa, Knights_of_Montesa_ug1, Knights_of_Montesa_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
-era 1            spain, aragon, portugal
-era 2            spain, aragon, portugal
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, teutonic_order, slave
+era 1            spain, aragon
+era 2            spain, aragon
 info_pic_dir	 KnightOrders
 card_pic_dir	 KnightOrders
 recruit_priority_offset    40
@@ -9535,8 +9535,8 @@ stat_food        60, 300
 stat_cost        1, 595, 340, 100, 75, 1005, 4, 140
 armour_ug_levels 24, 34, 37, 40
 armour_ug_models Armats, Armats_ug1, Armats_ug1, Armats_ug1
-ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal
-era 1            aragon, france, denmark, spain, norway, england, hungary, poland, portugal
+ownership        aragon, france, denmark, spain, norway, england, hungary, poland
+era 1            aragon, france, denmark, spain, norway, england, hungary, poland
 recruit_priority_offset    40
 
 
@@ -9610,8 +9610,8 @@ stat_food        60, 300
 stat_cost        1, 480, 270, 90, 70, 775, 4, 140
 armour_ug_levels 24, 34, 37, 40
 armour_ug_models Dismounted_Armats, Dismounted_Armats_ug1, Dismounted_Armats_ug1, Dismounted_Armats_ug1
-ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal
-era 1            aragon, france, denmark, spain, norway, england, hungary, poland, portugal
+ownership        aragon, france, denmark, spain, norway, england, hungary, poland
+era 1            aragon, france, denmark, spain, norway, england, hungary, poland
 recruit_priority_offset    25
 
 
@@ -9842,7 +9842,7 @@ stat_food        60, 300
 stat_cost        1, 280, 180, 75, 55, 445, 4, 100
 armour_ug_levels 7, 14, 19
 armour_ug_models light_swordsmen, light_swordsmen_ug1, light_swordsmen_ug1
-ownership        hre, portugal, milan, venice, papal_states, hungary, poland, spain, teutonic_order, slave
+ownership        hre, milan, venice, papal_states, hungary, poland, spain, teutonic_order, slave
 recruit_priority_offset    10
 
 
@@ -10011,7 +10011,7 @@ stat_food        60, 300
 stat_cost        1, 320, 320, 75, 60, 465, 4, 70
 armour_ug_levels 7
 armour_ug_models andalusian_infantry
-ownership        slave, moors, spain, aragon, portugal
+ownership        slave, moors, spain, aragon
 recruit_priority_offset    15
 
 
@@ -10043,7 +10043,7 @@ stat_food        60, 300
 stat_cost        1, 420, 420, 90, 70, 665, 4, 150
 armour_ug_levels 20, 37
 armour_ug_models mercenary_saracens, mercenary_saracens
-ownership        all ; slave, turks, egypt, moors, timurids
+ownership        all ; slave, turks, egypt, moors, timurids, portugal
 recruit_priority_offset    30
 
 
@@ -10528,7 +10528,7 @@ stat_food        60, 300
 stat_cost        1, 960, 600, 65, 155, 960, 2, 200; Old Cost
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Dismounted_Ritterbruder, Dismounted_Ritterbruder, Dismounted_Ritterbruder_ug1, Dismounted_Ritterbruder_ug1
-ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, slave
+ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, slave
 era 0            teutonic_order, hre
 era 1            teutonic_order, hre
 era 2            teutonic_order, hre
@@ -10566,9 +10566,9 @@ stat_food        60, 300
 stat_cost        1, 255, 120, 75, 55, 415, 4, 120
 armour_ug_levels 2, 7
 armour_ug_models Prussian_Archers, Prussian_Archers_ug1
-ownership        teutonic_order, hre, england, scotland, france, denmark, spain, aragon, portugal, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
-era 0            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, portugal, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
-era 1            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, portugal, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
+ownership        teutonic_order, hre, england, scotland, france, denmark, spain, aragon, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
+era 0            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
+era 1            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
 recruit_priority_offset    5
  
  
@@ -10759,7 +10759,7 @@ stat_food        60, 300
 stat_cost        1, 1230, 800, 85, 205, 1230, 2, 290; Old cost values
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Ritterbruder, Ritterbruder, Ritterbruder_ug1, Ritterbruder_ug1
-ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, slave
+ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, hre, slave
 era 0            teutonic_order, hre
 era 1            teutonic_order, hre
 era 2            teutonic_order, hre
@@ -11203,7 +11203,7 @@ dictionary       Canons_of_the_Holy_Sepulcher      ; Canons of the Holy Sepulche
 category         infantry
 class            heavy
 voice_type       Heavy
-accent         German
+;accent         German
 banner faction   main_hospitaller
 banner holy      crusade
 soldier          Canons_of_the_Holy_Sepulcher, 40, 0, 1.375, 0.55
@@ -11375,9 +11375,9 @@ stat_food        60, 300
 stat_cost        10, 1345, 300, 120, 95, 1045, 4, 180
 armour_ug_levels 5, 9, 37
 armour_ug_models Ghulam, Ghulam, Ghulam
-ownership        egypt, kwarezm, timurids
-era 0            egypt, kwarezm, timurids
-era 1            egypt, kwarezm, timurids
+ownership        egypt, kwarezm, timurids, portugal
+era 0            egypt, kwarezm, timurids, portugal
+era 1            egypt, kwarezm, timurids, portugal
 recruit_priority_offset    35
 
 
@@ -11415,9 +11415,9 @@ stat_food        60, 300
 stat_cost        16, 2460, 535, 120, 95, 1925, 4, 180
 armour_ug_levels 11, 37
 armour_ug_models Khassaki, Khassaki_ug1
-ownership        egypt, timurids
-era 0            egypt, timurids
-era 1            egypt, timurids
+ownership        egypt, timurids, portugal
+era 0            egypt, timurids, portugal
+era 1            egypt, timurids, portugal
 recruit_priority_offset    55
  
  
@@ -11454,9 +11454,9 @@ stat_food        60, 300
 stat_cost        6, 940, 225, 110, 85, 715, 4, 210
 armour_ug_levels 5, 9, 37
 armour_ug_models Dismounted_ghulam, Dismounted_ghulam, Dismounted_ghulam
-ownership        egypt, kwarezm, timurids
-era 0            egypt, kwarezm, timurids
-era 1            egypt, kwarezm, timurids
+ownership        egypt, kwarezm, timurids, portugal
+era 0            egypt, kwarezm, timurids, portugal
+era 1            egypt, kwarezm, timurids, portugal
 recruit_priority_offset    15
 
 
@@ -11492,9 +11492,9 @@ stat_food        60, 300
 stat_cost        6, 940, 225, 60, 140, 715, 4, 160
 armour_ug_levels 7, 11
 armour_ug_models Al_Haqa_Infantry, Al_Haqa_Infantry_ug1
-ownership        egypt
-era 0            egypt
-era 1            egypt
+ownership        egypt, portugal
+era 0            egypt, portugal
+era 1            egypt, portugal
 recruit_priority_offset    10
 
 
@@ -11530,8 +11530,8 @@ stat_food        60, 300
 stat_cost        2, 590, 200, 30, 75, 590, 1, 170
 armour_ug_levels 1
 armour_ug_models ne_mangonel_crew
-ownership        england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  teutonic_order, jerusalem, poland, hungary, byzantium, turks, egypt, moors, cumans, kwarezm
-era 1            england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  teutonic_order, jerusalem
+ownership        england, norway, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  teutonic_order, jerusalem, poland, hungary, byzantium, turks, egypt, moors, cumans, kwarezm, georgia, portugal
+era 1            england, norway, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  teutonic_order, jerusalem
 recruit_priority_offset    -15 
 
 
@@ -12836,7 +12836,7 @@ stat_food        60, 300
 stat_cost        1, 290, 120, 65, 50, 300, 4, 70
 armour_ug_levels 0, 1
 armour_ug_models cum_militia_a_sw, cum_militia_a_sw 
-ownership        slave, cumans
+ownership        slave, cumans, georgia
 era 0            cumans
 era 1            cumans
 era 2            cumans
@@ -12977,7 +12977,7 @@ stat_food        60, 300
 stat_cost        1, 275, 275, 100, 75, 440, 4, 130
 armour_ug_levels 1
 armour_ug_models Numidian_Cavalry
-ownership        slave, moors
+ownership        slave, moors, portugal
 recruit_priority_offset    0 
 
 
@@ -13878,9 +13878,9 @@ stat_food        60, 300
 stat_cost        1, 465, 335, 65, 50, 560, 4, 120
 armour_ug_levels 7
 armour_ug_models Gasmuli
-ownership        byzantium
-era 1            byzantium
-era 2            byzantium
+ownership        byzantium, georgia
+era 1            byzantium, georgia
+era 2            byzantium, georgia
 recruit_priority_offset    15
 
 
@@ -14410,7 +14410,7 @@ stat_food        60, 300
 stat_cost        1, 255, 255, 75, 55, 330, 4, 60
 armour_ug_levels 0
 armour_ug_models Tribal_Warrior
-ownership        all ; moors
+ownership        all ; moors, portugal
 recruit_priority_offset    0
 
 ;500
@@ -14444,7 +14444,382 @@ stat_food        60, 300
 stat_cost        8, 6000, 125, 75, 60, 6000, 4, 70
 armour_ug_levels 11
 armour_ug_models NE_Bodyguard
-ownership        byzantium, england, scotland, france, hre, denmark, norway, spain, aragon, portugal, sicily, milan, venice, hungary, poland, lithuania, russia, kievan_rus, jerusalem
+ownership        byzantium, england, scotland, france, hre, denmark, norway, spain, aragon, sicily, milan, venice, hungary, poland, lithuania, russia, kievan_rus, jerusalem, georgia
 info_pic_dir	 RLC
 card_pic_dir	 RLC
 recruit_priority_offset    -75
+
+;GEORGIA
+
+type             Azenuri Infantry
+dictionary       Azenuri_Infantry      ;Azenuri Infantry
+category         infantry
+class            heavy
+voice_type       Heavy
+banner faction   main_infantry
+banner holy      crusade
+soldier          Azenuri_Infantry  , 40, 0, 1.1
+officer          georgian_captain
+officer          georgian_captain_flag
+officer          georgian_captain_flag
+attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, mercenary_unit
+move_speed_mod	 0.95
+formation        1.2, 1.2, 2.4, 2.4, 4, square
+stat_health      1, 1
+stat_pri         7, 4, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri_attr    no
+stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
+stat_sec_attr    no
+stat_pri_armour  5, 5, 4, metal ;
+stat_sec_armour  0, 0, flesh
+stat_heat        5
+stat_ground      0, -2, 2, 0
+stat_mental      12, low, untrained
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        1, 545, 360, 60, 140, 745, 4, 160
+armour_ug_levels 7, 11, 37
+armour_ug_models Azenuri_Infantry, Azenuri_Infantry_ug1, Azenuri_Infantry_ug1
+ownership        all
+era 0            georgia
+era 1            georgia
+era 2            georgia
+;info_pic_dir	 georgia
+;card_pic_dir	 georgia
+recruit_priority_offset 10
+
+
+type             Dismounted Eristavi
+dictionary       Dismounted_Eristavi      ; Dismounted Eristavi, f
+category         infantry
+class            heavy
+voice_type       Heavy
+banner faction   main_infantry
+banner holy      crusade
+soldier          Dismounted_Eristavi, 40, 0, 1.15, 0.45
+officer          georgian_captain
+officer          georgian_captain_flag
+officer          georgian_captain_flag
+attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
+move_speed_mod	 0.85
+formation        1.2, 1.0, 2.4, 2.0, 3, square
+stat_health      1, 1
+stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1 ; long sword
+stat_pri_attr    no
+stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
+stat_sec_attr    no
+stat_pri_armour  8, 10, 5, metal ;
+stat_sec_armour  0, 0, flesh
+stat_heat        7
+stat_ground      -1, -3, 1, -1 
+stat_mental      15, low, untrained
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        1, 735, 445, 90, 70, 795, 4, 140
+armour_ug_levels 11, 18, 37
+armour_ug_models Dismounted_Eristavi, Dismounted_Eristavi_ug1, Dismounted_Eristavi_ug1
+ownership        georgia, slave
+era 0            georgia
+era 1            georgia
+era 2            georgia
+recruit_priority_offset    25
+
+
+type             Metsikhovne Spearmen
+dictionary       Metsikhovne_Spearmen
+category         infantry
+class            spearmen
+voice_type       Light
+banner faction   main_spear
+banner holy      crusade
+soldier          Metsikhovne_Spearmen, 60, 0, 1.2, 0.35
+officer          georgian_captain_flag
+officer          georgian_captain_flag
+mount_effect     horse +2, camel +2
+attributes       sea_faring, hide_forest, can_withdraw, hardy, free_upkeep_unit, mercenary_unit
+move_speed_mod	 1.01
+formation        1.0, 1.0, 2.0, 2.0, 5, square, shield_wall
+stat_health      1, 1
+stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri_attr    light_spear
+stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
+stat_sec_attr    no
+stat_pri_armour  2, 4, 7, flesh
+stat_sec_armour  0, 0, flesh
+stat_heat        0
+stat_ground      1, 0, 3, 0
+stat_mental      7, normal, trained
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        1, 385, 180, 65, 50, 320, 4, 80
+armour_ug_levels 1, 4
+armour_ug_models Metsikhovne_Spearmen, Metsikhovne_Spearmen_ug1
+ownership        all
+era 0            georgia
+era 1            georgia
+era 2            georgia
+;info_pic_dir	 georgia
+;card_pic_dir	 georgia
+recruit_priority_offset    15
+
+
+type             Tadzreuli
+dictionary       Tadzreuli     ; Tadzreuli, ep
+category         infantry
+class            spearmen
+voice_type       Heavy
+banner faction   main_spear
+banner holy      crusade
+soldier          Tadzreuli, 48, 0, 1.15, 0.30
+officer          georgian_captain
+officer          georgian_captain_flag
+officer          georgian_captain_flag
+mount_effect     horse +2, camel +2
+attributes       sea_faring, hide_forest, can_withdraw, command, free_upkeep_unit
+move_speed_mod	 0.8
+formation        1.0, 1.0, 2.0, 2.0, 5, square, shield_wall
+stat_health      1, 1
+stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri_attr    light_spear
+stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
+stat_sec_attr    no
+stat_pri_armour  4, 4, 7, metal ; 
+stat_sec_armour  0, 0, flesh
+stat_heat        7
+stat_ground      1, -2, 2, 2
+stat_mental      16, disciplined, trained ; guard
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        2, 650, 150, 115, 90, 650, 2, 180
+armour_ug_levels 7, 11, 37
+armour_ug_models Tadzreuli, Tadzreuli_ug1, Tadzreuli_ug1
+ownership        georgia, slave
+era 0            georgia
+era 1            georgia
+era 2            georgia
+recruit_priority_offset    20
+
+
+type             Metsikhovne Archers
+dictionary       Metsikhovne_Archers
+category         infantry
+class            missile
+voice_type       Light
+banner faction   main_missile
+banner holy      crusade
+soldier          metsikhovne_archers, 40, 0, 0.75, 0.35
+officer          georgian_captain_flag
+attributes       sea_faring, hide_forest, hardy, can_withdraw, foot_archers, start_skirmishing, free_upkeep_unit, mercenary_unit
+formation        1.4, 1.4, 1.8, 1.8, 3, square
+stat_health      1, 2
+stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri_attr    area
+stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1 ; light sword
+stat_sec_attr    no
+stat_pri_armour  3, 4, 0, flesh
+stat_sec_armour  0, 0, flesh
+stat_heat        0
+stat_ground      1, 0, 3, 0
+stat_mental      7, normal, trained
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        3, 495, 230, 65, 50, 505, 4, 90
+armour_ug_levels 1, 7
+armour_ug_models metsikhovne_archers, metsikhovne_archers_ug1
+ownership        all
+era 0            georgia
+era 1            georgia
+era 2            georgia
+;info_pic_dir	 georgia
+;card_pic_dir	 georgia
+recruit_priority_offset    10
+
+
+type             Monaspa Archers
+dictionary       Monaspa_Archers      ; Monaspa Archers, ep
+category         infantry
+class            missile
+voice_type       heavy
+banner faction   main_missile
+soldier          Monaspa_Archers, 40, 0, 1.1, 0.30
+officer          georgian_captain
+officer          georgian_captain_flag
+officer          georgian_captain_flag
+attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, start_not_skirmishing
+move_speed_mod	 0.90
+formation        1.2, 1.2, 2.4, 2.4, 4, square
+stat_health      1, 1
+stat_pri         5, 2, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri_attr    area
+stat_sec         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_sec_attr    no
+stat_pri_armour  8, 15, 0, metal ; 
+stat_sec_armour  0, 0, flesh
+stat_heat        4
+stat_ground      1, -2, 1, 1 
+stat_mental      14, disciplined, trained
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        6, 970, 360, 85, 65, 1185, 4, 100
+armour_ug_levels 9, 18, 37
+armour_ug_models Monaspa_Archers, Monaspa_archers_ug1, Monaspa_archers_ug1
+ownership        georgia, slave
+era 0            georgia
+era 1            georgia
+era 2            georgia
+recruit_priority_offset 0
+
+
+type             Azenuri Cavalry
+dictionary       Azenuri_Cavalry ; Azenuri Cavalry, feudal
+category         cavalry
+class            heavy
+voice_type       heavy
+banner faction   main_cavalry
+banner holy      crusade_cavalry
+soldier          Azenuri_Cavalry, 24, 0, 1
+officer          georgian_captain
+officer          georgian_captain_flag
+mount            medium horse charger
+attributes       sea_faring, hide_forest, can_withdraw, can_formed_charge, knight, frighten_foot, free_upkeep_unit, mercenary_unit
+formation        2, 4.4, 3, 6, 3, square
+stat_health      1, 2
+stat_pri         6, 7, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri_attr    no
+stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_sec_attr    no
+stat_pri_armour  5, 5, 4, metal ;
+stat_sec_armour  0, 0, flesh
+stat_heat        5
+stat_ground      0, -1, -3, 1
+stat_mental      14, low, untrained
+stat_charge_dist 20
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        1, 725, 530, 120, 95, 825, 4, 170
+armour_ug_levels 5, 9, 37
+armour_ug_models Azenuri_Cavalry, Azenuri_Cavalry_ug1, Azenuri_Cavalry_ug1
+ownership        all
+era 0            georgia
+era 1            georgia
+era 2            georgia
+;info_pic_dir	 georgia
+;card_pic_dir	 georgia
+recruit_priority_offset 0
+
+
+type             Eristavi Cavalry
+dictionary       Eristavi_Cavalry      ; Eristavi Cavalry, f
+category         cavalry  ; elite mounted melee, early lance/sword
+class            heavy
+voice_type       Heavy
+banner faction   main_cavalry
+banner holy      crusade_cavalry
+soldier          eristavi_lancers, 20, 0, 1
+officer          georgian_captain_flag
+mount            heavy horse charger lancer
+mount_effect     elephant -4, camel -4
+attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, frighten_foot, knight, command
+move_speed_mod	 0.95
+formation        1.5, 4.4, 2.5, 6, 2, square ; , wedge
+stat_health      1, 3
+stat_pri         4, 17, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri_attr    no
+stat_sec         10, 5, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec_attr    no
+stat_pri_armour  8, 6, 5, metal
+stat_sec_armour  0, 0, flesh
+stat_heat        9
+stat_ground      -1, -2, -3, -1
+stat_mental      16, impetuous, untrained
+stat_charge_dist 20
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        1, 1050, 510, 120, 95, 1110, 4, 180
+armour_ug_levels 11, 18, 37
+armour_ug_models eristavi_lancers, eristavi_lancers_ug1, eristavi_lancers_ug1
+ownership        georgia, slave
+era 0            georgia
+era 1            georgia
+era 2            georgia
+recruit_priority_offset    40
+
+
+type             Monaspa Cavalry
+dictionary       Monaspa_Cavalry ; Monaspa Cavalry, ep
+category         cavalry
+class            skirmish
+voice_type       Heavy
+banner faction   main_cavalry
+banner holy      crusade_cavalry
+soldier          Monaspa_Cavalry, 32, 0, 1
+officer          Royal_Monaspa_ug1
+officer          georgian_captain_flag
+mount            eastern horse HA
+mount_effect     elephant -4, camel -4 
+attributes       sea_faring, hide_forest, can_withdraw, horse_archers, knight, can_formed_charge, cantabrian_circle, hardy, frighten_foot
+formation        2, 4.4, 3, 6, 3, square
+stat_health      1, 3
+stat_pri         4, 5, superior_mounted_missile_composite_arrow, 180, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri_attr    area
+stat_sec         8, 5, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
+stat_sec_attr    no
+stat_pri_armour  8, 12, 0, metal ;
+stat_sec_armour  0, 0, flesh
+stat_heat        5
+stat_ground      0, -1, -3, 1
+stat_mental      14, disciplined, trained
+stat_charge_dist 20
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        10, 1325, 330, 120, 95, 1525, 2, 170
+armour_ug_levels 12, 18, 37
+armour_ug_models Monaspa_Cavalry, Monaspa_Cavalry_ug1, Monaspa_Cavalry_ug1
+ownership        georgia, slave
+era 0            georgia
+era 1            georgia
+era 2            georgia
+recruit_priority_offset 0
+
+
+type             Royal Monaspa
+dictionary       Royal_Monaspa     ; Royal_Monaspa, ep
+category         cavalry
+class            heavy
+voice_type       General
+banner faction   main_cavalry
+banner holy      crusade_cavalry
+soldier          EE_Bodyguard, 8, 0, 1
+officer          georgian_captain_flag
+mount            barded horse charger
+mount_effect     elephant -4, camel -4 
+attributes       sea_faring, hide_forest, hardy, can_withdraw, can_formed_charge, frighten_foot, general_unit, command
+move_speed_mod	 0.95
+formation        2, 4.4, 3, 6, 2, square
+stat_health      1, 3
+stat_pri         7, 5, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
+stat_pri_attr    no
+stat_sec         10, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_sec_attr    no
+stat_pri_armour  11, 10, 3, metal 
+stat_sec_armour  0, 0, flesh
+stat_heat        7
+stat_ground      -1, -2, -3, 0
+stat_mental      19, disciplined, trained
+stat_charge_dist 30
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        1, 6495, 150, 40, 30, 530, 1, 100
+armour_ug_levels 9, 14, 23
+armour_ug_models Royal_Monaspa, Royal_Monaspa_ug1, Royal_Monaspa_ug1
+ownership        georgia, slave
+era 0            georgia
+era 1            georgia
+era 2            georgia
+recruit_priority_offset    20

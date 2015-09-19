@@ -857,7 +857,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -866,7 +866,7 @@
 					IF GOOD RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.5"/>
-				<min_entry	faction_standing="0.8"/>
+				<max_entry	faction_standing="0.8"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -875,7 +875,7 @@
 					IF GREAT RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.8"/>
-				<min_entry	faction_standing="1.0"/>
+				<max_entry	faction_standing="1.0"/>
 				<faction_attitude	want_ally="true" pts_alliance="5" continue="true"/>
 			</decision_entry>
 			
@@ -884,7 +884,7 @@
 					IF TARGET IS TRUSTWORTHY, WANT TO ALLY
 				-->
 				<min_entry	target_global_standing="0.25"/>
-				<min_entry	target_global_standing="1.0"/>
+				<max_entry	target_global_standing="1.0"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -893,7 +893,7 @@
 					IF TARGET IS OUR PROTECTORATE, WANT TO ALLY
 				-->
 				<min_entry	is_protectorate="true"/>
-				<min_entry	is_protectorate="true"/>
+				<max_entry	is_protectorate="true"/>
 				<faction_attitude	want_ally="true" pts_alliance="20" continue="true"/>
 			</decision_entry>
 
@@ -3049,7 +3049,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -3058,7 +3058,7 @@
 					IF ISLAMIC, DONT ALLY
 				-->
 				<min_entry	target_religion="islam"/>
-				<min_entry	target_religion="islam"/>
+				<max_entry	target_religion="islam"/>
 				<faction_attitude	want_ally="false" pts_alliance="-100" continue="true"/>
 			</decision_entry>
 
@@ -3067,7 +3067,7 @@
 					IF PAGAN, DONT ALLY
 				-->
 				<min_entry	target_religion="pagan"/>
-				<min_entry	target_religion="pagan"/>
+				<max_entry	target_religion="pagan"/>
 				<faction_attitude	want_ally="false" pts_alliance="-100" continue="true"/>
 			</decision_entry>
 
@@ -3076,7 +3076,7 @@
 					IF ORTHODOX, DONT ALLY
 				-->
 				<min_entry	target_religion="orthodox"/>
-				<min_entry	target_religion="orthodox"/>
+				<max_entry	target_religion="orthodox"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -3085,7 +3085,7 @@
 					IF TARGET IS OUR PROTECTORATE, WANT TO ALLY
 				-->
 				<min_entry	is_protectorate="true"/>
-				<min_entry	is_protectorate="true"/>
+				<max_entry	is_protectorate="true"/>
 				<faction_attitude	want_ally="true" pts_alliance="20" continue="true"/>
 			</decision_entry>
 
@@ -5305,7 +5305,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -5314,7 +5314,7 @@
 					IF GOOD RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.5"/>
-				<min_entry	faction_standing="0.8"/>
+				<max_entry	faction_standing="0.8"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -5323,7 +5323,7 @@
 					IF GREAT RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.8"/>
-				<min_entry	faction_standing="1.0"/>
+				<max_entry	faction_standing="1.0"/>
 				<faction_attitude	want_ally="true" pts_alliance="5" continue="true"/>
 			</decision_entry>
 			
@@ -5332,7 +5332,7 @@
 					IF TARGET IS TRUSTWORTHY, WANT TO ALLY
 				-->
 				<min_entry	target_global_standing="0.25"/>
-				<min_entry	target_global_standing="1.0"/>
+				<max_entry	target_global_standing="1.0"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -5341,7 +5341,7 @@
 					IF TARGET IS OUR PROTECTORATE, WANT TO ALLY
 				-->
 				<min_entry	is_protectorate="true"/>
-				<min_entry	is_protectorate="true"/>
+				<max_entry	is_protectorate="true"/>
 				<faction_attitude	want_ally="true" pts_alliance="20" continue="true"/>
 			</decision_entry>
 
@@ -7588,7 +7588,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -7597,7 +7597,7 @@
 					IF GOOD RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.5"/>
-				<min_entry	faction_standing="0.8"/>
+				<max_entry	faction_standing="0.8"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -7606,7 +7606,7 @@
 					IF GREAT RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.8"/>
-				<min_entry	faction_standing="1.0"/>
+				<max_entry	faction_standing="1.0"/>
 				<faction_attitude	want_ally="true" pts_alliance="5" continue="true"/>
 			</decision_entry>
 			
@@ -7616,7 +7616,7 @@
 					IF TARGET IS TRUSTWORTHY, WANT TO ALLY
 				-->
 				<min_entry	target_global_standing="0.5"/>
-				<min_entry	target_global_standing="1.0"/>
+				<max_entry	target_global_standing="1.0"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -7625,7 +7625,7 @@
 					IF TARGET IS OUR PROTECTORATE, WANT TO ALLY
 				-->
 				<min_entry	is_protectorate="true"/>
-				<min_entry	is_protectorate="true"/>
+				<max_entry	is_protectorate="true"/>
 				<faction_attitude	want_ally="true" pts_alliance="20" continue="true"/>
 			</decision_entry>
 
@@ -9704,7 +9704,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -9713,7 +9713,7 @@
 					IF GOOD RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.5"/>
-				<min_entry	faction_standing="0.8"/>
+				<max_entry	faction_standing="0.8"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -9722,7 +9722,7 @@
 					IF GREAT RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.8"/>
-				<min_entry	faction_standing="1.0"/>
+				<max_entry	faction_standing="1.0"/>
 				<faction_attitude	want_ally="true" pts_alliance="5" continue="true"/>
 			</decision_entry>
 			
@@ -9731,7 +9731,7 @@
 					IF TARGET IS TRUSTWORTHY, WANT TO ALLY
 				-->
 				<min_entry	target_global_standing="0.25"/>
-				<min_entry	target_global_standing="1.0"/>
+				<max_entry	target_global_standing="1.0"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -9740,7 +9740,7 @@
 					IF TARGET IS OUR PROTECTORATE, WANT TO ALLY
 				-->
 				<min_entry	is_protectorate="true"/>
-				<min_entry	is_protectorate="true"/>
+				<max_entry	is_protectorate="true"/>
 				<faction_attitude	want_ally="true" pts_alliance="20" continue="true"/>
 			</decision_entry>
 
@@ -11910,7 +11910,7 @@
 					IF FACTION TO OUTLIVE, LESS LIKELY TO ALLY
 				-->
 				<min_entry	is_target_faction_to_outlive="true"/>
-				<min_entry	is_target_faction_to_outlive="true"/>
+				<max_entry	is_target_faction_to_outlive="true"/>
 				<faction_attitude	want_ally="false" pts_alliance="-30" continue="true"/>
 			</decision_entry>
 
@@ -11919,7 +11919,7 @@
 					IF GOOD RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.5"/>
-				<min_entry	faction_standing="0.8"/>
+				<max_entry	faction_standing="0.8"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -11928,7 +11928,7 @@
 					IF GREAT RELATIONS, WANT TO ALLY
 				-->
 				<min_entry	faction_standing="0.8"/>
-				<min_entry	faction_standing="1.0"/>
+				<max_entry	faction_standing="1.0"/>
 				<faction_attitude	want_ally="true" pts_alliance="5" continue="true"/>
 			</decision_entry>
 			
@@ -11937,7 +11937,7 @@
 					IF TARGET IS TRUSTWORTHY, WANT TO ALLY
 				-->
 				<min_entry	target_global_standing="0.25"/>
-				<min_entry	target_global_standing="1.0"/>
+				<max_entry	target_global_standing="1.0"/>
 				<faction_attitude	pts_alliance="3" continue="true"/>
 			</decision_entry>
 
@@ -11946,7 +11946,7 @@
 					IF TARGET IS OUR PROTECTORATE, WANT TO ALLY
 				-->
 				<min_entry	is_protectorate="true"/>
-				<min_entry	is_protectorate="true"/>
+				<max_entry	is_protectorate="true"/>
 				<faction_attitude	want_ally="true" pts_alliance="20" continue="true"/>
 			</decision_entry>
 

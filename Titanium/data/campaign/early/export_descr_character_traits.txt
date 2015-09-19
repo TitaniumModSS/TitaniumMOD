@@ -362,6 +362,18 @@ Trait Royal_Founder
    Effect Authority 1
 
 ;------------------------------------------
+Trait Founder_Crusader
+ Characters family
+
+ Level Founder_Crusader
+   Description Founder_Crusader_desc
+   EffectsDescription Royal_Founder_effects_desc
+   Threshold 1
+
+   Effect Fertility 1
+   Effect Authority 1
+
+;------------------------------------------
 Trait HouseFounder
  Characters family
  
@@ -1201,6 +1213,41 @@ Trait Princess_Royal_Blood_Kwarezm
 
    Effect Charm 1
 
+;------------------------------------------
+Trait Royal_Blood_Georgia
+ Characters family
+
+ Level Royal_Blood_Georgia
+   Description Royal_Blood_Georgia_desc
+   EffectsDescription Royal_Blood_Georgia_effects_desc
+   Threshold 1
+
+   Effect LocalPopularity 1
+   Effect Defence 2
+   Effect Law 1
+
+;------------------------------------------
+Trait Royal_Relation_Georgia
+ Characters family
+
+ Level Royal_Relation_Georgia
+   Description Royal_Relation_Georgia_desc
+   EffectsDescription Royal_Relation_Georgia_effects_desc
+   Threshold 1
+
+;------------------------------------------
+Trait Princess_Royal_Blood_Georgia
+ Characters princess
+
+ Level Princess_Royal_Blood_Georgia
+   Description Princess_Royal_Blood_Georgia_desc
+   EffectsDescription Princess_Royal_Blood_Georgia_effects_desc
+   Threshold 1
+
+   Effect Charm 1
+   Effect PersonalSecurity 1
+
+;------------------------------------------
 ;********* MARRIAGE *********
 ;------------------------------------------
 Trait MarriageCertificate
@@ -1493,6 +1540,17 @@ Trait WifeIsKwarezm
  Level WifeIsKwarezm
    Description WifeIsKwarezm_desc
    EffectsDescription WifeIsKwarezm_effects_desc
+   Threshold 1
+
+   Effect LocalPopularity 1
+
+;------------------------------------------
+Trait WifeIsGeorgian
+ Characters family
+ 
+ Level WifeIsGeorgian
+   Description WifeIsGeorgian_desc
+   EffectsDescription WifeIsGeorgian_effects_desc
    Threshold 1
 
    Effect LocalPopularity 1
@@ -4614,6 +4672,17 @@ Trait VendettaKwarezm
 
    Effect Combat_V_Faction_Kwarezm 1
 
+;------------------------------------------
+Trait VendettaGeorgia
+ Characters family
+
+ Level VendettaGeorgia
+   Description VendettaGeorgia_desc
+   EffectsDescription VendettaGeorgia_effects_desc
+   Threshold 2
+
+   Effect Combat_V_Faction_Georgia 1
+
 ;========================================================
 ; VANILLA TRAITS 
 ;========================================================
@@ -6983,6 +7052,61 @@ Trait HatesKwarezm
    Threshold 4 
 
    Effect Combat_V_Faction_Kwarezm 3 
+
+;------------------------------------------
+Trait FearsGeorgia
+ Characters family
+ AntiTraits HatesGeorgia
+
+ Level Nervous_Near_Georgia
+   Description Nervous_Near_Georgia_desc
+   EffectsDescription Nervous_Near_Georgia_effects_desc
+   Threshold 1 
+
+   Effect Combat_V_Faction_Georgia -1 
+
+ Level Fears_Georgia
+   Description Fears_Georgia_desc
+   EffectsDescription Fears_Georgia_effects_desc
+   Threshold 2 
+
+   Effect TroopMorale -1 
+   Effect Combat_V_Faction_Georgia -2 
+
+ Level Terrified_of_Georgia
+   Description Terrified_of_Georgia_desc
+   EffectsDescription Terrified_of_Georgia_effects_desc
+   Threshold 4 
+
+   Effect TroopMorale -1 
+   Effect Combat_V_Faction_Georgia -3 
+
+;------------------------------------------
+Trait HatesGeorgia
+ Characters family
+ AntiTraits FearsGeorgia
+
+ Level Despises_Georgia
+   Description Despises_Georgia_desc
+   EffectsDescription Despises_Georgia_effects_desc
+   Threshold 1 
+
+   Effect Combat_V_Faction_Georgia 1 
+
+ Level Hates_Georgia
+   Description Hates_Georgia_desc
+   EffectsDescription Hates_Georgia_effects_desc
+   Threshold 2 
+
+   Effect TroopMorale 1 
+   Effect Combat_V_Faction_Georgia 2 
+
+ Level Loathes_Georgia
+   Description Loathes_Georgia_desc
+   EffectsDescription Loathes_Georgia_effects_desc
+   Threshold 4 
+
+   Effect Combat_V_Faction_Georgia 3 
 
 ;------------------------------------------
 Trait FearsCatholic
@@ -16077,6 +16201,7 @@ Trigger Royal_Founder_FactionLeader
        and not FactionType venice
        and not FactionType milan
        and not FactionType russia
+       and not FactionType jerusalem
        and I_TurnNumber = 0
 
  Affects Royal_Founder 1 Chance 100
@@ -17382,6 +17507,62 @@ Trigger princess_Royal_Kwarezm_CharacterComesOfAge
  Affects Princess_Royal_Blood_Kwarezm 1 Chance 100
 
 ;------------------------------------------
+Trigger Royal_Blood_Georgia_CharacterComesOfAge_Father
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Royal_Blood_Georgia > 0
+
+ Affects Royal_Blood_Georgia 1 Chance 100
+
+;------------------------------------------
+Trigger Royal_Blood_Georgia_CharacterComesOfAge_Mother
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait WifeIsGeorgian = 1
+       and FatherTrait Royal_Blood_Georgia = 0
+       and FactionType georgia
+
+ Affects Royal_Blood_Georgia 1 Chance 100
+
+;------------------------------------------
+Trigger Royal_Relation_Georgia_CharacterComesOfAge_Father
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Royal_Relation_Georgia > 0
+
+ Affects Royal_Relation_Georgia 1 Chance 100
+
+;------------------------------------------
+Trigger Royal_Relation_Georgia_CharacterComesOfAge_Mother
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait WifeIsGeorgian = 1
+       and FatherTrait Royal_Blood_Georgia = 0
+       and not FactionType georgia
+
+ Affects Royal_Relation_Georgia 1 Chance 100
+
+;------------------------------------------
+Trigger princess_Royal_Blood_Georgia_CharacterComesOfAge
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Royal_Blood_Georgia > 0
+       and AgentType = princess
+
+ Affects Princess_Royal_Blood_Georgia 1 Chance 100
+
+;------------------------------------------
+Trigger princess_Royal_Blood_Georgia_CharacterComesOfAge2
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait WifeIsGeorgian = 1
+       and FatherTrait Royal_Blood_Georgia = 0
+       and FactionType georgia
+       and AgentType = princess
+
+ Affects Princess_Royal_Blood_Georgia 1 Chance 100
+
+;------------------------------------------
 Trigger Royal_Blood_English_FactionHeir
  WhenToTest CharacterTurnStart
 
@@ -17955,6 +18136,29 @@ Trigger Princess_Royal_Blood_Kwarezm_FactionHeir
  Affects Princess_Royal_Blood_Kwarezm 1 Chance 100
 
 ;------------------------------------------
+Trigger Royal_Blood_Georgia_FactionHeir
+ WhenToTest CharacterTurnStart
+
+ Condition FatherTrait Royal_Founder > 0
+       and FactionType georgia
+       and Trait Royal_Blood_Georgia = 0
+       and OriginalFactionType georgia
+       and Trait BiologicalSon > 0
+
+ Affects Royal_Blood_Georgia 1 Chance 100
+
+;------------------------------------------
+Trigger Princess_Royal_Blood_Georgia_FactionHeir
+ WhenToTest CharacterTurnStart
+
+ Condition FatherTrait Royal_Founder > 0
+       and AgentType = princess
+       and FactionType georgia
+       and Trait Princess_Royal_Blood_Georgia = 0
+ 
+ Affects Princess_Royal_Blood_Georgia 1 Chance 100
+
+;------------------------------------------
 ;bastard sons have no connection to their father's wife
 Trigger cleanup_relation_english
  WhenToTest CharacterComesOfAge
@@ -18160,6 +18364,7 @@ Trigger cleanup_relation_Norwegian
        and FatherTrait Royal_Relation_Norwegian = 0
 
  Affects Royal_Relation_Norwegian -1 Chance 100
+
 ;------------------------------------------
 Trigger cleanup_relation_Kievian 
  WhenToTest CharacterComesOfAge
@@ -18169,6 +18374,26 @@ Trigger cleanup_relation_Kievian
        and FatherTrait Royal_Relation_Kievan = 0
 
  Affects Royal_Relation_Kievan -1 Chance 100
+
+;------------------------------------------
+Trigger cleanup_relation_kwarezm 
+ WhenToTest CharacterComesOfAge
+
+ Condition Trait BastardSon >= 1
+       and Trait Royal_Relation_Kwarezm > 0
+       and FatherTrait Royal_Relation_Kwarezm = 0
+
+ Affects Royal_Relation_Kwarezm -1 Chance 100
+
+;------------------------------------------
+Trigger cleanup_relation_georgia 
+ WhenToTest CharacterComesOfAge
+
+ Condition Trait BastardSon >= 1
+       and Trait Royal_Relation_Georgia > 0
+       and FatherTrait Royal_Relation_Georgia = 0
+
+ Affects Royal_Relation_Georgia -1 Chance 100
 
 ;********* BLOODLINES TRIGGERS - ROYAL HOUSES *********
 ;------------------------------------------
@@ -18211,6 +18436,7 @@ Trigger FoundRoyalHouse
        and Trait Royal_Blood_Cumans = 0
        and Trait Royal_Blood_Kwarezm = 0
        and Trait Royal_Blood_Jerusalem = 0
+       and Trait Royal_Blood_Georgia = 0
 
  Affects HouseFounder 1 Chance 100
 
@@ -18495,7 +18721,15 @@ Trigger family_generalmarries_Kwarezm
 
  Affects WifeIsKwarezm 1 Chance 100
 
+;------------------------------------------
+Trigger family_generalmarries_georgian
+ WhenToTest CharacterMarriesPrincess
 
+ Condition SpouseTrait Princess_Royal_Blood_Georgia > 0
+
+ Affects WifeIsGeorgian 1 Chance 100
+
+;------------------------------------------
 ;********* HEALTH SYSTEM TRIGGERS *********
 ;------------------------------------------
 Trigger PlayerScurvyDeathlyHealth
@@ -21744,10 +21978,10 @@ Trigger GrandsonOfKingOrPrince_NoSalicLaw
        and not FactionType france
        and not FactionType hre
 	;No Princesses
-       and not FactionType turks
-       and not FactionType egypt
-       and not FactionType moors
-       and not FactionType kwarezm
+       ;and not FactionType turks
+       ;and not FactionType egypt
+       ;and not FactionType moors
+       ;and not FactionType kwarezm
        and not FactionType mongols
        and not FactionType timurids
 
@@ -22885,6 +23119,39 @@ Trigger RulerOfSicily_kwarezm_remove_2
  Affects RulerOfSicily -1 Chance 100
 
 ;------------------------------------------
+Trigger RulerOfSicily_georgia_add
+ WhenToTest CharacterTurnEnd
+
+ Condition FactionType georgia
+       and IsFactionLeader
+       and I_SettlementOwner Palermo = georgia
+       and I_SettlementOwner Naples = georgia
+
+ Affects RulerOfSicily 1 Chance 100
+
+;------------------------------------------
+Trigger RulerOfSicily_georgia_remove_1
+ WhenToTest CharacterTurnEnd
+
+ Condition FactionType georgia
+       and IsFactionLeader
+       and Trait RulerOfSicily = 1
+       and not I_SettlementOwner Palermo = georgia
+
+ Affects RulerOfSicily -1 Chance 100
+
+;------------------------------------------
+Trigger RulerOfSicily_georgia_remove_2
+ WhenToTest CharacterTurnEnd
+
+ Condition FactionType georgia
+       and IsFactionLeader
+       and Trait RulerOfSicily = 1
+       and not I_SettlementOwner Naples = georgia
+
+ Affects RulerOfSicily -1 Chance 100
+
+;------------------------------------------
 Trigger RulerOfSicilyBonus_add
  WhenToTest CharacterTurnEnd
 
@@ -23506,8 +23773,20 @@ Trigger Military_birth_nonpagan
  WhenToTest CharacterComesOfAge
 
  Condition IsGeneral
+       and I_EventCounter lithuania_catholic != 1
        and not FactionType cumans
        and not FactionType lithuania 
+       and not FactionType teutonic_order
+
+ Affects MilitaryInclination 1 Chance 40
+
+;--------------------------------------------
+Trigger Military_birth_nonpagan_alt
+ WhenToTest CharacterComesOfAge
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 1
+       and not FactionType cumans
        and not FactionType teutonic_order
 
  Affects MilitaryInclination 1 Chance 40
@@ -23526,6 +23805,7 @@ Trigger Military_birth_lithuania
  WhenToTest CharacterComesOfAge
 
  Condition IsGeneral
+       and I_EventCounter lithuania_catholic != 1
        and FactionType lithuania 
 
  Affects MilitaryInclination 1 Chance 70
@@ -25326,6 +25606,11 @@ WhenToTest CharacterTurnEnd
 Condition IsFactionLeader
 and Trait IsFather = 0
 and Trait NoHeirYet < 1
+and not FactionType papal_states
+and not FactionType teutonic_order
+and not FactionType venice
+and not FactionType milan
+and not FactionType russia
 
 Affects NoHeirYet 1 Chance 10 ; or with greater chance?
 
@@ -26638,6 +26923,42 @@ Trigger VendettaAgainstKwarezmSet
  Affects VendettaSet 1 Chance 100 
 
 ;------------------------------------------
+Trigger VendettaAgainstGeorgia
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and not WonBattle
+       and BattleSuccess > average
+       and I_ConflictType Normal
+       and BattleOdds >= 0.5
+       and GeneralFoughtFaction georgia
+       and Trait VendettaSet = 0
+
+ Affects VendettaGeorgia 1 Chance 50
+
+;------------------------------------------
+Trigger VendettaAgainstGeorgiaForHumiliation
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and not WonBattle
+       and BattleSuccess > clear
+       and I_ConflictType Normal
+       and BattleOdds >= 0.5
+       and GeneralFoughtFaction georgia
+       and Trait VendettaSet = 0
+
+ Affects VendettaGeorgia 1 Chance 25 
+
+;------------------------------------------
+Trigger VendettaAgainstGeorgiaSet
+ WhenToTest PostBattle
+
+ Condition Trait VendettaGeorgia = 1
+
+ Affects VendettaSet 1 Chance 100 
+
+;------------------------------------------
 Trigger DadHasVendettaVenice
  WhenToTest CharacterTurnEnd
 
@@ -27366,6 +27687,32 @@ Trigger DadHasVendettaKwarezm_ComeOfAge
  Affects VendettaSet 1 Chance 100
 
 ;------------------------------------------
+Trigger DadHasVendettaGeorgia
+ WhenToTest CharacterTurnEnd
+
+ Condition FatherTrait VendettaGeorgia = 1
+       and Trait VendettaSet = 0
+       and not I_NumberOfSettlements georgia = 0
+       and RandomPercent > 44
+       and RandomPercent < 51
+
+ Affects VendettaGeorgia 1 Chance 100
+ Affects VendettaSet 1 Chance 100
+
+;------------------------------------------
+Trigger DadHasVendettaGeorgia_ComeOfAge
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait VendettaGeorgia = 1
+       and Trait VendettaSet = 0
+       and not I_NumberOfSettlements georgia = 0
+       and RandomPercent > 49
+       and RandomPercent < 81
+
+ Affects VendettaGeorgia 1 Chance 100
+ Affects VendettaSet 1 Chance 100
+
+;------------------------------------------
 Trigger ForgetVendettaVenice
  WhenToTest CharacterTurnEnd
 
@@ -27643,6 +27990,16 @@ Trigger ForgetVendettaKwarezm
        and I_NumberOfSettlements kwarezm = 0
 
  Affects VendettaKwarezm -1 Chance 100
+ Affects VendettaSet -1 Chance 100
+
+;------------------------------------------
+Trigger ForgetVendettaGeorgia
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait VendettaGeorgia = 1
+       and I_NumberOfSettlements georgia = 0
+
+ Affects VendettaGeorgia -1 Chance 100
  Affects VendettaSet -1 Chance 100
 
 ;********* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! *********
@@ -29527,6 +29884,52 @@ Trigger fear_jerusalem_2
  Affects FearsJerusalem 1 Chance 50
 
 ;------------------------------------------
+Trigger hate_georgia_1
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and not WonBattle
+       and I_ConflictType Normal
+       and BattleOdds <= 1.0
+       and GeneralFoughtFaction georgia
+
+ Affects HatesGeorgia 1 Chance 30
+
+;------------------------------------------
+Trigger hate_georgia_2
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and GeneralHPLostRatioinBattle <= 0.8
+       and GeneralFoughtFaction georgia
+
+ Affects HatesGeorgia 1 Chance 15
+
+;------------------------------------------
+Trigger fear_georgia_1
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and not WonBattle
+       and BattleSuccess < crushing
+       and I_ConflictType Normal
+       and BattleOdds > 1.0
+       and GeneralFoughtFaction georgia
+
+ Affects FearsGeorgia 1 Chance 25
+
+;------------------------------------------
+Trigger fear_georgia_2
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and not WonBattle
+       and BattleSuccess = crushing
+       and GeneralFoughtFaction georgia
+
+ Affects FearsGeorgia 1 Chance 50
+
+;------------------------------------------
 Trigger dad_FearsCumans
  WhenToTest CharacterComesOfAge
 
@@ -29807,11 +30210,22 @@ Trigger dad_FearsJerusalem
  Affects HatesJerusalem 1 Chance 5
 
 ;------------------------------------------
+Trigger dad_FearsGeorgia
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait FearsGeorgia > 0
+
+ Affects HatesGeorgia 1 Chance 40
+ Affects HatesGeorgia 1 Chance 25
+ Affects HatesGeorgia 1 Chance 5
+
+;------------------------------------------
 Trigger hate_religion_catholic
  WhenToTest PostBattle
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 0
+       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not GeneralFoughtFaction egypt
        and not GeneralFoughtFaction cumans
@@ -29824,17 +30238,19 @@ Trigger hate_religion_catholic
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion catholic
 
  Affects HatesCatholic 1 Chance 5
 
 ;------------------------------------------
-Trigger hate_religion_catholic_alt
+Trigger hate_religion_catholic_alt1
  WhenToTest PostBattle
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 1
+       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not GeneralFoughtFaction egypt
        and not GeneralFoughtFaction cumans
@@ -29846,6 +30262,58 @@ Trigger hate_religion_catholic_alt
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects HatesCatholic 1 Chance 5
+
+;------------------------------------------
+Trigger hate_religion_catholic_alt2
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 0
+       and I_EventCounter zirids_exist = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction portugal ;zirids
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects HatesCatholic 1 Chance 5
+
+;------------------------------------------
+Trigger hate_religion_catholic_alt3
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 1
+       and I_EventCounter zirids_exist = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction portugal ;zirids
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion catholic
 
@@ -29857,6 +30325,7 @@ Trigger fear_religion_catholic_1
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 0
+       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
@@ -29871,17 +30340,19 @@ Trigger fear_religion_catholic_1
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion catholic
 
  Affects FearsCatholic 1 Chance 5
 
 ;------------------------------------------
-Trigger fear_religion_catholic_1_alt
+Trigger fear_religion_catholic_1_alt1
  WhenToTest PostBattle
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 1
+       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
@@ -29895,6 +30366,62 @@ Trigger fear_religion_catholic_1_alt
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects FearsCatholic 1 Chance 5
+
+;------------------------------------------
+Trigger fear_religion_catholic_1_alt2
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 0
+       and I_EventCounter zirids_exist = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction portugal ;zirids
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects FearsCatholic 1 Chance 5
+
+;------------------------------------------
+Trigger fear_religion_catholic_1_alt3
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 1
+       and I_EventCounter zirids_exist = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction portugal ;zirids
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion catholic
 
@@ -29906,6 +30433,7 @@ Trigger fear_religion_catholic_2
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 0
+       and I_EventCounter zirids_exist = 0
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
@@ -29920,17 +30448,19 @@ Trigger fear_religion_catholic_2
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion catholic
 
  Affects FearsCatholic 1 Chance 20
 
 ;------------------------------------------
-Trigger fear_religion_catholic_2_alt
+Trigger fear_religion_catholic_2_alt1
  WhenToTest PostBattle
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 1
+       and I_EventCounter zirids_exist = 0
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
@@ -29944,6 +30474,62 @@ Trigger fear_religion_catholic_2_alt
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects FearsCatholic 1 Chance 20
+
+;------------------------------------------
+Trigger fear_religion_catholic_2_alt2
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 0
+       and I_EventCounter zirids_exist = 1
+       and BattleSuccess = crushing
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction portugal ;zirids
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion catholic
+
+ Affects FearsCatholic 1 Chance 20
+
+;------------------------------------------
+Trigger fear_religion_catholic_2_alt3
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter lithuania_catholic = 1
+       and I_EventCounter zirids_exist = 1
+       and BattleSuccess = crushing
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction portugal ;zirids
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion catholic
 
@@ -29954,6 +30540,7 @@ Trigger hate_religion_islam
  WhenToTest PostBattle
 
  Condition IsGeneral
+       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not GeneralFoughtFaction venice
        and not GeneralFoughtFaction sicily
@@ -29978,6 +30565,42 @@ Trigger hate_religion_islam
        and not GeneralFoughtFaction teutonic_order
        and not GeneralFoughtFaction norway
        and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion islam
+
+ Affects HatesIslam 1 Chance 5
+
+;------------------------------------------
+Trigger hate_religion_islam_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter zirids_exist = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not GeneralFoughtFaction venice
+       and not GeneralFoughtFaction sicily
+       and not GeneralFoughtFaction milan
+       and not GeneralFoughtFaction papal_states
+       and not GeneralFoughtFaction denmark
+       and not GeneralFoughtFaction scotland
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction france
+       and not GeneralFoughtFaction hre
+       and not GeneralFoughtFaction england
+       and not GeneralFoughtFaction poland
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction spain
+       and not GeneralFoughtFaction hungary
+       and not GeneralFoughtFaction aragon
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction teutonic_order
+       and not GeneralFoughtFaction norway
+       and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion islam
 
@@ -29988,6 +30611,7 @@ Trigger fear_religion_islam_1
  WhenToTest PostBattle
 
  Condition IsGeneral
+       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
@@ -30014,6 +30638,44 @@ Trigger fear_religion_islam_1
        and not GeneralFoughtFaction teutonic_order
        and not GeneralFoughtFaction norway
        and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion islam
+
+ Affects FearsIslam 1 Chance 5
+
+;------------------------------------------
+Trigger fear_religion_islam_1_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter zirids_exist = 1
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction venice
+       and not GeneralFoughtFaction sicily
+       and not GeneralFoughtFaction milan
+       and not GeneralFoughtFaction papal_states
+       and not GeneralFoughtFaction denmark
+       and not GeneralFoughtFaction scotland
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction france
+       and not GeneralFoughtFaction hre
+       and not GeneralFoughtFaction england
+       and not GeneralFoughtFaction poland
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction spain
+       and not GeneralFoughtFaction hungary
+       and not GeneralFoughtFaction aragon
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction teutonic_order
+       and not GeneralFoughtFaction norway
+       and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion islam
 
@@ -30024,6 +30686,7 @@ Trigger fear_religion_islam_2
  WhenToTest PostBattle
 
  Condition IsGeneral
+       and I_EventCounter zirids_exist = 0
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
@@ -30050,6 +30713,45 @@ Trigger fear_religion_islam_2
        and not GeneralFoughtFaction teutonic_order
        and not GeneralFoughtFaction norway
        and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion islam
+
+
+ Affects FearsIslam 1 Chance 20
+
+;------------------------------------------
+Trigger fear_religion_islam_2_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and I_EventCounter zirids_exist = 1
+       and BattleSuccess = crushing
+       and not WonBattle
+       and BattleOdds > 1.0
+       and not GeneralFoughtFaction venice
+       and not GeneralFoughtFaction sicily
+       and not GeneralFoughtFaction milan
+       and not GeneralFoughtFaction papal_states
+       and not GeneralFoughtFaction denmark
+       and not GeneralFoughtFaction scotland
+       and not GeneralFoughtFaction cumans
+       and not GeneralFoughtFaction mongols
+       and not GeneralFoughtFaction france
+       and not GeneralFoughtFaction hre
+       and not GeneralFoughtFaction england
+       and not GeneralFoughtFaction poland
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction spain
+       and not GeneralFoughtFaction hungary
+       and not GeneralFoughtFaction aragon
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction teutonic_order
+       and not GeneralFoughtFaction norway
+       and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion islam
 
@@ -30174,6 +30876,7 @@ Trigger hate_religion_pagan
 
  Condition IsGeneral
        and GeneralHPLostRatioinBattle <= 0.6
+       and I_EventCounter lithuania_catholic != 1
        and not GeneralFoughtFaction venice
        and not GeneralFoughtFaction sicily
        and not GeneralFoughtFaction milan
@@ -30199,6 +30902,46 @@ Trigger hate_religion_pagan
        and not GeneralFoughtFaction norway
        and not GeneralFoughtFaction jerusalem
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion pagan
+
+ Affects HatesPagan 1 Chance 5
+
+;------------------------------------------
+Trigger hate_religion_pagan_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and GeneralHPLostRatioinBattle <= 0.6
+       and I_EventCounter lithuania_catholic = 1
+       and not GeneralFoughtFaction venice
+       and not GeneralFoughtFaction sicily
+       and not GeneralFoughtFaction milan
+       and not GeneralFoughtFaction papal_states
+       and not GeneralFoughtFaction denmark
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction scotland
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction france
+       and not GeneralFoughtFaction hre
+       and not GeneralFoughtFaction england
+       and not GeneralFoughtFaction portugal
+       and not GeneralFoughtFaction poland
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction spain
+       and not GeneralFoughtFaction hungary
+       and not GeneralFoughtFaction aragon
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction teutonic_order
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction norway
+       and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion pagan
 
@@ -30212,6 +30955,7 @@ Trigger fear_religion_pagan_1
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
+       and I_EventCounter lithuania_catholic != 1
        and not GeneralFoughtFaction venice
        and not GeneralFoughtFaction sicily
        and not GeneralFoughtFaction milan
@@ -30237,6 +30981,48 @@ Trigger fear_religion_pagan_1
        and not GeneralFoughtFaction norway
        and not GeneralFoughtFaction jerusalem
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion pagan
+
+ Affects FearsPagan 1 Chance 5
+
+;------------------------------------------
+Trigger fear_religion_pagan_1_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and GeneralHPLostRatioinBattle <= 0.6
+       and not WonBattle
+       and BattleOdds > 1.0
+       and I_EventCounter lithuania_catholic = 1
+       and not GeneralFoughtFaction venice
+       and not GeneralFoughtFaction sicily
+       and not GeneralFoughtFaction milan
+       and not GeneralFoughtFaction papal_states
+       and not GeneralFoughtFaction denmark
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction scotland
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction france
+       and not GeneralFoughtFaction hre
+       and not GeneralFoughtFaction england
+       and not GeneralFoughtFaction portugal
+       and not GeneralFoughtFaction poland
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction spain
+       and not GeneralFoughtFaction hungary
+       and not GeneralFoughtFaction aragon
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction teutonic_order
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction norway
+       and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion pagan
 
@@ -30250,6 +31036,7 @@ Trigger fear_religion_pagan_2
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
+       and I_EventCounter lithuania_catholic != 1
        and not GeneralFoughtFaction venice
        and not GeneralFoughtFaction sicily
        and not GeneralFoughtFaction milan
@@ -30275,6 +31062,48 @@ Trigger fear_religion_pagan_2
        and not GeneralFoughtFaction norway
        and not GeneralFoughtFaction jerusalem
        and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
+       and not GeneralFoughtFaction slave
+       and not CharacterReligion pagan
+
+ Affects FearsPagan 1 Chance 20
+
+;------------------------------------------
+Trigger fear_religion_pagan_2_alt
+ WhenToTest PostBattle
+
+ Condition IsGeneral
+       and BattleSuccess = crushing
+       and not WonBattle
+       and BattleOdds > 1.0
+       and I_EventCounter lithuania_catholic = 1
+       and not GeneralFoughtFaction venice
+       and not GeneralFoughtFaction sicily
+       and not GeneralFoughtFaction milan
+       and not GeneralFoughtFaction papal_states
+       and not GeneralFoughtFaction denmark
+       and not GeneralFoughtFaction egypt
+       and not GeneralFoughtFaction scotland
+       and not GeneralFoughtFaction turks
+       and not GeneralFoughtFaction france
+       and not GeneralFoughtFaction hre
+       and not GeneralFoughtFaction england
+       and not GeneralFoughtFaction portugal
+       and not GeneralFoughtFaction poland
+       and not GeneralFoughtFaction byzantium
+       and not GeneralFoughtFaction moors
+       and not GeneralFoughtFaction russia
+       and not GeneralFoughtFaction spain
+       and not GeneralFoughtFaction hungary
+       and not GeneralFoughtFaction aragon
+       and not GeneralFoughtFaction kievan_rus
+       and not GeneralFoughtFaction lithuania
+       and not GeneralFoughtFaction teutonic_order
+       and not GeneralFoughtFaction timurids
+       and not GeneralFoughtFaction norway
+       and not GeneralFoughtFaction jerusalem
+       and not GeneralFoughtFaction kwarezm
+       and not GeneralFoughtFaction georgia
        and not GeneralFoughtFaction slave
        and not CharacterReligion pagan
 
@@ -32759,6 +33588,7 @@ Trigger random_birth_portugal
  WhenToTest CharacterComesOfAge
 
  Condition FactionType portugal
+       and I_EventCounter zirids_exist = 0
 
  Affects GoodTrader 12 Chance 5 
  Affects GoodInfantryGeneral 1 Chance 5 
@@ -37205,6 +38035,15 @@ Trigger authority_addup_25
        and Trait Royal_Blood_Kwarezm > 0
 
  Affects AuthHeirBoost 1 Chance 100 
+;------------------------------------------
+Trigger authority_addup_26
+ WhenToTest CharacterTurnStart
+
+ Condition not IsFactionLeader
+       and not IsFactionHeir
+       and Trait Royal_Blood_Georgia > 0
+
+ Affects AuthHeirBoost 1 Chance 100 
 
 ;----------------------------------------------------
 
@@ -37650,7 +38489,7 @@ and not Trait Princess_Muslim > 0
 Affects Princess_Orthodox 1 Chance 100
 
 ;------------------------------------------
-Trigger Princess_Pagan_Faith_Show
+Trigger Princess_Orthodox_Faith_Show
 WhenToTest CharacterTurnEnd
 
 Condition AgentType = princess
@@ -39116,6 +39955,7 @@ and not FactionType moors
 and not FactionType turks
 and not FactionType kwarezm
 and not FactionType timurids ;abbasids
+and not FactionType portugal ;zirids
 and HasAncType office_military1
 and Trait Military_Career_Orlok < 1
 
@@ -43946,6 +44786,7 @@ and not FactionType egypt
 and not FactionType moors
 and not FactionType kwarezm
 and not FactionType timurids
+and not FactionType georgia
 
 Affects Next_Heir_Trait -2 Chance 100
 
@@ -43977,6 +44818,7 @@ and not FactionType egypt
 and not FactionType moors
 and not FactionType kwarezm
 and not FactionType timurids
+and not FactionType georgia
 
 Affects Desinherited_Trait -2 Chance 100
 

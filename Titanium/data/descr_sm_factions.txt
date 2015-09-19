@@ -613,6 +613,27 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						georgia
+faction						georgia
+culture						greek
+religion					orthodox
+symbol						models_strat/symbol_georgia.CAS
+rebel_symbol					models_strat/symbol_rebels_g.CAS
+primary_colour					red 188, green 28, blue 28
+secondary_colour				red 123, green 0, blue 0
+loading_logo					loading_screen/symbols/symbol128_byzantium.tga
+standard_index					28
+logo_index					FACTION_LOGO_GEORGIA
+small_logo_index				SMALL_FACTION_LOGO_GEORGIA
+triumph_value					5
+custom_battle_availability			yes
+can_sap						no
+prefers_naval_invasions				yes
+can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 faction						dummies
 culture						greek
 religion					heretic
@@ -621,8 +642,8 @@ rebel_symbol					models_strat/symbol_rebels.CAS
 primary_colour					red 0, green 0, blue 0
 secondary_colour				red 171, green 14, blue 9
 loading_logo					loading_screen/symbols/symbol128_byzantium.tga
-standard_index					15
-logo_index					FACTION_LOGO_BYZANTIUM
+standard_index					29
+logo_index					FACTION_LOGO_REBELS
 small_logo_index				SMALL_FACTION_LOGO_DUMMIES
 triumph_value					5
 custom_battle_availability			no
@@ -642,7 +663,7 @@ rebel_symbol					models_strat/symbol_rebels.CAS
 primary_colour					red 110, green 110, blue 110
 secondary_colour				red 239, green 239, blue 239
 loading_logo					loading_screen/symbols/symbol128_slaves.tga
-standard_index					28
+standard_index					30
 logo_index					FACTION_LOGO_REBELS
 small_logo_index				SMALL_FACTION_LOGO_REBELS
 triumph_value					5

@@ -22377,6 +22377,27 @@ Trigger conquer_britain22
  AcquireAncillary crown_england_2 chance 100
 
 ;------------------------------------------
+Trigger conquer_britain23 
+ WhenToTest CharacterTurnEnd
+
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner London = georgia
+ and I_SettlementOwner Nottingham = georgia
+ and I_SettlementOwner York = georgia
+ ;and I_SettlementOwner Exeter = georgia
+ and I_SettlementOwner Winchester = georgia
+ and I_SettlementOwner Caernarvon = georgia
+ and I_SettlementOwner Edinburgh = georgia
+ and I_SettlementOwner Aberdeen = georgia
+ and I_SettlementOwner Inverness = georgia
+ and I_SettlementOwner Dublin = georgia
+ and not I_WorldwideAncillaryExists crown_england_2
+ 
+ AcquireAncillary crown_england_2 chance 100
+
+;------------------------------------------
 Trigger conquer_spain 
  WhenToTest CharacterTurnEnd 
 
@@ -22832,6 +22853,29 @@ Trigger conquer_spain20
  and I_SettlementOwner Zaragoza = mongols
  and I_SettlementOwner Barcelona = mongols
  and I_SettlementOwner Seville = mongols
+ and not I_WorldwideAncillaryExists crown_spain_2
+ 
+ AcquireAncillary crown_spain_2 chance 100 
+
+;------------------------------------------ 
+Trigger conquer_spain21 
+ WhenToTest CharacterTurnEnd 
+
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Leon = georgia
+ and I_SettlementOwner Toledo = georgia
+ and I_SettlementOwner Pamplona = georgia
+ and I_SettlementOwner Valencia = georgia
+ and I_SettlementOwner Salamanca = georgia
+ and I_SettlementOwner Murcia = georgia
+ and I_SettlementOwner Burgos = georgia
+ and I_SettlementOwner Cordoba = georgia
+ and I_SettlementOwner Granada = georgia
+ and I_SettlementOwner Zaragoza = georgia
+ and I_SettlementOwner Barcelona = georgia
+ and I_SettlementOwner Seville = georgia
  and not I_WorldwideAncillaryExists crown_spain_2
  
  AcquireAncillary crown_spain_2 chance 100 
@@ -23366,6 +23410,29 @@ Trigger conquer_france23
  AcquireAncillary crown_france_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_france24 
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Paris = georgia
+ and I_SettlementOwner Rheims = georgia
+ and I_SettlementOwner Clermont = georgia
+ and I_SettlementOwner Bordeaux = georgia
+ and I_SettlementOwner Toulouse = georgia
+ and I_SettlementOwner Rennes = georgia
+ and I_SettlementOwner Caen = georgia
+ and I_SettlementOwner Bruges = georgia
+ and I_SettlementOwner Metz = georgia
+ and I_SettlementOwner Dijon = georgia
+ and I_SettlementOwner Lyon = georgia
+ and I_SettlementOwner Marseille = georgia
+ and not FactionwideAncillaryExists crown_france_2
+ 
+ AcquireAncillary crown_france_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_hre 
  WhenToTest CharacterTurnEnd
  
@@ -23895,6 +23962,29 @@ Trigger conquer_hre23
  AcquireAncillary crown_hre_2 chance 100 
 
 ;------------------------------------------ 
+Trigger conquer_hre24 
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Stettin = georgia
+ and I_SettlementOwner Hamburg = georgia
+ and I_SettlementOwner Magdeburg = georgia
+ and I_SettlementOwner Frankfurt = georgia
+ and I_SettlementOwner Metz = georgia
+ and I_SettlementOwner Nuremburg = georgia
+ and I_SettlementOwner Staufen = georgia
+ and I_SettlementOwner Vienna = georgia
+ and I_SettlementOwner Salzburg = georgia
+ and I_SettlementOwner Cologne = georgia
+ and I_SettlementOwner Innsbruck = georgia
+ and I_SettlementOwner Prague = georgia
+ and not FactionwideAncillaryExists crown_hre_2
+ 
+ AcquireAncillary crown_hre_2 chance 100 
+
+;------------------------------------------ 
 Trigger conquer_italy 
  WhenToTest CharacterTurnEnd
  
@@ -24378,6 +24468,29 @@ Trigger conquer_italy21
  AcquireAncillary crown_italy_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_italy22 
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Milan = georgia
+ and I_SettlementOwner Genoa = georgia
+ and I_SettlementOwner Bologna = georgia
+ and I_SettlementOwner Pisa = georgia
+ and I_SettlementOwner georgia = georgia
+ and I_SettlementOwner Ancona = georgia
+ and I_SettlementOwner Naples = georgia
+ and I_SettlementOwner Bari = georgia
+ and I_SettlementOwner Syracuse = georgia
+ and I_SettlementOwner Palermo = georgia
+ and I_SettlementOwner Ajaccio = georgia
+ and I_SettlementOwner Cagliari = georgia
+ and not I_WorldwideAncillaryExists crown_italy_2
+ 
+ AcquireAncillary crown_italy_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_scandinavia
  WhenToTest CharacterTurnEnd
  
@@ -24835,6 +24948,27 @@ Trigger conquer_scandinavia22
  and I_SettlementOwner Oslo = mongols
  and I_SettlementOwner Bergen = mongols
  and I_SettlementOwner Eikundarsund = mongols
+ and not I_WorldwideAncillaryExists crown_scandinavia_2
+ 
+ AcquireAncillary crown_scandinavia_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_scandinavia23
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Arhus = georgia
+ and I_SettlementOwner Lund = georgia
+ and I_SettlementOwner Visby = georgia
+ ;and I_SettlementOwner Skara = georgia
+ ;and I_SettlementOwner Nykoeping = georgia
+ and I_SettlementOwner Uppsala = georgia
+ and I_SettlementOwner Roskilde = georgia
+ and I_SettlementOwner Oslo = georgia
+ and I_SettlementOwner Bergen = georgia
+ and I_SettlementOwner Eikundarsund = georgia
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25318,6 +25452,27 @@ Trigger conquer_hungary23
  and I_SettlementOwner Varad = kwarezm
  and I_SettlementOwner Sofia = kwarezm
  and I_SettlementOwner Scopia = kwarezm
+ and not FactionwideAncillaryExists crown_hungary_2
+ 
+ AcquireAncillary crown_hungary_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_hungary24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Esztergom = georgia
+ and I_SettlementOwner Brasov = georgia
+ and I_SettlementOwner Kassa = georgia
+ and I_SettlementOwner Zagreb = georgia
+ and I_SettlementOwner Baia = georgia
+ and I_SettlementOwner Targoviste = georgia
+ and I_SettlementOwner Belgrade = georgia
+ and I_SettlementOwner Varad = georgia
+ and I_SettlementOwner Sofia = georgia
+ and I_SettlementOwner Scopia = georgia
  and not FactionwideAncillaryExists crown_hungary_2
  
  AcquireAncillary crown_hungary_2 chance 100 
@@ -26000,6 +26155,37 @@ Trigger conquer_turks22
  and I_SettlementOwner Konjikala = hungary
  and I_SettlementOwner Khiva = hungary
  and I_SettlementOwner Urgench = hungary
+ and not I_WorldwideAncillaryExists crown_turks_2
+ 
+ AcquireAncillary crown_turks_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_turks23
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Iconium = georgia
+ and I_SettlementOwner Ankara = georgia
+ and I_SettlementOwner Adana = georgia
+ and I_SettlementOwner Caesarea = georgia
+ and I_SettlementOwner Edessa = georgia
+ and I_SettlementOwner Diyarbakir = georgia
+ and I_SettlementOwner Mosul = georgia
+ and I_SettlementOwner Tabriz = georgia
+ and I_SettlementOwner Kermanshah = georgia
+ and I_SettlementOwner Alamut = georgia
+ and I_SettlementOwner Baghdad = georgia
+ and I_SettlementOwner Ray = georgia
+ and I_SettlementOwner Isfahan = georgia
+ and I_SettlementOwner Yazd = georgia
+ ;and I_SettlementOwner Damghan = georgia
+ and I_SettlementOwner Mashhad = georgia
+ and I_SettlementOwner Gorgan = georgia
+ and I_SettlementOwner Konjikala = georgia
+ and I_SettlementOwner Khiva = georgia
+ and I_SettlementOwner Urgench = georgia
  and not I_WorldwideAncillaryExists crown_turks_2
  
  AcquireAncillary crown_turks_2 chance 100 
@@ -26695,6 +26881,36 @@ Trigger conquer_egypt23
  AcquireAncillary crown_egypt_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_egypt24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Luxor = georgia
+ and I_SettlementOwner Cairo = georgia
+ and I_SettlementOwner Damietta = georgia
+ and I_SettlementOwner Alexandria = georgia
+ and I_SettlementOwner Gaza = georgia
+ and I_SettlementOwner Kerak = georgia
+ and I_SettlementOwner Jerusalem = georgia
+ and I_SettlementOwner Acre = georgia
+ and I_SettlementOwner Tortosa = georgia
+ and I_SettlementOwner Damascus = georgia
+ and I_SettlementOwner Antioch = georgia
+ and I_SettlementOwner Aleppo = georgia
+ and I_SettlementOwner Qarisiya = georgia
+ and I_SettlementOwner Baghdad = georgia
+ and I_SettlementOwner Ahvaz = georgia
+ and I_SettlementOwner Basra = georgia
+ and I_SettlementOwner Mecca = georgia
+ and I_SettlementOwner Medina = georgia
+ and I_SettlementOwner Tayma = georgia
+ and not I_WorldwideAncillaryExists crown_egypt_2
+ 
+ AcquireAncillary crown_egypt_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_lith
  WhenToTest CharacterTurnEnd
  
@@ -27142,6 +27358,26 @@ Trigger conquer_lith23
  and I_SettlementOwner Thorn = mongols
  and I_SettlementOwner Plock = mongols
  and I_SettlementOwner Turku = mongols
+ and not I_WorldwideAncillaryExists crown_lithuania_2
+ 
+ AcquireAncillary crown_lithuania_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_lith24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Palanga = georgia
+ and I_SettlementOwner Vilnius = georgia
+ and I_SettlementOwner Riga = georgia
+ and I_SettlementOwner Reval = georgia
+ and I_SettlementOwner Hrodna = georgia
+ and I_SettlementOwner Pskov = georgia
+ and I_SettlementOwner Thorn = georgia
+ and I_SettlementOwner Plock = georgia
+ and I_SettlementOwner Turku = georgia
  and not I_WorldwideAncillaryExists crown_lithuania_2
  
  AcquireAncillary crown_lithuania_2 chance 100 
@@ -27736,6 +27972,34 @@ Trigger conquer_russia21
  AcquireAncillary crown_russia_2 chance 100 
 
 ;------------------------------------------
+Trigger conquer_russia22
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia 
+ and I_SettlementOwner Novgorod = georgia
+ and I_SettlementOwner Yaroslavl = georgia
+ and I_SettlementOwner Smolensk = georgia
+ and I_SettlementOwner Mensk = georgia
+ ;and I_SettlementOwner Ryazan = georgia
+ and I_SettlementOwner Bryansk = georgia
+ and I_SettlementOwner Kiev = georgia
+ and I_SettlementOwner Tmutarakan = georgia
+ and I_SettlementOwner Polotsk = georgia
+ and I_SettlementOwner Pskov = georgia
+ and I_SettlementOwner Moscow = georgia
+ and I_SettlementOwner Azaq = georgia
+ and I_SettlementOwner Sarkel = georgia
+ and I_SettlementOwner Bulgar = georgia
+ and I_SettlementOwner Serdobinskaya = georgia
+ and I_SettlementOwner Murom = georgia
+ ;and I_SettlementOwner Kazan = georgia
+ and not I_WorldwideAncillaryExists crown_russia_2
+ 
+ AcquireAncillary crown_russia_2 chance 100 
+
+;------------------------------------------
 Trigger conquer_poland
  WhenToTest CharacterTurnEnd
  
@@ -28191,6 +28455,26 @@ Trigger conquer_poland23
  and I_SettlementOwner Zhytomyr = mongols
  and I_SettlementOwner Pereyaslav = mongols
  and I_SettlementOwner Bryansk = mongols
+ and not I_WorldwideAncillaryExists crown_poland_2
+ 
+ AcquireAncillary crown_poland_2 chance 100 
+
+;------------------------------------------
+Trigger conquer_poland24
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType georgia
+ and I_SettlementOwner Stettin = georgia
+ and I_SettlementOwner Wroclaw = georgia
+ and I_SettlementOwner Thorn = georgia
+ and I_SettlementOwner Plock = georgia
+ and I_SettlementOwner Krakow = georgia
+ and I_SettlementOwner Halych = georgia
+ and I_SettlementOwner Zhytomyr = georgia
+ and I_SettlementOwner Pereyaslav = georgia
+ and I_SettlementOwner Bryansk = georgia
  and not I_WorldwideAncillaryExists crown_poland_2
  
  AcquireAncillary crown_poland_2 chance 100 

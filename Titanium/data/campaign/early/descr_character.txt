@@ -16,7 +16,7 @@ dictionary		1
 strat_model		aztec_general
 strat_model		aztec_general					; heir
 strat_model		aztec_general					; pagan leader
-strat_model		northern_generic_king					; catholic leader
+strat_model		early_northern_king					; catholic leader
 battle_model	Aztec_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
@@ -25,7 +25,7 @@ dictionary		2
 strat_model		crusader_general
 strat_model		count_tripoli					; count of tripoli
 strat_model		prince_antioch					        ; prince of antioch
-strat_model		king_jerusalem					; king of jerusalem
+strat_model		early_northern_king					; king of jerusalem
 strat_model		emperor_constantinople					; emperor of constantinople
 battle_model	Fancy_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
@@ -40,41 +40,41 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			venice
 dictionary		15
-strat_model		southern_general
-strat_model		southern_general					; heir
+strat_model		early_southern_general
+strat_model		early_southern_general					; heir
 strat_model		fancy_general						; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			sicily
 dictionary		15
-strat_model		southern_general
-strat_model		southern_general					; heir
-strat_model		northern_generic_king					; leader
+strat_model		early_southern_general
+strat_model		early_southern_general					; heir
+strat_model		early_northern_king					; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			milan
 dictionary		15
-strat_model		southern_general
-strat_model		southern_general					; heir
+strat_model		early_southern_general
+strat_model		early_southern_general					; heir
 strat_model		fancy_general						; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			papal_states
 dictionary		15
-strat_model		fancy_general
-strat_model		fancy_general					; heir
+strat_model		early_southern_general
+strat_model		early_southern_general					; heir
 strat_model		pope						; leader
 battle_model	Fancy_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			denmark
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
@@ -105,9 +105,9 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			scotland
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 strat_model		william_wallace
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
@@ -138,41 +138,41 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			france
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			hre
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			england
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			portugal
 dictionary		2
-strat_model		southern_general
-strat_model		southern_general				; heir
-strat_model		northern_generic_king				; leader
-battle_model	Northern_General
+strat_model		islamic_general
+strat_model		islamic_general					; heir
+strat_model		middle_eastern_sultan				; leader
+battle_model	Eastern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			poland
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
@@ -210,49 +210,57 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			spain
 dictionary		2
-strat_model		southern_general
-strat_model		southern_general					; heir
-strat_model		northern_generic_king					; leader
+strat_model		early_southern_general
+strat_model		early_southern_general					; heir
+strat_model		early_northern_king					; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			aragon
 dictionary		2
-strat_model		southern_general
-strat_model		southern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_southern_general
+strat_model		early_southern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			hungary
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			norway
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_generic_king				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_king				; leader
 battle_model	Northern_General
+battle_equip	gladius, chainmail shirt helmet and rectangular shield
+
+faction			georgia
+dictionary		2
+strat_model		east_christ_general
+strat_model		aztec_general					; heir
+strat_model		aztec_general					; leader
+battle_model	andronicus
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			dummies
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_general				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_general				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			slave
 dictionary		2
-strat_model		northern_general
-strat_model		northern_general				; heir
-strat_model		northern_general				; leader
+strat_model		early_northern_general
+strat_model		early_northern_general				; heir
+strat_model		early_northern_general				; leader
 battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
@@ -373,8 +381,8 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			portugal
 dictionary		2
-strat_model		crusader_captain
-battle_model	Teutonic_Captain
+strat_model		islamic_captain
+battle_model	Eastern_Captain
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			poland
@@ -429,6 +437,12 @@ faction			norway
 dictionary		2
 strat_model		fancy_captain
 battle_model	Fancy_Captain
+battle_equip	gladius, chainmail shirt helmet and rectangular shield
+
+faction			georgia
+dictionary		2
+strat_model		crusader_captain
+battle_model	Teutonic_Captain
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			dummies
@@ -529,7 +543,7 @@ strat_model		northern_spy
 
 faction			portugal
 dictionary		2
-strat_model		southern_spy
+strat_model		islamic_spy
 
 faction			poland
 dictionary		2
@@ -562,6 +576,10 @@ strat_model		southern_spy
 faction			hungary
 dictionary		2
 strat_model		northern_spy
+
+faction			georgia
+dictionary		2
+strat_model		southern_spy
 
 faction			dummies
 dictionary		2
@@ -658,7 +676,7 @@ strat_model		northern_assassin
 
 faction			portugal
 dictionary		2
-strat_model		southern_assassin
+strat_model		islamic_assassin
 
 faction			poland
 dictionary		2
@@ -691,6 +709,10 @@ strat_model		southern_assassin
 faction			hungary
 dictionary		2
 strat_model		northern_assassin
+
+faction			georgia
+dictionary		2
+strat_model		southern_assassin
 
 faction			dummies
 dictionary		2
@@ -787,7 +809,7 @@ strat_model		northern_ambassador
 
 faction			portugal
 dictionary		2
-strat_model		southern_ambassador
+strat_model		islamic_ambassador
 
 faction			poland
 dictionary		2
@@ -821,9 +843,13 @@ faction			hungary
 dictionary		2
 strat_model		northern_ambassador
 
+faction			georgia
+dictionary		2
+strat_model		southern_ambassador
+
 faction			dummies
 dictionary		2
-strat_model		northern_ambassador
+strat_model		southern_ambassador
 
 ;faction			slave
 ;dictionary		2
@@ -950,6 +976,10 @@ faction			hungary
 dictionary		2
 strat_model		thrace_admiral
 
+faction			georgia
+dictionary		2
+strat_model		greek_cities_admiral
+
 faction			dummies
 dictionary		2
 strat_model		slave_admiral
@@ -1053,8 +1083,7 @@ strat_model		royal_lady
 
 faction			portugal
 dictionary		2
-strat_model		southern_princess
-strat_model		royal_lady
+strat_model		islamic_princess
 
 faction			poland
 dictionary		2
@@ -1094,6 +1123,11 @@ faction			hungary
 dictionary		2
 strat_model		northern_princess
 strat_model		royal_lady2
+
+faction			georgia
+dictionary		2
+strat_model		southern_princess
+strat_model		royal_lady
 
 ;faction			slave
 ;dictionary		2
@@ -1186,7 +1220,7 @@ strat_model		northern_merchant
 
 faction			portugal
 dictionary		2
-strat_model		southern_merchant
+strat_model		islamic_merchant
 
 faction			poland
 dictionary		2
@@ -1219,6 +1253,10 @@ strat_model		southern_merchant
 faction			hungary
 dictionary		2
 strat_model		northern_merchant
+
+faction			georgia
+dictionary		2
+strat_model		southern_merchant
 
 faction			dummies
 dictionary		2
@@ -1364,9 +1402,9 @@ strat_model		catholic_cardinal					; advanced priest
 
 faction			portugal
 dictionary		2
-strat_model		catholic_priest						; default model
-strat_model		catholic_bishop						; medium level priest
-strat_model		catholic_cardinal					; advanced priest
+strat_model		muslim_iman						; default model
+strat_model		muslim_iman						; medium level priest
+strat_model		muslim_iman					        ; advanced priest
 
 faction			poland
 dictionary		2
@@ -1418,6 +1456,14 @@ dictionary		2
 strat_model		catholic_priest						; default model
 strat_model		catholic_bishop						; medium level priest
 strat_model		catholic_cardinal					; advanced priest
+
+faction			georgia
+dictionary		2
+strat_model		orthodox_priest						; default model
+strat_model		orthodox_bishop						; medium level priest
+strat_model		orthodox_bishop						; medium level priest
+strat_model		orthodox_patriarch					; advanced priest
+
 
 faction			dummies
 dictionary		2
