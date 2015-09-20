@@ -687,7 +687,7 @@ texture				spain, models_strat/textures/early_general_spain.tga
 texture				venice, models_strat/textures/early_general_venice.tga
 texture				dummies, models_strat/textures/early_general_rebels.tga
 texture				slave, models_strat/textures/early_general_rebels.tga
-model_flexi_m			models_strat/early_general_northern.CAS, max
+model_flexi_m			models_strat/early_general_southern.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
 type				islamic_general
@@ -803,12 +803,12 @@ type				early_northern_king
 skeleton			strat_named_with_army
 scale				0.7
 indiv_range			40
-texture				france, models_strat/textures/northern_generic_king_france.tga
-texture				england, models_strat/textures/northern_generic_king_england.tga
-texture				hre, models_strat/textures/northern_generic_king_hre.tga
-texture				scotland, models_strat/textures/northern_generic_king_scotland.tga
-texture				denmark, models_strat/textures/northern_generic_king_denmark.tga
-texture				norway, models_strat/textures/northern_generic_king_norway.tga
+texture				france, models_strat/textures/northern_king_early_france.tga
+texture				england, models_strat/textures/northern_king_early_england.tga
+texture				hre, models_strat/textures/northern_king_early_hre.tga
+texture				scotland, models_strat/textures/northern_king_early_scotland.tga
+texture				denmark, models_strat/textures/northern_king_early_denmark.tga
+texture				norway, models_strat/textures/northern_king_early_norway.tga
 texture				sicily, models_strat/textures/northern_king_early_sicily.tga
 texture				jerusalem, models_strat/textures/northern_king_early_jerusalem.tga
 texture				spain, models_strat/textures/northern_king_early_spain.tga
@@ -874,6 +874,16 @@ texture				papal_states, models_strat/textures/Fancy_General_papal_states.tga
 texture				jerusalem, models_strat/textures/Fancy_General_jerusalem.tga
 texture				slave, models_strat/textures/fancy_general_rebels.tga
 model_flexi_m			models_strat/Fancy_General.CAS, max
+shadow_model_flexi		models_strat/shadow_sword.CAS, max
+
+type				early_southern_leader
+skeleton			strat_named_with_army
+scale				0.7
+indiv_range			40
+texture				milan, models_strat/textures/early_general_genoa.tga
+texture				venice, models_strat/textures/early_general_venice_doge.tga
+texture				slave, models_strat/textures/early_general_rebels.tga
+model_flexi_m			models_strat/early_general_southern.CAS, max
 shadow_model_flexi		models_strat/shadow_sword.CAS, max
 
 type				teutonic_grand_master

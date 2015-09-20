@@ -1377,7 +1377,7 @@ Trigger 0031_P_Faction_Excommunicated
     WhenToTest FactionExcommunicated
 
     FactionStanding factions { papal_states } -1.0
-    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.2
+    FactionStanding factions { england, france, spain, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.2
 
 ;------------------------------------------
 Trigger 0031_P_Faction_Excommunicated_g
@@ -2879,22 +2879,21 @@ Trigger Turks
     WhenToTest FactionTurnStart
 
     Condition FactionType turks
-	and I_EventCounter abbasid_exist != 1
 
     FactionStanding factions { mongols, byzantium } normalise -1 40
     FactionStanding factions { spain, milan, venice, sicily } normalise -1 70
     FactionStanding factions { russia, kievan_rus, georgia, cumans } normalise -1 90
     FactionStanding factions { england, france, hre } normalise -1 95
     FactionStanding factions { egypt, moors, kwarezm } normalise 1 45
+    FactionStanding factions { timurids } normalise 1 60
 
 ;------------------------------------------
 Trigger Egypt
     WhenToTest FactionTurnStart
 
     Condition FactionType egypt
-	and I_EventCounter abbasid_exist != 1
 
-    FactionStanding factions { mongols } normalise -1 40
+    FactionStanding factions { mongols, timurids } normalise -1 40
     FactionStanding factions { spain, england, france, hre } normalise -1 60
     FactionStanding factions { milan, venice, sicily } normalise -1 70
     FactionStanding factions { byzantium, russia, kievan_rus, georgia, jerusalem } normalise -1 80
@@ -2931,15 +2930,6 @@ Trigger Zirids
     FactionStanding factions { sicily, aragon, milan } normalise -1 70
     FactionStanding factions { egypt } normalise -1 30
     FactionStanding factions { moors } normalise 1 30
-
-;------------------------------------------
-Trigger Zirids_Abbasid
-    WhenToTest FactionTurnStart
-
-    Condition FactionType portugal
-    and I_EventCounter zirids_exist = 1
-    and I_EventCounter abbasid_exist = 1
-
     FactionStanding factions { timurids } normalise 1 60
 
 ;------------------------------------------
@@ -3015,11 +3005,10 @@ Trigger Kwarezm
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
-	and I_EventCounter abbasid_exist != 1
 
     FactionStanding factions { mongols } normalise -1 30
     FactionStanding factions { cumans } normalise -1 60
-    FactionStanding factions { turks, egypt } normalise 1 60
+    FactionStanding factions { turks, egypt, timurids } normalise 1 60
 
 ;------------------------------------------
 Trigger Papal_States
@@ -3060,20 +3049,10 @@ Trigger Jerusalem
     FactionStanding factions { papal_states } normalise 1 30
     
 ;------------------------------------------
-Trigger Timurids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType timurids
-    and I_EventCounter abbasids_exist != 1
-
-    FactionStanding exclude_factions { } normalise -1 40
-
-------------------------------------------
 Trigger Abbasids
     WhenToTest FactionTurnStart
 
     Condition FactionType timurids
-    and I_EventCounter abbasids_exist = 1
 
     FactionStanding factions { mongols } normalise -1 60
     FactionStanding factions { egypt } normalise -1 120
@@ -3741,7 +3720,7 @@ Trigger Orthodox_Destroy_Huge_Cathedral_Lithuania
     Condition BuildingName = huge_cathedral_o
 	and I_EventCounter lithuania_catholic = 1
 
-    FactionStanding factions { ithuania } -0.04
+    FactionStanding factions { lithuania } -0.04
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Huge_Cathedral_Zirids
@@ -4096,33 +4075,6 @@ Trigger MoorsAlt
     FactionStanding factions { egypt, turks, portugal } normalise 1 30
 
 ;------------------------------------------
-Trigger TurksAlt
-    WhenToTest FactionTurnStart
-
-    Condition FactionType turks
-	and I_EventCounter abbasid_exist = 1
-
-    FactionStanding factions { mongols, byzantium } normalise -1 40
-    FactionStanding factions { spain, milan, venice, sicily } normalise -1 70
-    FactionStanding factions { russia, kievan_rus, georgia, cumans } normalise -1 90
-    FactionStanding factions { england, france, hre } normalise -1 95
-    FactionStanding factions { egypt, moors, kwarezm } normalise 1 45
-    FactionStanding factions { timurids } normalise 1 60
-
-;------------------------------------------
-Trigger EgyptAlt
-    WhenToTest FactionTurnStart
-
-    Condition FactionType egypt
-	and I_EventCounter abbasid_exist = 1
-
-    FactionStanding factions { mongols, timurids } normalise -1 40
-    FactionStanding factions { spain, england, france, hre } normalise -1 60
-    FactionStanding factions { milan, venice, sicily } normalise -1 70
-    FactionStanding factions { byzantium, russia, kievan_rus, georgia, jerusalem } normalise -1 80
-    FactionStanding factions { turks, moors, kwarezm } normalise 1 45
-
-;------------------------------------------
 Trigger LithuaniaAlt
     WhenToTest FactionTurnStart
 
@@ -4143,17 +4095,6 @@ Trigger AragonAlt
     FactionStanding factions { moors, egypt, portugal } normalise -1 40
     FactionStanding factions { milan, sicily, france } normalise -1 80
     FactionStanding factions { spain } normalise 1 50
-
-;------------------------------------------
-Trigger KwarezmAlt
-    WhenToTest FactionTurnStart
-
-    Condition FactionType kwarezm
-	and I_EventCounter abbasids_exist = 1
-
-    FactionStanding factions { mongols } normalise -1 30
-    FactionStanding factions { cumans } normalise -1 60
-    FactionStanding factions { turks, egypt, timurids } normalise 1 60
 
 ;------------------------------------------
 Trigger Papal_States_Lithuania

@@ -1,0 +1,42 @@
+[name] Watchtowers to Villages
+[works for] high
+[description]This mod replaces Watchtowers\n
+with Small Villages.
+[files] 
+translate data\text\expanded.txt
+translate data\text\strat.txt
+translate data\text\tooltips.txt
+overwrite data\ui\eastern_european\#watchtower.tga with #watchtower.tga
+overwrite data\ui\middle_eastern\#watchtower.tga with #watchtowerME.tga
+overwrite data\ui\northern_european\#watchtower.tga with #watchtower.tga
+overwrite data\ui\southern_european\#watchtower.tga with #watchtowerSE.tga
+overwrite data\ui\greek\#watchtower.tga with #watchtowerSE.tga
+replace data\descr_cultures.txt with:
+watchtower			data/models_strat/residences/se_watchtower_village.CAS,					watchtower_roman
+on:
+watchtower			data/models_strat/residences/SE_watchtower.CAS,					watchtower_roman
+<end>
+
+replace data\descr_cultures.txt with:
+watchtower			data/models_strat/residences/ne_watchtower_village.CAS,					watchtower_barbarian
+on:
+watchtower			data/models_strat/residences/NE_watchtower.CAS,					watchtower_barbarian
+<end>
+
+replace data\descr_cultures.txt with:
+watchtower			data/models_strat/residences/se_watchtower_village.CAS,					watchtower_roman
+on:
+watchtower			data/models_strat/residences/SE_watchtower.CAS,					watchtower_roman
+<end>
+
+replace data\descr_cultures.txt with:
+watchtower			data/models_strat/residences/ne_watchtower_village.CAS,					watchtower_barbarian
+on:
+watchtower			data/models_strat/residences/NE_watchtower.CAS,					watchtower_barbarian
+<end>
+
+replace data\descr_cultures.txt with:
+watchtower			data/models_strat/residences/me_watchtower_village.CAS,				watchtower_eastern
+on:
+watchtower			data/models_strat/residences/ME_watchtower.CAS,				watchtower_eastern
+<end>

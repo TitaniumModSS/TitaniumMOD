@@ -14392,6 +14392,28 @@ army
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 
+;Marrakech Province Fort (Taroudant)
+character	sub_faction moors, Al_Watiq Al_Qasim, character, male, male, age 29, x 16, y 66 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
+army
+unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+
+;Tlemcen Province Fort (Sijilmassa)
+character	sub_faction moors, Umar Al_Qasim, general, male, age 20, x 46, y 71 
+army
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+
 ;Tlemcen Province Fort (Achir)
 character	sub_faction moors, Al_Hajjaj, general, male, age 20, x 83, y 98 
 army
@@ -15407,9 +15429,11 @@ region Fes_Province
 fort 38 103 bz_fort_m culture middle_eastern
 fort 56 100 bz_fort_m culture middle_eastern
 
-;region Marrakesh_Province
+region Marrakesh_Province
+fort 16 66 bz_fort_m culture middle_eastern
 
 region Melilla_Province; Tlemcen
+fort 46 71 bz_fort_m culture middle_eastern
 fort 74 103 bz_fort_m culture middle_eastern
 fort 83 98 bz_fort_m culture middle_eastern
 

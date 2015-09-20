@@ -5335,7 +5335,7 @@ settlement
 
 ;Lubeck
 character	Henryk, named character, male, leader, age 42, x 155, y 233 
-traits Factionleader 1 , IsFather 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 3 , BattleChivalry 1 , ReligionStarter 1 , Catholic 3 
+traits Factionleader 1 , IsFather 1 , ReligionStarter 1 , MilitaryInclination 1 , Pagan_Edu 1 , GoodCommander 2 , PublicFaith 3 , BattleChivalry 1 , Catholic 3 
 army
 unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
@@ -5351,7 +5351,7 @@ unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 
 ;Lubeck Province Fort (Rostock)
 character	Izbor, named character, male, heir, age 39, x 164, y 235 
-traits Factionheir 1 , IsFather 1 , LoyaltyStarter 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 1 , ReligionStarter 1 , PublicFaith 3 , Catholic 2 , Royal_Blood_Lithuanian 1 
+traits Factionheir 1 , IsFather 1 , LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , GoodCommander 2 , PublicFaith 3 , Catholic 2 , Royal_Blood_Lithuanian 1 
 army
 unit		Lith Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Lithuanian Cavalry			exp 0 armour 0 weapon_lvl 0
@@ -9760,11 +9760,33 @@ unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 
+;Tlemcen Province Fort (Sijilmassa)
+character	sub_faction moors, Umar Al_Qasim, general, male, age 20, x 46, y 71 
+army
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+
 ;Fes Province Fort (Melilla)
 character	sub_faction moors, Al_Watiq, general, male, age 21, x 56, y 100 
 army
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+
+;Marrakech Province Fort (Taroudant)
+character	sub_faction moors, Al_Watiq Al_Qasim, character, male, male, age 29, x 16, y 66 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 1 , ReligionStarter 1 
+army
+unit		ME Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
+unit		Desert Cavalry				exp 1 armour 0 weapon_lvl 0
 
 ;PERSIA-IRAN
 ;Yazd
@@ -10315,9 +10337,6 @@ faction_standings	england,		-0.20	norway, denmark
 faction_standings	england,		-0.70	scotland
 faction_standings	england,		-0.80	france
 faction_standings	england,		-1.00	slave
-; faction_standings	portugal,		0.80	aragon
-; faction_standings	portugal,		0.60	spain
-; faction_standings	portugal,		-0.70	moors
 faction_standings	portugal,		-0.30	aragon ;ZIRIDS
 faction_standings	portugal,		-0.10	spain ;ZIRIDS
 faction_standings	portugal,		-0.20	moors ;ZIRIDS
@@ -10338,7 +10357,6 @@ faction_standings	byzantium,		-0.80	turks
 faction_standings	byzantium,		-1.00	slave, mongols
 faction_standings	moors,			0.40	egypt, turks, timurids
 faction_standings	moors,			-0.40	milan, sicily
-; faction_standings	moors,			-0.70	portugal
 faction_standings	moors,			-0.10	portugal ;ZIRIDS
 faction_standings	moors,			-0.80	aragon, papal_states
 faction_standings	moors,			-0.90	spain
@@ -10348,7 +10366,6 @@ faction_standings	russia,			0.20	denmark, lithuania, kievan_rus
 faction_standings	russia,			-0.20	norway, hungary
 faction_standings	russia,			-0.40	cumans, poland, teutonic_order
 faction_standings	russia,			-1.00	slave, mongols
-; faction_standings	spain,			0.60	portugal
 faction_standings	spain,			-0.10	portugal ;ZIRIDS
 faction_standings	spain,			0.50	aragon
 faction_standings	spain,			0.20	england
@@ -10360,7 +10377,6 @@ faction_standings	hungary,		0.20	hre, teutonic_order, lithuania, papal_states, v
 faction_standings	hungary,		-0.20	kievan_rus, russia, byzantium
 faction_standings	hungary,		-0.80	mongols, georgia
 faction_standings	hungary,		-1.00	slave
-; faction_standings	aragon,			0.80	portugal
 faction_standings	aragon,			-0.40	portugal ;ZIRIDS
 faction_standings	aragon,			0.50	spain
 faction_standings	aragon,			0.20	papal_states, milan
@@ -10426,12 +10442,9 @@ faction_relationships 	russia, at_war_with 	cumans
 faction_relationships 	kievan_rus, at_war_with 	cumans
 faction_relationships 	cumans, at_war_with 	kievan_rus, russia
 
-; faction_relationships 	moors, at_war_with 	aragon, spain, portugal
 faction_relationships 	moors, at_war_with 	aragon, spain ;ZIRIDS
 faction_relationships 	aragon, at_war_with 	moors
 faction_relationships 	spain, at_war_with 	moors
-; faction_relationships 	spain, allied_to 	portugal
-; faction_relationships 	portugal, protectorate_of 	spain
 
 faction_relationships 	venice, at_war_with 	slave
 faction_relationships 	sicily, at_war_with 	slave
@@ -10826,9 +10839,11 @@ region Fes_Province
 fort 38 103 bz_fort_m culture middle_eastern
 fort 56 100 bz_fort_m culture middle_eastern
 
-;region Marrakesh_Province
+region Marrakesh_Province
+fort 16 66 bz_fort_m culture middle_eastern
 
 region Melilla_Province; Tlemcen
+fort 46 71 bz_fort_m culture middle_eastern
 fort 74 103 bz_fort_m culture middle_eastern
 fort 83 98 bz_fort_m culture middle_eastern
 

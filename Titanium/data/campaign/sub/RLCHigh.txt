@@ -1,0 +1,26 @@
+[name] Courtesan Ladies Redux
+[works for] high high1300
+[grouped in] RLC
+[description]
+Adds recruitable Courtesan Ladies to european factions.\n
+These Courtesan Ladies act much like princesses with the exception they are not part of the family tree.\n\n
+Based on "Royal Ladies of the Court" submod by Bane_tw and Ishan.
+[files]
+translate data\text\missions.txt with text\rlc_missions.txt
+replace data\export_descr_character_traits.txt with rlc_export_descr_character_traits_triggers.txt from:
+;******************************************************
+;**********************RLC TRIGGERS*********************
+;******************************************************
+to:
+;Space for CLR submod triggers
+append data\export_descr_ancillaries.txt with rlc_export_descr_ancillaries_triggers.txt
+append data\world\maps\campaign\imperial_campaign\campaign_script.txt with rlc_scriptAI.txt after:
+;=======================================================;
+;================= ADDITIONAL SCRIPTS ==================;
+;=======================================================;
+<end>
+append data\world\maps\campaign\imperial_campaign\campaign_script.txt with rlc_script.txt after:
+;=======================================================;
+;================= ADDITIONAL SCRIPTS ==================;
+;=======================================================;
+<end>

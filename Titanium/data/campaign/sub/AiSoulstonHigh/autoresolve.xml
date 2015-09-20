@@ -1,0 +1,52 @@
+	<autoresolve>
+		<min_capture_percent float="10.0"/>
+		<max_capture_percent float="35.0"/>
+		<lopsided_thresh float="1.0"/>
+		<lopsided_hn_mod float="100.0"/>
+		<separation_missile_add uint="1"/>
+		<naval_sink_modifier float="65.0"/>
+		<naval_sink_offset float="15.0"/>
+		<naval_sink_max float="80.0"/>
+		<sally_att_def_draw_divisor float="1.75"/>
+		<!-- sally battles equal draw if attacker lost and (no of attacker troops) > (no of defender troops)/divisor -->
+		<use_new_sett_autoresolve bool="true"/>
+		<!-- do we use the new settlement autoresolve -->
+		<switchable_defence_exposed bool="true"/>
+		<!-- can unit switch exposed state during autoresolve -->
+		<gate_defence_num_oil_attacks int="3"/>
+		<!-- number of gate oil attacks -->
+		<gate_defence_strength_oil_base float="4.0"/>
+		<!-- gate oil attack strength -->
+		<gate_defence_strength_oil_level_modifier float="0.0"/>
+		<!-- gate oil attack strength += modifier * oil_level -->
+		<gate_defence_num_arrow_attacks int="2"/>
+		<!-- number of gate arrow attacks -->
+		<gate_defence_strength_arrow_base float="2.0"/>
+		<!-- gate arrow attack strength -->
+		<gate_defence_strength_arrow_level_modifier float="2.0"/>
+		<!-- gate arrow attack strength += modifier * arrow_level -->
+		<gate_defence_num_default_attacks int="2"/>
+		<!-- number of gate generic advantage attacks -->
+		<gate_defence_strength_default_base float="1.0"/>
+		<!-- gate generic advantage attack strength -->
+		<gate_defence_strength_default_level_modifier float="1.0"/>
+		<!-- gate advantage attack strength += modifier * fortification_level -->
+		<sett_defence_num_arrow_attacks int="2"/>
+		<!-- number of settlement arrow attacks -->
+		<sett_defence_strength_arrow_base float="2.0"/>
+		<!-- settlement arrow attack strength -->
+		<sett_defence_strength_arrow_level_modifier float="2.0"/>
+		<!-- sett arrow attack strength += modifier * arrow_level -->
+		<sett_defence_num_default_attacks int="0"/>
+		<!-- number of sett generic advantage attacks -->
+		<sett_defence_strength_default_base float="1.0"/>
+		<!-- sett generic advantage attack strength -->
+		<sett_defence_strength_default_level_modifier float="1.0"/>
+		<!-- sett advantage attack strength += modifier * fortification_level -->
+		<display_strength_oil float="600"/>
+		<!-- additional effective army strength for defending residence with oil -->
+		<display_strength_arrow float="600"/>
+		<!-- additional effective army strength for defending residence with arrows -->
+		<display_strength_default float="500"/>
+		<!-- additional effective army strength for defending residence with fortification levels -->
+	</autoresolve>

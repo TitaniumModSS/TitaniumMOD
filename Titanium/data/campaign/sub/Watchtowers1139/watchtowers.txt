@@ -1,0 +1,880 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; >>>> start of regions section <<<< Forts+Watchtowers
+
+; BRITAIN
+region Inverness_Province
+watchtower 38 249
+watchtower 51 266
+fort 53 266 stone_fort_b culture northern_european
+
+region Eikundarsund_Province; Scottish Isles Province, Kirkjuvagr
+fort 45 236 stone_fort_b culture northern_european
+
+region Aberdeen_Province
+watchtower 58 256
+
+region Edinburgh_Province
+watchtower 46 245
+fort 47 247 stone_fort_b culture northern_european
+fort 42 241 stone_fort_b culture northern_european
+
+region York_Province
+watchtower 66 245
+watchtower 61 234
+fort 64 246 stone_fort_b culture northern_european
+
+region Nottingham_Province
+watchtower 64 224
+watchtower 78 227
+
+region London_Province
+watchtower 85 225
+watchtower 80 214
+
+region Winchester_Province
+watchtower 72 212
+watchtower 60 211
+watchtower 40 207
+fort 68 213 stone_fort_b culture northern_european
+fort 52 211 stone_fort_b culture northern_european
+
+region Caernarvon_Province
+watchtower 49 222
+fort 56 218 stone_fort_b culture northern_european
+
+region Dublin_Province
+watchtower 32 224
+watchtower 14 219
+watchtower 20 237
+fort 31 233 stone_fort_b culture northern_european
+fort 13 230 stone_fort_b culture northern_european
+fort 17 220 stone_fort_b culture northern_european
+
+; SCANDINAVIA
+region Oslo_Province
+watchtower 152 272
+watchtower 163 266
+
+region Skara_Province
+watchtower 178 264
+watchtower 167 257
+
+region Arhus_Province
+watchtower 139 254
+watchtower 148 241
+fort 141 244 stone_fort_b culture northern_european
+
+region Bergen_Province
+watchtower 117 276
+watchtower 129 265
+watchtower 136 276
+fort 121 267 stone_fort_b culture northern_european
+
+region Uppsala_Province
+watchtower 186 273
+watchtower 210 273
+fort 201 269 stone_fort_b culture northern_european
+
+region Visby_Province
+watchtower 212 261
+
+region Roskilde_Province
+watchtower 166 241
+
+region Lund_Province
+watchtower 183 249
+
+region Kalmar_Province
+watchtower 197 262
+
+; RUSLAND-STEPPES
+region Novgorod_Province
+watchtower 297 272
+watchtower 297 254
+watchtower 321 271
+watchtower 340 256
+fort 338 256 stone_fort_c culture eastern_european
+fort 326 264 stone_fort_c culture eastern_european
+
+region Pskov_Province
+watchtower 280 271
+watchtower 288 256
+
+region Polotsk_Province
+watchtower 275 249
+watchtower 279 237
+watchtower 293 236
+watchtower 296 242
+fort 275 234 stone_fort_c culture eastern_european
+
+region Hrodna_Province
+watchtower 260 232
+watchtower 252 220
+
+region Mensk_Province; Zhytkavichy Province, Turov
+watchtower 271 229
+watchtower 271 216
+watchtower 289 226
+
+region Zhytomyr_Province; Volhynia Province, Volodymyr
+watchtower 248 213
+watchtower 263 209
+
+region Halych_Province
+watchtower 244 205
+watchtower 269 197
+fort 257 196 stone_fort_c culture eastern_european
+
+region Kiev_Province
+watchtower 275 200
+watchtower 285 217
+watchtower 294 203
+fort 283 208 stone_fort_c culture eastern_european
+
+region Bryansk_Province; Chernihivskyi Province, Chernigov
+watchtower 310 226
+watchtower 328 222
+watchtower 333 238
+watchtower 347 229
+fort 325 231 stone_fort_c culture eastern_european
+fort 317 221 stone_fort_c culture eastern_european
+
+region Pereyaslav_Province
+watchtower 317 203
+watchtower 330 209
+fort 326 204 stone_fort_c culture eastern_european
+
+region Smolensk_Province
+watchtower 313 237
+watchtower 316 253
+watchtower 330 248
+
+region Yaroslavl_Province; Sarskoye Province, Rostov
+watchtower 350 269
+watchtower 351 250
+watchtower 368 251
+watchtower 370 272
+fort 348 248 stone_fort_c culture eastern_european
+fort 365 261 stone_fort_c culture eastern_european
+fort 368 253 stone_fort_c culture eastern_european
+
+region Murom_Province
+watchtower 366 236
+fort 363 240 stone_fort_c culture eastern_european
+fort 377 239 stone_fort_c culture eastern_european
+
+region Oleshe_Province
+watchtower 291 189
+watchtower 297 179
+watchtower 315 190
+watchtower 330 195
+watchtower 333 182
+
+region Caffa_Province; Taurica Province, Chersonesos
+watchtower 315 173
+watchtower 323 168
+fort 330 170 bz_fort_m culture greek
+
+region Azaq_Province
+watchtower 350 181
+watchtower 355 192
+watchtower 371 191
+
+region Astrakhan_Province
+watchtower 410 188
+watchtower 424 176
+watchtower 438 183
+
+region Serdobinskaya_Province; Burtaslaria Province, Voronezh
+watchtower 348 204
+watchtower 377 217
+watchtower 391 235
+fort 350 202 stone_fort_c culture eastern_european
+
+region Bulgar_Province
+watchtower 389 256
+watchtower 410 254
+watchtower 410 238
+watchtower 441 263
+watchtower 455 258
+watchtower 466 233
+fort 435 267 stone_fort_c culture eastern_european
+fort 431 247 stone_fort_c culture eastern_european
+fort 440 241 stone_fort_c culture eastern_european
+fort 452 247 stone_fort_c culture eastern_european
+
+region Jaiksk_Province; Aktobe Province
+watchtower 410 208
+watchtower 428 216
+watchtower 449 207
+watchtower 458 174
+watchtower 490 191
+watchtower 494 167
+fort 395 224 stone_fort_c culture eastern_european
+fort 418 221 stone_fort_c culture eastern_european
+fort 447 214 stone_fort_c culture eastern_european
+fort 495 195 stone_fort_c culture eastern_european
+
+; EASTERN EUROPE
+region Krakow_Province
+watchtower 224 214
+watchtower 236 202
+fort 241 214 stone_fort_c culture eastern_european
+
+region Khiva_Province; Poznan Province
+watchtower 215 219
+
+region Wroclaw_Province
+watchtower 190 218
+watchtower 205 214
+
+region Plock_Province
+watchtower 230 219
+watchtower 241 231
+fort 210 228 stone_fort_c culture eastern_european
+
+region Thorn_Province; Kdanzk
+watchtower 202 239
+watchtower 202 230
+
+region Stettin_Province
+watchtower 173 236
+watchtower 188 231
+
+region Riga_Province
+watchtower 240 254
+watchtower 262 259
+watchtower 265 247
+fort 271 264 stone_fort_c culture eastern_european
+
+region Reval_Province
+watchtower 242 266
+watchtower 263 266
+watchtower 275 273
+
+region Vilnius_Province; Kaunas
+watchtower 237 247
+watchtower 258 244
+fort 257 240 stone_fort_c culture eastern_european
+
+region Palanga_Province; Twangste Province
+watchtower 216 233
+watchtower 223 239
+watchtower 232 234
+
+region Prague_Province
+watchtower 169 206
+watchtower 191 206
+
+region Esztergom_Province
+watchtower 205 188
+
+region Kassa_Province
+watchtower 206 196
+fort 209 197 stone_fort_c culture eastern_european
+
+region Varad_Province
+watchtower 224 184
+watchtower 232 173
+
+region Brasov_Province; Gyulafehevar Province
+watchtower 258 179
+fort 261 176 stone_fort_c culture eastern_european
+
+region Targoviste_Province
+watchtower 245 166
+watchtower 273 172
+fort 243 166 stone_fort_c culture eastern_european
+
+region Baia_Province; Iasi
+watchtower 273 179
+watchtower 290 181
+fort 266 188 stone_fort_c culture eastern_european
+
+; CENTRAL EUROPE
+region Magdeburg_Province; Brandenburg Province
+watchtower 166 211
+watchtower 181 223
+
+region Hamburg_Province; Saxony Province, Bremen
+watchtower 150 226
+fort 149 231 holyr_fort_b culture northern_european
+
+region Embi_Province; Thuringia Province, Erfurt
+watchtower 157 219
+fort 161 220 holyr_fort_b culture northern_european
+
+region Damghan_Province; Mecklenburg Province, Liubice/Lubeck
+watchtower 167 230
+fort 164 235 holyr_fort_b culture northern_european
+
+region Cologne_Province
+watchtower 127 206
+watchtower 132 219
+fort 121 210 holyr_fort_b culture northern_european
+
+region Frankfurt_Province
+watchtower 139 217
+watchtower 146 205
+fort 141 217 holyr_fort_b culture northern_european
+
+region Nuremburg_Province
+watchtower 166 200
+
+region Staufen_Province
+watchtower 133 197
+fort 138 200 holyr_fort_b culture northern_european
+
+region Groningen_Province; Utrecht Province
+watchtower 108 219
+watchtower 125 226
+watchtower 136 230
+fort 124 228 holyr_fort_b culture northern_european
+
+region Vienna_Province
+watchtower 187 182
+watchtower 189 195
+fort 181 184 holyr_fort_b culture northern_european
+
+region Salzburg_Province
+watchtower 175 189
+
+region Bern_Province; Zurich Province
+fort 132 184 holyr_fort_b culture northern_european
+
+region Innsbruck_Province
+watchtower 154 187
+
+; WESTERN EUROPE
+region Bruges_Province; Artois Province, Arras
+watchtower 93 212
+
+region Antwerp_Province; Flanders Province, Ghent
+fort 101 214 stone_fort_b culture northern_european
+
+region Sharjah_Province; Brabant Province, Leuven
+watchtower 116 210
+fort 110 214 stone_fort_b culture northern_european
+
+region Metz_Province
+watchtower 123 191
+fort 126 202 stone_fort_b culture northern_european
+
+region Rheims_Province
+watchtower 113 199
+fort 106 194 stone_fort_b culture northern_european
+
+region Dijon_Province
+watchtower 107 184
+
+region Paris_Province
+watchtower 100 199
+
+region Khlynov_Province; Orleanais Province, Orleans
+watchtower 94 183
+
+region Caen_Province
+watchtower 65 203
+watchtower 80 200
+fort 79 191 stone_fort_b culture northern_european
+
+region Angers_Province
+watchtower 81 190
+
+region Rennes_Province
+watchtower 49 196
+watchtower 64 195
+
+region Exeter_Province; Poitou Province, Poitiers
+watchtower 69 180
+watchtower 81 173
+
+region Bordeaux_Province
+watchtower 84 160
+
+region Toulouse_Province
+watchtower 103 159
+
+region Clermont_Province
+watchtower 89 172
+
+region Lyon_Province
+watchtower 115 171
+
+region Marseille_Province; Arles
+watchtower 120 162
+fort 117 158 stone_fort_b culture northern_european
+
+; BALKANS
+region Zagreb_Province
+watchtower 194 164
+watchtower 200 173
+
+region Ryazan_Province; Raska Province, Ras
+watchtower 215 159
+fort 225 167 stone_fort_c culture eastern_european
+
+region Sofia_Province; Sredets
+watchtower 245 151
+
+region Constantinople_Province
+watchtower 276 142
+
+region Adrianople_Province
+watchtower 271 139
+
+region Corinth_Province
+watchtower 236 117
+watchtower 243 110
+watchtower 245 122
+watchtower 254 120
+fort 249 119 bz_fort_m culture greek
+
+region Thessalonica_Province
+watchtower 234 144
+watchtower 235 136
+watchtower 252 136
+fort 231 148 bz_fort_m culture greek
+
+region Arta_Province
+watchtower 226 121
+watchtower 230 129
+fort 234 124 bz_fort_m culture greek
+
+region Durazzo_Province
+watchtower 220 135
+watchtower 225 141
+
+;region Ragusa_Province
+
+region Athens_Province; Dalmatia Province, Zara
+watchtower 194 159
+
+region Belgrade_Province; Nysos
+watchtower 228 165
+
+region Turku_Province; Bosnia Province, Vrhbosna
+watchtower 213 168
+
+region Moscow_Province; Duklja Province, Shkoder
+watchtower 213 153
+
+region Scopia_Province; Tarnovo
+watchtower 265 150
+watchtower 275 156
+watchtower 280 168
+fort 282 164 stone_fort_c culture eastern_european
+fort 268 154 stone_fort_b bz_fort_m culture greek
+
+region Iraklion_Province
+watchtower 248 102
+watchtower 266 99
+
+; ITALY
+region Rome_Province
+watchtower 175 146
+
+region Pisa_Province; Pisa-Ajaccio Province
+watchtower 143 151
+fort 141 148 stone_fort_d culture southern_european
+
+region Bologna_Province
+watchtower 165 163
+
+region Genoa_Province
+watchtower 147 166
+
+region Nykoeping_Province; Tuscany Province, Florence
+watchtower 159 154
+
+region Milan_Province
+watchtower 140 176
+fort 133 170 stone_fort_d culture southern_european
+
+region Ajaccio_Province; Cote-d'Azur Province, Nice
+watchtower 133 162
+
+region Yelabuga_Province; Verona
+watchtower 164 176
+
+;region Venice_Province
+
+region Beleb_el_Anab_Province; Giulia Province, Trieste
+watchtower 178 169
+
+region Naples_Province
+watchtower 186 141
+
+region Bari_Province
+watchtower 193 147
+watchtower 208 135
+fort 202 138 stone_fort_d culture southern_european
+
+region Ancona_Province
+watchtower 175 156
+
+region Syracuse_Province; Calabria Province, Reggio
+watchtower 194 127
+watchtower 199 128
+
+region Palermo_Province
+watchtower 168 119
+watchtower 176 115
+watchtower 187 118
+fort 187 113 stone_fort_d culture southern_european
+
+region Cagliari_Province
+watchtower 143 136
+fort 144 141 stone_fort_d culture southern_european
+
+; IBERIA
+region Leon_Province
+watchtower 31 137
+watchtower 39 147
+fort 37 142 stone_fort_d culture southern_european
+
+region Salamanca_Province; Galicia Province, Santiago de Compostela
+watchtower 25 153
+
+region Burgos_Province
+watchtower 58 154
+
+region Toledo_Province
+watchtower 38 133
+watchtower 59 141
+
+region Pamplona_Province
+watchtower 70 153
+
+region Zaragoza_Province
+watchtower 81 144
+fort 75 150 stone_fort_d culture southern_european
+
+region Barcelona_Province
+watchtower 95 148
+
+region Valencia_Province
+watchtower 68 139
+watchtower 77 135
+
+region Palma_Province
+watchtower 101 130
+
+region Oporto_Province
+watchtower 25 146
+
+;region Galway_Province; Coimbra Province
+
+region Lisbon_Province
+watchtower 24 134
+
+region Silves_Province
+watchtower 15 118
+
+region Granada_Province
+watchtower 62 114
+
+region Murcia_Province
+watchtower 58 128
+watchtower 72 123
+
+region Cordoba_Province
+watchtower 45 124
+
+;region Seville_Province; Extremadura Province, Badajoz
+
+region Oran_Province; Western Andalusia Province, Sevilla
+watchtower 26 116
+watchtower 39 107
+
+; AFRICA
+region Fes_Province
+watchtower 36 102
+fort 38 103 bz_fort_m culture middle_eastern
+fort 56 100 bz_fort_m culture middle_eastern
+
+region Marrakesh_Province
+watchtower 26 85
+fort 16 66 bz_fort_m culture middle_eastern
+
+region Melilla_Province; Tlemcen
+watchtower 46 80
+watchtower 60 93
+fort 46 71 bz_fort_m culture middle_eastern
+fort 74 103 bz_fort_m culture middle_eastern
+fort 83 98 bz_fort_m culture middle_eastern
+
+region Algiers_Province
+watchtower 82 104
+watchtower 100 106
+watchtower 120 108
+fort 110 99 bz_fort_m culture middle_eastern
+fort 111 111 bz_fort_m culture middle_eastern
+fort 125 106 bz_fort_m culture middle_eastern
+fort 133 112 bz_fort_m culture middle_eastern
+
+region Tunis_Province
+watchtower 137 111
+watchtower 155 110
+fort 149 103 bz_fort_m culture middle_eastern
+
+region Al-Mahdiya_Province
+watchtower 152 95
+fort 155 97 bz_fort_m culture middle_eastern
+
+region Tripoli_Province; Tarabulus, Maghreb
+watchtower 186 78
+
+region Benghazi_Province
+watchtower 231 80
+watchtower 248 76
+fort 250 76 bz_fort_m culture middle_eastern
+
+region Alexandria_Province
+watchtower 282 69
+
+;region Damietta_Province
+
+;region Cairo_Province
+
+region Luxor_Province
+watchtower 316 46
+watchtower 324 30
+
+; CAUCASUS
+region Sarkel_Province
+watchtower 357 167
+watchtower 370 176
+watchtower 391 181
+watchtower 393 196
+watchtower 409 169
+watchtower 419 161
+watchtower 426 145
+fort 399 159 stone_fort_c culture eastern_european
+fort 425 147 stone_fort_c culture eastern_european
+
+region Tmutarakan_Province
+watchtower 342 171
+
+region Tbilisi_Province
+watchtower 391 146
+watchtower 398 152
+watchtower 413 143
+
+region Kutaisi_Province
+watchtower 368 157
+watchtower 380 146
+
+region Baku_Province
+watchtower 420 135
+watchtower 438 137
+
+region Yerevan_Province; Greater Armenia Province, Ani
+watchtower 386 135
+fort 398 135 bz_fort_m culture middle_eastern
+
+region Qarisiya_Province; Van Province
+watchtower 384 132
+watchtower 398 127
+
+; ANATOLIA
+region Trebizond_Province
+watchtower 343 142
+watchtower 360 136
+watchtower 378 141
+
+region Caesarea_Province
+watchtower 320 124
+watchtower 329 133
+
+region Iconium_Province
+watchtower 305 120
+watchtower 319 111
+
+region Adana_Province; Cilicia Province, Sis
+watchtower 327 118
+watchtower 330 111
+watchtower 340 119
+fort 328 113 bz_fort_m culture middle_eastern
+fort 332 112 bz_fort_m culture middle_eastern
+
+region Sinop_Province
+watchtower 303 142
+watchtower 317 149
+watchtower 333 144
+
+region Nicaea_Province
+watchtower 286 126
+watchtower 289 141
+
+region Canakkale_Province
+watchtower 266 129
+watchtower 277 128
+
+region Ankara_Province
+watchtower 300 125
+watchtower 308 135
+watchtower 315 129
+
+region Rhodes_Province; Chaldia Province, Sivas
+watchtower 348 134
+
+region Isparta_Province
+watchtower 281 121
+watchtower 292 121
+watchtower 300 113
+fort 283 122 bz_fort_m culture middle_eastern
+
+region Edessa_Province
+watchtower 346 112
+watchtower 361 113
+
+region Smyrna_Province
+watchtower 274 116
+watchtower 277 106
+watchtower 284 111
+fort 279 107 bz_fort_m culture middle_eastern
+fort 280 111 bz_fort_m culture middle_eastern
+
+region Diyarbakir_Province
+watchtower 364 129
+watchtower 372 121
+
+; LEVANT
+region Antioch_Province
+watchtower 335 102
+
+region Tortosa_Province; Tripoli, Levant
+fort 336 98 bz_fort_m culture middle_eastern
+fort 339 97 bz_fort_m culture middle_eastern
+
+region Aleppo_Province
+fort 356 101 bz_fort_m culture middle_eastern
+
+region Damascus_Province
+watchtower 339 80
+watchtower 348 95
+fort 337 76 bz_fort_m culture middle_eastern
+fort 353 95 bz_fort_m culture middle_eastern
+
+region Acre_Province
+watchtower 333 86
+fort 332 82 bz_fort_m culture middle_eastern
+
+region Jerusalem_Province
+watchtower 328 78
+
+;region Kerak_Province
+
+region Gaza_Province
+watchtower 316 67
+watchtower 321 58
+fort 323 70 bz_fort_m culture middle_eastern
+
+region Nicosia_Province
+watchtower 310 98
+watchtower 321 100
+
+; MESOPOTAMIA
+region Baghdad_Province
+watchtower 388 86
+
+region Basra_Province
+watchtower 416 69
+watchtower 423 60
+
+region Medina_Province; Wasit Province
+watchtower 409 81
+
+region Mosul_Province
+watchtower 376 108
+watchtower 379 94
+watchtower 392 100
+watchtower 395 114
+fort 369 98 bz_fort_m culture middle_eastern
+
+region Tayma_Province; Jazira Province, Ar-Raqqah
+watchtower 372 112
+
+; ARABIA
+region Mecca_Province
+watchtower 350 32
+watchtower 355 17
+fort 354 44 bz_fort_m culture middle_eastern
+fort 362 22 bz_fort_m culture middle_eastern
+
+region Al-Mu'miniya_Province
+watchtower 429 40
+watchtower 445 27
+watchtower 463 20
+watchtower 481 29
+fort 477 29 bz_fort_m culture middle_eastern
+
+region Al_Aqaba_Province
+watchtower 333 50
+watchtower 344 40
+
+; PERSIA-KHORASSAN
+region Mashhad_Province
+watchtower 495 111
+watchtower 491 101
+
+region Tabriz_Province
+watchtower 415 125
+watchtower 416 112
+watchtower 428 123
+
+region Kerman_Province
+watchtower 482 64
+watchtower 484 42
+
+region Urgench_Province
+watchtower 442 166
+watchtower 471 152
+watchtower 502 161
+watchtower 505 142
+fort 505 147 bz_fort_m culture middle_eastern
+
+region Ray_Province
+watchtower 460 96
+watchtower 480 107
+fort 468 105 bz_fort_m culture middle_eastern
+
+region Isfahan_Province
+watchtower 441 82
+watchtower 459 80
+
+region Shiraz_Province
+watchtower 445 56
+watchtower 462 63
+watchtower 462 43
+
+region Gorgan_Province
+watchtower 461 130
+watchtower 480 117
+
+region Konjikala_Province
+watchtower 493 130
+
+region Yazd_Province
+fort 502 90 bz_fort_m culture middle_eastern
+
+region Alamut_Province
+watchtower 435 100
+fort 430 114 bz_fort_m culture middle_eastern
+
+region Kermanshah_Province
+watchtower 414 101
+watchtower 422 87
+fort 426 96 bz_fort_m culture middle_eastern
+
+region Ahvaz_Province
+watchtower 427 80
+watchtower 433 64
+
+;EMPTY LAND
+region Kazan_Province; Un-Inhabited Region
+fort 239 280 stone_fort_c culture eastern_european
+
+script
+campaign_script.txt

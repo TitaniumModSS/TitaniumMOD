@@ -1,0 +1,3521 @@
+;*********  BYG'S REALITY & SUPPLY TRAITS  *********
+
+Trait Healing
+    Characters family
+
+    Level Battle_Hardened
+        Description Battle_Hardened_desc
+        EffectsDescription Battle_Hardened_effects_desc
+        Threshold  1
+
+        Effect BattleSurgery  70
+        Effect Command  3
+        Effect TroopMorale  3
+        Effect Attack  3
+        Effect Defence  3
+        Effect LineOfSight  5
+
+
+    Level Battle_Weakened
+        Description Battle_Weakened_desc
+        EffectsDescription Battle_Weakened_effects_desc
+        Threshold  2
+
+
+;------------------------------------------
+Trait MVC
+    Characters family
+
+    Level First_Major_New_Victory
+        Description First_Major_New_Victory_desc
+        EffectsDescription First_Major_New_Victory_effects_desc
+        GainMessage First_Major_New_Victory_gain_desc
+        Threshold  1
+
+
+    Level Second_Major_New_Victory
+        Description Second_Major_New_Victory_desc
+        EffectsDescription Second_Major_New_Victory_effects_desc
+        GainMessage Second_Major_New_Victory_gain_desc
+        Threshold  2
+
+
+    Level Third_Major_New_Victory
+        Description Third_Major_New_Victory_desc
+        EffectsDescription Third_Major_New_Victory_effects_desc
+        GainMessage Third_Major_New_Victory_gain_desc
+        Threshold  3
+
+
+    Level Fourth_Major_New_Victory
+        Description Fourth_Major_New_Victory_desc
+        EffectsDescription Fourth_Major_New_Victory_effects_desc
+        GainMessage Fourth_Major_New_Victory_gain_desc
+        Threshold  4
+
+
+    Level Fifth_Major_New_Victory
+        Description Fifth_Major_New_Victory_desc
+        EffectsDescription Fifth_Major_New_Victory_effects_desc
+        Threshold  5
+
+;------------------------------------------
+Trait FMVC
+    Characters family
+
+    Level One_Great_Monument
+        Description One_Great_Monument_desc
+        EffectsDescription One_Great_Monument_effects_desc
+        GainMessage One_Great_Monument_gain_desc
+        Threshold  1
+
+
+    Level Two_Great_Monuments
+        Description Two_Great_Monuments_desc
+        EffectsDescription Two_Great_Monuments_effects_desc
+        Threshold  2
+
+
+    Level Three_Great_Monuments
+        Description Three_Great_Monuments_desc
+        EffectsDescription Three_Great_Monuments_effects_desc
+        Threshold  3
+
+
+    Level Four_Great_Monuments
+        Description Four_Great_Monuments_desc
+        EffectsDescription Four_Great_Monuments_effects_desc
+        Threshold  4
+
+
+    Level Five_Great_Monuments
+        Description Five_Great_Monuments_desc
+        EffectsDescription Five_Great_Monuments_effects_desc
+        Threshold  5
+
+;------------------------------------------
+Trait TMVC
+    Characters family
+
+    Level One_Spectacular_Monument
+        Description One_Spectacular_Monument_desc
+        EffectsDescription One_Spectacular_Monument_effects_desc
+        GainMessage One_Spectacular_Monument_gain_desc
+        Threshold  1
+
+
+    Level Two_Spectacular_Monuments
+        Description Two_Spectacular_Monuments_desc
+        EffectsDescription Two_Spectacular_Monuments_effects_desc
+        Threshold  2
+
+
+    Level Three_Spectacular_Monuments
+        Description Three_Spectacular_Monuments_desc
+        EffectsDescription Three_Spectacular_Monuments_effects_desc
+        Threshold  3
+
+
+    Level Four_Spectacular_Monuments
+        Description Four_Spectacular_Monuments_desc
+        EffectsDescription Four_Spectacular_Monuments_effects_desc
+        Threshold  4
+
+        Effect TroopMorale  3
+
+    Level Five_Spectacular_Monuments
+        Description Five_Spectacular_Monuments_desc
+        EffectsDescription Five_Spectacular_Monuments_effects_desc
+        Threshold  5
+
+        Effect TroopMorale  3
+
+;------------------------------------------
+Trait SB
+        Characters family
+
+        Level Complacent
+        Description Complacent_desc
+        EffectsDescription Complacent_effects_desc
+        Threshold 2
+
+        Effect Command  -1
+        Effect TroopMorale  -2
+
+        Level Slack
+        Description Slack_desc
+        EffectsDescription Slack_effects_desc
+        Threshold 3
+
+        Effect Command  -2
+        Effect TroopMorale  -4
+
+;------------------------------------------
+Trait Away
+    Characters family
+    Hidden
+
+    Level Away
+        Description Away_desc
+        EffectsDescription Away_effects_desc
+        Threshold  1
+
+
+;------------------------------------------
+Trait Turnsaway
+    Characters family
+    AntiTraits Turnshome
+
+    Level Bent_On_Glory
+        Description Bent_On_Glory_desc
+        EffectsDescription Bent_On_Glory_effects_desc
+        GainMessage Bent_On_Glory_gain_desc
+        Threshold  4
+
+        Effect Loyalty  -2
+        Effect TroopMorale  3
+
+    Level Eager_To_Fight
+        Description Eager_To_Fight_desc
+        EffectsDescription Eager_To_Fight_effects_desc
+        Threshold  8
+
+        Effect TroopMorale  2
+
+    Level Ready_For_Action
+        Description Ready_For_Action_desc
+        EffectsDescription Ready_For_Action_effects_desc
+        Threshold  12
+
+    Level Troops_Weary
+        Description Troops_Weary_desc
+        EffectsDescription Troops_Weary_effects_desc
+        Threshold  16
+
+        Effect TroopMorale  -2
+
+    Level Troops_Despondent
+        Description Troops_Despondent_desc
+        EffectsDescription Troops_Despondent_effects_desc
+        Threshold  20
+
+        Effect TroopMorale  -4
+
+    Level Troops_Undisciplined
+        Description Troops_Undisciplined_desc
+        EffectsDescription Troops_Undisciplined_effects_desc
+        GainMessage Troops_Undisciplined_gain_desc
+        Threshold  24
+
+        Effect Command -1
+        Effect TroopMorale  -6
+        Effect Unrest  1
+        Effect Loyalty  -1
+
+    Level Troops_Desperate
+        Description Troops_Desperate_desc
+        EffectsDescription Troops_Desperate_effects_desc
+        GainMessage Troops_Desperate_gain_desc
+        Threshold  28
+
+        Effect Command -2
+        Effect TroopMorale  -8
+        Effect Unrest  2
+        Effect Loyalty  -2
+
+    Level Troops_Mutinous
+        Description Troops_Mutinous_desc
+        EffectsDescription Troops_Mutinous_effects_desc
+        GainMessage Troops_Mutinous_gain_desc
+        Threshold  32
+
+        Effect Command -3
+        Effect TroopMorale  -10
+        Effect Unrest  5
+        Effect Loyalty  -5
+
+    Level Too_Many_Years_Away
+        Description Too_Many_Years_Away_desc
+        EffectsDescription Too_Many_Years_Away_effects_desc
+        Threshold  36
+
+        Effect Command -5
+        Effect TroopMorale  -10
+        Effect Unrest  5
+        Effect Loyalty  -5
+
+;------------------------------------------
+Trait Turnshome
+    Characters family
+    AntiTraits Turnsaway
+
+    Level Settled
+        Description Settled_desc
+        EffectsDescription Settled_effects_desc
+        Threshold  4
+
+
+;------------------------------------------
+Trait Con
+    Characters family
+    AntiTraits Ovcon
+
+    Level Confident
+        Description Confident_desc
+        EffectsDescription Confident_effects_desc
+        Threshold  4
+
+
+;------------------------------------------
+Trait Ovcon
+    Characters family
+    AntiTraits Con
+
+    Level Self_Assured
+        Description Self_Assured_desc
+        EffectsDescription Self_Assured_effects_desc
+        Threshold  1
+
+        Effect TroopMorale  +1
+
+    Level Overconfident
+        Description Overconfident_desc
+        EffectsDescription Overconfident_effects_desc
+        Threshold  7
+
+        Effect Attack -3
+        Effect Defence -3
+        Effect SiegeAttack -3
+        Effect TroopMorale  -3
+
+    Level Blatantly_Overconfident
+        Description Blatantly_Overconfident_desc
+        EffectsDescription Blatantly_Overconfident_effects_desc
+        Threshold  14
+
+        Effect Attack -6
+        Effect Defence -6
+        Effect SiegeAttack -6
+        Effect TroopMorale  -6
+
+
+;------------------------------------------
+Trait Supplies
+    Characters family
+    AntiTraits SuppliesAdded
+
+    Level Army_Fully_Supplied
+        Description Army_Fully_Supplied_desc
+        EffectsDescription Army_Fully_Supplied_effects_desc
+        Threshold  1
+
+        Effect Charm  5
+        Effect MovementPoints -5
+
+    Level Army_Supplies_75_Percent
+        Description Army_Supplies_75_Percent_desc
+        EffectsDescription Army_Supplies_75_Percent_effects_desc
+        Threshold  2
+
+        Effect Charm  5
+        Effect MovementPoints -4
+
+    Level Army_Supplies_50_Percent
+        Description Army_Supplies_50_Percent_desc
+        EffectsDescription Army_Supplies_50_Percent_effects_desc
+        Threshold  3
+
+        Effect Charm  5
+        Effect MovementPoints -3
+        Effect Unrest  1
+
+    Level Army_Supplies_25_Percent
+        Description Army_Supplies_25_Percent_desc
+        EffectsDescription Army_Supplies_25_Percent_effects_desc
+        Threshold  4
+
+        Effect MovementPoints -2
+        Effect TroopMorale  -4
+        Effect Unrest  2
+
+    Level Using_Emergency_Supplies
+        Description Using_Emergency_Supplies_desc
+        EffectsDescription Using_Emergency_Supplies_effects_desc
+;        GainMessage Using_Emergency_Supplies_gain_desc
+        Threshold  5
+
+        Effect TroopMorale  -2
+        Effect Unrest  2
+
+    Level Out_Of_Supplies
+        Description Out_Of_Supplies_desc
+        EffectsDescription Out_Of_Supplies_effects_desc
+;        GainMessage Out_Of_Supplies_gain_desc
+        Threshold  6
+
+        Effect Command -2
+        Effect TroopMorale  -4
+        Effect Loyalty -2
+        Effect Unrest  3
+        Effect MovementPoints -4
+
+
+;unrest here represents when you enter a settlement you take more supplies from population, depriving them more
+;------------------------------------------
+Trait SuppliesAdded
+    Characters family
+    AntiTraits Supplies
+
+    Level Supplies_Added
+        Description Supplies_Added_desc
+        EffectsDescription Supplies_Added_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait TimeInField
+    Characters family
+    AntiTraits TIFReset
+
+    Level TIF1
+        Description TIF1_desc
+        EffectsDescription TIF1_effects_desc
+        Threshold  1
+
+
+    Level TIF2
+        Description TIF2_desc
+        EffectsDescription TIF2_effects_desc
+        Threshold  2
+
+
+    Level TIF3
+        Description TIF3_desc
+        EffectsDescription TIF3_effects_desc
+        Threshold  3
+
+
+    Level TIF4
+        Description TIF4_desc
+        EffectsDescription TIF4_effects_desc
+        Threshold  4
+
+;Checks time in home region outdoors to compare with timein region, so time in settlement doesn't confuse trait
+;------------------------------------------
+Trait TIFReset
+    Characters family
+    AntiTraits TimeInField
+
+    Level TIFR
+        Description TIFR_desc
+        EffectsDescription TIFR_effects_desc
+        Threshold  4
+
+;------------------------------------------
+Trait SuppliedBySea
+    Characters family
+
+    Level On_Supply_Ship
+        Description On_Supply_Ship_desc
+        EffectsDescription On_Supply_Ship_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Dishonor
+    Characters family
+    AntiTraits NoDishonor
+
+    Level Neglected_Border_Defences
+        Description Neglected_Border_Defences_desc
+        EffectsDescription Neglected_Border_Defences_effects_desc
+        GainMessage Neglected_Border_Defences_gain_desc
+        Threshold  1
+
+        Effect Unrest  1
+
+    Level Negligent
+        Description Negligent_desc
+        EffectsDescription Negligent_effects_desc
+        Threshold  3
+
+        Effect Defence -2
+        Effect TroopMorale  -2
+        Effect Loyalty -1
+        Effect Unrest  2
+
+    Level Completely_Negligent
+        Description Completely_Negligent_desc
+        EffectsDescription Completely_Negligent_effects_desc
+        Threshold  5
+
+        Effect Defence -3
+        Effect TroopMorale  -4
+        Effect Loyalty -2
+        Effect Unrest  3
+
+;attack effect is in besieged trait
+;------------------------------------------
+Trait NoDishonor
+    Characters family
+    AntiTraits Dishonor
+
+    Level No_Dishonor
+        Description No_Dishonor_desc
+        EffectsDescription No_Dishonor_effects_desc
+        Threshold  1
+
+
+;------------------------------------------
+Trait Besieged
+    Characters family
+    Hidden
+    AntiTraits NotBesieged
+
+
+    Level UnderSiege
+        Description UnderSiege_desc
+        EffectsDescription UnderSiege_effects_desc
+        Threshold  1
+
+        Effect Attack -3
+        Effect Unrest  2
+
+    Level UnderSiegeAgain
+        Description UnderSiegeAgain_desc
+        EffectsDescription UnderSiegeAgain_effects_desc
+        Threshold  2
+
+        Effect Attack -6
+        Effect Unrest  4
+
+;enable hidden after testing
+;------------------------------------------
+Trait NotBesieged
+    Characters family
+    Hidden
+    AntiTraits Besieged
+
+
+    Level NotUnderSiege
+        Description NotUnderSiege_desc
+        EffectsDescription NotUnderSiege_effects_desc
+        Threshold  4
+
+
+;enable hidden after testing
+;------------------------------------------
+Trait PoorLogisticsBGR
+    Characters family
+    AntiTraits AdvisedOnLogistics
+
+    Level Poor_Logistician
+        Description Poor_Logistician_desc
+        EffectsDescription Poor_Logistician_effects_desc
+        Threshold  1
+
+        Effect Command -1
+        Effect TroopMorale  -2
+        Effect MovementPoints -2
+
+    Level Good_Logistician
+        Description Good_Logistician_desc
+        EffectsDescription Good_Logistician_effects_desc
+        GainMessage Good_Logistician_gain_desc
+        Threshold  2
+
+;       Effect Command  1
+;       Effect TroopMorale  2
+        Effect MovementPoints  1
+;        Effect BattleSurgery  10
+;        Effect Charm  5
+        Effect Piety  2
+
+;Lvl 1 Will make resupply take longer (2xlonger than standard). Lvl 2 =2x faster resupply than standard and some resupply in non own religion settlements.
+;------------------------------------------
+Trait AdvisedOnLogistics
+    Characters family
+    AntiTraits PoorLogisticsBGR
+
+    Level Advised_On_Logistics
+        Description Advised_On_Logistics_desc
+        EffectsDescription Advised_On_Logistics_effects_desc
+        Threshold  2
+
+;10-01-2008 changed thresh to 2 from 1 (may be better for reset)
+;------------------------------------------
+Trait WarCouncilMember
+    Characters family
+
+    Level War_Council_Member
+        Description War_Council_Member_desc
+        EffectsDescription War_Council_Member_effects_desc
+        GainMessage War_Council_Member_gain_desc
+        Threshold  1
+
+;------------------------------------------
+Trait SuppressAuthority
+    Characters family
+    Hidden
+    AntiTraits AntiSuppress
+
+    Level Suppress1
+        Description Suppress1_desc
+        EffectsDescription Suppress1_effects_desc
+        Threshold  1
+
+        Effect Authority -1
+
+    Level Suppress2
+        Description Suppress2_desc
+        EffectsDescription Suppress2_effects_desc
+        Threshold  2
+
+        Effect Authority -2
+
+    Level Suppress3
+        Description Suppress3_desc
+        EffectsDescription Suppress3_effects_desc
+        Threshold  3
+
+        Effect Authority -3
+
+    Level Suppress4
+        Description Suppress4_desc
+        EffectsDescription Suppress4_effects_desc
+        Threshold  4
+
+        Effect Authority -4
+
+    Level Suppress5
+        Description Suppress5_desc
+        EffectsDescription Suppress5_effects_desc
+        Threshold  5
+
+        Effect Authority -5
+
+    Level Suppress6
+        Description Suppress6_desc
+        EffectsDescription Suppress6_effects_desc
+        Threshold  6
+
+        Effect Authority -6
+
+    Level Suppress7
+        Description Suppress7_desc
+        EffectsDescription Suppress7_effects_desc
+        Threshold  7
+
+        Effect Authority -7
+
+;------------------------------------------
+Trait AntiSuppress
+    Characters family
+    Hidden
+    AntiTraits SuppressAuthority
+
+    Level AntiSuppress1
+        Description AntiSuppress1_desc
+        EffectsDescription AntiSuppress1_effects_desc
+        Threshold  4
+
+;------------------------------------------
+Trait StopR
+    Characters family
+    Hidden
+    AntiTraits StartR
+
+    Level Impaired_Recruitment_Ability
+        Description Impaired_Recruitment_Ability_desc
+        EffectsDescription Impaired_Recruitment_Ability_effects_desc
+        Threshold  1
+
+Effect Charm -1
+
+;------------------------------------------
+Trait StartR
+    Characters family
+    Hidden
+    AntiTraits StopR
+
+    Level Reenable_Recruitment
+        Description Reenable_Recruitment_desc
+        EffectsDescription Reenable_Recruitment_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait GeneralZeal
+    Characters family
+;    Hidden
+    AntiTraits GeneralZealReset
+
+    Level General_Zeal_High
+        Description General_Zeal_High_desc
+        EffectsDescription General_Zeal_High_effects_desc
+        Threshold  1
+
+    Level General_Zeal_Waning
+        Description General_Zeal_Waning_desc
+        EffectsDescription General_Zeal_Waning_effects_desc
+        Threshold  2
+
+Effect Loyalty -1
+Effect Command -1
+Effect Piety -1
+        Effect SiegeAttack -1
+        Effect TroopMorale  -1
+        Effect BribeResistance -3
+
+    Level General_Zeal_Low
+        Description General_Zeal_Low_desc
+        EffectsDescription General_Zeal_Low_effects_desc
+        Threshold  3
+
+Effect Loyalty -2
+Effect Command -1
+Effect Piety -2
+        Effect Attack -1
+        Effect Defence -1
+        Effect SiegeAttack -2
+        Effect TroopMorale  -2
+        Effect BribeResistance -4
+
+    Level General_Zeal_Very_Low
+        Description General_Zeal_Very_Low_desc
+        EffectsDescription General_Zeal_Very_Low_effects_desc
+        Threshold  4
+
+Effect Loyalty -3
+Effect Command -2
+Effect Piety -2
+        Effect Attack -1
+        Effect Defence -1
+        Effect SiegeAttack -3
+        Effect TroopMorale  -3
+        Effect BribeResistance -5
+
+    Level General_Zeal_Abysmal
+        Description General_Zeal_Abysmal_desc
+        EffectsDescription General_Zeal_Abysmal_effects_desc
+        Threshold  5
+
+Effect Loyalty -4
+Effect Command -2
+Effect Piety -3
+        Effect Attack -2
+        Effect Defence -2
+        Effect SiegeAttack -4
+        Effect TroopMorale  -4
+        Effect BribeResistance -6
+
+;------------------------------------------
+Trait GeneralZealReset
+    Characters family
+;    Hidden
+    AntiTraits GeneralZeal
+
+    Level ResetGeneralZeal
+        Description ResetGeneralZeal_desc
+        EffectsDescription ResetGeneralZeal_effects_desc
+        Threshold  5
+
+;------------------------------------------
+Trait FactionZeal
+    Characters family
+;    Hidden
+    AntiTraits ZealReset
+
+    Level Faction_Zeal_High
+        Description Faction_Zeal_High_desc
+        EffectsDescription Faction_Zeal_High_effects_desc
+        GainMessage Faction_Zeal_High_gain_desc
+        Threshold  1
+
+    Level Faction_Zeal_Waning
+        Description Faction_Zeal_Waning_desc
+        EffectsDescription Faction_Zeal_Waning_effects_desc
+        GainMessage Faction_Zeal_Waning_gain_desc
+        Threshold  2
+
+    Level Faction_Zeal_Low
+        Description Faction_Zeal_Low_desc
+        EffectsDescription Faction_Zeal_Low_effects_desc
+        GainMessage Faction_Zeal_Low_gain_desc
+        Threshold  3
+
+    Level Faction_Zeal_Very_Low
+        Description Faction_Zeal_Very_Low_desc
+        EffectsDescription Faction_Zeal_Very_Low_effects_desc
+        GainMessage Faction_Zeal_Very_Low_gain_desc
+        Threshold  4
+
+    Level Faction_Zeal_Abysmal
+        Description Faction_Zeal_Abysmal_desc
+        EffectsDescription Faction_Zeal_Abysmal_effects_desc
+        GainMessage Faction_Zeal_Abysmal_gain_desc
+        Threshold  5
+
+;------------------------------------------
+Trait ZealReset
+    Characters family
+;    Hidden
+    AntiTraits FactionZeal
+
+    Level ResetZeal
+        Description ResetZeal_desc
+        EffectsDescription ResetZeal_effects_desc
+        Threshold  5
+
+;------------------------------------------
+Trait RecruitmentLimited
+    Characters family
+
+    Level Recruitment_Limit_Reached
+        Description Recruitment_Limit_Reached_desc
+        EffectsDescription Recruitment_Limit_Reached_effects_desc
+        Threshold  1
+
+    Level Recruitment_Limit_Message
+        Description Recruitment_Limit_Message_desc
+        EffectsDescription Recruitment_Limit_Message_effects_desc
+        GainMessage Recruitment_Limit_Message_gain_desc
+        Threshold  2
+
+    Level Recruits_Available
+        Description Recruits_Available_desc
+        EffectsDescription Recruits_Available_effects_desc
+        GainMessage Recruits_Available_gain_desc
+        Threshold  3
+
+;------------------------------------------
+Trait GainRL
+    Characters family
+
+    Level GainRL1
+        Description GainRL1_desc
+        EffectsDescription GainRL1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait CentralisedPower
+    Characters family
+
+    Level Universal_Right_to_Knight
+        Description Universal_Right_to_Knight_desc
+        EffectsDescription Universal_Right_to_Knight_effects_desc
+        GainMessage Universal_Right_to_Knight_gain_desc
+        Threshold  1
+
+    Level Right_to_Knight_Restricted
+        Description Right_to_Knight_Restricted_desc
+        EffectsDescription Right_to_Knight_Restricted_effects_desc
+        GainMessage Right_to_Knight_Restricted_gain_desc
+        Threshold  2
+
+    Level Professional_Recruitment_and_Command
+        Description Professional_Recruitment_and_Command_desc
+        EffectsDescription Professional_Recruitment_and_Command_effects_desc
+        GainMessage Professional_Recruitment_and_Command_gain_desc
+        Threshold  3
+
+    Level Centralised_Recruitment_and_Command
+        Description Centralised_Recruitment_and_Command_desc
+        EffectsDescription Centralised_Recruitment_and_Command_effects_desc
+        GainMessage Centralised_Recruitment_and_Command_gain_desc
+        Threshold  4
+
+;------------------------------------------
+Trait CentralisedPowerEffect
+    Characters family
+    Hidden
+    AntiTraits CentralisedPowerReset
+
+    Level Has_Right_to_Knight
+        Description Has_Right_to_Knight_desc
+        EffectsDescription Has_Right_to_Knight_effects_desc
+        Threshold  1
+
+        Effect Charm  5
+
+;------------------------------------------
+Trait CentralisedPowerReset
+    Characters family
+    Hidden
+    AntiTraits CentralisedPowerEffect
+
+    Level ResetCentralisation
+        Description ResetCentralisation_desc
+        EffectsDescription ResetCentralisation_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait SupplyMirror
+    Characters family
+    Hidden
+
+    Level 25_Percent_Supply_Level
+        Description 25_Percent_Supply_Level_desc
+        EffectsDescription 25_Percent_Supply_Level_effects_desc
+        GainMessage 25_Percent_Supply_Level_gain_desc
+        Threshold  1
+
+    Level Emergency_Supply_Level
+        Description Emergency_Supply_Level_desc
+        EffectsDescription Emergency_Supply_Level_effects_desc
+        GainMessage Emergency_Supply_Level_gain_desc
+        Threshold  2
+
+    Level No_Supplies_Remaining
+        Description No_Supplies_Remaining_desc
+        EffectsDescription No_Supplies_Remaining_effects_desc
+        GainMessage No_Supplies_Remaining_gain_desc
+        Threshold  3
+
+;------------------------------------------
+Trait RecruitmentAbility
+    Characters family
+
+
+    Level Full_Recruitment_Ability
+        Description Full_Recruitment_Ability_desc
+        EffectsDescription Full_Recruitment_Ability_effects_desc
+        Threshold  1
+
+    Level Average_Recruitment_Ability
+        Description Average_Recruitment_Ability_desc
+        EffectsDescription Average_Recruitment_Ability_effects_desc
+        Threshold  2
+
+    Level Minimal_Recruitment_Ability
+        Description Minimal_Recruitment_Ability_desc
+        EffectsDescription Minimal_Recruitment_Ability_effects_desc
+        Threshold  3
+
+;------------------------------------------
+Trait RecruitmentUnauthorised
+    Characters family
+
+
+    Level Recruitment_Unauthorised
+        Description Recruitment_Unauthorised_desc
+        EffectsDescription Recruitment_Unauthorised_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Orders
+    Characters family
+
+
+    Level Right_to_Knight
+        Description Right_to_Knight_desc
+        EffectsDescription Right_to_Knight_effects_desc
+        Threshold  1
+
+    Level Order_No_Right_to_Knight
+        Description Order_No_Right_to_Knight_desc
+        EffectsDescription Order_No_Right_to_Knight_effects_desc
+        Threshold  2
+
+    Level Order_Professional_Recruitment
+        Description Order_Professional_Recruitment_desc
+        EffectsDescription Order_Professional_Recruitment_effects_desc
+        Threshold  3
+
+    Level Order_Centralised_Recruitment
+        Description Order_Centralised_Recruitment_desc
+        EffectsDescription Order_Centralised_Recruitment_effects_desc
+        Threshold  4
+
+;------------------------------------------
+Trait ReligiousWarTax
+    Characters family
+    Hidden
+
+    Level Religious_War_Tax
+        Description Religious_War_Tax_desc
+        EffectsDescription Religious_War_Tax_effects_desc
+        GainMessage Religious_War_Tax_gain_desc
+        Threshold  1
+
+;------------------------------------------
+Trait bgrdeduct
+    Characters family
+
+    Level crusade
+        Description crusade_desc
+        EffectsDescription crusade_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait bgrdeductislam
+    Characters family
+
+    Level jihad
+        Description jihad_desc
+        EffectsDescription jihad_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait crusadecost
+    Characters family
+
+    Level Joins_the_Crusade
+        Description Joins_the_Crusade_desc
+        EffectsDescription Joins_the_Crusade_effects_desc
+        GainMessage Joins_the_Crusade_gain_desc
+        Threshold  1
+
+;------------------------------------------
+Trait jihadcost
+    Characters family
+
+    Level Joins_the_Jihad
+        Description Joins_the_Jihad_desc
+        EffectsDescription Joins_the_Jihad_effects_desc
+        GainMessage Joins_the_Jihad_gain_desc
+        Threshold  1
+
+;------------------------------------------
+Trait SupplyCost
+    Characters family
+
+    Level 25_Percent_Supplies_Purchased
+        Description 25_Percent_Supplies_Purchased_desc
+        EffectsDescription 25_Percent_Supplies_Purchased_effects_desc
+;        GainMessage 25_Percent_Supplies_Purchased_gain_desc
+        Threshold  1
+
+    Level 50_Percent_Supplies_Purchased
+        Description 50_Percent_Supplies_Purchased_desc
+        EffectsDescription 50_Percent_Supplies_Purchased_effects_desc
+;        GainMessage 50_Percent_Supplies_Purchased_gain_desc
+        Threshold  2
+
+    Level 75_Percent_Supplies_Purchased
+        Description 75_Percent_Supplies_Purchased_desc
+        EffectsDescription 75_Percent_Supplies_Purchased_effects_desc
+;        GainMessage 75_Percent_Supplies_Purchased_gain_desc
+        Threshold  3
+
+    Level 100_Percent_Supplies_Purchased
+        Description 100_Percent_Supplies_Purchased_desc
+        EffectsDescription 100_Percent_Supplies_Purchased_effects_desc
+;        GainMessage 100_Percent_Supplies_Purchased_gain_desc
+        Threshold  4
+
+    Level Extra_Supplies_Purchased
+        Description Extra_Supplies_Purchased_desc
+        EffectsDescription Extra_Supplies_Purchased_effects_desc
+;        GainMessage Extra_Supplies_Purchased_gain_desc
+        Threshold  5
+
+;------------------------------------------
+Trait SupplyCostMirror
+    Characters family
+    AntiTraits SupplyCostMirrorReset
+
+    Level 25_Percent_Supplies_PurchasedM
+        Description 25_Percent_Supplies_PurchasedM_desc
+        EffectsDescription 25_Percent_Supplies_PurchasedM_effects_desc
+        GainMessage 25_Percent_Supplies_PurchasedM_gain_desc
+        Threshold  1
+
+    Level 50_Percent_Supplies_PurchasedM
+        Description 50_Percent_Supplies_PurchasedM_desc
+        EffectsDescription 50_Percent_Supplies_PurchasedM_effects_desc
+        GainMessage 50_Percent_Supplies_PurchasedM_gain_desc
+        Threshold  2
+
+    Level 75_Percent_Supplies_PurchasedM
+        Description 75_Percent_Supplies_PurchasedM_desc
+        EffectsDescription 75_Percent_Supplies_PurchasedM_effects_desc
+        GainMessage 75_Percent_Supplies_PurchasedM_gain_desc
+        Threshold  3
+
+    Level 100_Percent_Supplies_PurchasedM
+        Description 100_Percent_Supplies_PurchasedM_desc
+        EffectsDescription 100_Percent_Supplies_PurchasedM_effects_desc
+        GainMessage 100_Percent_Supplies_PurchasedM_gain_desc
+        Threshold  4
+
+    Level Extra_Supplies_PurchasedM
+        Description Extra_Supplies_PurchasedM_desc
+        EffectsDescription Extra_Supplies_PurchasedM_effects_desc
+        GainMessage Extra_Supplies_PurchasedM_gain_desc
+        Threshold  5
+
+;------------------------------------------
+Trait SupplyCostMirrorReset
+    Characters family
+    AntiTraits SupplyCostMirror
+
+    Level Supply_Cost_Mirror_Reset
+        Description Supply_Cost_Mirror_Reset_desc
+        EffectsDescription Supply_Cost_Mirror_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Cost
+    Characters family
+    Hidden
+    AntiTraits CostReset
+
+    Level Cost_1
+        Description Cost_1_desc
+        EffectsDescription Cost_1_effects_desc
+        Threshold  1
+
+    Level Cost_2
+        Description Cost_2_desc
+        EffectsDescription Cost_2_effects_desc
+        Threshold  2
+
+    Level Cost_3
+        Description Cost_3_desc
+        EffectsDescription Cost_3_effects_desc
+        Threshold  3
+
+    Level Cost_4
+        Description Cost_4_desc
+        EffectsDescription Cost_4_effects_desc
+        Threshold  4
+
+    Level Cost_5
+        Description Cost_5_desc
+        EffectsDescription Cost_5_effects_desc
+        Threshold  5
+
+    Level Cost_6
+        Description Cost_6_desc
+        EffectsDescription Cost_6_effects_desc
+        Threshold  6
+
+    Level Cost_7
+        Description Cost_7_desc
+        EffectsDescription Cost_7_effects_desc
+        Threshold  7
+
+    Level Cost_8
+        Description Cost_8_desc
+        EffectsDescription Cost_8_effects_desc
+        Threshold  8
+
+    Level Cost_9
+        Description Cost_9_desc
+        EffectsDescription Cost_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait CostReset
+    Characters family
+    Hidden
+    AntiTraits Cost
+
+    Level CostReset_1
+        Description CostReset_1_desc
+        EffectsDescription CostReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Earn
+    Characters family
+    AntiTraits EarnReset
+
+    Level Earn_1
+        Description Earn_1_desc
+        EffectsDescription Earn_1_effects_desc
+        Threshold  1
+
+    Level Earn_2
+        Description Earn_2_desc
+        EffectsDescription Earn_2_effects_desc
+        Threshold  2
+
+    Level Earn_3
+        Description Earn_3_desc
+        EffectsDescription Earn_3_effects_desc
+        Threshold  3
+
+    Level Earn_4
+        Description Earn_4_desc
+        EffectsDescription Earn_4_effects_desc
+        Threshold  4
+
+    Level Earn_5
+        Description Earn_5_desc
+        EffectsDescription Earn_5_effects_desc
+        Threshold  5
+
+    Level Earn_6
+        Description Earn_6_desc
+        EffectsDescription Earn_6_effects_desc
+        Threshold  6
+
+    Level Earn_7
+        Description Earn_7_desc
+        EffectsDescription Earn_7_effects_desc
+        Threshold  7
+
+    Level Earn_8
+        Description Earn_8_desc
+        EffectsDescription Earn_8_effects_desc
+        Threshold  8
+
+    Level Earn_9
+        Description Earn_9_desc
+        EffectsDescription Earn_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait EarnReset
+    Characters family
+    AntiTraits Earn
+
+    Level EarnReset_1
+        Description EarnReset_1_desc
+        EffectsDescription EarnReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Wealth
+    Characters family
+    AntiTraits Poverty
+
+
+    Level Wealth_In_Debt_80
+        Description Wealth_In_Debt_80_desc
+        EffectsDescription Wealth_In_Debt_80_effects_desc
+        Threshold  20
+
+        Effect Command -4
+        Effect TroopMorale -5
+        Effect Loyalty -3
+        Effect Piety -3
+        Effect BribeResistance -4
+        Effect PersonalSecurity -2
+
+    Level Wealth_In_Debt_60
+        Description Wealth_In_Debt_60_desc
+        EffectsDescription Wealth_In_Debt_60_effects_desc
+        Threshold  40
+
+        Effect Command -3
+        Effect TroopMorale -3
+        Effect Loyalty -2
+        Effect Piety -2
+        Effect BribeResistance -3
+        Effect PersonalSecurity -2
+
+    Level Wealth_In_Debt_40
+        Description Wealth_In_Debt_40_desc
+        EffectsDescription Wealth_In_Debt_40_effects_desc
+        Threshold  60
+
+        Effect Command -2
+        Effect TroopMorale -2
+        Effect Loyalty -1
+        Effect Piety -1
+        Effect BribeResistance -2
+        Effect PersonalSecurity -2
+
+    Level Wealth_In_Debt_20
+        Description Wealth_In_Debt_20_desc
+        EffectsDescription Wealth_In_Debt_20_effects_desc
+        Threshold  80
+
+        Effect Command -1
+        Effect TroopMorale -1
+        Effect Loyalty -1
+        Effect Piety -1
+        Effect BribeResistance -2
+        Effect PersonalSecurity -2
+
+    Level Wealth_Broke
+        Description Wealth_Broke_desc
+        EffectsDescription Wealth_Broke_effects_desc
+        Threshold  100
+
+        Effect Loyalty -1
+        Effect Piety -1
+        Effect BribeResistance -2
+        Effect PersonalSecurity -2
+
+    Level Wealth_Poor
+        Description Wealth_Poor_desc
+        EffectsDescription Wealth_Poor_effects_desc
+        Threshold  101
+
+        Effect BribeResistance -1
+        Effect PersonalSecurity -1
+
+    Level Wealth_Adequate
+        Description Wealth_Adequate_desc
+        EffectsDescription Wealth_Adequate_effects_desc
+        Threshold  121
+
+    Level Wealth_Rich
+        Description Wealth_Rich_desc
+        EffectsDescription Wealth_Rich_effects_desc
+        Threshold  141
+
+    Level Wealth_Very_Rich
+        Description Wealth_Very_Rich_desc
+        EffectsDescription Wealth_Very_Rich_effects_desc
+        Threshold  161
+
+;------------------------------------------
+Trait Poverty
+    Characters family
+    AntiTraits Wealth
+
+    Level Wealth_Deduct
+        Description Wealth_Deduct_desc
+        EffectsDescription Wealth_Deduct_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait TreasuryCost
+    Characters family
+    Hidden
+    AntiTraits TCReset
+
+    Level TreasuryCost_1
+        Description TreasuryCost_1_desc
+        EffectsDescription TreasuryCost_1_effects_desc
+        Threshold  1
+
+    Level TreasuryCost_2
+        Description TreasuryCost_2_desc
+        EffectsDescription TreasuryCost_2_effects_desc
+        Threshold  2
+
+    Level TreasuryCost_3
+        Description TreasuryCost_3_desc
+        EffectsDescription TreasuryCost_3_effects_desc
+        Threshold  3
+
+    Level TreasuryCost_4
+        Description TreasuryCost_4_desc
+        EffectsDescription TreasuryCost_4_effects_desc
+        Threshold  4
+
+    Level TreasuryCost_5
+        Description TreasuryCost_5_desc
+        EffectsDescription TreasuryCost_5_effects_desc
+        Threshold  5
+
+    Level TreasuryCost_6
+        Description TreasuryCost_6_desc
+        EffectsDescription TreasuryCost_6_effects_desc
+        Threshold  6
+
+    Level TreasuryCost_7
+        Description TreasuryCost_7_desc
+        EffectsDescription TreasuryCost_7_effects_desc
+        Threshold  7
+
+    Level TreasuryCost_8
+        Description TreasuryCost_8_desc
+        EffectsDescription TreasuryCost_8_effects_desc
+        Threshold  8
+
+    Level TreasuryCost_9
+        Description TreasuryCost_9_desc
+        EffectsDescription TreasuryCost_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait TCReset
+    Characters family
+    Hidden
+    AntiTraits TreasuryCost
+
+    Level TCReset_1
+        Description TCReset_1_desc
+        EffectsDescription TCReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait TreasuryWealth
+    Characters family
+    Hidden
+    AntiTraits TWReset
+
+    Level TreasuryWealth_1
+        Description TreasuryWealth_1_desc
+        EffectsDescription TreasuryWealth_1_effects_desc
+        Threshold  1
+
+    Level TreasuryWealth_2
+        Description TreasuryWealth_2_desc
+        EffectsDescription TreasuryWealth_2_effects_desc
+        Threshold  2
+
+    Level TreasuryWealth_3
+        Description TreasuryWealth_3_desc
+        EffectsDescription TreasuryWealth_3_effects_desc
+        Threshold  3
+
+    Level TreasuryWealth_4
+        Description TreasuryWealth_4_desc
+        EffectsDescription TreasuryWealth_4_effects_desc
+        Threshold  4
+
+    Level TreasuryWealth_5
+        Description TreasuryWealth_5_desc
+        EffectsDescription TreasuryWealth_5_effects_desc
+        Threshold  5
+
+    Level TreasuryWealth_6
+        Description TreasuryWealth_6_desc
+        EffectsDescription TreasuryWealth_6_effects_desc
+        Threshold  6
+
+    Level TreasuryWealth_7
+        Description TreasuryWealth_7_desc
+        EffectsDescription TreasuryWealth_7_effects_desc
+        Threshold  7
+
+    Level TreasuryWealth_8
+        Description TreasuryWealth_8_desc
+        EffectsDescription TreasuryWealth_8_effects_desc
+        Threshold  8
+
+    Level TreasuryWealth_9
+        Description TreasuryWealth_9_desc
+        EffectsDescription TreasuryWealth_9_effects_desc
+        Threshold  9
+
+; for gens in debt paying and all gens receiving
+;------------------------------------------
+Trait TWReset
+    Characters family
+    Hidden
+    AntiTraits TreasuryWealth
+
+    Level TWReset_1
+        Description TWReset_1_desc
+        EffectsDescription TWReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ExpeditionTaxOrder
+    Characters family
+    AntiTraits ExpeditionTaxOrderReset
+
+    Level Expedition_Tax_Order
+        Description Expedition_Tax_Order_desc
+        EffectsDescription Expedition_Tax_Order_effects_desc
+        GainMessage Expedition_Tax_Order_gain_desc
+        LoseMessage Expedition_Tax_Order_lose_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ExpeditionTaxOrderReset
+    Characters family
+    AntiTraits ExpeditionTaxOrder
+
+    Level Expedition_Tax_Order_Reset
+        Description Expedition_Tax_Order_Reset_desc
+        EffectsDescription Expedition_Tax_Order_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ExpeditionTax
+    Characters family
+    AntiTraits ExpeditionTaxReset
+
+    Level Expedition_Tax
+        Description Expedition_Tax_desc
+        EffectsDescription Expedition_Tax_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ExpeditionTaxReset
+    Characters family
+    AntiTraits ExpeditionTax
+
+    Level Expedition_Tax_Reset
+        Description Expedition_Tax_Reset_desc
+        EffectsDescription Expedition_Tax_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Debt
+    Characters family
+    AntiTraits DebtReset
+
+    Level Debt_1
+        Description Debt_1_desc
+        EffectsDescription Debt_1_effects_desc
+        GainMessage Debt_1_gain_desc
+        Threshold  1
+
+        Effect Loyalty -2
+        Effect Piety -2
+        Effect BribeResistance -3
+        Effect PersonalSecurity -3
+        Effect Unrest  3
+        Effect TaxCollection -3
+        Effect LocalPopularity -3
+
+    Level Debt_2
+        Description Debt_2_desc
+        EffectsDescription Debt_2_effects_desc
+        GainMessage Debt_2_gain_desc
+        Threshold  2
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+    Level Debt_3
+        Description Debt_3_desc
+        EffectsDescription Debt_3_effects_desc
+        GainMessage Debt_3_gain_desc
+        Threshold  3
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+    Level Debt_4
+        Description Debt_4_desc
+        EffectsDescription Debt_4_effects_desc
+        GainMessage Debt_4_gain_desc
+        Threshold  4
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+    Level Debt_5
+        Description Debt_5_desc
+        EffectsDescription Debt_5_effects_desc
+        GainMessage Debt_5_gain_desc
+        Threshold  5
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+    Level Debt_6
+        Description Debt_6_desc
+        EffectsDescription Debt_6_effects_desc
+        GainMessage Debt_6_gain_desc
+        Threshold  6
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+    Level Debt_7
+        Description Debt_7_desc
+        EffectsDescription Debt_7_effects_desc
+        GainMessage Debt_7_gain_desc
+        Threshold  7
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+    Level Debt_8
+        Description Debt_8_desc
+        EffectsDescription Debt_8_effects_desc
+        GainMessage Debt_8_gain_desc
+        Threshold  8
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+    Level Debt_9
+        Description Debt_9_desc
+        EffectsDescription Debt_9_effects_desc
+        GainMessage Debt_9_gain_desc
+        Threshold  9
+
+        Effect Loyalty -5
+        Effect Piety -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  5
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+
+;------------------------------------------
+Trait DebtReset
+    Characters family
+    AntiTraits Debt
+
+    Level DebtReset_1
+        Description DebtReset_1_desc
+        EffectsDescription DebtReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Tax
+    Characters family
+    AntiTraits TaxReset
+
+    Level Tax_1
+        Description Tax_1_desc
+        EffectsDescription Tax_1_effects_desc
+        Threshold  1
+
+    Level Tax_2
+        Description Tax_2_desc
+        EffectsDescription Tax_2_effects_desc
+        Threshold  2
+
+    Level Tax_3
+        Description Tax_3_desc
+        EffectsDescription Tax_3_effects_desc
+        Threshold  3
+
+    Level Tax_4
+        Description Tax_4_desc
+        EffectsDescription Tax_4_effects_desc
+        Threshold  4
+
+    Level Tax_5
+        Description Tax_5_desc
+        EffectsDescription Tax_5_effects_desc
+        Threshold  5
+
+    Level Tax_6
+        Description Tax_6_desc
+        EffectsDescription Tax_6_effects_desc
+        Threshold  6
+
+    Level Tax_7
+        Description Tax_7_desc
+        EffectsDescription Tax_7_effects_desc
+        Threshold  7
+
+    Level Tax_8
+        Description Tax_8_desc
+        EffectsDescription Tax_8_effects_desc
+        Threshold  8
+
+    Level Tax_9
+        Description Tax_9_desc
+        EffectsDescription Tax_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait TaxReset
+    Characters family
+    AntiTraits Tax
+
+    Level TaxReset_1
+        Description TaxReset_1_desc
+        EffectsDescription TaxReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait TaxEffect
+    Characters family
+    AntiTraits TaxEffectReset
+
+    Level TaxEffect_1
+        Description TaxEffect_1_desc
+        EffectsDescription TaxEffect_1_effects_desc
+        Threshold  1
+
+;        Effect PersonalSecurity -1
+        Effect Unrest  1
+        Effect LocalPopularity -1
+
+    Level TaxEffect_2
+        Description TaxEffect_2_desc
+        EffectsDescription TaxEffect_2_effects_desc
+        Threshold  2
+
+;        Effect PersonalSecurity -2
+        Effect Unrest  2
+        Effect LocalPopularity -2
+
+    Level TaxEffect_3
+        Description TaxEffect_3_desc
+        EffectsDescription TaxEffect_3_effects_desc
+        Threshold  3
+
+;        Effect PersonalSecurity -3
+        Effect Unrest  3
+        Effect LocalPopularity -3
+
+    Level TaxEffect_4
+        Description TaxEffect_4_desc
+        EffectsDescription TaxEffect_4_effects_desc
+        Threshold  4
+
+;        Effect PersonalSecurity -4
+        Effect Unrest  4
+        Effect LocalPopularity -4
+
+;------------------------------------------
+Trait TaxEffectReset
+    Characters family
+    AntiTraits TaxEffect
+
+    Level TaxEffectReset_1
+        Description TaxEffectReset_1_desc
+        EffectsDescription TaxEffectReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Fines
+    Characters family
+    AntiTraits FinesReset
+
+    Level Fines_1
+        Description Fines_1_desc
+        EffectsDescription Fines_1_effects_desc
+        Threshold  1
+
+    Level Fines_2
+        Description Fines_2_desc
+        EffectsDescription Fines_2_effects_desc
+        Threshold  2
+
+    Level Fines_3
+        Description Fines_3_desc
+        EffectsDescription Fines_3_effects_desc
+        Threshold  3
+
+    Level Fines_4
+        Description Fines_4_desc
+        EffectsDescription Fines_4_effects_desc
+        Threshold  4
+
+    Level Fines_5
+        Description Fines_5_desc
+        EffectsDescription Fines_5_effects_desc
+        Threshold  5
+
+    Level Fines_6
+        Description Fines_6_desc
+        EffectsDescription Fines_6_effects_desc
+        Threshold  6
+
+    Level Fines_7
+        Description Fines_7_desc
+        EffectsDescription Fines_7_effects_desc
+        Threshold  7
+
+    Level Fines_8
+        Description Fines_8_desc
+        EffectsDescription Fines_8_effects_desc
+        Threshold  8
+
+    Level Fines_9
+        Description Fines_9_desc
+        EffectsDescription Fines_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait FinesReset
+    Characters family
+    AntiTraits Fines
+
+    Level FinesReset_1
+        Description FinesReset_1_desc
+        EffectsDescription FinesReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait LeaderDefied
+    Characters family
+    AntiTraits LeaderDefiedReset
+
+    Level LeaderDefied_1
+        Description LeaderDefied_1_desc
+        EffectsDescription LeaderDefied_1_effects_desc
+        Threshold  1
+
+        Effect PersonalSecurity -5
+        Effect Unrest  20
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+        Effect Loyalty -3
+        Effect Command -3
+        Effect TroopMorale -5
+        Effect Law -5
+        Effect Squalor 10
+
+    Level LeaderDefied_2
+        Description LeaderDefied_2_desc
+        EffectsDescription LeaderDefied_2_effects_desc
+        Threshold  2
+
+        Effect Authority -1
+        Effect PersonalSecurity -5
+        Effect Unrest  20
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+        Effect Loyalty -3
+        Effect Command -3
+        Effect TroopMorale -5
+        Effect Law -5
+        Effect Squalor 10
+
+    Level LeaderDefied_3
+        Description LeaderDefied_3_desc
+        EffectsDescription LeaderDefied_3_effects_desc
+        Threshold  3
+
+        Effect Authority -2
+        Effect PersonalSecurity -5
+        Effect Unrest  20
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+        Effect Loyalty -3
+        Effect Command -3
+        Effect TroopMorale -5
+        Effect Law -5
+        Effect Squalor 10
+
+    Level LeaderDefied_4
+        Description LeaderDefied_4_desc
+        EffectsDescription LeaderDefied_4_effects_desc
+        Threshold  4
+
+        Effect Authority -3
+        Effect PersonalSecurity -5
+        Effect Unrest  20
+        Effect TaxCollection -5
+        Effect LocalPopularity -5
+        Effect Loyalty -3
+        Effect Command -3
+        Effect TroopMorale -5
+        Effect Law -5
+        Effect Squalor 10
+
+;------------------------------------------
+Trait LeaderDefiedReset
+    Characters family
+    AntiTraits LeaderDefied
+
+    Level LeaderDefiedReset_1
+        Description LeaderDefiedReset_1_desc
+        EffectsDescription LeaderDefiedReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait DefiedOrders
+    Characters family
+    AntiTraits DefiedOrdersReset
+
+    Level DefiedOrders_1
+        Description DefiedOrders_1_desc
+        EffectsDescription DefiedOrders_1_effects_desc
+        GainMessage DefiedOrders_1_gain_desc
+        Threshold  1
+
+        Effect Loyalty -1
+        Effect Piety -1
+        Effect BribeResistance -1
+        Effect PersonalSecurity -1
+        Effect Unrest  2
+        Effect LocalPopularity -1
+
+    Level DefiedOrders_2
+        Description DefiedOrders_2_desc
+        EffectsDescription DefiedOrders_2_effects_desc
+        GainMessage DefiedOrders_2_gain_desc
+        Threshold  2
+
+        Effect Loyalty -3
+        Effect Piety -3
+        Effect BribeResistance -3
+        Effect PersonalSecurity -3
+        Effect Unrest  4
+        Effect LocalPopularity -3
+
+    Level DefiedOrders_3
+        Description DefiedOrders_3_desc
+        EffectsDescription DefiedOrders_3_effects_desc
+        GainMessage DefiedOrders_3_gain_desc
+        Threshold  3
+
+        Effect Loyalty -5
+        Effect BribeResistance -4
+        Effect PersonalSecurity -4
+        Effect Unrest  6
+        Effect LocalPopularity -4
+
+    Level DefiedOrders_4
+        Description DefiedOrders_4_desc
+        EffectsDescription DefiedOrders_4_effects_desc
+        GainMessage DefiedOrders_4_gain_desc
+        Threshold  4
+
+        Effect Loyalty -5
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+        Effect Unrest  8
+        Effect LocalPopularity -5
+
+;------------------------------------------
+Trait DefiedOrdersReset
+    Characters family
+    AntiTraits DefiedOrders
+
+    Level DefiedOrdersReset_1
+        Description DefiedOrdersReset_1_desc
+        EffectsDescription DefiedOrdersReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait HasWarchest
+    Characters family
+    AntiTraits HasWarchestReset
+
+    Level HasWarchest
+        Description HasWarchest_desc
+        EffectsDescription HasWarchest_effects_desc
+        GainMessage HasWarchest_gain_desc
+        Threshold  1
+
+        Effect Charm  5
+
+;------------------------------------------
+Trait HasWarchestReset
+    Characters family
+    AntiTraits HasWarchest
+
+    Level HasWarchestReset
+        Description HasWarchestReset_desc
+        EffectsDescription HasWarchestReset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait EstatePurchased
+    Characters family
+    AntiTraits EstatePurchasedReset
+
+    Level EstatePurchased_1
+        Description EstatePurchased_1_desc
+        EffectsDescription EstatePurchased_1_effects_desc
+        GainMessage EstatePurchased_1_gain_desc
+        Threshold  1
+
+;------------------------------------------
+Trait EstatePurchasedReset
+    Characters family
+    AntiTraits EstatePurchased
+
+    Level EstatePurchasedReset_1
+        Description EstatePurchasedReset_1_desc
+        EffectsDescription EstatePurchasedReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait Estates
+    Characters family
+    AntiTraits EstatesReset
+
+    Level Estates_1
+        Description Estates_1_desc
+        EffectsDescription Estates_1_effects_desc
+        GainMessage Estates_1_gain_desc
+        Threshold  1
+
+        Effect BribeResistance -5
+        Effect PersonalSecurity -5
+
+    Level Estates_2
+        Description Estates_2_desc
+        EffectsDescription Estates_2_effects_desc
+        GainMessage Estates_2_gain_desc
+        Threshold  2
+
+    Level Estates_3
+        Description Estates_3_desc
+        EffectsDescription Estates_3_effects_desc
+        GainMessage Estates_3_gain_desc
+        Threshold  3
+
+;------------------------------------------
+Trait EstatesReset
+    Characters family
+    AntiTraits Estates
+
+    Level EstatesReset_1
+        Description EstatesReset_1_desc
+        EffectsDescription EstatesReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait NotComplied
+    Characters family
+    AntiTraits NotCompliedReset
+
+    Level NotComplied
+        Description NotComplied_desc
+        EffectsDescription NotComplied_effects_desc
+        GainMessage NotComplied_gain_desc
+        Threshold  1
+
+        Effect Loyalty -5
+
+;------------------------------------------
+Trait NotCompliedReset
+    Characters family
+    AntiTraits NotComplied
+
+    Level NotCompliedReset
+        Description NotCompliedReset_desc
+        EffectsDescription NotCompliedReset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Pardon
+    Characters family
+    AntiTraits PardonReset
+
+    Level Pardon
+        Description Pardon_desc
+        EffectsDescription Pardon_effects_desc
+        GainMessage Pardon_gain_desc
+        Threshold  1
+
+;------------------------------------------
+Trait PardonReset
+    Characters family
+    AntiTraits Pardon
+
+    Level PardonReset
+        Description PardonReset_desc
+        EffectsDescription PardonReset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Pardoned
+    Characters family
+    AntiTraits PardonedReset
+
+    Level Pardoned
+        Description Pardoned_desc
+        EffectsDescription Pardoned_effects_desc
+        GainMessage Pardoned_gain_desc
+        Threshold  1
+
+;------------------------------------------
+Trait PardonedReset
+    Characters family
+    AntiTraits Pardoned
+
+    Level PardonedReset
+        Description PardonedReset_desc
+        EffectsDescription PardonedReset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait WealthTax
+    Characters family
+    AntiTraits WealthTaxReset
+
+    Level WealthTax_1
+        Description WealthTax_1_desc
+        EffectsDescription WealthTax_1_effects_desc
+        GainMessage WealthTax_1_gain_desc
+        LoseMessage WealthTax_1_lose_desc
+        Threshold  1
+
+;------------------------------------------
+Trait WealthTaxReset
+    Characters family
+    AntiTraits WealthTax
+
+    Level WealthTaxReset_1
+        Description WealthTaxReset_1_desc
+        EffectsDescription WealthTaxReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait WealthCheck
+    Characters family
+
+    Level Wealth_Check
+        Description Wealth_Check_desc
+        EffectsDescription Wealth_Check_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait MilitaryExpenses
+    Characters family
+    AntiTraits MilitaryExpensesReset
+
+    Level MilitaryExpenses_1
+        Description MilitaryExpenses_1_desc
+        EffectsDescription MilitaryExpenses_1_effects_desc
+        Threshold  1
+
+    Level MilitaryExpenses_2
+        Description MilitaryExpenses_2_desc
+        EffectsDescription MilitaryExpenses_2_effects_desc
+        Threshold  2
+
+    Level MilitaryExpenses_3
+        Description MilitaryExpenses_3_desc
+        EffectsDescription MilitaryExpenses_3_effects_desc
+        Threshold  3
+
+    Level MilitaryExpenses_4
+        Description MilitaryExpenses_4_desc
+        EffectsDescription MilitaryExpenses_4_effects_desc
+        Threshold  4
+
+    Level MilitaryExpenses_5
+        Description MilitaryExpenses_5_desc
+        EffectsDescription MilitaryExpenses_5_effects_desc
+        Threshold  5
+
+    Level MilitaryExpenses_6
+        Description MilitaryExpenses_6_desc
+        EffectsDescription MilitaryExpenses_6_effects_desc
+        Threshold  6
+
+    Level MilitaryExpenses_7
+        Description MilitaryExpenses_7_desc
+        EffectsDescription MilitaryExpenses_7_effects_desc
+        Threshold  7
+
+    Level MilitaryExpenses_8
+        Description MilitaryExpenses_8_desc
+        EffectsDescription MilitaryExpenses_8_effects_desc
+        Threshold  8
+
+    Level MilitaryExpenses_9
+        Description MilitaryExpenses_9_desc
+        EffectsDescription MilitaryExpenses_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MilitaryExpensesReset
+    Characters family
+    AntiTraits MilitaryExpenses
+
+    Level MilitaryExpensesReset_1
+        Description MilitaryExpensesReset_1_desc
+        EffectsDescription MilitaryExpensesReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait MilitaryExpenses1
+    Characters family
+    AntiTraits MilitaryExpenses1Reset
+
+    Level MilitaryExpenses1_1
+        Description MilitaryExpenses1_1_desc
+        EffectsDescription MilitaryExpenses1_1_effects_desc
+        Threshold  1
+
+    Level MilitaryExpenses1_2
+        Description MilitaryExpenses1_2_desc
+        EffectsDescription MilitaryExpenses1_2_effects_desc
+        Threshold  2
+
+    Level MilitaryExpenses1_3
+        Description MilitaryExpenses1_3_desc
+        EffectsDescription MilitaryExpenses1_3_effects_desc
+        Threshold  3
+
+    Level MilitaryExpenses1_4
+        Description MilitaryExpenses1_4_desc
+        EffectsDescription MilitaryExpenses1_4_effects_desc
+        Threshold  4
+
+    Level MilitaryExpenses1_5
+        Description MilitaryExpenses1_5_desc
+        EffectsDescription MilitaryExpenses1_5_effects_desc
+        Threshold  5
+
+    Level MilitaryExpenses1_6
+        Description MilitaryExpenses1_6_desc
+        EffectsDescription MilitaryExpenses1_6_effects_desc
+        Threshold  6
+
+    Level MilitaryExpenses1_7
+        Description MilitaryExpenses1_7_desc
+        EffectsDescription MilitaryExpenses1_7_effects_desc
+        Threshold  7
+
+    Level MilitaryExpenses1_8
+        Description MilitaryExpenses1_8_desc
+        EffectsDescription MilitaryExpenses1_8_effects_desc
+        Threshold  8
+
+    Level MilitaryExpenses1_9
+        Description MilitaryExpenses1_9_desc
+        EffectsDescription MilitaryExpenses1_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MilitaryExpenses1Reset
+    Characters family
+    AntiTraits MilitaryExpenses1
+
+    Level MilitaryExpenses1Reset_1
+        Description MilitaryExpenses1Reset_1_desc
+        EffectsDescription MilitaryExpenses1Reset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait MilitaryExpenses2
+    Characters family
+    AntiTraits MilitaryExpenses2Reset
+
+    Level MilitaryExpenses2_1
+        Description MilitaryExpenses2_1_desc
+        EffectsDescription MilitaryExpenses2_1_effects_desc
+        Threshold  1
+
+    Level MilitaryExpenses2_2
+        Description MilitaryExpenses2_2_desc
+        EffectsDescription MilitaryExpenses2_2_effects_desc
+        Threshold  2
+
+    Level MilitaryExpenses2_3
+        Description MilitaryExpenses2_3_desc
+        EffectsDescription MilitaryExpenses2_3_effects_desc
+        Threshold  3
+
+    Level MilitaryExpenses2_4
+        Description MilitaryExpenses2_4_desc
+        EffectsDescription MilitaryExpenses2_4_effects_desc
+        Threshold  4
+
+    Level MilitaryExpenses2_5
+        Description MilitaryExpenses2_5_desc
+        EffectsDescription MilitaryExpenses2_5_effects_desc
+        Threshold  5
+
+    Level MilitaryExpenses2_6
+        Description MilitaryExpenses2_6_desc
+        EffectsDescription MilitaryExpenses2_6_effects_desc
+        Threshold  6
+
+    Level MilitaryExpenses2_7
+        Description MilitaryExpenses2_7_desc
+        EffectsDescription MilitaryExpenses2_7_effects_desc
+        Threshold  7
+
+    Level MilitaryExpenses2_8
+        Description MilitaryExpenses2_8_desc
+        EffectsDescription MilitaryExpenses2_8_effects_desc
+        Threshold  8
+
+    Level MilitaryExpenses2_9
+        Description MilitaryExpenses2_9_desc
+        EffectsDescription MilitaryExpenses2_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MilitaryExpenses2Reset
+    Characters family
+    AntiTraits MilitaryExpenses2
+
+    Level MilitaryExpenses2Reset_1
+        Description MilitaryExpenses2Reset_1_desc
+        EffectsDescription MilitaryExpenses2Reset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait MilitaryExpenses3
+    Characters family
+    AntiTraits MilitaryExpenses3Reset
+
+    Level MilitaryExpenses3_1
+        Description MilitaryExpenses3_1_desc
+        EffectsDescription MilitaryExpenses3_1_effects_desc
+        Threshold  1
+
+    Level MilitaryExpenses3_2
+        Description MilitaryExpenses3_2_desc
+        EffectsDescription MilitaryExpenses3_2_effects_desc
+        Threshold  2
+
+    Level MilitaryExpenses3_3
+        Description MilitaryExpenses3_3_desc
+        EffectsDescription MilitaryExpenses3_3_effects_desc
+        Threshold  3
+
+    Level MilitaryExpenses3_4
+        Description MilitaryExpenses3_4_desc
+        EffectsDescription MilitaryExpenses3_4_effects_desc
+        Threshold  4
+
+    Level MilitaryExpenses3_5
+        Description MilitaryExpenses3_5_desc
+        EffectsDescription MilitaryExpenses3_5_effects_desc
+        Threshold  5
+
+    Level MilitaryExpenses3_6
+        Description MilitaryExpenses3_6_desc
+        EffectsDescription MilitaryExpenses3_6_effects_desc
+        Threshold  6
+
+    Level MilitaryExpenses3_7
+        Description MilitaryExpenses3_7_desc
+        EffectsDescription MilitaryExpenses3_7_effects_desc
+        Threshold  7
+
+    Level MilitaryExpenses3_8
+        Description MilitaryExpenses3_8_desc
+        EffectsDescription MilitaryExpenses3_8_effects_desc
+        Threshold  8
+
+    Level MilitaryExpenses3_9
+        Description MilitaryExpenses3_9_desc
+        EffectsDescription MilitaryExpenses3_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MilitaryExpenses3Reset
+    Characters family
+    AntiTraits MilitaryExpenses3
+
+    Level MilitaryExpenses3Reset_1
+        Description MilitaryExpenses3Reset_1_desc
+        EffectsDescription MilitaryExpenses3Reset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait MilitaryExpenses4
+    Characters family
+    AntiTraits MilitaryExpenses4Reset
+
+    Level MilitaryExpenses4_1
+        Description MilitaryExpenses4_1_desc
+        EffectsDescription MilitaryExpenses4_1_effects_desc
+        Threshold  1
+
+    Level MilitaryExpenses4_2
+        Description MilitaryExpenses4_2_desc
+        EffectsDescription MilitaryExpenses4_2_effects_desc
+        Threshold  2
+
+    Level MilitaryExpenses4_3
+        Description MilitaryExpenses4_3_desc
+        EffectsDescription MilitaryExpenses4_3_effects_desc
+        Threshold  3
+
+    Level MilitaryExpenses4_4
+        Description MilitaryExpenses4_4_desc
+        EffectsDescription MilitaryExpenses4_4_effects_desc
+        Threshold  4
+
+    Level MilitaryExpenses4_5
+        Description MilitaryExpenses4_5_desc
+        EffectsDescription MilitaryExpenses4_5_effects_desc
+        Threshold  5
+
+    Level MilitaryExpenses4_6
+        Description MilitaryExpenses4_6_desc
+        EffectsDescription MilitaryExpenses4_6_effects_desc
+        Threshold  6
+
+    Level MilitaryExpenses4_7
+        Description MilitaryExpenses4_7_desc
+        EffectsDescription MilitaryExpenses4_7_effects_desc
+        Threshold  7
+
+    Level MilitaryExpenses4_8
+        Description MilitaryExpenses4_8_desc
+        EffectsDescription MilitaryExpenses4_8_effects_desc
+        Threshold  8
+
+    Level MilitaryExpenses4_9
+        Description MilitaryExpenses4_9_desc
+        EffectsDescription MilitaryExpenses4_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MilitaryExpenses4Reset
+    Characters family
+    AntiTraits MilitaryExpenses4
+
+    Level MilitaryExpenses4Reset_1
+        Description MilitaryExpenses4Reset_1_desc
+        EffectsDescription MilitaryExpenses4Reset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ReadyForScutage
+    Characters family
+    AntiTraits ReadyForScutageReset
+
+    Level Ready_For_Scutage
+        Description Ready_For_Scutage_desc
+        EffectsDescription Ready_For_Scutage_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ReadyForScutageReset
+    Characters family
+    AntiTraits ReadyForScutage
+
+    Level Ready_For_Scutage_Reset
+        Description Ready_For_Scutage_Reset_desc
+        EffectsDescription Ready_For_Scutage_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait PardonAccepted
+    Characters family
+    AntiTraits PardonAcceptedReset
+
+    Level Pardon_Accepted
+        Description Pardon_Accepted_desc
+        EffectsDescription Pardon_Accepted_effects_desc
+        GainMessage Pardon_Accepted_gain_desc
+        Threshold  1
+
+    Level Pardon_Not_Accepted
+        Description Pardon_Not_Accepted_desc
+        EffectsDescription Pardon_Not_Accepted_effects_desc
+        GainMessage Pardon_Not_Accepted_gain_desc
+        Threshold  2
+
+;------------------------------------------
+Trait PardonAcceptedReset
+    Characters family
+    AntiTraits PardonAccepted
+
+    Level Pardon_Accepted_Reset
+        Description Pardon_Accepted_Reset_desc
+        EffectsDescription Pardon_Accepted_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ReinsOfPower
+    Characters family
+    AntiTraits ReinsOfPowerReset
+
+    Level Weak_Grip
+        Description Weak_Grip_desc
+        EffectsDescription Weak_Grip_effects_desc
+        GainMessage Weak_Grip_gain_desc
+        Threshold  1
+
+    Level Tight_Grip
+        Description Tight_Grip_desc
+        EffectsDescription Tight_Grip_effects_desc
+        GainMessage Tight_Grip_gain_desc
+        Threshold  2
+
+        Effect Chivalry -2
+
+;------------------------------------------
+Trait ReinsOfPowerReset
+    Characters family
+    AntiTraits ReinsOfPower
+
+    Level Reins_of_Power_Reset
+        Description Reins_of_Power_Reset_desc
+        EffectsDescription Reins_of_Power_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Hundreds
+    Characters family
+    AntiTraits MinusHundreds
+
+    Level Hundreds_1
+        Description Hundreds_1_desc
+        EffectsDescription Hundreds_1_effects_desc
+        Threshold  1
+
+    Level Hundreds_2
+        Description Hundreds_2_desc
+        EffectsDescription Hundreds_2_effects_desc
+        Threshold  2
+
+    Level Hundreds_3
+        Description Hundreds_3_desc
+        EffectsDescription Hundreds_3_effects_desc
+        Threshold  3
+
+    Level Hundreds_4
+        Description Hundreds_4_desc
+        EffectsDescription Hundreds_4_effects_desc
+        Threshold  4
+
+    Level Hundreds_5
+        Description Hundreds_5_desc
+        EffectsDescription Hundreds_5_effects_desc
+        Threshold  5
+
+    Level Hundreds_6
+        Description Hundreds_6_desc
+        EffectsDescription Hundreds_6_effects_desc
+        Threshold  6
+
+    Level Hundreds_7
+        Description Hundreds_7_desc
+        EffectsDescription Hundreds_7_effects_desc
+        Threshold  7
+
+    Level Hundreds_8
+        Description Hundreds_8_desc
+        EffectsDescription Hundreds_8_effects_desc
+        Threshold  8
+
+    Level Hundreds_9
+        Description Hundreds_9_desc
+        EffectsDescription Hundreds_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MinusHundreds
+    Characters family
+    AntiTraits Hundreds
+
+    Level MinusHundreds_1
+        Description MinusHundreds_1_desc
+        EffectsDescription MinusHundreds_1_effects_desc
+        Threshold  1
+
+    Level MinusHundreds_2
+        Description MinusHundreds_2_desc
+        EffectsDescription MinusHundreds_2_effects_desc
+        Threshold  2
+
+    Level MinusHundreds_3
+        Description MinusHundreds_3_desc
+        EffectsDescription MinusHundreds_3_effects_desc
+        Threshold  3
+
+    Level MinusHundreds_4
+        Description MinusHundreds_4_desc
+        EffectsDescription MinusHundreds_4_effects_desc
+        Threshold  4
+
+    Level MinusHundreds_5
+        Description MinusHundreds_5_desc
+        EffectsDescription MinusHundreds_5_effects_desc
+        Threshold  5
+
+    Level MinusHundreds_6
+        Description MinusHundreds_6_desc
+        EffectsDescription MinusHundreds_6_effects_desc
+        Threshold  6
+
+    Level MinusHundreds_7
+        Description MinusHundreds_7_desc
+        EffectsDescription MinusHundreds_7_effects_desc
+        Threshold  7
+
+    Level MinusHundreds_8
+        Description MinusHundreds_8_desc
+        EffectsDescription MinusHundreds_8_effects_desc
+        Threshold  8
+
+    Level MinusHundreds_9
+        Description MinusHundreds_9_desc
+        EffectsDescription MinusHundreds_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait Thousands
+    Characters family
+    AntiTraits MinusThousands
+
+    Level Thousands_1
+        Description Thousands_1_desc
+        EffectsDescription Thousands_1_effects_desc
+        Threshold  1
+
+    Level Thousands_2
+        Description Thousands_2_desc
+        EffectsDescription Thousands_2_effects_desc
+        Threshold  2
+
+    Level Thousands_3
+        Description Thousands_3_desc
+        EffectsDescription Thousands_3_effects_desc
+        Threshold  3
+
+    Level Thousands_4
+        Description Thousands_4_desc
+        EffectsDescription Thousands_4_effects_desc
+        Threshold  4
+
+    Level Thousands_5
+        Description Thousands_5_desc
+        EffectsDescription Thousands_5_effects_desc
+        Threshold  5
+
+    Level Thousands_6
+        Description Thousands_6_desc
+        EffectsDescription Thousands_6_effects_desc
+        Threshold  6
+
+    Level Thousands_7
+        Description Thousands_7_desc
+        EffectsDescription Thousands_7_effects_desc
+        Threshold  7
+
+    Level Thousands_8
+        Description Thousands_8_desc
+        EffectsDescription Thousands_8_effects_desc
+        Threshold  8
+
+    Level Thousands_9
+        Description Thousands_9_desc
+        EffectsDescription Thousands_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MinusThousands
+    Characters family
+    AntiTraits Thousands
+
+    Level MinusThousands_1
+        Description MinusThousands_1_desc
+        EffectsDescription MinusThousands_1_effects_desc
+        Threshold  1
+
+    Level MinusThousands_2
+        Description MinusThousands_2_desc
+        EffectsDescription MinusThousands_2_effects_desc
+        Threshold  2
+
+    Level MinusThousands_3
+        Description MinusThousands_3_desc
+        EffectsDescription MinusThousands_3_effects_desc
+        Threshold  3
+
+    Level MinusThousands_4
+        Description MinusThousands_4_desc
+        EffectsDescription MinusThousands_4_effects_desc
+        Threshold  4
+
+    Level MinusThousands_5
+        Description MinusThousands_5_desc
+        EffectsDescription MinusThousands_5_effects_desc
+        Threshold  5
+
+    Level MinusThousands_6
+        Description MinusThousands_6_desc
+        EffectsDescription MinusThousands_6_effects_desc
+        Threshold  6
+
+    Level MinusThousands_7
+        Description MinusThousands_7_desc
+        EffectsDescription MinusThousands_7_effects_desc
+        Threshold  7
+
+    Level MinusThousands_8
+        Description MinusThousands_8_desc
+        EffectsDescription MinusThousands_8_effects_desc
+        Threshold  8
+
+    Level MinusThousands_9
+        Description MinusThousands_9_desc
+        EffectsDescription MinusThousands_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait Encamped
+    Characters family
+    AntiTraits EncampedReset
+
+    Level Encamped_1
+        Description Encamped_1_desc
+        EffectsDescription Encamped_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait EncampedReset
+    Characters family
+    AntiTraits Encamped
+
+    Level Encamped_Reset
+        Description Encamped_Reset_desc
+        EffectsDescription Encamped_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait SupplyWagon
+    Characters family
+    AntiTraits SupplyWagonReset
+
+    Level SupplyWagon_0
+        Description SupplyWagon_0_desc
+        EffectsDescription SupplyWagon_0_effects_desc
+        Threshold  1
+
+    Level SupplyWagon_1
+        Description SupplyWagon_1_desc
+        EffectsDescription SupplyWagon_1_effects_desc
+        Threshold  2
+        Effect MovementPoints -2
+
+    Level SupplyWagon_2
+        Description SupplyWagon_2_desc
+        EffectsDescription SupplyWagon_2_effects_desc
+        Threshold  3
+        Effect MovementPoints -3
+
+    Level SupplyWagon_3
+        Description SupplyWagon_3_desc
+        EffectsDescription SupplyWagon_3_effects_desc
+        Threshold  4
+        Effect MovementPoints -4
+
+    Level SupplyWagon_4
+        Description SupplyWagon_4_desc
+        EffectsDescription SupplyWagon_4_effects_desc
+        Threshold  5
+        Effect MovementPoints -5
+
+;------------------------------------------
+Trait SupplyWagonReset
+    Characters family
+    AntiTraits SupplyWagon
+
+    Level SupplyWagon_Reset
+        Description SupplyWagon_Reset_desc
+        EffectsDescription SupplyWagon_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ForageIncrement
+    Characters family
+    AntiTraits ForageIncrementReset
+
+    Level ForageIncrement_1
+        Description ForageIncrement_1_desc
+        EffectsDescription ForageIncrement_1_effects_desc
+        Threshold  1
+
+    Level ForageIncrement_2
+        Description ForageIncrement_2_desc
+        EffectsDescription ForageIncrement_2_effects_desc
+        Threshold  2
+
+    Level ForageIncrement_3
+        Description ForageIncrement_3_desc
+        EffectsDescription ForageIncrement_3_effects_desc
+        Threshold  3
+
+    Level ForageIncrement_4
+        Description ForageIncrement_4_desc
+        EffectsDescription ForageIncrement_4_effects_desc
+        Threshold  4
+
+    Level ForageIncrement_5
+        Description ForageIncrement_5_desc
+        EffectsDescription ForageIncrement_5_effects_desc
+        Threshold  5
+
+    Level ForageIncrement_6
+        Description ForageIncrement_6_desc
+        EffectsDescription ForageIncrement_6_effects_desc
+        Threshold  6
+
+    Level ForageIncrement_7
+        Description ForageIncrement_7_desc
+        EffectsDescription ForageIncrement_7_effects_desc
+        Threshold  7
+
+    Level ForageIncrement_8
+        Description ForageIncrement_8_desc
+        EffectsDescription ForageIncrement_8_effects_desc
+        Threshold  8
+
+;------------------------------------------
+Trait ForageIncrementReset
+    Characters family
+    AntiTraits ForageIncrement
+
+    Level ForageIncrement_Reset
+        Description ForageIncrement_Reset_desc
+        EffectsDescription ForageIncrement_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait SupplyIncrement
+    Characters family
+    AntiTraits SupplyIncrementReset
+
+    Level SupplyIncrement_1
+        Description SupplyIncrement_1_desc
+        EffectsDescription SupplyIncrement_1_effects_desc
+        Threshold  1
+
+    Level SupplyIncrement_2
+        Description SupplyIncrement_2_desc
+        EffectsDescription SupplyIncrement_2_effects_desc
+        Threshold  2
+
+    Level SupplyIncrement_3
+        Description SupplyIncrement_3_desc
+        EffectsDescription SupplyIncrement_3_effects_desc
+        Threshold  3
+
+    Level SupplyIncrement_4
+        Description SupplyIncrement_4_desc
+        EffectsDescription SupplyIncrement_4_effects_desc
+        Threshold  4
+
+    Level SupplyIncrement_5
+        Description SupplyIncrement_5_desc
+        EffectsDescription SupplyIncrement_5_effects_desc
+        Threshold  5
+
+    Level SupplyIncrement_6
+        Description SupplyIncrement_6_desc
+        EffectsDescription SupplyIncrement_6_effects_desc
+        Threshold  6
+
+    Level SupplyIncrement_7
+        Description SupplyIncrement_7_desc
+        EffectsDescription SupplyIncrement_7_effects_desc
+        Threshold  7
+
+    Level SupplyIncrement_8
+        Description SupplyIncrement_8_desc
+        EffectsDescription SupplyIncrement_8_effects_desc
+        Threshold  8
+
+;------------------------------------------
+Trait SupplyIncrementReset
+    Characters family
+    AntiTraits SupplyIncrement
+
+    Level SupplyIncrement_Reset
+        Description SupplyIncrement_Reset_desc
+        EffectsDescription SupplyIncrement_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait ArmySize
+    Characters family
+    AntiTraits ArmySizeReset
+
+    Level ArmySize_1
+        Description ArmySize_1_desc
+        EffectsDescription ArmySize_1_effects_desc
+        Threshold  1
+
+        Effect MovementPoints  1
+
+    Level ArmySize_2
+        Description ArmySize_2_desc
+        EffectsDescription ArmySize_2_effects_desc
+        Threshold  2
+
+        Effect MovementPoints  2
+
+    Level ArmySize_3
+        Description ArmySize_3_desc
+        EffectsDescription ArmySize_3_effects_desc
+        Threshold  3
+
+        Effect MovementPoints  3
+
+    Level ArmySize_4
+        Description ArmySize_4_desc
+        EffectsDescription ArmySize_4_effects_desc
+        Threshold  4
+
+        Effect MovementPoints  4
+
+;------------------------------------------
+Trait ArmySizeReset
+    Characters family
+    AntiTraits ArmySize
+
+    Level ArmySize_Reset
+        Description ArmySize_Reset_desc
+        EffectsDescription ArmySize_Reset_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait MercHire
+    Characters family
+    AntiTraits MercHireReset
+
+    Level MercHire_1
+        Description MercHire_1_desc
+        EffectsDescription MercHire_1_effects_desc
+        Threshold  1
+
+    Level MercHire_2
+        Description MercHire_2_desc
+        EffectsDescription MercHire_2_effects_desc
+        Threshold  2
+
+    Level MercHire_3
+        Description MercHire_3_desc
+        EffectsDescription MercHire_3_effects_desc
+        Threshold  3
+
+    Level MercHire_4
+        Description MercHire_4_desc
+        EffectsDescription MercHire_4_effects_desc
+        Threshold  4
+
+    Level MercHire_5
+        Description MercHire_5_desc
+        EffectsDescription MercHire_5_effects_desc
+        Threshold  5
+
+    Level MercHire_6
+        Description MercHire_6_desc
+        EffectsDescription MercHire_6_effects_desc
+        Threshold  6
+
+    Level MercHire_7
+        Description MercHire_7_desc
+        EffectsDescription MercHire_7_effects_desc
+        Threshold  7
+
+    Level MercHire_8
+        Description MercHire_8_desc
+        EffectsDescription MercHire_8_effects_desc
+        Threshold  8
+
+    Level MercHire_9
+        Description MercHire_9_desc
+        EffectsDescription MercHire_9_effects_desc
+        Threshold  9
+
+;------------------------------------------
+Trait MercHireReset
+    Characters family
+    AntiTraits MercHire
+
+    Level MercHireReset_1
+        Description MercHireReset_1_desc
+        EffectsDescription MercHireReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait HumanSpy
+    Characters all
+    Hidden
+    AntiTraits HumanSpyReset
+
+    Level HumanSpy_1
+        Description HumanSpy_1_desc
+        EffectsDescription HumanSpy_1_effects_desc
+        Threshold  1
+
+        Effect LineOfSight  -1
+
+    Level HumanSpy_2
+        Description HumanSpy_2_desc
+        EffectsDescription HumanSpy_2_effects_desc
+        Threshold  2
+
+        Effect LineOfSight  -2
+
+    Level HumanSpy_3
+        Description HumanSpy_3_desc
+        EffectsDescription HumanSpy_3_effects_desc
+        Threshold  3
+
+        Effect LineOfSight  -3
+
+    Level HumanSpy_4
+        Description HumanSpy_4_desc
+        EffectsDescription HumanSpy_4_effects_desc
+        Threshold  4
+
+        Effect LineOfSight  -5
+;------------------------------------------
+Trait HumanSpyReset
+    Characters all
+    Hidden
+    AntiTraits HumanSpy
+
+    Level HumanSpyReset_1
+        Description HumanSpyReset_1_desc
+        EffectsDescription HumanSpyReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait Inflation
+    Characters family
+;    Hidden
+    AntiTraits InflationReset
+
+    Level Inflation_1
+        Description Inflation_1_desc
+        EffectsDescription Inflation_1_effects_desc
+;        GainMessage Inflation_1_gain_desc
+;        LoseMessage Inflation_1_lose_desc
+        Threshold  1
+;------------------------------------------
+Trait InflationReset
+    Characters family
+;    Hidden
+    AntiTraits Inflation
+
+    Level InflationReset_1
+        Description InflationReset_1_desc
+        EffectsDescription InflationReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait Caught
+    Characters family
+    AntiTraits CaughtReset
+
+    Level Caught_1
+        Description Caught_1_desc
+        EffectsDescription Caught_1_effects_desc
+        GainMessage Caught_1_gain_desc
+        Threshold  1
+
+    Level Caught_2
+        Description Caught_2_desc
+        EffectsDescription Caught_2_effects_desc
+        GainMessage Caught_2_gain_desc
+        Threshold  2
+;------------------------------------------
+Trait CaughtReset
+    Characters family
+    AntiTraits Caught
+
+    Level CaughtReset_1
+        Description CaughtReset_1_desc
+        EffectsDescription CaughtReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait CrusadeTimeOut
+    Characters family
+;    Hidden
+    AntiTraits CrusadeTimeOutReset
+
+    Level CrusadeTimeOut_1
+        Description CrusadeTimeOut_1_desc
+        EffectsDescription CrusadeTimeOut_1_effects_desc
+        GainMessage CrusadeTimeOut_1_gain_desc
+        LoseMessage CrusadeTimeOut_1_lose_desc
+        Threshold  9
+;------------------------------------------
+Trait CrusadeTimeOutReset
+    Characters family
+;    Hidden
+    AntiTraits CrusadeTimeOut
+
+    Level CrusadeTimeOutReset_1
+        Description CrusadeTimeOutReset_1_desc
+        EffectsDescription CrusadeTimeOutReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait TreasuryNine
+    Characters family
+    Hidden
+    AntiTraits TNReset
+
+    Level TreasuryNine_1
+        Description TreasuryNine_1_desc
+        EffectsDescription TreasuryNine_1_effects_desc
+        Threshold  1
+
+    Level TreasuryNine_2
+        Description TreasuryNine_2_desc
+        EffectsDescription TreasuryNine_2_effects_desc
+        Threshold  2
+
+    Level TreasuryNine_3
+        Description TreasuryNine_3_desc
+        EffectsDescription TreasuryNine_3_effects_desc
+        Threshold  3
+
+    Level TreasuryNine_4
+        Description TreasuryNine_4_desc
+        EffectsDescription TreasuryNine_4_effects_desc
+        Threshold  4
+
+    Level TreasuryNine_5
+        Description TreasuryNine_5_desc
+        EffectsDescription TreasuryNine_5_effects_desc
+        Threshold  5
+
+    Level TreasuryNine_6
+        Description TreasuryNine_6_desc
+        EffectsDescription TreasuryNine_6_effects_desc
+        Threshold  6
+
+    Level TreasuryNine_7
+        Description TreasuryNine_7_desc
+        EffectsDescription TreasuryNine_7_effects_desc
+        Threshold  7
+
+    Level TreasuryNine_8
+        Description TreasuryNine_8_desc
+        EffectsDescription TreasuryNine_8_effects_desc
+        Threshold  8
+
+    Level TreasuryNine_9
+        Description TreasuryNine_9_desc
+        EffectsDescription TreasuryNine_9_effects_desc
+        Threshold  9
+
+; for gens in debt paying and all gens receiving
+;------------------------------------------
+Trait TNReset
+    Characters family
+    Hidden
+    AntiTraits TreasuryNine
+
+    Level TNReset_1
+        Description TNReset_1_desc
+        EffectsDescription TNReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Good
+    Characters family
+    AntiTraits Bad
+
+    Level Good_1
+        Description Good_1_desc
+        EffectsDescription Good_1_effects_desc
+        GainMessage Good_1_gain_desc
+        Threshold  1
+;------------------------------------------
+Trait Bad
+    Characters family
+    AntiTraits Good
+
+    Level Bad_1
+        Description Bad_1_desc
+        EffectsDescription Bad_1_effects_desc
+        GainMessage Bad_1_gain_desc
+        Threshold  1
+;------------------------------------------
+Trait x
+    Characters family
+    Hidden
+    AntiTraits xReset
+
+    Level x_1
+        Description x_1_desc
+        EffectsDescription x_1_effects_desc
+        Threshold  1
+
+    Level x_2
+        Description x_2_desc
+        EffectsDescription x_2_effects_desc
+        Threshold  2
+;------------------------------------------
+Trait xReset
+    Characters family
+    Hidden
+    AntiTraits x
+
+    Level xReset_1
+        Description xReset_1_desc
+        EffectsDescription xReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait xest
+    Characters family
+    Hidden
+    AntiTraits xestReset
+
+    Level xest_1
+        Description xest_1_desc
+        EffectsDescription xest_1_effects_desc
+        Threshold  1
+
+    Level xest_2
+        Description xest_2_desc
+        EffectsDescription xest_2_effects_desc
+        Threshold  2
+;------------------------------------------
+Trait xestReset
+    Characters family
+    Hidden
+    AntiTraits xest
+
+    Level xestReset_1
+        Description xestReset_1_desc
+        EffectsDescription xestReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait SupplyIncrementCost
+    Characters family
+;    Hidden
+    AntiTraits SupplyIncrementCostReset
+
+    Level SupplyIncrementCost_1
+        Description SupplyIncrementCost_1_desc
+        EffectsDescription SupplyIncrementCost_1_effects_desc
+        Threshold  1
+
+    Level SupplyIncrementCost_2
+        Description SupplyIncrementCost_2_desc
+        EffectsDescription SupplyIncrementCost_2_effects_desc
+        Threshold  2
+
+    Level SupplyIncrementCost_3
+        Description SupplyIncrementCost_3_desc
+        EffectsDescription SupplyIncrementCost_3_effects_desc
+        Threshold  3
+
+    Level SupplyIncrementCost_4
+        Description SupplyIncrementCost_4_desc
+        EffectsDescription SupplyIncrementCost_4_effects_desc
+        Threshold  4
+
+    Level SupplyIncrementCost_5
+        Description SupplyIncrementCost_5_desc
+        EffectsDescription SupplyIncrementCost_5_effects_desc
+        Threshold  5
+
+    Level SupplyIncrementCost_6
+        Description SupplyIncrementCost_6_desc
+        EffectsDescription SupplyIncrementCost_6_effects_desc
+        Threshold  6
+
+    Level SupplyIncrementCost_7
+        Description SupplyIncrementCost_7_desc
+        EffectsDescription SupplyIncrementCost_7_effects_desc
+        Threshold  7
+
+    Level SupplyIncrementCost_8
+        Description SupplyIncrementCost_8_desc
+        EffectsDescription SupplyIncrementCost_8_effects_desc
+        Threshold  8
+
+;------------------------------------------
+Trait SupplyIncrementCostReset
+    Characters family
+;    Hidden
+    AntiTraits SupplyIncrementCost
+
+    Level SupplyIncrementCostReset_1
+        Description SupplyIncrementCostReset_1_desc
+        EffectsDescription SupplyIncrementCostReset_1_effects_desc
+        Threshold  1
+
+;------------------------------------------
+Trait Starving
+    Characters family
+;    Hidden
+    AntiTraits StarvingReset
+
+    Level Starving_1
+        Description Starving_1_desc
+        EffectsDescription Starving_1_effects_desc
+        GainMessage Starving_1_gain_desc
+        Threshold  1
+
+        Effect Command -2
+        Effect TroopMorale  -4
+        Effect Loyalty -2
+        Effect MovementPoints -4
+        Effect BribeResistance -5
+;------------------------------------------
+Trait StarvingReset
+    Characters family
+;    Hidden
+    AntiTraits Starving
+
+    Level StarvingReset_1
+        Description StarvingReset_1_desc
+        EffectsDescription StarvingReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait PardonAvailable
+    Characters family
+;    Hidden
+
+    Level PardonAvailable_1
+        Description PardonAvailable_1_desc
+        EffectsDescription PardonAvailable_1_effects_desc
+        GainMessage PardonAvailable_1_gain_desc
+        Threshold  1
+;------------------------------------------
+Trait Move
+    Characters family
+;    Hidden
+    AntiTraits MoveReset
+
+    Level Move_1
+        Description Move_1_desc
+        EffectsDescription Move_1_effects_desc
+        Threshold  1
+
+        Effect MovementPoints -1
+;------------------------------------------
+Trait MoveReset
+    Characters family
+;    Hidden
+    AntiTraits Move
+
+    Level MoveReset_1
+        Description MoveReset_1_desc
+        EffectsDescription MoveReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait Spare
+    Characters family
+    Hidden
+    AntiTraits SpareReset
+
+    Level Spare_1
+        Description Spare_1_desc
+        EffectsDescription Spare_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait SpareReset
+    Characters family
+    Hidden
+    AntiTraits Spare
+
+    Level SpareReset_1
+        Description SpareReset_1_desc
+        EffectsDescription SpareReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait SpareTwo
+    Characters family
+;    Hidden
+    AntiTraits SpareTwoReset
+
+    Level SpareTwo_1
+        Description SpareTwo_1_desc
+        EffectsDescription SpareTwo_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait SpareTwoReset
+    Characters family
+;    Hidden
+    AntiTraits SpareTwo
+
+    Level SpareTwoReset_1
+        Description SpareTwoReset_1_desc
+        EffectsDescription SpareTwoReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait JrWarCouncillor
+    Characters family
+;    Hidden
+    AntiTraits JrWarCouncillorReset
+
+    Level JrWarCouncillor_1
+        Description JrWarCouncillor_1_desc
+        EffectsDescription JrWarCouncillor_1_effects_desc
+        GainMessage JrWarCouncillor_1_gain_desc
+        Threshold  1
+
+    Level JrWarCouncillor_2
+        Description JrWarCouncillor_2_desc
+        EffectsDescription JrWarCouncillor_2_effects_desc
+        GainMessage JrWarCouncillor_2_gain_desc
+        Threshold  2
+;------------------------------------------
+Trait JrWarCouncillorReset
+    Characters family
+;    Hidden
+    AntiTraits JrWarCouncillor
+
+    Level JrWarCouncillorReset_1
+        Description JrWarCouncillorReset_1_desc
+        EffectsDescription JrWarCouncillorReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait RecruitLimit
+    Characters family
+;    Hidden
+    AntiTraits RecruitLimitReset
+
+    Level RecruitLimit_1
+        Description RecruitLimit_1_desc
+        EffectsDescription RecruitLimit_1_effects_desc
+        GainMessage RecruitLimit_1_gain_desc
+        Threshold  1
+        Effect Charm 5
+
+    Level RecruitLimit_2
+        Description RecruitLimit_2_desc
+        EffectsDescription RecruitLimit_2_effects_desc
+        Threshold  2
+        Effect Charm 5
+
+    Level RecruitLimit_3
+        Description RecruitLimit_3_desc
+        EffectsDescription RecruitLimit_3_effects_desc
+        Threshold  3
+        Effect Charm 5
+
+    Level RecruitLimit_4
+        Description RecruitLimit_4_desc
+        EffectsDescription RecruitLimit_4_effects_desc
+        Threshold  4
+        Effect Charm 5
+
+    Level RecruitLimit_5
+        Description RecruitLimit_5_desc
+        EffectsDescription RecruitLimit_5_effects_desc
+        Threshold  5
+        Effect Charm 5
+
+    Level RecruitLimit_6
+        Description RecruitLimit_6_desc
+        EffectsDescription RecruitLimit_6_effects_desc
+        Threshold  6
+        Effect Charm 5
+
+    Level RecruitLimit_7
+        Description RecruitLimit_7_desc
+        EffectsDescription RecruitLimit_7_effects_desc
+        Threshold  7
+        Effect Charm 5
+
+    Level RecruitLimit_8
+        Description RecruitLimit_8_desc
+        EffectsDescription RecruitLimit_8_effects_desc
+        Threshold  8
+        Effect Charm 5
+;------------------------------------------
+Trait RecruitLimitReset
+    Characters family
+;    Hidden
+    AntiTraits RecruitLimit
+
+    Level RecruitLimitReset_1
+        Description RecruitLimitReset_1_desc
+        EffectsDescription RecruitLimitReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait WCT
+    Characters family
+;    Hidden
+    AntiTraits WCTReset
+
+    Level WCT_1
+        Description WCT_1_desc
+        EffectsDescription WCT_1_effects_desc
+        Threshold  1
+
+    Level WCT_2
+        Description WCT_2_desc
+        EffectsDescription WCT_2_effects_desc
+        Threshold  2
+
+    Level WCT_3
+        Description WCT_3_desc
+        EffectsDescription WCT_3_effects_desc
+        Threshold  3
+
+    Level WCT_4
+        Description WCT_4_desc
+        EffectsDescription WCT_4_effects_desc
+        Threshold  4
+
+    Level WCT_5
+        Description WCT_5_desc
+        EffectsDescription WCT_5_effects_desc
+        Threshold  5
+
+    Level WCT_6
+        Description WCT_6_desc
+        EffectsDescription WCT_6_effects_desc
+        Threshold  6
+
+;------------------------------------------
+Trait WCTReset
+    Characters family
+;    Hidden
+    AntiTraits WCT
+
+    Level WCTReset_1
+        Description WCTReset_1_desc
+        EffectsDescription WCTReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait WCP
+    Characters family
+;    Hidden
+    AntiTraits WCPReset
+
+    Level WCP_1
+        Description WCP_1_desc
+        EffectsDescription WCP_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait WCPReset
+    Characters family
+;    Hidden
+    AntiTraits WCP
+
+    Level WCPReset_1
+        Description WCPReset_1_desc
+        EffectsDescription WCPReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait JrWCOff
+    Characters family
+    Hidden
+    AntiTraits JrWCOffReset
+
+    Level JrWCOff_1
+        Description JrWCOff_1_desc
+        EffectsDescription JrWCOff_1_effects_desc
+        Threshold  1
+        Effect Charm -5
+;------------------------------------------
+Trait JrWCOffReset
+    Characters family
+    Hidden
+    AntiTraits JrWCOff
+
+    Level JrWCOffReset_1
+        Description JrWCOffReset_1_desc
+        EffectsDescription JrWCOffReset_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait RecruitedUnit
+    Characters family
+    Hidden
+    AntiTraits RecruitedUnitReset
+
+    Level RecruitedUnit_1
+        Description RecruitedUnit_1_desc
+        EffectsDescription RecruitedUnit_1_effects_desc
+        Threshold  1
+;------------------------------------------
+Trait RecruitedUnitReset
+    Characters family
+    Hidden
+    AntiTraits RecruitedUnit
+
+    Level RecruitedUnitReset_1
+        Description RecruitedUnitReset_1_desc
+        EffectsDescription RecruitedUnitReset_1_effects_desc
+        Threshold  1
+;------------------------------------------

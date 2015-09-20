@@ -2402,7 +2402,7 @@ soldier          Crusader_Knights, 24, 0, 1
 officer          northern_captain_early_flag
 mount            heavy horse brawler lancer
 mount_effect     elephant -4, camel -4 
-attributes       sea_faring, hide_forest, hardy, can_withdraw, can_formed_charge, frighten_foot, mercenary_unit, knight, crusading_unit
+attributes       sea_faring, hide_forest, hardy, can_withdraw, can_formed_charge, frighten_foot, mercenary_unit, knight, crusading_unit, disband_2
 move_speed_mod	 1.05
 formation        1.5, 4.4, 2.5, 6, 2, square ;  ; , wedge
 stat_health      1, 3
@@ -2455,7 +2455,7 @@ stat_food        60, 300
 stat_cost        1, 305, 225, 100, 75, 475, 4, 110
 armour_ug_levels 2, 7, 8, 23
 armour_ug_models Mounted_Sergeants, Mounted_Sergeants_ug1, Mounted_Sergeants_ug1, Mounted_Sergeants_ug1
-ownership        france, hre, milan, venice, papal_states, sicily, jerusalem, teutonic_order, slave
+ownership        all; france, hre, milan, venice, papal_states, sicily, jerusalem, teutonic_order, slave
 era 0            france, hre, milan, venice, papal_states, sicily, jerusalem
 era 1            france, hre, milan, venice, papal_states, sicily, jerusalem
 recruit_priority_offset    0
@@ -5045,7 +5045,7 @@ accent         English
 banner faction   main_infantry
 banner holy      crusade
 soldier          Pilgrims, 60, 0, 0.7 
-attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit
+attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit, disband_1
 formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 0
 stat_pri         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 60, 1
@@ -5077,7 +5077,7 @@ banner faction   main_infantry
 banner holy      crusade
 soldier          Religious_Fanatics, 60, 0, 0.9, 0.5 ; (0.7 x 1.25)
 mount_effect     horse +1, camel +1
-attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit
+attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit, disband_1
 formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 1
 stat_pri         6, 3, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
@@ -5112,7 +5112,7 @@ banner faction   main_infantry
 banner holy      crusade
 soldier          Flagellants, 48, 0, 0.7
 officer          northern_captain
-attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit
+attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit, disband_1
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 1
 stat_pri         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 90, 1
@@ -5271,7 +5271,7 @@ stat_food        60, 300
 stat_cost        1, 280, 200, 85, 65, 420, 4, 130
 armour_ug_levels 7, 14, 19
 armour_ug_models Armored_Sergeants, Armored_Sergeants_ug1, Armored_Sergeants_ug1
-ownership        england, france, hre, milan, venice, papal_states, sicily, slave
+ownership        all; england, france, hre, milan, venice, papal_states, sicily, slave
 era 0            england, france, hre, milan, venice, papal_states, sicily, slave
 era 1            england, france, hre, milan, venice, papal_states, sicily, slave
 era 2            england, france, hre, venice, papal_states, sicily, slave
@@ -5859,7 +5859,7 @@ banner holy      crusade
 soldier          Crusader_Sergeants, 60, 0, 1, 0.30
 officer          northern_captain
 mount_effect     horse +4, camel +4
-attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, crusading_unit
+attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, crusading_unit, disband_2
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
@@ -9144,7 +9144,7 @@ banner faction   main_infantry
 banner holy      crusade
 soldier          Ghazis, 60, 0, 0.75, 0.45
 officer		 eastern_captain
-attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit
+attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit, disband_1
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
 stat_pri         8, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
@@ -9177,7 +9177,7 @@ banner holy      crusade
 soldier          Mutatawwi'a, 48, 0, 0.875, 0.5
 officer		eastern_captain
 mount_effect     horse +1, camel +1
-attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit
+attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit, disband_2
 formation        1.4, 1.4, 2.8, 2.8, 4, square
 stat_health      1, 1
 stat_pri         7, 2, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
@@ -11268,7 +11268,7 @@ soldier          Great_Cross, 24, 1, 1.05, 0.30
 officer		 northern_captain
 engine           great_cross
 mount_effect     horse +4, camel +4
-attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, standard, crusading_unit, command
+attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, standard, crusading_unit, command, disband_2
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
@@ -11511,7 +11511,7 @@ banner faction   main_infantry
 banner holy      crusade
 soldier          Dismounted_Crusader_Knights, 48, 0, 1.15, 0.45
 officer		 northern_captain
-attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, crusading_unit
+attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, crusading_unit, disband_2
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
@@ -13174,7 +13174,7 @@ stat_cost        1, 505, 360, 75, 55, 505, 4, 100
 armour_ug_levels 10
 armour_ug_models dismounted_norman_cavalry
 ownership        england, sicily
-era 0		 england
+era 0		 england, sicily
 era 1		 england
 recruit_priority_offset    10
 

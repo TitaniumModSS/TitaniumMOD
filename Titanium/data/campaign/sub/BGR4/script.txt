@@ -2420,7 +2420,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Inverness_Province -1 Persian Spearmen
         inc_recruit_pool Inverness_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Inverness_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Inverness_Province -1 Azenuri Infantry
         inc_recruit_pool Inverness_Province -1 Azenuri Cavalry
         end_if
@@ -2762,7 +2762,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Oslo_Province -1 Persian Spearmen
         inc_recruit_pool Oslo_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Oslo_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Oslo_Province -1 Azenuri Infantry
         inc_recruit_pool Oslo_Province -1 Azenuri Cavalry
         end_if
@@ -3104,7 +3104,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Nykoeping_Province -1 Persian Spearmen
         inc_recruit_pool Nykoeping_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Nykoeping_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Nykoeping_Province -1 Azenuri Infantry
         inc_recruit_pool Nykoeping_Province -1 Azenuri Cavalry
         end_if
@@ -3447,7 +3447,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Novgorod_Province -1 Persian Spearmen
         inc_recruit_pool Novgorod_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Novgorod_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Novgorod_Province -1 Azenuri Infantry
         inc_recruit_pool Novgorod_Province -1 Azenuri Cavalry
         end_if
@@ -3790,7 +3790,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Moscow_Province -1 Persian Spearmen
         inc_recruit_pool Moscow_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Moscow_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Moscow_Province -1 Azenuri Infantry
         inc_recruit_pool Moscow_Province -1 Azenuri Cavalry
         end_if
@@ -4133,7 +4133,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bulgar_Province -1 Persian Spearmen
         inc_recruit_pool Bulgar_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bulgar_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bulgar_Province -1 Azenuri Infantry
         inc_recruit_pool Bulgar_Province -1 Azenuri Cavalry
         end_if
@@ -4476,7 +4476,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Riga_Province -1 Persian Spearmen
         inc_recruit_pool Riga_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Riga_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Riga_Province -1 Azenuri Infantry
         inc_recruit_pool Riga_Province -1 Azenuri Cavalry
         end_if
@@ -4819,7 +4819,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Arhus_Province -1 Persian Spearmen
         inc_recruit_pool Arhus_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Arhus_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Arhus_Province -1 Azenuri Infantry
         inc_recruit_pool Arhus_Province -1 Azenuri Cavalry
         end_if
@@ -5162,7 +5162,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Edinburgh_Province -1 Persian Spearmen
         inc_recruit_pool Edinburgh_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Edinburgh_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Edinburgh_Province -1 Azenuri Infantry
         inc_recruit_pool Edinburgh_Province -1 Azenuri Cavalry
         end_if
@@ -5505,7 +5505,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Smolensk_Province -1 Persian Spearmen
         inc_recruit_pool Smolensk_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Smolensk_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Smolensk_Province -1 Azenuri Infantry
         inc_recruit_pool Smolensk_Province -1 Azenuri Cavalry
         end_if
@@ -5848,7 +5848,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Dublin_Province -1 Persian Spearmen
         inc_recruit_pool Dublin_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Dublin_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Dublin_Province -1 Azenuri Infantry
         inc_recruit_pool Dublin_Province -1 Azenuri Cavalry
         end_if
@@ -6191,7 +6191,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Oleshe_Province -1 Persian Spearmen
         inc_recruit_pool Oleshe_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Oleshe_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Oleshe_Province -1 Azenuri Infantry
         inc_recruit_pool Oleshe_Province -1 Azenuri Cavalry
         end_if
@@ -6534,7 +6534,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Vilnius_Province -1 Persian Spearmen
         inc_recruit_pool Vilnius_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Vilnius_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Vilnius_Province -1 Azenuri Infantry
         inc_recruit_pool Vilnius_Province -1 Azenuri Cavalry
         end_if
@@ -6877,7 +6877,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool York_Province -1 Persian Spearmen
         inc_recruit_pool York_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool York_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool York_Province -1 Azenuri Infantry
         inc_recruit_pool York_Province -1 Azenuri Cavalry
         end_if
@@ -7220,7 +7220,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Ryazan_Province -1 Persian Spearmen
         inc_recruit_pool Ryazan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Ryazan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Ryazan_Province -1 Azenuri Infantry
         inc_recruit_pool Ryazan_Province -1 Azenuri Cavalry
         end_if
@@ -7563,7 +7563,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Caernarvon_Province -1 Persian Spearmen
         inc_recruit_pool Caernarvon_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Caernarvon_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Caernarvon_Province -1 Azenuri Infantry
         inc_recruit_pool Caernarvon_Province -1 Azenuri Cavalry
         end_if
@@ -7906,7 +7906,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Thorn_Province -1 Persian Spearmen
         inc_recruit_pool Thorn_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Thorn_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Thorn_Province -1 Azenuri Infantry
         inc_recruit_pool Thorn_Province -1 Azenuri Cavalry
         end_if
@@ -8249,7 +8249,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Nottingham_Province -1 Persian Spearmen
         inc_recruit_pool Nottingham_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Nottingham_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Nottingham_Province -1 Azenuri Infantry
         inc_recruit_pool Nottingham_Province -1 Azenuri Cavalry
         end_if
@@ -8592,7 +8592,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Stettin_Province -1 Persian Spearmen
         inc_recruit_pool Stettin_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Stettin_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Stettin_Province -1 Azenuri Infantry
         inc_recruit_pool Stettin_Province -1 Azenuri Cavalry
         end_if
@@ -8935,7 +8935,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Hamburg_Province -1 Persian Spearmen
         inc_recruit_pool Hamburg_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Hamburg_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Hamburg_Province -1 Azenuri Infantry
         inc_recruit_pool Hamburg_Province -1 Azenuri Cavalry
         end_if
@@ -9278,7 +9278,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Sarkel_Province -1 Persian Spearmen
         inc_recruit_pool Sarkel_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Sarkel_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Sarkel_Province -1 Azenuri Infantry
         inc_recruit_pool Sarkel_Province -1 Azenuri Cavalry
         end_if
@@ -9621,7 +9621,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Antwerp_Province -1 Persian Spearmen
         inc_recruit_pool Antwerp_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Antwerp_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Antwerp_Province -1 Azenuri Infantry
         inc_recruit_pool Antwerp_Province -1 Azenuri Cavalry
         end_if
@@ -9964,7 +9964,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Magdeburg_Province -1 Persian Spearmen
         inc_recruit_pool Magdeburg_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Magdeburg_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Magdeburg_Province -1 Azenuri Infantry
         inc_recruit_pool Magdeburg_Province -1 Azenuri Cavalry
         end_if
@@ -10307,7 +10307,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Halych_Province -1 Persian Spearmen
         inc_recruit_pool Halych_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Halych_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Halych_Province -1 Azenuri Infantry
         inc_recruit_pool Halych_Province -1 Azenuri Cavalry
         end_if
@@ -10650,7 +10650,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Krakow_Province -1 Persian Spearmen
         inc_recruit_pool Krakow_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Krakow_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Krakow_Province -1 Azenuri Infantry
         inc_recruit_pool Krakow_Province -1 Azenuri Cavalry
         end_if
@@ -10993,7 +10993,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool London_Province -1 Persian Spearmen
         inc_recruit_pool London_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool London_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool London_Province -1 Azenuri Infantry
         inc_recruit_pool London_Province -1 Azenuri Cavalry
         end_if
@@ -11336,7 +11336,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Wroclaw_Province -1 Persian Spearmen
         inc_recruit_pool Wroclaw_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Wroclaw_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Wroclaw_Province -1 Azenuri Infantry
         inc_recruit_pool Wroclaw_Province -1 Azenuri Cavalry
         end_if
@@ -11679,7 +11679,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kiev_Province -1 Persian Spearmen
         inc_recruit_pool Kiev_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kiev_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kiev_Province -1 Azenuri Infantry
         inc_recruit_pool Kiev_Province -1 Azenuri Cavalry
         end_if
@@ -12022,7 +12022,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bruges_Province -1 Persian Spearmen
         inc_recruit_pool Bruges_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bruges_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bruges_Province -1 Azenuri Infantry
         inc_recruit_pool Bruges_Province -1 Azenuri Cavalry
         end_if
@@ -12365,7 +12365,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Frankfurt_Province -1 Persian Spearmen
         inc_recruit_pool Frankfurt_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Frankfurt_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Frankfurt_Province -1 Azenuri Infantry
         inc_recruit_pool Frankfurt_Province -1 Azenuri Cavalry
         end_if
@@ -12708,7 +12708,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Metz_Province -1 Persian Spearmen
         inc_recruit_pool Metz_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Metz_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Metz_Province -1 Azenuri Infantry
         inc_recruit_pool Metz_Province -1 Azenuri Cavalry
         end_if
@@ -13051,7 +13051,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Caen_Province -1 Persian Spearmen
         inc_recruit_pool Caen_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Caen_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Caen_Province -1 Azenuri Infantry
         inc_recruit_pool Caen_Province -1 Azenuri Cavalry
         end_if
@@ -13394,7 +13394,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Prague_Province -1 Persian Spearmen
         inc_recruit_pool Prague_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Prague_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Prague_Province -1 Azenuri Infantry
         inc_recruit_pool Prague_Province -1 Azenuri Cavalry
         end_if
@@ -13737,7 +13737,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Rheims_Province -1 Persian Spearmen
         inc_recruit_pool Rheims_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Rheims_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Rheims_Province -1 Azenuri Infantry
         inc_recruit_pool Rheims_Province -1 Azenuri Cavalry
         end_if
@@ -14080,7 +14080,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Rennes_Province -1 Persian Spearmen
         inc_recruit_pool Rennes_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Rennes_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Rennes_Province -1 Azenuri Infantry
         inc_recruit_pool Rennes_Province -1 Azenuri Cavalry
         end_if
@@ -14423,7 +14423,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Nuremburg_Province -1 Persian Spearmen
         inc_recruit_pool Nuremburg_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Nuremburg_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Nuremburg_Province -1 Azenuri Infantry
         inc_recruit_pool Nuremburg_Province -1 Azenuri Cavalry
         end_if
@@ -14766,7 +14766,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Paris_Province -1 Persian Spearmen
         inc_recruit_pool Paris_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Paris_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Paris_Province -1 Azenuri Infantry
         inc_recruit_pool Paris_Province -1 Azenuri Cavalry
         end_if
@@ -15109,7 +15109,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Staufen_Province -1 Persian Spearmen
         inc_recruit_pool Staufen_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Staufen_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Staufen_Province -1 Azenuri Infantry
         inc_recruit_pool Staufen_Province -1 Azenuri Cavalry
         end_if
@@ -15452,7 +15452,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Baia_Province -1 Persian Spearmen
         inc_recruit_pool Baia_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Baia_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Baia_Province -1 Azenuri Infantry
         inc_recruit_pool Baia_Province -1 Azenuri Cavalry
         end_if
@@ -15795,7 +15795,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Esztergom_Province -1 Persian Spearmen
         inc_recruit_pool Esztergom_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Esztergom_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Esztergom_Province -1 Azenuri Infantry
         inc_recruit_pool Esztergom_Province -1 Azenuri Cavalry
         end_if
@@ -16138,7 +16138,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Angers_Province -1 Persian Spearmen
         inc_recruit_pool Angers_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Angers_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Angers_Province -1 Azenuri Infantry
         inc_recruit_pool Angers_Province -1 Azenuri Cavalry
         end_if
@@ -16481,7 +16481,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Brasov_Province -1 Persian Spearmen
         inc_recruit_pool Brasov_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Brasov_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Brasov_Province -1 Azenuri Infantry
         inc_recruit_pool Brasov_Province -1 Azenuri Cavalry
         end_if
@@ -16824,7 +16824,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Caffa_Province -1 Persian Spearmen
         inc_recruit_pool Caffa_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Caffa_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Caffa_Province -1 Azenuri Infantry
         inc_recruit_pool Caffa_Province -1 Azenuri Cavalry
         end_if
@@ -17167,7 +17167,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Vienna_Province -1 Persian Spearmen
         inc_recruit_pool Vienna_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Vienna_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Vienna_Province -1 Azenuri Infantry
         inc_recruit_pool Vienna_Province -1 Azenuri Cavalry
         end_if
@@ -17510,7 +17510,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Dijon_Province -1 Persian Spearmen
         inc_recruit_pool Dijon_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Dijon_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Dijon_Province -1 Azenuri Infantry
         inc_recruit_pool Dijon_Province -1 Azenuri Cavalry
         end_if
@@ -17853,7 +17853,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bern_Province -1 Persian Spearmen
         inc_recruit_pool Bern_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bern_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bern_Province -1 Azenuri Infantry
         inc_recruit_pool Bern_Province -1 Azenuri Cavalry
         end_if
@@ -18196,7 +18196,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Innsbruck_Province -1 Persian Spearmen
         inc_recruit_pool Innsbruck_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Innsbruck_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Innsbruck_Province -1 Azenuri Infantry
         inc_recruit_pool Innsbruck_Province -1 Azenuri Cavalry
         end_if
@@ -18539,7 +18539,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bordeaux_Province -1 Persian Spearmen
         inc_recruit_pool Bordeaux_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bordeaux_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bordeaux_Province -1 Azenuri Infantry
         inc_recruit_pool Bordeaux_Province -1 Azenuri Cavalry
         end_if
@@ -18882,7 +18882,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Tbilisi_Province -1 Persian Spearmen
         inc_recruit_pool Tbilisi_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Tbilisi_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Tbilisi_Province -1 Azenuri Infantry
         inc_recruit_pool Tbilisi_Province -1 Azenuri Cavalry
         end_if
@@ -19225,7 +19225,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Targoviste_Province -1 Persian Spearmen
         inc_recruit_pool Targoviste_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Targoviste_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Targoviste_Province -1 Azenuri Infantry
         inc_recruit_pool Targoviste_Province -1 Azenuri Cavalry
         end_if
@@ -19568,7 +19568,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Milan_Province -1 Persian Spearmen
         inc_recruit_pool Milan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Milan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Milan_Province -1 Azenuri Infantry
         inc_recruit_pool Milan_Province -1 Azenuri Cavalry
         end_if
@@ -19911,7 +19911,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Venice_Province -1 Persian Spearmen
         inc_recruit_pool Venice_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Venice_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Venice_Province -1 Azenuri Infantry
         inc_recruit_pool Venice_Province -1 Azenuri Cavalry
         end_if
@@ -20254,7 +20254,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Toulouse_Province -1 Persian Spearmen
         inc_recruit_pool Toulouse_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Toulouse_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Toulouse_Province -1 Azenuri Infantry
         inc_recruit_pool Toulouse_Province -1 Azenuri Cavalry
         end_if
@@ -20597,7 +20597,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Leon_Province -1 Persian Spearmen
         inc_recruit_pool Leon_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Leon_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Leon_Province -1 Azenuri Infantry
         inc_recruit_pool Leon_Province -1 Azenuri Cavalry
         end_if
@@ -20940,7 +20940,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Zagreb_Province -1 Persian Spearmen
         inc_recruit_pool Zagreb_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Zagreb_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Zagreb_Province -1 Azenuri Infantry
         inc_recruit_pool Zagreb_Province -1 Azenuri Cavalry
         end_if
@@ -21283,7 +21283,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Sofia_Province -1 Persian Spearmen
         inc_recruit_pool Sofia_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Sofia_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Sofia_Province -1 Azenuri Infantry
         inc_recruit_pool Sofia_Province -1 Azenuri Cavalry
         end_if
@@ -21626,7 +21626,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Ragusa_Province -1 Persian Spearmen
         inc_recruit_pool Ragusa_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Ragusa_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Ragusa_Province -1 Azenuri Infantry
         inc_recruit_pool Ragusa_Province -1 Azenuri Cavalry
         end_if
@@ -21969,7 +21969,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Toledo_Province -1 Persian Spearmen
         inc_recruit_pool Toledo_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Toledo_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Toledo_Province -1 Azenuri Infantry
         inc_recruit_pool Toledo_Province -1 Azenuri Cavalry
         end_if
@@ -22312,7 +22312,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bologna_Province -1 Persian Spearmen
         inc_recruit_pool Bologna_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bologna_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bologna_Province -1 Azenuri Infantry
         inc_recruit_pool Bologna_Province -1 Azenuri Cavalry
         end_if
@@ -22655,7 +22655,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Pamplona_Province -1 Persian Spearmen
         inc_recruit_pool Pamplona_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Pamplona_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Pamplona_Province -1 Azenuri Infantry
         inc_recruit_pool Pamplona_Province -1 Azenuri Cavalry
         end_if
@@ -22998,7 +22998,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Genoa_Province -1 Persian Spearmen
         inc_recruit_pool Genoa_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Genoa_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Genoa_Province -1 Azenuri Infantry
         inc_recruit_pool Genoa_Province -1 Azenuri Cavalry
         end_if
@@ -23341,7 +23341,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Pisa_Province -1 Persian Spearmen
         inc_recruit_pool Pisa_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Pisa_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Pisa_Province -1 Azenuri Infantry
         inc_recruit_pool Pisa_Province -1 Azenuri Cavalry
         end_if
@@ -23684,7 +23684,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Trebizond_Province -1 Persian Spearmen
         inc_recruit_pool Trebizond_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Trebizond_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Trebizond_Province -1 Azenuri Infantry
         inc_recruit_pool Trebizond_Province -1 Azenuri Cavalry
         end_if
@@ -24027,7 +24027,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Marseille_Province -1 Persian Spearmen
         inc_recruit_pool Marseille_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Marseille_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Marseille_Province -1 Azenuri Infantry
         inc_recruit_pool Marseille_Province -1 Azenuri Cavalry
         end_if
@@ -24370,7 +24370,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Yerevan_Province -1 Persian Spearmen
         inc_recruit_pool Yerevan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Yerevan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Yerevan_Province -1 Azenuri Infantry
         inc_recruit_pool Yerevan_Province -1 Azenuri Cavalry
         end_if
@@ -24713,7 +24713,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Zaragoza_Province -1 Persian Spearmen
         inc_recruit_pool Zaragoza_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Zaragoza_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Zaragoza_Province -1 Azenuri Infantry
         inc_recruit_pool Zaragoza_Province -1 Azenuri Cavalry
         end_if
@@ -25056,7 +25056,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Constantinople_Province -1 Persian Spearmen
         inc_recruit_pool Constantinople_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Constantinople_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Constantinople_Province -1 Azenuri Infantry
         inc_recruit_pool Constantinople_Province -1 Azenuri Cavalry
         end_if
@@ -25399,7 +25399,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Lisbon_Province -1 Persian Spearmen
         inc_recruit_pool Lisbon_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Lisbon_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Lisbon_Province -1 Azenuri Infantry
         inc_recruit_pool Lisbon_Province -1 Azenuri Cavalry
         end_if
@@ -25742,7 +25742,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Thessalonica_Province -1 Persian Spearmen
         inc_recruit_pool Thessalonica_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Thessalonica_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Thessalonica_Province -1 Azenuri Infantry
         inc_recruit_pool Thessalonica_Province -1 Azenuri Cavalry
         end_if
@@ -26085,7 +26085,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Arta_Province -1 Persian Spearmen
         inc_recruit_pool Arta_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Arta_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Arta_Province -1 Azenuri Infantry
         inc_recruit_pool Arta_Province -1 Azenuri Cavalry
         end_if
@@ -26428,7 +26428,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Ajaccio_Province -1 Persian Spearmen
         inc_recruit_pool Ajaccio_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Ajaccio_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Ajaccio_Province -1 Azenuri Infantry
         inc_recruit_pool Ajaccio_Province -1 Azenuri Cavalry
         end_if
@@ -26771,7 +26771,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Nicaea_Province -1 Persian Spearmen
         inc_recruit_pool Nicaea_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Nicaea_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Nicaea_Province -1 Azenuri Infantry
         inc_recruit_pool Nicaea_Province -1 Azenuri Cavalry
         end_if
@@ -27114,7 +27114,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Rome_Province -1 Persian Spearmen
         inc_recruit_pool Rome_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Rome_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Rome_Province -1 Azenuri Infantry
         inc_recruit_pool Rome_Province -1 Azenuri Cavalry
         end_if
@@ -27457,7 +27457,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Naples_Province -1 Persian Spearmen
         inc_recruit_pool Naples_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Naples_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Naples_Province -1 Azenuri Infantry
         inc_recruit_pool Naples_Province -1 Azenuri Cavalry
         end_if
@@ -27800,7 +27800,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Caesarea_Province -1 Persian Spearmen
         inc_recruit_pool Caesarea_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Caesarea_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Caesarea_Province -1 Azenuri Infantry
         inc_recruit_pool Caesarea_Province -1 Azenuri Cavalry
         end_if
@@ -28143,7 +28143,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Baghdad_Province -1 Persian Spearmen
         inc_recruit_pool Baghdad_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Baghdad_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Baghdad_Province -1 Azenuri Infantry
         inc_recruit_pool Baghdad_Province -1 Azenuri Cavalry
         end_if
@@ -28486,7 +28486,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Cordoba_Province -1 Persian Spearmen
         inc_recruit_pool Cordoba_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Cordoba_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Cordoba_Province -1 Azenuri Infantry
         inc_recruit_pool Cordoba_Province -1 Azenuri Cavalry
         end_if
@@ -28829,7 +28829,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Durazzo_Province -1 Persian Spearmen
         inc_recruit_pool Durazzo_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Durazzo_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Durazzo_Province -1 Azenuri Infantry
         inc_recruit_pool Durazzo_Province -1 Azenuri Cavalry
         end_if
@@ -29172,7 +29172,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Valencia_Province -1 Persian Spearmen
         inc_recruit_pool Valencia_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Valencia_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Valencia_Province -1 Azenuri Infantry
         inc_recruit_pool Valencia_Province -1 Azenuri Cavalry
         end_if
@@ -29515,7 +29515,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Iconium_Province -1 Persian Spearmen
         inc_recruit_pool Iconium_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Iconium_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Iconium_Province -1 Azenuri Infantry
         inc_recruit_pool Iconium_Province -1 Azenuri Cavalry
         end_if
@@ -29858,7 +29858,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Adana_Province -1 Persian Spearmen
         inc_recruit_pool Adana_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Adana_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Adana_Province -1 Azenuri Infantry
         inc_recruit_pool Adana_Province -1 Azenuri Cavalry
         end_if
@@ -30201,7 +30201,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Mosul_Province -1 Persian Spearmen
         inc_recruit_pool Mosul_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Mosul_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Mosul_Province -1 Azenuri Infantry
         inc_recruit_pool Mosul_Province -1 Azenuri Cavalry
         end_if
@@ -30544,7 +30544,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Cagliari_Province -1 Persian Spearmen
         inc_recruit_pool Cagliari_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Cagliari_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Cagliari_Province -1 Azenuri Infantry
         inc_recruit_pool Cagliari_Province -1 Azenuri Cavalry
         end_if
@@ -30887,7 +30887,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Edessa_Province -1 Persian Spearmen
         inc_recruit_pool Edessa_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Edessa_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Edessa_Province -1 Azenuri Infantry
         inc_recruit_pool Edessa_Province -1 Azenuri Cavalry
         end_if
@@ -31230,7 +31230,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Smyrna_Province -1 Persian Spearmen
         inc_recruit_pool Smyrna_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Smyrna_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Smyrna_Province -1 Azenuri Infantry
         inc_recruit_pool Smyrna_Province -1 Azenuri Cavalry
         end_if
@@ -31573,7 +31573,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Antioch_Province -1 Persian Spearmen
         inc_recruit_pool Antioch_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Antioch_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Antioch_Province -1 Azenuri Infantry
         inc_recruit_pool Antioch_Province -1 Azenuri Cavalry
         end_if
@@ -31916,7 +31916,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Granada_Province -1 Persian Spearmen
         inc_recruit_pool Granada_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Granada_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Granada_Province -1 Azenuri Infantry
         inc_recruit_pool Granada_Province -1 Azenuri Cavalry
         end_if
@@ -32259,7 +32259,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Aleppo_Province -1 Persian Spearmen
         inc_recruit_pool Aleppo_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Aleppo_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Aleppo_Province -1 Azenuri Infantry
         inc_recruit_pool Aleppo_Province -1 Azenuri Cavalry
         end_if
@@ -32602,7 +32602,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Medina_Province -1 Persian Spearmen
         inc_recruit_pool Medina_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Medina_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Medina_Province -1 Azenuri Infantry
         inc_recruit_pool Medina_Province -1 Azenuri Cavalry
         end_if
@@ -32945,7 +32945,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Palermo_Province -1 Persian Spearmen
         inc_recruit_pool Palermo_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Palermo_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Palermo_Province -1 Azenuri Infantry
         inc_recruit_pool Palermo_Province -1 Azenuri Cavalry
         end_if
@@ -33288,7 +33288,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Corinth_Province -1 Persian Spearmen
         inc_recruit_pool Corinth_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Corinth_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Corinth_Province -1 Azenuri Infantry
         inc_recruit_pool Corinth_Province -1 Azenuri Cavalry
         end_if
@@ -33631,7 +33631,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Marrakesh_Province -1 Persian Spearmen
         inc_recruit_pool Marrakesh_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Marrakesh_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Marrakesh_Province -1 Azenuri Infantry
         inc_recruit_pool Marrakesh_Province -1 Azenuri Cavalry
         end_if
@@ -34316,7 +34316,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Damascus_Province -1 Persian Spearmen
         inc_recruit_pool Damascus_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Damascus_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Damascus_Province -1 Azenuri Infantry
         inc_recruit_pool Damascus_Province -1 Azenuri Cavalry
         end_if
@@ -34659,7 +34659,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Algiers_Province -1 Persian Spearmen
         inc_recruit_pool Algiers_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Algiers_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Algiers_Province -1 Azenuri Infantry
         inc_recruit_pool Algiers_Province -1 Azenuri Cavalry
         end_if
@@ -35002,7 +35002,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Tunis_Province -1 Persian Spearmen
         inc_recruit_pool Tunis_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Tunis_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Tunis_Province -1 Azenuri Infantry
         inc_recruit_pool Tunis_Province -1 Azenuri Cavalry
         end_if
@@ -35345,7 +35345,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Acre_Province -1 Persian Spearmen
         inc_recruit_pool Acre_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Acre_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Acre_Province -1 Azenuri Infantry
         inc_recruit_pool Acre_Province -1 Azenuri Cavalry
         end_if
@@ -36030,7 +36030,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Jerusalem_Province -1 Persian Spearmen
         inc_recruit_pool Jerusalem_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Jerusalem_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Jerusalem_Province -1 Azenuri Infantry
         inc_recruit_pool Jerusalem_Province -1 Azenuri Cavalry
         end_if
@@ -36373,7 +36373,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Gaza_Province -1 Persian Spearmen
         inc_recruit_pool Gaza_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Gaza_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Gaza_Province -1 Azenuri Infantry
         inc_recruit_pool Gaza_Province -1 Azenuri Cavalry
         end_if
@@ -36716,7 +36716,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Tripoli_Province -1 Persian Spearmen
         inc_recruit_pool Tripoli_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Tripoli_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Tripoli_Province -1 Azenuri Infantry
         inc_recruit_pool Tripoli_Province -1 Azenuri Cavalry
         end_if
@@ -37059,7 +37059,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Alexandria_Province -1 Persian Spearmen
         inc_recruit_pool Alexandria_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Alexandria_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Alexandria_Province -1 Azenuri Infantry
         inc_recruit_pool Alexandria_Province -1 Azenuri Cavalry
         end_if
@@ -37402,7 +37402,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Damietta_Province -1 Persian Spearmen
         inc_recruit_pool Damietta_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Damietta_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Damietta_Province -1 Azenuri Infantry
         inc_recruit_pool Damietta_Province -1 Azenuri Cavalry
         end_if
@@ -37745,7 +37745,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Cairo_Province -1 Persian Spearmen
         inc_recruit_pool Cairo_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Cairo_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Cairo_Province -1 Azenuri Infantry
         inc_recruit_pool Cairo_Province -1 Azenuri Cavalry
         end_if
@@ -38088,7 +38088,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Qarisiya_Province -1 Persian Spearmen
         inc_recruit_pool Qarisiya_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Qarisiya_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Qarisiya_Province -1 Azenuri Infantry
         inc_recruit_pool Qarisiya_Province -1 Azenuri Cavalry
         end_if
@@ -38431,7 +38431,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Basra_Province -1 Persian Spearmen
         inc_recruit_pool Basra_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Basra_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Basra_Province -1 Azenuri Infantry
         inc_recruit_pool Basra_Province -1 Azenuri Cavalry
         end_if
@@ -38774,7 +38774,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Benghazi_Province -1 Persian Spearmen
         inc_recruit_pool Benghazi_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Benghazi_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Benghazi_Province -1 Azenuri Infantry
         inc_recruit_pool Benghazi_Province -1 Azenuri Cavalry
         end_if
@@ -39117,7 +39117,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bryansk_Province -1 Persian Spearmen
         inc_recruit_pool Bryansk_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bryansk_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bryansk_Province -1 Azenuri Infantry
         inc_recruit_pool Bryansk_Province -1 Azenuri Cavalry
         end_if
@@ -39460,7 +39460,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Lyon_Province -1 Persian Spearmen
         inc_recruit_pool Lyon_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Lyon_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Lyon_Province -1 Azenuri Infantry
         inc_recruit_pool Lyon_Province -1 Azenuri Cavalry
         end_if
@@ -39803,7 +39803,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Sinop_Province -1 Persian Spearmen
         inc_recruit_pool Sinop_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Sinop_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Sinop_Province -1 Azenuri Infantry
         inc_recruit_pool Sinop_Province -1 Azenuri Cavalry
         end_if
@@ -40146,7 +40146,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Belgrade_Province -1 Persian Spearmen
         inc_recruit_pool Belgrade_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Belgrade_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Belgrade_Province -1 Azenuri Infantry
         inc_recruit_pool Belgrade_Province -1 Azenuri Cavalry
         end_if
@@ -40489,7 +40489,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Barcelona_Province -1 Persian Spearmen
         inc_recruit_pool Barcelona_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Barcelona_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Barcelona_Province -1 Azenuri Infantry
         inc_recruit_pool Barcelona_Province -1 Azenuri Cavalry
         end_if
@@ -41174,7 +41174,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bari_Province -1 Persian Spearmen
         inc_recruit_pool Bari_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bari_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bari_Province -1 Azenuri Infantry
         inc_recruit_pool Bari_Province -1 Azenuri Cavalry
         end_if
@@ -41517,7 +41517,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Skara_Province -1 Persian Spearmen
         inc_recruit_pool Skara_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Skara_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Skara_Province -1 Azenuri Infantry
         inc_recruit_pool Skara_Province -1 Azenuri Cavalry
         end_if
@@ -41860,7 +41860,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Exeter_Province -1 Persian Spearmen
         inc_recruit_pool Exeter_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Exeter_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Exeter_Province -1 Azenuri Infantry
         inc_recruit_pool Exeter_Province -1 Azenuri Cavalry
         end_if
@@ -42203,7 +42203,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Oporto_Province -1 Persian Spearmen
         inc_recruit_pool Oporto_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Oporto_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Oporto_Province -1 Azenuri Infantry
         inc_recruit_pool Oporto_Province -1 Azenuri Cavalry
         end_if
@@ -42546,7 +42546,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Mecca_Province -1 Persian Spearmen
         inc_recruit_pool Mecca_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Mecca_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Mecca_Province -1 Azenuri Infantry
         inc_recruit_pool Mecca_Province -1 Azenuri Cavalry
         end_if
@@ -42889,7 +42889,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Beleb_el_Anab_Province -1 Persian Spearmen
         inc_recruit_pool Beleb_el_Anab_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Beleb_el_Anab_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Beleb_el_Anab_Province -1 Azenuri Infantry
         inc_recruit_pool Beleb_el_Anab_Province -1 Azenuri Cavalry
         end_if
@@ -43232,7 +43232,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Tortosa_Province -1 Persian Spearmen
         inc_recruit_pool Tortosa_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Tortosa_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Tortosa_Province -1 Azenuri Infantry
         inc_recruit_pool Tortosa_Province -1 Azenuri Cavalry
         end_if
@@ -43575,7 +43575,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Astrakhan_Province -1 Persian Spearmen
         inc_recruit_pool Astrakhan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Astrakhan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Astrakhan_Province -1 Azenuri Infantry
         inc_recruit_pool Astrakhan_Province -1 Azenuri Cavalry
         end_if
@@ -43918,7 +43918,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Luxor_Province -1 Persian Spearmen
         inc_recruit_pool Luxor_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Luxor_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Luxor_Province -1 Azenuri Infantry
         inc_recruit_pool Luxor_Province -1 Azenuri Cavalry
         end_if
@@ -44261,7 +44261,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Clermont_Province -1 Persian Spearmen
         inc_recruit_pool Clermont_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Clermont_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Clermont_Province -1 Azenuri Infantry
         inc_recruit_pool Clermont_Province -1 Azenuri Cavalry
         end_if
@@ -44604,7 +44604,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Groningen_Province -1 Persian Spearmen
         inc_recruit_pool Groningen_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Groningen_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Groningen_Province -1 Azenuri Infantry
         inc_recruit_pool Groningen_Province -1 Azenuri Cavalry
         end_if
@@ -44947,7 +44947,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Salamanca_Province -1 Persian Spearmen
         inc_recruit_pool Salamanca_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Salamanca_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Salamanca_Province -1 Azenuri Infantry
         inc_recruit_pool Salamanca_Province -1 Azenuri Cavalry
         end_if
@@ -45290,7 +45290,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Melilla_Province -1 Persian Spearmen
         inc_recruit_pool Melilla_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Melilla_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Melilla_Province -1 Azenuri Infantry
         inc_recruit_pool Melilla_Province -1 Azenuri Cavalry
         end_if
@@ -45633,7 +45633,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Khlynov_Province -1 Persian Spearmen
         inc_recruit_pool Khlynov_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Khlynov_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Khlynov_Province -1 Azenuri Infantry
         inc_recruit_pool Khlynov_Province -1 Azenuri Cavalry
         end_if
@@ -45976,7 +45976,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Salzburg_Province -1 Persian Spearmen
         inc_recruit_pool Salzburg_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Salzburg_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Salzburg_Province -1 Azenuri Infantry
         inc_recruit_pool Salzburg_Province -1 Azenuri Cavalry
         end_if
@@ -46319,7 +46319,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Diyarbakir_Province -1 Persian Spearmen
         inc_recruit_pool Diyarbakir_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Diyarbakir_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Diyarbakir_Province -1 Azenuri Infantry
         inc_recruit_pool Diyarbakir_Province -1 Azenuri Cavalry
         end_if
@@ -46662,7 +46662,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Plock_Province -1 Persian Spearmen
         inc_recruit_pool Plock_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Plock_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Plock_Province -1 Azenuri Infantry
         inc_recruit_pool Plock_Province -1 Azenuri Cavalry
         end_if
@@ -47005,7 +47005,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Ancona_Province -1 Persian Spearmen
         inc_recruit_pool Ancona_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Ancona_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Ancona_Province -1 Azenuri Infantry
         inc_recruit_pool Ancona_Province -1 Azenuri Cavalry
         end_if
@@ -47348,7 +47348,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Athens_Province -1 Persian Spearmen
         inc_recruit_pool Athens_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Athens_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Athens_Province -1 Azenuri Infantry
         inc_recruit_pool Athens_Province -1 Azenuri Cavalry
         end_if
@@ -47691,7 +47691,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Canakkale_Province -1 Persian Spearmen
         inc_recruit_pool Canakkale_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Canakkale_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Canakkale_Province -1 Azenuri Infantry
         inc_recruit_pool Canakkale_Province -1 Azenuri Cavalry
         end_if
@@ -48034,7 +48034,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Bergen_Province -1 Persian Spearmen
         inc_recruit_pool Bergen_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Bergen_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Bergen_Province -1 Azenuri Infantry
         inc_recruit_pool Bergen_Province -1 Azenuri Cavalry
         end_if
@@ -48377,7 +48377,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Tmutarakan_Province -1 Persian Spearmen
         inc_recruit_pool Tmutarakan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Tmutarakan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Tmutarakan_Province -1 Azenuri Infantry
         inc_recruit_pool Tmutarakan_Province -1 Azenuri Cavalry
         end_if
@@ -48720,7 +48720,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Uppsala_Province -1 Persian Spearmen
         inc_recruit_pool Uppsala_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Uppsala_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Uppsala_Province -1 Azenuri Infantry
         inc_recruit_pool Uppsala_Province -1 Azenuri Cavalry
         end_if
@@ -49063,7 +49063,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kassa_Province -1 Persian Spearmen
         inc_recruit_pool Kassa_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kassa_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kassa_Province -1 Azenuri Infantry
         inc_recruit_pool Kassa_Province -1 Azenuri Cavalry
         end_if
@@ -49406,7 +49406,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Silves_Province -1 Persian Spearmen
         inc_recruit_pool Silves_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Silves_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Silves_Province -1 Azenuri Infantry
         inc_recruit_pool Silves_Province -1 Azenuri Cavalry
         end_if
@@ -49749,7 +49749,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Scopia_Province -1 Persian Spearmen
         inc_recruit_pool Scopia_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Scopia_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Scopia_Province -1 Azenuri Infantry
         inc_recruit_pool Scopia_Province -1 Azenuri Cavalry
         end_if
@@ -50092,7 +50092,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Winchester_Province -1 Persian Spearmen
         inc_recruit_pool Winchester_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Winchester_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Winchester_Province -1 Azenuri Infantry
         inc_recruit_pool Winchester_Province -1 Azenuri Cavalry
         end_if
@@ -50435,7 +50435,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Baku_Province -1 Persian Spearmen
         inc_recruit_pool Baku_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Baku_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Baku_Province -1 Azenuri Infantry
         inc_recruit_pool Baku_Province -1 Azenuri Cavalry
         end_if
@@ -50778,7 +50778,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Murcia_Province -1 Persian Spearmen
         inc_recruit_pool Murcia_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Murcia_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Murcia_Province -1 Azenuri Infantry
         inc_recruit_pool Murcia_Province -1 Azenuri Cavalry
         end_if
@@ -51121,7 +51121,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Syracuse_Province -1 Persian Spearmen
         inc_recruit_pool Syracuse_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Syracuse_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Syracuse_Province -1 Azenuri Infantry
         inc_recruit_pool Syracuse_Province -1 Azenuri Cavalry
         end_if
@@ -51464,7 +51464,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Al-Mu'miniya_Province -1 Persian Spearmen
         inc_recruit_pool Al-Mu'miniya_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Al-Mu'miniya_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Al-Mu'miniya_Province -1 Azenuri Infantry
         inc_recruit_pool Al-Mu'miniya_Province -1 Azenuri Cavalry
         end_if
@@ -51807,7 +51807,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Burgos_Province -1 Persian Spearmen
         inc_recruit_pool Burgos_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Burgos_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Burgos_Province -1 Azenuri Infantry
         inc_recruit_pool Burgos_Province -1 Azenuri Cavalry
         end_if
@@ -52150,7 +52150,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Mensk_Province -1 Persian Spearmen
         inc_recruit_pool Mensk_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Mensk_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Mensk_Province -1 Azenuri Infantry
         inc_recruit_pool Mensk_Province -1 Azenuri Cavalry
         end_if
@@ -52493,7 +52493,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Cologne_Province -1 Persian Spearmen
         inc_recruit_pool Cologne_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Cologne_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Cologne_Province -1 Azenuri Infantry
         inc_recruit_pool Cologne_Province -1 Azenuri Cavalry
         end_if
@@ -52836,7 +52836,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Yaroslavl_Province -1 Persian Spearmen
         inc_recruit_pool Yaroslavl_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Yaroslavl_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Yaroslavl_Province -1 Azenuri Infantry
         inc_recruit_pool Yaroslavl_Province -1 Azenuri Cavalry
         end_if
@@ -53179,7 +53179,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Al_Aqaba_Province -1 Persian Spearmen
         inc_recruit_pool Al_Aqaba_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Al_Aqaba_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Al_Aqaba_Province -1 Azenuri Infantry
         inc_recruit_pool Al_Aqaba_Province -1 Azenuri Cavalry
         end_if
@@ -53522,7 +53522,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Ankara_Province -1 Persian Spearmen
         inc_recruit_pool Ankara_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Ankara_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Ankara_Province -1 Azenuri Infantry
         inc_recruit_pool Ankara_Province -1 Azenuri Cavalry
         end_if
@@ -53865,7 +53865,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kerak_Province -1 Persian Spearmen
         inc_recruit_pool Kerak_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kerak_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kerak_Province -1 Azenuri Infantry
         inc_recruit_pool Kerak_Province -1 Azenuri Cavalry
         end_if
@@ -54208,7 +54208,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Eikundarsund_Province -1 Persian Spearmen
         inc_recruit_pool Eikundarsund_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Eikundarsund_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Eikundarsund_Province -1 Azenuri Infantry
         inc_recruit_pool Eikundarsund_Province -1 Azenuri Cavalry
         end_if
@@ -54551,7 +54551,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Galway_Province -1 Persian Spearmen
         inc_recruit_pool Galway_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Galway_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Galway_Province -1 Azenuri Infantry
         inc_recruit_pool Galway_Province -1 Azenuri Cavalry
         end_if
@@ -54894,7 +54894,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Palanga_Province -1 Persian Spearmen
         inc_recruit_pool Palanga_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Palanga_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Palanga_Province -1 Azenuri Infantry
         inc_recruit_pool Palanga_Province -1 Azenuri Cavalry
         end_if
@@ -55237,7 +55237,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Pskov_Province -1 Persian Spearmen
         inc_recruit_pool Pskov_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Pskov_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Pskov_Province -1 Azenuri Infantry
         inc_recruit_pool Pskov_Province -1 Azenuri Cavalry
         end_if
@@ -55580,7 +55580,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Visby_Province -1 Persian Spearmen
         inc_recruit_pool Visby_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Visby_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Visby_Province -1 Azenuri Infantry
         inc_recruit_pool Visby_Province -1 Azenuri Cavalry
         end_if
@@ -55923,7 +55923,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Roskilde_Province -1 Persian Spearmen
         inc_recruit_pool Roskilde_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Roskilde_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Roskilde_Province -1 Azenuri Infantry
         inc_recruit_pool Roskilde_Province -1 Azenuri Cavalry
         end_if
@@ -56266,7 +56266,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Lund_Province -1 Persian Spearmen
         inc_recruit_pool Lund_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Lund_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Lund_Province -1 Azenuri Infantry
         inc_recruit_pool Lund_Province -1 Azenuri Cavalry
         end_if
@@ -56609,7 +56609,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Mashhad_Province -1 Persian Spearmen
         inc_recruit_pool Mashhad_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Mashhad_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Mashhad_Province -1 Azenuri Infantry
         inc_recruit_pool Mashhad_Province -1 Azenuri Cavalry
         end_if
@@ -56952,7 +56952,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kerman_Province -1 Persian Spearmen
         inc_recruit_pool Kerman_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kerman_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kerman_Province -1 Azenuri Infantry
         inc_recruit_pool Kerman_Province -1 Azenuri Cavalry
         end_if
@@ -57295,7 +57295,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Urgench_Province -1 Persian Spearmen
         inc_recruit_pool Urgench_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Urgench_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Urgench_Province -1 Azenuri Infantry
         inc_recruit_pool Urgench_Province -1 Azenuri Cavalry
         end_if
@@ -57638,7 +57638,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Ray_Province -1 Persian Spearmen
         inc_recruit_pool Ray_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Ray_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Ray_Province -1 Azenuri Infantry
         inc_recruit_pool Ray_Province -1 Azenuri Cavalry
         end_if
@@ -57981,7 +57981,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Isfahan_Province -1 Persian Spearmen
         inc_recruit_pool Isfahan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Isfahan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Isfahan_Province -1 Azenuri Infantry
         inc_recruit_pool Isfahan_Province -1 Azenuri Cavalry
         end_if
@@ -58324,7 +58324,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Shiraz_Province -1 Persian Spearmen
         inc_recruit_pool Shiraz_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Shiraz_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Shiraz_Province -1 Azenuri Infantry
         inc_recruit_pool Shiraz_Province -1 Azenuri Cavalry
         end_if
@@ -58667,7 +58667,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Sharjah_Province -1 Persian Spearmen
         inc_recruit_pool Sharjah_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Sharjah_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Sharjah_Province -1 Azenuri Infantry
         inc_recruit_pool Sharjah_Province -1 Azenuri Cavalry
         end_if
@@ -59010,7 +59010,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Gorgan_Province -1 Persian Spearmen
         inc_recruit_pool Gorgan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Gorgan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Gorgan_Province -1 Azenuri Infantry
         inc_recruit_pool Gorgan_Province -1 Azenuri Cavalry
         end_if
@@ -59353,7 +59353,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Khiva_Province -1 Persian Spearmen
         inc_recruit_pool Khiva_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Khiva_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Khiva_Province -1 Azenuri Infantry
         inc_recruit_pool Khiva_Province -1 Azenuri Cavalry
         end_if
@@ -59696,7 +59696,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kazan_Province -1 Persian Spearmen
         inc_recruit_pool Kazan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kazan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kazan_Province -1 Azenuri Infantry
         inc_recruit_pool Kazan_Province -1 Azenuri Cavalry
         end_if
@@ -60039,7 +60039,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Tayma_Province -1 Persian Spearmen
         inc_recruit_pool Tayma_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Tayma_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Tayma_Province -1 Azenuri Infantry
         inc_recruit_pool Tayma_Province -1 Azenuri Cavalry
         end_if
@@ -60382,7 +60382,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Jaiksk_Province -1 Persian Spearmen
         inc_recruit_pool Jaiksk_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Jaiksk_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Jaiksk_Province -1 Azenuri Infantry
         inc_recruit_pool Jaiksk_Province -1 Azenuri Cavalry
         end_if
@@ -60725,7 +60725,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Konjikala_Province -1 Persian Spearmen
         inc_recruit_pool Konjikala_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Konjikala_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Konjikala_Province -1 Azenuri Infantry
         inc_recruit_pool Konjikala_Province -1 Azenuri Cavalry
         end_if
@@ -61068,7 +61068,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Yazd_Province -1 Persian Spearmen
         inc_recruit_pool Yazd_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Yazd_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Yazd_Province -1 Azenuri Infantry
         inc_recruit_pool Yazd_Province -1 Azenuri Cavalry
         end_if
@@ -61411,7 +61411,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Al-Mahdiya_Province -1 Persian Spearmen
         inc_recruit_pool Al-Mahdiya_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Al-Mahdiya_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Al-Mahdiya_Province -1 Azenuri Infantry
         inc_recruit_pool Al-Mahdiya_Province -1 Azenuri Cavalry
         end_if
@@ -61754,7 +61754,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Zhytomyr_Province -1 Persian Spearmen
         inc_recruit_pool Zhytomyr_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Zhytomyr_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Zhytomyr_Province -1 Azenuri Infantry
         inc_recruit_pool Zhytomyr_Province -1 Azenuri Cavalry
         end_if
@@ -62097,7 +62097,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Polotsk_Province -1 Persian Spearmen
         inc_recruit_pool Polotsk_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Polotsk_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Polotsk_Province -1 Azenuri Infantry
         inc_recruit_pool Polotsk_Province -1 Azenuri Cavalry
         end_if
@@ -62440,7 +62440,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Embi_Province -1 Persian Spearmen
         inc_recruit_pool Embi_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Embi_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Embi_Province -1 Azenuri Infantry
         inc_recruit_pool Embi_Province -1 Azenuri Cavalry
         end_if
@@ -62783,7 +62783,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Damghan_Province -1 Persian Spearmen
         inc_recruit_pool Damghan_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Damghan_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Damghan_Province -1 Azenuri Infantry
         inc_recruit_pool Damghan_Province -1 Azenuri Cavalry
         end_if
@@ -63126,7 +63126,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Turku_Province -1 Persian Spearmen
         inc_recruit_pool Turku_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Turku_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Turku_Province -1 Azenuri Infantry
         inc_recruit_pool Turku_Province -1 Azenuri Cavalry
         end_if
@@ -63469,7 +63469,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Fes_Province -1 Persian Spearmen
         inc_recruit_pool Fes_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Fes_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Fes_Province -1 Azenuri Infantry
         inc_recruit_pool Fes_Province -1 Azenuri Cavalry
         end_if
@@ -64154,7 +64154,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kermanshah_Province -1 Persian Spearmen
         inc_recruit_pool Kermanshah_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kermanshah_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kermanshah_Province -1 Azenuri Infantry
         inc_recruit_pool Kermanshah_Province -1 Azenuri Cavalry
         end_if
@@ -64497,7 +64497,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Tabriz_Province -1 Persian Spearmen
         inc_recruit_pool Tabriz_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Tabriz_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Tabriz_Province -1 Azenuri Infantry
         inc_recruit_pool Tabriz_Province -1 Azenuri Cavalry
         end_if
@@ -64840,7 +64840,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Pereyaslav_Province -1 Persian Spearmen
         inc_recruit_pool Pereyaslav_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Pereyaslav_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Pereyaslav_Province -1 Azenuri Infantry
         inc_recruit_pool Pereyaslav_Province -1 Azenuri Cavalry
         end_if
@@ -65183,7 +65183,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Adrianople_Province -1 Persian Spearmen
         inc_recruit_pool Adrianople_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Adrianople_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Adrianople_Province -1 Azenuri Infantry
         inc_recruit_pool Adrianople_Province -1 Azenuri Cavalry
         end_if
@@ -65526,7 +65526,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Seville_Province -1 Persian Spearmen
         inc_recruit_pool Seville_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Seville_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Seville_Province -1 Azenuri Infantry
         inc_recruit_pool Seville_Province -1 Azenuri Cavalry
         end_if
@@ -65869,7 +65869,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Aberdeen_Province -1 Persian Spearmen
         inc_recruit_pool Aberdeen_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Aberdeen_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Aberdeen_Province -1 Azenuri Infantry
         inc_recruit_pool Aberdeen_Province -1 Azenuri Cavalry
         end_if
@@ -66212,7 +66212,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Oran_Province -1 Persian Spearmen
         inc_recruit_pool Oran_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Oran_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Oran_Province -1 Azenuri Infantry
         inc_recruit_pool Oran_Province -1 Azenuri Cavalry
         end_if
@@ -66555,7 +66555,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Hrodna_Province -1 Persian Spearmen
         inc_recruit_pool Hrodna_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Hrodna_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Hrodna_Province -1 Azenuri Infantry
         inc_recruit_pool Hrodna_Province -1 Azenuri Cavalry
         end_if
@@ -66898,7 +66898,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Azaq_Province -1 Persian Spearmen
         inc_recruit_pool Azaq_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Azaq_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Azaq_Province -1 Azenuri Infantry
         inc_recruit_pool Azaq_Province -1 Azenuri Cavalry
         end_if
@@ -67241,7 +67241,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Reval_Province -1 Persian Spearmen
         inc_recruit_pool Reval_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Reval_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Reval_Province -1 Azenuri Infantry
         inc_recruit_pool Reval_Province -1 Azenuri Cavalry
         end_if
@@ -67584,7 +67584,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Varad_Province -1 Persian Spearmen
         inc_recruit_pool Varad_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Varad_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Varad_Province -1 Azenuri Infantry
         inc_recruit_pool Varad_Province -1 Azenuri Cavalry
         end_if
@@ -67927,7 +67927,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kalmar_Province -1 Persian Spearmen
         inc_recruit_pool Kalmar_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kalmar_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kalmar_Province -1 Azenuri Infantry
         inc_recruit_pool Kalmar_Province -1 Azenuri Cavalry
         end_if
@@ -68270,7 +68270,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Yelabuga_Province -1 Persian Spearmen
         inc_recruit_pool Yelabuga_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Yelabuga_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Yelabuga_Province -1 Azenuri Infantry
         inc_recruit_pool Yelabuga_Province -1 Azenuri Cavalry
         end_if
@@ -68613,7 +68613,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Alamut_Province -1 Persian Spearmen
         inc_recruit_pool Alamut_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Alamut_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Alamut_Province -1 Azenuri Infantry
         inc_recruit_pool Alamut_Province -1 Azenuri Cavalry
         end_if
@@ -68956,7 +68956,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Murom_Province -1 Persian Spearmen
         inc_recruit_pool Murom_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Murom_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Murom_Province -1 Azenuri Infantry
         inc_recruit_pool Murom_Province -1 Azenuri Cavalry
         end_if
@@ -69299,7 +69299,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Isparta_Province -1 Persian Spearmen
         inc_recruit_pool Isparta_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Isparta_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Isparta_Province -1 Azenuri Infantry
         inc_recruit_pool Isparta_Province -1 Azenuri Cavalry
         end_if
@@ -69642,7 +69642,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Kutaisi_Province -1 Persian Spearmen
         inc_recruit_pool Kutaisi_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Kutaisi_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Kutaisi_Province -1 Azenuri Infantry
         inc_recruit_pool Kutaisi_Province -1 Azenuri Cavalry
         end_if
@@ -69985,7 +69985,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Ahvaz_Province -1 Persian Spearmen
         inc_recruit_pool Ahvaz_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Ahvaz_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Ahvaz_Province -1 Azenuri Infantry
         inc_recruit_pool Ahvaz_Province -1 Azenuri Cavalry
         end_if
@@ -70328,7 +70328,7 @@ monitor_event SettlementTurnEnd SettlementIsLocal
         inc_recruit_pool Serdobinskaya_Province -1 Persian Spearmen
         inc_recruit_pool Serdobinskaya_Province -1 Greek Bodyguard ; 22
         inc_recruit_pool Serdobinskaya_Province -1 Polotsk Boyar Druzhina
-        if I_EventCounter georgia_exits = 1
+        if I_EventCounter georgia_exist = 1
         inc_recruit_pool Serdobinskaya_Province -1 Azenuri Infantry
         inc_recruit_pool Serdobinskaya_Province -1 Azenuri Cavalry
         end_if

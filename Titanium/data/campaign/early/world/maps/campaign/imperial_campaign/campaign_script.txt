@@ -32,6 +32,7 @@
 ;---- Interactive Events
 ;* 5)EMERGENT FACTIONS/NATIONAL UPRISINGS
 ;---- William Wallace Uprising
+;---- Saladin Emergent
 ;---- Teutonic Order Emergent
 ;---- Golden Horde Emergent
 ;---- Bulgarian Uprising
@@ -692,10 +693,6 @@ end_monitor
 ;========================================================
 
 ;==================== Reset counters ====================
-;declare_counter campaign_year
-;declare_counter campaign_year_set
-;set_counter campaign_year_set -1
-
 declare_counter new_fturn
 declare_counter christian_faction
 set_event_counter lithuania_catholic 0 ; Used in descr_faction_standing.txt
@@ -1329,9 +1326,9 @@ monitor_event FactionTurnStart
 
  ;Seljuk Reinforcement
  if I_EventCounter DifficultyLevel > 1
- and not I_IsFactionAIControlled byzantium
- and I_IsFactionAIControlled turks
-	spawn_army 
+	if not I_IsFactionAIControlled byzantium
+	and I_IsFactionAIControlled turks
+		spawn_army 
 		faction turks
 		character	Kasim, general, age 28, x 293, y 135
 		unit		ME Bodyguard		exp 1 armour 0 weapon_lvl 0
@@ -1348,8 +1345,15 @@ monitor_event FactionTurnStart
 		unit		ME Spear Militia		exp 0 armour 0 weapon_lvl 0
 		unit		Turkomans			exp 1 armour 0 weapon_lvl 0
 		unit		Turkomans			exp 1 armour 0 weapon_lvl 0
-	end
-	add_money turks 8000
+		end
+		add_money turks 8000
+	end_if
+ ;Constantinople Reinforcement
+	if not I_IsFactionAIControlled turks
+	and I_IsFactionAIControlled byzantium
+		console_command create_unit Constantinople "Spartharii tou Vasileos" 4 3 0 0
+		console_command create_unit Constantinople "Mourtatoi" 2 3 0 0
+	end_if
  end_if
 
  if I_EventCounter DifficultyLevel <= 2
@@ -4290,26 +4294,20 @@ monitor_event CharacterTurnStart CharacterIsLocal
 	and Trait ArmyCost > 0
 
 	if I_TurnNumber < 20
-	;if I_EventCounter Campaign_Year < 20
 	console_command add_money -150
 	end_if
 
 	if I_TurnNumber < 40
 	and I_TurnNumber >= 20
-	;if I_EventCounter Campaign_Year >= 20
-	;and I_EventCounter Campaign_Year < 40
 	 console_command add_money -210
 	end_if
 
 	if I_TurnNumber < 80
 	and I_TurnNumber >= 40
-	;if I_EventCounter Campaign_Year >= 40
-	;and I_EventCounter Campaign_Year < 80
 	 console_command add_money -300
 	end_if
 
 	if I_TurnNumber >= 80
-	;if I_EventCounter Campaign_Year >= 80
 	 console_command add_money -400
 	end_if
 
@@ -8837,34 +8835,128 @@ end_monitor
 
 monitor_event CharacterTurnStart CharFactionType scotland
 	and Trait ScotlandHero = 1
-	and not I_SettlementOwner Edinburgh = scotland
 	and I_IsFactionAIControlled scotland
 	
-	if I_AtSea scotland4wallace ; to avoid the case he lost a battle and retreated at a ship near Edinburg
+	if I_SettlementOwner Edinburgh = scotland
 		terminate_monitor
+	end_if
+	
+	if I_AtSea scotland4wallace ; to avoid the case he lost a battle and retreated at a ship near Edinburgh
+		set_counter wallace_spawned 4
 	end_if
 
 	if I_SettlementUnderSiege Edinburgh;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_edinburgh = 0
-		terminate_monitor
+	and I_CompareCounter wallace_spawned != 3
+		set_counter wallace_spawned 4
 	end_if
 
 	if not I_CharacterTypeNearTile scotland, named_character, 5, 57, 248 ;if character not standing where it should, avoid ctd
-		terminate_monitor
+		set_counter wallace_spawned 4
 	end_if
 
 	if I_SettlementUnderSiege Edinburgh
-	and I_CompareCounter attack_edinburgh = 3
+	and I_CompareCounter wallace_spawned = 3
 		siege_settlement scotland4wallace, Edinburgh, attack
 		set_counter wallace_spawned 2
 		terminate_monitor
 	end_if
 
 	if not I_SettlementUnderSiege Edinburgh
+	and I_CompareCounter wallace_spawned != 4
 		siege_settlement scotland4wallace, Edinburgh, maintain
 		set_counter wallace_spawned 3
 	end_if
 	
+	if I_CompareCounter wallace_spawned = 4
+		set_counter wallace_spawned 2
+	end_if
+end_monitor
+
+;============== Saladin Emergent ================
+add_events
+	event	counter	SaladinSet
+	date	63
+	event	counter	SaladinSet
+	date	71
+end_add_events
+
+declare_counter saladin_spawned
+set_counter saladin_spawned 0
+
+monitor_event FactionTurnStart FactionType egypt
+	and I_EventCounter SaladinSet = 2
+
+	if I_CompareCounter saladin_spawned = 0
+		set_counter saladin_spawned 2
+	end_if
+	
+terminate_monitor
+end_monitor
+
+monitor_event FactionTurnStart FactionType egypt
+	and I_EventCounter SaladinSet >= 1
+	and I_NumberOfSettlements egypt < 4
+
+	if I_CompareCounter saladin_spawned = 0
+		set_counter saladin_spawned 1
+	end_if
+
+terminate_monitor
+end_monitor
+
+monitor_event PreFactionTurnStart FactionType egypt
+	and I_CompareCounter saladin_spawned >= 1
+
+	if I_CompareCounter saladin_spawned = 2
+		spawn_army 
+		faction egypt
+		character	Salahaddin Al_Ayyubi, named character, age 34, x 304, y 61, family, direction SE, portrait saladin, label egypt4saladin
+		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , EgyptHero 1 , BattleChivalry 2 , Loyal 2 , Just 2 , Upright 2 , Austere 2 
+		unit   ME Bodyguard			exp 6 armour 0 weapon_lvl 0
+		unit   Arab Cavalry			exp 2 armour 1 weapon_lvl 0
+		unit   Desert Cavalry			exp 1 armour 0 weapon_lvl 0
+		unit   Dismounted Arab Cavalry	exp 0 armour 0 weapon_lvl 0
+		unit   Saracen Militia			exp 0 armour 0 weapon_lvl 0
+		unit   Desert Archers			exp 0 armour 0 weapon_lvl 0
+		end
+	end_if
+	if I_CompareCounter saladin_spawned = 1
+		spawn_army 
+		faction egypt
+		character	Asadaddin Shirkuh, named character, age 41, x 303, y 61, family, direction SE, label egypt4shirkuh
+		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3
+		unit   ME Bodyguard			exp 6 armour 0 weapon_lvl 0
+		unit   Arab Cavalry			exp 3 armour 1 weapon_lvl 0
+		unit   Desert Cavalry			exp 3 armour 0 weapon_lvl 0
+		unit   Dismounted Arab Cavalry	exp 3 armour 0 weapon_lvl 0
+		unit   Dismounted Arab Cavalry	exp 1 armour 0 weapon_lvl 0
+		unit   Saracen Militia			exp 3 armour 0 weapon_lvl 0
+		unit   Saracen Militia			exp 1 armour 0 weapon_lvl 0
+		unit   Desert Archers			exp 2 armour 0 weapon_lvl 0
+		unit   Desert Archers			exp 0 armour 0 weapon_lvl 0
+		unit   Mamluk Archers			exp 3 armour 0 weapon_lvl 0
+		unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+		faction egypt
+		character	Salahaddin Al_Ayyubi, named character, age 26, x 304, y 61, family, direction SE, portrait saladin, label egypt4saladin
+		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , EgyptHero 1 , BattleChivalry 2 , Loyal 2 , Just 2 , Upright 2 , Austere 2 
+		unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
+		unit   Arab Cavalry			exp 1 armour 1 weapon_lvl 0
+		unit   Desert Cavalry			exp 1 armour 0 weapon_lvl 0
+		unit   Dismounted Arab Cavalry	exp 2 armour 0 weapon_lvl 0
+		unit   Dismounted Arab Cavalry	exp 0 armour 0 weapon_lvl 0
+		unit   Saracen Militia			exp 2 armour 0 weapon_lvl 0
+		unit   Saracen Militia			exp 1 armour 0 weapon_lvl 0
+		unit   Desert Archers			exp 2 armour 0 weapon_lvl 0
+		unit   Mamluk Archers			exp 3 armour 0 weapon_lvl 0
+		unit   Mamluk Archers			exp 0 armour 0 weapon_lvl 0
+		end
+	end_if
+
+	historic_event egypt_saladin false factions { egypt, }
+	set_counter saladin_spawned -1
+terminate_monitor
 end_monitor
 
 ;============== Teutonic Order Emergent =================

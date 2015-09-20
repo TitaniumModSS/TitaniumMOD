@@ -1,0 +1,2151 @@
+;--------------------------------------------------------------------;
+;********************************************************************;
+;***************Royal Ladies of the Court AI EXTRA*******************;
+;********************************************************************;
+;--------------------------------------------------------------------;
+declare_counter courtesan_ai
+monitor_event PreFactionTurnStart IsFactionAIControlled
+	
+	if I_TurnNumber = 30
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 60
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 90
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 120
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 150
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 180
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 210
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 240
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 270
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 300
+		set_counter courtesan_ai 1
+	end_if
+	if I_TurnNumber = 301
+		terminate_monitor
+	end_if
+
+	if I_CompareCounter courtesan_ai = 1
+		if I_NumberOfSettlements byzantium > 3
+		and I_CompareCounter turn_fid = 9
+			if I_SettlementOwner Constantinople = byzantium
+			and RandomPercent < 51
+				spawn_character byzantium random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = byzantium
+			and RandomPercent < 16
+				spawn_character byzantium random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = byzantium
+			and RandomPercent < 16
+				spawn_character byzantium random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = byzantium
+			and RandomPercent < 16
+				spawn_character byzantium random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = byzantium
+			and RandomPercent < 16
+				spawn_character byzantium random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = byzantium
+			and RandomPercent < 34
+				spawn_character byzantium random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements hre > 3
+		and I_CompareCounter turn_fid = 18
+			if I_SettlementOwner Constantinople = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = hre
+			and RandomPercent < 51
+				spawn_character hre random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = hre
+			and RandomPercent < 16
+				spawn_character hre random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = hre
+			and RandomPercent < 16
+				spawn_character hre random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = hre
+			and RandomPercent < 16
+				spawn_character hre random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = hre
+			and RandomPercent < 16
+				spawn_character hre random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = hre
+			and RandomPercent < 34
+				spawn_character hre random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements france > 3
+		and I_CompareCounter turn_fid = 17
+			if I_SettlementOwner Constantinople = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = france
+			and RandomPercent < 51
+				spawn_character france random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = france
+			and RandomPercent < 16
+				spawn_character france random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = france
+			and RandomPercent < 16
+				spawn_character france random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = france
+			and RandomPercent < 16
+				spawn_character france random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = france
+			and RandomPercent < 16
+				spawn_character france random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = france
+			and RandomPercent < 34
+				spawn_character france random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements england > 3
+		and I_CompareCounter turn_fid = 19
+			if I_SettlementOwner Constantinople = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = england
+			and RandomPercent < 51
+				spawn_character england random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = england
+			and RandomPercent < 16
+				spawn_character england random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = england
+			and RandomPercent < 16
+				spawn_character england random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = england
+			and RandomPercent < 16
+				spawn_character england random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = england
+			and RandomPercent < 16
+				spawn_character england random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = england
+			and RandomPercent < 34
+				spawn_character england random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements scotland > 3
+		and I_CompareCounter turn_fid = 16
+			if I_SettlementOwner Constantinople = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = scotland
+			and RandomPercent < 16
+				spawn_character scotland random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = scotland
+			and RandomPercent < 16
+				spawn_character scotland random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = scotland
+			and RandomPercent < 16
+				spawn_character scotland random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = scotland
+			and RandomPercent < 16
+				spawn_character scotland random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = scotland
+			and RandomPercent < 51
+				spawn_character scotland random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = scotland
+			and RandomPercent < 34
+				spawn_character scotland random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements denmark > 3
+		and I_CompareCounter turn_fid = 15
+			if I_SettlementOwner Constantinople = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = denmark
+			and RandomPercent < 51
+				spawn_character denmark random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = denmark
+			and RandomPercent < 16
+				spawn_character denmark random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = denmark
+			and RandomPercent < 16
+				spawn_character denmark random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = denmark
+			and RandomPercent < 16
+				spawn_character denmark random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = denmark
+			and RandomPercent < 16
+				spawn_character denmark random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = denmark
+			and RandomPercent < 34
+				spawn_character denmark random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements norway > 3
+		and I_CompareCounter turn_fid = 26
+			if I_SettlementOwner Constantinople = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = norway
+			and RandomPercent < 51
+				spawn_character norway random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = norway
+			and RandomPercent < 16
+				spawn_character norway random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = norway
+			and RandomPercent < 16
+				spawn_character norway random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = norway
+			and RandomPercent < 16
+				spawn_character norway random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = norway
+			and RandomPercent < 16
+				spawn_character norway random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = norway
+			and RandomPercent < 34
+				spawn_character norway random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements spain > 3
+		and I_CompareCounter turn_fid = 22
+			if I_SettlementOwner Constantinople = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = spain
+			and RandomPercent < 51
+				spawn_character spain random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = spain
+			and RandomPercent < 16
+				spawn_character spain random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = spain
+			and RandomPercent < 16
+				spawn_character spain random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = spain
+			and RandomPercent < 16
+				spawn_character spain random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = spain
+			and RandomPercent < 16
+				spawn_character spain random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = spain
+			and RandomPercent < 34
+				spawn_character spain random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements aragon > 3
+		and I_CompareCounter turn_fid = 24
+			if I_SettlementOwner Constantinople = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = aragon
+			and RandomPercent < 16
+				spawn_character aragon random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = aragon
+			and RandomPercent < 16
+				spawn_character aragon random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = aragon
+			and RandomPercent < 16
+				spawn_character aragon random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = aragon
+			and RandomPercent < 16
+				spawn_character aragon random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = aragon
+			and RandomPercent < 51
+				spawn_character aragon random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = aragon
+			and RandomPercent < 34
+				spawn_character aragon random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements portugal > 3
+		and I_CompareCounter turn_fid = 20
+		and I_EventCounter zirids_exist != 1
+			if I_SettlementOwner Constantinople = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = portugal
+			and RandomPercent < 16
+				spawn_character portugal random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = portugal
+			and RandomPercent < 16
+				spawn_character portugal random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = portugal
+			and RandomPercent < 16
+				spawn_character portugal random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = portugal
+			and RandomPercent < 16
+				spawn_character portugal random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = portugal
+			and RandomPercent < 34
+				spawn_character portugal random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements milan > 3
+		and I_CompareCounter turn_fid = 14
+			if I_SettlementOwner Constantinople = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = milan
+			and RandomPercent < 16
+				spawn_character milan random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = milan
+			and RandomPercent < 16
+				spawn_character milan random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = milan
+			and RandomPercent < 51
+				spawn_character milan random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = milan
+			and RandomPercent < 16
+				spawn_character milan random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = milan
+			and RandomPercent < 16
+				spawn_character milan random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = milan
+			and RandomPercent < 34
+				spawn_character milan random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements venice > 3
+		and I_CompareCounter turn_fid = 12
+			if I_SettlementOwner Constantinople = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = venice
+			and RandomPercent < 16
+				spawn_character venice random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = venice
+			and RandomPercent < 16
+				spawn_character venice random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = venice
+			and RandomPercent < 16
+				spawn_character venice random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = venice
+			and RandomPercent < 51
+				spawn_character venice random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = venice
+			and RandomPercent < 16
+				spawn_character venice random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = venice
+			and RandomPercent < 34
+				spawn_character venice random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements sicily > 3
+		and I_CompareCounter turn_fid = 13
+		and I_EventCounter hafsids_exist != 1
+			if I_SettlementOwner Constantinople = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = sicily
+			and RandomPercent < 16
+				spawn_character sicily random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = sicily
+			and RandomPercent < 51
+				spawn_character sicily random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = sicily
+			and RandomPercent < 16
+				spawn_character sicily random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = sicily
+			and RandomPercent < 16
+				spawn_character sicily random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = sicily
+			and RandomPercent < 16
+				spawn_character sicily random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = sicily
+			and RandomPercent < 34
+				spawn_character sicily random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements hungary > 3
+		and I_CompareCounter turn_fid = 23
+			if I_SettlementOwner Constantinople = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = hungary
+			and RandomPercent < 16
+				spawn_character hungary random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = hungary
+			and RandomPercent < 16
+				spawn_character hungary random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = hungary
+			and RandomPercent < 16
+				spawn_character hungary random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = hungary
+			and RandomPercent < 51
+				spawn_character hungary random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = hungary
+			and RandomPercent < 16
+				spawn_character hungary random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = hungary
+			and RandomPercent < 34
+				spawn_character hungary random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements poland > 3
+		and I_CompareCounter turn_fid = 21
+			if I_SettlementOwner Constantinople = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = poland
+			and RandomPercent < 16
+				spawn_character poland random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = poland
+			and RandomPercent < 16
+				spawn_character poland random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = poland
+			and RandomPercent < 16
+				spawn_character poland random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = poland
+			and RandomPercent < 51
+				spawn_character poland random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = poland
+			and RandomPercent < 16
+				spawn_character poland random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = poland
+			and RandomPercent < 34
+				spawn_character poland random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements lithuania > 3
+		and I_CompareCounter turn_fid = 6
+			if I_SettlementOwner Constantinople = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = lithuania
+			and RandomPercent < 16
+				spawn_character lithuania random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = lithuania
+			and RandomPercent < 16
+				spawn_character lithuania random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = lithuania
+			and RandomPercent < 16
+				spawn_character lithuania random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = lithuania
+			and RandomPercent < 16
+				spawn_character lithuania random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = lithuania
+			and RandomPercent < 51
+				spawn_character lithuania random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = lithuania
+			and RandomPercent < 34
+				spawn_character lithuania random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements russia > 3
+		and I_CompareCounter turn_fid = 10
+			if I_SettlementOwner Constantinople = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = russia
+			and RandomPercent < 16
+				spawn_character russia random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = russia
+			and RandomPercent < 16
+				spawn_character russia random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = russia
+			and RandomPercent < 16
+				spawn_character russia random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = russia
+			and RandomPercent < 51
+				spawn_character russia random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = russia
+			and RandomPercent < 16
+				spawn_character russia random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = russia
+			and RandomPercent < 16
+				spawn_character russia random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = russia
+			and RandomPercent < 34
+				spawn_character russia random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements kievan_rus > 3
+		and I_CompareCounter turn_fid = 11
+			if I_SettlementOwner Constantinople = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = kievan_rus
+			and RandomPercent < 16
+				spawn_character kievan_rus random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = kievan_rus
+			and RandomPercent < 16
+				spawn_character kievan_rus random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = kievan_rus
+			and RandomPercent < 16
+				spawn_character kievan_rus random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = kievan_rus
+			and RandomPercent < 51
+				spawn_character kievan_rus random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = kievan_rus
+			and RandomPercent < 16
+				spawn_character kievan_rus random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = kievan_rus
+			and RandomPercent < 16
+				spawn_character kievan_rus random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = kievan_rus
+			and RandomPercent < 34
+				spawn_character kievan_rus random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements jerusalem > 3
+		and I_CompareCounter turn_fid = 27
+			if I_SettlementOwner Constantinople = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = jerusalem
+			and RandomPercent < 16
+				spawn_character jerusalem random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = jerusalem
+			and RandomPercent < 16
+				spawn_character jerusalem random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = jerusalem
+			and RandomPercent < 16
+				spawn_character jerusalem random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = jerusalem
+			and RandomPercent < 16
+				spawn_character jerusalem random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = jerusalem
+			and RandomPercent < 51
+				spawn_character jerusalem random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = jerusalem
+			and RandomPercent < 34
+				spawn_character jerusalem random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements georgia > 3
+		and I_CompareCounter turn_fid = 29
+			if I_SettlementOwner Constantinople = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = georgia
+			and RandomPercent < 16
+				spawn_character georgia random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = georgia
+			and RandomPercent < 51
+				spawn_character georgia random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = georgia
+			and RandomPercent < 34
+				spawn_character georgia random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+
+		if I_NumberOfSettlements cumans > 3
+		and I_CompareCounter turn_fid = 7
+			if I_SettlementOwner Constantinople = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 284, y 142
+			end_if
+			if I_SettlementOwner London = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 80, y 217
+			end_if
+			if I_SettlementOwner Frankfurt = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 140, y 206
+			end_if
+			if I_SettlementOwner Paris = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 93, y 197
+			end_if
+			if I_SettlementOwner Arhus = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 150, y 250
+			end_if
+			if I_SettlementOwner Oslo = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Leon = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 120, y 269
+			end_if
+			if I_SettlementOwner Lisbon = cumans
+			and RandomPercent < 16
+				spawn_character cumans random_name, princess, age 19, x 13, y 127
+			end_if
+			if I_SettlementOwner Naples = cumans
+			and RandomPercent < 16
+				spawn_character cumans random_name, princess, age 19, x 182, y 139
+			end_if
+			if I_SettlementOwner Genoa = cumans
+			and RandomPercent < 16
+				spawn_character cumans random_name, princess, age 19, x 142, y 166
+			end_if
+			if I_SettlementOwner Novgorod = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 303, y 267
+			end_if
+			if I_SettlementOwner Krakow = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 217, y 208
+			end_if
+			if I_SettlementOwner Kiev = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 297, y 209
+			end_if
+			if I_SettlementOwner Venice = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 168, y 173
+			end_if
+			if I_SettlementOwner Esztergom = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 213, y 191
+			end_if
+			if I_SettlementOwner Milan = cumans
+			and RandomPercent < 16
+				spawn_character cumans random_name, princess, age 19, x 144, y 175
+			end_if
+			if I_SettlementOwner Edinburgh = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 59, y 248
+			end_if
+			if I_SettlementOwner Zaragoza = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 78, y 147
+			end_if
+			if I_SettlementOwner Cordoba = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 42, y 117
+			end_if
+			if I_SettlementOwner Rome = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 169, y 146
+			end_if
+			if I_SettlementOwner Jerusalem = cumans
+			and RandomPercent < 51
+				spawn_character cumans random_name, princess, age 19, x 330, y 74
+			end_if
+			if I_SettlementOwner Ryazan = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 225, y 157
+			end_if
+			if I_SettlementOwner Vilnius = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 260, y 239
+			end_if
+			if I_SettlementOwner Qarisiya = cumans
+			and RandomPercent < 34
+				spawn_character cumans random_name, princess, age 19, x 262, y 157
+			end_if
+		end_if
+		set_counter courtesan_ai 0
+	end_if
+end_monitor
+
+;=======================================================================
+;END:------------- Royal Ladies of the Court AI EXTRA -----------------;
+;=======================================================================
