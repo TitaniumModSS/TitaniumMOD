@@ -10,13 +10,12 @@ fort 53 266 stone_fort_b culture northern_european
 region Eikundarsund_Province; Scottish Isles Province, Kirkjuvagr
 fort 45 236 stone_fort_b culture northern_european
 
-region Aberdeen_Province
-watchtower 58 256
-
 region Edinburgh_Province
 watchtower 46 245
+watchtower 58 256
 fort 47 247 stone_fort_b culture northern_european
 fort 42 241 stone_fort_b culture northern_european
+fort 62 257 stone_fort_b culture northern_european
 
 region York_Province
 watchtower 66 245
@@ -55,10 +54,6 @@ region Oslo_Province
 watchtower 152 272
 watchtower 163 266
 
-region Skara_Province
-watchtower 178 264
-watchtower 167 257
-
 region Arhus_Province
 watchtower 139 254
 watchtower 148 241
@@ -69,11 +64,6 @@ watchtower 117 276
 watchtower 129 265
 watchtower 136 276
 fort 121 267 stone_fort_b culture northern_european
-
-region Uppsala_Province
-watchtower 186 273
-watchtower 210 273
-fort 201 269 stone_fort_b culture northern_european
 
 region Visby_Province
 watchtower 212 261
@@ -86,6 +76,13 @@ watchtower 183 249
 
 region Kalmar_Province
 watchtower 197 262
+watchtower 186 273
+watchtower 210 273
+watchtower 178 264
+watchtower 167 257
+fort 201 269 stone_fort_b culture northern_european
+fort 206 276 stone_fort_b culture northern_european
+fort 175 265 stone_fort_b culture northern_european
 
 ; RUSLAND-STEPPES
 region Novgorod_Province
@@ -266,6 +263,8 @@ region Prague_Province
 watchtower 169 206
 watchtower 191 206
 
+;region Uppsala_Province; Moravia Province, Brno
+
 region Esztergom_Province
 watchtower 205 188
 
@@ -325,11 +324,13 @@ region Staufen_Province
 watchtower 133 197
 fort 138 200 holyr_fort_b culture northern_european
 
-region Groningen_Province; Utrecht Province
+;region Groningen_Province; Holland Province, Utrecht
 watchtower 108 219
+
+region Skara_Province; Friesland Province, Groningen
 watchtower 125 226
 watchtower 136 230
-fort 124 228 holyr_fort_b culture northern_european
+fort 119 229 holyr_fort_b culture northern_european
 
 region Vienna_Province
 watchtower 187 182
@@ -379,7 +380,7 @@ watchtower 80 200
 fort 79 191 stone_fort_b culture northern_european
 
 region Angers_Province
-watchtower 81 190
+watchtower 81 191
 
 region Rennes_Province
 watchtower 49 196
@@ -406,9 +407,10 @@ watchtower 120 162
 fort 117 158 stone_fort_b culture northern_european
 
 ; BALKANS
-region Zagreb_Province
-watchtower 194 164
+region Zagreb_Province; Knin
+watchtower 194 165
 watchtower 200 173
+fort 192 176 stone_fort_c culture eastern_european
 
 region Ryazan_Province; Raska Province, Ras
 watchtower 215 159
@@ -449,6 +451,7 @@ watchtower 225 141
 
 region Athens_Province; Dalmatia Province, Zara
 watchtower 194 159
+fort 197 160 stone_fort_c culture eastern_european
 
 region Belgrade_Province; Nysos
 watchtower 228 165
@@ -499,8 +502,9 @@ watchtower 164 176
 
 ;region Venice_Province
 
-region Beleb_el_Anab_Province; Giulia Province, Trieste
+region Beleb_el_Anab_Province; Carniola Province, Laibach
 watchtower 178 169
+fort 176 172 stone_fort_d culture southern_european
 
 region Naples_Province
 watchtower 186 141
@@ -582,11 +586,11 @@ watchtower 72 123
 region Cordoba_Province
 watchtower 45 124
 
-;region Seville_Province; Extremadura Province, Badajoz
-
-region Oran_Province; Western Andalusia Province, Sevilla
+region Seville_Province; Western Andalusia Province
 watchtower 26 116
 watchtower 39 107
+
+;region Oran_Province; Extremadura Province, Badajoz
 
 ; AFRICA
 region Fes_Province
@@ -649,11 +653,10 @@ watchtower 357 167
 watchtower 370 176
 watchtower 391 181
 watchtower 393 196
-watchtower 409 169
+watchtower 408 170
 watchtower 419 161
 watchtower 426 145
-fort 399 159 stone_fort_c culture eastern_european
-fort 425 147 stone_fort_c culture eastern_european
+fort 409 168 stone_fort_c culture eastern_european
 
 region Tmutarakan_Province
 watchtower 342 171
@@ -661,15 +664,19 @@ watchtower 342 171
 region Tbilisi_Province
 watchtower 391 146
 watchtower 398 152
-watchtower 413 143
 
 region Kutaisi_Province
 watchtower 368 157
 watchtower 380 146
 
-region Baku_Province
+region Baku_Province; Shamakhi
+watchtower 413 143
 watchtower 420 135
 watchtower 438 137
+fort 436 137 bz_fort_m culture middle_eastern
+fort 430 133 bz_fort_m culture middle_eastern
+fort 412 138 bz_fort_m culture middle_eastern
+fort 425 147 stone_fort_c culture eastern_european
 
 region Yerevan_Province; Greater Armenia Province, Ani
 watchtower 386 135
@@ -678,6 +685,8 @@ fort 398 135 bz_fort_m culture middle_eastern
 region Qarisiya_Province; Van Province
 watchtower 384 132
 watchtower 398 127
+
+;region Aberdeen_Province; Alania Province
 
 ; ANATOLIA
 region Trebizond_Province

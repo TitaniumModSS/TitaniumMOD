@@ -25,15 +25,6 @@ Eikundarsund_Province; Scottish Isles Province
 	5
 	5
 	religions { catholic 75 orthodox 3 islam 0 pagan 20 heretic 2 }
-Aberdeen_Province
-	Aberdeen
-	scotland
-	Highland_Rebels
-	53 204 103
-	scotland
-	5
-	5
-	religions { catholic 85 orthodox 0 islam 0 pagan 10 heretic 5 }
 Edinburgh_Province
 	Edinburgh
 	scotland
@@ -109,15 +100,6 @@ Oslo_Province
 	5
 	5
 	religions { catholic 80 orthodox 3 islam 0 pagan 15 heretic 2 }
-Skara_Province; Westro-Gothia Province
-	Skara
-	norway
-	Swedish_Rebels
-	255 125 190
-	norway, no_pirates
-	5
-	5
-	religions { catholic 65 orthodox 1 islam 0 pagan 25 heretic 9 }
 Arhus_Province
 	Arhus
 	denmark
@@ -135,15 +117,6 @@ Bergen_Province
 	norway, no_pirates
 	5
 	5
-	religions { catholic 80 orthodox 3 islam 0 pagan 15 heretic 2 }
-Uppsala_Province
-	Uppsala
-	norway
-	Swedish_Rebels
-	0 255 128
-	norway
-	5
-	4
 	religions { catholic 80 orthodox 3 islam 0 pagan 15 heretic 2 }
 Visby_Province
 	Visby
@@ -466,6 +439,15 @@ Prague_Province
 	5
 	4
 	religions { catholic 80 orthodox 2 islam 0 pagan 6 heretic 12 }
+Uppsala_Province; Moravia Province
+	Uppsala; Brno
+	poland
+	Bohemian_Rebels
+	0 255 128
+	hre, poland
+	5
+	4
+	religions { catholic 80 orthodox 3 islam 0 pagan 5 heretic 12 }
 Esztergom_Province
 	Esztergom
 	hungary
@@ -595,15 +577,24 @@ Staufen_Province
 	5
 	5
 	religions { catholic 90 orthodox 2 islam 0 pagan 6 heretic 2 }
-Groningen_Province; Utrecht Province
+Groningen_Province; Holland Province, Utrecht
 	Groningen; Utrecht
-	denmark
+	hre
 	Flemish_Rebels
 	98 30 86
-	denmark, teutonic_knights_chapter_house
+	hre, teutonic_knights_chapter_house
 	5
 	4
 	religions { catholic 80 orthodox 0 islam 0 pagan 8 heretic 12 }
+Skara_Province; Friesland Province
+	Skara; Groningen
+	denmark
+	Flemish_Rebels
+	255 125 190
+	denmark
+	5
+	5
+	religions { catholic 75 orthodox 0 islam 0 pagan 15 heretic 10 }
 Vienna_Province
 	Vienna
 	hre
@@ -1432,6 +1423,15 @@ Qarisiya_Province; Lesser Armenia Pronvince
 	5
 	4
 	religions { catholic 0 orthodox 20 islam 70 pagan 5 heretic 5 }
+Aberdeen_Province; Alania Province
+	Aberdeen; Maghas
+	scotland
+	Alanian_Rebels
+	53 204 103
+	georgia, cumans
+	5
+	5
+	religions { catholic 0 orthodox 30 islam 20 pagan 45 heretic 5 }
 ;
 ; ANATOLIA
 ;

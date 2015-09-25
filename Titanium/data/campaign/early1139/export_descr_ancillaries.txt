@@ -1,6 +1,6 @@
 ;SS6.4 EDA edited by gracul: Jan-2011
 ;Titanium, edited by gsthoed and melooo182: Sep-2014
-;Early Era
+;Early Era 1139
 
 ;=========================================;
 ;========= ANC TRAITS START HERE =========;
@@ -3863,10 +3863,11 @@ Ancillary king_eikundarsund ;Kirkjuvagr
  EffectsDescription king_eikundarsund_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary king_eloued ;Trieste
+Ancillary king_eloued ;Laibach
  Type dearmad_her
  Transferable 1
- Image govern_trieste.tga
+ ;Image govern_trieste.tga
+ Image govern_laibach.tga
  Description king_eloued_desc
  EffectsDescription king_eloued_effects_desc
  Effect TaxCollection 5
@@ -4124,7 +4125,8 @@ Ancillary king_sinop
 Ancillary king_skara
  Type dearmad_her
  Transferable 1
- Image king_skara.tga
+ ;Image king_skara.tga
+ Image king_groningen.tga
  Description king_skara_desc
  EffectsDescription king_skara_effects_desc
  Effect TaxCollection 5
@@ -4161,7 +4163,8 @@ Ancillary king_tortosa
 Ancillary king_uppsala 
  Type dearmad_her
  Transferable 1
- Image king_uppsala.tga
+ ;Image king_uppsala.tga
+ Image govern_moravia.tga
  Description king_uppsala_desc
  EffectsDescription king_uppsala_effects_desc
  Effect TaxCollection 5
@@ -4437,7 +4440,8 @@ Ancillary king_oran
 Ancillary king_aberdeen 
  Type dearmad_her
  Transferable 1
- Image king_aberdeen.tga
+ ;Image king_aberdeen.tga
+ Image govern_maghas.tga
  Description king_aberdeen_desc
  EffectsDescription king_aberdeen_effects_desc
  Effect TaxCollection 5
@@ -5802,10 +5806,11 @@ Ancillary iking_eikundarsund ;Kirkjuvagr
  EffectsDescription iking_eikundarsund_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary iking_eloued ;Trieste
+Ancillary iking_eloued ;Laibach
  Type dearmad_her
  Transferable 1
- Image govern_trieste.tga
+ ;Image govern_trieste.tga
+ Image govern_laibach.tga
  Description iking_eloued_desc
  EffectsDescription iking_eloued_effects_desc
  Effect TaxCollection 5
@@ -6063,7 +6068,8 @@ Ancillary iking_sinop
 Ancillary iking_skara 
  Type dearmad_her
  Transferable 1
- Image king_skara.tga
+ ;Image king_skara.tga
+ Image king_groningen.tga
  Description iking_skara_desc
  EffectsDescription iking_skara_effects_desc
  Effect TaxCollection 5
@@ -6100,7 +6106,8 @@ Ancillary iking_tortosa
 Ancillary iking_uppsala 
  Type dearmad_her
  Transferable 1
- Image king_uppsala.tga
+ ;Image king_uppsala.tga
+ Image govern_moravia.tga
  Description iking_uppsala_desc
  EffectsDescription iking_uppsala_effects_desc
  Effect TaxCollection 5
@@ -6375,7 +6382,8 @@ Ancillary iking_oran
 Ancillary iking_aberdeen 
  Type dearmad_her
  Transferable 1
- Image king_aberdeen.tga
+ ;Image king_aberdeen.tga
+ Image govern_maghas.tga
  Description iking_aberdeen_desc
  EffectsDescription iking_aberdeen_effects_desc
  Effect TaxCollection 5
@@ -7753,10 +7761,11 @@ Ancillary oking_eikundarsund ;Kirkjuvagr
  EffectsDescription oking_eikundarsund_effects_desc
  Effect TaxCollection 5
 ;------------------------------------------ 
-Ancillary oking_eloued ;Trieste
+Ancillary oking_eloued ;Laibach
  Type dearmad_her
  Transferable 1
- Image govern_trieste.tga
+ ;Image govern_trieste.tga
+ Image govern_laibach.tga
  Description oking_eloued_desc
  EffectsDescription oking_eloued_effects_desc
  Effect TaxCollection 5
@@ -8013,7 +8022,8 @@ Ancillary oking_sinop
 Ancillary oking_skara 
  Type dearmad_her
  Transferable 1
- Image king_skara.tga
+ ;Image king_skara.tga
+ Image king_groningen.tga
  Description oking_skara_desc
  EffectsDescription oking_skara_effects_desc
  Effect TaxCollection 5
@@ -8050,7 +8060,8 @@ Ancillary oking_tortosa
 Ancillary oking_uppsala 
  Type dearmad_her
  Transferable 1
- Image king_uppsala.tga
+ ;Image king_uppsala.tga
+ Image govern_moravia.tga
  Description oking_uppsala_desc
  EffectsDescription oking_uppsala_effects_desc
  Effect TaxCollection 5
@@ -8325,7 +8336,8 @@ Ancillary oking_oran
 Ancillary oking_aberdeen 
  Type dearmad_her
  Transferable 1
- Image king_aberdeen.tga
+ ;Image king_aberdeen.tga
+ Image govern_maghas.tga
  Description oking_aberdeen_desc
  EffectsDescription oking_aberdeen_effects_desc
  Effect TaxCollection 5
@@ -9017,7 +9029,7 @@ Trigger crown_britain
  and I_SettlementOwner Winchester = england
  and I_SettlementOwner Caernarvon = england
  and I_SettlementOwner Edinburgh = england
- and I_SettlementOwner Aberdeen = england
+ ;and I_SettlementOwner Aberdeen = england
  and I_SettlementOwner Inverness = england
  and I_SettlementOwner Dublin = england
  and not I_WorldwideAncillaryExists crown_england
@@ -9037,7 +9049,7 @@ Trigger crown_britain2
  and I_SettlementOwner Winchester = scotland
  and I_SettlementOwner Caernarvon = scotland
  and I_SettlementOwner Edinburgh = scotland
- and I_SettlementOwner Aberdeen = scotland
+ ;and I_SettlementOwner Aberdeen = scotland
  and I_SettlementOwner Inverness = scotland
  and I_SettlementOwner Dublin = scotland
  and not I_WorldwideAncillaryExists crown_england
@@ -9094,7 +9106,6 @@ Trigger crown_spain3
  WhenToTest CharacterTurnEnd 
 
  Condition IsFactionLeader 
- and I_EventCounter zirids_exist = 0
  and EndedInSettlement 
  and FactionType portugal
  and I_SettlementOwner Leon = portugal
@@ -9113,30 +9124,6 @@ Trigger crown_spain3
  and not I_WorldwideAncillaryExists crown_spain
  
  AcquireAncillary crown_spain chance 100 
-;------------------------------------------ 
-Trigger crown_spain3_zirids
- WhenToTest CharacterTurnEnd 
-
- Condition IsFactionLeader 
- and I_EventCounter zirids_exist = 1
- and EndedInSettlement 
- and FactionType portugal
- and I_SettlementOwner Leon = portugal
- and I_SettlementOwner Toledo = portugal
- and I_SettlementOwner Pamplona = portugal
- and I_SettlementOwner Valencia = portugal
- and I_SettlementOwner Salamanca = portugal
- and I_SettlementOwner Murcia = portugal
- and I_SettlementOwner Burgos = portugal
- and I_SettlementOwner Cordoba = portugal
- and I_SettlementOwner Granada = portugal
- and I_SettlementOwner Zaragoza = portugal
- and I_SettlementOwner Barcelona = portugal
- and I_SettlementOwner Oran = portugal; Badajoz
- and I_SettlementOwner Seville = portugal; Seville
- and not I_WorldwideAncillaryExists crown_spain_2
- 
- AcquireAncillary crown_spain_2 chance 100 
 ;------------------------------------------ 
 Trigger crown_spain4
  WhenToTest CharacterTurnEnd 
@@ -9253,13 +9240,13 @@ Trigger crown_scandinavia
  and I_SettlementOwner Arhus = denmark
  and I_SettlementOwner Lund = denmark
  and I_SettlementOwner Visby = denmark
- and I_SettlementOwner Skara = denmark
+ ;and I_SettlementOwner Skara = denmark
  ;and I_SettlementOwner Nykoeping = denmark
- and I_SettlementOwner Uppsala = denmark
+ ;and I_SettlementOwner Uppsala = denmark
  and I_SettlementOwner Roskilde = denmark
  and I_SettlementOwner Oslo = denmark
  and I_SettlementOwner Bergen = denmark
- and I_SettlementOwner Eikundarsund = denmark
+ ;and I_SettlementOwner Eikundarsund = denmark
  and not I_WorldwideAncillaryExists crown_scandinavia
  
  AcquireAncillary crown_scandinavia chance 100 
@@ -9272,13 +9259,13 @@ Trigger crown_scandinavia2
  and I_SettlementOwner Arhus = norway
  and I_SettlementOwner Lund = norway
  and I_SettlementOwner Visby = norway
- and I_SettlementOwner Skara = norway
+ ;and I_SettlementOwner Skara = norway
  ;and I_SettlementOwner Nykoeping = norway
- and I_SettlementOwner Uppsala = norway
+ ;and I_SettlementOwner Uppsala = norway
  and I_SettlementOwner Roskilde = norway
  and I_SettlementOwner Oslo = norway
  and I_SettlementOwner Bergen = norway
- and I_SettlementOwner Eikundarsund = norway
+ ;and I_SettlementOwner Eikundarsund = norway
  and not I_WorldwideAncillaryExists crown_scandinavia
  
  AcquireAncillary crown_scandinavia chance 100 
@@ -10457,7 +10444,6 @@ Trigger crusader_santiago1
 Trigger crusader_santiago2 
  WhenToTest GeneralTakesCrusadeTarget 
  Condition IsCrusade 
- and I_EventCounter zirids_exist = 0
  and CharFactionType portugal 
  
  AcquireAncillary knight_santiago chance 70 
@@ -10857,7 +10843,6 @@ Trigger knight_santiago_vnv_trigger2
  and GeneralFoughtInCombat 
  and BattleOdds >= 0.5 
  and BattleOdds < 1.5 
- and I_EventCounter zirids_exist = 0
  and FactionType portugal 
  
  AcquireAncillary knight_santiago chance 40 
@@ -12952,7 +12937,6 @@ Trigger chancellor_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and Attribute Loyalty >= 6
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -12976,7 +12960,6 @@ Trigger chancellor_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and Attribute Loyalty >= 5
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -13125,7 +13108,6 @@ Trigger seneschal_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13143,7 +13125,6 @@ Trigger seneschal_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13235,7 +13216,6 @@ Trigger chamberlain_mongol
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and SettlementBuildingExists >= council_chambers 
@@ -13534,8 +13514,7 @@ Trigger marshall_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids; abbasids
- and not CharFactionType portugal; zirids
+ and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13559,8 +13538,7 @@ Trigger marshall_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType timurids; abbasids
- and not CharFactionType portugal; zirids
+ and not CharFactionType timurids ;abbasids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13740,7 +13718,6 @@ Trigger moh_mongol
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13846,7 +13823,6 @@ Trigger steward_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and SettlementBuildingExists >= council_chambers 
  and FactionIsLocal ;for player only
@@ -13863,7 +13839,6 @@ Trigger steward_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and not IsFactionLeader
  and not IsFactionHeir
  and EndedInSettlement
@@ -13989,7 +13964,6 @@ Trigger treasurer_mongol_player
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and IsFactionLeader
@@ -14012,7 +13986,6 @@ Trigger treasurer_mongol_ai
  and not CharFactionType turks
  and not CharFactionType kwarezm
  and not CharFactionType timurids ;abbasids
- and not CharFactionType portugal ;zirids
  and not IsFactionLeader
  and not IsFactionHeir
  and Treasury > 10000
@@ -22082,7 +22055,7 @@ Trigger conquer_britain
  and I_SettlementOwner Winchester = norway
  and I_SettlementOwner Caernarvon = norway
  and I_SettlementOwner Edinburgh = norway
- and I_SettlementOwner Aberdeen = norway
+ ;and I_SettlementOwner Aberdeen = norway
  and I_SettlementOwner Inverness = norway
  and I_SettlementOwner Dublin = norway
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22103,7 +22076,7 @@ Trigger conquer_britain2
  and I_SettlementOwner Winchester = denmark
  and I_SettlementOwner Caernarvon = denmark
  and I_SettlementOwner Edinburgh = denmark
- and I_SettlementOwner Aberdeen = denmark
+ ;and I_SettlementOwner Aberdeen = denmark
  and I_SettlementOwner Inverness = denmark
  and I_SettlementOwner Dublin = denmark
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22124,7 +22097,7 @@ Trigger conquer_britain3
  and I_SettlementOwner Winchester = france
  and I_SettlementOwner Caernarvon = france
  and I_SettlementOwner Edinburgh = france
- and I_SettlementOwner Aberdeen = france
+ ;and I_SettlementOwner Aberdeen = france
  and I_SettlementOwner Inverness = france
  and I_SettlementOwner Dublin = france
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22145,7 +22118,7 @@ Trigger conquer_britain4
  and I_SettlementOwner Winchester = hre
  and I_SettlementOwner Caernarvon = hre
  and I_SettlementOwner Edinburgh = hre
- and I_SettlementOwner Aberdeen = hre
+ ;and I_SettlementOwner Aberdeen = hre
  and I_SettlementOwner Inverness = hre
  and I_SettlementOwner Dublin = hre
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22166,7 +22139,7 @@ Trigger conquer_britain5
  and I_SettlementOwner Winchester = spain
  and I_SettlementOwner Caernarvon = spain
  and I_SettlementOwner Edinburgh = spain
- and I_SettlementOwner Aberdeen = spain
+ ;and I_SettlementOwner Aberdeen = spain
  and I_SettlementOwner Inverness = spain
  and I_SettlementOwner Dublin = spain
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22187,7 +22160,7 @@ Trigger conquer_britain6
  and I_SettlementOwner Winchester = portugal
  and I_SettlementOwner Caernarvon = portugal
  and I_SettlementOwner Edinburgh = portugal
- and I_SettlementOwner Aberdeen = portugal
+ ;and I_SettlementOwner Aberdeen = portugal
  and I_SettlementOwner Inverness = portugal
  and I_SettlementOwner Dublin = portugal
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22208,7 +22181,7 @@ Trigger conquer_britain7
  and I_SettlementOwner Winchester = aragon
  and I_SettlementOwner Caernarvon = aragon
  and I_SettlementOwner Edinburgh = aragon
- and I_SettlementOwner Aberdeen = aragon
+ ;and I_SettlementOwner Aberdeen = aragon
  and I_SettlementOwner Inverness = aragon
  and I_SettlementOwner Dublin = aragon
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22229,7 +22202,7 @@ Trigger conquer_britain8
  and I_SettlementOwner Winchester = poland
  and I_SettlementOwner Caernarvon = poland
  and I_SettlementOwner Edinburgh = poland
- and I_SettlementOwner Aberdeen = poland
+ ;and I_SettlementOwner Aberdeen = poland
  and I_SettlementOwner Inverness = poland
  and I_SettlementOwner Dublin = poland
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22250,7 +22223,7 @@ Trigger conquer_britain9
  and I_SettlementOwner Winchester = hungary
  and I_SettlementOwner Caernarvon = hungary
  and I_SettlementOwner Edinburgh = hungary
- and I_SettlementOwner Aberdeen = hungary
+ ;and I_SettlementOwner Aberdeen = hungary
  and I_SettlementOwner Inverness = hungary
  and I_SettlementOwner Dublin = hungary
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22271,7 +22244,7 @@ Trigger conquer_britain10
  and I_SettlementOwner Winchester = milan
  and I_SettlementOwner Caernarvon = milan
  and I_SettlementOwner Edinburgh = milan
- and I_SettlementOwner Aberdeen = milan
+ ;and I_SettlementOwner Aberdeen = milan
  and I_SettlementOwner Inverness = milan
  and I_SettlementOwner Dublin = milan
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22292,7 +22265,7 @@ Trigger conquer_britain11
  and I_SettlementOwner Winchester = venice
  and I_SettlementOwner Caernarvon = venice
  and I_SettlementOwner Edinburgh = venice
- and I_SettlementOwner Aberdeen = venice
+ ;and I_SettlementOwner Aberdeen = venice
  and I_SettlementOwner Inverness = venice
  and I_SettlementOwner Dublin = venice
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22313,7 +22286,7 @@ Trigger conquer_britain12
  and I_SettlementOwner Winchester = sicily
  and I_SettlementOwner Caernarvon = sicily
  and I_SettlementOwner Edinburgh = sicily
- and I_SettlementOwner Aberdeen = sicily
+ ;and I_SettlementOwner Aberdeen = sicily
  and I_SettlementOwner Inverness = sicily
  and I_SettlementOwner Dublin = sicily
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22334,7 +22307,7 @@ Trigger conquer_britain13
  and I_SettlementOwner Winchester = lithuania
  and I_SettlementOwner Caernarvon = lithuania
  and I_SettlementOwner Edinburgh = lithuania
- and I_SettlementOwner Aberdeen = lithuania
+ ;and I_SettlementOwner Aberdeen = lithuania
  and I_SettlementOwner Inverness = lithuania
  and I_SettlementOwner Dublin = lithuania
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22355,7 +22328,7 @@ Trigger conquer_britain14
  and I_SettlementOwner Winchester = russia
  and I_SettlementOwner Caernarvon = russia
  and I_SettlementOwner Edinburgh = russia
- and I_SettlementOwner Aberdeen = russia
+ ;and I_SettlementOwner Aberdeen = russia
  and I_SettlementOwner Inverness = russia
  and I_SettlementOwner Dublin = russia
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22376,7 +22349,7 @@ Trigger conquer_britain15
  and I_SettlementOwner Winchester = kievan_rus
  and I_SettlementOwner Caernarvon = kievan_rus
  and I_SettlementOwner Edinburgh = kievan_rus
- and I_SettlementOwner Aberdeen = kievan_rus
+ ;and I_SettlementOwner Aberdeen = kievan_rus
  and I_SettlementOwner Inverness = kievan_rus
  and I_SettlementOwner Dublin = kievan_rus
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22397,7 +22370,7 @@ Trigger conquer_britain16
  and I_SettlementOwner Winchester = cumans
  and I_SettlementOwner Caernarvon = cumans
  and I_SettlementOwner Edinburgh = cumans
- and I_SettlementOwner Aberdeen = cumans
+ ;and I_SettlementOwner Aberdeen = cumans
  and I_SettlementOwner Inverness = cumans
  and I_SettlementOwner Dublin = cumans
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22418,7 +22391,7 @@ Trigger conquer_britain17
  and I_SettlementOwner Winchester = moors
  and I_SettlementOwner Caernarvon = moors
  and I_SettlementOwner Edinburgh = moors
- and I_SettlementOwner Aberdeen = moors
+ ;and I_SettlementOwner Aberdeen = moors
  and I_SettlementOwner Inverness = moors
  and I_SettlementOwner Dublin = moors
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22439,7 +22412,7 @@ Trigger conquer_britain18
  and I_SettlementOwner Winchester = egypt
  and I_SettlementOwner Caernarvon = egypt
  and I_SettlementOwner Edinburgh = egypt
- and I_SettlementOwner Aberdeen = egypt
+ ;and I_SettlementOwner Aberdeen = egypt
  and I_SettlementOwner Inverness = egypt
  and I_SettlementOwner Dublin = egypt
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22460,7 +22433,7 @@ Trigger conquer_britain19
  and I_SettlementOwner Winchester = turks
  and I_SettlementOwner Caernarvon = turks
  and I_SettlementOwner Edinburgh = turks
- and I_SettlementOwner Aberdeen = turks
+ ;and I_SettlementOwner Aberdeen = turks
  and I_SettlementOwner Inverness = turks
  and I_SettlementOwner Dublin = turks
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22481,7 +22454,7 @@ Trigger conquer_britain20
  and I_SettlementOwner Winchester = byzantium
  and I_SettlementOwner Caernarvon = byzantium
  and I_SettlementOwner Edinburgh = byzantium
- and I_SettlementOwner Aberdeen = byzantium
+ ;and I_SettlementOwner Aberdeen = byzantium
  and I_SettlementOwner Inverness = byzantium
  and I_SettlementOwner Dublin = byzantium
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22502,7 +22475,7 @@ Trigger conquer_britain21
  and I_SettlementOwner Winchester = kwarezm
  and I_SettlementOwner Caernarvon = kwarezm
  and I_SettlementOwner Edinburgh = kwarezm
- and I_SettlementOwner Aberdeen = kwarezm
+ ;and I_SettlementOwner Aberdeen = kwarezm
  and I_SettlementOwner Inverness = kwarezm
  and I_SettlementOwner Dublin = kwarezm
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22523,7 +22496,7 @@ Trigger conquer_britain22
  and I_SettlementOwner Winchester = mongols
  and I_SettlementOwner Caernarvon = mongols
  and I_SettlementOwner Edinburgh = mongols
- and I_SettlementOwner Aberdeen = mongols
+ ;and I_SettlementOwner Aberdeen = mongols
  and I_SettlementOwner Inverness = mongols
  and I_SettlementOwner Dublin = mongols
  and not I_WorldwideAncillaryExists crown_england_2
@@ -22544,7 +22517,7 @@ Trigger conquer_britain23
  and I_SettlementOwner Winchester = georgia
  and I_SettlementOwner Caernarvon = georgia
  and I_SettlementOwner Edinburgh = georgia
- and I_SettlementOwner Aberdeen = georgia
+ ;and I_SettlementOwner Aberdeen = georgia
  and I_SettlementOwner Inverness = georgia
  and I_SettlementOwner Dublin = georgia
  and not I_WorldwideAncillaryExists crown_england_2
@@ -24677,11 +24650,11 @@ Trigger conquer_scandinavia
  and I_SettlementOwner Visby = hre
  ;and I_SettlementOwner Skara = hre
  ;and I_SettlementOwner Nykoeping = hre
- and I_SettlementOwner Uppsala = hre
+ ;and I_SettlementOwner Uppsala = hre
  and I_SettlementOwner Roskilde = hre
  and I_SettlementOwner Oslo = hre
  and I_SettlementOwner Bergen = hre
- and I_SettlementOwner Eikundarsund = hre
+ ;and I_SettlementOwner Eikundarsund = hre
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24698,11 +24671,11 @@ Trigger conquer_scandinavia2
  and I_SettlementOwner Visby = england
  ;and I_SettlementOwner Skara = england
  ;and I_SettlementOwner Nykoeping = england
- and I_SettlementOwner Uppsala = england
+ ;and I_SettlementOwner Uppsala = england
  and I_SettlementOwner Roskilde = england
  and I_SettlementOwner Oslo = england
  and I_SettlementOwner Bergen = england
- and I_SettlementOwner Eikundarsund = england
+ ;and I_SettlementOwner Eikundarsund = england
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24719,11 +24692,11 @@ Trigger conquer_scandinavia3
  and I_SettlementOwner Visby = lithuania
  ;and I_SettlementOwner Skara = lithuania
  ;and I_SettlementOwner Nykoeping = lithuania
- and I_SettlementOwner Uppsala = lithuania
+ ;and I_SettlementOwner Uppsala = lithuania
  and I_SettlementOwner Roskilde = lithuania
  and I_SettlementOwner Oslo = lithuania
  and I_SettlementOwner Bergen = lithuania
- and I_SettlementOwner Eikundarsund = lithuania
+ ;and I_SettlementOwner Eikundarsund = lithuania
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24740,11 +24713,11 @@ Trigger conquer_scandinavia4
  and I_SettlementOwner Visby = russia
  ;and I_SettlementOwner Skara = russia
  ;and I_SettlementOwner Nykoeping = russia
- and I_SettlementOwner Uppsala = russia
+ ;and I_SettlementOwner Uppsala = russia
  and I_SettlementOwner Roskilde = russia
  and I_SettlementOwner Oslo = russia
  and I_SettlementOwner Bergen = russia
- and I_SettlementOwner Eikundarsund = russia
+ ;and I_SettlementOwner Eikundarsund = russia
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24761,11 +24734,11 @@ Trigger conquer_scandinavia5
  and I_SettlementOwner Visby = poland
  ;and I_SettlementOwner Skara = poland
  ;and I_SettlementOwner Nykoeping = poland
- and I_SettlementOwner Uppsala = poland
+ ;and I_SettlementOwner Uppsala = poland
  and I_SettlementOwner Roskilde = poland
  and I_SettlementOwner Oslo = poland
  and I_SettlementOwner Bergen = poland
- and I_SettlementOwner Eikundarsund = poland
+ ;and I_SettlementOwner Eikundarsund = poland
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24782,11 +24755,11 @@ Trigger conquer_scandinavia6
  and I_SettlementOwner Visby = scotland
  ;and I_SettlementOwner Skara = scotland
  ;and I_SettlementOwner Nykoeping = scotland
- and I_SettlementOwner Uppsala = scotland
+ ;and I_SettlementOwner Uppsala = scotland
  and I_SettlementOwner Roskilde = scotland
  and I_SettlementOwner Oslo = scotland
  and I_SettlementOwner Bergen = scotland
- and I_SettlementOwner Eikundarsund = scotland
+ ;and I_SettlementOwner Eikundarsund = scotland
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24803,11 +24776,11 @@ Trigger conquer_scandinavia7
  and I_SettlementOwner Visby = kievan_rus
  ;and I_SettlementOwner Skara = kievan_rus
  ;and I_SettlementOwner Nykoeping = kievan_rus
- and I_SettlementOwner Uppsala = kievan_rus
+ ;and I_SettlementOwner Uppsala = kievan_rus
  and I_SettlementOwner Roskilde = kievan_rus
  and I_SettlementOwner Oslo = kievan_rus
  and I_SettlementOwner Bergen = kievan_rus
- and I_SettlementOwner Eikundarsund = kievan_rus
+ ;and I_SettlementOwner Eikundarsund = kievan_rus
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24824,11 +24797,11 @@ Trigger conquer_scandinavia8
  and I_SettlementOwner Visby = cumans
  ;and I_SettlementOwner Skara = cumans
  ;and I_SettlementOwner Nykoeping = cumans
- and I_SettlementOwner Uppsala = cumans
+ ;and I_SettlementOwner Uppsala = cumans
  and I_SettlementOwner Roskilde = cumans
  and I_SettlementOwner Oslo = cumans
  and I_SettlementOwner Bergen = cumans
- and I_SettlementOwner Eikundarsund = cumans
+ ;and I_SettlementOwner Eikundarsund = cumans
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24845,11 +24818,11 @@ Trigger conquer_scandinavia9
  and I_SettlementOwner Visby = france
  ;and I_SettlementOwner Skara = france
  ;and I_SettlementOwner Nykoeping = france
- and I_SettlementOwner Uppsala = france
+ ;and I_SettlementOwner Uppsala = france
  and I_SettlementOwner Roskilde = france
  and I_SettlementOwner Oslo = france
  and I_SettlementOwner Bergen = france
- and I_SettlementOwner Eikundarsund = france
+ ;and I_SettlementOwner Eikundarsund = france
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24866,11 +24839,11 @@ Trigger conquer_scandinavia10
  and I_SettlementOwner Visby = hungary
  ;and I_SettlementOwner Skara = hungary
  ;and I_SettlementOwner Nykoeping = hungary
- and I_SettlementOwner Uppsala = hungary
+ ;and I_SettlementOwner Uppsala = hungary
  and I_SettlementOwner Roskilde = hungary
  and I_SettlementOwner Oslo = hungary
  and I_SettlementOwner Bergen = hungary
- and I_SettlementOwner Eikundarsund = hungary
+ ;and I_SettlementOwner Eikundarsund = hungary
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24887,11 +24860,11 @@ Trigger conquer_scandinavia11
  and I_SettlementOwner Visby = spain
  ;and I_SettlementOwner Skara = spain
  ;and I_SettlementOwner Nykoeping = spain
- and I_SettlementOwner Uppsala = spain
+ ;and I_SettlementOwner Uppsala = spain
  and I_SettlementOwner Roskilde = spain
  and I_SettlementOwner Oslo = spain
  and I_SettlementOwner Bergen = spain
- and I_SettlementOwner Eikundarsund = spain
+ ;and I_SettlementOwner Eikundarsund = spain
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24908,11 +24881,11 @@ Trigger conquer_scandinavia12
  and I_SettlementOwner Visby = aragon
  ;and I_SettlementOwner Skara = aragon
  ;and I_SettlementOwner Nykoeping = aragon
- and I_SettlementOwner Uppsala = aragon
+ ;and I_SettlementOwner Uppsala = aragon
  and I_SettlementOwner Roskilde = aragon
  and I_SettlementOwner Oslo = aragon
  and I_SettlementOwner Bergen = aragon
- and I_SettlementOwner Eikundarsund = aragon
+ ;and I_SettlementOwner Eikundarsund = aragon
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24929,11 +24902,11 @@ Trigger conquer_scandinavia13
  and I_SettlementOwner Visby = portugal
  ;and I_SettlementOwner Skara = portugal
  ;and I_SettlementOwner Nykoeping = portugal
- and I_SettlementOwner Uppsala = portugal
+ ;and I_SettlementOwner Uppsala = portugal
  and I_SettlementOwner Roskilde = portugal
  and I_SettlementOwner Oslo = portugal
  and I_SettlementOwner Bergen = portugal
- and I_SettlementOwner Eikundarsund = portugal
+ ;and I_SettlementOwner Eikundarsund = portugal
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24950,11 +24923,11 @@ Trigger conquer_scandinavia14
  and I_SettlementOwner Visby = milan
  ;and I_SettlementOwner Skara = milan
  ;and I_SettlementOwner Nykoeping = milan
- and I_SettlementOwner Uppsala = milan
+ ;and I_SettlementOwner Uppsala = milan
  and I_SettlementOwner Roskilde = milan
  and I_SettlementOwner Oslo = milan
  and I_SettlementOwner Bergen = milan
- and I_SettlementOwner Eikundarsund = milan
+ ;and I_SettlementOwner Eikundarsund = milan
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24971,11 +24944,11 @@ Trigger conquer_scandinavia15
  and I_SettlementOwner Visby = venice
  ;and I_SettlementOwner Skara = venice
  ;and I_SettlementOwner Nykoeping = venice
- and I_SettlementOwner Uppsala = venice
+ ;and I_SettlementOwner Uppsala = venice
  and I_SettlementOwner Roskilde = venice
  and I_SettlementOwner Oslo = venice
  and I_SettlementOwner Bergen = venice
- and I_SettlementOwner Eikundarsund = venice
+ ;and I_SettlementOwner Eikundarsund = venice
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -24992,11 +24965,11 @@ Trigger conquer_scandinavia16
  and I_SettlementOwner Visby = sicily
  ;and I_SettlementOwner Skara = sicily
  ;and I_SettlementOwner Nykoeping = sicily
- and I_SettlementOwner Uppsala = sicily
+ ;and I_SettlementOwner Uppsala = sicily
  and I_SettlementOwner Roskilde = sicily
  and I_SettlementOwner Oslo = sicily
  and I_SettlementOwner Bergen = sicily
- and I_SettlementOwner Eikundarsund = sicily
+ ;and I_SettlementOwner Eikundarsund = sicily
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25013,11 +24986,11 @@ Trigger conquer_scandinavia17
  and I_SettlementOwner Visby = byzantium
  ;and I_SettlementOwner Skara = byzantium
  ;and I_SettlementOwner Nykoeping = byzantium
- and I_SettlementOwner Uppsala = byzantium
+ ;and I_SettlementOwner Uppsala = byzantium
  and I_SettlementOwner Roskilde = byzantium
  and I_SettlementOwner Oslo = byzantium
  and I_SettlementOwner Bergen = byzantium
- and I_SettlementOwner Eikundarsund = byzantium
+ ;and I_SettlementOwner Eikundarsund = byzantium
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25034,11 +25007,11 @@ Trigger conquer_scandinavia18
  and I_SettlementOwner Visby = moors
  ;and I_SettlementOwner Skara = moors
  ;and I_SettlementOwner Nykoeping = moors
- and I_SettlementOwner Uppsala = moors
+ ;and I_SettlementOwner Uppsala = moors
  and I_SettlementOwner Roskilde = moors
  and I_SettlementOwner Oslo = moors
  and I_SettlementOwner Bergen = moors
- and I_SettlementOwner Eikundarsund = moors
+ ;and I_SettlementOwner Eikundarsund = moors
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25055,11 +25028,11 @@ Trigger conquer_scandinavia19
  and I_SettlementOwner Visby = egypt
  ;and I_SettlementOwner Skara = egypt
  ;and I_SettlementOwner Nykoeping = egypt
- and I_SettlementOwner Uppsala = egypt
+ ;and I_SettlementOwner Uppsala = egypt
  and I_SettlementOwner Roskilde = egypt
  and I_SettlementOwner Oslo = egypt
  and I_SettlementOwner Bergen = egypt
- and I_SettlementOwner Eikundarsund = egypt
+ ;and I_SettlementOwner Eikundarsund = egypt
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25076,11 +25049,11 @@ Trigger conquer_scandinavia20
  and I_SettlementOwner Visby = turks
  ;and I_SettlementOwner Skara = turks
  ;and I_SettlementOwner Nykoeping = turks
- and I_SettlementOwner Uppsala = turks
+ ;and I_SettlementOwner Uppsala = turks
  and I_SettlementOwner Roskilde = turks
  and I_SettlementOwner Oslo = turks
  and I_SettlementOwner Bergen = turks
- and I_SettlementOwner Eikundarsund = turks
+ ;and I_SettlementOwner Eikundarsund = turks
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25097,11 +25070,11 @@ Trigger conquer_scandinavia21
  and I_SettlementOwner Visby = kwarezm
  ;and I_SettlementOwner Skara = kwarezm
  ;and I_SettlementOwner Nykoeping = kwarezm
- and I_SettlementOwner Uppsala = kwarezm
+ ;and I_SettlementOwner Uppsala = kwarezm
  and I_SettlementOwner Roskilde = kwarezm
  and I_SettlementOwner Oslo = kwarezm
  and I_SettlementOwner Bergen = kwarezm
- and I_SettlementOwner Eikundarsund = kwarezm
+ ;and I_SettlementOwner Eikundarsund = kwarezm
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25118,11 +25091,11 @@ Trigger conquer_scandinavia22
  and I_SettlementOwner Visby = mongols
  ;and I_SettlementOwner Skara = mongols
  ;and I_SettlementOwner Nykoeping = mongols
- and I_SettlementOwner Uppsala = mongols
+ ;and I_SettlementOwner Uppsala = mongols
  and I_SettlementOwner Roskilde = mongols
  and I_SettlementOwner Oslo = mongols
  and I_SettlementOwner Bergen = mongols
- and I_SettlementOwner Eikundarsund = mongols
+ ;and I_SettlementOwner Eikundarsund = mongols
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -25139,11 +25112,11 @@ Trigger conquer_scandinavia23
  and I_SettlementOwner Visby = georgia
  ;and I_SettlementOwner Skara = georgia
  ;and I_SettlementOwner Nykoeping = georgia
- and I_SettlementOwner Uppsala = georgia
+ ;and I_SettlementOwner Uppsala = georgia
  and I_SettlementOwner Roskilde = georgia
  and I_SettlementOwner Oslo = georgia
  and I_SettlementOwner Bergen = georgia
- and I_SettlementOwner Eikundarsund = georgia
+ ;and I_SettlementOwner Eikundarsund = georgia
  and not I_WorldwideAncillaryExists crown_scandinavia_2
  
  AcquireAncillary crown_scandinavia_2 chance 100 
@@ -28830,7 +28803,6 @@ Trigger crown_jerusalem14
  Condition IsFactionLeader 
  and EndedInSettlement
  and SettlementName Jerusalem
- and I_EventCounter zirids_exist = 0
  and FactionType portugal
  and I_SettlementOwner Jerusalem = portugal
  and not I_WorldwideAncillaryExists crown_jerusalem

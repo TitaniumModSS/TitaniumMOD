@@ -1,4 +1,4 @@
-; Titanium - Early Era Campaign Script
+; Titanium - Early Era 1100 Campaign Script
 ;========================================================
 ;===================== CONTENTS =========================
 ;========================================================
@@ -33,6 +33,7 @@
 ;* 5)EMERGENT FACTIONS/NATIONAL UPRISINGS
 ;---- William Wallace Uprising
 ;---- Saladin Emergent
+;---- Crusaders Reinforce
 ;---- Teutonic Order Emergent
 ;---- Golden Horde Emergent
 ;---- Bulgarian Uprising
@@ -86,6 +87,7 @@ set_event_counter georgia_exist 1; For use in other files
 set_event_counter zirids_exist 1; For use in other files
 set_event_counter hafsids_exist 0; For use in other files
 set_event_counter bulgaria_exist 0; For use in other files
+freeze_faction_ai dummies
 
 ;====================== Setup AI ========================
 set_event_counter DifficultyLevel 2 ; default level is medium
@@ -8725,6 +8727,46 @@ end_monitor
 ;******** EMERGENT FACTIONS/NATIONAL UPRISINGS **********
 ;********************************************************
 ;========================================================
+declare_counter besieging_test
+declare_counter scripted_siege
+monitor_event MultiTurnMove I_CompareCounter besieging_test = 1
+	and HighestAttAdjacentChar Unorthodoxy named_character = 1
+
+	if I_CompareCounter scripted_siege = -1
+		terminate_monitor
+	end_if
+	set_counter scripted_siege 0
+end_monitor
+monitor_event FactionSturnStart FactionType slave
+	and I_CompareCounter wallace_spawned = -1
+	and I_CompareCounter pagan_rebel = -1
+	and I_CompareCounter bulgarians_rebel = -1
+	and I_CompareCounter TO_spawned = -1
+	and I_CompareCounter mongols_spawned = -1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label end_besiegescript1
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character end_besiegescript1 60,1
+		console_command mp end_besiegescript1 -1
+		spawn_army
+			faction dummies
+			character	Peter, named character, x 19, y 20, label end_besiegescript2
+			traits	ScriptedBesieger 1
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character end_besiegescript2 61,1
+		console_command mp end_besiegescript2 -1
+		set_counter scripted_siege -1
+		set_counter besieging_test 1
+		move end_besiegescript1, 62, 1
+		kill_character end_besiegescript1
+		kill_character end_besiegescript2
+	 terminate_monitor
+end_monitor
 
 ;============== William Wallace Uprising ================
 add_events
@@ -8735,9 +8777,8 @@ add_events
 	event	counter	WilliamWallaceSet
 	date	180
 end_add_events
-
 declare_counter wallace_spawned
-set_counter wallace_spawned 0
+declare_counter scottishwallace
 
 monitor_event FactionTurnStart FactionType scotland
 	and I_EventCounter WilliamWallaceSet = 3
@@ -8749,7 +8790,6 @@ monitor_event FactionTurnStart FactionType scotland
 	
 terminate_monitor
 end_monitor
-
 monitor_event FactionTurnStart FactionType scotland
 	and I_EventCounter WilliamWallaceSet >= 1
 	and I_NumberOfSettlements scotland < 2
@@ -8760,7 +8800,6 @@ monitor_event FactionTurnStart FactionType scotland
 
 terminate_monitor
 end_monitor
-
 monitor_event GeneralCaptureSettlement FactionType england
 	and TargetFactionType scotland
 	and I_EventCounter WilliamWallaceSet >= 2
@@ -8774,10 +8813,22 @@ end_monitor
 
 monitor_event PreFactionTurnStart FactionType scotland
 	and I_CompareCounter wallace_spawned = 1
+	historic_event scotland_wallace event/william_wallace.bik
+	terminate_monitor
+end_monitor
+
+monitor_event CharacterTurnStart CharFactionType scotland
+	and Trait ScotlandHero = 1
+	and I_CompareCounter wallace_spawned = 2
+		set_counter scottishwallace 1
+		terminate_monitor
+end_monitor
+
+monitor_event FactionTurnStart FactionType scotland
+	and I_CompareCounter wallace_spawned >= 1
 
 	spawn_army 
 		faction scotland
-		;OLD;character	William Wallace, named character, age 20, x 55, y 253, direction SE, battle_model Wallace_General, portrait wallace, label scotland4wallace
 		character	Uilliam Wallace, named character, age 20, x 56, y 252, direction SE, battle_model Wallace_General, portrait wallace, label scotland4wallace
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , ScotlandHero 1 , LoyaltyStarter 1, BattleChivalry 2 , Loyal 2 , Just 2 , Rabblerouser 3 , Hardened 1 , Upright 2 , Austere 2 
 		unit		Highland Nobles	exp 4 armour 0 weapon_lvl 1
@@ -8800,8 +8851,7 @@ monitor_event PreFactionTurnStart FactionType scotland
 		unit		Highland Rabble	exp 4 armour 0 weapon_lvl 0
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
-	end	   
-
+	end
 	spawn_army 
 		faction scotland
 		character	random_name, named character, age 26, x 54, y 254
@@ -8827,61 +8877,87 @@ monitor_event PreFactionTurnStart FactionType scotland
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
 	end
+	
+	if not I_IsFactionAIControlled scotland
+	set_counter wallace_spawned -1
+	terminate_monitor
+	end_if
 
-	historic_event scotland_wallace event/william_wallace.bik
+	;###### "Phase2" (next turn)
+	if I_CompareCounter wallace_spawned = 2
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4scotland
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4scotland 61,1
+		console_command mp temp4scotland -1
+
+		if I_CharacterExists scotland4wallace
+		and I_SettlementOwner Edinburgh != scotland
+		and I_SettlementUnderSiege Edinburgh
+		and I_CharacterTypeNearTile scotland, named_character, 2, 54, 248 ;Edinburgh
+			set_counter scripted_siege 1
+			console_command move_character temp4scotland 54,248
+			set_counter besieging_test 1
+			move temp4scotland, 54, 249
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4scotland 53,248
+				move temp4scotland, 54, 248
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4scotland 55,248
+				move temp4scotland, 54, 248
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4scotland 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter scottishwallace = 1
+				siege_settlement scotland4wallace, Edinburgh, attack
+				log always Wallace Edinburgh Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+		set_counter scripted_siege -1
+		set_counter wallace_spawned -1
+		kill_character temp4scotland
+	 terminate_monitor
+	end_if
+
+	;###### "Phase1"
 	set_counter wallace_spawned 2
-terminate_monitor
-end_monitor
-
-monitor_event CharacterTurnStart CharFactionType scotland
-	and Trait ScotlandHero = 1
-	and I_IsFactionAIControlled scotland
-	
-	if I_SettlementOwner Edinburgh = scotland
-		terminate_monitor
-	end_if
-	
-	if I_AtSea scotland4wallace ; to avoid the case he lost a battle and retreated at a ship near Edinburgh
-		set_counter wallace_spawned 4
-	end_if
-
-	if I_SettlementUnderSiege Edinburgh;if settlement under siege already, avoid ctd.
-	and I_CompareCounter wallace_spawned != 3
-		set_counter wallace_spawned 4
-	end_if
-
-	if not I_CharacterTypeNearTile scotland, named_character, 5, 57, 248 ;if character not standing where it should, avoid ctd
-		set_counter wallace_spawned 4
-	end_if
-
-	if I_SettlementUnderSiege Edinburgh
-	and I_CompareCounter wallace_spawned = 3
-		siege_settlement scotland4wallace, Edinburgh, attack
-		set_counter wallace_spawned 2
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Edinburgh
-	and I_CompareCounter wallace_spawned != 4
+	if I_IsFactionAIControlled scotland
+	and I_SettlementOwner Edinburgh != scotland
+	and ! I_SettlementUnderSiege Edinburgh
 		siege_settlement scotland4wallace, Edinburgh, maintain
-		set_counter wallace_spawned 3
-	end_if
-	
-	if I_CompareCounter wallace_spawned = 4
-		set_counter wallace_spawned 2
+		if ! I_SettlementUnderSiege Edinburgh
+			move scotland4wallace, 56,252
+		end_if
+		if I_SettlementUnderSiege Edinburgh
+			console_command give_trait scotland4wallace ScriptedBesieger 1
+		end_if
 	end_if
 end_monitor
 
-;============== Saladin Emergent ================
+;============== Saladin Emergent & Crusaders Reinforce ================
 add_events
 	event	counter	SaladinSet
 	date	63
 	event	counter	SaladinSet
 	date	71
+	event	counter	CrusadersSet
+	date	74
+	event	counter	CrusadersSet
+	date	87
 end_add_events
 
 declare_counter saladin_spawned
+declare_counter crusaders_spawned
+declare_counter egyptiansaladin
 set_counter saladin_spawned 0
+set_counter crusaders_spawned 0
 
 monitor_event FactionTurnStart FactionType egypt
 	and I_EventCounter SaladinSet = 2
@@ -8905,12 +8981,25 @@ terminate_monitor
 end_monitor
 
 monitor_event PreFactionTurnStart FactionType egypt
+	and I_CompareCounter saladin_spawned = 1
+	historic_event egypt_saladin false factions { egypt, }
+	terminate_monitor
+end_monitor
+
+monitor_event CharacterTurnStart CharFactionType egypt
+	and Trait EgyptHero = 1
+	and I_CompareCounter saladin_spawned = 3
+		set_counter egyptiansaladin 1
+		terminate_monitor
+end_monitor
+
+monitor_event FactionTurnStart FactionType egypt
 	and I_CompareCounter saladin_spawned >= 1
 
 	if I_CompareCounter saladin_spawned = 2
 		spawn_army 
 		faction egypt
-		character	Salahaddin Al_Ayyubi, named character, age 34, x 304, y 61, family, direction SE, portrait saladin, label egypt4saladin
+		character	Salahaddin Al_Ayyubi, named character, age 34, x 308, y 64, family, direction SE, portrait saladin, label egypt4saladin
 		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , EgyptHero 1 , BattleChivalry 2 , Loyal 2 , Just 2 , Upright 2 , Austere 2 
 		unit   ME Bodyguard			exp 6 armour 0 weapon_lvl 0
 		unit   Arab Cavalry			exp 2 armour 1 weapon_lvl 0
@@ -8923,7 +9012,7 @@ monitor_event PreFactionTurnStart FactionType egypt
 	if I_CompareCounter saladin_spawned = 1
 		spawn_army 
 		faction egypt
-		character	Asadaddin Shirkuh, named character, age 41, x 303, y 61, family, direction SE, label egypt4shirkuh
+		character	Asadaddin Shirkuh, named character, age 41, x 308, y 63, family, direction SW, label egypt4shirkuh
 		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3
 		unit   ME Bodyguard			exp 6 armour 0 weapon_lvl 0
 		unit   Arab Cavalry			exp 3 armour 1 weapon_lvl 0
@@ -8939,7 +9028,7 @@ monitor_event PreFactionTurnStart FactionType egypt
 		end
 		spawn_army 
 		faction egypt
-		character	Salahaddin Al_Ayyubi, named character, age 26, x 304, y 61, family, direction SE, portrait saladin, label egypt4saladin
+		character	Salahaddin Al_Ayyubi, named character, age 26, x 308, y 64, family, direction SW, portrait saladin, label egypt4saladin
 		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , EgyptHero 1 , BattleChivalry 2 , Loyal 2 , Just 2 , Upright 2 , Austere 2 
 		unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
 		unit   Arab Cavalry			exp 1 armour 1 weapon_lvl 0
@@ -8954,14 +9043,391 @@ monitor_event PreFactionTurnStart FactionType egypt
 		end
 	end_if
 
-	historic_event egypt_saladin false factions { egypt, }
+	if not I_IsFactionAIControlled egypt
 	set_counter saladin_spawned -1
+	terminate_monitor
+	end_if
+
+	;###### "Phase2" (next turn)
+	if I_CompareCounter saladin_spawned = 3
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4egypt
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4egypt 61,1
+		console_command mp temp4egypt -1
+
+		if I_CharacterExists egypt4saladin
+		and I_SettlementOwner Cairo != egypt
+		and I_SettlementUnderSiege Cairo
+		and I_CharacterTypeNearTile egypt, named_character, 2, 302, 61 ;Cairo
+			set_counter scripted_siege 1
+			console_command move_character temp4egypt 302,61
+			set_counter besieging_test 1
+			move temp4egypt, 303, 61
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4egypt 303,61
+				move temp4egypt, 301, 61
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4egypt 301,61
+				move temp4egypt, 303, 61
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4egypt 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter egyptiansaladin = 1
+				siege_settlement egypt4saladin, Cairo, attack
+				log always Saladin Cairo Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+		set_counter scripted_siege -1
+		set_counter saladin_spawned -1
+		kill_character temp4egypt
+	 terminate_monitor
+	end_if
+	
+	;###### "Phase1"
+	set_counter saladin_spawned 3
+	if I_SettlementOwner Cairo != egypt
+	and ! I_SettlementUnderSiege Cairo
+		siege_settlement egypt4saladin, Cairo, maintain
+		if I_CharacterExists egypt4shirkuh
+		siege_settlement egypt4shirkuh, Cairo, maintain
+		end_if
+		if ! I_SettlementUnderSiege Cairo
+			move egypt4saladin, 308,64
+		end_if
+		if I_SettlementUnderSiege Cairo
+			console_command give_trait egypt4saladin ScriptedBesieger 1
+		end_if
+	end_if
+end_monitor
+
+monitor_event FactionTurnStart FactionType jerusalem
+	and I_EventCounter CrusadersSet = 2
+	and I_CompareCounter saladin_spawned = -1
+
+	if I_CompareCounter crusaders_spawned = 0
+		set_counter crusaders_spawned 2
+	end_if
+	
+terminate_monitor
+end_monitor
+
+monitor_event FactionTurnStart FactionType jerusalem
+	and I_EventCounter CrusadersSet = 1
+	and I_CompareCounter saladin_spawned = -1
+	and I_NumberOfHeirs jerusalem < 6
+
+	if I_CompareCounter crusaders_spawned = 0
+		set_counter crusaders_spawned 1
+	end_if
+
+terminate_monitor
+end_monitor
+
+monitor_event FactionTurnStart FactionType jerusalem
+	and I_CompareCounter crusaders_spawned >= 1
+
+	if I_CompareCounter crusaders_spawned = 2
+		spawn_army 
+		faction jerusalem
+		character	Reynaud de_Chatillon, named character, age 62, x 335, y 72, family, direction SE, label jerusalem4reynald
+		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , BattleDread 3 , StrategyDread 2 , Loyal 1 
+		unit   NE Bodyguard			exp 6 armour 0 weapon_lvl 0
+		unit   Knights of Jerusalem		exp 3 armour 1 weapon_lvl 0
+		unit   Knights Templar			exp 3 armour 0 weapon_lvl 0
+		end
+		spawn_army 
+		faction jerusalem
+		character	Balian d_Ibelin, named character, age 44, x 328, y 79, family, direction SE, label jerusalem4balian
+		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 1 , BattleChivalry 2 , StrategyChivalry 1 , Loyal 2 
+		unit   NE Bodyguard			exp 6 armour 0 weapon_lvl 0
+		unit   Knights of Jerusalem		exp 3 armour 1 weapon_lvl 0
+		end
+	end_if
+	if I_CompareCounter crusaders_spawned = 1
+		spawn_army 
+		faction jerusalem
+		character	Reynaud de_Chatillon, named character, age 49, x 338, y 105, family, direction SE, label jerusalem4reynald
+		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , BattleDread 2 , StrategyDread 1 , Loyal 1 
+		unit   NE Bodyguard			exp 6 armour 0 weapon_lvl 0
+		unit   Knights of Jerusalem		exp 3 armour 1 weapon_lvl 0
+		unit   Knights Templar			exp 3 armour 0 weapon_lvl 0
+		unit   Sergeant Spearmen		exp 3 armour 3 weapon_lvl 0
+		unit   Crossbow Militia			exp 2 armour 2 weapon_lvl 0
+		unit   Peasant Archers			exp 0 armour 2 weapon_lvl 0
+		end
+		spawn_army 
+		faction jerusalem
+		character	Balian d_Ibelin, named character, age 31, x 328, y 79, family, direction SE, label jerusalem4balian
+		traits LoyaltyStarter 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 1 , BattleChivalry 2 , StrategyChivalry 1 , Loyal 2 
+		unit   NE Bodyguard			exp 6 armour 0 weapon_lvl 0
+		unit   Knights of Jerusalem		exp 3 armour 1 weapon_lvl 0
+		unit   Sergeant Spearmen		exp 3 armour 3 weapon_lvl 0
+		unit   Crossbow Militia			exp 2 armour 2 weapon_lvl 0
+		end
+	end_if
+
+	set_counter crusaders_spawned -1
 terminate_monitor
 end_monitor
 
 ;============== Teutonic Order Emergent =================
-;monitor_event FactionTurnEnd FactionType slave;	testing
-;	and I_TurnNumber = 1;			testing
+;Spawning rebel pagan armies before TO invasion
+declare_counter pagan_rebel
+declare_counter TO_spawned
+declare_counter rebelmindaugas
+declare_counter rebeldaumantas
+declare_counter rebelramvaldas
+declare_counter teutonickonrad
+
+monitor_event CharacterTurnStart CharFactionType slave
+	and Trait InvasionCharacterCounter = 1
+	and I_CompareCounter pagan_rebel = 1
+		set_counter rebelmindaugas 1
+		console_command give_trait mindaugas4pagan InvasionCharacterCounter -1
+		terminate_monitor
+end_monitor
+monitor_event CharacterTurnStart CharFactionType slave
+	and Trait InvasionCharacterCounter = 2
+	and I_CompareCounter pagan_rebel = 1
+		set_counter rebeldaumantas 1
+		console_command give_trait daumantas4pagan InvasionCharacterCounter -2
+		terminate_monitor
+end_monitor
+monitor_event CharacterTurnStart CharFactionType slave
+	and Trait InvasionCharacterCounter = 3
+	and I_CompareCounter pagan_rebel = 1
+		set_counter rebelramvaldas 1
+		console_command give_trait ramvaldas4pagan InvasionCharacterCounter -3
+		terminate_monitor
+end_monitor
+
+monitor_event FactionTurnStart FactionType slave
+	and I_EventCounter torre_del_oro = 1
+
+	;###### "Phase2" (next turn)
+	if I_CompareCounter pagan_rebel = 1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4pagan
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character temp4pagan 61,1
+		console_command mp temp4pagan -1
+
+		if I_CharacterExists mindaugas4pagan
+		and I_SettlementOwner Vilnius != slave
+		and I_SettlementUnderSiege Vilnius
+		and I_CharacterTypeNearTile slave, named_character, 2, 250, 242 ;Kaunas
+			set_counter scripted_siege 1
+			console_command move_character temp4pagan 250,242
+			set_counter besieging_test 1
+			move temp4pagan, 250, 243
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4pagan 249,242
+				move temp4pagan, 250, 242
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4pagan 251,242
+				move temp4pagan, 250, 242
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4pagan 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter rebelmindaugas = 1
+				siege_settlement mindaugas4pagan, Vilnius, attack
+				log always Pagans Vilnius Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+
+		if I_CharacterExists daumantas4pagan
+		and I_SettlementOwner Palanga != slave
+		and I_SettlementUnderSiege Palanga
+		and I_CharacterTypeNearTile slave, named_character, 2, 225, 240 ;Twangste
+			set_counter scripted_siege 1
+			console_command move_character temp4pagan 225,240
+			set_counter besieging_test 1
+			move temp4pagan, 225, 239
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4pagan 224,240
+				move temp4pagan, 225, 240
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4pagan 226,240
+				move temp4pagan, 225, 240
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4pagan 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter rebeldaumantas = 1
+				siege_settlement daumantas4pagan, Palanga, attack
+				log always Pagans Twangste Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+
+		if I_CharacterExists ramvaldas4pagan
+		and I_SettlementOwner Riga != slave
+		and I_SettlementUnderSiege Riga
+		and I_CharacterTypeNearTile slave, named_character, 2, 252, 256 ;Riga
+			set_counter scripted_siege 1
+			console_command move_character temp4pagan 252, 256
+			set_counter besieging_test 1
+			move temp4pagan, 252, 255
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4pagan 252,257
+				move temp4pagan, 252, 256
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4pagan 252,255
+				move temp4pagan, 252, 256
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4pagan 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter rebelramvaldas = 1
+				siege_settlement ramvaldas4pagan, Riga, attack
+				log always Pagans Riga Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+
+		set_counter scripted_siege -1
+		set_counter pagan_rebel -1
+		kill_character temp4pagan
+	 terminate_monitor
+	end_if
+
+	;###### "Phase1"
+	if I_SettlementOwner Vilnius != slave
+		spawn_army
+			faction dummies
+			character 	Mindaugas, named character, age 21, x 250, y 247, label mindaugas4pagan
+			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 3 , PublicFaith 2 , Intelligent 1 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 3 
+			unit	Lith Bodyguard 		exp 5 armour 0 weapon_lvl 0
+			unit	Lithuanian Cavalry 	exp 1 armour 1 weapon_lvl 0
+			unit	Lithuanian Cavalry 	exp 1 armour 1 weapon_lvl 0
+			unit	Lithuanian Cavalry 	exp 1 armour 1 weapon_lvl 0
+			unit	EE Peasants	 	exp 1 armour 1 weapon_lvl 0
+			unit	EE Peasants	 	exp 1 armour 1 weapon_lvl 0
+			unit	EE Peasants	 	exp 1 armour 1 weapon_lvl 0
+			unit	EE Spear Militia	 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Spear Militia	 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Spear Militia	 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Crossbow Militia 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Crossbow Militia 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Crossbow Militia 	exp 0 armour 1 weapon_lvl 0
+			unit	Lithuanian Archers 	exp 1 armour 0 weapon_lvl 0
+			unit	Lithuanian Archers 	exp 1 armour 0 weapon_lvl 0
+			unit	Lithuanian Archers 	exp 1 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		add_money slave 10000
+	end_if
+	if I_SettlementOwner Palanga != slave
+		spawn_army
+			faction dummies
+			character	Daumantas, named character, age 39, x 229, y 229, label daumantas4pagan
+			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 4 , PublicFaith 2 , Intelligent 1 , GoodCommander 2 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 1 
+			unit	Lith Bodyguard 		exp 5 armour 0 weapon_lvl 0
+			unit	Lithuanian Cavalry 	exp 3 armour 1 weapon_lvl 0
+			unit	Lithuanian Cavalry 	exp 3 armour 1 weapon_lvl 0
+			unit	Lithuanian Cavalry 	exp 1 armour 0 weapon_lvl 0
+			unit	Lithuanian Cavalry 	exp 1 armour 0 weapon_lvl 0
+			unit	EE Spear Militia	 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Spear Militia	 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Spear Militia	 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Spear Militia	 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Crossbow Militia 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Crossbow Militia 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Crossbow Militia 	exp 0 armour 1 weapon_lvl 0
+			unit	EE Crossbow Militia 	exp 0 armour 1 weapon_lvl 0
+			unit	Lithuanian Archers 	exp 1 armour 0 weapon_lvl 0
+			unit	Lithuanian Archers 	exp 1 armour 0 weapon_lvl 0
+			unit	Lithuanian Archers 	exp 1 armour 0 weapon_lvl 0
+			unit	Lithuanian Archers 	exp 1 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		add_money slave 10000
+	end_if
+	if I_SettlementOwner Riga != slave
+		spawn_army 
+			faction dummies
+			character Ramvaldas, named character, age 31, x 242, y 257, label ramvaldas4pagan
+			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Pagan_Edu 2 , PublicFaith 3 , Intelligent 1 , GoodCommander 2 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 2 
+			unit		Lith Bodyguard		exp 3 armour 0 weapon_lvl 0
+			unit		Lithuanian Cavalry	exp 3 armour 1 weapon_lvl 0
+			unit		Woodsmen			exp 3 armour 0 weapon_lvl 0
+			unit		Woodsmen			exp 3 armour 0 weapon_lvl 0
+			unit		Woodsmen			exp 2 armour 0 weapon_lvl 0
+			unit		Woodsmen			exp 2 armour 0 weapon_lvl 0
+			unit		EE Spear Militia		exp 2 armour 0 weapon_lvl 0
+			unit		EE Spear Militia		exp 1 armour 0 weapon_lvl 0
+			unit		EE Spear Militia		exp 1 armour 0 weapon_lvl 0
+			unit		Lithuanian Archers	exp 2 armour 0 weapon_lvl 0
+			unit		Lithuanian Archers	exp 1 armour 0 weapon_lvl 0
+			unit		Lithuanian Archers	exp 1 armour 0 weapon_lvl 0
+			unit		EE Peasants		exp 1 armour 1 weapon_lvl 0
+			unit		EE Peasants		exp 1 armour 1 weapon_lvl 0
+			unit		EE Peasants		exp 1 armour 1 weapon_lvl 0
+			unit		EE Peasants		exp 1 armour 1 weapon_lvl 0
+			unit		Lithuanian Cavalry 	exp 1 armour 0 weapon_lvl 0
+			unit		Lithuanian Cavalry 	exp 1 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		add_money slave 10000
+	end_if
+
+	set_counter pagan_rebel 1
+
+	if I_SettlementOwner Vilnius != slave
+	and ! I_SettlementUnderSiege Vilnius
+		siege_settlement mindaugas4pagan, Vilnius, maintain
+		if ! I_SettlementUnderSiege Vilnius
+			move mindaugas4pagan, 250,247
+		end_if
+		if I_SettlementUnderSiege Vilnius
+			console_command give_trait mindaugas4pagan ScriptedBesieger 1
+			console_command give_trait mindaugas4pagan InvasionCharacterCounter 1
+		end_if
+	end_if
+	if I_SettlementOwner Palanga != slave
+	and ! I_SettlementUnderSiege Palanga
+		siege_settlement daumantas4pagan, Palanga, maintain
+		if ! I_SettlementUnderSiege Palanga
+			move daumantas4pagan, 229,229
+		end_if
+		if I_SettlementUnderSiege Palanga
+			console_command give_trait daumantas4pagan ScriptedBesieger 1
+			console_command give_trait daumantas4pagan InvasionCharacterCounter 2
+		end_if
+	end_if
+	if I_SettlementOwner Riga != slave
+	and ! I_SettlementUnderSiege Riga
+		siege_settlement ramvaldas4pagan, Riga, maintain
+		if ! I_SettlementUnderSiege Riga
+			move ramvaldas4pagan, 242,257
+		end_if
+		if I_SettlementUnderSiege Riga
+			console_command give_trait ramvaldas4pagan ScriptedBesieger 1
+			console_command give_trait ramvaldas4pagan InvasionCharacterCounter 3
+		end_if
+	end_if
+end_monitor
+
+;TEUTONIC ORDER EMERGENT PROPER
 monitor_event EventCounter EventCounterType inquisition
 	and EventCounter > 0
 
@@ -8972,10 +9438,9 @@ monitor_event EventCounter EventCounterType inquisition
 
 	spawn_army
 		faction teutonic_order
-;		OLD;character Herrmann von_Salza, named character, age 40, x 231, y 244, label teuton4leader, family
-;		Now Spawns right under Palanga
-		character Herrmann von_Salza, named character, family, age 40, x 224, y 238, label teuton4leader, direction N
-		traits FactionleaderTO 1, MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 3 , ContentGeneral 3 , Prim 2 , ReligionStarter 1
+		character Herrmann von_Salza, named character, family, age 40, x 231, y 242, label teuton4leader, direction W
+		;character Herrmann von_Salza, named character, family, age 40, x 225, y 239, label teuton4leader, direction N ;right under Twangste
+		traits FactionleaderTO 1, ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 3 , ContentGeneral 3 , Prim 2 , TOEmergeID 1 
 		unit	TO Bodyguard 		exp 5 armour 0 weapon_lvl 0
 		unit	Order Militia 		exp 2 armour 0 weapon_lvl 0
 		unit	Order Militia 		exp 2 armour 0 weapon_lvl 0
@@ -8997,15 +9462,13 @@ monitor_event EventCounter EventCounterType inquisition
 		unit	Ritterbruder 		exp 3 armour 0 weapon_lvl 0
 		unit	Ritterbruder 		exp 2 armour 0 weapon_lvl 0
 	end
-
 	add_money teutonic_order, 5000
 
 	spawn_army
 		faction teutonic_order
-;		OLD;character Conrad von_Thuringen, named character, age 30, x 232, y 243, label teuton4heir, family
-;		Now Spawns right under Riga
-		character Conrad von_Thuringen, named character, family, age 30, x 250, y 254, label teuton4heir, direction N
-		traits FactionheirTO 1, MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 1 , GoodCommander 2 , LoyaltyStarter 1 , Drink 1 , PublicFaith 1 , ContentGeneral 3 , ReligionStarter 1
+		character Conrad von_Thuringen, named character, family, age 30, x 234, y 241, label teuton4heir, direction N
+		;character Conrad von_Thuringen, named character, family, age 30, x 252, y 255, label teuton4heir, direction N ;right under Riga
+		traits FactionheirTO 1, LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 1 , GoodCommander 2 , Drink 1 , PublicFaith 1 , ContentGeneral 3 , TOEmergeID 2 
 		unit	TO Bodyguard 		exp 3 armour 0 weapon_lvl 0
 		unit	Order Militia 		exp 2 armour 0 weapon_lvl 0
 		unit	Order Militia 		exp 1 armour 0 weapon_lvl 0
@@ -9027,97 +9490,164 @@ monitor_event EventCounter EventCounterType inquisition
 		unit	Ritterbruder 		exp 3 armour 0 weapon_lvl 0
 		unit	Ritterbruder 		exp 2 armour 0 weapon_lvl 0
 	end
-
 	add_money teutonic_order, 5000
 	spawn_character teutonic_order random_name, priest, age 27, x 222, y 238 
 	spawn_character teutonic_order random_name, priest, age 35, x 224, y 236
 		
 	historic_event teutonic_order_invasion event/teutonic_faction_intro.bik
-
-	if I_EventCounter obotrites_exist != 1
+	if I_EventCounter PaganLithuania = 1
 	console_command diplomatic_stance teutonic_order lithuania war
 	end_if
 
 terminate_monitor
 end_monitor
 
-declare_counter attack_palanga
-set_counter attack_palanga 0
-
-;monitor_event FactionTurnStart FactionType teutonic_order
 monitor_event CharacterTurnStart CharFactionType teutonic_order
-	and Trait FactionleaderTO = 1
-	and not I_SettlementOwner Palanga = teutonic_order
-	and I_IsFactionAIControlled teutonic_order
-	;and I_CharacterExists teuton4leader
-	;and I_CharacterExists teuton4heir
-	
-	if I_AtSea teuton4leader; to avoid the case he lost a battle and retreated at a ship nearby
+	and Trait TOEmergeID = 2
+		set_counter teutonickonrad 1
+	if I_CompareCounter TO_spawned = 3
 		terminate_monitor
-	end_if
-	;if I_AtSea teuton4heir; to avoid the case he lost a battle and retreated at a ship nearby
-	;	terminate_monitor
-	;end_if
-
-	if I_SettlementUnderSiege Palanga;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_palanga = 0
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile teutonic_order, named_character, 5, 224, 239 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Palanga
-	and I_CompareCounter attack_palanga = 1
-		siege_settlement teuton4leader, Palanga, attack
-		set_counter attack_palanga 2
-		;move teuton4heir, 250, 255;for riga
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Palanga
-		siege_settlement teuton4leader, Palanga, maintain
-		;siege_settlement teuton4heir, Palanga, maintain
-		set_counter attack_palanga 1
 	end_if
 end_monitor
 
-declare_counter attack_riga
-set_counter attack_riga 0
+monitor_event FactionTurnStart FactionType teutonic_order
+	and I_EventCounter teutonic_order_invasion > 0
 
-;monitor_event FactionTurnStart FactionType teutonic_order
-monitor_event CharacterTurnStart CharFactionType teutonic_order
-	and Trait FactionheirTO = 1
-	and not I_SettlementOwner Riga = teutonic_order
-	and I_IsFactionAIControlled teutonic_order
-	;and I_CompareCounter attack_palanga = 2
-	;and I_CharacterTypeNearTile teutonic_order, named_character, 5, 250, 255
-	;and I_CharacterExists teuton4heir
-	
-	if I_AtSea teuton4heir ; to avoid the case he lost a battle and retreated at a ship nearby
-		terminate_monitor
+	;###### "Phase4" (next turn)
+	if I_CompareCounter TO_spawned = 3
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4TO2
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4TO2 61,1
+		console_command mp temp4TO2 -1
+
+		if I_CompareCounter teutonickonrad = 1
+		and I_SettlementOwner Riga != teutonic_order
+		and I_SettlementUnderSiege Riga
+		and I_CharacterTypeNearTile teutonic_order, named_character, 2, 252, 256 ;Riga
+			set_counter scripted_siege 1
+			console_command move_character temp4TO2 252, 256
+			set_counter besieging_test 1
+			move temp4TO2, 252, 255
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4TO2 252,257
+				move temp4TO2, 252, 256
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4TO2 252,255
+				move temp4TO2, 252, 256
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4TO2 61,1
+
+			if I_CompareCounter scripted_siege = 0
+				siege_settlement teuton4heir, Riga, attack
+				log always TO Riga Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+
+		set_counter scripted_siege -1
+		set_counter TO_spawned -1
+		kill_character temp4TO2
+	 terminate_monitor
 	end_if
 
-	if I_SettlementUnderSiege Riga;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_riga = 0
-		terminate_monitor
+	;###### "Phase3" (next turn)
+	if I_CompareCounter TO_spawned = 2
+		if I_CompareCounter teutonickonrad = 0
+			set_counter TO_spawned -1
+			terminate_monitor
+		end_if
+		set_counter teutonickonrad 0
+		if I_AtSea teuton4heir
+			set_counter TO_spawned -1
+			terminate_monitor
+		end_if
+		if I_SettlementOwner Riga != teutonic_order
+		and ! I_SettlementUnderSiege Riga
+			siege_settlement teuton4heir, Riga, maintain
+			if ! I_SettlementUnderSiege Riga
+				move teuton4heir, 248, 254
+			end_if
+			if I_SettlementUnderSiege Riga
+				console_command give_trait teuton4heir ScriptedBesieger 1
+				set_counter TO_spawned 3
+			end_if
+		end_if
 	end_if
 
-	if not I_CharacterTypeNearTile teutonic_order, named_character, 5, 250, 255 ;if character not standing where it should, avoid ctd
-		terminate_monitor
+	;###### "Phase2" (next turn)
+	if I_CompareCounter TO_spawned = 1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4TO
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4TO 61,1
+		console_command mp temp4TO -1
+
+		if I_CharacterExists teuton4leader
+		and I_SettlementOwner Palanga != teutonic_order
+		and I_SettlementUnderSiege Palanga
+		and I_CharacterTypeNearTile teutonic_order, named_character, 2, 225, 240 ;Twangste
+			set_counter scripted_siege 1
+			console_command move_character temp4TO 225,240
+			set_counter besieging_test 1
+			move temp4TO, 225, 239
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4TO 224,240
+				move temp4TO, 225, 240
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4TO 226,240
+				move temp4TO, 225, 240
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4TO 61,1
+
+			if I_CompareCounter scripted_siege = 0
+				siege_settlement teuton4leader, Palanga, attack
+				log always TO Twangste Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+
+		set_counter scripted_siege -1
+		set_counter TO_spawned -1
+		kill_character temp4TO
+		if I_CompareCounter teutonickonrad = 0
+			terminate_monitor
+		end_if
+		if I_CharacterExists teuton4heir
+		move teuton4heir, 252, 255
+		end_if
+		set_counter teutonickonrad 0
+		set_counter TO_spawned 2
 	end_if
 
-	if I_SettlementUnderSiege Riga
-	and I_CompareCounter attack_riga = 1
-		siege_settlement teuton4heir, Riga, attack
-		set_counter attack_riga 2
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Riga
-		siege_settlement teuton4heir, Riga, maintain
-		set_counter attack_riga 1
+	;###### "Phase1"
+	if I_CompareCounter TO_spawned = 0
+		set_counter TO_spawned 1
+		if I_SettlementOwner Palanga != teutonic_order
+		and ! I_SettlementUnderSiege Palanga
+		and I_CharacterExists teuton4leader
+		and I_CompareCounter teutonickonrad = 1
+			siege_settlement teuton4leader, Palanga, maintain
+			siege_settlement teuton4heir, Palanga, maintain
+			set_counter teutonickonrad 0
+			if ! I_SettlementUnderSiege Palanga
+				move teuton4leader, 231,242
+				move teuton4heir, 234,241
+			end_if
+			if I_SettlementUnderSiege Palanga
+				console_command give_trait teuton4leader ScriptedBesieger 1
+			end_if
+		end_if
 	end_if
 end_monitor
 
@@ -9136,7 +9666,7 @@ monitor_event FactionTurnStart FactionType teutonic_order
 	and I_IsFactionAIControlled lithuania
 	and I_EventCounter Teutonic2Order < 3
 
-	if I_EventCounter obotrites_exist = 1
+	if I_EventCounter lithuania_conversion_accepted = 1
 		terminate_monitor
 	end_if
 	console_command diplomatic_stance teutonic_order lithuania war
@@ -9299,7 +9829,7 @@ monitor_event EventCounter EventCounterType mongols_invasion
 	;Faction Leader
 	spawn_army ;Urgench
 		faction mongols
-		character	Genghis, named character, age 48, x 500, y 153, label mongols4genghis, family
+		character	Genghis, named character, age 48, x 505, y 153, label mongols4genghis, family
 		traits Factionleader 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
@@ -9354,7 +9884,7 @@ monitor_event EventCounter EventCounterType mongols_invasion
 
 	spawn_army ;Urgench
 		faction mongols
-		character	Aradai, named character, age 22, x 501, y 154, label mongols4aradai, family
+		character	Aradai, named character, age 22, x 505, y 154, label mongols4aradai, family
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 1 
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
@@ -9611,7 +10141,7 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 
 	spawn_army
 		faction mongols
-		character	random_name, named character, age 26, x 500, y 153, label mongols4supportgen1, family
+		character	random_name, named character, age 26, x 505, y 154, label mongols4supportgen1, family
 		traits MilitaryInclination 1 , Military_Edu 4 , NaturalMilitarySkill 4 , GoodCommander 5 , Bloodthirsty 3 , BattleDread 5 , StrategyDread 5 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 , Drink 4 , Genocide 3
 		unit	Keshikten Bodyguard		exp 7 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
@@ -9638,7 +10168,7 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 
 	spawn_army
 		faction mongols
-		character	random_name, named character, age 25, x 499, y 154, label mongols4supportgen2, family
+		character	random_name, named character, age 25, x 503, y 154, label mongols4supportgen2, family
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Anger 3 , BattleDread 3 , StrategyDread 3 , PublicFaith 2 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
@@ -9665,7 +10195,7 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 
 	spawn_army
 		faction mongols
-		character	random_name, named character, age 24, x 499, y 153, label mongols4supportgen3
+		character	random_name, named character, age 24, x 505, y 152, label mongols4supportgen3
 		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 3 , GoodCommander 5 , Bloodthirsty 3 , BattleDread 5 , StrategyDread 5 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 , Drink 2
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
@@ -9692,7 +10222,7 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 
 	spawn_army
 		faction mongols
-		character	random_name, named character, age 25, x 501, y 153, label mongols4supportgen4
+		character	random_name, named character, age 25, x 505, y 150, label mongols4supportgen4
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
@@ -9718,19 +10248,19 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 	add_money mongols 5000
 
 	if not I_SettlementUnderSiege Urgench
-		if I_CharacterTypeNearTile mongols, named_character, 0, 501, 153
-			siege_settlement mongols4supportgen4, Urgench, maintain
-		end_if
-
-		if I_CharacterTypeNearTile mongols, named_character, 0, 499, 154
+		if I_CharacterTypeNearTile mongols, named_character, 0, 503, 154
 			siege_settlement mongols4supportgen2, Urgench, maintain
 		end_if
 
-		if I_CharacterTypeNearTile mongols, named_character, 0, 499, 153
+		if I_CharacterTypeNearTile mongols, named_character, 0, 505, 152
 			siege_settlement mongols4supportgen3, Urgench, maintain
 		end_if
+		
+		if I_CharacterTypeNearTile mongols, named_character, 0, 505, 150
+			siege_settlement mongols4supportgen4, Urgench, maintain
+		end_if
 
-		if I_CharacterTypeNearTile mongols, named_character, 0, 500, 153
+		if I_CharacterTypeNearTile mongols, named_character, 0, 505, 154
 			siege_settlement mongols4supportgen1, Urgench, attack
 		end_if
 	end_if
@@ -9739,7 +10269,7 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 end_monitor
 
 monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
+	and IsFactionAIControlled
 	and I_CharacterTypeNearTile mongols, named_character, 10, 440, 194
 
 	historic_event mongols_blue_horde_caucasus
@@ -9760,7 +10290,7 @@ terminate_monitor
 end_monitor
 
 monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
+	and IsFactionAIControlled
 	and I_CharacterTypeNearTile mongols, named_character, 10, 326, 202
 
 	historic_event mongols_blue_horde_kiev
@@ -9781,7 +10311,7 @@ terminate_monitor
 end_monitor
 
 monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
+	and IsFactionAIControlled
 	and I_CharacterTypeNearTile mongols, named_character, 10, 280, 184
 
 	historic_event mongols_blue_horde_hungary
@@ -9802,7 +10332,7 @@ terminate_monitor
 end_monitor
 
 monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
+	and IsFactionAIControlled
 	and I_CharacterTypeNearTile mongols, named_character, 5, 396, 89
 
 	historic_event mongols_horde_baghdad
@@ -10189,7 +10719,7 @@ monitor_event EventCounter EventCounterType mongols_invasion
 end_monitor
 
 monitor_event PreFactionTurnStart FactionType mongols
-	and not FactionIsLocal
+	and IsFactionAIControlled
 
 	if I_EventCounter mongols_invasion = 5
 		terminate_monitor
@@ -10203,13 +10733,6 @@ monitor_event PreFactionTurnStart FactionType mongols
 		add_money mongols 5000
 	end_if
 
-	;if I_SettlementOwner Khiva = mongols
-	;	create_unit Khiva, Disamounted Turhagut, num 3, exp 2, arm 0, wep 0
-	;	create_unit Khiva, Hoshiga Horse Archers, num 1, exp 2, arm 0, wep 0
-	;	create_unit Khiva, Turhagut Lancers, num 1, exp 4, arm 0, wep 0
-	;	add_money mongols 5000
-	;end_if
-
 	if I_SettlementOwner Konjikala = mongols
 		create_unit Konjikala, Khabutu Archers, num 3, exp 3, arm 0, wep 0
 		create_unit Konjikala, Hoshiga Horse Archers, num 2, exp 4, arm 0, wep 0
@@ -10217,13 +10740,6 @@ monitor_event PreFactionTurnStart FactionType mongols
 		create_unit Konjikala, ME Catapult, num 1, exp 4, arm 0, wep 0
 		add_money mongols 5000
 	end_if
-
-	;if I_SettlementOwner Embi = mongols
-	;	create_unit Embi, Khabutu Archers, num 1, exp 2, arm 0, wep 0
-	;	create_unit Embi, Disamounted Turhagut, num 1, exp 2, arm 0, wep 0
-	;	create_unit Embi, Hoshiga Horse Archers, num 2, exp 4, arm 0, wep 0
-	;	add_money mongols 3000
-	;end_if
 
 	if I_EventCounter DifficultyLevel >= 2
 		if I_SettlementOwner Jaiksk = mongols
@@ -10297,14 +10813,6 @@ monitor_event PreFactionTurnStart FactionType mongols
 		end_if
 	end_if
 
-	;if I_EventCounter DifficultyLevel >= 3
-	;	if I_SettlementOwner Damghan = mongols
-	;		create_unit Damghan, Turhagut Lancers, num 1, exp 2, arm 0, wep 0
-	;		create_unit Damghan, ME Trebuchet, num 1, exp 5, arm 0, wep 0
-	;		add_money mongols 3000
-	;	end_if
-	;end_if
-
 	if I_EventCounter DifficultyLevel >= 4
 		if I_SettlementOwner Yazd = mongols
 			create_unit Yazd, Disamounted Turhagut, num 2, exp 1, arm 0, wep 0
@@ -10316,271 +10824,323 @@ end_monitor
 
 ;mongols weaken and no longer are a superpower
 monitor_event PreFactionTurnStart FactionType mongols
-	and not FactionIsLocal
+	and IsFactionAIControlled
 	and I_EventCounter mongols_invasion = 6
 
 	set_event_counter is_the_ai 0
 
 end_monitor
 
-declare_counter attack_urgench
-set_counter attack_urgench 0
-
-;monitor_event FactionTurnStart FactionType mongols
+declare_counter mongols_spawned
+declare_counter mongolaradai
+declare_counter mongolchindu
+declare_counter mongolnayuk
 monitor_event CharacterTurnStart CharFactionType mongols
-	and Trait InvasionCharacterCounter = 1; Aradai
-	and not I_SettlementOwner Urgench = mongols
-	and I_IsFactionAIControlled mongols
-	and I_CharacterExists mongols4genghis
-	;and I_CharacterExists mongols4aradai
-	
-	if I_SettlementUnderSiege Urgench;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_urgench = 0
+	and Trait InvasionCharacterCounter = 1
+		set_counter mongolaradai 1
+	if I_CompareCounter mongols_spawned = 1
 		terminate_monitor
 	end_if
-
-	if not I_CharacterTypeNearTile mongols, named_character, 5, 500, 154 ;if character not standing where it should, avoid ctd
+end_monitor
+monitor_event CharacterTurnStart CharFactionType mongols
+	and Trait InvasionCharacterCounter = 3
+		set_counter mongolchindu 1
+	if I_CompareCounter mongols_spawned = 2
 		terminate_monitor
 	end_if
-
-	if I_SettlementUnderSiege Urgench
-	and I_CompareCounter attack_urgench = 1
-		siege_settlement mongols4genghis, Urgench, attack
-		siege_settlement mongols4aradai, Urgench, maintain
-		set_counter attack_urgench 2
+end_monitor
+monitor_event CharacterTurnStart CharFactionType mongols
+	and Trait InvasionCharacterCounter = 4
+		set_counter mongolnayuk 1
+	if I_CompareCounter mongols_spawned = 2
 		terminate_monitor
 	end_if
+end_monitor
 
-	if not I_SettlementUnderSiege Urgench
-		if I_CompareCounter attack_urgench = 0
-			siege_settlement mongols4genghis, Urgench, maintain
-			siege_settlement mongols4aradai, Urgench, maintain
-			set_counter attack_urgench 1
+monitor_event FactionTurnStart FactionType mongols
+	and I_EventCounter mongols_invasion > 0
+
+	;###### "Phase3" (next turn)
+	if I_CompareCounter mongols_spawned = 2
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4mongols2
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4mongols2 61,1
+		console_command mp temp4mongols2 -1
+
+		if I_CharacterExists mongols4chindu
+		and I_SettlementOwner Konjikala != mongols
+		and I_SettlementUnderSiege Konjikala
+		and I_CharacterTypeNearTile mongols, named_character, 2, 497, 120 ;Konjikala
+			set_counter scripted_siege 1
+			console_command move_character temp4mongols2 497, 120
+			set_counter besieging_test 1
+			move temp4mongols2, 497, 121
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4mongols2 496,120
+				move temp4mongols2, 497, 120
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4mongols2 498,120
+				move temp4mongols2, 497, 120
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4mongols2 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter mongolchindu = 1
+				siege_settlement mongols4chindu, Konjikala, attack
+				log always mongols Konjikala Siege Script Successful! ~Melooo182
+				set_counter mongolchindu 0
+			end_if
 		end_if
-	end_if
-end_monitor
 
-;declare_counter attack_khiva
-;set_counter attack_khiva 0
-;
-;;monitor_event FactionTurnStart FactionType mongols
-;monitor_event CharacterTurnStart CharFactionType mongols
-;	and Trait InvasionCharacterCounter = 2; Bayan
-;	and not I_SettlementOwner Khiva = mongols
-;	and I_IsFactionAIControlled mongols
-;	and I_CharacterExists mongols4jebe
-;	;and I_CharacterExists mongols4bayan
-;	
-;	if I_SettlementUnderSiege Khiva;if settlement under siege already, avoid ctd.
-;	and I_CompareCounter attack_khiva = 0
-;		terminate_monitor
-;	end_if
-;
-;	if not I_CharacterTypeNearTile mongols, named_character, 5, 505, 147 ;if character not standing where it should, avoid ctd
-;		terminate_monitor
-;	end_if
-;
-;	if I_SettlementUnderSiege Khiva
-;	and I_CompareCounter attack_khiva = 1
-;		siege_settlement mongols4jebe, Khiva, attack
-;		siege_settlement mongols4bayan, Khiva, maintain
-;		set_counter attack_khiva 2
-;		terminate_monitor
-;	end_if
-;
-;	if not I_SettlementUnderSiege Khiva
-;		if I_CompareCounter attack_khiva = 0
-;			siege_settlement mongols4jebe, Khiva, maintain
-;			siege_settlement mongols4bayan, Khiva, maintain
-;			set_counter attack_khiva 1
-;		end_if
-;	end_if
-;end_monitor
+		if I_CompareCounter mongolnayuk = 1
+		and I_CharacterExists mongols4nayuk
+		move mongols4nayuk, 470, 114; to Gorgan
+		end_if
 
-declare_counter attack_konjikala
-set_counter attack_konjikala 0
-
-;monitor_event FactionTurnStart FactionType mongols
-monitor_event CharacterTurnStart CharFactionType mongols
-	and Trait InvasionCharacterCounter = 3; Chindu
-	and I_CharacterExists mongols4chindu
-
-	if I_CompareCounter attack_konjikala = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_mongol_character 1
-end_monitor
-monitor_event CharacterTurnStart CharFactionType mongols
-	and Trait InvasionCharacterCounter = 4; Nayuk
-	and I_CharacterExists mongols4nayuk
-
-	if I_CompareCounter attack_konjikala = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_mongol_character 2
-end_monitor
-monitor_event EventCounter EventCounterType is_mongol_character
-	and EventCounter = 2
-	and not I_SettlementOwner Konjikala = mongols
-	and I_IsFactionAIControlled mongols
-	
-	if I_SettlementUnderSiege Konjikala;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_konjikala = 0
-		terminate_monitor
+		set_counter scripted_siege -1
+		set_counter mongols_spawned -1
+		kill_character temp4mongols2
+	 terminate_monitor
 	end_if
 
-	if not I_CharacterTypeNearTile mongols, named_character, 5, 490, 126 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
+	;###### "Phase2" (next turn)
+	if I_CompareCounter mongols_spawned = 1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4mongols1
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4mongols1 61,1
+		console_command mp temp4mongols1 -1
 
-	if I_SettlementUnderSiege Konjikala
-	and I_CompareCounter attack_konjikala = 1
-		siege_settlement mongols4chindu, Konjikala, attack
-		siege_settlement mongols4nayuk, Konjikala, maintain
-		set_counter attack_konjikala 2
-		terminate_monitor
-	end_if
+		if I_CharacterExists mongols4genghis
+		and I_SettlementOwner Urgench != mongols
+		and I_SettlementUnderSiege Urgench
+		and I_CharacterTypeNearTile mongols, named_character, 2, 503, 152 ;Urgench
+			set_counter scripted_siege 1
+			console_command move_character temp4mongols1 503,152
+			set_counter besieging_test 1
+			move temp4mongols1, 504, 152
 
-	if not I_SettlementUnderSiege Konjikala
-		if I_CompareCounter attack_konjikala = 0
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4mongols1 502,152
+				move temp4mongols1, 503, 152
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4mongols1 504,152
+				move temp4mongols1, 503, 152
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4mongols1 61,1
+
+			if I_CompareCounter scripted_siege = 0
+				siege_settlement mongols4genghis, Urgench, attack
+				log always mongols Urgench Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+
+		set_counter scripted_siege -1
+		kill_character temp4mongols1
+		
+		if I_CompareCounter mongolaradai = 1
+		and I_CharacterExists mongols4aradai
+			move mongols4aradai, 505, 147; to Khiva Fort
+			set_counter mongolaradai 0
+		end_if
+
+	;Konjikala Siege
+		if I_SettlementOwner Konjikala != mongols
+		and ! I_SettlementUnderSiege Konjikala
+		and I_CompareCounter mongolchindu = 1
+		and I_CompareCounter mongolnayuk = 1
 			siege_settlement mongols4chindu, Konjikala, maintain
 			siege_settlement mongols4nayuk, Konjikala, maintain
-			set_counter attack_konjikala 1
-			set_event_counter is_mongol_character 0
+			set_counter mongolchindu 0
+			set_counter mongolnayuk 0
+			if ! I_SettlementUnderSiege Konjikala
+				move mongols4chindu, 490, 125
+				move mongols4nayuk, 491, 126
+			end_if
+			if I_SettlementUnderSiege Konjikala
+				console_command give_trait mongols4chindu ScriptedBesieger 1
+				set_counter mongols_spawned 2
+			end_if
 		end_if
+		if I_CompareCounter mongols_spawned = 1
+			set_counter mongols_spawned -1
+			terminate_monitor
+		end_if
+	end_if
+
+	;###### "Phase1"
+	if I_CompareCounter mongols_spawned = 0
+		set_counter mongols_spawned 1
+		if I_SettlementOwner Urgench != mongols
+		and ! I_SettlementUnderSiege Urgench
+		and I_CharacterExists mongols4genghis
+		and I_CompareCounter mongolaradai = 1
+			siege_settlement mongols4genghis, Urgench, maintain
+			siege_settlement mongols4aradai, Urgench, maintain
+			if ! I_SettlementUnderSiege Urgench
+				move mongols4genghis, 505,153
+				move mongols4aradai, 505,154
+			end_if
+			if I_SettlementUnderSiege Urgench
+				console_command give_trait mongols4genghis ScriptedBesieger 1
+			end_if
+		end_if
+		set_counter mongolaradai 0
 	end_if
 end_monitor
 
 ;================= BULGARIAN UPRISING ===================
 declare_counter bulgarians_rebel
-declare_counter bu_test
+declare_counter rebelpeter
+declare_counter rebelivan
+declare_counter rebelkalman
 add_events
 		event	counter	BulgarianUprisingSet
-		date	50
+		date	50 85
 end_add_events
 
-monitor_event MultiTurnMove I_CompareCounter bu_test = 1
-	and HighestAttAdjacentChar Unorthodoxy named_character = 1
-
-	if I_CompareCounter bulgarians_rebel = -1
+monitor_event CharacterTurnStart CharFactionType slave
+	and Trait InvasionCharacterCounter = 1
+	and I_CompareCounter bulgarians_rebel = 1
+		set_counter rebelpeter 1
+		console_command give_trait peter4bulgaria InvasionCharacterCounter -1
 		terminate_monitor
-	end_if
-	set_counter bulgarians_rebel 0
+end_monitor
+monitor_event CharacterTurnStart CharFactionType slave
+	and Trait InvasionCharacterCounter = 2
+	and I_CompareCounter bulgarians_rebel = 1
+		set_counter rebelivan 1
+		console_command give_trait ivan4slave InvasionCharacterCounter -2
+		terminate_monitor
+end_monitor
+monitor_event CharacterTurnStart CharFactionType slave
+	and Trait InvasionCharacterCounter = 3
+	and I_CompareCounter bulgarians_rebel = 1
+		set_counter rebelkalman 1
+		console_command give_trait kalman4slave InvasionCharacterCounter -3
+		terminate_monitor
 end_monitor
 
 monitor_event FactionTurnStart FactionType slave
-;	and I_TurnNumber > 49
 	and I_EventCounter BulgarianUprisingSet = 1
 
-	;###### "Turn" 51
+	;###### "Phase2"(next turn)
 	if I_CompareCounter bulgarians_rebel = 1
 		spawn_army
 			faction dummies
-			character	Temporary, named character, x 20, y 20
+			character	Temporary, named character, x 20, y 20, label temp4bulgaria
 			unit		Aldari	exp 0 armour 0 weapon_lvl 0
 		end
 		give_everything_to_faction dummies papal_states false
-		console_command move_character Temporary 9,223
-		console_command mp Temporary -1
+		console_command move_character temp4bulgaria 61,1
+		console_command mp temp4bulgaria -1
 
 		if I_CharacterExists peter4bulgaria
 		and I_SettlementOwner Sofia != slave
 		and I_SettlementUnderSiege Sofia
-		and I_CharacterTypeNearTile slave, named_character, 2, 248, 155 ;Sofia
-			;set_counter bulgarians_rebel 1
-			console_command move_character Temporary 248,155
-			set_counter bu_test 1
-			move Temporary, 248, 156
+		and I_CharacterTypeNearTile slave, named_character, 2, 246, 153 ;Sofia
+			set_counter scripted_siege 1
+			console_command move_character temp4bulgaria 246,153
+			set_counter besieging_test 1
+			move temp4bulgaria, 245, 153
 
-			if I_CompareCounter bulgarians_rebel = 1
-				console_command move_character Temporary 248,156
-				move Temporary, 248, 155
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4bulgaria 247,153
+				move temp4bulgaria, 246, 153
 			end_if
-			if I_CompareCounter bulgarians_rebel = 1
-				console_command move_character Temporary 248,154
-				move Temporary, 248, 155
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4bulgaria 245,153
+				move temp4bulgaria, 246, 153
 			end_if
-			set_counter bu_test 0
-			console_command move_character Temporary 9,223
+			set_counter besieging_test 0
+			console_command move_character temp4bulgaria 61,1
 
-			if I_CompareCounter bulgarians_rebel = 0
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter rebelpeter = 1
 				siege_settlement peter4bulgaria, Sofia, attack
+				log always Bulgaria Sredets Siege Script Successful! ~Melooo182
 			end_if
 		end_if
 
 		if I_CharacterExists ivan4slave
-		and I_SettlementOwner Scopia != slave
-		and I_SettlementUnderSiege Scopia
-		and I_CharacterTypeNearTile slave, named_character, 2, 233, 149 ;Scopia
-			console_command move_character Temporary 233,149
-			set_counter bulgarians_rebel 1
-			set_counter bu_test 1
-			move Temporary, 234, 149
+		and I_SettlementOwner Belgrade != slave; Nis
+		and I_SettlementUnderSiege Belgrade
+		and I_CharacterTypeNearTile slave, named_character, 2, 235, 158 ;Nis
+			set_counter scripted_siege 1
+			console_command move_character temp4bulgaria 235,158
+			set_counter besieging_test 1
+			move temp4bulgaria, 236, 159
 
-			if I_CompareCounter bulgarians_rebel = 1
-				console_command move_character Temporary 233,150
-				move Temporary, 233, 149
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4bulgaria 236,158
+				move temp4bulgaria, 235, 158
 			end_if
-			if I_CompareCounter bulgarians_rebel = 1
-				console_command move_character Temporary 233,148
-				move Temporary, 233, 149
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4bulgaria 234,158
+				move temp4bulgaria, 235, 158
 			end_if
-			set_counter bu_test 0
-			console_command move_character Temporary 9,223
+			set_counter besieging_test 0
+			console_command move_character temp4bulgaria 61,1
 
-			if I_CompareCounter bulgarians_rebel = 0
-				siege_settlement ivan4slave, Scopia, attack
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter rebelivan = 1
+				siege_settlement ivan4slave, Belgrade, attack
+				log always Bulgaria Nysos Siege Script Successful! ~Melooo182
 			end_if
 		end_if
 
 		if I_CharacterExists kalman4slave
-		and I_SettlementOwner Adrianople != slave
-		and I_SettlementUnderSiege Adrianople
-		and I_CharacterTypeNearTile slave, named_character, 2, 269, 146 ;Adrianople
-			set_counter bulgarians_rebel 1
-			console_command move_character Temporary 269, 146
-			set_counter bu_test 1
-			move Temporary, 269, 147
+		and I_SettlementOwner Scopia != slave; Tarnovo
+		and I_SettlementUnderSiege Scopia
+		and I_CharacterTypeNearTile slave, named_character, 2, 262, 157 ;Tarnovo
+			set_counter scripted_siege 1
+			console_command move_character temp4bulgaria 262, 157
+			set_counter besieging_test 1
+			move temp4bulgaria, 262, 158
 
-			if I_CompareCounter bulgarians_rebel = 1
-				console_command move_character Temporary 269,147
-				move Temporary, 269, 146
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4bulgaria 263,157
+				move temp4bulgaria, 262, 157
 			end_if
-			if I_CompareCounter bulgarians_rebel = 1
-				console_command move_character Temporary 269,145
-				move Temporary, 269, 146
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4bulgaria 261,157
+				move temp4bulgaria, 262, 157
 			end_if
-			set_counter bu_test 0
-			console_command move_character Temporary 9,223
+			set_counter besieging_test 0
+			console_command move_character temp4bulgaria 61,1
 
-			if I_CompareCounter bulgarians_rebel = 0
-				siege_settlement kalman4slave, Adrianople, attack
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter rebelkalman = 1
+				siege_settlement kalman4slave, Scopia, attack
+				log always Bulgaria Tarnovo Siege Script Successful! ~Melooo182
 			end_if
 		end_if
 
-		spawn_army
-			faction dummies
-			character	Peter, named character, x 19, y 20, label end4bus
-			traits	ofBulgariaName 2
-			unit		Aldari	exp 0 armour 0 weapon_lvl 0
-		end
-		give_everything_to_faction dummies papal_states false
-		console_command move_character end4bus 10,223
+		set_counter scripted_siege -1
 		set_counter bulgarians_rebel -1
-		set_counter bu_test 1
-		move Temporary, 8, 223
-		kill_character Temporary
-		kill_character end4bus
+		kill_character temp4bulgaria
 	 terminate_monitor
 	end_if
 
-	;###### "Turn" 50
+	;###### "Phase1"
 	if I_SettlementOwner Sofia != slave
 		set_counter bulgarians_rebel 1
 		spawn_army
 			faction dummies
-			character 	Peter, named character, age 30, x 250, y 157, label peter4bulgaria
-			traits 	GoodCommander 4, BattleDread 3, StrategyDread 2, PublicFaith 1, NaturalMilitarySkill 2, ofBulgariaName 1
+			character 	Petar, named character, age 33, x 249, y 151, label peter4bulgaria
+			traits 	LoyaltyStarter 1 , ReligionStarter 1 , GoodCommander 4, BattleDread 3, StrategyDread 2, PublicFaith 1, NaturalMilitarySkill 2, ofBulgariaName 1 
 			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
 			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
@@ -10601,12 +11161,12 @@ monitor_event FactionTurnStart FactionType slave
 		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
-	if I_SettlementOwner Scopia != slave
+	if I_SettlementOwner Belgrade != slave; Nis
 		set_counter bulgarians_rebel 1
 		spawn_army
 			faction dummies
-			character	Ivan, named character, age 30, x 236, y 151, label ivan4slave
-			traits	GoodCommander 2, BattleChivalry 3, StrategyChivalry 2, PublicFaith 1, NaturalMilitarySkill 1, ofBulgariaName 1
+			character	Ivan, named character, age 30, x 236, y 155, label ivan4slave
+			traits		LoyaltyStarter 1 , ReligionStarter 1 , GoodCommander 2, BattleChivalry 3, StrategyChivalry 2, PublicFaith 1, NaturalMilitarySkill 1, ofBulgariaName 1 
 			unit    	EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
 			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
@@ -10627,12 +11187,12 @@ monitor_event FactionTurnStart FactionType slave
 		give_everything_to_faction dummies slave false
 		add_money slave 10000
 	end_if
-	if I_SettlementOwner Adrianople != slave
+	if I_SettlementOwner Scopia != slave; Tarnovo
 		set_counter bulgarians_rebel 1
 		spawn_army 
 			faction dummies
-			character Kalman, named character, age 30, x 267, y 147, label kalman4slave
-			traits GoodCommander 2, Bloodthirsty 2, BattleDread 3, ofBulgariaName 1
+			character Kaloyan, named character, age 25, x 264, y 159, label kalman4slave
+			traits 	LoyaltyStarter 1 , ReligionStarter 1 , GoodCommander 2, Bloodthirsty 2, BattleDread 3, ofBulgariaName 1 
 			unit		EE Bodyguard		exp 2 armour 0 weapon_lvl 0
 			unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
 			unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
@@ -10663,30 +11223,33 @@ monitor_event FactionTurnStart FactionType slave
 	and ! I_SettlementUnderSiege Sofia
 		siege_settlement peter4bulgaria, Sofia, maintain
 		if ! I_SettlementUnderSiege Sofia
-			move peter4bulgaria, 250,157
+			move peter4bulgaria, 249,151
 		end_if
 		if I_SettlementUnderSiege Sofia
-			console_command give_trait peter4bulgaria ofBulgariaName 2
+			console_command give_trait peter4bulgaria ScriptedBesieger 1
+			console_command give_trait peter4bulgaria InvasionCharacterCounter 1
 		end_if
 	end_if
-	if I_SettlementOwner Scopia != slave
+	if I_SettlementOwner Belgrade != slave; Nis
+	and ! I_SettlementUnderSiege Belgrade
+		siege_settlement ivan4slave, Belgrade, maintain
+		if ! I_SettlementUnderSiege Belgrade
+			move ivan4slave, 236,155
+		end_if
+		if I_SettlementUnderSiege Belgrade
+			console_command give_trait ivan4slave ScriptedBesieger 1
+			console_command give_trait ivan4slave InvasionCharacterCounter 2
+		end_if
+	end_if
+	if I_SettlementOwner Scopia != slave; Tarnovo
 	and ! I_SettlementUnderSiege Scopia
-		siege_settlement ivan4slave, Scopia, maintain
+		siege_settlement kalman4slave, Scopia, maintain
 		if ! I_SettlementUnderSiege Scopia
-			move ivan4slave, 236,151
+			move kalman4slave, 264,159
 		end_if
 		if I_SettlementUnderSiege Scopia
-			console_command give_trait ivan4slave ofBulgariaName 2
-		end_if
-	end_if
-	if I_SettlementOwner Adrianople != slave
-	and ! I_SettlementUnderSiege Adrianople
-		siege_settlement kalman4slave, Adrianople, maintain
-		if ! I_SettlementUnderSiege Adrianople
-			move kalman4slave, 267,147
-		end_if
-		if I_SettlementUnderSiege Adrianople
-			console_command give_trait kalman4slave ofBulgariaName 2
+			console_command give_trait kalman4slave ScriptedBesieger 1
+			console_command give_trait kalman4slave InvasionCharacterCounter 3
 		end_if
 	end_if
 end_monitor
@@ -36549,15 +37112,6 @@ declare_counter conversion_al_mahdiya
 ;MESOPOTAMIA
 	monitor_event GeneralCaptureSettlement SettlementName Baghdad
 	and not FactionType timurids
-		if I_EventCounter abbasids_exist != 1
-			terminate_monitor
-		end_if
-			add_settlement_turmoil Baghdad 8
-	end_monitor
-	monitor_event GeneralCaptureSettlement SettlementName Baghdad
-		if I_EventCounter abbasids_exist = 1
-			terminate_monitor
-		end_if
 			add_settlement_turmoil Baghdad 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Mosul
@@ -45419,10 +45973,6 @@ end_monitor
 	set_counter england_emerge 0
 
 ;Portugal
-	declare_counter oporto_riot
-	set_counter oporto_riot 0
-	declare_counter lisbon_riot
-	set_counter lisbon_riot 0
 	declare_counter al_mahdiya_riot
 	set_counter al_mahdiya_riot 0
 	declare_counter tunis_riot
@@ -45500,14 +46050,11 @@ end_monitor
 	declare_counter aragon_emerge
 	set_counter aragon_emerge 0
 
-;Lithuania
-	declare_counter vilnius_riot
-	set_counter vilnius_riot 0
-	declare_counter lithuania_emerge
-	set_counter lithuania_emerge 0
-	;Obotrites
+;Lithuania/Obotrites
 	declare_counter lubeck_riot
 	set_counter lubeck_riot 0
+	declare_counter lithuania_emerge
+	set_counter lithuania_emerge 0
 
 ;Kievan Rus
 	declare_counter kiev_riot
@@ -46047,21 +46594,9 @@ end_monitor
 	    set_counter faction_emerge_id 18
 	end_monitor
 
-;Lithuania
-	monitor_event CityRiots SettlementName Vilnius
-	  and I_NumberOfSettlements lithuania = 0
-	  and I_EventCounter obotrites_exist != 1
-	  and I_IsFactionAIControlled lithuania
-	  and not I_SettlementOwner Vilnius = lithuania
-	  and I_CompareCounter lithuania_emerge = 0
-	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
-	    set_counter vilnius_riot 1
-	    set_counter faction_emerge_id 19
-	end_monitor
-	;Obotrites
+;Lithuania/Obotrites
 	monitor_event CityRiots SettlementName Damghan
 	  and I_NumberOfSettlements lithuania = 0
-	  and I_EventCounter obotrites_exist = 1
 	  and I_IsFactionAIControlled lithuania
 	  and not I_SettlementOwner Damghan = lithuania
 	  and I_CompareCounter lithuania_emerge = 0
@@ -46455,17 +46990,7 @@ end_monitor
 			set_counter zaragoza_riot 1
 			set_counter faction_emerge_id 18
 		end_if
-		if I_SettlementOwner Vilnius = slave
-		and I_EventCounter obotrites_exist != 1
-		and I_NumberOfSettlements lithuania = 0
-		and I_IsFactionAIControlled lithuania
-		and I_CompareCounter lithuania_emerge = 0
-		and RandomPercent > 66
-			set_counter vilnius_riot 1
-			set_counter faction_emerge_id 19
-		end_if
 		if I_SettlementOwner Damghan = slave
-		and I_EventCounter obotrites_exist = 1
 		and I_NumberOfSettlements lithuania = 0
 		and I_IsFactionAIControlled lithuania
 		and I_CompareCounter lithuania_emerge = 0
@@ -46682,6 +47207,7 @@ and I_CompareCounter faction_emerge_id >= 1
 	console_command create_building Halych ros_po_bonus
 	console_command create_building Oporto ros_po_bonus
 	console_command create_building Lisbon ros_po_bonus
+	console_command create_building Vilnius ros_po_bonus
 	if I_CompareCounter faction_emerge_id != 1
 		console_command create_building Edinburgh ros_po_bonus
 		console_command create_building Aberdeen ros_po_bonus
@@ -46771,7 +47297,6 @@ and I_CompareCounter faction_emerge_id >= 1
 		console_command create_building Barcelona ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 19
-		console_command create_building Vilnius ros_po_bonus
 		console_command create_building Damghan ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 20
@@ -54638,206 +55163,8 @@ and I_CompareCounter faction_emerge_id >= 1
 
 ;Lithuania
   if I_CompareCounter faction_emerge_id = 19
-	if I_CompareCounter vilnius_riot = 0
-		console_command create_building Vilnius ros_po_bonus
-	end_if
 	if I_CompareCounter lubeck_riot = 0
 		console_command create_building Damghan ros_po_bonus
-	end_if
-	if I_CompareCounter vilnius_riot = 1
-		console_command create_building Vilnius ros_target
-		if I_EventCounter HEAVY_MAIL_ARMOR = 0
-			spawn_army
-			faction lithuania
-			character random_name, named character, age 30, x 257, y 240, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   Lith Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Noble Cavalry			exp 2 armour 0 weapon_lvl 0
-			unit   Noble Sons Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Lithuanian Noble Infantry	exp 1 armour 0 weapon_lvl 0
-			unit   Lithuanian Noble Sons		exp 1 armour 0 weapon_lvl 0
-			unit   Baltic Spearmen			exp 0 armour 0 weapon_lvl 0
-			unit   Baltic Spearmen			exp 0 armour 0 weapon_lvl 0
-			unit   Baltic Spearmen			exp 0 armour 0 weapon_lvl 0
-			unit   Lithuanian Skirmishers		exp 0 armour 0 weapon_lvl 0
-			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
-			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
-			end
-			spawn_army
-			faction lithuania
-			character random_name, named character, age 30, x 250, y 242, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   Lith Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Noble Cavalry			exp 2 armour 0 weapon_lvl 0
-			unit   Noble Sons Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Lithuanian Noble Infantry	exp 1 armour 0 weapon_lvl 0
-			unit   Lithuanian Noble Sons		exp 1 armour 0 weapon_lvl 0
-			unit   Baltic Spearmen			exp 0 armour 0 weapon_lvl 0
-			unit   Baltic Spearmen			exp 0 armour 0 weapon_lvl 0
-			unit   Baltic Spearmen			exp 0 armour 0 weapon_lvl 0
-			unit   Lithuanian Skirmishers		exp 0 armour 0 weapon_lvl 0
-			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
-			unit   EE Peasant Archers		exp 0 armour 0 weapon_lvl 0
-			end
-		end_if
-		if I_EventCounter HEAVY_MAIL_ARMOR = 1; Heavy Mail 1200
-		and I_EventCounter HALF_PLATE_ARMOR = 0
-			spawn_army
-			faction lithuania
-			character random_name, named character, age 30, x 257, y 240, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   Lith Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Noble Cavalry			exp 2 armour 1 weapon_lvl 0
-			unit   Noble Sons Cavalry		exp 1 armour 1 weapon_lvl 0
-			unit   Lithuanian Noble Infantry	exp 1 armour 1 weapon_lvl 0
-			unit   Lithuanian Noble Sons		exp 1 armour 1 weapon_lvl 0
-			unit   Ducal Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Ducal Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Ducal Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Lithuanian Skirmishers		exp 0 armour 0 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			end
-			spawn_army
-			faction lithuania
-			character random_name, named character, age 30, x 250, y 242, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   Lith Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Noble Cavalry			exp 2 armour 1 weapon_lvl 0
-			unit   Noble Sons Cavalry		exp 1 armour 1 weapon_lvl 0
-			unit   Lithuanian Noble Infantry	exp 1 armour 1 weapon_lvl 0
-			unit   Lithuanian Noble Sons		exp 1 armour 1 weapon_lvl 0
-			unit   Ducal Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Ducal Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Ducal Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Lithuanian Skirmishers		exp 0 armour 0 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			end
-		end_if
-		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
-			spawn_army
-			faction lithuania
-			character random_name, named character, age 30, x 257, y 240, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   Lith Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Noble Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Noble Sons Cavalry		exp 1 armour 2 weapon_lvl 0
-			unit   Lithuanian Noble Infantry	exp 1 armour 2 weapon_lvl 0
-			unit   Lithuanian Noble Sons		exp 1 armour 2 weapon_lvl 0
-			unit   L Regular Infantry		exp 0 armour 0 weapon_lvl 0
-			unit   L Regular Infantry		exp 0 armour 0 weapon_lvl 0
-			unit   Late Lithuanian Spearman	exp 0 armour 1 weapon_lvl 0
-			unit   Late Lithuanian Spearman	exp 0 armour 1 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			end
-			spawn_army
-			faction lithuania
-			character random_name, named character, age 30, x 250, y 242, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   Lith Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Noble Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Noble Sons Cavalry		exp 1 armour 2 weapon_lvl 0
-			unit   Lithuanian Noble Infantry	exp 1 armour 2 weapon_lvl 0
-			unit   Lithuanian Noble Sons		exp 1 armour 2 weapon_lvl 0
-			unit   L Regular Infantry		exp 0 armour 0 weapon_lvl 0
-			unit   L Regular Infantry		exp 0 armour 0 weapon_lvl 0
-			unit   Late Lithuanian Spearman	exp 0 armour 1 weapon_lvl 0
-			unit   Late Lithuanian Spearman	exp 0 armour 1 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			unit   Lettish Crossbowmen		exp 0 armour 0 weapon_lvl 0
-			end
-		end_if
-		if I_SettlementOwner Vilnius = venice
-			faction_emerge lithuania venice 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = sicily
-			faction_emerge lithuania sicily 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = milan
-			faction_emerge lithuania milan 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = denmark
-			faction_emerge lithuania denmark 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = egypt
-			faction_emerge lithuania egypt 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = cumans
-			faction_emerge lithuania cumans 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = turks
-			faction_emerge lithuania turks 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = scotland
-			faction_emerge lithuania scotland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = hre
-			faction_emerge lithuania hre 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = england
-			faction_emerge lithuania england 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = portugal
-			faction_emerge lithuania portugal 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = poland
-			faction_emerge lithuania poland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = byzantium
-			faction_emerge lithuania byzantium 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = moors
-			faction_emerge lithuania moors 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = russia
-			faction_emerge lithuania russia 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = spain
-			faction_emerge lithuania spain 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = hungary
-			faction_emerge lithuania hungary 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = aragon
-			faction_emerge lithuania aragon 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = france
-			faction_emerge lithuania france 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = kievan_rus
-			faction_emerge lithuania kievan_rus 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = norway
-			faction_emerge lithuania norway 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = jerusalem
-			faction_emerge lithuania jerusalem 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = kwarezm
-			faction_emerge lithuania kwarezm 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = papal_states
-			faction_emerge lithuania papal_states 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = mongols
-			faction_emerge lithuania mongols 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = teutonic_order
-			faction_emerge lithuania teutonic_order 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = timurids
-			faction_emerge lithuania timurids 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = georgia
-			faction_emerge lithuania georgia 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Vilnius = slave
-			faction_emerge lithuania slave 1 400.0 0.0 1.2 town true
-		end_if
-		historic_event lithuania_emerged
-		set_counter vilnius_riot 0
 	end_if
 	if I_CompareCounter lubeck_riot = 1
 		console_command create_building Damghan ros_target
@@ -55447,7 +55774,7 @@ and I_CompareCounter faction_emerge_id >= 1
   end_if
 
 ;Kwarezm
-  if I_CompareCounter faction_emerge_id = 23
+  if I_CompareCounter faction_emerge_id = 22
 	if I_CompareCounter urgench_riot = 0
 		console_command create_building Urgench ros_po_bonus
 	end_if
@@ -55568,7 +55895,7 @@ and I_CompareCounter faction_emerge_id >= 1
 			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
 			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			unit   Persian Archers			exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			end
@@ -55584,7 +55911,7 @@ and I_CompareCounter faction_emerge_id >= 1
 			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
 			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			unit   Persian Archers			exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			end
@@ -55600,7 +55927,7 @@ and I_CompareCounter faction_emerge_id >= 1
 			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
 			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			unit   Persian Archers			exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			end
@@ -60928,6 +61255,580 @@ monitor_event FactionTurnEnd ;I_CompareCounter hs_console > 0
 		set_counter papal_states_has_brain 1
 		increment_kings_purse papal_states -600
 	end_if
+
+end_monitor
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;			Named Forts Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+monitor_event FactionTurnEnd FactionIsLocal
+	retire_characters dummies princess
+end_monitor
+    
+;--- 1st Spawn "Fort Labels" ---
+monitor_event PreFactionTurnStart FactionIsLocal
+
+	;BRITAIN
+	spawn_character dummies, Thurso_Fort, princess, age 14, x 53, y 266
+	spawn_character dummies, Mann_Fort, princess, age 14, x 45, y 236
+	spawn_character dummies, Glasgow_Fort, princess, age 14, x 47, y 247
+	spawn_character dummies, Stranraer_Fort, princess, age 14, x 42, y 241
+	spawn_character dummies, Aberdeen_Fort, princess, age 14, x 62, y 257
+	spawn_character dummies, Berwick_Fort, princess, age 14, x 64, y 246
+	spawn_character dummies, Winchester_Fort, princess, age 14, x 68, y 213
+	spawn_character dummies, Exeter_Fort, princess, age 14, x 52, y 211
+	spawn_character dummies, Cardiff_Fort, princess, age 14, x 56, y 218
+	spawn_character dummies, Dundalk_Fort, princess, age 14, x 31, y 233
+	spawn_character dummies, Galway_Fort, princess, age 14, x 13, y 230
+	spawn_character dummies, Cork_Fort, princess, age 14, x 17, y 220
+	;SCANDINAVIA
+	spawn_character dummies, Riba_Fort, princess, age 14, x 141, y 244
+	spawn_character dummies, Eikundarsund_Fort, princess, age 14, x 121, y 267
+	spawn_character dummies, Nykoeping_Fort, princess, age 14, x 201, y 269
+	spawn_character dummies, Uppsala_Fort, princess, age 14, x 206, y 276
+	spawn_character dummies, Skara_Fort, princess, age 14, x 175, y 265
+	;RUSLAND-STEPPES
+	spawn_character dummies, Tver_Fort, princess, age 14, x 338, y 256
+	spawn_character dummies, Borovichi_Fort, princess, age 14, x 326, y 264
+	spawn_character dummies, Mensk_Fort, princess, age 14, x 275, y 234
+	spawn_character dummies, Kolomea_Fort, princess, age 14, x 257, y 196
+	spawn_character dummies, Zhytomyr_Fort, princess, age 14, x 283, y 208
+	spawn_character dummies, Bryansk_Fort, princess, age 14, x 325, y 231
+	spawn_character dummies, Novhorod_Siverskyi_Fort, princess, age 14, x 317, y 221
+	spawn_character dummies, Poltava_Fort, princess, age 14, x 326, y 204
+	;spawn_character dummies, Moscow_Fort, princess, age 14, x 348, y 248
+	spawn_character dummies, Yaroslavl_Fort, princess, age 14, x 365, y 261
+	spawn_character dummies, Suzdal_Fort, princess, age 14, x 368, y 253
+	spawn_character dummies, Ryazan_Fort, princess, age 14, x 363, y 240
+	spawn_character dummies, Kasimov_Fort, princess, age 14, x 377, y 239
+	spawn_character dummies, Caffa_Fort, princess, age 14, x 330, y 170
+	spawn_character dummies, Sharukan_Fort, princess, age 14, x 350, y 202
+	spawn_character dummies, Khlynov_Fort, princess, age 14, x 435, y 267
+	spawn_character dummies, Kazan_Fort, princess, age 14, x 431, y 247
+	spawn_character dummies, Bilar_Fort, princess, age 14, x 440, y 241
+	spawn_character dummies, Yelabuga_Fort, princess, age 14, x 452, y 247
+	spawn_character dummies, Serdobinskaya_Fort, princess, age 14, x 395, y 224
+	spawn_character dummies, Volsk_Fort, princess, age 14, x 418, y 221
+	;spawn_character dummies, Jaiksk_Fort, princess, age 14, x 447, y 214
+	;spawn_character dummies, Embi_Fort, princess, age 14, x 495, y 195
+	;EASTERN EUROPE
+	spawn_character dummies, Lublin_Fort, princess, age 14, x 241, y 214
+	spawn_character dummies, Thorn_Fort, princess, age 14, x 210, y 228
+	spawn_character dummies, Yuryev_Fort, princess, age 14, x 271, y 264
+	spawn_character dummies, Vilnius_Fort, princess, age 14, x 257, y 240
+	spawn_character dummies, Trencin_Fort, princess, age 14, x 209, y 197
+	spawn_character dummies, Brasov_Fort, princess, age 14, x 261, y 176
+	spawn_character dummies, Severin_Fort, princess, age 14, x 243, y 166
+	spawn_character dummies, Baia_Fort, princess, age 14, x 266, y 188
+	;CENTRAL EUROPE
+	spawn_character dummies, Hamburg_Fort, princess, age 14, x 149, y 231
+	spawn_character dummies, Magdeburg_Fort, princess, age 14, x 161, y 220
+	spawn_character dummies, Rostock_Fort, princess, age 14, x 164, y 235
+	spawn_character dummies, Aachen_Fort, princess, age 14, x 121, y 210
+	spawn_character dummies, Paderborn_Fort, princess, age 14, x 141, y 217
+	spawn_character dummies, Speyer_Fort, princess, age 14, x 138, y 200
+	spawn_character dummies, Leeuwarden_Fort, princess, age 14, x 119, y 229
+	spawn_character dummies, Friesach_Fort, princess, age 14, x 181, y 184
+	spawn_character dummies, Bern_Fort, princess, age 14, x 132, y 184
+	;WESTERN EUROPE
+	spawn_character dummies, Bruges_Fort, princess, age 14, x 101, y 214
+	spawn_character dummies, Antwerp_Fort, princess, age 14, x 110, y 214
+	spawn_character dummies, Trier_Fort, princess, age 14, x 126, y 202
+	spawn_character dummies, Troyes_Fort, princess, age 14, x 106, y 194
+	spawn_character dummies, Le_Mans_Fort, princess, age 14, x 79, y 191
+	spawn_character dummies, Marseille_Fort, princess, age 14, x 117, y 158
+	;BALKANS
+	spawn_character dummies, Zagreb_Fort, princess, age 14, x 192, y 176
+	spawn_character dummies, Beograd_Fort, princess, age 14, x 225, y 167
+	spawn_character dummies, Athens_Fort, princess, age 14, x 249, y 119
+	spawn_character dummies, Scopia_Fort, princess, age 14, x 231, y 148
+	spawn_character dummies, Epahtos_Fort, princess, age 14, x 234, y 124
+	spawn_character dummies, Spalato_Fort, princess, age 14, x 197, y 160
+	spawn_character dummies, Constantia_Fort, princess, age 14, x 282, y 164
+	spawn_character dummies, Yambol_Fort, princess, age 14, x 268, y 154
+	;ITALY
+	spawn_character dummies, Ajaccio_Fort, princess, age 14, x 141, y 148
+	spawn_character dummies, Turin_Fort, princess, age 14, x 133, y 170
+	spawn_character dummies, Trieste_Fort, princess, age 14, x 176, y 172
+	spawn_character dummies, Tarento_Fort, princess, age 14, x 202, y 138
+	spawn_character dummies, Syracusa_Fort, princess, age 14, x 187, y 113
+	spawn_character dummies, Luogosanto_Fort, princess, age 14, x 144, y 141
+	;IBERIA
+	spawn_character dummies, Salamanca_Fort, princess, age 14, x 37, y 142
+	spawn_character dummies, Huesca_Fort, princess, age 14, x 75, y 150
+	spawn_character dummies, Coimbra_Fort, princess, age 14, x 18, y 136
+	;AFRICA
+	spawn_character dummies, Tangiers_Fort, princess, age 14, x 38, y 103
+	spawn_character dummies, Melilla_Fort, princess, age 14, x 56, y 100
+	spawn_character dummies, Taroudant_Fort, princess, age 14, x 16, y 66
+	spawn_character dummies, Sijilmassa_Fort, princess, age 14, x 46, y 71
+	spawn_character dummies, Oran_Fort, princess, age 14, x 74, y 103
+	spawn_character dummies, Achir_Fort, princess, age 14, x 83, y 98
+	;spawn_character dummies, Qusantinah_Fort, princess, age 14, x 125, y 106
+	spawn_character dummies, Qala_Fort, princess, age 14, x 110, y 99
+	spawn_character dummies, Bejaia_Fort, princess, age 14, x 111, y 111
+	spawn_character dummies, Beleb_el_Anab_Fort, princess, age 14, x 133, y 112
+	spawn_character dummies, Kairouan_Fort, princess, age 14, x 149, y 103
+	spawn_character dummies, Sfax_Fort, princess, age 14, x 155, y 97
+	spawn_character dummies, Tobruk_Fort, princess, age 14, x 250, y 76
+	;CAUCASUS
+	spawn_character dummies, Chanta_Fort, princess, age 14, x 409, y 168
+	spawn_character dummies, Baku_Fort, princess, age 14, x 436, y 137
+	spawn_character dummies, Shirvan_Fort, princess, age 14, x 430, y 133
+	spawn_character dummies, Ganja_Fort, princess, age 14, x 412, y 138
+	spawn_character dummies, Derbent_Fort, princess, age 14, x 425, y 147
+	spawn_character dummies, Yerevan_Fort, princess, age 14, x 398, y 135
+	;ANATOLIA
+	spawn_character dummies, Tarsus_Fort, princess, age 14, x 328, y 113
+	spawn_character dummies, Adana_Fort, princess, age 14, x 332, y 112
+	spawn_character dummies, Philadelphia_Fort, princess, age 14, x 283, y 122
+	spawn_character dummies, Rhodes_Fort, princess, age 14, x 279, y 107
+	spawn_character dummies, Marmaris_Fort, princess, age 14, x 280, y 111
+	;LEVANT
+	spawn_character dummies, Tartus_Fort, princess, age 14, x 336, y 98
+	spawn_character dummies, Krak_de_Chevalier_Fort, princess, age 14, x 339, y 97
+	spawn_character dummies, Resafa_Fort, princess, age 14, x 356, y 101
+	spawn_character dummies, Amman_Fort, princess, age 14, x 337, y 76
+	spawn_character dummies, Tadmur_Fort, princess, age 14, x 353, y 95
+	spawn_character dummies, Tiberias_Fort, princess, age 14, x 332, y 82
+	spawn_character dummies, Arish_Fort, princess, age 14, x 323, y 70
+	;MESOPOTAMIA
+	spawn_character dummies, Al_Mayadin_Fort, princess, age 14, x 369, y 98
+	;ARABIA
+	spawn_character dummies, Tayma_Fort, princess, age 14, x 354, y 44
+	spawn_character dummies, Medina_Fort, princess, age 14, x 362, y 22
+	spawn_character dummies, Sharjah_Fort, princess, age 14, x 477, y 29
+	;PERSIA-KHORASSAN
+	spawn_character dummies, Khiva_Fort, princess, age 14, x 505, y 147
+	spawn_character dummies, Damghan_Fort, princess, age 14, x 468, y 105
+	spawn_character dummies, Qaen_Fort, princess, age 14, x 502, y 90
+	spawn_character dummies, Rudkhan_Fort, princess, age 14, x 430, y 114
+	spawn_character dummies, Hamadan_Fort, princess, age 14, x 426, y 96
+	;EMPTY LAND
+	spawn_character dummies, Turku_Fort, princess, age 14, x 239, y 280
+
+	;BRITAIN
+	console_command move_character "Thurso_Fort" 53, 266
+	console_command move_character "Mann_Fort" 45, 236
+	console_command move_character "Glasgow_Fort" 47, 247
+	console_command move_character "Stranraer_Fort" 42, 241
+	console_command move_character "Aberdeen_Fort" 62, 257
+	console_command move_character "Berwick_Fort" 64, 246
+	console_command move_character "Winchester_Fort" 68, 213
+	console_command move_character "Exeter_Fort" 52, 211
+	console_command move_character "Cardiff_Fort" 56, 218
+	console_command move_character "Dundalk_Fort" 31, 233
+	console_command move_character "Galway_Fort" 13, 230
+	console_command move_character "Cork_Fort" 17, 220
+	;SCANDINAVIA
+	console_command move_character "Riba_Fort" 141, 244
+	console_command move_character "Eikundarsund_Fort" 121, 267
+	console_command move_character "Nykoeping_Fort" 201, 269
+	console_command move_character "Uppsala_Fort" 206, 276
+	console_command move_character "Skara_Fort" 175, 265
+	;RUSLAND-STEPPES
+	console_command move_character "Tver_Fort" 338, 256
+	console_command move_character "Borovichi_Fort" 326, 264
+	console_command move_character "Mensk_Fort" 275, 234
+	console_command move_character "Kolomea_Fort" 257, 196
+	console_command move_character "Zhytomyr_Fort" 283, 208
+	console_command move_character "Bryansk_Fort" 325, 231
+	console_command move_character "Novhorod_Siverskyi_Fort" 317, 221
+	console_command move_character "Poltava_Fort" 326, 204
+	;console_command move_character "Moscow_Fort" 348, 248
+	console_command move_character "Yaroslavl_Fort" 365, 261
+	console_command move_character "Suzdal_Fort" 368, 253
+	console_command move_character "Ryazan_Fort" 363, 240
+	console_command move_character "Kasimov_Fort" 377, 239
+	console_command move_character "Caffa_Fort" 330, 170
+	console_command move_character "Sharukan_Fort" 350, 202
+	console_command move_character "Khlynov_Fort" 435, 267
+	console_command move_character "Kazan_Fort" 431, 247
+	console_command move_character "Bilar_Fort" 440, 241
+	console_command move_character "Yelabuga_Fort" 452, 247
+	console_command move_character "Serdobinskaya_Fort" 395, 224
+	console_command move_character "Volsk_Fort" 418, 221
+	;console_command move_character "Jaiksk_Fort" 447, 214
+	;console_command move_character "Embi_Fort" 495, 195
+	;EASTERN EUROPE
+	console_command move_character "Lublin_Fort" 241, 214
+	console_command move_character "Thorn_Fort" 210, 228
+	console_command move_character "Yuryev_Fort" 271, 264
+	console_command move_character "Vilnius_Fort" 257, 240
+	console_command move_character "Trencin_Fort" 209, 197
+	console_command move_character "Brasov_Fort" 261, 176
+	console_command move_character "Severin_Fort" 243, 166
+	console_command move_character "Baia_Fort" 266, 188
+	;CENTRAL EUROPE
+	console_command move_character "Hamburg_Fort" 149, 231
+	console_command move_character "Magdeburg_Fort" 161, 220
+	console_command move_character "Rostock_Fort" 164, 235
+	console_command move_character "Aachen_Fort" 121, 210
+	console_command move_character "Paderborn_Fort" 141, 217
+	console_command move_character "Speyer_Fort" 138, 200
+	console_command move_character "Leeuwarden_Fort" 119, 229
+	console_command move_character "Friesach_Fort" 181, 184
+	console_command move_character "Bern_Fort" 132, 184
+	;WESTERN EUROPE
+	console_command move_character "Bruges_Fort" 101, 214
+	console_command move_character "Antwerp_Fort" 110, 214
+	console_command move_character "Trier_Fort" 126, 202
+	console_command move_character "Troyes_Fort" 106, 194
+	console_command move_character "Le_Mans_Fort" 79, 191
+	console_command move_character "Marseille_Fort" 117, 158
+	;BALKANS
+	console_command move_character "Zagreb_Fort" 192, 176
+	console_command move_character "Beograd_Fort" 225, 167
+	console_command move_character "Athens_Fort" 249, 119
+	console_command move_character "Scopia_Fort" 231, 148
+	console_command move_character "Epahtos_Fort" 234, 124
+	console_command move_character "Spalato_Fort" 197, 160
+	console_command move_character "Constantia_Fort" 282, 164
+	console_command move_character "Yambol_Fort" 268, 154
+	;ITALY
+	console_command move_character "Ajaccio_Fort" 141, 148
+	console_command move_character "Turin_Fort" 133, 170
+	console_command move_character "Trieste_Fort" 176, 172
+	console_command move_character "Tarento_Fort" 202, 138
+	console_command move_character "Syracusa_Fort" 187, 113
+	console_command move_character "Luogosanto_Fort" 144, 141
+	;IBERIA
+	console_command move_character "Salamanca_Fort" 37, 142
+	console_command move_character "Huesca_Fort" 75, 150
+	console_command move_character "Coimbra_Fort" 18, 136
+	;AFRICA
+	console_command move_character "Tangiers_Fort" 38, 103
+	console_command move_character "Melilla_Fort" 56, 100
+	console_command move_character "Taroudant_Fort" 16, 66
+	console_command move_character "Sijilmassa_Fort" 46, 71
+	console_command move_character "Oran_Fort" 74, 103
+	console_command move_character "Achir_Fort" 83, 98
+	;console_command move_character "Qusantinah_Fort" 125, 106
+	console_command move_character "Qala_Fort" 110, 99
+	console_command move_character "Bejaia_Fort" 111, 111
+	console_command move_character "Beleb_el_Anab_Fort" 133, 112
+	console_command move_character "Kairouan_Fort" 149, 103
+	console_command move_character "Sfax_Fort" 155, 97
+	console_command move_character "Tobruk_Fort" 250, 76
+	;CAUCASUS
+	console_command move_character "Chanta_Fort" 409, 168
+	console_command move_character "Baku_Fort" 436, 137
+	console_command move_character "Shirvan_Fort" 430, 133
+	console_command move_character "Ganja_Fort" 412, 138
+	console_command move_character "Derbent_Fort" 425, 147
+	console_command move_character "Yerevan_Fort" 398, 135
+	;ANATOLIA
+	console_command move_character "Tarsus_Fort" 328, 113
+	console_command move_character "Adana_Fort" 332, 112
+	console_command move_character "Philadelphia_Fort" 283, 122
+	console_command move_character "Rhodes_Fort" 279, 107
+	console_command move_character "Marmaris_Fort" 280, 111
+	;LEVANT
+	console_command move_character "Tartus_Fort" 336, 98
+	console_command move_character "Krak_de_Chevalier_Fort" 339, 97
+	console_command move_character "Resafa_Fort" 356, 101
+	console_command move_character "Amman_Fort" 337, 76
+	console_command move_character "Tadmur_Fort" 353, 95
+	console_command move_character "Tiberias_Fort" 332, 82
+	console_command move_character "Arish_Fort" 323, 70
+	;MESOPOTAMIA
+	console_command move_character "Al_Mayadin_Fort" 369, 98
+	;ARABIA
+	console_command move_character "Tayma_Fort" 354, 44
+	console_command move_character "Medina_Fort" 362, 22
+	console_command move_character "Sharjah_Fort" 477, 29
+	;PERSIA-KHORASSAN
+	console_command move_character "Khiva_Fort" 505, 147
+	console_command move_character "Damghan_Fort" 468, 105
+	console_command move_character "Qaen_Fort" 502, 90
+	console_command move_character "Rudkhan_Fort" 430, 114
+	console_command move_character "Hamadan_Fort" 426, 96
+	;EMPTY LAND
+	console_command move_character "Turku_Fort" 239, 280
+
+	terminate_monitor
+end_monitor
+
+;--- ReSpawn "Fort Labels" ---
+monitor_event FactionTurnEnd FactionType slave
+
+	;BRITAIN
+	spawn_character dummies, Thurso_Fort, princess, age 14, x 53, y 266
+	spawn_character dummies, Mann_Fort, princess, age 14, x 45, y 236
+	spawn_character dummies, Glasgow_Fort, princess, age 14, x 47, y 247
+	spawn_character dummies, Stranraer_Fort, princess, age 14, x 42, y 241
+	spawn_character dummies, Aberdeen_Fort, princess, age 14, x 62, y 257
+	spawn_character dummies, Berwick_Fort, princess, age 14, x 64, y 246
+	spawn_character dummies, Winchester_Fort, princess, age 14, x 68, y 213
+	spawn_character dummies, Exeter_Fort, princess, age 14, x 52, y 211
+	spawn_character dummies, Cardiff_Fort, princess, age 14, x 56, y 218
+	spawn_character dummies, Dundalk_Fort, princess, age 14, x 31, y 233
+	spawn_character dummies, Galway_Fort, princess, age 14, x 13, y 230
+	spawn_character dummies, Cork_Fort, princess, age 14, x 17, y 220
+	;SCANDINAVIA
+	spawn_character dummies, Riba_Fort, princess, age 14, x 141, y 244
+	spawn_character dummies, Eikundarsund_Fort, princess, age 14, x 121, y 267
+	spawn_character dummies, Nykoeping_Fort, princess, age 14, x 201, y 269
+	spawn_character dummies, Uppsala_Fort, princess, age 14, x 206, y 276
+	spawn_character dummies, Skara_Fort, princess, age 14, x 175, y 265
+	;RUSLAND-STEPPES
+	spawn_character dummies, Tver_Fort, princess, age 14, x 338, y 256
+	spawn_character dummies, Borovichi_Fort, princess, age 14, x 326, y 264
+	spawn_character dummies, Mensk_Fort, princess, age 14, x 275, y 234
+	spawn_character dummies, Kolomea_Fort, princess, age 14, x 257, y 196
+	spawn_character dummies, Zhytomyr_Fort, princess, age 14, x 283, y 208
+	spawn_character dummies, Bryansk_Fort, princess, age 14, x 325, y 231
+	spawn_character dummies, Novhorod_Siverskyi_Fort, princess, age 14, x 317, y 221
+	spawn_character dummies, Poltava_Fort, princess, age 14, x 326, y 204
+	;spawn_character dummies, Moscow_Fort, princess, age 14, x 348, y 248
+	spawn_character dummies, Yaroslavl_Fort, princess, age 14, x 365, y 261
+	spawn_character dummies, Suzdal_Fort, princess, age 14, x 368, y 253
+	spawn_character dummies, Ryazan_Fort, princess, age 14, x 363, y 240
+	spawn_character dummies, Kasimov_Fort, princess, age 14, x 377, y 239
+	spawn_character dummies, Caffa_Fort, princess, age 14, x 330, y 170
+	spawn_character dummies, Sharukan_Fort, princess, age 14, x 350, y 202
+	spawn_character dummies, Khlynov_Fort, princess, age 14, x 435, y 267
+	spawn_character dummies, Kazan_Fort, princess, age 14, x 431, y 247
+	spawn_character dummies, Bilar_Fort, princess, age 14, x 440, y 241
+	spawn_character dummies, Yelabuga_Fort, princess, age 14, x 452, y 247
+	spawn_character dummies, Serdobinskaya_Fort, princess, age 14, x 395, y 224
+	spawn_character dummies, Volsk_Fort, princess, age 14, x 418, y 221
+	;spawn_character dummies, Jaiksk_Fort, princess, age 14, x 447, y 214
+	;spawn_character dummies, Embi_Fort, princess, age 14, x 495, y 195
+	;EASTERN EUROPE
+	spawn_character dummies, Lublin_Fort, princess, age 14, x 241, y 214
+	spawn_character dummies, Thorn_Fort, princess, age 14, x 210, y 228
+	spawn_character dummies, Yuryev_Fort, princess, age 14, x 271, y 264
+	spawn_character dummies, Vilnius_Fort, princess, age 14, x 257, y 240
+	spawn_character dummies, Trencin_Fort, princess, age 14, x 209, y 197
+	spawn_character dummies, Brasov_Fort, princess, age 14, x 261, y 176
+	spawn_character dummies, Severin_Fort, princess, age 14, x 243, y 166
+	spawn_character dummies, Baia_Fort, princess, age 14, x 266, y 188
+	;CENTRAL EUROPE
+	spawn_character dummies, Hamburg_Fort, princess, age 14, x 149, y 231
+	spawn_character dummies, Magdeburg_Fort, princess, age 14, x 161, y 220
+	spawn_character dummies, Rostock_Fort, princess, age 14, x 164, y 235
+	spawn_character dummies, Aachen_Fort, princess, age 14, x 121, y 210
+	spawn_character dummies, Paderborn_Fort, princess, age 14, x 141, y 217
+	spawn_character dummies, Speyer_Fort, princess, age 14, x 138, y 200
+	spawn_character dummies, Leeuwarden_Fort, princess, age 14, x 119, y 229
+	spawn_character dummies, Friesach_Fort, princess, age 14, x 181, y 184
+	spawn_character dummies, Bern_Fort, princess, age 14, x 132, y 184
+	;WESTERN EUROPE
+	spawn_character dummies, Bruges_Fort, princess, age 14, x 101, y 214
+	spawn_character dummies, Antwerp_Fort, princess, age 14, x 110, y 214
+	spawn_character dummies, Trier_Fort, princess, age 14, x 126, y 202
+	spawn_character dummies, Troyes_Fort, princess, age 14, x 106, y 194
+	spawn_character dummies, Le_Mans_Fort, princess, age 14, x 79, y 191
+	spawn_character dummies, Marseille_Fort, princess, age 14, x 117, y 158
+	;BALKANS
+	spawn_character dummies, Zagreb_Fort, princess, age 14, x 192, y 176
+	spawn_character dummies, Beograd_Fort, princess, age 14, x 225, y 167
+	spawn_character dummies, Athens_Fort, princess, age 14, x 249, y 119
+	spawn_character dummies, Scopia_Fort, princess, age 14, x 231, y 148
+	spawn_character dummies, Epahtos_Fort, princess, age 14, x 234, y 124
+	spawn_character dummies, Spalato_Fort, princess, age 14, x 197, y 160
+	spawn_character dummies, Constantia_Fort, princess, age 14, x 282, y 164
+	spawn_character dummies, Yambol_Fort, princess, age 14, x 268, y 154
+	;ITALY
+	spawn_character dummies, Ajaccio_Fort, princess, age 14, x 141, y 148
+	spawn_character dummies, Turin_Fort, princess, age 14, x 133, y 170
+	spawn_character dummies, Trieste_Fort, princess, age 14, x 176, y 172
+	spawn_character dummies, Tarento_Fort, princess, age 14, x 202, y 138
+	spawn_character dummies, Syracusa_Fort, princess, age 14, x 187, y 113
+	spawn_character dummies, Luogosanto_Fort, princess, age 14, x 144, y 141
+	;IBERIA
+	spawn_character dummies, Salamanca_Fort, princess, age 14, x 37, y 142
+	spawn_character dummies, Huesca_Fort, princess, age 14, x 75, y 150
+	spawn_character dummies, Coimbra_Fort, princess, age 14, x 18, y 136
+	;AFRICA
+	spawn_character dummies, Tangiers_Fort, princess, age 14, x 38, y 103
+	spawn_character dummies, Melilla_Fort, princess, age 14, x 56, y 100
+	spawn_character dummies, Taroudant_Fort, princess, age 14, x 16, y 66
+	spawn_character dummies, Sijilmassa_Fort, princess, age 14, x 46, y 71
+	spawn_character dummies, Oran_Fort, princess, age 14, x 74, y 103
+	spawn_character dummies, Achir_Fort, princess, age 14, x 83, y 98
+	;spawn_character dummies, Qusantinah_Fort, princess, age 14, x 125, y 106
+	spawn_character dummies, Qala_Fort, princess, age 14, x 110, y 99
+	spawn_character dummies, Bejaia_Fort, princess, age 14, x 111, y 111
+	spawn_character dummies, Beleb_el_Anab_Fort, princess, age 14, x 133, y 112
+	spawn_character dummies, Kairouan_Fort, princess, age 14, x 149, y 103
+	spawn_character dummies, Sfax_Fort, princess, age 14, x 155, y 97
+	spawn_character dummies, Tobruk_Fort, princess, age 14, x 250, y 76
+	;CAUCASUS
+	spawn_character dummies, Chanta_Fort, princess, age 14, x 409, y 168
+	spawn_character dummies, Baku_Fort, princess, age 14, x 436, y 137
+	spawn_character dummies, Shirvan_Fort, princess, age 14, x 430, y 133
+	spawn_character dummies, Ganja_Fort, princess, age 14, x 412, y 138
+	spawn_character dummies, Derbent_Fort, princess, age 14, x 425, y 147
+	spawn_character dummies, Yerevan_Fort, princess, age 14, x 398, y 135
+	;ANATOLIA
+	spawn_character dummies, Tarsus_Fort, princess, age 14, x 328, y 113
+	spawn_character dummies, Adana_Fort, princess, age 14, x 332, y 112
+	spawn_character dummies, Philadelphia_Fort, princess, age 14, x 283, y 122
+	spawn_character dummies, Rhodes_Fort, princess, age 14, x 279, y 107
+	spawn_character dummies, Marmaris_Fort, princess, age 14, x 280, y 111
+	;LEVANT
+	spawn_character dummies, Tartus_Fort, princess, age 14, x 336, y 98
+	spawn_character dummies, Krak_de_Chevalier_Fort, princess, age 14, x 339, y 97
+	spawn_character dummies, Resafa_Fort, princess, age 14, x 356, y 101
+	spawn_character dummies, Amman_Fort, princess, age 14, x 337, y 76
+	spawn_character dummies, Tadmur_Fort, princess, age 14, x 353, y 95
+	spawn_character dummies, Tiberias_Fort, princess, age 14, x 332, y 82
+	spawn_character dummies, Arish_Fort, princess, age 14, x 323, y 70
+	;MESOPOTAMIA
+	spawn_character dummies, Al_Mayadin_Fort, princess, age 14, x 369, y 98
+	;ARABIA
+	spawn_character dummies, Tayma_Fort, princess, age 14, x 354, y 44
+	spawn_character dummies, Medina_Fort, princess, age 14, x 362, y 22
+	spawn_character dummies, Sharjah_Fort, princess, age 14, x 477, y 29
+	;PERSIA-KHORASSAN
+	spawn_character dummies, Khiva_Fort, princess, age 14, x 505, y 147
+	spawn_character dummies, Damghan_Fort, princess, age 14, x 468, y 105
+	spawn_character dummies, Qaen_Fort, princess, age 14, x 502, y 90
+	spawn_character dummies, Rudkhan_Fort, princess, age 14, x 430, y 114
+	spawn_character dummies, Hamadan_Fort, princess, age 14, x 426, y 96
+	;EMPTY LAND
+	spawn_character dummies, Turku_Fort, princess, age 14, x 239, y 280
+
+	;BRITAIN
+	console_command move_character "Thurso_Fort" 53, 266
+	console_command move_character "Mann_Fort" 45, 236
+	console_command move_character "Glasgow_Fort" 47, 247
+	console_command move_character "Stranraer_Fort" 42, 241
+	console_command move_character "Aberdeen_Fort" 62, 257
+	console_command move_character "Berwick_Fort" 64, 246
+	console_command move_character "Winchester_Fort" 68, 213
+	console_command move_character "Exeter_Fort" 52, 211
+	console_command move_character "Cardiff_Fort" 56, 218
+	console_command move_character "Dundalk_Fort" 31, 233
+	console_command move_character "Galway_Fort" 13, 230
+	console_command move_character "Cork_Fort" 17, 220
+	;SCANDINAVIA
+	console_command move_character "Riba_Fort" 141, 244
+	console_command move_character "Eikundarsund_Fort" 121, 267
+	console_command move_character "Nykoeping_Fort" 201, 269
+	console_command move_character "Uppsala_Fort" 206, 276
+	console_command move_character "Skara_Fort" 175, 265
+	;RUSLAND-STEPPES
+	console_command move_character "Tver_Fort" 338, 256
+	console_command move_character "Borovichi_Fort" 326, 264
+	console_command move_character "Mensk_Fort" 275, 234
+	console_command move_character "Kolomea_Fort" 257, 196
+	console_command move_character "Zhytomyr_Fort" 283, 208
+	console_command move_character "Bryansk_Fort" 325, 231
+	console_command move_character "Novhorod_Siverskyi_Fort" 317, 221
+	console_command move_character "Poltava_Fort" 326, 204
+	;console_command move_character "Moscow_Fort" 348, 248
+	console_command move_character "Yaroslavl_Fort" 365, 261
+	console_command move_character "Suzdal_Fort" 368, 253
+	console_command move_character "Ryazan_Fort" 363, 240
+	console_command move_character "Kasimov_Fort" 377, 239
+	console_command move_character "Caffa_Fort" 330, 170
+	console_command move_character "Sharukan_Fort" 350, 202
+	console_command move_character "Khlynov_Fort" 435, 267
+	console_command move_character "Kazan_Fort" 431, 247
+	console_command move_character "Bilar_Fort" 440, 241
+	console_command move_character "Yelabuga_Fort" 452, 247
+	console_command move_character "Serdobinskaya_Fort" 395, 224
+	console_command move_character "Volsk_Fort" 418, 221
+	;console_command move_character "Jaiksk_Fort" 447, 214
+	;console_command move_character "Embi_Fort" 495, 195
+	;EASTERN EUROPE
+	console_command move_character "Lublin_Fort" 241, 214
+	console_command move_character "Thorn_Fort" 210, 228
+	console_command move_character "Yuryev_Fort" 271, 264
+	console_command move_character "Vilnius_Fort" 257, 240
+	console_command move_character "Trencin_Fort" 209, 197
+	console_command move_character "Brasov_Fort" 261, 176
+	console_command move_character "Severin_Fort" 243, 166
+	console_command move_character "Baia_Fort" 266, 188
+	;CENTRAL EUROPE
+	console_command move_character "Hamburg_Fort" 149, 231
+	console_command move_character "Magdeburg_Fort" 161, 220
+	console_command move_character "Rostock_Fort" 164, 235
+	console_command move_character "Aachen_Fort" 121, 210
+	console_command move_character "Paderborn_Fort" 141, 217
+	console_command move_character "Speyer_Fort" 138, 200
+	console_command move_character "Leeuwarden_Fort" 119, 229
+	console_command move_character "Friesach_Fort" 181, 184
+	console_command move_character "Bern_Fort" 132, 184
+	;WESTERN EUROPE
+	console_command move_character "Bruges_Fort" 101, 214
+	console_command move_character "Antwerp_Fort" 110, 214
+	console_command move_character "Trier_Fort" 126, 202
+	console_command move_character "Troyes_Fort" 106, 194
+	console_command move_character "Le_Mans_Fort" 79, 191
+	console_command move_character "Marseille_Fort" 117, 158
+	;BALKANS
+	console_command move_character "Zagreb_Fort" 192, 176
+	console_command move_character "Beograd_Fort" 225, 167
+	console_command move_character "Athens_Fort" 249, 119
+	console_command move_character "Scopia_Fort" 231, 148
+	console_command move_character "Epahtos_Fort" 234, 124
+	console_command move_character "Spalato_Fort" 197, 160
+	console_command move_character "Constantia_Fort" 282, 164
+	console_command move_character "Yambol_Fort" 268, 154
+	;ITALY
+	console_command move_character "Ajaccio_Fort" 141, 148
+	console_command move_character "Turin_Fort" 133, 170
+	console_command move_character "Trieste_Fort" 176, 172
+	console_command move_character "Tarento_Fort" 202, 138
+	console_command move_character "Syracusa_Fort" 187, 113
+	console_command move_character "Luogosanto_Fort" 144, 141
+	;IBERIA
+	console_command move_character "Salamanca_Fort" 37, 142
+	console_command move_character "Huesca_Fort" 75, 150
+	console_command move_character "Coimbra_Fort" 18, 136
+	;AFRICA
+	console_command move_character "Tangiers_Fort" 38, 103
+	console_command move_character "Melilla_Fort" 56, 100
+	console_command move_character "Taroudant_Fort" 16, 66
+	console_command move_character "Sijilmassa_Fort" 46, 71
+	console_command move_character "Oran_Fort" 74, 103
+	console_command move_character "Achir_Fort" 83, 98
+	;console_command move_character "Qusantinah_Fort" 125, 106
+	console_command move_character "Qala_Fort" 110, 99
+	console_command move_character "Bejaia_Fort" 111, 111
+	console_command move_character "Beleb_el_Anab_Fort" 133, 112
+	console_command move_character "Kairouan_Fort" 149, 103
+	console_command move_character "Sfax_Fort" 155, 97
+	console_command move_character "Tobruk_Fort" 250, 76
+	;CAUCASUS
+	console_command move_character "Chanta_Fort" 409, 168
+	console_command move_character "Baku_Fort" 436, 137
+	console_command move_character "Shirvan_Fort" 430, 133
+	console_command move_character "Ganja_Fort" 412, 138
+	console_command move_character "Derbent_Fort" 425, 147
+	console_command move_character "Yerevan_Fort" 398, 135
+	;ANATOLIA
+	console_command move_character "Tarsus_Fort" 328, 113
+	console_command move_character "Adana_Fort" 332, 112
+	console_command move_character "Philadelphia_Fort" 283, 122
+	console_command move_character "Rhodes_Fort" 279, 107
+	console_command move_character "Marmaris_Fort" 280, 111
+	;LEVANT
+	console_command move_character "Tartus_Fort" 336, 98
+	console_command move_character "Krak_de_Chevalier_Fort" 339, 97
+	console_command move_character "Resafa_Fort" 356, 101
+	console_command move_character "Amman_Fort" 337, 76
+	console_command move_character "Tadmur_Fort" 353, 95
+	console_command move_character "Tiberias_Fort" 332, 82
+	console_command move_character "Arish_Fort" 323, 70
+	;MESOPOTAMIA
+	console_command move_character "Al_Mayadin_Fort" 369, 98
+	;ARABIA
+	console_command move_character "Tayma_Fort" 354, 44
+	console_command move_character "Medina_Fort" 362, 22
+	console_command move_character "Sharjah_Fort" 477, 29
+	;PERSIA-KHORASSAN
+	console_command move_character "Khiva_Fort" 505, 147
+	console_command move_character "Damghan_Fort" 468, 105
+	console_command move_character "Qaen_Fort" 502, 90
+	console_command move_character "Rudkhan_Fort" 430, 114
+	console_command move_character "Hamadan_Fort" 426, 96
+	;EMPTY LAND
+	console_command move_character "Turku_Fort" 239, 280
 
 end_monitor
 

@@ -14,7 +14,6 @@ playable
 	egypt
 	scotland
 	cumans;		BULGARIA
-	mongols
 	turks
 	france
 	hre
@@ -29,11 +28,12 @@ playable
 	aragon
 	lithuania
 	kievan_rus
-	teutonic_order
 	norway
 	jerusalem
 	kwarezm
 	georgia;	SERBIA
+	mongols
+	teutonic_order
 end
 unlockable
 end
@@ -3379,232 +3379,6 @@ character_record		Elena of_Bulgaria, 	female, age 50, alive, never_a_leader
 character_record		IvanI Asen, 	male, age 60, dead 24, past_leader; (age ?)
 
 relative 	IvanI Asen,	Elena of_Bulgaria,	Ivan Asen,	Aleksandar Asen,	end
-
-faction	mongols, balanced genghis
-ai_label		mongol
-denari	125000
-denari_kings_purse	5000
-settlement
-{
-	level city
-	region Urgench_Province
-
-	year_founded 0
-	population 10400
-	plan_set default_set
-	faction_creator kwarezm
-	building
-	{
-		type core_building stone_wall
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-	building
-	{
-		type barracks city_watch
-	}
-	building
-	{
-		type temple_tengir tengir_sanctuary
-	}
-	building
-	{
-		type market market
-	}
-	building
-	{
-		type taverns inn
-	}
-	building
-	{
-		type city_hall town_hall
-	}
-	building
-	{
-		type hinterland_farms farms+1
-	}
-	building
-	{
-		type siege catapult_range
-	}
-}
-
-;Urgench
-character	Genghis, named character, male, leader, age 48, x 503, y 152, label mongols4genghis 
-traits Factionleader 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 
-army
-unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
-unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 4 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-
-character	Jebe, named character, male, heir, age 25, x 505, y 146, label mongols4jebe 
-traits Factionheir 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 
-army
-unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
-unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 4 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-
-character	Aradai, named character, male, age 22, x 501, y 154, label mongols4aradai 
-traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 1 
-army
-unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Khabutu Archers				exp 4 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 3 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 3 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 3 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 3 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-
-character	Bayan, named character, male, age 21, x 504, y 147, label mongols4bayan 
-traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , InvasionCharacterCounter 2 
-army
-unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
-unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
-unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-
-character	Chindu, named character, male, age 24, x 490, y 125, label mongols4chindu 
-traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 3 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 3 
-army
-unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 4 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 4 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-
-character	Nayuk, named character, male, age 21, x 491, y 126, label mongols4nayuk 
-traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 4 
-army
-unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
-unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
-unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
-unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
-unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
-
-character	Arabla of_the_Jirgin, priest, male, age 22, x 480, y 140 
-traits NaturalPriestSkill 2 , StrongFaith 1 , DivineProtection 1, PaganPriest 1 
-
-character	Aragei of_the_Arulad, priest, male, age 32, x 500, y 98 
-traits NaturalPriestSkill 2 , Warmonger 1 , StrongFaith 1 , DivineProtection 1, PaganPriest 1 
-
-character	Bavaboge of_the_Jirgin, priest, male, age 28, x 470, y 120 
-traits NaturalPriestSkill 3 , StrongFaith 2 , DivineProtection 2, PaganPriest 1 
-
-character	Ghazandu of_the_Khorilar, spy, male, age 32, x 500, y 135 
-traits NaturalSpySkill 3 , GoodSpy 1 
-
-character	Jebuk of_the_Oirat, spy, male, age 28, x 493, y 178 
-traits NaturalSpySkill 3 , GoodSpy 3 
-
-character	Khotai of_Tibet, spy, male, age 21, x 489, y 110 
-traits NaturalSpySkill 1 , GoodSpy 3 
-
-character	Yesugis of_the_Oyirad, assassin, male, age 32, x 504, y 132 
-traits NaturalAssassinSkill 3 , GoodAssassin 1 , GoodConspirator 1 
-
-character	Yesugis of_the_Oirat, assassin, male, age 28, x 485, y 189 
-traits NaturalAssassinSkill 2 , GoodAssassin 3 , GoodConspirator 1 
-
-character	Yesuk of_the_Oirat, assassin, male, age 21, x 495, y 135 
-traits NaturalAssassinSkill 2 , GoodAssassin 3 
-
-character_record		Minghan, 	female, age 29, alive, never_a_leader
-
-relative 	Genghis,	Minghan,	Jebe,	Chindu,	Aradai,	Bayan,	end
 
 faction	turks, balanced napoleon
 ai_label		islam
@@ -9547,175 +9321,6 @@ character_record		Elena Yaroslavich, 	female, age 32, alive, never_a_leader
 
 relative 	Mstislav Rurikovich,	Elena Yaroslavich,	Eupraxia Rurikovich,	Vladimir Rurikovich,	end
 
-faction	teutonic_order, balanced henry
-ai_label		catholic
-denari	12000
-denari_kings_purse	2200
-settlement castle
-{
-	level large_town
-	region Palanga_Province
-
-	year_founded 0
-	population 6700
-	plan_set default_set
-	faction_creator teutonic_order
-	building
-	{
-		type core_castle_building castle
-	}
-	building
-	{
-		type equestrian knights_stables
-	}
-	building
-	{
-		type castle_barracks drill_square
-	}
-	building
-	{
-		type temple_catholic_castle chapel
-	}
-	building
-	{
-		type hinterland_castle_roads c_roads
-	}
-	building
-	{
-		type castle_port c_port
-	}
-	building
-	{
-		type missiles practice_range
-	}
-	building
-	{
-		type castle_smith c_blacksmith
-	}
-	building
-	{
-		type castle_siege c_ballista_range
-	}
-}
-
-settlement
-{
-	level large_town
-	region Riga_Province
-
-	year_founded 0
-	population 6300
-	plan_set default_set
-	faction_creator russia
-	building
-	{
-		type core_building wooden_wall
-		plugin hansa hansa
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-	building
-	{
-		type port port
-	}
-	building
-	{
-		type barracks town_guard
-	}
-	building
-	{
-		type temple_catholic church
-	}
-	building
-	{
-		type market market
-	}
-	building
-	{
-		type taverns brothel
-	}
-	building
-	{
-		type city_hall town_hall
-	}
-	building
-	{
-		type hinterland_farms farms
-	}
-	building
-	{
-		type siege catapult_range
-	}
-}
-
-character	Herrmann von_Salza, named character, male, leader, age 55, x 246, y 247 
-traits FactionleaderTO 1 , LoyaltyStarter 1 , MilitaryInclination 1 ,Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , PublicFaith 2 , CrusaderHistory 2 , BattleChivalry 4 , ReligionStarter 1 
-army
-unit		TO Bodyguard				exp 2 armour 0 weapon_lvl 0
-unit		Sword Brethren				exp 1 armour 0 weapon_lvl 0
-unit		Prussian Archers			exp 2 armour 1 weapon_lvl 0
-unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
-unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
-unit		Crusader Sergeants			exp 0 armour 0 weapon_lvl 0
-unit		Crusader Sergeants			exp 1 armour 0 weapon_lvl 0
-unit		Christ Knights				exp 1 armour 0 weapon_lvl 0
-unit		Christ Knights				exp 1 armour 0 weapon_lvl 0
-unit		Knechten				exp 1 armour 1 weapon_lvl 0
-unit		Prussian Auxillia			exp 1 armour 0 weapon_lvl 0
-unit		Prussian Infantry			exp 0 armour 0 weapon_lvl 0
-
-character	Conrad von_Thuringen, named character, male, heir, age 14, x 256, y 250 
-traits FactionheirTO 1 , LoyaltyStarter 1 , MilitaryInclination 1 ,Military_Edu 2 , GoodCommander 1 , HaleAndHearty 1 , ReligionStarter 1 
-army
-unit		TO Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
-unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 1 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 1 weapon_lvl 0
-unit		Crusader Sergeants			exp 0 armour 0 weapon_lvl 0
-unit		Prussian Axemen				exp 2 armour 0 weapon_lvl 0
-unit		Prussian Axemen				exp 2 armour 1 weapon_lvl 0
-unit		Knechten				exp 1 armour 1 weapon_lvl 0
-unit		Prussian Auxillia			exp 1 armour 0 weapon_lvl 0
-unit		Prussian Infantry			exp 0 armour 0 weapon_lvl 0
-
-;Riga
-character	Egbart, general, male, age 26, x 252, y 256 
-army
-unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
-unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-
-;Palanga
-character	Cuntz, general, male, age 26, x 225, y 240 
-army
-unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Prussian Axemen				exp 2 armour 1 weapon_lvl 0
-unit		Knechten				exp 1 armour 1 weapon_lvl 0
-
-character	Heidenrich, spy, male, age 23, x 232, y 249 
-traits NaturalSpySkill 2 
-
-character	Jan, priest, male, age 34, x 226, y 238 
-traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
-
-character_record		Konstanze, 	female, age 45, dead 9, never_a_leader
-character_record		Elisabeth, 	female, age 25, dead 0, never_a_leader
-;character_record		Heribert, 	male, age 10, alive, never_a_leader
-;character_record		Heinrich, 	male, age 9, alive, never_a_leader
-
-relative 	Conrad von_Thuringen,	Elisabeth,	end
-relative 	Herrmann von_Salza,	Konstanze,	Elisabeth,	end;,	Heribert,	Heinrich,	end
-
-faction	timurids, balanced smith
-ai_label		islam
-dead_until_resurrected
-denari	15000
-denari_kings_purse	6000
-
 
 faction	norway, sailor smith
 ai_label		catholic
@@ -11586,6 +11191,401 @@ character_record		Ana of_Venezia, 	female, age 40, alive, never_a_leader; (age ?
 
 relative 	Stefan Nemanjic,	Ana of_Venezia,	Radoslav Nemanjic,	Vladislav Nemanjic,	Komnena Nemanjic,	end
 
+
+faction	mongols, balanced genghis
+ai_label		mongol
+denari	125000
+denari_kings_purse	5000
+settlement
+{
+	level city
+	region Urgench_Province
+
+	year_founded 0
+	population 10400
+	plan_set default_set
+	faction_creator kwarezm
+	building
+	{
+		type core_building stone_wall
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type barracks city_watch
+	}
+	building
+	{
+		type temple_tengir tengir_sanctuary
+	}
+	building
+	{
+		type market market
+	}
+	building
+	{
+		type taverns inn
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type hinterland_farms farms+1
+	}
+	building
+	{
+		type siege catapult_range
+	}
+}
+
+;Urgench
+character	Genghis, named character, male, leader, age 48, x 503, y 152, label mongols4genghis 
+traits Factionleader 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 
+army
+unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
+unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 4 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+
+character	Jebe, named character, male, heir, age 25, x 505, y 146, label mongols4jebe 
+traits Factionheir 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 
+army
+unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
+unit		Dismounted Khorchi Archers		exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 4 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+
+character	Aradai, named character, male, age 22, x 501, y 154, label mongols4aradai 
+traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 1 
+army
+unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Khabutu Archers				exp 4 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 3 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 3 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 3 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 3 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+
+character	Bayan, named character, male, age 21, x 504, y 147, label mongols4bayan 
+traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , InvasionCharacterCounter 2 
+army
+unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
+unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
+unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+
+character	Chindu, named character, male, age 24, x 490, y 125, label mongols4chindu 
+traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 3 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 3 
+army
+unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 4 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Hoschuchi Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Lubchiten Horse Archers			exp 4 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 4 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+
+character	Nayuk, named character, male, age 21, x 491, y 126, label mongols4nayuk 
+traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 4 
+army
+unit		Keshikten Bodyguard			exp 6 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Merguen Archers				exp 5 armour 0 weapon_lvl 0
+unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
+unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
+unit		Khabutu Archers				exp 6 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Nukeri Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
+unit		Turhagut Lancers			exp 6 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 5 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		Hoshiga Horse Archers			exp 6 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+unit		ME Trebuchet				exp 5 armour 0 weapon_lvl 0
+
+character	Arabla of_the_Jirgin, priest, male, age 22, x 480, y 140 
+traits NaturalPriestSkill 2 , StrongFaith 1 , DivineProtection 1, PaganPriest 1 
+
+character	Aragei of_the_Arulad, priest, male, age 32, x 500, y 98 
+traits NaturalPriestSkill 2 , Warmonger 1 , StrongFaith 1 , DivineProtection 1, PaganPriest 1 
+
+character	Bavaboge of_the_Jirgin, priest, male, age 28, x 470, y 120 
+traits NaturalPriestSkill 3 , StrongFaith 2 , DivineProtection 2, PaganPriest 1 
+
+character	Ghazandu of_the_Khorilar, spy, male, age 32, x 500, y 135 
+traits NaturalSpySkill 3 , GoodSpy 1 
+
+character	Jebuk of_the_Oirat, spy, male, age 28, x 493, y 178 
+traits NaturalSpySkill 3 , GoodSpy 3 
+
+character	Khotai of_Tibet, spy, male, age 21, x 489, y 110 
+traits NaturalSpySkill 1 , GoodSpy 3 
+
+character	Yesugis of_the_Oyirad, assassin, male, age 32, x 504, y 132 
+traits NaturalAssassinSkill 3 , GoodAssassin 1 , GoodConspirator 1 
+
+character	Yesugis of_the_Oirat, assassin, male, age 28, x 485, y 189 
+traits NaturalAssassinSkill 2 , GoodAssassin 3 , GoodConspirator 1 
+
+character	Yesuk of_the_Oirat, assassin, male, age 21, x 495, y 135 
+traits NaturalAssassinSkill 2 , GoodAssassin 3 
+
+character_record		Minghan, 	female, age 29, alive, never_a_leader
+
+relative 	Genghis,	Minghan,	Jebe,	Chindu,	Aradai,	Bayan,	end
+
+faction	teutonic_order, balanced henry
+ai_label		catholic
+denari	12000
+denari_kings_purse	2200
+settlement castle
+{
+	level large_town
+	region Palanga_Province
+
+	year_founded 0
+	population 6700
+	plan_set default_set
+	faction_creator teutonic_order
+	building
+	{
+		type core_castle_building castle
+	}
+	building
+	{
+		type equestrian knights_stables
+	}
+	building
+	{
+		type castle_barracks drill_square
+	}
+	building
+	{
+		type temple_catholic_castle chapel
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type castle_port c_port
+	}
+	building
+	{
+		type missiles practice_range
+	}
+	building
+	{
+		type castle_smith c_blacksmith
+	}
+	building
+	{
+		type castle_siege c_ballista_range
+	}
+}
+
+settlement
+{
+	level large_town
+	region Riga_Province
+
+	year_founded 0
+	population 6300
+	plan_set default_set
+	faction_creator russia
+	building
+	{
+		type core_building wooden_wall
+		plugin hansa hansa
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type barracks town_guard
+	}
+	building
+	{
+		type temple_catholic church
+	}
+	building
+	{
+		type market market
+	}
+	building
+	{
+		type taverns brothel
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
+	building
+	{
+		type siege catapult_range
+	}
+}
+
+character	Herrmann von_Salza, named character, male, leader, age 55, x 246, y 247 
+traits FactionleaderTO 1 , LoyaltyStarter 1 , MilitaryInclination 1 ,Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , PublicFaith 2 , CrusaderHistory 2 , BattleChivalry 4 , ReligionStarter 1 
+army
+unit		TO Bodyguard				exp 2 armour 0 weapon_lvl 0
+unit		Sword Brethren				exp 1 armour 0 weapon_lvl 0
+unit		Prussian Archers			exp 2 armour 1 weapon_lvl 0
+unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
+unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
+unit		Crusader Sergeants			exp 0 armour 0 weapon_lvl 0
+unit		Crusader Sergeants			exp 1 armour 0 weapon_lvl 0
+unit		Christ Knights				exp 1 armour 0 weapon_lvl 0
+unit		Christ Knights				exp 1 armour 0 weapon_lvl 0
+unit		Knechten				exp 1 armour 1 weapon_lvl 0
+unit		Prussian Auxillia			exp 1 armour 0 weapon_lvl 0
+unit		Prussian Infantry			exp 0 armour 0 weapon_lvl 0
+
+character	Conrad von_Thuringen, named character, male, heir, age 14, x 256, y 250 
+traits FactionheirTO 1 , LoyaltyStarter 1 , MilitaryInclination 1 ,Military_Edu 2 , GoodCommander 1 , HaleAndHearty 1 , ReligionStarter 1 
+army
+unit		TO Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
+unit		Prussian Archers			exp 1 armour 1 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 1 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 1 weapon_lvl 0
+unit		Crusader Sergeants			exp 0 armour 0 weapon_lvl 0
+unit		Prussian Axemen				exp 2 armour 0 weapon_lvl 0
+unit		Prussian Axemen				exp 2 armour 1 weapon_lvl 0
+unit		Knechten				exp 1 armour 1 weapon_lvl 0
+unit		Prussian Auxillia			exp 1 armour 0 weapon_lvl 0
+unit		Prussian Infantry			exp 0 armour 0 weapon_lvl 0
+
+;Riga
+character	Egbart, general, male, age 26, x 252, y 256 
+army
+unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+
+;Palanga
+character	Cuntz, general, male, age 26, x 225, y 240 
+army
+unit		Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		Prussian Axemen				exp 2 armour 1 weapon_lvl 0
+unit		Knechten				exp 1 armour 1 weapon_lvl 0
+
+character	Heidenrich, spy, male, age 23, x 232, y 249 
+traits NaturalSpySkill 2 
+
+character	Jan, priest, male, age 34, x 226, y 238 
+traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
+
+character_record		Konstanze, 	female, age 45, dead 9, never_a_leader
+character_record		Elisabeth, 	female, age 25, dead 0, never_a_leader
+;character_record		Heribert, 	male, age 10, alive, never_a_leader
+;character_record		Heinrich, 	male, age 9, alive, never_a_leader
+
+relative 	Conrad von_Thuringen,	Elisabeth,	end
+relative 	Herrmann von_Salza,	Konstanze,	Elisabeth,	end;,	Heribert,	Heinrich,	end
+
+faction	timurids, balanced smith
+ai_label		islam
+dead_until_resurrected
+denari	15000
+denari_kings_purse	6000
 
 faction	dummies, balanced smith
 ai_label		default
@@ -13848,6 +13848,19 @@ unit		EE Peasant Archers			exp 1 armour 0 weapon_lvl 0
 unit		Hussites				exp 2 armour 2 weapon_lvl 0
 unit		Hussites				exp 1 armour 3 weapon_lvl 0
 
+;Prague Province Fort (Brno)
+character	sub_faction poland, Bronislaw, general, male, age 27, x 198, y 200 
+army
+unit		Feudal Knights				exp 0 armour 0 weapon_lvl 0
+unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
+unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
+unit		Armored Sergeants			exp 1 armour 0 weapon_lvl 0
+unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Spear Militia				exp 0 armour 0 weapon_lvl 0
+unit		EE Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+unit		EE Peasant Archers				exp 1 armour 0 weapon_lvl 0
+unit		EE Peasant Archers				exp 0 armour 0 weapon_lvl 0
+
 ;Frankfurt Province Fort (Paderborn)
 character	sub_faction hre, Georig, general, male, age 21, x 141, y 217 
 army
@@ -14222,6 +14235,36 @@ unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 1 armour 0 weapon_lvl 0
 unit		Desert Archers				exp 0 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
+
+;Ani Province Fort (Ganja)
+character	sub_faction turks, Abil_Askar, general, male, age 21, x 412, y 138 
+army
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+
+;Baku Province Fort (Shamakhi)
+character	sub_faction turks, Ahmadili, general, male, age 21, x 426, y 138 
+army
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+
+;Baku Province Fort (Shirvan)
+character	sub_faction turks, Alp_Arghun, general, male, age 21, x 430, y 133 
+army
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
+unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
+unit		Turkish Archers				exp 0 armour 0 weapon_lvl 0
+unit		Turkomans				exp 0 armour 0 weapon_lvl 0
 
 ;*ASIA MINOR*
 ;Smyrna Province Fort (Marmaris)
@@ -14856,7 +14899,7 @@ unit		Arab Cavalry				exp 1 armour 0 weapon_lvl 0
 unit		Turkomans				exp 2 armour 0 weapon_lvl 0
 unit		Turkomans				exp 1 armour 0 weapon_lvl 0
 
-;Baku Province Fort (Derbent)
+;Sarkel Province Fort (Derbent)
 character	sub_faction cumans, Baramuk, general, male, age 21, x 425, y 147 
 army
 unit		Pechenegs				exp 0 armour 0 weapon_lvl 0
@@ -15210,7 +15253,8 @@ fort 257 240 stone_fort_c culture eastern_european
 
 ;region Palanga_Province; Twangste Province
 
-;region Prague_Province
+region Prague_Province
+fort 198 200 stone_fort_c culture eastern_european
 
 ;region Esztergom_Province
 
@@ -15474,10 +15518,13 @@ fort 425 147 stone_fort_c culture eastern_european
 
 ;region Kutaisi_Province
 
-;region Baku_Province
+region Baku_Province
+fort 426 138 bz_fort_m culture middle_eastern
+fort 430 133 bz_fort_m culture middle_eastern
 
 region Yerevan_Province; Greater Armenia Province, Ani
 fort 398 135 bz_fort_m culture middle_eastern
+fort 412 138 bz_fort_m culture middle_eastern
 
 ; ANATOLIA
 ;region Trebizond_Province

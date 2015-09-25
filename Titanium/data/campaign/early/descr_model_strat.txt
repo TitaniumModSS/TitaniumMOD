@@ -337,6 +337,14 @@ texture				timurids, models_strat/textures/islamic_princess_abbasid.tga
 model_flexi_m			models_strat/islamic_princess.cas, max
 shadow_model_flexi		models_strat/shadow_model_princess_northern.cas, max
 
+type				minor_settlement_tag
+skeleton			princess
+scale				0.1
+indiv_range			40
+texture				dummies, models_strat/textures/dummycharacter_slave.tga
+texture				slave, models_strat/textures/dummycharacter_slave.tga
+model_flexi_m			models_strat/dummycharacter.cas, max
+
 
 ;;;;;;;;;;;;
 ; MERCHANT ;

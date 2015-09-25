@@ -1,6 +1,6 @@
 ;SS6.4 EDCT edited by gracul: Jan-2011
 ;Titanium submod edited by gsthoed and melooo182: Sep-2014
-;Early Era
+;Early Era 1139
 
 ;=======================================================================
 ;BBB File by Dearmad and Pnutmaster - 2007 (thanks Re Berengario I ;)
@@ -285,6 +285,21 @@ Trait DivineProtectionPagan
 
    Effect Piety 2 
    Effect Violence 2 
+
+;------------------------------------------
+Trait TOEmergeID
+ Characters family
+ Hidden
+
+ Level Hochmeister
+   Description Hochmeister_desc
+   EffectsDescription Hochmeister_effects_desc
+   Threshold 1
+
+ Level Hochmeister
+   Description Hochmeister_desc
+   EffectsDescription Hochmeister_effects_desc
+   Threshold 2
 
 ;------------------------------------------
 Trait FactionleaderTO
@@ -11172,15 +11187,7 @@ Trait ofBulgariaName
    Epithet of_Bulgaria_Name_epithet_desc
    Threshold 1
 
- Level of_Bulgaria_Name_epithet_desc
-   Description of_Bulgaria_Name_epithet_desc
-   EffectsDescription of_Bulgaria_Name_epithet_desc
-   Epithet of_Bulgaria_Name_epithet_desc
-   Threshold 2
-
-   Effect Unorthodoxy 1 
 ;==========================================
-
 ;------------------------------------------
 Trait GoodDenouncer
  Characters inquisitor, priest
@@ -13092,6 +13099,19 @@ Trait InvasionCharacterCounter
    EffectsDescription Hidden_effects_desc
    Threshold 5
 
+;------------------------------------------
+Trait ScriptedBesieger
+ Characters family
+ Hidden
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 1
+
+   Effect Unorthodoxy 1 
+   
+;==========================================
 ;===== ROYAL LADY OF THE COURT TRAITS =====
 ;------------------------------------------
 Trait RoyalLady
@@ -16036,6 +16056,17 @@ Trait LoanDread
 ;======== VNV TRIGGERS START HERE ========;
 ;=========================================;
 ;------------------------------------------
+Trigger ScriptedBesiegerTraitRemoval
+ WhenToTest CharacterTurnStart
+
+ Condition IsGeneral
+       and Trait ScriptedBesieger > 0
+       and not IsBesieging
+
+ Affects ScriptedBesieger -1 Chance 100 
+
+;------------------------------------------
+;------------------------------------------
 Trigger priestinit14
  WhenToTest AgentCreated
 
@@ -16660,7 +16691,7 @@ Trigger european_birth_in_acre
 Trigger european_birth_in_antioch
  WhenToTest CharacterComesOfAge
 
- Condition IsRegionOneOf 164 Antioch_Province
+ Condition IsRegionOneOf 165 Antioch_Province
        and not FactionType lithuania
        and not FactionType cumans
 
@@ -16710,7 +16741,7 @@ Trigger european_birth_in_baghdad
 Trigger european_birth_in_edessa
  WhenToTest CharacterComesOfAge
 
- Condition IsRegionOneOf 156 Edessa_Province
+ Condition IsRegionOneOf 157 Edessa_Province
        and not FactionType lithuania
        and not FactionType cumans
 
@@ -22038,7 +22069,7 @@ Trigger Priest_Visit_Constantinople
 
  Condition CharacterReligion orthodox
        and AgentType = priest
-       and IsRegionOneOf 124 Constantinople_Province
+       and IsRegionOneOf 123 Constantinople_Province
        and TimeInRegion > 1
        and Trait PriestOrthodoxDoctrine = 0
 
@@ -22085,7 +22116,7 @@ Trigger Priest_Visit_JerusalemRegion_CatholicAi
 Trigger Priest_Visit_EmbiRegion
  WhenToTest CharacterTurnEnd
 
- Condition IsRegionOneOf 34 Jaiksk_Province
+ Condition IsRegionOneOf 31 Jaiksk_Province
        and AgentType = priest
        and TimeInRegion > 3
        and Trait StrongFaith <= 3
@@ -25748,7 +25779,7 @@ Trigger Visit_RomeRegion
 ;------------------------------------------
 Trigger Visit_GaliciaRegion
  WhenToTest CharacterTurnEnd
- Condition IsRegionOneOf 108 Salamanca_Province
+ Condition IsRegionOneOf 109 Salamanca_Province
        and IsGeneral
        and not EndedInEnemyZOC
        and CharacterReligion catholic
@@ -25759,7 +25790,7 @@ Trigger Visit_GaliciaRegion
 ;------------------------------------------
 Trigger Visit_ConstantinopleRegion
  WhenToTest CharacterTurnEnd
- Condition IsRegionOneOf 124 Constantinople_Province
+ Condition IsRegionOneOf 123 Constantinople_Province
        and IsGeneral
        and not EndedInEnemyZOC
        and CharacterReligion orthodox
@@ -30138,7 +30169,6 @@ Trigger hate_religion_catholic
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 0
-       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not GeneralFoughtFaction egypt
        and not GeneralFoughtFaction cumans
@@ -30158,12 +30188,11 @@ Trigger hate_religion_catholic
  Affects HatesCatholic 1 Chance 5
 
 ;------------------------------------------
-Trigger hate_religion_catholic_alt1
+Trigger hate_religion_catholic_alt
  WhenToTest PostBattle
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 1
-       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not GeneralFoughtFaction egypt
        and not GeneralFoughtFaction cumans
@@ -30171,57 +30200,6 @@ Trigger hate_religion_catholic_alt1
        and not GeneralFoughtFaction turks
        and not GeneralFoughtFaction byzantium
        and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction timurids
-       and not GeneralFoughtFaction kwarezm
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion catholic
-
- Affects HatesCatholic 1 Chance 5
-
-;------------------------------------------
-Trigger hate_religion_catholic_alt2
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter lithuania_catholic = 0
-       and I_EventCounter zirids_exist = 1
-       and GeneralHPLostRatioinBattle <= 0.6
-       and not GeneralFoughtFaction egypt
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction turks
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction portugal ;zirids
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction lithuania
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction timurids
-       and not GeneralFoughtFaction kwarezm
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion catholic
-
- Affects HatesCatholic 1 Chance 5
-
-;------------------------------------------
-Trigger hate_religion_catholic_alt3
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter lithuania_catholic = 1
-       and I_EventCounter zirids_exist = 1
-       and GeneralHPLostRatioinBattle <= 0.6
-       and not GeneralFoughtFaction egypt
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction turks
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction portugal ;zirids
        and not GeneralFoughtFaction russia
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
@@ -30238,7 +30216,6 @@ Trigger fear_religion_catholic_1
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 0
-       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
@@ -30260,12 +30237,11 @@ Trigger fear_religion_catholic_1
  Affects FearsCatholic 1 Chance 5
 
 ;------------------------------------------
-Trigger fear_religion_catholic_1_alt1
+Trigger fear_religion_catholic_1_alt
  WhenToTest PostBattle
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 1
-       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
@@ -30275,61 +30251,6 @@ Trigger fear_religion_catholic_1_alt1
        and not GeneralFoughtFaction turks
        and not GeneralFoughtFaction byzantium
        and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction timurids
-       and not GeneralFoughtFaction kwarezm
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion catholic
-
- Affects FearsCatholic 1 Chance 5
-
-;------------------------------------------
-Trigger fear_religion_catholic_1_alt2
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter lithuania_catholic = 0
-       and I_EventCounter zirids_exist = 1
-       and GeneralHPLostRatioinBattle <= 0.6
-       and not WonBattle
-       and BattleOdds > 1.0
-       and not GeneralFoughtFaction egypt
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction turks
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction portugal ;zirids
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction lithuania
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction timurids
-       and not GeneralFoughtFaction kwarezm
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion catholic
-
- Affects FearsCatholic 1 Chance 5
-
-;------------------------------------------
-Trigger fear_religion_catholic_1_alt3
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter lithuania_catholic = 1
-       and I_EventCounter zirids_exist = 1
-       and GeneralHPLostRatioinBattle <= 0.6
-       and not WonBattle
-       and BattleOdds > 1.0
-       and not GeneralFoughtFaction egypt
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction turks
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction portugal ;zirids
        and not GeneralFoughtFaction russia
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
@@ -30346,7 +30267,6 @@ Trigger fear_religion_catholic_2
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 0
-       and I_EventCounter zirids_exist = 0
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
@@ -30368,12 +30288,11 @@ Trigger fear_religion_catholic_2
  Affects FearsCatholic 1 Chance 20
 
 ;------------------------------------------
-Trigger fear_religion_catholic_2_alt1
+Trigger fear_religion_catholic_2_alt
  WhenToTest PostBattle
 
  Condition IsGeneral
        and I_EventCounter lithuania_catholic = 1
-       and I_EventCounter zirids_exist = 0
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
@@ -30383,61 +30302,6 @@ Trigger fear_religion_catholic_2_alt1
        and not GeneralFoughtFaction turks
        and not GeneralFoughtFaction byzantium
        and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction timurids
-       and not GeneralFoughtFaction kwarezm
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion catholic
-
- Affects FearsCatholic 1 Chance 20
-
-;------------------------------------------
-Trigger fear_religion_catholic_2_alt2
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter lithuania_catholic = 0
-       and I_EventCounter zirids_exist = 1
-       and BattleSuccess = crushing
-       and not WonBattle
-       and BattleOdds > 1.0
-       and not GeneralFoughtFaction egypt
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction turks
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction portugal ;zirids
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction lithuania
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction timurids
-       and not GeneralFoughtFaction kwarezm
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion catholic
-
- Affects FearsCatholic 1 Chance 20
-
-;------------------------------------------
-Trigger fear_religion_catholic_2_alt3
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter lithuania_catholic = 1
-       and I_EventCounter zirids_exist = 1
-       and BattleSuccess = crushing
-       and not WonBattle
-       and BattleOdds > 1.0
-       and not GeneralFoughtFaction egypt
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction turks
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction moors
-       and not GeneralFoughtFaction portugal ;zirids
        and not GeneralFoughtFaction russia
        and not GeneralFoughtFaction kievan_rus
        and not GeneralFoughtFaction timurids
@@ -30453,7 +30317,6 @@ Trigger hate_religion_islam
  WhenToTest PostBattle
 
  Condition IsGeneral
-       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not GeneralFoughtFaction venice
        and not GeneralFoughtFaction sicily
@@ -30467,41 +30330,6 @@ Trigger hate_religion_islam
        and not GeneralFoughtFaction hre
        and not GeneralFoughtFaction england
        and not GeneralFoughtFaction portugal
-       and not GeneralFoughtFaction poland
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction spain
-       and not GeneralFoughtFaction hungary
-       and not GeneralFoughtFaction aragon
-       and not GeneralFoughtFaction lithuania
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction teutonic_order
-       and not GeneralFoughtFaction norway
-       and not GeneralFoughtFaction jerusalem
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion islam
-
- Affects HatesIslam 1 Chance 5
-
-;------------------------------------------
-Trigger hate_religion_islam_alt
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter zirids_exist = 1
-       and GeneralHPLostRatioinBattle <= 0.6
-       and not GeneralFoughtFaction venice
-       and not GeneralFoughtFaction sicily
-       and not GeneralFoughtFaction milan
-       and not GeneralFoughtFaction papal_states
-       and not GeneralFoughtFaction denmark
-       and not GeneralFoughtFaction scotland
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction france
-       and not GeneralFoughtFaction hre
-       and not GeneralFoughtFaction england
        and not GeneralFoughtFaction poland
        and not GeneralFoughtFaction byzantium
        and not GeneralFoughtFaction russia
@@ -30524,7 +30352,6 @@ Trigger fear_religion_islam_1
  WhenToTest PostBattle
 
  Condition IsGeneral
-       and I_EventCounter zirids_exist = 0
        and GeneralHPLostRatioinBattle <= 0.6
        and not WonBattle
        and BattleOdds > 1.0
@@ -30540,43 +30367,6 @@ Trigger fear_religion_islam_1
        and not GeneralFoughtFaction hre
        and not GeneralFoughtFaction england
        and not GeneralFoughtFaction portugal
-       and not GeneralFoughtFaction poland
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction spain
-       and not GeneralFoughtFaction hungary
-       and not GeneralFoughtFaction aragon
-       and not GeneralFoughtFaction lithuania
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction teutonic_order
-       and not GeneralFoughtFaction norway
-       and not GeneralFoughtFaction jerusalem
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion islam
-
- Affects FearsIslam 1 Chance 5
-
-;------------------------------------------
-Trigger fear_religion_islam_1_alt
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter zirids_exist = 1
-       and GeneralHPLostRatioinBattle <= 0.6
-       and not WonBattle
-       and BattleOdds > 1.0
-       and not GeneralFoughtFaction venice
-       and not GeneralFoughtFaction sicily
-       and not GeneralFoughtFaction milan
-       and not GeneralFoughtFaction papal_states
-       and not GeneralFoughtFaction denmark
-       and not GeneralFoughtFaction scotland
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction france
-       and not GeneralFoughtFaction hre
-       and not GeneralFoughtFaction england
        and not GeneralFoughtFaction poland
        and not GeneralFoughtFaction byzantium
        and not GeneralFoughtFaction russia
@@ -30599,7 +30389,6 @@ Trigger fear_religion_islam_2
  WhenToTest PostBattle
 
  Condition IsGeneral
-       and I_EventCounter zirids_exist = 0
        and BattleSuccess = crushing
        and not WonBattle
        and BattleOdds > 1.0
@@ -30615,44 +30404,6 @@ Trigger fear_religion_islam_2
        and not GeneralFoughtFaction hre
        and not GeneralFoughtFaction england
        and not GeneralFoughtFaction portugal
-       and not GeneralFoughtFaction poland
-       and not GeneralFoughtFaction byzantium
-       and not GeneralFoughtFaction russia
-       and not GeneralFoughtFaction spain
-       and not GeneralFoughtFaction hungary
-       and not GeneralFoughtFaction aragon
-       and not GeneralFoughtFaction lithuania
-       and not GeneralFoughtFaction kievan_rus
-       and not GeneralFoughtFaction teutonic_order
-       and not GeneralFoughtFaction norway
-       and not GeneralFoughtFaction jerusalem
-       and not GeneralFoughtFaction georgia
-       and not GeneralFoughtFaction slave
-       and not CharacterReligion islam
-
-
- Affects FearsIslam 1 Chance 20
-
-;------------------------------------------
-Trigger fear_religion_islam_2_alt
- WhenToTest PostBattle
-
- Condition IsGeneral
-       and I_EventCounter zirids_exist = 1
-       and BattleSuccess = crushing
-       and not WonBattle
-       and BattleOdds > 1.0
-       and not GeneralFoughtFaction venice
-       and not GeneralFoughtFaction sicily
-       and not GeneralFoughtFaction milan
-       and not GeneralFoughtFaction papal_states
-       and not GeneralFoughtFaction denmark
-       and not GeneralFoughtFaction scotland
-       and not GeneralFoughtFaction cumans
-       and not GeneralFoughtFaction mongols
-       and not GeneralFoughtFaction france
-       and not GeneralFoughtFaction hre
-       and not GeneralFoughtFaction england
        and not GeneralFoughtFaction poland
        and not GeneralFoughtFaction byzantium
        and not GeneralFoughtFaction russia
@@ -33501,7 +33252,6 @@ Trigger random_birth_portugal
  WhenToTest CharacterComesOfAge
 
  Condition FactionType portugal
-       and I_EventCounter zirids_exist = 0
 
  Affects GoodTrader 12 Chance 5 
  Affects GoodInfantryGeneral 1 Chance 5 
@@ -39868,7 +39618,6 @@ and not FactionType moors
 and not FactionType turks
 and not FactionType kwarezm
 and not FactionType timurids ;abbasids
-and not FactionType portugal ;zirids
 and HasAncType office_military1
 and Trait Military_Career_Orlok < 1
 

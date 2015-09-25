@@ -171,26 +171,6 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-faction						mongols;, spawned_on_event
-culture						middle_eastern
-religion					pagan
-symbol						models_strat/symbol_mongols.CAS
-rebel_symbol					models_strat/symbol_rebels_me.CAS
-primary_colour					red 244, green 231, blue 170
-secondary_colour				red 0, green 0, blue 0
-loading_logo					loading_screen/symbols/symbol128_mongols.tga
-standard_index					8
-logo_index					FACTION_LOGO_MONGOLS
-small_logo_index				SMALL_FACTION_LOGO_MONGOLS
-triumph_value					5
-custom_battle_availability			yes
-can_sap						no
-prefers_naval_invasions				no
-can_have_princess				no
-has_family_tree					yes
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;						Rum
 faction						turks
 culture						middle_eastern
@@ -475,58 +455,6 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-faction						teutonic_order;, spawned_on_event
-culture						northern_european
-religion					catholic
-symbol						models_strat/symbol_teutonic_order.cas
-rebel_symbol					models_strat/symbol_rebels_ne.CAS
-primary_colour					red 3, green 3, blue 3
-secondary_colour				red 255, green 255, blue 255
-loading_logo					loading_screen/symbols/symbol128_england.tga
-standard_index					23
-logo_index					FACTION_LOGO_TEUTONIC_ORDER
-small_logo_index				SMALL_FACTION_LOGO_TEUTONIC_ORDER
-triumph_value					5
-custom_battle_availability			yes
-can_sap						no
-prefers_naval_invasions				no
-can_have_princess				no
-has_family_tree					teutonic
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-faction						timurids, spawned_on_event
-culture						middle_eastern
-religion					islam
-symbol						models_strat/symbol_timurids.CAS
-rebel_symbol					models_strat/symbol_rebels_me.CAS
-primary_colour					red 1, green 1, blue 1
-secondary_colour				red 215, green 0, blue 0
-loading_logo					loading_screen/symbols/symbol128_timurids.tga
-standard_index					24
-logo_index					FACTION_LOGO_TIMURIDS
-small_logo_index				SMALL_FACTION_LOGO_TIMURIDS
-triumph_value					5
-custom_battle_availability			yes
-horde_min_units				10
-horde_max_units				20
-horde_max_units_reduction_every_horde		10
-horde_unit_per_settlement_population		250
-horde_min_named_characters			2
-horde_max_percent_army_stack			80
-horde_disband_percent_on_settlement_capture	0
-horde_unit					Hoshiga Horse Archers
-horde_unit					Khorchi Horse Archers
-horde_unit					Turhagut Lancers
-horde_unit					ME Halberd Militia
-horde_unit					Nukeri Horse Archers
-can_sap						yes
-prefers_naval_invasions				yes
-can_have_princess				no
-has_family_tree					yes
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 faction						norway
 culture						northern_european
 religion					catholic
@@ -605,6 +533,78 @@ custom_battle_availability			yes
 can_sap						no
 prefers_naval_invasions				yes
 can_have_princess				yes
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						mongols;, spawned_on_event
+culture						middle_eastern
+religion					pagan
+symbol						models_strat/symbol_mongols.CAS
+rebel_symbol					models_strat/symbol_rebels_me.CAS
+primary_colour					red 244, green 231, blue 170
+secondary_colour				red 0, green 0, blue 0
+loading_logo					loading_screen/symbols/symbol128_mongols.tga
+standard_index					8
+logo_index					FACTION_LOGO_MONGOLS
+small_logo_index				SMALL_FACTION_LOGO_MONGOLS
+triumph_value					5
+custom_battle_availability			yes
+can_sap						no
+prefers_naval_invasions				no
+can_have_princess				no
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						teutonic_order;, spawned_on_event
+culture						northern_european
+religion					catholic
+symbol						models_strat/symbol_teutonic_order.cas
+rebel_symbol					models_strat/symbol_rebels_ne.CAS
+primary_colour					red 3, green 3, blue 3
+secondary_colour				red 255, green 255, blue 255
+loading_logo					loading_screen/symbols/symbol128_england.tga
+standard_index					23
+logo_index					FACTION_LOGO_TEUTONIC_ORDER
+small_logo_index				SMALL_FACTION_LOGO_TEUTONIC_ORDER
+triumph_value					5
+custom_battle_availability			yes
+can_sap						no
+prefers_naval_invasions				no
+can_have_princess				no
+has_family_tree					teutonic
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+faction						timurids, spawned_on_event
+culture						middle_eastern
+religion					islam
+symbol						models_strat/symbol_timurids.CAS
+rebel_symbol					models_strat/symbol_rebels_me.CAS
+primary_colour					red 1, green 1, blue 1
+secondary_colour				red 215, green 0, blue 0
+loading_logo					loading_screen/symbols/symbol128_timurids.tga
+standard_index					24
+logo_index					FACTION_LOGO_TIMURIDS
+small_logo_index				SMALL_FACTION_LOGO_TIMURIDS
+triumph_value					5
+custom_battle_availability			yes
+horde_min_units				10
+horde_max_units				20
+horde_max_units_reduction_every_horde		10
+horde_unit_per_settlement_population		250
+horde_min_named_characters			2
+horde_max_percent_army_stack			80
+horde_disband_percent_on_settlement_capture	0
+horde_unit					Hoshiga Horse Archers
+horde_unit					Khorchi Horse Archers
+horde_unit					Turhagut Lancers
+horde_unit					ME Halberd Militia
+horde_unit					Nukeri Horse Archers
+can_sap						yes
+prefers_naval_invasions				yes
+can_have_princess				no
 has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

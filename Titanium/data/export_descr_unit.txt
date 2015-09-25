@@ -6661,8 +6661,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         16, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
+stat_pri         10, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  13, 8, 0, metal
@@ -6732,8 +6732,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         17, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
+stat_pri         11, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  13, 7, 0, metal
@@ -6906,8 +6906,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         16, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
+stat_pri         10, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  13, 8, 0, metal
@@ -7298,8 +7298,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         13, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
-stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
+stat_pri         7, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  11, 7, 0, metal
@@ -11708,8 +11708,8 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         15, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
+stat_pri         9, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  14, 9, 0, metal
@@ -14707,9 +14707,9 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, frighten_foot
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         15, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri         9, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    no ; ap ;polearm rebalance (poleaxe)
+stat_pri_attr    ap ;polearm rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no

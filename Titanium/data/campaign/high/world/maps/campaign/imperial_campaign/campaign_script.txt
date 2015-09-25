@@ -84,6 +84,7 @@ set_event_counter georgia_exist 1; (SERBIA) For use in other files
 set_event_counter zirids_exist 0; For use in other files
 set_event_counter hafsids_exist 1; For use in other files
 set_event_counter bulgaria_exist 1; For use in other files
+freeze_faction_ai dummies
 
 ;====================== Setup AI ========================
 set_event_counter DifficultyLevel 2 ; default level is medium
@@ -8920,37 +8921,79 @@ end_monitor
 ;******** EMERGENT FACTIONS/NATIONAL UPRISINGS **********
 ;********************************************************
 ;========================================================
+declare_counter besieging_test
+declare_counter scripted_siege
+monitor_event MultiTurnMove I_CompareCounter besieging_test = 1
+	and HighestAttAdjacentChar Unorthodoxy named_character = 1
+
+	if I_CompareCounter scripted_siege = -1
+		terminate_monitor
+	end_if
+	set_counter scripted_siege 0
+end_monitor
+monitor_event FactionSturnStart FactionType slave
+	and I_CompareCounter wallace_spawned = -1
+	and I_CompareCounter pagan_rebel = -1
+	and I_CompareCounter bulgarians_rebel = -1
+	and I_CompareCounter TO_spawned = -1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label end_besiegescript1
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character end_besiegescript1 60,1
+		console_command mp end_besiegescript1 -1
+		spawn_army
+			faction dummies
+			character	Peter, named character, x 19, y 20, label end_besiegescript2
+			traits	ScriptedBesieger 1
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character end_besiegescript2 61,1
+		console_command mp end_besiegescript2 -1
+		set_counter scripted_siege -1
+		set_counter besieging_test 1
+		move end_besiegescript1, 62, 1
+		kill_character end_besiegescript1
+		kill_character end_besiegescript2
+	 terminate_monitor
+end_monitor
 
 ;============== William Wallace Uprising ================
 add_events
 	event	counter	WilliamWallaceSet
 	date	60
 end_add_events
-
 declare_counter wallace_spawned
-set_counter wallace_spawned 0
+declare_counter scottishwallace
 
 monitor_event FactionTurnStart FactionType scotland
 	and I_EventCounter WilliamWallaceSet = 1
-	and I_NumberOfSettlements scotland < 4
 
-	set_counter wallace_spawned 1
+	if I_CompareCounter wallace_spawned = 0
+	and I_NumberOfSettlements scotland < 4
+		set_counter wallace_spawned 1
+	end_if
 	
 terminate_monitor
 end_monitor
-
 monitor_event FactionTurnStart FactionType scotland
 	and I_NumberOfSettlements scotland < 2
 
+	if I_CompareCounter wallace_spawned = 0
 	set_counter wallace_spawned 1
+	end_if
 
 terminate_monitor
 end_monitor
-
 monitor_event GeneralCaptureSettlement FactionType england
 	and TargetFactionType scotland
 
+	if I_CompareCounter wallace_spawned = 0
 	set_counter wallace_spawned 1
+	end_if
 
 terminate_monitor
 end_monitor
@@ -8960,7 +9003,6 @@ monitor_event PreFactionTurnStart FactionType scotland
 
 	spawn_army 
 		faction scotland
-		;OLD;character	William Wallace, named character, age 20, x 55, y 253, direction SE, battle_model Wallace_General, portrait wallace, label scotland4wallace
 		character	Uilliam Wallace, named character, age 20, x 56, y 252, direction SE, battle_model Wallace_General, portrait wallace, label scotland4wallace
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , ScotlandHero 1 , LoyaltyStarter 1, BattleChivalry 2 , Loyal 2 , Just 2 , Rabblerouser 3 , Hardened 1 , Upright 2 , Austere 2 
 		unit		Highland Nobles	exp 4 armour 0 weapon_lvl 1
@@ -8983,8 +9025,7 @@ monitor_event PreFactionTurnStart FactionType scotland
 		unit		Highland Rabble	exp 4 armour 0 weapon_lvl 0
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
-	end	   
-
+	end
 	spawn_army 
 		faction scotland
 		character	random_name, named character, age 26, x 54, y 254
@@ -9010,7 +9051,6 @@ monitor_event PreFactionTurnStart FactionType scotland
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
 		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
 	end
-
 	historic_event scotland_wallace event/william_wallace.bik
 	set_counter wallace_spawned 2
 terminate_monitor
@@ -9018,34 +9058,74 @@ end_monitor
 
 monitor_event CharacterTurnStart CharFactionType scotland
 	and Trait ScotlandHero = 1
-	and not I_SettlementOwner Edinburgh = scotland
-	and I_IsFactionAIControlled scotland
+	and I_CompareCounter wallace_spawned = 3
+		set_counter scottishwallace 1
+		terminate_monitor
+end_monitor
+
+monitor_event FactionTurnStart FactionType scotland
+	and I_CompareCounter wallace_spawned >= 2
 	
-	if I_AtSea scotland4wallace ; to avoid the case he lost a battle and retreated at a ship near Edinburg
-		terminate_monitor
+	if not I_IsFactionAIControlled scotland
+	set_counter wallace_spawned -1
+	terminate_monitor
 	end_if
 
-	if I_SettlementUnderSiege Edinburgh;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_edinburgh = 0
-		terminate_monitor
+	;###### "Phase2" (next turn)
+	if I_CompareCounter wallace_spawned = 3
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4scotland
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4scotland 61,1
+		console_command mp temp4scotland -1
+
+		if I_CharacterExists scotland4wallace
+		and I_SettlementOwner Edinburgh != scotland
+		and I_SettlementUnderSiege Edinburgh
+		and I_CharacterTypeNearTile scotland, named_character, 2, 54, 248 ;Edinburgh
+			set_counter scripted_siege 1
+			console_command move_character temp4scotland 54,247
+			set_counter besieging_test 1
+			move temp4scotland, 53, 248
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4scotland 54,249
+				move temp4scotland, 54, 248
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4scotland 55,248
+				move temp4scotland, 54, 248
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4scotland 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter scottishwallace = 1
+				siege_settlement scotland4wallace, Edinburgh, attack
+			end_if
+		end_if
+		set_counter scripted_siege -1
+		set_counter wallace_spawned -1
+		kill_character temp4scotland
+	 terminate_monitor
 	end_if
 
-	if not I_CharacterTypeNearTile scotland, named_character, 5, 57, 248 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Edinburgh
-	and I_CompareCounter attack_edinburgh = 3
-		siege_settlement scotland4wallace, Edinburgh, attack
-		set_counter wallace_spawned 2
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Edinburgh
+	;###### "Phase1"
+	set_counter wallace_spawned 3
+	if I_IsFactionAIControlled scotland
+	and I_SettlementOwner Edinburgh != scotland
+	and ! I_SettlementUnderSiege Edinburgh
 		siege_settlement scotland4wallace, Edinburgh, maintain
-		set_counter wallace_spawned 3
+		if ! I_SettlementUnderSiege Edinburgh
+			move scotland4wallace, 56,252
+		end_if
+		if I_SettlementUnderSiege Edinburgh
+			console_command give_trait scotland4wallace ScriptedBesieger 1
+		end_if
 	end_if
-	
 end_monitor
 
 ;============= END William Wallace Uprising ==============
@@ -55011,7 +55091,7 @@ and I_CompareCounter faction_emerge_id >= 1
   end_if
 
 ;Kwarezm
-  if I_CompareCounter faction_emerge_id = 23
+  if I_CompareCounter faction_emerge_id = 22
 	if I_CompareCounter urgench_riot = 0
 		console_command create_building Urgench ros_po_bonus
 	end_if
@@ -60573,6 +60653,568 @@ monitor_event FactionTurnEnd ;I_CompareCounter hs_console > 0
 		set_counter papal_states_has_brain 1
 		increment_kings_purse papal_states -600
 	end_if
+
+end_monitor
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;			Named Forts Script
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+monitor_event FactionTurnEnd FactionIsLocal
+	retire_characters dummies princess
+end_monitor
+    
+;--- 1st Spawn "Fort Labels" ---
+monitor_event PreFactionTurnStart FactionIsLocal
+
+	;BRITAIN
+	spawn_character dummies, Thurso_Fort, princess, age 14, x 53, y 266
+	spawn_character dummies, Mann_Fort, princess, age 14, x 45, y 236
+	spawn_character dummies, Glasgow_Fort, princess, age 14, x 47, y 247
+	spawn_character dummies, Stranraer_Fort, princess, age 14, x 42, y 241
+	spawn_character dummies, Berwick_Fort, princess, age 14, x 64, y 246
+	spawn_character dummies, Winchester_Fort, princess, age 14, x 68, y 213
+	spawn_character dummies, Exeter_Fort, princess, age 14, x 52, y 211
+	spawn_character dummies, Cardiff_Fort, princess, age 14, x 56, y 218
+	spawn_character dummies, Dundalk_Fort, princess, age 14, x 31, y 233
+	spawn_character dummies, Galway_Fort, princess, age 14, x 13, y 230
+	spawn_character dummies, Cork_Fort, princess, age 14, x 17, y 220
+	;SCANDINAVIA
+	spawn_character dummies, Riba_Fort, princess, age 14, x 141, y 244
+	spawn_character dummies, Eikundarsund_Fort, princess, age 14, x 121, y 267
+	spawn_character dummies, Nykoeping_Fort, princess, age 14, x 201, y 269
+	;RUSLAND-STEPPES
+	spawn_character dummies, Tver_Fort, princess, age 14, x 338, y 256
+	spawn_character dummies, Borovichi_Fort, princess, age 14, x 326, y 264
+	spawn_character dummies, Mensk_Fort, princess, age 14, x 275, y 234
+	spawn_character dummies, Kolomea_Fort, princess, age 14, x 257, y 196
+	spawn_character dummies, Zhytomyr_Fort, princess, age 14, x 283, y 208
+	spawn_character dummies, Bryansk_Fort, princess, age 14, x 325, y 231
+	spawn_character dummies, Novhorod_Siverskyi_Fort, princess, age 14, x 317, y 221
+	spawn_character dummies, Poltava_Fort, princess, age 14, x 326, y 204
+	;spawn_character dummies, Moscow_Fort, princess, age 14, x 348, y 248
+	spawn_character dummies, Yaroslavl_Fort, princess, age 14, x 365, y 261
+	spawn_character dummies, Suzdal_Fort, princess, age 14, x 368, y 253
+	spawn_character dummies, Ryazan_Fort, princess, age 14, x 363, y 240
+	spawn_character dummies, Kasimov_Fort, princess, age 14, x 377, y 239
+	;spawn_character dummies, Caffa_Fort, princess, age 14, x 330, y 170
+	spawn_character dummies, Sharukan_Fort, princess, age 14, x 350, y 202
+	spawn_character dummies, Khlynov_Fort, princess, age 14, x 435, y 267
+	spawn_character dummies, Kazan_Fort, princess, age 14, x 431, y 247
+	spawn_character dummies, Bilar_Fort, princess, age 14, x 440, y 241
+	spawn_character dummies, Yelabuga_Fort, princess, age 14, x 452, y 247
+	spawn_character dummies, Serdobinskaya_Fort, princess, age 14, x 395, y 224
+	spawn_character dummies, Volsk_Fort, princess, age 14, x 418, y 221
+	;spawn_character dummies, Jaiksk_Fort, princess, age 14, x 447, y 214
+	;spawn_character dummies, Embi_Fort, princess, age 14, x 495, y 195
+	;EASTERN EUROPE
+	spawn_character dummies, Lublin_Fort, princess, age 14, x 241, y 214
+	spawn_character dummies, Thorn_Fort, princess, age 14, x 210, y 228
+	spawn_character dummies, Yuryev_Fort, princess, age 14, x 271, y 264
+	spawn_character dummies, Vilnius_Fort, princess, age 14, x 257, y 240
+	spawn_character dummies, Trencin_Fort, princess, age 14, x 209, y 197
+	spawn_character dummies, Brasov_Fort, princess, age 14, x 261, y 176
+	spawn_character dummies, Severin_Fort, princess, age 14, x 243, y 166
+	spawn_character dummies, Baia_Fort, princess, age 14, x 266, y 188
+	;CENTRAL EUROPE
+	spawn_character dummies, Hamburg_Fort, princess, age 14, x 149, y 231
+	spawn_character dummies, Magdeburg_Fort, princess, age 14, x 161, y 220
+	spawn_character dummies, Rostock_Fort, princess, age 14, x 164, y 235
+	spawn_character dummies, Aachen_Fort, princess, age 14, x 121, y 210
+	spawn_character dummies, Paderborn_Fort, princess, age 14, x 141, y 217
+	spawn_character dummies, Speyer_Fort, princess, age 14, x 138, y 200
+	spawn_character dummies, Leeuwarden_Fort, princess, age 14, x 119, y 229
+	spawn_character dummies, Friesach_Fort, princess, age 14, x 181, y 184
+	spawn_character dummies, Bern_Fort, princess, age 14, x 132, y 184
+	;WESTERN EUROPE
+	spawn_character dummies, Bruges_Fort, princess, age 14, x 101, y 214
+	spawn_character dummies, Antwerp_Fort, princess, age 14, x 110, y 214
+	spawn_character dummies, Trier_Fort, princess, age 14, x 126, y 202
+	spawn_character dummies, Troyes_Fort, princess, age 14, x 106, y 194
+	spawn_character dummies, Le_Mans_Fort, princess, age 14, x 79, y 191
+	spawn_character dummies, Marseille_Fort, princess, age 14, x 117, y 158
+	;BALKANS
+	;spawn_character dummies, Zagreb_Fort, princess, age 14, x 192, y 176
+	spawn_character dummies, Beograd_Fort, princess, age 14, x 225, y 167
+	;spawn_character dummies, Athens_Fort, princess, age 14, x 249, y 119
+	;spawn_character dummies, Scopia_Fort, princess, age 14, x 231, y 148
+	spawn_character dummies, Epahtos_Fort, princess, age 14, x 234, y 124
+	spawn_character dummies, Spalato_Fort, princess, age 14, x 197, y 160
+	spawn_character dummies, Constantia_Fort, princess, age 14, x 282, y 164
+	spawn_character dummies, Yambol_Fort, princess, age 14, x 268, y 154
+	;ITALY
+	spawn_character dummies, Ajaccio_Fort, princess, age 14, x 141, y 148
+	spawn_character dummies, Turin_Fort, princess, age 14, x 133, y 170
+	;spawn_character dummies, Trieste_Fort, princess, age 14, x 176, y 172
+	spawn_character dummies, Tarento_Fort, princess, age 14, x 202, y 138
+	spawn_character dummies, Syracusa_Fort, princess, age 14, x 187, y 113
+	spawn_character dummies, Luogosanto_Fort, princess, age 14, x 144, y 141
+	;IBERIA
+	spawn_character dummies, Salamanca_Fort, princess, age 14, x 37, y 142
+	spawn_character dummies, Huesca_Fort, princess, age 14, x 75, y 150
+	spawn_character dummies, Coimbra_Fort, princess, age 14, x 18, y 136
+	;AFRICA
+	spawn_character dummies, Tangiers_Fort, princess, age 14, x 38, y 103
+	spawn_character dummies, Melilla_Fort, princess, age 14, x 56, y 100
+	spawn_character dummies, Taroudant_Fort, princess, age 14, x 16, y 66
+	spawn_character dummies, Sijilmassa_Fort, princess, age 14, x 46, y 71
+	spawn_character dummies, Oran_Fort, princess, age 14, x 74, y 103
+	spawn_character dummies, Achir_Fort, princess, age 14, x 83, y 98
+	;spawn_character dummies, Qusantinah_Fort, princess, age 14, x 125, y 106
+	spawn_character dummies, Qala_Fort, princess, age 14, x 110, y 99
+	spawn_character dummies, Bejaia_Fort, princess, age 14, x 111, y 111
+	spawn_character dummies, Beleb_el_Anab_Fort, princess, age 14, x 133, y 112
+	spawn_character dummies, Kairouan_Fort, princess, age 14, x 149, y 103
+	spawn_character dummies, Sfax_Fort, princess, age 14, x 155, y 97
+	spawn_character dummies, Tobruk_Fort, princess, age 14, x 250, y 76
+	;CAUCASUS
+	spawn_character dummies, Chanta_Fort, princess, age 14, x 409, y 168
+	;spawn_character dummies, Baku_Fort, princess, age 14, x 436, y 137
+	spawn_character dummies, Shirvan_Fort, princess, age 14, x 430, y 133
+	spawn_character dummies, Ganja_Fort, princess, age 14, x 412, y 138
+	spawn_character dummies, Derbent_Fort, princess, age 14, x 425, y 147
+	spawn_character dummies, Yerevan_Fort, princess, age 14, x 398, y 135
+	;ANATOLIA
+	spawn_character dummies, Tarsus_Fort, princess, age 14, x 328, y 113
+	spawn_character dummies, Adana_Fort, princess, age 14, x 332, y 112
+	spawn_character dummies, Philadelphia_Fort, princess, age 14, x 283, y 122
+	;spawn_character dummies, Rhodes_Fort, princess, age 14, x 279, y 107
+	spawn_character dummies, Marmaris_Fort, princess, age 14, x 280, y 111
+	;LEVANT
+	spawn_character dummies, Tartus_Fort, princess, age 14, x 336, y 98
+	spawn_character dummies, Krak_de_Chevalier_Fort, princess, age 14, x 339, y 97
+	spawn_character dummies, Resafa_Fort, princess, age 14, x 356, y 101
+	spawn_character dummies, Amman_Fort, princess, age 14, x 337, y 76
+	spawn_character dummies, Tadmur_Fort, princess, age 14, x 353, y 95
+	spawn_character dummies, Tiberias_Fort, princess, age 14, x 332, y 82
+	spawn_character dummies, Arish_Fort, princess, age 14, x 323, y 70
+	;MESOPOTAMIA
+	spawn_character dummies, Al_Mayadin_Fort, princess, age 14, x 369, y 98
+	;ARABIA
+	spawn_character dummies, Tayma_Fort, princess, age 14, x 354, y 44
+	spawn_character dummies, Medina_Fort, princess, age 14, x 362, y 22
+	spawn_character dummies, Sharjah_Fort, princess, age 14, x 477, y 29
+	;PERSIA-KHORASSAN
+	spawn_character dummies, Khiva_Fort, princess, age 14, x 505, y 147
+	spawn_character dummies, Damghan_Fort, princess, age 14, x 468, y 105
+	spawn_character dummies, Qaen_Fort, princess, age 14, x 502, y 90
+	spawn_character dummies, Rudkhan_Fort, princess, age 14, x 430, y 114
+	spawn_character dummies, Hamadan_Fort, princess, age 14, x 426, y 96
+	;EMPTY LAND
+	spawn_character dummies, Turku_Fort, princess, age 14, x 239, y 280
+
+	;BRITAIN
+	console_command move_character "Thurso_Fort" 53, 266
+	console_command move_character "Mann_Fort" 45, 236
+	console_command move_character "Glasgow_Fort" 47, 247
+	console_command move_character "Stranraer_Fort" 42, 241
+	console_command move_character "Berwick_Fort" 64, 246
+	console_command move_character "Winchester_Fort" 68, 213
+	console_command move_character "Exeter_Fort" 52, 211
+	console_command move_character "Cardiff_Fort" 56, 218
+	console_command move_character "Dundalk_Fort" 31, 233
+	console_command move_character "Galway_Fort" 13, 230
+	console_command move_character "Cork_Fort" 17, 220
+	;SCANDINAVIA
+	console_command move_character "Riba_Fort" 141, 244
+	console_command move_character "Eikundarsund_Fort" 121, 267
+	console_command move_character "Nykoeping_Fort" 201, 269
+	;RUSLAND-STEPPES
+	console_command move_character "Tver_Fort" 338, 256
+	console_command move_character "Borovichi_Fort" 326, 264
+	console_command move_character "Mensk_Fort" 275, 234
+	console_command move_character "Kolomea_Fort" 257, 196
+	console_command move_character "Zhytomyr_Fort" 283, 208
+	console_command move_character "Bryansk_Fort" 325, 231
+	console_command move_character "Novhorod_Siverskyi_Fort" 317, 221
+	console_command move_character "Poltava_Fort" 326, 204
+	;console_command move_character "Moscow_Fort" 348, 248
+	console_command move_character "Yaroslavl_Fort" 365, 261
+	console_command move_character "Suzdal_Fort" 368, 253
+	console_command move_character "Ryazan_Fort" 363, 240
+	console_command move_character "Kasimov_Fort" 377, 239
+	;console_command move_character "Caffa_Fort" 330, 170
+	console_command move_character "Sharukan_Fort" 350, 202
+	console_command move_character "Khlynov_Fort" 435, 267
+	console_command move_character "Kazan_Fort" 431, 247
+	console_command move_character "Bilar_Fort" 440, 241
+	console_command move_character "Yelabuga_Fort" 452, 247
+	console_command move_character "Serdobinskaya_Fort" 395, 224
+	console_command move_character "Volsk_Fort" 418, 221
+	;console_command move_character "Jaiksk_Fort" 447, 214
+	;console_command move_character "Embi_Fort" 495, 195
+	;EASTERN EUROPE
+	console_command move_character "Lublin_Fort" 241, 214
+	console_command move_character "Thorn_Fort" 210, 228
+	console_command move_character "Yuryev_Fort" 271, 264
+	console_command move_character "Vilnius_Fort" 257, 240
+	console_command move_character "Trencin_Fort" 209, 197
+	console_command move_character "Brasov_Fort" 261, 176
+	console_command move_character "Severin_Fort" 243, 166
+	console_command move_character "Baia_Fort" 266, 188
+	;CENTRAL EUROPE
+	console_command move_character "Hamburg_Fort" 149, 231
+	console_command move_character "Magdeburg_Fort" 161, 220
+	console_command move_character "Rostock_Fort" 164, 235
+	console_command move_character "Aachen_Fort" 121, 210
+	console_command move_character "Paderborn_Fort" 141, 217
+	console_command move_character "Speyer_Fort" 138, 200
+	console_command move_character "Leeuwarden_Fort" 119, 229
+	console_command move_character "Friesach_Fort" 181, 184
+	console_command move_character "Bern_Fort" 132, 184
+	;WESTERN EUROPE
+	console_command move_character "Bruges_Fort" 101, 214
+	console_command move_character "Antwerp_Fort" 110, 214
+	console_command move_character "Trier_Fort" 126, 202
+	console_command move_character "Troyes_Fort" 106, 194
+	console_command move_character "Le_Mans_Fort" 79, 191
+	console_command move_character "Marseille_Fort" 117, 158
+	;BALKANS
+	;console_command move_character "Zagreb_Fort" 192, 176
+	console_command move_character "Beograd_Fort" 225, 167
+	;console_command move_character "Athens_Fort" 249, 119
+	;console_command move_character "Scopia_Fort" 231, 148
+	console_command move_character "Epahtos_Fort" 234, 124
+	console_command move_character "Spalato_Fort" 197, 160
+	console_command move_character "Constantia_Fort" 282, 164
+	console_command move_character "Yambol_Fort" 268, 154
+	;ITALY
+	console_command move_character "Ajaccio_Fort" 141, 148
+	console_command move_character "Turin_Fort" 133, 170
+	;console_command move_character "Trieste_Fort" 176, 172
+	console_command move_character "Tarento_Fort" 202, 138
+	console_command move_character "Syracusa_Fort" 187, 113
+	console_command move_character "Luogosanto_Fort" 144, 141
+	;IBERIA
+	console_command move_character "Salamanca_Fort" 37, 142
+	console_command move_character "Huesca_Fort" 75, 150
+	console_command move_character "Coimbra_Fort" 18, 136
+	;AFRICA
+	console_command move_character "Tangiers_Fort" 38, 103
+	console_command move_character "Melilla_Fort" 56, 100
+	console_command move_character "Taroudant_Fort" 16, 66
+	console_command move_character "Sijilmassa_Fort" 46, 71
+	console_command move_character "Oran_Fort" 74, 103
+	console_command move_character "Achir_Fort" 83, 98
+	;console_command move_character "Qusantinah_Fort" 125, 106
+	console_command move_character "Qala_Fort" 110, 99
+	console_command move_character "Bejaia_Fort" 111, 111
+	console_command move_character "Beleb_el_Anab_Fort" 133, 112
+	console_command move_character "Kairouan_Fort" 149, 103
+	console_command move_character "Sfax_Fort" 155, 97
+	console_command move_character "Tobruk_Fort" 250, 76
+	;CAUCASUS
+	console_command move_character "Chanta_Fort" 409, 168
+	;console_command move_character "Baku_Fort" 436, 137
+	console_command move_character "Shirvan_Fort" 430, 133
+	console_command move_character "Ganja_Fort" 412, 138
+	console_command move_character "Derbent_Fort" 425, 147
+	console_command move_character "Yerevan_Fort" 398, 135
+	;ANATOLIA
+	console_command move_character "Tarsus_Fort" 328, 113
+	console_command move_character "Adana_Fort" 332, 112
+	console_command move_character "Philadelphia_Fort" 283, 122
+	;console_command move_character "Rhodes_Fort" 279, 107
+	console_command move_character "Marmaris_Fort" 280, 111
+	;LEVANT
+	console_command move_character "Tartus_Fort" 336, 98
+	console_command move_character "Krak_de_Chevalier_Fort" 339, 97
+	console_command move_character "Resafa_Fort" 356, 101
+	console_command move_character "Amman_Fort" 337, 76
+	console_command move_character "Tadmur_Fort" 353, 95
+	console_command move_character "Tiberias_Fort" 332, 82
+	console_command move_character "Arish_Fort" 323, 70
+	;MESOPOTAMIA
+	console_command move_character "Al_Mayadin_Fort" 369, 98
+	;ARABIA
+	console_command move_character "Tayma_Fort" 354, 44
+	console_command move_character "Medina_Fort" 362, 22
+	console_command move_character "Sharjah_Fort" 477, 29
+	;PERSIA-KHORASSAN
+	console_command move_character "Khiva_Fort" 505, 147
+	console_command move_character "Damghan_Fort" 468, 105
+	console_command move_character "Qaen_Fort" 502, 90
+	console_command move_character "Rudkhan_Fort" 430, 114
+	console_command move_character "Hamadan_Fort" 426, 96
+	;EMPTY LAND
+	console_command move_character "Turku_Fort" 239, 280
+
+	terminate_monitor
+end_monitor
+
+;--- ReSpawn "Fort Labels" ---
+monitor_event FactionTurnEnd FactionType slave
+
+	;BRITAIN
+	spawn_character dummies, Thurso_Fort, princess, age 14, x 53, y 266
+	spawn_character dummies, Mann_Fort, princess, age 14, x 45, y 236
+	spawn_character dummies, Glasgow_Fort, princess, age 14, x 47, y 247
+	spawn_character dummies, Stranraer_Fort, princess, age 14, x 42, y 241
+	spawn_character dummies, Berwick_Fort, princess, age 14, x 64, y 246
+	spawn_character dummies, Winchester_Fort, princess, age 14, x 68, y 213
+	spawn_character dummies, Exeter_Fort, princess, age 14, x 52, y 211
+	spawn_character dummies, Cardiff_Fort, princess, age 14, x 56, y 218
+	spawn_character dummies, Dundalk_Fort, princess, age 14, x 31, y 233
+	spawn_character dummies, Galway_Fort, princess, age 14, x 13, y 230
+	spawn_character dummies, Cork_Fort, princess, age 14, x 17, y 220
+	;SCANDINAVIA
+	spawn_character dummies, Riba_Fort, princess, age 14, x 141, y 244
+	spawn_character dummies, Eikundarsund_Fort, princess, age 14, x 121, y 267
+	spawn_character dummies, Nykoeping_Fort, princess, age 14, x 201, y 269
+	;RUSLAND-STEPPES
+	spawn_character dummies, Tver_Fort, princess, age 14, x 338, y 256
+	spawn_character dummies, Borovichi_Fort, princess, age 14, x 326, y 264
+	spawn_character dummies, Mensk_Fort, princess, age 14, x 275, y 234
+	spawn_character dummies, Kolomea_Fort, princess, age 14, x 257, y 196
+	spawn_character dummies, Zhytomyr_Fort, princess, age 14, x 283, y 208
+	spawn_character dummies, Bryansk_Fort, princess, age 14, x 325, y 231
+	spawn_character dummies, Novhorod_Siverskyi_Fort, princess, age 14, x 317, y 221
+	spawn_character dummies, Poltava_Fort, princess, age 14, x 326, y 204
+	;spawn_character dummies, Moscow_Fort, princess, age 14, x 348, y 248
+	spawn_character dummies, Yaroslavl_Fort, princess, age 14, x 365, y 261
+	spawn_character dummies, Suzdal_Fort, princess, age 14, x 368, y 253
+	spawn_character dummies, Ryazan_Fort, princess, age 14, x 363, y 240
+	spawn_character dummies, Kasimov_Fort, princess, age 14, x 377, y 239
+	;spawn_character dummies, Caffa_Fort, princess, age 14, x 330, y 170
+	spawn_character dummies, Sharukan_Fort, princess, age 14, x 350, y 202
+	spawn_character dummies, Khlynov_Fort, princess, age 14, x 435, y 267
+	spawn_character dummies, Kazan_Fort, princess, age 14, x 431, y 247
+	spawn_character dummies, Bilar_Fort, princess, age 14, x 440, y 241
+	spawn_character dummies, Yelabuga_Fort, princess, age 14, x 452, y 247
+	spawn_character dummies, Serdobinskaya_Fort, princess, age 14, x 395, y 224
+	spawn_character dummies, Volsk_Fort, princess, age 14, x 418, y 221
+	;spawn_character dummies, Jaiksk_Fort, princess, age 14, x 447, y 214
+	;spawn_character dummies, Embi_Fort, princess, age 14, x 495, y 195
+	;EASTERN EUROPE
+	spawn_character dummies, Lublin_Fort, princess, age 14, x 241, y 214
+	spawn_character dummies, Thorn_Fort, princess, age 14, x 210, y 228
+	spawn_character dummies, Yuryev_Fort, princess, age 14, x 271, y 264
+	spawn_character dummies, Vilnius_Fort, princess, age 14, x 257, y 240
+	spawn_character dummies, Trencin_Fort, princess, age 14, x 209, y 197
+	spawn_character dummies, Brasov_Fort, princess, age 14, x 261, y 176
+	spawn_character dummies, Severin_Fort, princess, age 14, x 243, y 166
+	spawn_character dummies, Baia_Fort, princess, age 14, x 266, y 188
+	;CENTRAL EUROPE
+	spawn_character dummies, Hamburg_Fort, princess, age 14, x 149, y 231
+	spawn_character dummies, Magdeburg_Fort, princess, age 14, x 161, y 220
+	spawn_character dummies, Rostock_Fort, princess, age 14, x 164, y 235
+	spawn_character dummies, Aachen_Fort, princess, age 14, x 121, y 210
+	spawn_character dummies, Paderborn_Fort, princess, age 14, x 141, y 217
+	spawn_character dummies, Speyer_Fort, princess, age 14, x 138, y 200
+	spawn_character dummies, Leeuwarden_Fort, princess, age 14, x 119, y 229
+	spawn_character dummies, Friesach_Fort, princess, age 14, x 181, y 184
+	spawn_character dummies, Bern_Fort, princess, age 14, x 132, y 184
+	;WESTERN EUROPE
+	spawn_character dummies, Bruges_Fort, princess, age 14, x 101, y 214
+	spawn_character dummies, Antwerp_Fort, princess, age 14, x 110, y 214
+	spawn_character dummies, Trier_Fort, princess, age 14, x 126, y 202
+	spawn_character dummies, Troyes_Fort, princess, age 14, x 106, y 194
+	spawn_character dummies, Le_Mans_Fort, princess, age 14, x 79, y 191
+	spawn_character dummies, Marseille_Fort, princess, age 14, x 117, y 158
+	;BALKANS
+	;spawn_character dummies, Zagreb_Fort, princess, age 14, x 192, y 176
+	spawn_character dummies, Beograd_Fort, princess, age 14, x 225, y 167
+	;spawn_character dummies, Athens_Fort, princess, age 14, x 249, y 119
+	;spawn_character dummies, Scopia_Fort, princess, age 14, x 231, y 148
+	spawn_character dummies, Epahtos_Fort, princess, age 14, x 234, y 124
+	spawn_character dummies, Spalato_Fort, princess, age 14, x 197, y 160
+	spawn_character dummies, Constantia_Fort, princess, age 14, x 282, y 164
+	spawn_character dummies, Yambol_Fort, princess, age 14, x 268, y 154
+	;ITALY
+	spawn_character dummies, Ajaccio_Fort, princess, age 14, x 141, y 148
+	spawn_character dummies, Turin_Fort, princess, age 14, x 133, y 170
+	;spawn_character dummies, Trieste_Fort, princess, age 14, x 176, y 172
+	spawn_character dummies, Tarento_Fort, princess, age 14, x 202, y 138
+	spawn_character dummies, Syracusa_Fort, princess, age 14, x 187, y 113
+	spawn_character dummies, Luogosanto_Fort, princess, age 14, x 144, y 141
+	;IBERIA
+	spawn_character dummies, Salamanca_Fort, princess, age 14, x 37, y 142
+	spawn_character dummies, Huesca_Fort, princess, age 14, x 75, y 150
+	spawn_character dummies, Coimbra_Fort, princess, age 14, x 18, y 136
+	;AFRICA
+	spawn_character dummies, Tangiers_Fort, princess, age 14, x 38, y 103
+	spawn_character dummies, Melilla_Fort, princess, age 14, x 56, y 100
+	spawn_character dummies, Taroudant_Fort, princess, age 14, x 16, y 66
+	spawn_character dummies, Sijilmassa_Fort, princess, age 14, x 46, y 71
+	spawn_character dummies, Oran_Fort, princess, age 14, x 74, y 103
+	spawn_character dummies, Achir_Fort, princess, age 14, x 83, y 98
+	;spawn_character dummies, Qusantinah_Fort, princess, age 14, x 125, y 106
+	spawn_character dummies, Qala_Fort, princess, age 14, x 110, y 99
+	spawn_character dummies, Bejaia_Fort, princess, age 14, x 111, y 111
+	spawn_character dummies, Beleb_el_Anab_Fort, princess, age 14, x 133, y 112
+	spawn_character dummies, Kairouan_Fort, princess, age 14, x 149, y 103
+	spawn_character dummies, Sfax_Fort, princess, age 14, x 155, y 97
+	spawn_character dummies, Tobruk_Fort, princess, age 14, x 250, y 76
+	;CAUCASUS
+	spawn_character dummies, Chanta_Fort, princess, age 14, x 409, y 168
+	;spawn_character dummies, Baku_Fort, princess, age 14, x 436, y 137
+	spawn_character dummies, Shirvan_Fort, princess, age 14, x 430, y 133
+	spawn_character dummies, Ganja_Fort, princess, age 14, x 412, y 138
+	spawn_character dummies, Derbent_Fort, princess, age 14, x 425, y 147
+	spawn_character dummies, Yerevan_Fort, princess, age 14, x 398, y 135
+	;ANATOLIA
+	spawn_character dummies, Tarsus_Fort, princess, age 14, x 328, y 113
+	spawn_character dummies, Adana_Fort, princess, age 14, x 332, y 112
+	spawn_character dummies, Philadelphia_Fort, princess, age 14, x 283, y 122
+	;spawn_character dummies, Rhodes_Fort, princess, age 14, x 279, y 107
+	spawn_character dummies, Marmaris_Fort, princess, age 14, x 280, y 111
+	;LEVANT
+	spawn_character dummies, Tartus_Fort, princess, age 14, x 336, y 98
+	spawn_character dummies, Krak_de_Chevalier_Fort, princess, age 14, x 339, y 97
+	spawn_character dummies, Resafa_Fort, princess, age 14, x 356, y 101
+	spawn_character dummies, Amman_Fort, princess, age 14, x 337, y 76
+	spawn_character dummies, Tadmur_Fort, princess, age 14, x 353, y 95
+	spawn_character dummies, Tiberias_Fort, princess, age 14, x 332, y 82
+	spawn_character dummies, Arish_Fort, princess, age 14, x 323, y 70
+	;MESOPOTAMIA
+	spawn_character dummies, Al_Mayadin_Fort, princess, age 14, x 369, y 98
+	;ARABIA
+	spawn_character dummies, Tayma_Fort, princess, age 14, x 354, y 44
+	spawn_character dummies, Medina_Fort, princess, age 14, x 362, y 22
+	spawn_character dummies, Sharjah_Fort, princess, age 14, x 477, y 29
+	;PERSIA-KHORASSAN
+	spawn_character dummies, Khiva_Fort, princess, age 14, x 505, y 147
+	spawn_character dummies, Damghan_Fort, princess, age 14, x 468, y 105
+	spawn_character dummies, Qaen_Fort, princess, age 14, x 502, y 90
+	spawn_character dummies, Rudkhan_Fort, princess, age 14, x 430, y 114
+	spawn_character dummies, Hamadan_Fort, princess, age 14, x 426, y 96
+	;EMPTY LAND
+	spawn_character dummies, Turku_Fort, princess, age 14, x 239, y 280
+
+	;BRITAIN
+	console_command move_character "Thurso_Fort" 53, 266
+	console_command move_character "Mann_Fort" 45, 236
+	console_command move_character "Glasgow_Fort" 47, 247
+	console_command move_character "Stranraer_Fort" 42, 241
+	console_command move_character "Berwick_Fort" 64, 246
+	console_command move_character "Winchester_Fort" 68, 213
+	console_command move_character "Exeter_Fort" 52, 211
+	console_command move_character "Cardiff_Fort" 56, 218
+	console_command move_character "Dundalk_Fort" 31, 233
+	console_command move_character "Galway_Fort" 13, 230
+	console_command move_character "Cork_Fort" 17, 220
+	;SCANDINAVIA
+	console_command move_character "Riba_Fort" 141, 244
+	console_command move_character "Eikundarsund_Fort" 121, 267
+	console_command move_character "Nykoeping_Fort" 201, 269
+	;RUSLAND-STEPPES
+	console_command move_character "Tver_Fort" 338, 256
+	console_command move_character "Borovichi_Fort" 326, 264
+	console_command move_character "Mensk_Fort" 275, 234
+	console_command move_character "Kolomea_Fort" 257, 196
+	console_command move_character "Zhytomyr_Fort" 283, 208
+	console_command move_character "Bryansk_Fort" 325, 231
+	console_command move_character "Novhorod_Siverskyi_Fort" 317, 221
+	console_command move_character "Poltava_Fort" 326, 204
+	;console_command move_character "Moscow_Fort" 348, 248
+	console_command move_character "Yaroslavl_Fort" 365, 261
+	console_command move_character "Suzdal_Fort" 368, 253
+	console_command move_character "Ryazan_Fort" 363, 240
+	console_command move_character "Kasimov_Fort" 377, 239
+	;console_command move_character "Caffa_Fort" 330, 170
+	console_command move_character "Sharukan_Fort" 350, 202
+	console_command move_character "Khlynov_Fort" 435, 267
+	console_command move_character "Kazan_Fort" 431, 247
+	console_command move_character "Bilar_Fort" 440, 241
+	console_command move_character "Yelabuga_Fort" 452, 247
+	console_command move_character "Serdobinskaya_Fort" 395, 224
+	console_command move_character "Volsk_Fort" 418, 221
+	;console_command move_character "Jaiksk_Fort" 447, 214
+	;console_command move_character "Embi_Fort" 495, 195
+	;EASTERN EUROPE
+	console_command move_character "Lublin_Fort" 241, 214
+	console_command move_character "Thorn_Fort" 210, 228
+	console_command move_character "Yuryev_Fort" 271, 264
+	console_command move_character "Vilnius_Fort" 257, 240
+	console_command move_character "Trencin_Fort" 209, 197
+	console_command move_character "Brasov_Fort" 261, 176
+	console_command move_character "Severin_Fort" 243, 166
+	console_command move_character "Baia_Fort" 266, 188
+	;CENTRAL EUROPE
+	console_command move_character "Hamburg_Fort" 149, 231
+	console_command move_character "Magdeburg_Fort" 161, 220
+	console_command move_character "Rostock_Fort" 164, 235
+	console_command move_character "Aachen_Fort" 121, 210
+	console_command move_character "Paderborn_Fort" 141, 217
+	console_command move_character "Speyer_Fort" 138, 200
+	console_command move_character "Leeuwarden_Fort" 119, 229
+	console_command move_character "Friesach_Fort" 181, 184
+	console_command move_character "Bern_Fort" 132, 184
+	;WESTERN EUROPE
+	console_command move_character "Bruges_Fort" 101, 214
+	console_command move_character "Antwerp_Fort" 110, 214
+	console_command move_character "Trier_Fort" 126, 202
+	console_command move_character "Troyes_Fort" 106, 194
+	console_command move_character "Le_Mans_Fort" 79, 191
+	console_command move_character "Marseille_Fort" 117, 158
+	;BALKANS
+	;console_command move_character "Zagreb_Fort" 192, 176
+	console_command move_character "Beograd_Fort" 225, 167
+	;console_command move_character "Athens_Fort" 249, 119
+	;console_command move_character "Scopia_Fort" 231, 148
+	console_command move_character "Epahtos_Fort" 234, 124
+	console_command move_character "Spalato_Fort" 197, 160
+	console_command move_character "Constantia_Fort" 282, 164
+	console_command move_character "Yambol_Fort" 268, 154
+	;ITALY
+	console_command move_character "Ajaccio_Fort" 141, 148
+	console_command move_character "Turin_Fort" 133, 170
+	;console_command move_character "Trieste_Fort" 176, 172
+	console_command move_character "Tarento_Fort" 202, 138
+	console_command move_character "Syracusa_Fort" 187, 113
+	console_command move_character "Luogosanto_Fort" 144, 141
+	;IBERIA
+	console_command move_character "Salamanca_Fort" 37, 142
+	console_command move_character "Huesca_Fort" 75, 150
+	console_command move_character "Coimbra_Fort" 18, 136
+	;AFRICA
+	console_command move_character "Tangiers_Fort" 38, 103
+	console_command move_character "Melilla_Fort" 56, 100
+	console_command move_character "Taroudant_Fort" 16, 66
+	console_command move_character "Sijilmassa_Fort" 46, 71
+	console_command move_character "Oran_Fort" 74, 103
+	console_command move_character "Achir_Fort" 83, 98
+	;console_command move_character "Qusantinah_Fort" 125, 106
+	console_command move_character "Qala_Fort" 110, 99
+	console_command move_character "Bejaia_Fort" 111, 111
+	console_command move_character "Beleb_el_Anab_Fort" 133, 112
+	console_command move_character "Kairouan_Fort" 149, 103
+	console_command move_character "Sfax_Fort" 155, 97
+	console_command move_character "Tobruk_Fort" 250, 76
+	;CAUCASUS
+	console_command move_character "Chanta_Fort" 409, 168
+	;console_command move_character "Baku_Fort" 436, 137
+	console_command move_character "Shirvan_Fort" 430, 133
+	console_command move_character "Ganja_Fort" 412, 138
+	console_command move_character "Derbent_Fort" 425, 147
+	console_command move_character "Yerevan_Fort" 398, 135
+	;ANATOLIA
+	console_command move_character "Tarsus_Fort" 328, 113
+	console_command move_character "Adana_Fort" 332, 112
+	console_command move_character "Philadelphia_Fort" 283, 122
+	;console_command move_character "Rhodes_Fort" 279, 107
+	console_command move_character "Marmaris_Fort" 280, 111
+	;LEVANT
+	console_command move_character "Tartus_Fort" 336, 98
+	console_command move_character "Krak_de_Chevalier_Fort" 339, 97
+	console_command move_character "Resafa_Fort" 356, 101
+	console_command move_character "Amman_Fort" 337, 76
+	console_command move_character "Tadmur_Fort" 353, 95
+	console_command move_character "Tiberias_Fort" 332, 82
+	console_command move_character "Arish_Fort" 323, 70
+	;MESOPOTAMIA
+	console_command move_character "Al_Mayadin_Fort" 369, 98
+	;ARABIA
+	console_command move_character "Tayma_Fort" 354, 44
+	console_command move_character "Medina_Fort" 362, 22
+	console_command move_character "Sharjah_Fort" 477, 29
+	;PERSIA-KHORASSAN
+	console_command move_character "Khiva_Fort" 505, 147
+	console_command move_character "Damghan_Fort" 468, 105
+	console_command move_character "Qaen_Fort" 502, 90
+	console_command move_character "Rudkhan_Fort" 430, 114
+	console_command move_character "Hamadan_Fort" 426, 96
+	;EMPTY LAND
+	console_command move_character "Turku_Fort" 239, 280
 
 end_monitor
 
