@@ -1,4 +1,4 @@
-; SS6.4 - TITANIUM High Era
+; SS6.4 - TITANIUM High Era 1300
 venice
 hold_regions Venice_Province Constantinople_Province Ancona_Province Genoa_Province Iraklion_Province Ragusa_Province Athens_Province Thessalonica_Province Yelabuga_Province Beleb_el_Anab_Province Moscow_Province 
 take_regions 45
@@ -7,14 +7,13 @@ short_campaign hold_regions Constantinople_Province Genoa_Province
 take_regions 20
 outlive milan byzantium
 
-;HAFSIDS
 sicily
-hold_regions Tunis_Province Al-Mahdiya_Province Tripoli_Province Algiers_Province Palma_Province Cagliari_Province Palermo_Province Galway_Province ; Qusantinah
+hold_regions Palermo_Province Syracuse_Province Naples_Province Cagliari_Province Tunis_Province Tripoli_Province Ancona_Province Arta_Province Thessalonica_Province Jerusalem_Province Constantinople_Province 
 take_regions 45
-outlive moors milan aragon
-short_campaign hold_regions Tunis_Province Al-Mahdiya_Province Palermo_Province Galway_Province ; Qusantinah
+outlive byzantium moors aragon kwarezm
+short_campaign hold_regions Jerusalem_Province 
 take_regions 20
-outlive moors milan
+outlive byzantium aragon kwarezm
 
 milan
 hold_regions Genoa_Province Milan_Province Pisa_Province Venice_Province Jerusalem_Province Cagliari_Province Ajaccio_Province Bologna_Province Venice_Province Caffa_Province Nykoeping_Province ; Tuscany
@@ -60,23 +59,23 @@ outlive england norway
 cumans
 hold_regions Constantinople_Province Sofia_Province Qarisiya_Province Scopia_Province Belgrade_Province Baia_Province Adrianople_Province Targoviste_Province Brasov_Province Halych_Province 
 take_regions 45
-outlive byzantium georgia turks
+outlive byzantium kievan_rus turks
 short_campaign hold_regions Constantinople_Province Qarisiya_Province 
 take_regions 20
-outlive byzantium georgia
+outlive byzantium kievan_rus
 
 mongols
 hold_regions Urgench_Province Konjikala_Province Baghdad_Province Gorgan_Province Tmutarakan_Province Ray_Province Jerusalem_Province Antioch_Province Damascus_Province Gaza_Province Kiev_Province Oleshe_Province 
 take_regions 60
-outlive kwarezm turks kievan_rus cumans
+outlive timurids turks cumans
 short_campaign hold_regions Constantinople_Province Jerusalem_Province Kiev_Province Baghdad_Province 
 take_regions 40
-outlive kwarezm turks kievan_rus cumans
+outlive turks cumans
 
 turks
 hold_regions Iconium_Province Caesarea_Province Nicaea_Province Isparta_Province Smyrna_Province Sinop_Province Ankara_Province Constantinople_Province Damascus_Province Jerusalem_Province Vienna_Province Kutaisi_Province Baghdad_Province Kermanshah_Province 
 take_regions 45
-outlive byzantium kwarezm jerusalem egypt
+outlive byzantium mongols jerusalem egypt kievan_rus
 short_campaign hold_regions Constantinople_Province Jerusalem_Province Baghdad_Province 
 take_regions 25
 outlive byzantium jerusalem
@@ -116,7 +115,7 @@ outlive moors
 poland
 hold_regions Krakow_Province Wroclaw_Province Thorn_Province Stettin_Province Vilnius_Province Halych_Province Riga_Province Oleshe_Province Kiev_Province Polotsk_Province Khiva_Province ; Poznan
 take_regions 45
-outlive hre kievan_rus lithuania
+outlive hre lithuania
 short_campaign hold_regions Jerusalem_Province 
 take_regions 20
 outlive hre lithuania
@@ -124,7 +123,7 @@ outlive hre lithuania
 byzantium
 hold_regions Constantinople_Province Thessalonica_Province Adrianople_Province Nicaea_Province Iconium_Province Sofia_Province Canakkale_Province Trebizond_Province Smyrna_Province Isparta_Province Sinop_Province Ankara_Province Caesarea_Province Jerusalem_Province
 take_regions 45
-outlive turks venice cumans georgia
+outlive turks venice cumans kievan_rus
 short_campaign hold_regions Caesarea_Province Rome_Province 
 take_regions 20
 outlive turks venice cumans
@@ -132,7 +131,7 @@ outlive turks venice cumans
 moors
 hold_regions Cordoba_Province Granada_Province Marrakesh_Province Fes_Province Palma_Province Toledo_Province Algiers_Province Oran_Province Leon_Province Lisbon_Province Valencia_Province Algiers_Province Tunis_Province Zaragoza_Province Barcelona_Province Seville_Province 
 take_regions 45
-outlive spain portugal aragon sicily
+outlive spain portugal aragon sicily kwarezm
 short_campaign hold_regions Jerusalem_Province Toledo_Province 
 take_regions 20
 outlive spain portugal aragon
@@ -140,10 +139,10 @@ outlive spain portugal aragon
 russia
 hold_regions Novgorod_Province Yaroslavl_Province Riga_Province Reval_Province Oleshe_Province Kiev_Province Vilnius_Province Smolensk_Province 
 take_regions 45
-outlive kievan_rus lithuania poland
+outlive lithuania poland
 short_campaign hold_regions Constantinople_Province Kiev_Province 
 take_regions 20
-outlive kievan_rus lithuania
+outlive lithuania
 
 spain
 hold_regions Leon_Province Toledo_Province Salamanca_Province Cordoba_Province Granada_Province Valencia_Province Murcia_Province Algiers_Province Seville_Province 
@@ -156,10 +155,10 @@ outlive moors aragon
 hungary
 hold_regions Esztergom_Province Brasov_Province Vienna_Province Baia_Province Targoviste_Province Sofia_Province Kassa_Province Varad_Province Constantinople_Province Zagreb_Province Ryazan_Province Turku_Province ; Raska Bosnia
 take_regions 45
-outlive venice byzantium hre
+outlive venice byzantium kievan_rus cumans
 short_campaign hold_regions Jerusalem_Province Constantinople_Province 
 take_regions 20
-outlive byzantium hre
+outlive byzantium kievan_rus cumans
 
 aragon
 hold_regions Zaragoza_Province Barcelona_Province Pamplona_Province Valencia_Province Palma_Province Cagliari_Province Palermo_Province Syracuse_Province Naples_Province 
@@ -172,23 +171,24 @@ outlive moors sicily
 lithuania
 hold_regions Vilnius_Province Thorn_Province Reval_Province Varad_Province Riga_Province Palanga_Province Hrodna_Province Novgorod_Province Kiev_Province Mensk_Province 
 take_regions 45
-outlive russia kievan_rus poland
+outlive russia poland
 short_campaign hold_regions Kiev_Province Novgorod_Province
 take_regions 20
-outlive russia kievan_rus
+outlive russia
 
+;SERBIA
 kievan_rus
-hold_regions Kiev_Province Tmutarakan_Province Pereyaslav_Province Caffa_Province Sarkel_Province Bryansk_Province Oleshe_Province Novgorod_Province 
+hold_regions Ryazan_Province Moscow_Province Scopia_Province Turku_Province Zagreb_Province Belgrade_Province Qarisiya_Province Constantinople_Province 
 take_regions 45
-outlive russia cumans byzantium
-short_campaign hold_regions Constantinople_Province 
+outlive turks byzantium cumans
+short_campaign hold_regions Constantinople_Province Ryazan_Province 
 take_regions 20
-outlive russia cumans
+outlive byzantium cumans
 
 teutonic_order
 hold_regions Vilnius_Province Thorn_Province Novgorod_Province Riga_Province Varad_Province Palanga_Province Hrodna_Province 
 take_regions 45
-outlive lithuania russia kievan_rus poland
+outlive lithuania russia poland
 short_campaign hold_regions Novgorod_Province Vilnius_Province 
 take_regions 20
 outlive lithuania russia
@@ -217,22 +217,22 @@ short_campaign hold_regions Jerusalem_Province Cairo_Province
 take_regions 20
 outlive egypt byzantium
 
+;HAFSIDS
 kwarezm
-hold_regions Baghdad_Province Jerusalem_Province Sharjah_Province Baku_Province Konjikala_Province Tabriz_Province Alamut_Province 
+hold_regions Tunis_Province Al-Mahdiya_Province Tripoli_Province Algiers_Province Palma_Province Cagliari_Province Palermo_Province Galway_Province ; Qusantinah
+take_regions 45
+outlive moors sicily aragon
+short_campaign hold_regions Tunis_Province Al-Mahdiya_Province Palermo_Province 
+take_regions 20
+outlive moors sicily
+
+georgia
+hold_regions Kutaisi_Province Tbilisi_Province Qarisiya_Province Yerevan_Province Baku_Province Trebizond_Province Tabriz_Province Diyarbakir_Province Aberdeen_Province ;Alania
 take_regions 45
 outlive turks mongols
-short_campaign hold_regions Jerusalem_Province Baghdad_Province 
+short_campaign hold_regions Kutaisi_Province Tbilisi_Province 
 take_regions 20
 outlive turks
-
-;SERBIA
-georgia
-hold_regions Ryazan_Province Moscow_Province Scopia_Province Turku_Province Zagreb_Province Belgrade_Province Qarisiya_Province Constantinople_Province 
-take_regions 45
-outlive turks byzantium cumans
-short_campaign hold_regions Constantinople_Province Ryazan_Province 
-take_regions 20
-outlive byzantium cumans
 
 dummies
 hold_regions

@@ -1,4 +1,4 @@
-; Titanium - High Era Campaign Script
+; Titanium - High Era 1300 Campaign Script
 ;========================================================
 ;===================== CONTENTS =========================
 ;========================================================
@@ -7,7 +7,6 @@
 ;---- Setup AI
 ;---- Setup Events
 ;------ Pirate Cleanup Script
-;------ TEUTONIC AND REPUBLICS DEATH SCRIPT WORKAROUND
 ;* 2) PREPARE FOR NEW FACTION'S TURN
 ;---- Reset counters
 ;---- Whose turn is on?
@@ -32,9 +31,7 @@
 ;---- Player notification
 ;---- Interactive Events
 ;* 5)EMERGENT FACTIONS/NATIONAL UPRISINGS
-;---- William Wallace Uprising
-;---- Golden Horde Emergent
-;---- Timurids Invasion
+;---- TIMURIDS INVASION
 ;* 6) G5 BAI STUFF
 ;* 7) TITANIUM ADDITIONAL SCRIPTS
 ;---- Loan Script
@@ -47,6 +44,7 @@
 ;---- Conquered Crowns Script (TBD)
 ;* 8) ADDITIONAL SCRIPTS
 ;---- Hotseat Treasurer
+;---- Named Forts Script
 ;---- Stratmap UI toggle on/off
 
 
@@ -80,10 +78,11 @@ declare_counter orleans_exist
 set_counter orleans_exist 1
 set_event_counter obotrites_exist 0; For use in other files
 set_event_counter abbasids_exist 0; For use in other files
-set_event_counter georgia_exist 1; (SERBIA) For use in other files
+set_event_counter georgia_exist 1; For use in other files
 set_event_counter zirids_exist 0; For use in other files
 set_event_counter hafsids_exist 1; For use in other files
 set_event_counter bulgaria_exist 1; For use in other files
+set_event_counter serbia_exist 1; For use in other files
 freeze_faction_ai dummies
 
 ;====================== Setup AI ========================
@@ -98,7 +97,7 @@ monitor_event PreFactionTurnStart CampaignDifficulty >= hard
 	link_faction_ai hre catholic
 	link_faction_ai spain catholic
 	link_faction_ai venice catholic
-	link_faction_ai sicily islam	;Hafsids
+	link_faction_ai sicily catholic
 	link_faction_ai milan catholic
 	link_faction_ai scotland catholic
 	link_faction_ai cumans default	;Bulgaria
@@ -112,16 +111,16 @@ monitor_event PreFactionTurnStart CampaignDifficulty >= hard
 	link_faction_ai poland catholic
 	link_faction_ai hungary catholic
 	link_faction_ai lithuania pagan
-	link_faction_ai kievan_rus default
+	link_faction_ai kievan_rus default	;Serbia
 	link_faction_ai aragon catholic
 	link_faction_ai norway catholic
-	link_faction_ai kwarezm islam
+	link_faction_ai kwarezm islam	;Hafsids
 	link_faction_ai papal_states papal_faction
 	link_faction_ai mongols mongols_faction
 	link_faction_ai timurids islam
 	link_faction_ai teutonic_order catholic
 	link_faction_ai jerusalem catholic
-	link_faction_ai georgia default	;Serbia
+	link_faction_ai georgia default
 	link_faction_ai slave slave_faction
 
 	terminate_monitor
@@ -215,7 +214,9 @@ monitor_event PreFactionTurnStart CampaignDifficulty = very_hard
 	if I_IsFactionAIControlled mongols
 		increment_kings_purse mongols 3000
 	end_if
-	increment_kings_purse timurids 1800
+	if I_IsFactionAIControlled timurids
+		increment_kings_purse timurids 1800
+	end_if
 	increment_kings_purse papal_states 400
 	increment_kings_purse slave 3500
 
@@ -342,7 +343,9 @@ monitor_event PreFactionTurnStart CampaignDifficulty != medium
 	if I_IsFactionAIControlled teutonic_order
 		increment_kings_purse teutonic_order 500
 	end_if
-	increment_kings_purse timurids 500
+	if I_IsFactionAIControlled timurids
+		increment_kings_purse timurids 500
+	end_if
 	increment_kings_purse papal_states 300
 	increment_kings_purse slave 1500
 
@@ -438,7 +441,9 @@ monitor_event PreFactionTurnStart
 	if I_IsFactionAIControlled teutonic_order
 		increment_kings_purse teutonic_order 1000
 	end_if
-	increment_kings_purse timurids 1100
+	if I_IsFactionAIControlled timurids
+		increment_kings_purse timurids 1100
+	end_if
 	increment_kings_purse papal_states 400
 	increment_kings_purse slave 2000
 	terminate_monitor
@@ -454,7 +459,7 @@ monitor_event PreFactionTurnStart
 	link_faction_ai hre catholic
 	link_faction_ai spain catholic
 	link_faction_ai venice catholic
-	link_faction_ai sicily islam	;Hafsids
+	link_faction_ai sicily catholic
 	link_faction_ai milan catholic
 	link_faction_ai scotland catholic
 	link_faction_ai cumans default	;Bulgaria
@@ -468,17 +473,17 @@ monitor_event PreFactionTurnStart
 	link_faction_ai poland catholic
 	link_faction_ai hungary catholic
 	link_faction_ai lithuania pagan
-	link_faction_ai kievan_rus default
+	link_faction_ai kievan_rus default	;Serbia
 	link_faction_ai aragon catholic
 	link_faction_ai norway catholic
-	link_faction_ai kwarezm islam
+	link_faction_ai kwarezm islam	;Hafsids
 	link_faction_ai papal_states papal_faction
 	link_faction_ai mongols mongols_faction
 	link_faction_ai timurids islam
 	link_faction_ai teutonic_order catholic
 	link_faction_ai jerusalem catholic
-	link_faction_ai georgia default	;Serbia
-	link_faction_ai slave slave_faction'
+	link_faction_ai georgia default
+	link_faction_ai slave slave_faction
 
 	if I_IsFactionAIControlled england
 		increment_kings_purse england 800
@@ -561,7 +566,9 @@ monitor_event PreFactionTurnStart
 	if I_IsFactionAIControlled teutonic_order
 		increment_kings_purse teutonic_order 600
 	end_if
-	increment_kings_purse timurids 600
+	if I_IsFactionAIControlled timurids
+		increment_kings_purse timurids 600
+	end_if
 	increment_kings_purse papal_states 300
 	increment_kings_purse slave 2700
  end_if
@@ -621,13 +628,6 @@ monitor_event PreFactionTurnStart
 			console_command diplomatic_stance teutonic_order lithuania war
 		end_if
 	end_if
-	
-	;Historical Sicily Script
-;		send_character_off_map sicily4leader
-;		destroy_units sicily Swiss Pikemen
-;		if I_IsFactionAIControlled sicily
-;			give_everything_to_faction sicily hre false
-;		end_if
 
 	terminate_monitor
 end_monitor
@@ -657,23 +657,6 @@ monitor_event FactionTurnEnd FactionType slave
 			set_counter pirate_cleanup 0
 			destroy_units slave pirate ship
 		end_if
-	;TEUTONIC AND REPUBLICS DEATH SCRIPT WORKAROUND, Might be obsolete needs check
-	;---- Venice ----
-		if I_NumberOfSettlements venice < 1
-			console_command kill_faction venice
-		end_if
-	;---- Genoa ----
-		if I_NumberOfSettlements milan < 1
-			console_command kill_faction milan
-		end_if
-	;---- Novgorod ----
-		if I_NumberOfSettlements russia < 1
-			console_command kill_faction russia
-		end_if
-	;---- Teutonic Order ----
-		if I_NumberOfSettlements teutonic_order < 1
-			console_command kill_faction teutonic_order
-		end_if
 end_monitor
 
 ;========================================================
@@ -683,10 +666,6 @@ end_monitor
 ;========================================================
 
 ;==================== Reset counters ====================
-;declare_counter campaign_year
-;declare_counter campaign_year_set
-;set_counter campaign_year_set -1
-
 declare_counter new_fturn
 declare_counter christian_faction
 set_event_counter lithuania_catholic 0 ; Used in descr_faction_standing.txt
@@ -820,7 +799,7 @@ monitor_event PreFactionTurnStart FactionType venice
 end_monitor
 monitor_event PreFactionTurnStart FactionType sicily
 	set_counter turn_fid 13
-	;set_counter christian_faction 1
+	set_counter christian_faction 1
 	set_counter dead_diplomacy_sicily 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType milan
@@ -855,9 +834,7 @@ monitor_event PreFactionTurnStart FactionType england
 end_monitor
 monitor_event PreFactionTurnStart FactionType portugal
 	set_counter turn_fid 20
-	if I_EventCounter zirids_exist != 1
-		set_counter christian_faction 1
-	end_if
+	set_counter christian_faction 1
 	set_counter dead_diplomacy_portugal 0
 end_monitor
 monitor_event PreFactionTurnStart FactionType poland
@@ -908,7 +885,7 @@ end_monitor
 ;=================== AI Citadel check ===================
 monitor_event PreFactionTurnStart IsFactionAIControlled
 	and not FactionBuildingExists = citadel
-	and I_TurnNumber > 60
+	and I_TurnNumber > 15
 
 	set_event_counter citadel_boost 1
 end_monitor
@@ -1209,15 +1186,6 @@ monitor_event CharacterTurnEnd I_CompareCounter FK_special < 1
 			inc_event_counter killed_factions_count 1
 		end_if
 	end_if
-;	if I_CompareCounter sicily_died = 1
-;	and I_EventCounter FK_special_event <= 4	;1225AD
-;	and I_NumberOfSettlements sicily >= 1
-;		set_counter sicily_died 0
-;		inc_event_counter killed_factions_count -1
-;		if I_FactionLeaderAttribute sicily Command < 999
-;			inc_event_counter killed_factions_count 1
-;		end_if
-;	end_if
 	if I_CompareCounter hre_died = 1
 	and I_EventCounter FK_special_event <= 4	;1225AD
 	and I_NumberOfSettlements hre >= 1
@@ -1261,12 +1229,6 @@ monitor_event CharacterTurnEnd I_CompareCounter FK_special < 1
 		set_counter aragon_died 1
 		inc_event_counter killed_factions_count 1
 	end_if
-	;if I_EventCounter FK_special_event <= 6	;1229AD
-	;and I_CompareCounter sicily_died < 1
-	;and I_NumberOfSettlements sicily < 1
-	;	set_counter sicily_died 1
-	;	inc_event_counter killed_factions_count 1
-	;end_if
 end_monitor
 ;End of Faction Killer special cases
 
@@ -1295,27 +1257,10 @@ monitor_event PreFactionTurnStart I_EventCounter FK_special_event <= 8	;1233AD
 		console_command give_trait "Joan Plantagenet" Princess_Royal_Blood_English 1
 		set_counter royal_blood_england2 1
 	end_if
-;	if I_EventCounter FK_special_event >= 4	;1225AD
-;	and I_CompareCounter royal_blood_sicily = 0
-;		console_command give_trait "Enrico de_Svevia" Royal_Blood_Sicilian 1
-;		set_counter royal_blood_sicily 1
-;	end_if
 	if I_EventCounter FK_special_event >= 5	;1228AD
 	and I_CompareCounter royal_blood_england3 = 0
 		console_command give_trait "Isabella Plantagenet" Princess_Royal_Blood_English 1
 		set_counter royal_blood_england3 1
-;	end_if
-;	if I_EventCounter FK_special_event >= 6	;1229AD
-;	and I_CompareCounter royal_blood_sicily2 = 0
-;		console_command give_trait "Enzo de_Svevia" Royal_Blood_Sicilian 1
-;		console_command give_trait "Enzo de_Svevia" BastardSon 1
-;		set_counter royal_blood_sicily2 1
-;	end_if
-;	if I_EventCounter FK_special_event >= 7	;1230AD
-;	and I_CompareCounter royal_blood_sicily3 = 0
-;		console_command give_trait "Caterina de_Svevia" Princess_Royal_Blood_Sicily 1
-;		console_command give_trait "Caterina de_Svevia" BastardDaughter 1
-;		set_counter royal_blood_sicily3 1
 		terminate_monitor
 	end_if
 end_monitor
@@ -1521,9 +1466,9 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled sicily
 		spawn_army
 		faction sicily
-		character	Abdul_Aziz ibn_Al_Muizz, named character, age 20, x 146, y 110, family
+		character	Ettore d_Altavilla, named character, age 20, x 177, y 114, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Sicilian 1 , BiologicalSon 1
-		unit	ME Bodyguard	exp 2 armour 0 weapon_lvl 0
+		unit	SE Bodyguard	exp 2 armour 0 weapon_lvl 0
 		end
 	end_if
 	if I_IsFactionAIControlled milan
@@ -1783,21 +1728,17 @@ monitor_event FactionTurnStart
 	if I_IsFactionAIControlled sicily
 		spawn_army
 		faction sicily
-		character	Abdul_Aziz ibn_Al_Muizz, named character, age 20, x 146, y 110, family
+		character	Ettore d_Altavilla, named character, age 30, x 170, y 117, family
 		traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Sicilian 1 , BiologicalSon 1
-		unit	ME Bodyguard	exp 2 armour 0 weapon_lvl 0
-		unit	Desert Cavalry	exp 1 armour 0 weapon_lvl 0
-		unit	Urban Militia	exp 1 armour 0 weapon_lvl 0
-		unit	Urban Militia	exp 0 armour 0 weapon_lvl 0
-		unit	ME Spear Militia	exp 0 armour 0 weapon_lvl 0
-		unit	Dismounted Arab Cavalry	exp 0 armour 0 weapon_lvl 0
-		unit	Dismounted Arab Cavalry	exp 0 armour 0 weapon_lvl 0
-		unit	Desert Archers	exp 1 armour 0 weapon_lvl 0
-		unit	Desert Archers	exp 0 armour 0 weapon_lvl 0
-		unit	Desert Archers	exp 1 armour 0 weapon_lvl 0
-		unit	Desert Archers	exp 0 armour 0 weapon_lvl 0
-		unit	Desert Archers	exp 1 armour 0 weapon_lvl 0
-		unit	Desert Archers	exp 0 armour 0 weapon_lvl 0
+		unit	SE Bodyguard	exp 1 armour 1 weapon_lvl 0
+		unit	Italian Cavalry Militia	exp 1 armour 0 weapon_lvl 0
+		unit	Pavise Spear Militia	exp 1 armour 0 weapon_lvl 0
+		unit	Pavise Spear Militia	exp 0 armour 0 weapon_lvl 0
+		unit	Sergeant Spearmen	exp 2 armour 0 weapon_lvl 0
+		unit	Sergeant Spearmen	exp 1 armour 0 weapon_lvl 0
+		unit	Urban Crossbow Militia	exp 0 armour 2 weapon_lvl 0
+		unit	Urban Crossbow Militia	exp 0 armour 2 weapon_lvl 0
+		unit	Urban Crossbow Militia	exp 0 armour 2 weapon_lvl 0
 		end
 	end_if
 	if I_IsFactionAIControlled milan
@@ -2254,9 +2195,9 @@ monitor_event PreFactionTurnStart FactionType slave
 	end_if
 	if I_IsFactionAIControlled sicily
 	and I_NumberOfSettlements sicily > 1
-		spawn_character sicily random_name, merchant, age 20, x 150, y 109
-		spawn_character sicily random_name, merchant, age 20, x 150, y 109
-		spawn_character sicily random_name, priest, age 20, x 150, y 109
+		spawn_character sicily random_name, merchant, age 20, x 170, y 117
+		spawn_character sicily random_name, merchant, age 20, x 170, y 117
+		spawn_character sicily random_name, priest, age 20, x 170, y 117
 	end_if
 	if I_IsFactionAIControlled milan
 	and I_NumberOfSettlements milan > 1
@@ -2428,7 +2369,7 @@ monitor_event PreFactionTurnStart FactionType slave
 	end_if
 	if I_IsFactionAIControlled sicily
 	and I_NumberOfSettlements sicily > 1
-		spawn_character sicily random_name, merchant, age 20, x 147, y 105
+		spawn_character sicily random_name, merchant, age 20, x 170, y 117
 	end_if
 	if I_IsFactionAIControlled milan
 	and I_NumberOfSettlements milan > 1
@@ -2538,10 +2479,10 @@ monitor_event PreFactionTurnStart FactionType slave
 	and I_NumberOfSettlements sicily > 1
 		spawn_army
 			faction sicily
-			character random_name, admiral, age 20, x 153, y 118
-			unit	dhow		exp 0 armour 0 weapon_lvl 0
-			unit	dhow		exp 0 armour 0 weapon_lvl 0
-			unit	dhow		exp 0 armour 0 weapon_lvl 0
+			character random_name, admiral, age 20, x 170, y 122
+			unit	galley		exp 0 armour 0 weapon_lvl 0
+			unit	galley		exp 0 armour 0 weapon_lvl 0
+			unit	galley		exp 0 armour 0 weapon_lvl 0
 		end
 	end_if
 	if I_IsFactionAIControlled milan
@@ -2688,22 +2629,14 @@ monitor_event PreFactionTurnStart FactionType slave
 	if I_IsFactionAIControlled sicily
 		spawn_army
 			faction sicily
-			character	Salah ibn_Zakariyya, named character, age 30, x 150, y 107, family
+			character	Guaimario d_Altavilla, named character, age 30, x 170, y 117, family
 			traits LoyaltyStarter 1 , MilitaryInclination 1 , Military_Edu 2 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_Sicilian 1 , BiologicalSon 1
-			unit	ME Bodyguard		exp 2 armour 1 weapon_lvl 0
-			unit	Sipahis	exp 2 armour 0 weapon_lvl 0
-			unit	Arab Cavalry	exp 2 armour 0 weapon_lvl 0
-			unit	Arab Cavalry	exp 4 armour 0 weapon_lvl 0
-			unit	Desert Archers	exp 3 armour 0 weapon_lvl 0
-			unit	Desert Archers	exp 4 armour 0 weapon_lvl 0
-			unit	Desert Archers	exp 2 armour 0 weapon_lvl 0
-			unit	Desert Archers	exp 4 armour 0 weapon_lvl 0
-			unit	Hashishim	exp 4 armour 0 weapon_lvl 0
-			unit	Hashishim	exp 3 armour 0 weapon_lvl 0
-			unit	Hashishim	exp 2 armour 0 weapon_lvl 0
-			unit	Hashishim	exp 2 armour 0 weapon_lvl 0
-			unit	Granadine Jinetes	exp 1 armour 0 weapon_lvl 0
-			unit	Granadine Jinetes	exp 1 armour 0 weapon_lvl 0
+			unit	SE Bodyguard		exp 1 armour 1 weapon_lvl 0
+			unit	Italian Cavalry Militia	exp 1 armour 0 weapon_lvl 0
+			unit	Urban Spear Militia	exp 1 armour 0 weapon_lvl 0
+			unit	Urban Spear Militia	exp 1 armour 0 weapon_lvl 0
+			unit	Urban Crossbow Militia	exp 0 armour 0 weapon_lvl 0
+			unit	Urban Crossbow Militia	exp 0 armour 0 weapon_lvl 0
 		end
 	end_if
 	if I_IsFactionAIControlled milan
@@ -3173,9 +3106,9 @@ monitor_event FactionTurnStart FactionType slave
 	and I_NumberOfSettlements sicily >= 1
 		spawn_army
 			faction sicily
-			character	random_name, named character, age 20, x 150, y 108, family
+			character	random_name, named character, age 20, x 177, y 114, family
 			traits MilitaryInclination 2 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , Loyal 2 , ReligionStarter 1
-			unit	ME Bodyguard		exp 2 armour 0 weapon_lvl 0
+			unit	SE Bodyguard		exp 2 armour 0 weapon_lvl 0
 		end
 		inc_counter heir_sicily 1
 		inc_counter no_other_heir_spawn 1
@@ -4328,7 +4261,7 @@ if I_TurnsSinceLastCrusade = 5
 		destroy_units aragon disband_1
 	end_if
 	if I_IsFactionAIControlled portugal
-		destroy_units aragon disband_1
+		destroy_units portugal disband_1
 	end_if
 	if I_IsFactionAIControlled france
 		destroy_units france disband_1
@@ -4370,6 +4303,9 @@ if I_TurnsSinceLastCrusade = 8
 	if I_IsFactionAIControlled venice
 		destroy_units venice disband_2
 	end_if
+	if I_IsFactionAIControlled sicily
+		destroy_units sicily disband_2
+	end_if
 	if I_IsFactionAIControlled milan
 		destroy_units milan disband_2
 	end_if
@@ -4383,7 +4319,7 @@ if I_TurnsSinceLastCrusade = 8
 		destroy_units aragon disband_2
 	end_if
 	if I_IsFactionAIControlled portugal
-		destroy_units aragon disband_2
+		destroy_units portugal disband_2
 	end_if
 	if I_IsFactionAIControlled france
 		destroy_units france disband_2
@@ -4437,9 +4373,6 @@ if I_TurnsSinceLastJihad = 5
 	if I_IsFactionAIControlled timurids
 		destroy_units timurids disband_1
 	end_if
-	if I_IsFactionAIControlled sicily
-		destroy_units sicily disband_1
-	end_if
 end_if
 if I_TurnsSinceLastJihad = 8
 	if I_IsFactionAIControlled egypt
@@ -4457,9 +4390,6 @@ if I_TurnsSinceLastJihad = 8
 	if I_IsFactionAIControlled timurids
 		destroy_units timurids disband_2
 	end_if
-	if I_IsFactionAIControlled sicily
-		destroy_units sicily disband_2
-	end_if
 end_if
 end_monitor
 
@@ -4474,27 +4404,21 @@ monitor_event CharacterTurnStart CharacterIsLocal
 	and Trait ArmyCost > 0
 
 	if I_TurnNumber < 20
-	;if I_EventCounter Campaign_Year < 1240
 	console_command add_money -150
 	end_if
 
-	if I_TurnNumber >= 20
-	and I_TurnNumber < 40
-	;if I_EventCounter Campaign_Year >= 1240
-	;and I_EventCounter Campaign_Year < 1260
-	console_command add_money -210
+	if I_TurnNumber < 40
+	and I_TurnNumber >= 20
+	 console_command add_money -210
 	end_if
 
-	if I_TurnNumber >= 40
-	and I_TurnNumber < 80
-	;if I_EventCounter Campaign_Year >= 1260
-	;and I_EventCounter Campaign_Year < 1300
-	console_command add_money -300
+	if I_TurnNumber < 80
+	and I_TurnNumber >= 40
+	 console_command add_money -300
 	end_if
 
 	if I_TurnNumber >= 80
-	;if I_EventCounter Campaign_Year >= 1300
-	console_command add_money -400
+	 console_command add_money -400
 	end_if
 
 end_monitor
@@ -4565,7 +4489,6 @@ monitor_event FactionTurnStart
 	;catholic
 	if I_CompareCounter turn_fid >= 12
 	and I_CompareCounter turn_fid != 29
-	and I_CompareCounter turn_fid != 13
 		reveal_tile 330, 74;	Jerusalem
 		reveal_tile 169, 146;	Rome
 		reveal_tile 16, 155;	Santiago
@@ -4581,7 +4504,7 @@ monitor_event FactionTurnStart
 		end_if
 	end_if
 
-	;serbia orthodox
+	;georgia orthodox
 	if I_CompareCounter turn_fid = 29
 		reveal_tile 330, 74;	Jerusalem
 		reveal_tile 284, 142;	Constantinople
@@ -4595,14 +4518,6 @@ monitor_event FactionTurnStart
 
 	;islam
 	if I_CompareCounter turn_fid <= 5
-		reveal_tile 330, 74;	Jerusalem
-		reveal_tile 396, 88;	Baghdad
-		reveal_tile 359, 23;	Medina
-		reveal_tile 360, 6;	Mecca
-	end_if
-
-	;hafsids islam
-	if I_CompareCounter turn_fid = 13
 		reveal_tile 330, 74;	Jerusalem
 		reveal_tile 396, 88;	Baghdad
 		reveal_tile 359, 23;	Medina
@@ -4640,6 +4555,16 @@ monitor_event FactionTurnStart
 		console_command kill_character "Selim Muzaffer"
 		spawn_character turks Al_Maqtadi Muzaffer, priest, age 30, x 360, y 6 ;	Mecca
 		console_command kill_character "Al_Maqtadi Muzaffer"
+	end_if
+	if not I_IsFactionAIControlled timurids
+	and I_CompareCounter turn_fid != 3
+		spawn_character turks Al_Mustazhir ibn_Qasim, priest, age 30, x 330, y 74 ;	Jerusalem
+		send_character_off_map "Al_Mustazhir ibn_Qasim"
+		console_command kill_character "Al_Mustazhir ibn_Qasim"
+		spawn_character turks Al_Watiq ibn_Qasim, priest, age 30, x 359, y 23 ;	Medina
+		console_command kill_character "Al_Watiq ibn_Qasim"
+		spawn_character turks Al_Muqtadi ibn_Qasim, priest, age 30, x 360, y 6 ;	Mecca
+		console_command kill_character "Al_Muqtadi ibn_Qasim"
 	end_if
 	if not I_IsFactionAIControlled kwarezm
 	and I_CompareCounter turn_fid != 4
@@ -4722,16 +4647,15 @@ monitor_event FactionTurnStart
 	;end_if
 	if not I_IsFactionAIControlled sicily
 	and I_CompareCounter turn_fid != 13
-		spawn_character sicily Amjad ibn_Harun, priest, age 30, x 330, y 74 ;	Jerusalem
-		send_character_off_map "Amjad ibn_Harun"
-		console_command kill_character "Amjad ibn_Harun"
-		spawn_character sicily Bashar ibn_Harun, priest, age 30, x 396, y 88 ;	Baghdad
-		send_character_off_map "Bashar ibn_Harun"
-		console_command kill_character "Bashar ibn_Harun"
-		spawn_character sicily Shakir ibn_Harun, priest, age 30, x 359, y 23 ;	Medina
-		console_command kill_character "Shakir ibn_Harun"
-		spawn_character sicily Muhammad ibn_Harun, priest, age 30, x 360, y 6 ;	Mecca
-		console_command kill_character "Muhammad ibn_Harun"
+		spawn_character sicily Rubbertu di_Palermo, priest, age 30, x 330, y 74 ;	Jerusalem
+		send_character_off_map "Rubbertu di_Palermo"
+		console_command kill_character "Rubbertu di_Palermo"
+		spawn_character sicily Serlo di_Palermo, priest, age 30, x 169, y 146 ;	Rome
+		send_character_off_map "Serlo di_Palermo"
+		console_command kill_character "Serlo di_Palermo"
+		spawn_character sicily Pietro di_Palermo, priest, age 30, x 16, y 155 ;	Santiago
+		send_character_off_map "Pietro di_Palermo"
+		console_command kill_character "Pietro di_Palermo"
 	end_if
 	if not I_IsFactionAIControlled milan
 	and I_CompareCounter turn_fid != 14
@@ -4917,6 +4841,7 @@ monitor_event FactionTurnStart
 
 end_monitor
 
+
 ;==================== Major Events ====================== 
 ;--- Jerusalem Captured
 monitor_event GeneralCaptureSettlement SettlementName Jerusalem
@@ -4927,15 +4852,15 @@ monitor_event GeneralCaptureSettlement SettlementName Jerusalem
 	and not I_SettlementOwner Jerusalem = russia
 	and not I_SettlementOwner Jerusalem = kievan_rus
 	and not I_SettlementOwner Jerusalem = venice
-	;and not I_SettlementOwner Jerusalem = sicily
+	and not I_SettlementOwner Jerusalem = sicily
 	and not I_SettlementOwner Jerusalem = milan
 	and not I_SettlementOwner Jerusalem = denmark
 	and not I_SettlementOwner Jerusalem = scotland
 	and not I_SettlementOwner Jerusalem = france
 	and not I_SettlementOwner Jerusalem = hre
 	and not I_SettlementOwner Jerusalem = england
-	and not I_SettlementOwner Jerusalem = poland
 	and not I_SettlementOwner Jerusalem = portugal
+	and not I_SettlementOwner Jerusalem = poland
 	and not I_SettlementOwner Jerusalem = spain
 	and not I_SettlementOwner Jerusalem = hungary
 	and not I_SettlementOwner Jerusalem = aragon
@@ -4943,7 +4868,7 @@ monitor_event GeneralCaptureSettlement SettlementName Jerusalem
 	and not I_SettlementOwner Jerusalem = norway
 	and not I_SettlementOwner Jerusalem = jerusalem
 	and not I_SettlementOwner Jerusalem = papal_states
-	and not I_SettlementOwner Jerusalem = georgia;	SERBIA
+	and not I_SettlementOwner Jerusalem = georgia
 	and not I_SettlementOwner Jerusalem = cumans;	BULGARIA
 		if I_EventCounter lithuania_catholic != 1
 			historic_event jerusalem_christian event/Christians_Capture_Jerusalem.bik
@@ -4963,7 +4888,6 @@ monitor_event GeneralCaptureSettlement SettlementName Jerusalem
 	and not I_SettlementOwner Jerusalem = moors
 	and not I_SettlementOwner Jerusalem = kwarezm
 	and not I_SettlementOwner Jerusalem = timurids
-	and not I_SettlementOwner Jerusalem = sicily;	HAFSIDS
 		historic_event jerusalem_muslim event/Muslims_Capture_Jerusalem.bik
 	end_if
 terminate_monitor
@@ -8630,7 +8554,7 @@ monitor_event EventCounter EventCounterType HS_Great_Council
 	if I_LocalFaction jerusalem
   historic_event great_council true factions { jerusalem, }
 	end_if
-	if I_LocalFaction georgia;	Serbia
+	if I_LocalFaction georgia
   historic_event great_council true factions { georgia, }
 	end_if
 	if I_LocalFaction cumans;	Bulgaria
@@ -8654,9 +8578,9 @@ if not I_HotseatEnabled
 
 	if not I_LocalFaction egypt
 	and not I_LocalFaction turks
+	and not I_LocalFaction timurids
 	and not I_LocalFaction kwarezm
 	and not I_LocalFaction moors
-	and not I_LocalFaction sicily;	Hafsids
 	and not I_LocalFaction mongols
 	;and not I_LocalFaction cumans;	Bulgaria
 	;and not I_LocalFaction lithuania
@@ -8921,1083 +8845,6 @@ end_monitor
 ;******** EMERGENT FACTIONS/NATIONAL UPRISINGS **********
 ;********************************************************
 ;========================================================
-declare_counter besieging_test
-declare_counter scripted_siege
-monitor_event MultiTurnMove I_CompareCounter besieging_test = 1
-	and HighestAttAdjacentChar Unorthodoxy named_character = 1
-
-	if I_CompareCounter scripted_siege = -1
-		terminate_monitor
-	end_if
-	set_counter scripted_siege 0
-end_monitor
-monitor_event FactionSturnStart FactionType slave
-	and I_CompareCounter wallace_spawned = -1
-	and I_CompareCounter pagan_rebel = -1
-	and I_CompareCounter bulgarians_rebel = -1
-	and I_CompareCounter TO_spawned = -1
-		spawn_army
-			faction dummies
-			character	Temporary, named character, x 20, y 20, label end_besiegescript1
-			unit		Aldari	exp 0 armour 0 weapon_lvl 0
-		end
-		give_everything_to_faction dummies papal_states false
-		console_command move_character end_besiegescript1 60,1
-		console_command mp end_besiegescript1 -1
-		spawn_army
-			faction dummies
-			character	Peter, named character, x 19, y 20, label end_besiegescript2
-			traits	ScriptedBesieger 1
-			unit		Aldari	exp 0 armour 0 weapon_lvl 0
-		end
-		give_everything_to_faction dummies papal_states false
-		console_command move_character end_besiegescript2 61,1
-		console_command mp end_besiegescript2 -1
-		set_counter scripted_siege -1
-		set_counter besieging_test 1
-		move end_besiegescript1, 62, 1
-		kill_character end_besiegescript1
-		kill_character end_besiegescript2
-	 terminate_monitor
-end_monitor
-
-;============== William Wallace Uprising ================
-add_events
-	event	counter	WilliamWallaceSet
-	date	60
-end_add_events
-declare_counter wallace_spawned
-declare_counter scottishwallace
-
-monitor_event FactionTurnStart FactionType scotland
-	and I_EventCounter WilliamWallaceSet = 1
-
-	if I_CompareCounter wallace_spawned = 0
-	and I_NumberOfSettlements scotland < 4
-		set_counter wallace_spawned 1
-	end_if
-	
-terminate_monitor
-end_monitor
-monitor_event FactionTurnStart FactionType scotland
-	and I_NumberOfSettlements scotland < 2
-
-	if I_CompareCounter wallace_spawned = 0
-	set_counter wallace_spawned 1
-	end_if
-
-terminate_monitor
-end_monitor
-monitor_event GeneralCaptureSettlement FactionType england
-	and TargetFactionType scotland
-
-	if I_CompareCounter wallace_spawned = 0
-	set_counter wallace_spawned 1
-	end_if
-
-terminate_monitor
-end_monitor
-
-monitor_event PreFactionTurnStart FactionType scotland
-	and I_CompareCounter wallace_spawned = 1
-
-	spawn_army 
-		faction scotland
-		character	Uilliam Wallace, named character, age 20, x 56, y 252, direction SE, battle_model Wallace_General, portrait wallace, label scotland4wallace
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , ScotlandHero 1 , LoyaltyStarter 1, BattleChivalry 2 , Loyal 2 , Just 2 , Rabblerouser 3 , Hardened 1 , Upright 2 , Austere 2 
-		unit		Highland Nobles	exp 4 armour 0 weapon_lvl 1
-		unit		Highland Nobles	exp 2 armour 0 weapon_lvl 1
-		unit		Highlanders	exp 3 armour 1 weapon_lvl 1
-		unit		Highlanders	exp 3 armour 1 weapon_lvl 1
-		unit		Highlanders	exp 3 armour 1 weapon_lvl 1
-		unit		Highland Pikemen	exp 4 armour 1 weapon_lvl 0
-		unit		Highland Pikemen	exp 4 armour 1 weapon_lvl 0
-		unit		Highland Pikemen	exp 3 armour 1 weapon_lvl 0
-		unit		Highland Pikemen	exp 3 armour 1 weapon_lvl 0
-		unit		Highland Nobles	exp 3 armour 0 weapon_lvl 1
-		unit		Highland Nobles	exp 3 armour 0 weapon_lvl 1
-		unit		Noble Highland Archers	exp 1 armour 1 weapon_lvl 0
-		unit		Noble Highland Archers	exp 1 armour 1 weapon_lvl 0
-		unit		Noble Highland Archers	exp 1 armour 1 weapon_lvl 0
-		unit		Highland Rabble	exp 3 armour 0 weapon_lvl 0
-		unit		Highland Rabble	exp 3 armour 0 weapon_lvl 0
-		unit		Highland Rabble	exp 4 armour 0 weapon_lvl 0
-		unit		Highland Rabble	exp 4 armour 0 weapon_lvl 0
-		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
-		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
-	end
-	spawn_army 
-		faction scotland
-		character	random_name, named character, age 26, x 54, y 254
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , LoyaltyStarter 1, BattleChivalry 2 , Loyal 2 , Just 2 , Rabblerouser 3 , Hardened 1 
-		unit		Highland Nobles	exp 4 armour 0 weapon_lvl 1
-		unit		Highland Nobles	exp 2 armour 0 weapon_lvl 1
-		unit		Highlanders	exp 3 armour 1 weapon_lvl 1
-		unit		Highlanders	exp 3 armour 1 weapon_lvl 1
-		unit		Highlanders	exp 3 armour 1 weapon_lvl 1
-		unit		Highland Pikemen	exp 4 armour 1 weapon_lvl 0
-		unit		Highland Pikemen	exp 4 armour 1 weapon_lvl 0
-		unit		Highland Pikemen	exp 3 armour 1 weapon_lvl 0
-		unit		Highland Pikemen	exp 3 armour 1 weapon_lvl 0
-		unit		Highland Nobles	exp 3 armour 0 weapon_lvl 1
-		unit		Highland Nobles	exp 3 armour 0 weapon_lvl 1
-		unit		Noble Highland Archers	exp 1 armour 1 weapon_lvl 0
-		unit		Noble Highland Archers	exp 1 armour 1 weapon_lvl 0
-		unit		Noble Highland Archers	exp 1 armour 1 weapon_lvl 0
-		unit		Highland Rabble	exp 3 armour 0 weapon_lvl 0
-		unit		Highland Rabble	exp 3 armour 0 weapon_lvl 0
-		unit		Highland Rabble	exp 4 armour 0 weapon_lvl 0
-		unit		Highland Rabble	exp 4 armour 0 weapon_lvl 0
-		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
-		unit		Border Horse	exp 2 armour 0 weapon_lvl 0
-	end
-	historic_event scotland_wallace event/william_wallace.bik
-	set_counter wallace_spawned 2
-terminate_monitor
-end_monitor
-
-monitor_event CharacterTurnStart CharFactionType scotland
-	and Trait ScotlandHero = 1
-	and I_CompareCounter wallace_spawned = 3
-		set_counter scottishwallace 1
-		terminate_monitor
-end_monitor
-
-monitor_event FactionTurnStart FactionType scotland
-	and I_CompareCounter wallace_spawned >= 2
-	
-	if not I_IsFactionAIControlled scotland
-	set_counter wallace_spawned -1
-	terminate_monitor
-	end_if
-
-	;###### "Phase2" (next turn)
-	if I_CompareCounter wallace_spawned = 3
-		spawn_army
-			faction dummies
-			character	Temporary, named character, x 20, y 20, label temp4scotland
-			unit		Aldari	exp 0 armour 0 weapon_lvl 0
-		end
-		give_everything_to_faction dummies slave false
-		console_command move_character temp4scotland 61,1
-		console_command mp temp4scotland -1
-
-		if I_CharacterExists scotland4wallace
-		and I_SettlementOwner Edinburgh != scotland
-		and I_SettlementUnderSiege Edinburgh
-		and I_CharacterTypeNearTile scotland, named_character, 2, 54, 248 ;Edinburgh
-			set_counter scripted_siege 1
-			console_command move_character temp4scotland 54,247
-			set_counter besieging_test 1
-			move temp4scotland, 53, 248
-
-			if I_CompareCounter scripted_siege = 1
-				console_command move_character temp4scotland 54,249
-				move temp4scotland, 54, 248
-			end_if
-			if I_CompareCounter scripted_siege = 1
-				console_command move_character temp4scotland 55,248
-				move temp4scotland, 54, 248
-			end_if
-			set_counter besieging_test 0
-			console_command move_character temp4scotland 61,1
-
-			if I_CompareCounter scripted_siege = 0
-			and I_CompareCounter scottishwallace = 1
-				siege_settlement scotland4wallace, Edinburgh, attack
-			end_if
-		end_if
-		set_counter scripted_siege -1
-		set_counter wallace_spawned -1
-		kill_character temp4scotland
-	 terminate_monitor
-	end_if
-
-	;###### "Phase1"
-	set_counter wallace_spawned 3
-	if I_IsFactionAIControlled scotland
-	and I_SettlementOwner Edinburgh != scotland
-	and ! I_SettlementUnderSiege Edinburgh
-		siege_settlement scotland4wallace, Edinburgh, maintain
-		if ! I_SettlementUnderSiege Edinburgh
-			move scotland4wallace, 56,252
-		end_if
-		if I_SettlementUnderSiege Edinburgh
-			console_command give_trait scotland4wallace ScriptedBesieger 1
-		end_if
-	end_if
-end_monitor
-
-;============= END William Wallace Uprising ==============
-;=============== Golden Horde Emergent ==================
-	monitor_event EventCounter EventCounterType mongols_invasion_warn
-		and EventCounter = 1
-
-		add_events
-		event	counter	mongols_invasion
-		date	4
-		event	counter	mongols_invasion
-		date	13
-		event	counter	mongols_invasion
-		date	29
-		event	counter	mongols_invasion
-		date	50
-		event	counter	mongols_invasion
-		date	100
-		end_add_events
-		terminate_monitor
-	end_monitor
-
-;--human part
-monitor_event PreFactionTurnStart FactionType mongols
-	and FactionIsLocal
-	and I_EventCounter mongols_invasion = 1
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 26, x 498, y 140, label mongols4flash1
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Genocide 2 , BattleDread 2 , StrategyDread 1 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 1 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 2 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 1 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 2 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 2 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 4 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-	end
-
-	spawn_character mongols random_name, priest, age 31, x 497, y 140
-	point_at_character mongols4flash1
-	character_flash_start mongols4flash1
-	move_strat_camera 498, 140
-			terminate_monitor
-	end_monitor
-
-monitor_conditions I_CharacterSelected mongols4flash1
-	ui_flash_stop
-	character_flash_stop mongols4flash1
-terminate_monitor
-end_monitor
-
-monitor_event PreFactionTurnStart FactionType mongols
-	and FactionIsLocal
-	and I_EventCounter mongols_invasion = 3
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 26, x 498, y 140, label mongols4flash2
-		traits MilitaryInclination 1 , Military_Edu 1 , NaturalMilitarySkill 2 , GoodCommander 2 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 1 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 2 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 1 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 2 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 2 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 4 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 1 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		end
-
-	spawn_character mongols random_name, priest, age 22, x 497, y 140
-	point_at_character mongols4flash2
-	character_flash_start mongols4flash2
-	move_strat_camera 498, 140
-terminate_monitor
-end_monitor
-
-monitor_conditions I_CharacterSelected mongols4flash2
-	ui_flash_stop
-	character_flash_stop mongols4flash2
-terminate_monitor
-end_monitor
-
-monitor_event PreFactionTurnStart FactionType mongols
-	and FactionIsLocal
-	and I_EventCounter mongols_invasion = 3
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 26, x 498, y 140, label mongols4flash3
-		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 3 , GoodCommander 5 , Loyal 2 , ContentGeneral 3, BattleDread 3 , StrategyDread 2
-		unit	Keshikten Bodyguard		exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 4 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-	end
-
-	spawn_character mongols random_name, priest, age 22, x 497, y 140
-	point_at_character mongols4flash3
-	character_flash_start mongols4flash3
-	move_strat_camera 498, 140
-terminate_monitor
-end_monitor
-
-monitor_conditions I_CharacterSelected mongols4flash3
-	ui_flash_stop
-	character_flash_stop mongols4flash3
-terminate_monitor
-end_monitor
-
-;--ai part
-monitor_event PreFactionTurnStart FactionType mongols ;make sure the horde will acquire their first settlement early era
-	and not FactionIsLocal
-	and I_EventCounter mongols_invasion = 1
-	and not I_SettlementOwner Urgench = mongols
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 26, x 500, y 153, label mongols4supportgen1, family
-		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 3 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 3 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 25, x 499, y 154, label mongols4supportgen2, family
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Anger 3 , BattleDread 3 , StrategyDread 3 , PublicFaith 2 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 6 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 4 armour 0 weapon_lvl 0
-		unit	ME Trebuchet		exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet		exp 5 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 24, x 499, y 153, label mongols4supportgen3
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Anger 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 4, TouchedByTheGods 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut	exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 25, x 501, y 153, label mongols4supportgen4
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Khorchi Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 4 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-		unit	ME Trebuchet	exp 6 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-
-	if not I_SettlementUnderSiege Urgench
-		if I_CharacterTypeNearTile mongols, named_character, 0, 501, 153
-			siege_settlement mongols4supportgen4, Urgench, maintain
-		end_if
-
-		if I_CharacterTypeNearTile mongols, named_character, 0, 499, 154
-			siege_settlement mongols4supportgen2, Urgench, maintain
-		end_if
-
-		if I_CharacterTypeNearTile mongols, named_character, 0, 499, 153
-			siege_settlement mongols4supportgen3, Urgench, maintain
-		end_if
-
-		if I_CharacterTypeNearTile mongols, named_character, 0, 500, 153
-			siege_settlement mongols4supportgen1, Urgench, attack
-		end_if
-	end_if
-
-	terminate_monitor
-end_monitor
-
-monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
-	and I_CharacterTypeNearTile mongols, named_character, 10, 440, 194
-
-	historic_event mongols_blue_horde_caucasus
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 25, x 430, y 195
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 4 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 5 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-terminate_monitor
-end_monitor
-
-monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
-	and I_CharacterTypeNearTile mongols, named_character, 10, 326, 202
-
-	historic_event mongols_blue_horde_kiev
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 25, x 316, y 202
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 4 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 5 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-terminate_monitor
-end_monitor
-
-monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
-	and I_CharacterTypeNearTile mongols, named_character, 10, 280, 184
-
-	historic_event mongols_blue_horde_hungary
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 25, x 290, y 190
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 4 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 3 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 5 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-terminate_monitor
-end_monitor
-
-monitor_event FactionTurnEnd FactionType mongols
-	and not FactionIsLocal
-	and I_CharacterTypeNearTile mongols, named_character, 5, 396, 89
-
-	historic_event mongols_horde_baghdad
-
-terminate_monitor
-end_monitor
-
-monitor_event PreFactionTurnStart FactionType mongols
-	and I_EventCounter mongols_invasion = 1
-
-	spawn_army
-		faction mongols
-		character	Chagatai, named character, age 26, x 505, y 145, family
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Genocide 2 , BattleDread 2 , StrategyDread 1 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		end
-	add_money mongols 5000
-
-		spawn_army 
-		faction mongols
-		character	Subutai, named character, age 25, x 507, y 140, family
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 3 , StrategyDread 3 , PublicFaith 2 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-		end
-	add_money mongols 5000
-
-		spawn_army 
-		faction mongols
-		character	Berkei, named character, age 24, x 500, y 150,
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 2 , BattleDread 2 , StrategyDread 2 , PublicFaith 4, TouchedByTheGods 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 6 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Hoshiga Horse Archers	exp 6 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-		end
-	add_money mongols 5000
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 25, x 504, y 144
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		end
-	add_money mongols 5000
-
-	spawn_character mongols random_name, priest, age 22, x 480, y 140
-	spawn_character mongols random_name, priest, age 27, x 500, y 98
-	spawn_character mongols random_name, priest, age 32, x 470, y 120
-	spawn_character mongols random_name, priest, age 33, x 490, y 150
-	spawn_character mongols random_name, spy, age 20, x 500, y 135
-	spawn_character mongols random_name, spy, age 20, x 490, y 135
-	spawn_character mongols random_name, spy, age 29, x 489, y 110 
-	spawn_character mongols random_name, assassin, age 31, x 504, y 132 
-	spawn_character mongols random_name, assassin, age 33, x 491, y 144 
-	spawn_character mongols random_name, assassin, age 21, x 495, y 135
-terminate_monitor
-end_monitor
-
-monitor_event PreFactionTurnStart FactionType mongols
-	and I_IsFactionAIControlled mongols
-	and I_EventCounter mongols_invasion = 2
-
-	spawn_army
-		faction mongols
-		character	Batu, named character, age 26, x 505, y 145, family
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 3 , GoodCommander 3 , Genocide 2 , BattleDread 2 , StrategyDread 3 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-
-	spawn_army
-		faction mongols
-		character	Tsagadai, named character, age 25, x 500, y 191
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 5 armour 0 weapon_lvl 0
-	end
-	add_money mongols 5000
-
-	spawn_army
-		faction mongols
-		character	random_name, named character, age 26, x 508, y 92
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 3 , GoodCommander 3 , Genocide 2 , BattleDread 2 , StrategyDread 3 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-	end
-
-	spawn_character mongols random_name, priest, age 22, x 480, y 140
-	spawn_character mongols random_name, priest, age 27, x 500, y 98
-	spawn_character mongols random_name, spy, age 20, x 500, y 135
-	spawn_character mongols random_name, spy, age 20, x 490, y 135
-	spawn_character mongols random_name, spy, age 29, x 489, y 110 
-	spawn_character mongols random_name, assassin, age 31, x 504, y 132 
-	spawn_character mongols random_name, assassin, age 33, x 491, y 144 
-	spawn_character mongols random_name, assassin, age 21, x 495, y 135
-	add_money mongols 20000
-terminate_monitor
-end_monitor
-
-monitor_event PreFactionTurnStart FactionType mongols
-	and I_IsFactionAIControlled mongols
-	and I_EventCounter mongols_invasion = 3
-
-	spawn_army
-		faction mongols
-		character	Menglai, named character, age 25, x 490, y 137
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 3 , BattleDread 2 , StrategyDread 3 , PublicFaith 2 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 3 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-		unit	ME Trebuchet			exp 5 armour 0 weapon_lvl 0
-	end
-
-	spawn_army
-		faction mongols
-		character	Jagadai, named character, age 25, x 502, y 144
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-	end
-
-	spawn_character mongols random_name, priest, age 22, x 480, y 140
-	spawn_character mongols random_name, priest, age 27, x 500, y 98
-	spawn_character mongols random_name, spy, age 33, x 490, y 150
-	spawn_character mongols random_name, spy, age 20, x 500, y 135
-	spawn_character mongols random_name, assassin, age 20, x 490, y 135
-	spawn_character mongols random_name, assassin, age 21, x 495, y 135
-	add_money mongols 20000
-	terminate_monitor
-end_monitor
-
-monitor_event PreFactionTurnStart FactionType mongols
-	and I_IsFactionAIControlled mongols
-	and I_EventCounter mongols_invasion = 4
-
-		spawn_army 
-		faction mongols
-		character	Hulegu, named character, age 25, x 498, y 120
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Genocide 2 , BattleDread 2 , StrategyDread 3 , PublicFaith 3 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 6 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers		exp 6 armour 0 weapon_lvl 0
-		end
-
-		spawn_army 
-		faction mongols
-		character	Kitbuqa, named character, age 24, x 507, y 92
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 3 , BattleDread 2 , StrategyDread 2 , Loyal 2 , ContentGeneral 3
-		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 4 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		unit	Turhagut Lancers	exp 6 armour 0 weapon_lvl 0
-		end
-
-	spawn_character mongols random_name, priest, age 22, x 480, y 140
-	spawn_character mongols random_name, priest, age 27, x 500, y 98
-	spawn_character mongols random_name, spy, age 20, x 500, y 135
-	spawn_character mongols random_name, spy, age 20, x 490, y 135
-	spawn_character mongols random_name, assassin, age 21, x 495, y 135
-	add_money mongols 30000
-	terminate_monitor
-end_monitor
-	
-monitor_event PreFactionTurnStart FactionType mongols
-	and not FactionIsLocal
-
-	if I_EventCounter mongols_invasion = 4
-		terminate_monitor
-	end_if
-
-	if I_SettlementOwner Urgench = mongols
-		create_unit Urgench, Khabutu Archers, num 1, exp 3, arm 0, wep 0
-		create_unit Urgench, Hoschuchi Lancers, num 1, exp 4, arm 0, wep 0
-		create_unit Urgench, ME Trebuchet, num 2, exp 5, arm 0, wep 0
-		add_money mongols 3000
-	end_if
-
-	if I_SettlementOwner Khiva = mongols
-		create_unit Khiva, Disamounted Turhagut, num 1, exp 2, arm 0, wep 0
-		create_unit Khiva, Hoshiga Horse Archers, num 1, exp 2, arm 0, wep 0
-		add_money mongols 2000
-	end_if
-
-	if I_SettlementOwner Konjikala = mongols
-		create_unit Konjikala, Khabutu Archers, num 1, exp 3, arm 0, wep 0
-		create_unit Konjikala, Hoshiga Horse Archers, num 2, exp 4, arm 0, wep 0
-		create_unit Konjikala, ME Catapult, num 1, exp 4, arm 0, wep 0
-		add_money mongols 2000
-	end_if
-
-	if I_SettlementOwner Embi = mongols
-		create_unit Embi, Khabutu Archers, num 1, exp 2, arm 0, wep 0
-		create_unit Embi, Disamounted Turhagut, num 1, exp 2, arm 0, wep 0
-		create_unit Embi, Hoshiga Horse Archers, num 2, exp 4, arm 0, wep 0
-		add_money mongols 2000
-	end_if
-
-	if I_EventCounter DifficultyLevel >= 2
-		if I_SettlementOwner Jaiksk = mongols
-			create_unit Jaiksk, Disamounted Turhagut, num 1, exp 1, arm 0, wep 0
-			create_unit Jaiksk, Hoshiga Horse Archers, num 2, exp 3, arm 0, wep 0
-			add_money mongols 1000
-		end_if
-	end_if
-
-	if I_EventCounter DifficultyLevel >= 2
-		if I_SettlementOwner Astrakhan = mongols
-			create_unit Astrakhan, Disamounted Turhagut, num 2, exp 4, arm 0, wep 0
-			create_unit Astrakhan, Hoshiga Horse Archers, num 2, exp 3, arm 0, wep 0
-			create_unit Astrakhan, ME Catapult, num 1, exp 5, arm 0, wep 0
-			add_money mongols 2000
-		end_if
-	end_if
-
-
-	if I_SettlementOwner Gorgan = mongols
-		create_unit Gorgan, Khabutu Archers, num 1, exp 3, arm 0, wep 0
-		create_unit Gorgan, Disamounted Turhagut, num 1, exp 4, arm 0, wep 0
-		create_unit Gorgan, Turhagut Lancers, num 1, exp 4, arm 0, wep 0
-		add_money mongols 2000
-	end_if
-
-	if I_EventCounter DifficultyLevel >= 2
-		if I_SettlementOwner Mashhad = mongols
-			create_unit Mashhad, Khabutu Archers, num 1, exp 2, arm 0, wep 0
-			create_unit Mashhad, Hoshiga Horse Archers, num 2, exp 4, arm 0, wep 0
-			add_money mongols 2000
-		end_if
-	end_if
-
-	if I_EventCounter DifficultyLevel >= 3
-		if I_SettlementOwner Damghan = mongols
-			create_unit Damghan, Turhagut Lancers, num 1, exp 2, arm 0, wep 0
-			create_unit Damghan, ME Trebuchet, num 1, exp 5, arm 0, wep 0
-			add_money mongols 3000
-		end_if
-	end_if
-
-	if I_EventCounter DifficultyLevel >= 4
-		if I_SettlementOwner Yazd = mongols
-			create_unit Yazd, Disamounted Turhagut, num 2, exp 1, arm 0, wep 0
-			add_money mongols 1000
-		end_if
-	end_if
-
-end_monitor
-
-;mongols weaken and no longer are a superpower
-monitor_event PreFactionTurnStart FactionType mongols
-	and not FactionIsLocal
-	and I_EventCounter mongols_invasion = 5
-
-	set_event_counter is_the_ai 0
-
-	end_monitor
-
-declare_counter attack_khiva
-set_counter attack_khiva 0
-
-;monitor_event FactionTurnStart FactionType mongols
-monitor_event CharacterTurnStart CharFactionType mongols
-	and Trait InvasionCharacterCounter = 2; Bayan
-	and not I_SettlementOwner Khiva = mongols
-	and I_IsFactionAIControlled mongols
-	and I_CharacterExists mongols4jebe
-	;and I_CharacterExists mongols4bayan
-	
-	if I_SettlementUnderSiege Khiva;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_khiva = 0
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile mongols, named_character, 5, 505, 147 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Khiva
-	and I_CompareCounter attack_khiva = 1
-		siege_settlement mongols4jebe, Khiva, attack
-		siege_settlement mongols4bayan, Khiva, maintain
-		set_counter attack_khiva 2
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Khiva
-		if I_CompareCounter attack_khiva = 0
-			siege_settlement mongols4jebe, Khiva, maintain
-			siege_settlement mongols4bayan, Khiva, maintain
-			set_counter attack_khiva 1
-		end_if
-	end_if
-end_monitor
-
-declare_counter attack_konjikala
-set_counter attack_konjikala 0
-
-;monitor_event FactionTurnStart FactionType mongols
-monitor_event CharacterTurnStart CharFactionType mongols
-	and Trait InvasionCharacterCounter = 3; Chindu
-	and I_CharacterExists mongols4chindu
-
-	if I_CompareCounter attack_konjikala = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_mongol_character 1
-end_monitor
-monitor_event CharacterTurnStart CharFactionType mongols
-	and Trait InvasionCharacterCounter = 4; Nayuk
-	and I_CharacterExists mongols4nayuk
-
-	if I_CompareCounter attack_konjikala = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_mongol_character 2
-end_monitor
-monitor_event EventCounter EventCounterType is_mongol_character
-	and EventCounter = 2
-	and not I_SettlementOwner Konjikala = mongols
-	and I_IsFactionAIControlled mongols
-	
-	if I_SettlementUnderSiege Konjikala;if settlement under siege already, avoid ctd.
-	and I_CompareCounter attack_konjikala = 0
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile mongols, named_character, 5, 490, 126 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Konjikala
-	and I_CompareCounter attack_konjikala = 1
-		siege_settlement mongols4chindu, Konjikala, attack
-		siege_settlement mongols4nayuk, Konjikala, maintain
-		set_counter attack_konjikala 2
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Konjikala
-		if I_CompareCounter attack_konjikala = 0
-			siege_settlement mongols4chindu, Konjikala, maintain
-			siege_settlement mongols4nayuk, Konjikala, maintain
-			set_counter attack_konjikala 1
-			set_event_counter is_mongol_character 0
-		end_if
-	end_if
-end_monitor
-
-;=============== END Golden Horde Emergent ===============
 ;================== TIMURIDS INVASION ===================
 monitor_event EventCounter EventCounterType timurids_invasion_warn
 	and EventCounter = 1
@@ -10023,7 +8870,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 
 	spawn_army ;Urgench
 		faction timurids
-		character	Timur, named character, age 30, x 500, y 153, label timurids4timur, family
+		character	Timur, named character, age 30, x 509, y 150, label timurids4timur, family
 		traits Factionleader 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 3 , StrategyDread 2 , PublicFaith 4 , Loyal 1 , ContentGeneral 3
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10051,8 +8898,8 @@ monitor_event EventCounter EventCounterType timurids_invasion
 
 	spawn_army ;Urgench
 		faction timurids
-		character	Husayn, named character, age 24, x 501, y 154, label timurids4husayn, family
-		traits Factionheir 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , Anger 3 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 2 
+		character	Husayn, named character, age 24, x 509, y 152, label timurids4husayn, family
+		traits Factionheir 1 , MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 1 , Anger 3 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 2 , InvasionCharacterCounter 1 
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10078,7 +8925,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 	spawn_army ;Khiva
 		faction timurids
 		character	Umar_Shaykh, named character, age 23, x 504, y 147, label timurids4umar, family
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , Anger 3 , BattleDread 3 , StrategyDread 2 , PublicFaith 4, Loyal 1, ContentGeneral 3 , InvasionCharacterCounter 1 
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , Anger 3 , BattleDread 3 , StrategyDread 2 , PublicFaith 4, Loyal 1, ContentGeneral 3 
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10106,7 +8953,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 	spawn_army ;Khiva
 		faction timurids
 		character	Miran, named character, age 22, x 505, y 146, label timurids4miran, family
-		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , Bloodthirsty 2 , GoodCommander 1 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3 , InvasionCharacterCounter 2 
+		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , Bloodthirsty 2 , GoodCommander 1 , BattleDread 2 , StrategyDread 3 , PublicFaith 4, Loyal 1, ContentGeneral 3 
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10132,7 +8979,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 	spawn_army ;Konjikala
 		faction timurids
 		character	Batutai, named character, age 30, x 490, y 125, label timurids4batutai, family
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 3 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 3 
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 3 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 2 
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10160,7 +9007,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 	spawn_army ;Konjikala
 		faction timurids
 		character	Ghazatai, named character, age 24, x 491, y 126, label timurids4ghazatai, family
-		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 4 
+		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 3 
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10321,7 +9168,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 
 	spawn_army
 		faction timurids
-		character	random_name, named character, age 26, x 500, y 153, label timurids4supportgen1, family
+		character	random_name, named character, age 26, x 505, y 154, label timurids4supportgen1, family
 		traits MilitaryInclination 1 , Military_Edu 4 , NaturalMilitarySkill 4 , GoodCommander 5 , Bloodthirsty 3 , BattleDread 5 , StrategyDread 5 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 , Drink 4 , Genocide 3
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10348,7 +9195,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 
 	spawn_army
 		faction timurids
-		character	random_name, named character, age 25, x 499, y 154, label timurids4supportgen2, family
+		character	random_name, named character, age 25, x 503, y 154, label timurids4supportgen2, family
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Anger 3 , BattleDread 3 , StrategyDread 3 , PublicFaith 2 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10375,7 +9222,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 
 	spawn_army
 		faction timurids
-		character	random_name, named character, age 24, x 499, y 153, label timurids4supportgen3
+		character	random_name, named character, age 24, x 505, y 152, label timurids4supportgen3
 		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 3 , GoodCommander 5 , Bloodthirsty 3 , BattleDread 5 , StrategyDread 5 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1 , Drink 2
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10402,7 +9249,7 @@ monitor_event EventCounter EventCounterType timurids_invasion
 
 	spawn_army
 		faction timurids
-		character	random_name, named character, age 25, x 501, y 153, label timurids4supportgen4
+		character	random_name, named character, age 25, x 505, y 150, label timurids4supportgen4
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
 		unit		Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit		Turhagut Lancers	exp 6 armour 1 weapon_lvl 0
@@ -10428,19 +9275,19 @@ monitor_event EventCounter EventCounterType timurids_invasion
 	add_money timurids 5000
 
 	if not I_SettlementUnderSiege Urgench
-		if I_CharacterTypeNearTile timurids, named_character, 0, 501, 153
-			siege_settlement timurids4supportgen4, Urgench, maintain
-		end_if
-
-		if I_CharacterTypeNearTile timurids, named_character, 0, 499, 154
+		if I_CharacterTypeNearTile timurids, named_character, 0, 503, 154
 			siege_settlement timurids4supportgen2, Urgench, maintain
 		end_if
 
-		if I_CharacterTypeNearTile timurids, named_character, 0, 499, 153
+		if I_CharacterTypeNearTile timurids, named_character, 0, 505, 152
 			siege_settlement timurids4supportgen3, Urgench, maintain
 		end_if
 
-		if I_CharacterTypeNearTile timurids, named_character, 0, 500, 153
+		if I_CharacterTypeNearTile timurids, named_character, 0, 505, 150
+			siege_settlement timurids4supportgen4, Urgench, maintain
+		end_if
+
+		if I_CharacterTypeNearTile timurids, named_character, 0, 505, 154
 			siege_settlement timurids4supportgen1, Urgench, attack
 		end_if
 	end_if
@@ -10574,7 +9421,7 @@ terminate_monitor
 end_monitor
 
 monitor_event PreFactionTurnStart FactionType timurids
-	and not FactionIsLocal
+	and IsFactionAIControlled
 
 	if I_EventCounter timurids_invasion = 3
 		spawn_character timurids random_name, priest, age 22, x 480, y 140
@@ -10598,19 +9445,9 @@ monitor_event PreFactionTurnStart FactionType timurids
 		add_money timurids 3000
 	end_if
 
-	if I_SettlementOwner Khiva = timurids
-		create_unit Khiva, Merguen Archers, num 8, exp 5, arm 0, wep 0
-		add_money timurids 3000
-	end_if
-
 	if I_SettlementOwner Konjikala = timurids
 		create_unit Konjikala, Khorchi Horse Archers, num 4, exp 3, arm 0, wep 0
 		create_unit Konjikala, Turhagut Lancers, num 4, exp 4, arm 0, wep 0
-		add_money timurids 5000
-	end_if
-
-	if I_SettlementOwner Embi = timurids
-		create_unit Embi, Disamounted Turhagut, num 5, exp 4, arm 0, wep 0
 		add_money timurids 5000
 	end_if
 
@@ -10626,162 +9463,176 @@ monitor_event PreFactionTurnStart FactionType timurids
 		add_money timurids 5000
 	end_if
 
-	if I_SettlementOwner Damghan = timurids
-		create_unit Damghan, Turhagut Lancers, num 5, exp 2, arm 0, wep 0
-		add_money timurids 5000
-	end_if
-
 end_monitor
 
-declare_counter attack_urgench_timurids
-set_counter attack_urgench_timurids 0
-
-;monitor_event FactionTurnStart FactionType timurids
+declare_counter timurids_spawned
+declare_counter timuridhusayn
+declare_counter timuridbatutai
+declare_counter timuridghazatai
 monitor_event CharacterTurnStart CharFactionType timurids
-	and Trait Factionleader = 1
-	and not I_SettlementOwner Urgench = timurids
-	and I_IsFactionAIControlled timurids
-	;and I_CharacterExists timurids4timur
-	and I_CharacterExists timurids4husayn
-	
-	if I_SettlementUnderSiege Urgench;if settlement under siege already, avoid ctd.
-	and  I_CompareCounter attack_urgench_timurids = 0
+	and Trait InvasionCharacterCounter = 1
+		set_counter timuridhusayn 1
+	if I_CompareCounter timurids_spawned = 1
 		terminate_monitor
 	end_if
-
-	if not I_CharacterTypeNearTile timurids, named_character, 5, 500, 154 ;if character not standing where it should, avoid ctd
+end_monitor
+monitor_event CharacterTurnStart CharFactionType timurids
+	and Trait InvasionCharacterCounter = 2
+		set_counter timuridbatutai 1
+	if I_CompareCounter timurids_spawned = 2
 		terminate_monitor
 	end_if
+end_monitor
+monitor_event CharacterTurnStart CharFactionType timurids
+	and Trait InvasionCharacterCounter = 3
+		set_counter timuridghazatai 1
+	if I_CompareCounter timurids_spawned = 2
+		terminate_monitor
+	end_if
+end_monitor
 
-	if I_SettlementUnderSiege Urgench
-	and I_CompareCounter attack_urgench_timurids = 1
-		siege_settlement timurids4timur, Urgench, attack
-		siege_settlement timurids4husayn, Urgench, maintain
-		set_counter attack_urgench_timurids 2
-		if I_CharacterExists timurids4husayn
-			move timurids4husayn, 453, 207;for jaiksk
+monitor_event FactionTurnStart FactionType timurids
+	and I_EventCounter timurids_invasion > 0
+
+	;###### "Phase3" (next turn)
+	if I_CompareCounter timurids_spawned = 2
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4timurids2
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4timurids2 61,1
+		console_command mp temp4timurids2 -1
+
+		if I_CharacterExists timurids4batutai
+		and I_SettlementOwner Konjikala != timurids
+		and I_SettlementUnderSiege Konjikala
+		and I_CharacterTypeNearTile timurids, named_character, 2, 497, 120 ;Konjikala
+			set_counter scripted_siege 1
+			console_command move_character temp4timurids2 497, 120
+			set_counter besieging_test 1
+			move temp4timurids2, 497, 121
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4timurids2 496,120
+				move temp4timurids2, 497, 120
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4timurids2 498,120
+				move temp4timurids2, 497, 120
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4timurids2 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter timuridbatutai = 1
+				siege_settlement timurids4batutai, Konjikala, attack
+				log always Timurids Konjikala Siege Script Successful! ~Melooo182
+				set_counter timuridbatutai 0
+			end_if
 		end_if
-		terminate_monitor
-	end_if
 
-	if not I_SettlementUnderSiege Urgench
-		if I_CompareCounter attack_urgench_timurids = 0
-			siege_settlement timurids4timur, Urgench, maintain
-			siege_settlement timurids4husayn, Urgench, maintain
-			set_counter attack_urgench_timurids 1
+		if I_CompareCounter timuridghazatai = 1
+		and I_CharacterExists timurids4ghazatai
+		move timurids4ghazatai, 470, 114; to Gorgan
 		end_if
+
+		set_counter scripted_siege -1
+		set_counter timurids_spawned -1
+		kill_character temp4timurids2
+	 terminate_monitor
 	end_if
 
-end_monitor
+	;###### "Phase2" (next turn)
+	if I_CompareCounter timurids_spawned = 1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4timurids1
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		console_command move_character temp4timurids1 61,1
+		console_command mp temp4timurids1 -1
 
-declare_counter attack_khiva_timurids
-set_counter attack_khiva_timurids 0
+		if I_CharacterExists timurids4timur
+		and I_SettlementOwner Urgench != timurids
+		and I_SettlementUnderSiege Urgench
+		and I_CharacterTypeNearTile timurids, named_character, 2, 503, 152 ;Urgench
+			set_counter scripted_siege 1
+			console_command move_character temp4timurids1 503,152
+			set_counter besieging_test 1
+			move temp4timurids1, 504, 152
 
-;monitor_event FactionTurnStart FactionType timurids
-monitor_event CharacterTurnStart CharFactionType timurids
-	and Trait InvasionCharacterCounter = 1; Umar
-	and I_CharacterExists timurids4umar
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4timurids1 502,152
+				move temp4timurids1, 503, 152
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4timurids1 504,152
+				move temp4timurids1, 503, 152
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4timurids1 61,1
 
-	if I_CompareCounter attack_khiva_timurids = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_timurid_character 1
-end_monitor
-monitor_event CharacterTurnStart CharFactionType timurids
-	and Trait InvasionCharacterCounter = 2; Miran
-	and I_CharacterExists timurids4miran
-
-	if I_CompareCounter attack_khiva_timurids = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_timurid_character 2
-end_monitor
-monitor_event EventCounter EventCounterType is_timurid_character
-	and EventCounter = 2
-	and not I_SettlementOwner Khiva = timurids
-	and I_IsFactionAIControlled timurids
-	
-	if I_SettlementUnderSiege Khiva;if settlement under siege already, avoid ctd.
-	and  I_CompareCounter attack_khiva_timurids = 0
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile timurids, named_character, 5, 505, 147 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Khiva
-	and I_CompareCounter attack_khiva_timurids = 1
-		siege_settlement timurids4umar, Khiva, attack
-		siege_settlement timurids4miran, Khiva, maintain
-		set_counter attack_khiva_timurids 2
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Khiva
-		if I_CompareCounter attack_khiva_timurids = 0
-			siege_settlement timurids4umar, Khiva, maintain
-			siege_settlement timurids4miran, Khiva, maintain
-			set_counter attack_khiva_timurids 1
-			set_event_counter is_timurid_character 0
+			if I_CompareCounter scripted_siege = 0
+				siege_settlement timurids4timur, Urgench, attack
+				log always Timurids Urgench Siege Script Successful! ~Melooo182
+			end_if
 		end_if
-	end_if
 
-end_monitor
+		set_counter scripted_siege -1
+		kill_character temp4timurids1
+		
+		if I_CompareCounter timuridhusayn = 1
+		and I_CharacterExists timurids4husayn
+			move timurids4husayn, 505, 147; to Khiva Fort
+			set_counter timuridhusayn 0
+		end_if
 
-declare_counter attack_konjikala_timurids
-set_counter attack_konjikala_timurids 0
-
-;monitor_event FactionTurnStart FactionType timurids
-monitor_event CharacterTurnStart CharFactionType timurids
-	and Trait InvasionCharacterCounter = 3; Batutai
-	and I_CharacterExists timurids4batutai
-
-	if I_CompareCounter attack_konjikala_timurids = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_timurid_character2 1
-end_monitor
-monitor_event CharacterTurnStart CharFactionType timurids
-	and Trait InvasionCharacterCounter = 4; Ghazatai
-	and I_CharacterExists timurids4ghazatai
-
-	if I_CompareCounter attack_konjikala_timurids = 2
-		terminate_monitor
-	end_if
-	set_event_counter is_timurid_character2 2
-end_monitor
-monitor_event EventCounter EventCounterType is_timurid_character2
-	and EventCounter = 2
-	and not I_SettlementOwner Konjikala = timurids
-	and I_IsFactionAIControlled timurids
-	
-	if I_SettlementUnderSiege Konjikala;if settlement under siege already, avoid ctd.
-	and  I_CompareCounter attack_konjikala_timurids = 0
-		terminate_monitor
-	end_if
-
-	if not I_CharacterTypeNearTile timurids, named_character, 5, 490, 126 ;if character not standing where it should, avoid ctd
-		terminate_monitor
-	end_if
-
-	if I_SettlementUnderSiege Konjikala
-	and I_CompareCounter attack_konjikala_timurids = 1
-		siege_settlement timurids4batutai, Konjikala, attack
-		siege_settlement timurids4ghazatai, Konjikala, maintain
-		set_counter attack_konjikala_timurids 2
-		terminate_monitor
-	end_if
-
-	if not I_SettlementUnderSiege Konjikala
-		if I_CompareCounter attack_konjikala_timurids = 0
+	;Konjikala Siege
+		if I_SettlementOwner Konjikala != timurids
+		and ! I_SettlementUnderSiege Konjikala
+		and I_CompareCounter timuridbatutai = 1
+		and I_CompareCounter timuridghazatai = 1
 			siege_settlement timurids4batutai, Konjikala, maintain
 			siege_settlement timurids4ghazatai, Konjikala, maintain
-			set_counter attack_konjikala_timurids 1
-			set_event_counter is_timurid_character2 0
+			set_counter timuridbatutai 0
+			set_counter timuridghazatai 0
+			if ! I_SettlementUnderSiege Konjikala
+				move timurids4batutai, 490, 125
+				move timurids4ghazatai, 491, 126
+			end_if
+			if I_SettlementUnderSiege Konjikala
+				console_command give_trait timurids4batutai ScriptedBesieger 1
+				set_counter timurids_spawned 2
+			end_if
+		end_if
+		if I_CompareCounter timurids_spawned = 1
+			set_counter timurids_spawned -1
+			terminate_monitor
 		end_if
 	end_if
 
+	;###### "Phase1"
+	if I_CompareCounter timurids_spawned = 0
+		set_counter timurids_spawned 1
+		if I_SettlementOwner Urgench != timurids
+		and ! I_SettlementUnderSiege Urgench
+		and I_CharacterExists timurids4timur
+		and I_CompareCounter timuridhusayn = 1
+			siege_settlement timurids4timur, Urgench, maintain
+			siege_settlement timurids4husayn, Urgench, maintain
+			if ! I_SettlementUnderSiege Urgench
+				move timurids4timur, 509,150
+				move timurids4husayn, 509,152
+			end_if
+			if I_SettlementUnderSiege Urgench
+				console_command give_trait timurids4timur ScriptedBesieger 1
+			end_if
+		end_if
+		set_counter timuridhusayn 0
+	end_if
 end_monitor
 
 ;========================================================
@@ -36529,7 +35380,7 @@ declare_counter conversion_al_mahdiya
 			add_settlement_turmoil Rome 6
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Palermo
-	;and not FactionType sicily
+	and not FactionType sicily
 			add_settlement_turmoil Palermo 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Nykoeping; Florence
@@ -36596,7 +35447,7 @@ declare_counter conversion_al_mahdiya
 			add_settlement_turmoil Constantinople 10
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Ryazan; Ras
-	and not FactionType georgia
+	and not FactionType kievan_rus
 			add_settlement_turmoil Ryazan 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Sofia
@@ -36623,6 +35474,7 @@ declare_counter conversion_al_mahdiya
 			add_settlement_turmoil Trebizond 5
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Kutaisi
+	and not FactionType georgia
 			add_settlement_turmoil Kutaisi 8
 	end_monitor
 ;LEVANT
@@ -36645,11 +35497,9 @@ declare_counter conversion_al_mahdiya
 	end_monitor
 ;PERSIA-IRANIA
 	monitor_event GeneralCaptureSettlement SettlementName Ray
-	and not FactionType kwarezm
 			add_settlement_turmoil Ray 5
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Urgench
-	and not FactionType kwarezm
 			add_settlement_turmoil Urgench 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Isfahan
@@ -36669,7 +35519,7 @@ declare_counter conversion_al_mahdiya
 			add_settlement_turmoil Cairo 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Al-Mahdiya
-	and not FactionType sicily
+	and not FactionType kwarezm
 			add_settlement_turmoil Al-Mahdiya 8
 	end_monitor
 ;=======================Weak Leader Counter Reset======================
@@ -45389,10 +44239,8 @@ end_monitor
 	set_counter venice_emerge 0
 
 ;Sicily
-	declare_counter al_mahdiya_riot
-	set_counter al_mahdiya_riot 0
-	declare_counter tunis_riot
-	set_counter tunis_riot 0
+	declare_counter naples_riot
+	set_counter naples_riot 0
 	declare_counter sicily_emerge
 	set_counter sicily_emerge 0
 
@@ -45552,11 +44400,11 @@ end_monitor
 	declare_counter lithuania_emerge
 	set_counter lithuania_emerge 0
 
-;Kievan Rus
-	declare_counter kiev_riot
-	set_counter kiev_riot 0
-	declare_counter kievan_rus_emerge
-	set_counter kievan_rus_emerge 0
+;Kievan Rus/Serbia
+	declare_counter ras_riot
+	set_counter ras_riot 0
+	declare_counter duklja_riot
+	set_counter duklja_riot 0
 
 ;Norway
 	declare_counter bergen_riot
@@ -45564,13 +44412,11 @@ end_monitor
 	declare_counter norway_emerge
 	set_counter norway_emerge 0
 
-;Kwarezm
-	declare_counter urgench_riot
-	set_counter urgench_riot 0
-	declare_counter konjikala_riot
-	set_counter konjikala_riot 0
-	declare_counter kwarezm_emerge
-	set_counter kwarezm_emerge 0
+;Kwarezm/Hafsids
+	declare_counter al_mahdiya_riot
+	set_counter al_mahdiya_riot 0
+	declare_counter tunis_riot
+	set_counter tunis_riot 0
 
 ;Egypt/Fatimids
 	declare_counter cairo_riot
@@ -45604,11 +44450,11 @@ end_monitor
 	declare_counter teutonic_order_emerge
 	set_counter teutonic_order_emerge 0
 	
-;Georgia/Serbia
-	declare_counter ras_riot
-	set_counter ras_riot 0
-	declare_counter duklja_riot
-	set_counter duklja_riot 0
+;Georgia
+	declare_counter kutaisi_riot
+	set_counter kutaisi_riot 0
+	declare_counter tbilisi_riot
+	set_counter tbilisi_riot 0
 	declare_counter georgia_emerge
 	set_counter georgia_emerge 0
 ;
@@ -45661,21 +44507,13 @@ end_monitor
 	    set_counter faction_emerge_id 2
 	end_monitor
 
-;Sicily/Hafsids
-	monitor_event CityRiots SettlementName Al-Mahdiya
+;Sicily
+	monitor_event CityRiots SettlementName Naples
 	  and I_NumberOfSettlements sicily = 0
 	  and I_IsFactionAIControlled sicily
-	  and not I_SettlementOwner Al-Mahdiya = sicily
+	  and not I_SettlementOwner Naples = sicily
 	  and I_CompareCounter sicily_emerge = 0
-	    set_counter al_mahdiya_riot 1
-	    set_counter faction_emerge_id 3
-	end_monitor
-	monitor_event CityRiots SettlementName Tunis
-	  and I_NumberOfSettlements sicily = 0
-	  and I_IsFactionAIControlled sicily
-	  and not I_SettlementOwner Tunis = sicily
-	  and I_CompareCounter sicily_emerge = 0
-	    set_counter tunis_riot 1
+	    set_counter naples_riot 1
 	    set_counter faction_emerge_id 3
 	end_monitor
 
@@ -46087,13 +44925,21 @@ end_monitor
 	    set_counter faction_emerge_id 19
 	end_monitor
 
-;Kievan Rus
-	monitor_event CityRiots SettlementName Kiev
+;Kievan Rus/Serbia
+	monitor_event CityRiots SettlementName Ryazan
 	  and I_NumberOfSettlements kievan_rus = 0
 	  and I_IsFactionAIControlled kievan_rus
-	  and not I_SettlementOwner Kiev = kievan_rus
+	  and not I_SettlementOwner Ryazan = kievan_rus
 	  and I_CompareCounter kievan_rus_emerge = 0
-	    set_counter kiev_riot 1
+	    set_counter ras_riot 1
+	    set_counter faction_emerge_id 20
+	end_monitor
+	monitor_event CityRiots SettlementName Moscow
+	  and I_NumberOfSettlements kievan_rus = 0
+	  and I_IsFactionAIControlled kievan_rus
+	  and not I_SettlementOwner Moscow = kievan_rus
+	  and I_CompareCounter kievan_rus_emerge = 0
+	    set_counter duklja_riot 1
 	    set_counter faction_emerge_id 20
 	end_monitor
 
@@ -46107,21 +44953,21 @@ end_monitor
 	    set_counter faction_emerge_id 21
 	end_monitor
 
-;Kwarezm
-	monitor_event CityRiots SettlementName Urgench
+;Kwarezm/Hafsids
+	monitor_event CityRiots SettlementName Al-Mahdiya
 	  and I_NumberOfSettlements kwarezm = 0
 	  and I_IsFactionAIControlled kwarezm
-	  and not I_SettlementOwner Urgench = kwarezm
+	  and not I_SettlementOwner Al-Mahdiya = kwarezm
 	  and I_CompareCounter kwarezm_emerge = 0
-	    set_counter urgench_riot 1
+	    set_counter al_mahdiya_riot 1
 	    set_counter faction_emerge_id 22
 	end_monitor
-	monitor_event CityRiots SettlementName Konjikala
+	monitor_event CityRiots SettlementName Tunis
 	  and I_NumberOfSettlements kwarezm = 0
 	  and I_IsFactionAIControlled kwarezm
-	  and not I_SettlementOwner Konjikala = kwarezm
+	  and not I_SettlementOwner Tunis = kwarezm
 	  and I_CompareCounter kwarezm_emerge = 0
-	    set_counter konjikala_riot 1
+	    set_counter tunis_riot 1
 	    set_counter faction_emerge_id 22
 	end_monitor
 
@@ -46282,19 +45128,23 @@ end_monitor
 	    set_counter faction_emerge_id 25
 	end_monitor
 
-;Georgia/Serbia
-	monitor_event CityRiots SettlementName Ryazan
+;Georgia
+	monitor_event CityRiots SettlementName Kutaisi
 	  and I_NumberOfSettlements georgia = 0
+	  and I_EventCounter georgia_exist = 1
 	  and I_IsFactionAIControlled georgia
-	  and not I_SettlementOwner Ryazan = georgia
-	    set_counter ras_riot 1
-	    set_counter faction_emerge_id 26
+	  and not I_SettlementOwner Kutaisi = georgia
+	  and I_CompareCounter georgia_emerge = 0
+	    set_counter kutaisi_riot 1
+	    set_counter faction_emerge_id 27
 	end_monitor
-	monitor_event CityRiots SettlementName Moscow
+	monitor_event CityRiots SettlementName Tbilisi
 	  and I_NumberOfSettlements georgia = 0
+	  and I_EventCounter georgia_exist = 1
 	  and I_IsFactionAIControlled georgia
-	  and not I_SettlementOwner Moscow = georgia
-	    set_counter duklja_riot 1
+	  and not I_SettlementOwner Tbilisi = georgia
+	  and I_CompareCounter georgia_emerge = 0
+	    set_counter tbilisi_riot 1
 	    set_counter faction_emerge_id 26
 	end_monitor
 
@@ -46317,12 +45167,12 @@ end_monitor
 			set_counter venice_riot 1
 			set_counter faction_emerge_id 2
 		end_if
-		if I_SettlementOwner Al-Mahdiya = slave
+		if I_SettlementOwner Naples = slave
 		and I_NumberOfSettlements sicily = 0
 		and I_IsFactionAIControlled sicily
 		and I_CompareCounter sicily_emerge = 0
 		and RandomPercent > 66
-			set_counter al_mahdiya_riot 1
+			set_counter naples_riot 1
 			set_counter faction_emerge_id 3
 		end_if
 		if I_SettlementOwner Genoa = slave
@@ -46469,12 +45319,12 @@ end_monitor
 			set_counter vilnius_riot 1
 			set_counter faction_emerge_id 19
 		end_if
-		if I_SettlementOwner Kiev = slave
+		if I_SettlementOwner Ryazan = slave
 		and I_NumberOfSettlements kievan_rus = 0
 		and I_IsFactionAIControlled kievan_rus
 		and I_CompareCounter kievan_rus_emerge = 0
 		and RandomPercent > 66
-			set_counter kiev_riot 1
+			set_counter ras_riot 1
 			set_counter faction_emerge_id 20
 		end_if
 		if I_SettlementOwner Bergen = slave
@@ -46485,12 +45335,12 @@ end_monitor
 			set_counter bergen_riot 1
 			set_counter faction_emerge_id 21
 		end_if
-		if I_SettlementOwner Urgench = slave
+		if I_SettlementOwner Al-Mahdiya = slave
 		and I_NumberOfSettlements kwarezm = 0
 		and I_IsFactionAIControlled kwarezm
 		and I_CompareCounter kwarezm_emerge = 0
 		and RandomPercent > 66
-			set_counter urgench_riot 1
+			set_counter al_mahdiya_riot 1
 			set_counter faction_emerge_id 22
 		end_if
 		if I_SettlementOwner Cairo = slave
@@ -46518,12 +45368,12 @@ end_monitor
 			set_counter thorn_riot 1
 			set_counter faction_emerge_id 25
 		end_if
-		if I_SettlementOwner Ryazan = slave
+		if I_SettlementOwner Kutaisi = slave
 		and I_NumberOfSettlements georgia = 0
 		and I_IsFactionAIControlled georgia
 		and I_CompareCounter georgia_emerge = 0
 		and RandomPercent > 66
-			set_counter ras_riot 1
+			set_counter kutaisi_riot 1
 			set_counter faction_emerge_id 26
 		end_if
 	end_monitor
@@ -46541,13 +45391,13 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter ros_po_building 1
 	console_command create_building Oslo ros_po_bonus
 	console_command create_building Nykoeping ros_po_bonus
-	console_command create_building Tbilisi ros_po_bonus
+	console_command create_building Palermo ros_po_bonus
 	console_command create_building Bulgar ros_po_bonus
 	console_command create_building Smolensk ros_po_bonus
 	console_command create_building Dublin ros_po_bonus
 	console_command create_building Oleshe ros_po_bonus
 	console_command create_building York ros_po_bonus
-	console_command create_building Kutaisi ros_po_bonus
+	console_command create_building Syracuse ros_po_bonus
 	console_command create_building Caernarvon ros_po_bonus
 	console_command create_building Stettin ros_po_bonus
 	console_command create_building Hamburg ros_po_bonus
@@ -46667,9 +45517,9 @@ and I_CompareCounter faction_emerge_id >= 1
 	console_command create_building Halych ros_po_bonus
 	console_command create_building Baghdad ros_po_bonus
 	console_command create_building Basra ros_po_bonus
-	console_command create_building Palermo ros_po_bonus
-	console_command create_building Syracuse ros_po_bonus
-	console_command create_building Naples ros_po_bonus
+	console_command create_building Kiev ros_po_bonus
+	console_command create_building Konjikala ros_po_bonus
+	console_command create_building Urgench ros_po_bonus
 	console_command create_building Damghan ros_po_bonus
 	if I_CompareCounter faction_emerge_id != 1
 		console_command create_building Edinburgh ros_po_bonus
@@ -46680,8 +45530,7 @@ and I_CompareCounter faction_emerge_id >= 1
 		console_command create_building Venice ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 3
-		console_command create_building Al-Mahdiya ros_po_bonus
-		console_command create_building Tunis ros_po_bonus
+		console_command create_building Naples ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 4
 		console_command create_building Genoa ros_po_bonus
@@ -46762,14 +45611,15 @@ and I_CompareCounter faction_emerge_id >= 1
 		console_command create_building Vilnius ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 20
-		console_command create_building Kiev ros_po_bonus
+		console_command create_building Ryazan ros_po_bonus
+		console_command create_building Moscow ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 21
 		console_command create_building Bergen ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 22
-		console_command create_building Urgench ros_po_bonus
-		console_command create_building Konjikala ros_po_bonus
+		console_command create_building Al-Mahdiya ros_po_bonus
+		console_command create_building Tunis ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 23
 		console_command create_building Cairo ros_po_bonus
@@ -46788,8 +45638,8 @@ and I_CompareCounter faction_emerge_id >= 1
 		console_command create_building Riga ros_po_bonus
 	end_if
 	if I_CompareCounter faction_emerge_id != 26
-		console_command create_building Ryazan ros_po_bonus
-		console_command create_building Moscow ros_po_bonus
+		console_command create_building Kutaisi ros_po_bonus
+		console_command create_building Tbilisi ros_po_bonus
 	end_if
 
 ;Scotland
@@ -47436,300 +46286,158 @@ and I_CompareCounter faction_emerge_id >= 1
 	add_money venice 40000
   end_if
 
-;Sicily\Hafsids
+;Sicily
   if I_CompareCounter faction_emerge_id = 3
-	if I_CompareCounter al_mahdiya_riot = 0
-		console_command create_building Al-Mahdiya ros_po_bonus
-	end_if
-	if I_CompareCounter tunis_riot = 0
-		console_command create_building Tunis ros_po_bonus
+	if I_CompareCounter naples_riot = 0
+		console_command create_building Naples ros_po_bonus
 	end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 0; Heavy Mail 1200
-			spawn_army; Al-Mahdiya
+			spawn_army; Naples
 			faction sicily
-			character random_name, named character, age 30, x 156, y 100, family
+			character random_name, named character, age 30, x 182, y 139, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Hashishim			exp 0 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			end
-			spawn_army; Tunis
-			faction sicily
-			character random_name, named character, age 30, x 151, y 108, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Hashishim			exp 0 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard			exp 2 armour 0 weapon_lvl 0
+			unit   Feudal Knights			exp 2 armour 0 weapon_lvl 0
+			unit   Feudal Knights			exp 1 armour 0 weapon_lvl 0
+			unit   Dismounted Feudal Knights	exp 1 armour 0 weapon_lvl 0
+			unit   Dismounted Feudal Knights	exp 1 armour 0 weapon_lvl 0
+			unit   Pavise Spear Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Spear Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Armored Sergeants		exp 0 armour 0 weapon_lvl 0
+			unit   Armored Sergeants		exp 0 armour 0 weapon_lvl 0
+			unit   Sicilian Muslim Archers		exp 0 armour 0 weapon_lvl 0
+			unit   Sicilian Muslim Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 		and I_EventCounter FULL_PLATE_ARMOR = 0
-			spawn_army; Al-Mahdiya
+			spawn_army; Naples
 			faction sicily
-			character random_name, named character, age 30, x 156, y 100, family
+			character random_name, named character, age 30, x 182, y 139, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Hashishim			exp 1 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Crossbow Militia		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 0 weapon_lvl 0
-			end
-			spawn_army; Tunis
-			faction sicily
-			character random_name, named character, age 30, x 151, y 108, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Hashishim			exp 1 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Crossbow Militia		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard			exp 2 armour 1 weapon_lvl 0
+			unit   Chivalric Knights			exp 2 armour 0 weapon_lvl 0
+			unit   Feudal Knights			exp 1 armour 3 weapon_lvl 0
+			unit   Dismounted Feudal Knights	exp 1 armour 3 weapon_lvl 0
+			unit   Dismounted Italian MAA		exp 1 armour 0 weapon_lvl 0
+			unit   Pavise Spear Militia		exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Spear Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Spear Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Crossbowmen		exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Crossbowmen		exp 0 armour 1 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter FULL_PLATE_ARMOR = 1; Full Plate 1400
-			spawn_army; Al-Mahdiya
+			spawn_army; Naples
 			faction sicily
-			character random_name, named character, age 30, x 156, y 100, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Hashishim				exp 1 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			end
-			spawn_army; Tunis
-			faction sicily
-			character random_name, named character, age 30, x 151, y 108, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
-			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
-			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Hashishim				exp 1 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
+			character random_name, named character, age 30, x 182, y 139, family
+			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 4 , Energetic 1 , ReligionStarter 1 , Intelligent 2
+			unit   SE Bodyguard			exp 2 armour 2 weapon_lvl 0
+			unit   Chivalric Knights			exp 2 armour 1 weapon_lvl 0
+			unit   Dismounted Chivalric Knights	exp 1 armour 1 weapon_lvl 0
+			unit   Dismounted Italian MAA		exp 1 armour 1 weapon_lvl 0
+			unit   Dismounted Italian MAA		exp 1 armour 1 weapon_lvl 0
+			unit   Mounted Crossbowmen		exp 0 armour 0 weapon_lvl 0
+			unit   Hand Gunners			exp 0 armour 0 weapon_lvl 0
+			unit   Pike Militia				exp 0 armour 0 weapon_lvl 0
+			unit   Pike Militia				exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Crossbowmen		exp 0 armour 2 weapon_lvl 0
+			unit   Pavise Crossbowmen		exp 0 armour 2 weapon_lvl 0
 			end
 		end_if
-	if I_CompareCounter al_mahdiya_riot = 1
-		console_command create_building Al-Mahdiya ros_target
-		if I_SettlementOwner Al-Mahdiya = venice
+	if I_CompareCounter naples_riot = 1
+		console_command create_building Naples ros_target
+		if I_SettlementOwner Naples = venice
 			faction_emerge sicily venice 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = milan
-			faction_emerge sicily milan 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Al-Mahdiya = denmark
-			faction_emerge sicily denmark 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Al-Mahdiya = egypt
-			faction_emerge sicily egypt 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Al-Mahdiya = cumans
-			faction_emerge sicily cumans 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Al-Mahdiya = turks
-			faction_emerge sicily turks 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Al-Mahdiya = scotland
+		if I_SettlementOwner Naples = scotland
 			faction_emerge sicily scotland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = hre
-			faction_emerge sicily hre 2 400.0 0.0 1.2 town true
+		if I_SettlementOwner Naples = milan
+			faction_emerge sicily milan 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = england
-			faction_emerge sicily england 2 400.0 0.0 1.2 town true
+		if I_SettlementOwner Naples = denmark
+			faction_emerge sicily denmark 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = france
+		if I_SettlementOwner Naples = egypt
+			faction_emerge sicily egypt 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Naples = cumans
+			faction_emerge sicily cumans 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Naples = turks
+			faction_emerge sicily turks 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Naples = france
 			faction_emerge sicily france 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = portugal
+		if I_SettlementOwner Naples = hre
+			faction_emerge sicily hre 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Naples = england
+			faction_emerge sicily england 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Naples = portugal
 			faction_emerge sicily portugal 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = poland
+		if I_SettlementOwner Naples = poland
 			faction_emerge sicily poland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = byzantium
+		if I_SettlementOwner Naples = byzantium
 			faction_emerge sicily byzantium 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = moors
+		if I_SettlementOwner Naples = moors
 			faction_emerge sicily moors 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = russia
+		if I_SettlementOwner Naples = russia
 			faction_emerge sicily russia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = spain
+		if I_SettlementOwner Naples = spain
 			faction_emerge sicily spain 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = hungary
+		if I_SettlementOwner Naples = hungary
 			faction_emerge sicily hungary 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = aragon
+		if I_SettlementOwner Naples = aragon
 			faction_emerge sicily aragon 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = lithuania
+		if I_SettlementOwner Naples = lithuania
 			faction_emerge sicily lithuania 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = kievan_rus
+		if I_SettlementOwner Naples = kievan_rus
 			faction_emerge sicily kievan_rus 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = norway
+		if I_SettlementOwner Naples = norway
 			faction_emerge sicily norway 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = jerusalem
+		if I_SettlementOwner Naples = jerusalem
 			faction_emerge sicily jerusalem 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = kwarezm
+		if I_SettlementOwner Naples = kwarezm
 			faction_emerge sicily kwarezm 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = papal_states
+		if I_SettlementOwner Naples = papal_states
 			faction_emerge sicily papal_states 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = mongols
+		if I_SettlementOwner Naples = mongols
 			faction_emerge sicily mongols 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = teutonic_order
+		if I_SettlementOwner Naples = teutonic_order
 			faction_emerge sicily teutonic_order 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = timurids
+		if I_SettlementOwner Naples = timurids
 			faction_emerge sicily timurids 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = georgia
+		if I_SettlementOwner Naples = georgia
 			faction_emerge sicily georgia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Al-Mahdiya = slave
+		if I_SettlementOwner Naples = slave
 			faction_emerge sicily slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	if I_CompareCounter tunis_riot = 1
-		console_command create_building Tunis ros_target
-		if I_SettlementOwner Tunis = venice
-			faction_emerge sicily venice 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = milan
-			faction_emerge sicily milan 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = denmark
-			faction_emerge sicily denmark 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = egypt
-			faction_emerge sicily egypt 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = cumans
-			faction_emerge sicily cumans 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = turks
-			faction_emerge sicily turks 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = scotland
-			faction_emerge sicily scotland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = hre
-			faction_emerge sicily hre 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = england
-			faction_emerge sicily england 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = france
-			faction_emerge sicily france 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = portugal
-			faction_emerge sicily portugal 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = poland
-			faction_emerge sicily poland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = byzantium
-			faction_emerge sicily byzantium 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = moors
-			faction_emerge sicily moors 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = russia
-			faction_emerge sicily russia 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = spain
-			faction_emerge sicily spain 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = hungary
-			faction_emerge sicily hungary 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = aragon
-			faction_emerge sicily aragon 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = lithuania
-			faction_emerge sicily lithuania 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = kievan_rus
-			faction_emerge sicily kievan_rus 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = norway
-			faction_emerge sicily norway 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = jerusalem
-			faction_emerge sicily jerusalem 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = kwarezm
-			faction_emerge sicily kwarezm 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = papal_states
-			faction_emerge sicily papal_states 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = mongols
-			faction_emerge sicily mongols 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = teutonic_order
-			faction_emerge sicily teutonic_order 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = timurids
-			faction_emerge sicily timurids 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = georgia
-			faction_emerge sicily georgia 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Tunis = slave
-			faction_emerge sicily slave 1 400.0 0.0 1.2 town true
-		end_if
-	end_if
-	historic_event hafsids_emerged
-	set_counter al_mahdiya_riot 0
-	set_counter tunis_riot 0
+	historic_event sicily_emerged
+	set_counter naples_riot 0
 	set_counter sicily_emerge 5
 	add_money sicily 40000
   end_if
@@ -54682,206 +53390,300 @@ and I_CompareCounter faction_emerge_id >= 1
 	add_money lithuania 40000
   end_if
 
-;Kievan Rus
+;Kievan Rus/Serbia
   if I_CompareCounter faction_emerge_id = 20
-	if I_CompareCounter kiev_riot = 0
-		console_command create_building Kiev ros_po_bonus
+	if I_CompareCounter ras_riot = 0
+		console_command create_building Ryazan ros_po_bonus
 	end_if
-	if I_CompareCounter kiev_riot = 1
-		console_command create_building Kiev ros_target
+	if I_CompareCounter duklja_riot = 0
+		console_command create_building Moscow ros_po_bonus
+	end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 0; Heavy Mail 1200
-			spawn_army
+			spawn_army; Ras
 			faction kievan_rus
-			character random_name, named character, age 30, x 296, y 210, family
+			character random_name, named character, age 30, x 225, y 157, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   EE Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Boyars				exp 2 armour 1 weapon_lvl 0
-			unit   Druzhina				exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Boyars		exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Druzhina		exp 1 armour 1 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 0 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 0 weapon_lvl 0
-			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
-			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard			exp 2 armour 0 weapon_lvl 0
+			unit   Feudal Knights			exp 2 armour 0 weapon_lvl 0
+			unit   Feudal Knights			exp 1 armour 0 weapon_lvl 0
+			unit   Magyar Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Dismounted Feudal Knights	exp 1 armour 0 weapon_lvl 0
+			unit   Light Swordsmen			exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
+			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
-			spawn_army
+			spawn_army; Duklja
 			faction kievan_rus
-			character random_name, named character, age 30, x 295, y 207, family
+			character random_name, named character, age 30, x 218, y 149, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   EE Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Boyars				exp 2 armour 1 weapon_lvl 0
-			unit   Druzhina				exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Boyars		exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Druzhina		exp 1 armour 1 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 0 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 0 weapon_lvl 0
-			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
-			unit   EE Archer Militia			exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard			exp 2 armour 0 weapon_lvl 0
+			unit   Feudal Knights			exp 2 armour 0 weapon_lvl 0
+			unit   Feudal Knights			exp 1 armour 0 weapon_lvl 0
+			unit   Magyar Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Dismounted Feudal Knights	exp 1 armour 0 weapon_lvl 0
+			unit   Light Swordsmen			exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
+			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 		and I_EventCounter FULL_PLATE_ARMOR = 0
-			spawn_army
+			spawn_army; Ras
 			faction kievan_rus
-			character random_name, named character, age 30, x 296, y 210, family
+			character random_name, named character, age 30, x 225, y 157, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   EE Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Boyars				exp 2 armour 2 weapon_lvl 0
-			unit   Druzhina				exp 1 armour 2 weapon_lvl 0
-			unit   Dismounted Boyars		exp 1 armour 2 weapon_lvl 0
-			unit   Dismounted Druzhina		exp 1 armour 2 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 1 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 1 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
+			unit   E Chivalric Knights			exp 2 armour 0 weapon_lvl 0
+			unit   E Chivalric Knights			exp 1 armour 0 weapon_lvl 0
+			unit   Dismounted E Chivalric Knights	exp 1 armour 0 weapon_lvl 0
+			unit   Magyar Cavalry				exp 1 armour 1 weapon_lvl 0
+			unit   Feudal Knights			exp 0 armour 3 weapon_lvl 0
+			unit   Dismounted Feudal Knights	exp 0 armour 3 weapon_lvl 0
+			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
+			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
-			spawn_army
+			spawn_army; Duklja
 			faction kievan_rus
-			character random_name, named character, age 30, x 295, y 207, family
+			character random_name, named character, age 30, x 218, y 149, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   EE Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Boyars				exp 2 armour 2 weapon_lvl 0
-			unit   Druzhina				exp 1 armour 2 weapon_lvl 0
-			unit   Dismounted Boyars		exp 1 armour 2 weapon_lvl 0
-			unit   Dismounted Druzhina		exp 1 armour 2 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Rus Senior Militia			exp 0 armour 2 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 1 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 1 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
+			unit   E Chivalric Knights			exp 2 armour 0 weapon_lvl 0
+			unit   E Chivalric Knights			exp 1 armour 0 weapon_lvl 0
+			unit   Dismounted E Chivalric Knights	exp 1 armour 0 weapon_lvl 0
+			unit   Magyar Cavalry				exp 1 armour 1 weapon_lvl 0
+			unit   Feudal Knights			exp 0 armour 3 weapon_lvl 0
+			unit   Dismounted Feudal Knights	exp 0 armour 3 weapon_lvl 0
+			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
+			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter FULL_PLATE_ARMOR = 1; Full Plate 1400
-			spawn_army
+			spawn_army; Ras
 			faction kievan_rus
-			character random_name, named character, age 30, x 296, y 210, family
+			character random_name, named character, age 30, x 225, y 157, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   EE Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Heavy Boyars			exp 2 armour 3 weapon_lvl 0
-			unit   Heavy Boyars			exp 1 armour 3 weapon_lvl 0
-			unit   Dismounted Boyars		exp 1 armour 2 weapon_lvl 0
-			unit   Dismounted Druzhina		exp 1 armour 2 weapon_lvl 0
-			unit   Halberd Militia			exp 0 armour 0 weapon_lvl 0
-			unit   Halberd Militia			exp 0 armour 0 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 2 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 2 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
+			unit   E Chivalric Knights			exp 2 armour 1 weapon_lvl 0
+			unit   E Chivalric Knights			exp 1 armour 1 weapon_lvl 0
+			unit   Dismounted E Chivalric Knights	exp 1 armour 1 weapon_lvl 0
+			unit   Hussar					exp 1 armour 1 weapon_lvl 0
+			unit   Hussar					exp 0 armour 0 weapon_lvl 0
+			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
+			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
+			unit   Dismounted Armats			exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
 			end
-			spawn_army
+			spawn_army; Duklja
 			faction kievan_rus
-			character random_name, named character, age 30, x 295, y 207, family
+			character random_name, named character, age 30, x 218, y 149, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   EE Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Heavy Boyars			exp 2 armour 3 weapon_lvl 0
-			unit   Heavy Boyars			exp 1 armour 3 weapon_lvl 0
-			unit   Dismounted Boyars		exp 1 armour 2 weapon_lvl 0
-			unit   Dismounted Druzhina		exp 1 armour 2 weapon_lvl 0
-			unit   Halberd Militia			exp 0 armour 0 weapon_lvl 0
-			unit   Halberd Militia			exp 0 armour 0 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 2 weapon_lvl 0
-			unit   Kievan Palace Guard		exp 0 armour 2 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   EE Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
+			unit   E Chivalric Knights			exp 2 armour 1 weapon_lvl 0
+			unit   E Chivalric Knights			exp 1 armour 1 weapon_lvl 0
+			unit   Dismounted E Chivalric Knights	exp 1 armour 1 weapon_lvl 0
+			unit   Hussar					exp 1 armour 1 weapon_lvl 0
+			unit   Hussar					exp 0 armour 0 weapon_lvl 0
+			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
+			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
+			unit   Dismounted Armats			exp 0 armour 0 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
+			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
 			end
 		end_if
-		if I_SettlementOwner Kiev = venice
+	if I_CompareCounter ras_riot = 1
+		console_command create_building Ryazan ros_target
+		if I_SettlementOwner Ryazan = venice
 			faction_emerge kievan_rus venice 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = sicily
+		if I_SettlementOwner Ryazan = sicily
 			faction_emerge kievan_rus sicily 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = milan
+		if I_SettlementOwner Ryazan = milan
 			faction_emerge kievan_rus milan 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = denmark
+		if I_SettlementOwner Ryazan = denmark
 			faction_emerge kievan_rus denmark 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = egypt
+		if I_SettlementOwner Ryazan = egypt
 			faction_emerge kievan_rus egypt 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = cumans
-			faction_emerge kievan_rus cumans 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = turks
-			faction_emerge kievan_rus turks 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = scotland
-			faction_emerge kievan_rus scotland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = hre
-			faction_emerge kievan_rus hre 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = england
-			faction_emerge kievan_rus england 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = portugal
-			faction_emerge kievan_rus portugal 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = poland
-			faction_emerge kievan_rus poland 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = byzantium
-			faction_emerge kievan_rus byzantium 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = moors
-			faction_emerge kievan_rus moors 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = russia
-			faction_emerge kievan_rus russia 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = spain
-			faction_emerge kievan_rus spain 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = hungary
-			faction_emerge kievan_rus hungary 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = aragon
-			faction_emerge kievan_rus aragon 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = lithuania
-			faction_emerge kievan_rus lithuania 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = kievan_rus
-			faction_emerge kievan_rus france 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = norway
-			faction_emerge kievan_rus norway 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = jerusalem
-			faction_emerge kievan_rus jerusalem 2 400.0 0.0 1.2 town true
-		end_if
-		if I_SettlementOwner Kiev = kwarezm
+		if I_SettlementOwner Ryazan = kwarezm
 			faction_emerge kievan_rus kwarezm 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = papal_states
+		if I_SettlementOwner Ryazan = cumans
+			faction_emerge kievan_rus cumans 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = turks
+			faction_emerge kievan_rus turks 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = scotland
+			faction_emerge kievan_rus scotland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = hre
+			faction_emerge kievan_rus hre 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = england
+			faction_emerge kievan_rus england 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = portugal
+			faction_emerge kievan_rus portugal 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = poland
+			faction_emerge kievan_rus poland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = byzantium
+			faction_emerge kievan_rus byzantium 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = moors
+			faction_emerge kievan_rus moors 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = russia
+			faction_emerge kievan_rus russia 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = spain
+			faction_emerge kievan_rus spain 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = hungary
+			faction_emerge kievan_rus hungary 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = aragon
+			faction_emerge kievan_rus aragon 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = lithuania
+			faction_emerge kievan_rus lithuania 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = norway
+			faction_emerge kievan_rus norway 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = jerusalem
+			faction_emerge kievan_rus jerusalem 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = france
+			faction_emerge kievan_rus france 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Ryazan = papal_states
 			faction_emerge kievan_rus papal_states 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = mongols
+		if I_SettlementOwner Ryazan = mongols
 			faction_emerge kievan_rus mongols 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = teutonic_order
+		if I_SettlementOwner Ryazan = teutonic_order
 			faction_emerge kievan_rus teutonic_order 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = timurids
+		if I_SettlementOwner Ryazan = timurids
 			faction_emerge kievan_rus timurids 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = georgia
+		if I_SettlementOwner Ryazan = georgia
 			faction_emerge kievan_rus georgia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Kiev = slave
+		if I_SettlementOwner Ryazan = slave
 			faction_emerge kievan_rus slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	historic_event kievan_rus_emerged
-	set_counter kiev_riot 0
+	if I_CompareCounter duklja_riot = 1
+		console_command create_building Moscow ros_target
+		if I_SettlementOwner Moscow = venice
+			faction_emerge kievan_rus venice 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = sicily
+			faction_emerge kievan_rus sicily 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = milan
+			faction_emerge kievan_rus milan 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = denmark
+			faction_emerge kievan_rus denmark 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = egypt
+			faction_emerge kievan_rus egypt 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = kwarezm
+			faction_emerge kievan_rus kwarezm 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = cumans
+			faction_emerge kievan_rus cumans 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = turks
+			faction_emerge kievan_rus turks 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = scotland
+			faction_emerge kievan_rus scotland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = hre
+			faction_emerge kievan_rus hre 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = england
+			faction_emerge kievan_rus england 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = portugal
+			faction_emerge kievan_rus portugal 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = poland
+			faction_emerge kievan_rus poland 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = byzantium
+			faction_emerge kievan_rus byzantium 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = moors
+			faction_emerge kievan_rus moors 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = russia
+			faction_emerge kievan_rus russia 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = spain
+			faction_emerge kievan_rus spain 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = hungary
+			faction_emerge kievan_rus hungary 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = aragon
+			faction_emerge kievan_rus aragon 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = lithuania
+			faction_emerge kievan_rus lithuania 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = norway
+			faction_emerge kievan_rus norway 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = jerusalem
+			faction_emerge kievan_rus jerusalem 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = france
+			faction_emerge kievan_rus france 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = papal_states
+			faction_emerge kievan_rus papal_states 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = mongols
+			faction_emerge kievan_rus mongols 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = teutonic_order
+			faction_emerge kievan_rus teutonic_order 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = timurids
+			faction_emerge kievan_rus timurids 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = georgia
+			faction_emerge kievan_rus georgia 2 400.0 0.0 1.2 town true
+		end_if
+		if I_SettlementOwner Moscow = slave
+			faction_emerge kievan_rus slave 1 400.0 0.0 1.2 town true
+		end_if
+	end_if
+	historic_event serbia_emerged
+	set_counter ras_riot 0
+	set_counter duklja_riot 0
 	set_counter kievan_rus_emerge 5
 	add_money kievan_rus 40000
   end_if
@@ -55090,348 +53892,300 @@ and I_CompareCounter faction_emerge_id >= 1
 	add_money norway 40000
   end_if
 
-;Kwarezm
+;Kwarezm/Hafsids
   if I_CompareCounter faction_emerge_id = 22
-	if I_CompareCounter urgench_riot = 0
-		console_command create_building Urgench ros_po_bonus
+	if I_CompareCounter al_mahdiya_riot = 0
+		console_command create_building Al-Mahdiya ros_po_bonus
 	end_if
-	if I_CompareCounter konjikala_riot = 0
-		console_command create_building Konjikala ros_po_bonus
+	if I_CompareCounter tunis_riot = 0
+		console_command create_building Tunis ros_po_bonus
 	end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 0; Heavy Mail 1200
-			spawn_army; Urgench
+			spawn_army; Al-Mahdiya
 			faction kwarezm
-			character random_name, named character, age 30, x 503, y 152, family
+			character random_name, named character, age 30, x 156, y 100, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 1 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Ghulams		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
+			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Hashishim			exp 0 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
-			spawn_army; Khiva
+			spawn_army; Tunis
 			faction kwarezm
-			character random_name, named character, age 30, x 505, y 147, family
+			character random_name, named character, age 30, x 151, y 108, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 1 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Ghulams		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
-			end
-			spawn_army; Konjikala
-			faction kwarezm
-			character random_name, named character, age 30, x 497, y 120, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 1 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Ghulams		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 0 weapon_lvl 0
+			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Hashishim			exp 0 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
+			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   ME Crossbow Militia		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 		and I_EventCounter FULL_PLATE_ARMOR = 0
-			spawn_army; Urgench
+			spawn_army; Al-Mahdiya
 			faction kwarezm
-			character random_name, named character, age 30, x 503, y 152, family
+			character random_name, named character, age 30, x 156, y 100, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Imperial Guard			exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Sibyan al Khass			exp 1 armour 2 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 2 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 1 weapon_lvl 0
+			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Hashishim			exp 1 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Crossbow Militia		exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Archers		exp 0 armour 0 weapon_lvl 0
 			end
-			spawn_army; Khiva
+			spawn_army; Tunis
 			faction kwarezm
-			character random_name, named character, age 30, x 505, y 147, family
+			character random_name, named character, age 30, x 151, y 108, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Imperial Guard			exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Sibyan al Khass			exp 1 armour 2 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 2 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 1 weapon_lvl 0
+			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Hashishim			exp 1 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Crossbow Militia		exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			end
-			spawn_army; Konjikala
-			faction kwarezm
-			character random_name, named character, age 30, x 497, y 120, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 1 weapon_lvl 0
-			unit   Imperial Guard			exp 2 armour 0 weapon_lvl 0
-			unit   Kwarizmian Cavalry		exp 1 armour 0 weapon_lvl 0
-			unit   Sibyan al Khass			exp 1 armour 2 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 2 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   Armored Spearmen		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   Persian Archers			exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter FULL_PLATE_ARMOR = 1; Full Plate 1400
-			spawn_army; Urgench
+			spawn_army; Al-Mahdiya
 			faction kwarezm
-			character random_name, named character, age 30, x 503, y 152, family
+			character random_name, named character, age 30, x 156, y 100, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 2 weapon_lvl 0
-			unit   Imperial Guard			exp 2 armour 0 weapon_lvl 0
-			unit   Imperial Guard			exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
-			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Hashishim				exp 1 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
 			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			end
-			spawn_army; Khiva
+			spawn_army; Tunis
 			faction kwarezm
-			character random_name, named character, age 30, x 505, y 147, family
+			character random_name, named character, age 30, x 151, y 108, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
 			unit   ME Bodyguard			exp 2 armour 2 weapon_lvl 0
-			unit   Imperial Guard			exp 2 armour 0 weapon_lvl 0
-			unit   Imperial Guard			exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
-			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   Arab Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Arab Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Desert Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Hashishim				exp 1 armour 0 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
+			unit   ME Heavy Spearmen		exp 0 armour 1 weapon_lvl 0
 			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
-			end
-			spawn_army; Konjikala
-			faction kwarezm
-			character random_name, named character, age 30, x 497, y 120, family
-			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   ME Bodyguard			exp 2 armour 2 weapon_lvl 0
-			unit   Imperial Guard			exp 2 armour 0 weapon_lvl 0
-			unit   Imperial Guard			exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 0 weapon_lvl 0
-			unit   Armored Horsearchers		exp 1 armour 0 weapon_lvl 0
-			unit   ME Heavy Spearmen		exp 0 armour 0 weapon_lvl 0
-			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
-			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
 			unit   ME Hand Gunners			exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			unit   ME Heavy Archers		exp 0 armour 1 weapon_lvl 0
 			end
 		end_if
-	if I_CompareCounter urgench_riot = 1
-		console_command create_building Urgench ros_target
-		if I_SettlementOwner Urgench = venice
+	if I_CompareCounter al_mahdiya_riot = 1
+		console_command create_building Al-Mahdiya ros_target
+		if I_SettlementOwner Al-Mahdiya = venice
 			faction_emerge kwarezm venice 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = sicily
+		if I_SettlementOwner Al-Mahdiya = sicily
 			faction_emerge kwarezm sicily 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = milan
+		if I_SettlementOwner Al-Mahdiya = milan
 			faction_emerge kwarezm milan 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = denmark
+		if I_SettlementOwner Al-Mahdiya = denmark
 			faction_emerge kwarezm denmark 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = egypt
+		if I_SettlementOwner Al-Mahdiya = egypt
 			faction_emerge kwarezm egypt 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = cumans
+		if I_SettlementOwner Al-Mahdiya = cumans
 			faction_emerge kwarezm cumans 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = turks
+		if I_SettlementOwner Al-Mahdiya = turks
 			faction_emerge kwarezm turks 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = scotland
+		if I_SettlementOwner Al-Mahdiya = scotland
 			faction_emerge kwarezm scotland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = hre
+		if I_SettlementOwner Al-Mahdiya = hre
 			faction_emerge kwarezm hre 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = england
+		if I_SettlementOwner Al-Mahdiya = england
 			faction_emerge kwarezm england 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = portugal
+		if I_SettlementOwner Al-Mahdiya = portugal
 			faction_emerge kwarezm portugal 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = poland
+		if I_SettlementOwner Al-Mahdiya = poland
 			faction_emerge kwarezm poland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = byzantium
+		if I_SettlementOwner Al-Mahdiya = byzantium
 			faction_emerge kwarezm byzantium 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = moors
+		if I_SettlementOwner Al-Mahdiya = moors
 			faction_emerge kwarezm moors 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = russia
+		if I_SettlementOwner Al-Mahdiya = russia
 			faction_emerge kwarezm russia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = spain
+		if I_SettlementOwner Al-Mahdiya = spain
 			faction_emerge kwarezm spain 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = hungary
+		if I_SettlementOwner Al-Mahdiya = hungary
 			faction_emerge kwarezm hungary 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = aragon
+		if I_SettlementOwner Al-Mahdiya = aragon
 			faction_emerge kwarezm aragon 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = lithuania
+		if I_SettlementOwner Al-Mahdiya = lithuania
 			faction_emerge kwarezm lithuania 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = kievan_rus
+		if I_SettlementOwner Al-Mahdiya = kievan_rus
 			faction_emerge kwarezm kievan_rus 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = norway
+		if I_SettlementOwner Al-Mahdiya = norway
 			faction_emerge kwarezm norway 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = jerusalem
+		if I_SettlementOwner Al-Mahdiya = jerusalem
 			faction_emerge kwarezm jerusalem 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = france
+		if I_SettlementOwner Al-Mahdiya = france
 			faction_emerge kwarezm france 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = papal_states
+		if I_SettlementOwner Al-Mahdiya = papal_states
 			faction_emerge kwarezm papal_states 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = mongols
+		if I_SettlementOwner Al-Mahdiya = mongols
 			faction_emerge kwarezm mongols 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = teutonic_order
+		if I_SettlementOwner Al-Mahdiya = teutonic_order
 			faction_emerge kwarezm teutonic_order 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = timurids
+		if I_SettlementOwner Al-Mahdiya = timurids
 			faction_emerge kwarezm timurids 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = georgia
+		if I_SettlementOwner Al-Mahdiya = georgia
 			faction_emerge kwarezm georgia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Urgench = slave
+		if I_SettlementOwner Al-Mahdiya = slave
 			faction_emerge kwarezm slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	if I_CompareCounter konjikala_riot = 1
-		console_command create_building Konjikala ros_target
-		if I_SettlementOwner Konjikala = venice
+	if I_CompareCounter tunis_riot = 1
+		console_command create_building Tunis ros_target
+		if I_SettlementOwner Tunis = venice
 			faction_emerge kwarezm venice 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = sicily
+		if I_SettlementOwner Tunis = sicily
 			faction_emerge kwarezm sicily 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = milan
+		if I_SettlementOwner Tunis = milan
 			faction_emerge kwarezm milan 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = denmark
+		if I_SettlementOwner Tunis = denmark
 			faction_emerge kwarezm denmark 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = egypt
+		if I_SettlementOwner Tunis = egypt
 			faction_emerge kwarezm egypt 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = cumans
+		if I_SettlementOwner Tunis = cumans
 			faction_emerge kwarezm cumans 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = turks
+		if I_SettlementOwner Tunis = turks
 			faction_emerge kwarezm turks 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = scotland
+		if I_SettlementOwner Tunis = scotland
 			faction_emerge kwarezm scotland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = hre
+		if I_SettlementOwner Tunis = hre
 			faction_emerge kwarezm hre 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = england
+		if I_SettlementOwner Tunis = england
 			faction_emerge kwarezm england 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = portugal
+		if I_SettlementOwner Tunis = portugal
 			faction_emerge kwarezm portugal 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = poland
+		if I_SettlementOwner Tunis = poland
 			faction_emerge kwarezm poland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = byzantium
+		if I_SettlementOwner Tunis = byzantium
 			faction_emerge kwarezm byzantium 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = moors
+		if I_SettlementOwner Tunis = moors
 			faction_emerge kwarezm moors 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = russia
+		if I_SettlementOwner Tunis = russia
 			faction_emerge kwarezm russia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = spain
+		if I_SettlementOwner Tunis = spain
 			faction_emerge kwarezm spain 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = hungary
+		if I_SettlementOwner Tunis = hungary
 			faction_emerge kwarezm hungary 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = aragon
+		if I_SettlementOwner Tunis = aragon
 			faction_emerge kwarezm aragon 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = lithuania
+		if I_SettlementOwner Tunis = lithuania
 			faction_emerge kwarezm lithuania 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = kievan_rus
+		if I_SettlementOwner Tunis = kievan_rus
 			faction_emerge kwarezm kievan_rus 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = norway
+		if I_SettlementOwner Tunis = norway
 			faction_emerge kwarezm norway 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = jerusalem
+		if I_SettlementOwner Tunis = jerusalem
 			faction_emerge kwarezm jerusalem 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = france
+		if I_SettlementOwner Tunis = france
 			faction_emerge kwarezm france 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = papal_states
+		if I_SettlementOwner Tunis = papal_states
 			faction_emerge kwarezm papal_states 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = mongols
+		if I_SettlementOwner Tunis = mongols
 			faction_emerge kwarezm mongols 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = teutonic_order
+		if I_SettlementOwner Tunis = teutonic_order
 			faction_emerge kwarezm teutonic_order 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = timurids
+		if I_SettlementOwner Tunis = timurids
 			faction_emerge kwarezm timurids 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = georgia
+		if I_SettlementOwner Tunis = georgia
 			faction_emerge kwarezm georgia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Konjikala = slave
+		if I_SettlementOwner Tunis = slave
 			faction_emerge kwarezm slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	historic_event kwarezm_emerged
-	set_counter urgench_riot 0
-	set_counter konjikala_riot 0
+	historic_event hafsids_emerged
+	set_counter al_mahdiya_riot 0
+	set_counter tunis_riot 0
 	set_counter kwarezm_emerge 5
 	add_money kwarezm 40000
   end_if
@@ -57416,300 +56170,300 @@ and I_CompareCounter faction_emerge_id >= 1
 	add_money teutonic_order 40000
   end_if
 
-;Georgia/Serbia
+;Georgia
   if I_CompareCounter faction_emerge_id = 26
-	if I_CompareCounter ras_riot = 0
-		console_command create_building Ryazan ros_po_bonus
+	if I_CompareCounter kutaisi_riot = 0
+		console_command create_building Kutaisi ros_po_bonus
 	end_if
-	if I_CompareCounter duklja_riot = 0
-		console_command create_building Moscow ros_po_bonus
+	if I_CompareCounter tbilisi_riot = 0
+		console_command create_building Tbilisi ros_po_bonus
 	end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 0; Heavy Mail 1200
-			spawn_army; Ras
+			spawn_army; Kutaisi
 			faction georgia
-			character random_name, named character, age 30, x 225, y 157, family
+			character random_name, named character, age 30, x 385, y 151, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   SE Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Feudal Knights			exp 2 armour 0 weapon_lvl 0
-			unit   Feudal Knights			exp 1 armour 0 weapon_lvl 0
-			unit   Magyar Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Feudal Knights	exp 1 armour 0 weapon_lvl 0
-			unit   Light Swordsmen			exp 0 armour 0 weapon_lvl 0
-			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Royal Monaspa			exp 2 armour 0 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 2 armour 1 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 1 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
 			end
-			spawn_army; Duklja
+			spawn_army; Tbilisi
 			faction georgia
-			character random_name, named character, age 30, x 218, y 149, family
+			character random_name, named character, age 30, x 400, y 147, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   SE Bodyguard			exp 2 armour 0 weapon_lvl 0
-			unit   Feudal Knights			exp 2 armour 0 weapon_lvl 0
-			unit   Feudal Knights			exp 1 armour 0 weapon_lvl 0
-			unit   Magyar Cavalry			exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted Feudal Knights	exp 1 armour 0 weapon_lvl 0
-			unit   Light Swordsmen			exp 0 armour 0 weapon_lvl 0
-			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Pavise Spearmen			exp 0 armour 1 weapon_lvl 0
-			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
-			unit   Urban Crossbow Militia		exp 0 armour 0 weapon_lvl 0
+			unit   Royal Monaspa			exp 2 armour 0 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 2 armour 1 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 1 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 1 armour 1 weapon_lvl 0
+			unit   Pechenegs				exp 1 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
+			unit   Metsikhovne Archers		exp 0 armour 0 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter HALF_PLATE_ARMOR = 1; Partial Plate 1300
 		and I_EventCounter FULL_PLATE_ARMOR = 0
-			spawn_army; Ras
+			spawn_army; Kutaisi
 			faction georgia
-			character random_name, named character, age 30, x 225, y 157, family
+			character random_name, named character, age 30, x 385, y 151, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
-			unit   E Chivalric Knights			exp 2 armour 0 weapon_lvl 0
-			unit   E Chivalric Knights			exp 1 armour 0 weapon_lvl 0
-			unit   Dismounted E Chivalric Knights	exp 1 armour 0 weapon_lvl 0
-			unit   Magyar Cavalry				exp 1 armour 1 weapon_lvl 0
-			unit   Feudal Knights			exp 0 armour 3 weapon_lvl 0
-			unit   Dismounted Feudal Knights	exp 0 armour 3 weapon_lvl 0
-			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
-			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+			unit   Royal Monaspa			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Archers			exp 1 armour 2 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 2 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 0 armour 2 weapon_lvl 0
+			unit   Pechenegs				exp 0 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
 			end
-			spawn_army; Duklja
+			spawn_army; Tbilisi
 			faction georgia
-			character random_name, named character, age 30, x 218, y 149, family
+			character random_name, named character, age 30, x 400, y 147, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
-			unit   E Chivalric Knights			exp 2 armour 0 weapon_lvl 0
-			unit   E Chivalric Knights			exp 1 armour 0 weapon_lvl 0
-			unit   Dismounted E Chivalric Knights	exp 1 armour 0 weapon_lvl 0
-			unit   Magyar Cavalry				exp 1 armour 1 weapon_lvl 0
-			unit   Feudal Knights			exp 0 armour 3 weapon_lvl 0
-			unit   Dismounted Feudal Knights	exp 0 armour 3 weapon_lvl 0
-			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
-			unit   Pavise Spearmen				exp 0 armour 2 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 0 weapon_lvl 0
+			unit   Royal Monaspa			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Archers			exp 1 armour 2 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 2 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 0 armour 2 weapon_lvl 0
+			unit   Pechenegs				exp 0 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
 			end
 		end_if
 		if I_EventCounter FULL_PLATE_ARMOR = 1; Full Plate 1400
-			spawn_army; Ras
+			spawn_army; Kutaisi
 			faction georgia
-			character random_name, named character, age 30, x 225, y 157, family
+			character random_name, named character, age 30, x 385, y 151, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
-			unit   E Chivalric Knights			exp 2 armour 1 weapon_lvl 0
-			unit   E Chivalric Knights			exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted E Chivalric Knights	exp 1 armour 1 weapon_lvl 0
-			unit   Hussar					exp 1 armour 1 weapon_lvl 0
-			unit   Hussar					exp 0 armour 0 weapon_lvl 0
-			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
-			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
-			unit   Dismounted Armats			exp 0 armour 0 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
+			unit   Royal Monaspa			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Archers			exp 1 armour 2 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 2 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 0 armour 2 weapon_lvl 0
+			unit   Pechenegs				exp 0 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
 			end
-			spawn_army; Duklja
+			spawn_army; Tbilisi
 			faction georgia
-			character random_name, named character, age 30, x 218, y 149, family
+			character random_name, named character, age 30, x 400, y 147, family
 			traits LoyaltyStarter 1 , GoodCommander 4 , StrategyChivalry 2 , Energetic 4 , ReligionStarter 1 , Intelligent 2
-			unit   SE Bodyguard				exp 2 armour 0 weapon_lvl 0
-			unit   E Chivalric Knights			exp 2 armour 1 weapon_lvl 0
-			unit   E Chivalric Knights			exp 1 armour 1 weapon_lvl 0
-			unit   Dismounted E Chivalric Knights	exp 1 armour 1 weapon_lvl 0
-			unit   Hussar					exp 1 armour 1 weapon_lvl 0
-			unit   Hussar					exp 0 armour 0 weapon_lvl 0
-			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
-			unit   Halberd MAA				exp 0 armour 0 weapon_lvl 0
-			unit   Dismounted Armats			exp 0 armour 0 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
-			unit   Pavise Crossbow Militia			exp 0 armour 1 weapon_lvl 0
+			unit   Royal Monaspa			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Cavalry			exp 2 armour 2 weapon_lvl 0
+			unit   Monaspa Archers			exp 1 armour 2 weapon_lvl 0
+			unit   Eristavi Cavalry			exp 1 armour 2 weapon_lvl 0
+			unit   Dismounted Eristavi		exp 1 armour 2 weapon_lvl 0
+			unit   Azenuri Cavalry			exp 0 armour 2 weapon_lvl 0
+			unit   Pechenegs				exp 0 armour 0 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   Tadzreuli				exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
+			unit   ME Halberd Militia			exp 0 armour 1 weapon_lvl 0
 			end
 		end_if
-	if I_CompareCounter ras_riot = 1
-		console_command create_building Ryazan ros_target
-		if I_SettlementOwner Ryazan = venice
+	if I_CompareCounter kutaisi_riot = 1
+		console_command create_building Kutaisi ros_target
+		if I_SettlementOwner Kutaisi = venice
 			faction_emerge georgia venice 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = sicily
+		if I_SettlementOwner Kutaisi = sicily
 			faction_emerge georgia sicily 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = milan
+		if I_SettlementOwner Kutaisi = milan
 			faction_emerge georgia milan 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = denmark
+		if I_SettlementOwner Kutaisi = denmark
 			faction_emerge georgia denmark 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = egypt
+		if I_SettlementOwner Kutaisi = egypt
 			faction_emerge georgia egypt 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = kwarezm
+		if I_SettlementOwner Kutaisi = kwarezm
 			faction_emerge georgia kwarezm 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = cumans
+		if I_SettlementOwner Kutaisi = cumans
 			faction_emerge georgia cumans 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = turks
+		if I_SettlementOwner Kutaisi = turks
 			faction_emerge georgia turks 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = scotland
+		if I_SettlementOwner Kutaisi = scotland
 			faction_emerge georgia scotland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = hre
+		if I_SettlementOwner Kutaisi = hre
 			faction_emerge georgia hre 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = england
+		if I_SettlementOwner Kutaisi = england
 			faction_emerge georgia england 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = portugal
+		if I_SettlementOwner Kutaisi = portugal
 			faction_emerge georgia portugal 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = poland
+		if I_SettlementOwner Kutaisi = poland
 			faction_emerge georgia poland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = byzantium
+		if I_SettlementOwner Kutaisi = byzantium
 			faction_emerge georgia byzantium 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = moors
+		if I_SettlementOwner Kutaisi = moors
 			faction_emerge georgia moors 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = russia
+		if I_SettlementOwner Kutaisi = russia
 			faction_emerge georgia russia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = spain
+		if I_SettlementOwner Kutaisi = spain
 			faction_emerge georgia spain 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = hungary
+		if I_SettlementOwner Kutaisi = hungary
 			faction_emerge georgia hungary 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = aragon
+		if I_SettlementOwner Kutaisi = aragon
 			faction_emerge georgia aragon 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = lithuania
+		if I_SettlementOwner Kutaisi = lithuania
 			faction_emerge georgia lithuania 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = kievan_rus
+		if I_SettlementOwner Kutaisi = kievan_rus
 			faction_emerge georgia kievan_rus 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = norway
+		if I_SettlementOwner Kutaisi = norway
 			faction_emerge georgia norway 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = jerusalem
+		if I_SettlementOwner Kutaisi = jerusalem
 			faction_emerge georgia jerusalem 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = france
+		if I_SettlementOwner Kutaisi = france
 			faction_emerge georgia france 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = papal_states
+		if I_SettlementOwner Kutaisi = papal_states
 			faction_emerge georgia papal_states 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = mongols
+		if I_SettlementOwner Kutaisi = mongols
 			faction_emerge georgia mongols 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = teutonic_order
+		if I_SettlementOwner Kutaisi = teutonic_order
 			faction_emerge georgia teutonic_order 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = timurids
+		if I_SettlementOwner Kutaisi = timurids
 			faction_emerge georgia timurids 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Ryazan = slave
+		if I_SettlementOwner Kutaisi = slave
 			faction_emerge georgia slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	if I_CompareCounter duklja_riot = 1
-		console_command create_building Moscow ros_target
-		if I_SettlementOwner Moscow = venice
+	if I_CompareCounter tbilisi_riot = 1
+		console_command create_building Tbilisi ros_target
+		if I_SettlementOwner Tbilisi = venice
 			faction_emerge georgia venice 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = sicily
+		if I_SettlementOwner Tbilisi = sicily
 			faction_emerge georgia sicily 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = milan
+		if I_SettlementOwner Tbilisi = milan
 			faction_emerge georgia milan 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = denmark
+		if I_SettlementOwner Tbilisi = denmark
 			faction_emerge georgia denmark 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = egypt
+		if I_SettlementOwner Tbilisi = egypt
 			faction_emerge georgia egypt 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = kwarezm
+		if I_SettlementOwner Tbilisi = kwarezm
 			faction_emerge georgia kwarezm 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = cumans
+		if I_SettlementOwner Tbilisi = cumans
 			faction_emerge georgia cumans 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = turks
+		if I_SettlementOwner Tbilisi = turks
 			faction_emerge georgia turks 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = scotland
+		if I_SettlementOwner Tbilisi = scotland
 			faction_emerge georgia scotland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = hre
+		if I_SettlementOwner Tbilisi = hre
 			faction_emerge georgia hre 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = england
+		if I_SettlementOwner Tbilisi = england
 			faction_emerge georgia england 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = portugal
+		if I_SettlementOwner Tbilisi = portugal
 			faction_emerge georgia portugal 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = poland
+		if I_SettlementOwner Tbilisi = poland
 			faction_emerge georgia poland 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = byzantium
+		if I_SettlementOwner Tbilisi = byzantium
 			faction_emerge georgia byzantium 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = moors
+		if I_SettlementOwner Tbilisi = moors
 			faction_emerge georgia moors 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = russia
+		if I_SettlementOwner Tbilisi = russia
 			faction_emerge georgia russia 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = spain
+		if I_SettlementOwner Tbilisi = spain
 			faction_emerge georgia spain 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = hungary
+		if I_SettlementOwner Tbilisi = hungary
 			faction_emerge georgia hungary 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = aragon
+		if I_SettlementOwner Tbilisi = aragon
 			faction_emerge georgia aragon 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = lithuania
+		if I_SettlementOwner Tbilisi = lithuania
 			faction_emerge georgia lithuania 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = kievan_rus
+		if I_SettlementOwner Tbilisi = kievan_rus
 			faction_emerge georgia kievan_rus 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = norway
+		if I_SettlementOwner Tbilisi = norway
 			faction_emerge georgia norway 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = jerusalem
+		if I_SettlementOwner Tbilisi = jerusalem
 			faction_emerge georgia jerusalem 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = france
+		if I_SettlementOwner Tbilisi = france
 			faction_emerge georgia france 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = papal_states
+		if I_SettlementOwner Tbilisi = papal_states
 			faction_emerge georgia papal_states 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = mongols
+		if I_SettlementOwner Tbilisi = mongols
 			faction_emerge georgia mongols 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = teutonic_order
+		if I_SettlementOwner Tbilisi = teutonic_order
 			faction_emerge georgia teutonic_order 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = timurids
+		if I_SettlementOwner Tbilisi = timurids
 			faction_emerge georgia timurids 2 400.0 0.0 1.2 town true
 		end_if
-		if I_SettlementOwner Moscow = slave
+		if I_SettlementOwner Tbilisi = slave
 			faction_emerge georgia slave 1 400.0 0.0 1.2 town true
 		end_if
 	end_if
-	historic_event serbia_emerged
-	set_counter ras_riot 0
-	set_counter duklja_riot 0
+	historic_event georgia_emerged
+	set_counter kutaisi_riot 0
+	set_counter tbilisi_riot 0
 	set_counter georgia_emerge 5
 	add_money georgia 40000
   end_if
@@ -61216,6 +59970,144 @@ monitor_event FactionTurnEnd FactionType slave
 	;EMPTY LAND
 	console_command move_character "Turku_Fort" 239, 280
 
+end_monitor
+monitor GeneralCaptureResidence FactionIsLocal
+	and I_CompareCounter is_the_ai = 0
+	;BRITAIN
+	console_command move_character "Thurso_Fort" 53, 266
+	console_command move_character "Mann_Fort" 45, 236
+	console_command move_character "Glasgow_Fort" 47, 247
+	console_command move_character "Stranraer_Fort" 42, 241
+	console_command move_character "Berwick_Fort" 64, 246
+	console_command move_character "Winchester_Fort" 68, 213
+	console_command move_character "Exeter_Fort" 52, 211
+	console_command move_character "Cardiff_Fort" 56, 218
+	console_command move_character "Dundalk_Fort" 31, 233
+	console_command move_character "Galway_Fort" 13, 230
+	console_command move_character "Cork_Fort" 17, 220
+	;SCANDINAVIA
+	console_command move_character "Riba_Fort" 141, 244
+	console_command move_character "Eikundarsund_Fort" 121, 267
+	console_command move_character "Nykoeping_Fort" 201, 269
+	;RUSLAND-STEPPES
+	console_command move_character "Tver_Fort" 338, 256
+	console_command move_character "Borovichi_Fort" 326, 264
+	console_command move_character "Mensk_Fort" 275, 234
+	console_command move_character "Kolomea_Fort" 257, 196
+	console_command move_character "Zhytomyr_Fort" 283, 208
+	console_command move_character "Bryansk_Fort" 325, 231
+	console_command move_character "Novhorod_Siverskyi_Fort" 317, 221
+	console_command move_character "Poltava_Fort" 326, 204
+	;console_command move_character "Moscow_Fort" 348, 248
+	console_command move_character "Yaroslavl_Fort" 365, 261
+	console_command move_character "Suzdal_Fort" 368, 253
+	console_command move_character "Ryazan_Fort" 363, 240
+	console_command move_character "Kasimov_Fort" 377, 239
+	;console_command move_character "Caffa_Fort" 330, 170
+	console_command move_character "Sharukan_Fort" 350, 202
+	console_command move_character "Khlynov_Fort" 435, 267
+	console_command move_character "Kazan_Fort" 431, 247
+	console_command move_character "Bilar_Fort" 440, 241
+	console_command move_character "Yelabuga_Fort" 452, 247
+	console_command move_character "Serdobinskaya_Fort" 395, 224
+	console_command move_character "Volsk_Fort" 418, 221
+	;console_command move_character "Jaiksk_Fort" 447, 214
+	;console_command move_character "Embi_Fort" 495, 195
+	;EASTERN EUROPE
+	console_command move_character "Lublin_Fort" 241, 214
+	console_command move_character "Thorn_Fort" 210, 228
+	console_command move_character "Yuryev_Fort" 271, 264
+	console_command move_character "Vilnius_Fort" 257, 240
+	console_command move_character "Trencin_Fort" 209, 197
+	console_command move_character "Brasov_Fort" 261, 176
+	console_command move_character "Severin_Fort" 243, 166
+	console_command move_character "Baia_Fort" 266, 188
+	;CENTRAL EUROPE
+	console_command move_character "Hamburg_Fort" 149, 231
+	console_command move_character "Magdeburg_Fort" 161, 220
+	console_command move_character "Rostock_Fort" 164, 235
+	console_command move_character "Aachen_Fort" 121, 210
+	console_command move_character "Paderborn_Fort" 141, 217
+	console_command move_character "Speyer_Fort" 138, 200
+	console_command move_character "Leeuwarden_Fort" 119, 229
+	console_command move_character "Friesach_Fort" 181, 184
+	console_command move_character "Bern_Fort" 132, 184
+	;WESTERN EUROPE
+	console_command move_character "Bruges_Fort" 101, 214
+	console_command move_character "Antwerp_Fort" 110, 214
+	console_command move_character "Trier_Fort" 126, 202
+	console_command move_character "Troyes_Fort" 106, 194
+	console_command move_character "Le_Mans_Fort" 79, 191
+	console_command move_character "Marseille_Fort" 117, 158
+	;BALKANS
+	;console_command move_character "Zagreb_Fort" 192, 176
+	console_command move_character "Beograd_Fort" 225, 167
+	;console_command move_character "Athens_Fort" 249, 119
+	;console_command move_character "Scopia_Fort" 231, 148
+	console_command move_character "Epahtos_Fort" 234, 124
+	console_command move_character "Spalato_Fort" 197, 160
+	console_command move_character "Constantia_Fort" 282, 164
+	console_command move_character "Yambol_Fort" 268, 154
+	;ITALY
+	console_command move_character "Ajaccio_Fort" 141, 148
+	console_command move_character "Turin_Fort" 133, 170
+	;console_command move_character "Trieste_Fort" 176, 172
+	console_command move_character "Tarento_Fort" 202, 138
+	console_command move_character "Syracusa_Fort" 187, 113
+	console_command move_character "Luogosanto_Fort" 144, 141
+	;IBERIA
+	console_command move_character "Salamanca_Fort" 37, 142
+	console_command move_character "Huesca_Fort" 75, 150
+	console_command move_character "Coimbra_Fort" 18, 136
+	;AFRICA
+	console_command move_character "Tangiers_Fort" 38, 103
+	console_command move_character "Melilla_Fort" 56, 100
+	console_command move_character "Taroudant_Fort" 16, 66
+	console_command move_character "Sijilmassa_Fort" 46, 71
+	console_command move_character "Oran_Fort" 74, 103
+	console_command move_character "Achir_Fort" 83, 98
+	;console_command move_character "Qusantinah_Fort" 125, 106
+	console_command move_character "Qala_Fort" 110, 99
+	console_command move_character "Bejaia_Fort" 111, 111
+	console_command move_character "Beleb_el_Anab_Fort" 133, 112
+	console_command move_character "Kairouan_Fort" 149, 103
+	console_command move_character "Sfax_Fort" 155, 97
+	console_command move_character "Tobruk_Fort" 250, 76
+	;CAUCASUS
+	console_command move_character "Chanta_Fort" 409, 168
+	;console_command move_character "Baku_Fort" 436, 137
+	console_command move_character "Shirvan_Fort" 430, 133
+	console_command move_character "Ganja_Fort" 412, 138
+	console_command move_character "Derbent_Fort" 425, 147
+	console_command move_character "Yerevan_Fort" 398, 135
+	;ANATOLIA
+	console_command move_character "Tarsus_Fort" 328, 113
+	console_command move_character "Adana_Fort" 332, 112
+	console_command move_character "Philadelphia_Fort" 283, 122
+	;console_command move_character "Rhodes_Fort" 279, 107
+	console_command move_character "Marmaris_Fort" 280, 111
+	;LEVANT
+	console_command move_character "Tartus_Fort" 336, 98
+	console_command move_character "Krak_de_Chevalier_Fort" 339, 97
+	console_command move_character "Resafa_Fort" 356, 101
+	console_command move_character "Amman_Fort" 337, 76
+	console_command move_character "Tadmur_Fort" 353, 95
+	console_command move_character "Tiberias_Fort" 332, 82
+	console_command move_character "Arish_Fort" 323, 70
+	;MESOPOTAMIA
+	console_command move_character "Al_Mayadin_Fort" 369, 98
+	;ARABIA
+	console_command move_character "Tayma_Fort" 354, 44
+	console_command move_character "Medina_Fort" 362, 22
+	console_command move_character "Sharjah_Fort" 477, 29
+	;PERSIA-KHORASSAN
+	console_command move_character "Khiva_Fort" 505, 147
+	console_command move_character "Damghan_Fort" 468, 105
+	console_command move_character "Qaen_Fort" 502, 90
+	console_command move_character "Rudkhan_Fort" 430, 114
+	console_command move_character "Hamadan_Fort" 426, 96
+	;EMPTY LAND
+	console_command move_character "Turku_Fort" 239, 280
 end_monitor
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

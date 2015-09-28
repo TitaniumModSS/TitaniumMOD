@@ -26,18 +26,17 @@ has_family_tree					teutonic
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;						Hafsids
 faction						sicily
-culture						middle_eastern
-religion					islam
-symbol						models_strat/symbol_zirids.CAS
-rebel_symbol					models_strat/symbol_rebels_me.CAS
-primary_colour					red 255, green 255, blue 255
-secondary_colour				red 76, green 182, blue 126
-loading_logo					loading_screen/symbols/symbol128_portugal.tga
+culture						southern_european
+religion					catholic
+symbol						models_strat/symbol_sicily.CAS
+rebel_symbol					models_strat/symbol_rebels_se.CAS
+primary_colour					red 30, green 50, blue 80
+secondary_colour				red 250, green 250, blue 255
+loading_logo					loading_screen/symbols/symbol128_sicily.tga
 standard_index					1
-logo_index					FACTION_LOGO_ZIRIDS
-small_logo_index				SMALL_FACTION_LOGO_ZIRIDS
+logo_index					FACTION_LOGO_SICILY
+small_logo_index				SMALL_FACTION_LOGO_SICILY
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
@@ -171,7 +170,7 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;						Rum
+;						Ottomans
 faction						turks
 culture						middle_eastern
 religion					islam
@@ -435,17 +434,18 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						Serbia
 faction						kievan_rus
-culture						eastern_european
+culture						greek
 religion					orthodox
-symbol						models_strat/symbol_kievan_rus.cas
+symbol						models_strat/symbol_serbia.CAS
 rebel_symbol					models_strat/symbol_rebels_ee.CAS
-primary_colour					red 58, green 117, blue 196
-secondary_colour				red 249, green 221, blue 22
-loading_logo					loading_screen/symbols/symbol128_russia.tga
+primary_colour					red 188, green 28, blue 28
+secondary_colour				red 123, green 0, blue 0
+loading_logo					loading_screen/symbols/symbol128_byzantium.tga
 standard_index					22
-logo_index					FACTION_LOGO_KIEVAN_RUS
-small_logo_index				SMALL_FACTION_LOGO_KIEVAN_RUS
+logo_index					FACTION_LOGO_SERBIA
+small_logo_index				SMALL_FACTION_LOGO_SERBIA
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
@@ -455,6 +455,7 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						Sweden
 faction						norway
 culture						northern_european
 religion					catholic
@@ -495,17 +496,18 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;						Hafsids
 faction						kwarezm
 culture						middle_eastern
 religion					islam
-symbol						models_strat/symbol_kwarezm.cas
+symbol						models_strat/symbol_zirids.CAS
 rebel_symbol					models_strat/symbol_rebels_me.CAS
-primary_colour					red 0, green 139, blue 129
-secondary_colour				red 204, green 51, blue 51
+primary_colour					red 255, green 255, blue 255
+secondary_colour				red 76, green 182, blue 126
 loading_logo					loading_screen/symbols/symbol128_egypt.tga
 standard_index					27
-logo_index					FACTION_LOGO_KWAREZM
-small_logo_index				SMALL_FACTION_LOGO_KWAREZM
+logo_index					FACTION_LOGO_ZIRIDS
+small_logo_index				SMALL_FACTION_LOGO_ZIRIDS
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
@@ -516,43 +518,22 @@ has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;						Serbia
 faction						georgia
 culture						greek
 religion					orthodox
-symbol						models_strat/symbol_serbia.CAS
-rebel_symbol					models_strat/symbol_rebels_ee.CAS
+symbol						models_strat/symbol_georgia.CAS
+rebel_symbol					models_strat/symbol_rebels_g.CAS
 primary_colour					red 188, green 28, blue 28
 secondary_colour				red 123, green 0, blue 0
 loading_logo					loading_screen/symbols/symbol128_byzantium.tga
 standard_index					28
-logo_index					FACTION_LOGO_SERBIA
-small_logo_index				SMALL_FACTION_LOGO_SERBIA
+logo_index					FACTION_LOGO_GEORGIA
+small_logo_index				SMALL_FACTION_LOGO_GEORGIA
 triumph_value					5
 custom_battle_availability			yes
 can_sap						no
 prefers_naval_invasions				yes
 can_have_princess				yes
-has_family_tree					yes
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-faction						mongols;, spawned_on_event
-culture						middle_eastern
-religion					pagan
-symbol						models_strat/symbol_mongols.CAS
-rebel_symbol					models_strat/symbol_rebels_me.CAS
-primary_colour					red 244, green 231, blue 170
-secondary_colour				red 0, green 0, blue 0
-loading_logo					loading_screen/symbols/symbol128_mongols.tga
-standard_index					8
-logo_index					FACTION_LOGO_MONGOLS
-small_logo_index				SMALL_FACTION_LOGO_MONGOLS
-triumph_value					5
-custom_battle_availability			yes
-can_sap						no
-prefers_naval_invasions				no
-can_have_princess				no
 has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -577,7 +558,29 @@ has_family_tree					teutonic
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-faction						timurids, spawned_on_event
+;						Golden Horde
+faction						mongols
+culture						middle_eastern
+religion					pagan
+symbol						models_strat/symbol_mongols.CAS
+rebel_symbol					models_strat/symbol_rebels_me.CAS
+primary_colour					red 244, green 231, blue 170
+secondary_colour				red 0, green 0, blue 0
+loading_logo					loading_screen/symbols/symbol128_mongols.tga
+standard_index					8
+logo_index					FACTION_LOGO_MONGOLS
+small_logo_index				SMALL_FACTION_LOGO_MONGOLS
+triumph_value					5
+custom_battle_availability			yes
+can_sap						no
+prefers_naval_invasions				no
+can_have_princess				no
+has_family_tree					yes
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;						Ilkhanate
+faction						timurids
 culture						middle_eastern
 religion					islam
 symbol						models_strat/symbol_timurids.CAS
@@ -590,21 +593,9 @@ logo_index					FACTION_LOGO_TIMURIDS
 small_logo_index				SMALL_FACTION_LOGO_TIMURIDS
 triumph_value					5
 custom_battle_availability			yes
-horde_min_units				10
-horde_max_units				20
-horde_max_units_reduction_every_horde		10
-horde_unit_per_settlement_population		250
-horde_min_named_characters			2
-horde_max_percent_army_stack			80
-horde_disband_percent_on_settlement_capture	0
-horde_unit					Hoshiga Horse Archers
-horde_unit					Khorchi Horse Archers
-horde_unit					Turhagut Lancers
-horde_unit					ME Halberd Militia
-horde_unit					Nukeri Horse Archers
-can_sap						yes
+can_sap						no
 prefers_naval_invasions				yes
-can_have_princess				no
+can_have_princess				yes
 has_family_tree					yes
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

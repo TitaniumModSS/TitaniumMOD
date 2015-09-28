@@ -9106,20 +9106,20 @@ Trigger crown_spain3_hafsids
 
  Condition IsFactionLeader 
  and EndedInSettlement 
- and FactionType portugal
- and I_SettlementOwner Leon = sicily
- and I_SettlementOwner Toledo = sicily
- and I_SettlementOwner Pamplona = sicily
- and I_SettlementOwner Valencia = sicily
- and I_SettlementOwner Salamanca = sicily
- and I_SettlementOwner Murcia = sicily
- and I_SettlementOwner Burgos = sicily
- and I_SettlementOwner Cordoba = sicily
- and I_SettlementOwner Granada = sicily
- and I_SettlementOwner Zaragoza = sicily
- and I_SettlementOwner Barcelona = sicily
- and I_SettlementOwner Oran = sicily; Badajoz
- and I_SettlementOwner Seville = sicily; Seville
+ and FactionType kwarezm
+ and I_SettlementOwner Leon = kwarezm
+ and I_SettlementOwner Toledo = kwarezm
+ and I_SettlementOwner Pamplona = kwarezm
+ and I_SettlementOwner Valencia = kwarezm
+ and I_SettlementOwner Salamanca = kwarezm
+ and I_SettlementOwner Murcia = kwarezm
+ and I_SettlementOwner Burgos = kwarezm
+ and I_SettlementOwner Cordoba = kwarezm
+ and I_SettlementOwner Granada = kwarezm
+ and I_SettlementOwner Zaragoza = kwarezm
+ and I_SettlementOwner Barcelona = kwarezm
+ and I_SettlementOwner Oran = kwarezm; Badajoz
+ and I_SettlementOwner Seville = kwarezm; Seville
  and not I_WorldwideAncillaryExists crown_spain_2
  
  AcquireAncillary crown_spain_2 chance 100 
@@ -9175,33 +9175,33 @@ Trigger crown_russia
  
  AcquireAncillary crown_russia chance 100 
 ;------------------------------------------ 
-Trigger crown_russia2 
- WhenToTest CharacterTurnEnd 
- Condition IsFactionLeader 
- and EndedInSettlement 
- and FactionType kievan_rus 
- and I_SettlementOwner Novgorod = kievan_rus
- and I_SettlementOwner Yaroslavl = kievan_rus
- and I_SettlementOwner Pskov = kievan_rus
- and I_SettlementOwner Riga = kievan_rus
- and I_SettlementOwner Smolensk = kievan_rus
- and I_SettlementOwner Vilnius = kievan_rus
- and I_SettlementOwner Mensk = kievan_rus
- ;and I_SettlementOwner Ryazan = kievan_rus
- and I_SettlementOwner Bryansk = kievan_rus
- and I_SettlementOwner Kiev = kievan_rus
- and I_SettlementOwner Tmutarakan = kievan_rus
- and I_SettlementOwner Polotsk = kievan_rus
- ;and I_SettlementOwner Moscow = kievan_rus
- and I_SettlementOwner Azaq = kievan_rus
- and I_SettlementOwner Sarkel = kievan_rus
- and I_SettlementOwner Bulgar = kievan_rus
- and I_SettlementOwner Serdobinskaya = kievan_rus
- and I_SettlementOwner Murom = kievan_rus
- ;and I_SettlementOwner Kazan = kievan_rus
- and not I_WorldwideAncillaryExists crown_russia
- 
- AcquireAncillary crown_russia chance 100 
+;Trigger crown_russia2 
+; WhenToTest CharacterTurnEnd 
+; Condition IsFactionLeader 
+; and EndedInSettlement 
+; and FactionType kievan_rus 
+; and I_SettlementOwner Novgorod = kievan_rus
+; and I_SettlementOwner Yaroslavl = kievan_rus
+; and I_SettlementOwner Pskov = kievan_rus
+; and I_SettlementOwner Riga = kievan_rus
+; and I_SettlementOwner Smolensk = kievan_rus
+; and I_SettlementOwner Vilnius = kievan_rus
+; and I_SettlementOwner Mensk = kievan_rus
+; ;and I_SettlementOwner Ryazan = kievan_rus
+; and I_SettlementOwner Bryansk = kievan_rus
+; and I_SettlementOwner Kiev = kievan_rus
+; and I_SettlementOwner Tmutarakan = kievan_rus
+; and I_SettlementOwner Polotsk = kievan_rus
+; ;and I_SettlementOwner Moscow = kievan_rus
+; and I_SettlementOwner Azaq = kievan_rus
+; and I_SettlementOwner Sarkel = kievan_rus
+; and I_SettlementOwner Bulgar = kievan_rus
+; and I_SettlementOwner Serdobinskaya = kievan_rus
+; and I_SettlementOwner Murom = kievan_rus
+; ;and I_SettlementOwner Kazan = kievan_rus
+; and not I_WorldwideAncillaryExists crown_russia
+; 
+; AcquireAncillary crown_russia chance 100 
 ;------------------------------------------ 
 ;Trigger crown_russia3 
 ; WhenToTest CharacterTurnEnd 
@@ -9317,29 +9317,29 @@ Trigger crown_italy2
  
  AcquireAncillary crown_italy chance 100 
 ;------------------------------------------ 
-;Trigger crown_italy3
-; WhenToTest CharacterTurnEnd 
-; Condition IsFactionLeader 
-; and EndedInSettlement 
-; and FactionType sicily
-; and I_SettlementOwner Milan = sicily
-; and I_SettlementOwner Genoa = sicily
-; and I_SettlementOwner Bologna = sicily
-; and I_SettlementOwner Pisa = sicily
-; and I_SettlementOwner Venice = sicily
-; and I_SettlementOwner Ancona = sicily
-; and I_SettlementOwner Naples = sicily
-; and I_SettlementOwner Bari = sicily
-; and I_SettlementOwner Syracuse = sicily; Reggio
-; and I_SettlementOwner Palermo = sicily
-; and I_SettlementOwner Ajaccio = sicily
-; and I_SettlementOwner Cagliari = sicily
-; and I_SettlementOwner Nykoeping = sicily; Verona
-; and I_SettlementOwner Yelabuga = sicily; Florence
-; and I_SettlementOwner Beleb_el_Anab = sicily; Trieste
-; and not I_WorldwideAncillaryExists crown_italy
-; 
-; AcquireAncillary crown_italy chance 100 
+Trigger crown_italy3
+ WhenToTest CharacterTurnEnd 
+ Condition IsFactionLeader 
+ and EndedInSettlement 
+ and FactionType sicily
+ and I_SettlementOwner Milan = sicily
+ and I_SettlementOwner Genoa = sicily
+ and I_SettlementOwner Bologna = sicily
+ and I_SettlementOwner Pisa = sicily
+ and I_SettlementOwner Venice = sicily
+ and I_SettlementOwner Ancona = sicily
+ and I_SettlementOwner Naples = sicily
+ and I_SettlementOwner Bari = sicily
+ and I_SettlementOwner Syracuse = sicily; Reggio
+ and I_SettlementOwner Palermo = sicily
+ and I_SettlementOwner Ajaccio = sicily
+ and I_SettlementOwner Cagliari = sicily
+ and I_SettlementOwner Nykoeping = sicily; Verona
+ and I_SettlementOwner Yelabuga = sicily; Florence
+ and I_SettlementOwner Beleb_el_Anab = sicily; Trieste
+ and not I_WorldwideAncillaryExists crown_italy
+ 
+ AcquireAncillary crown_italy chance 100 
 ;------------------------------------------ 
 Trigger crown_turks
  WhenToTest CharacterTurnEnd 
@@ -9524,11 +9524,11 @@ Trigger crown_byzantium
  
  AcquireAncillary crown_byzantium chance 100 
 ;------------------------------------------ 
-Trigger crown_byzantium2 
+Trigger crown_byzantium2 ;BULGARIA
  WhenToTest CharacterTurnEnd 
  Condition IsFactionLeader 
  and EndedInSettlement 
- and FactionType byzantium 
+ and FactionType cumans 
  and I_SettlementOwner Constantinople = cumans
  and I_SettlementOwner Thessalonica = cumans
  and I_SettlementOwner Nicaea = cumans
@@ -9546,24 +9546,24 @@ Trigger crown_byzantium2
  
  AcquireAncillary crown_byzantium chance 100 
 ;------------------------------------------ 
-Trigger crown_byzantium3 
+Trigger crown_byzantium3 ;SERBIA
  WhenToTest CharacterTurnEnd 
  Condition IsFactionLeader 
  and EndedInSettlement 
- and FactionType byzantium 
- and I_SettlementOwner Constantinople = georgia
- and I_SettlementOwner Thessalonica = georgia
- and I_SettlementOwner Nicaea = georgia
- and I_SettlementOwner Athens = georgia
- and I_SettlementOwner Arta = georgia
- and I_SettlementOwner Canakkale = georgia
- and I_SettlementOwner Adrianople = georgia
- and I_SettlementOwner Smyrna = georgia
- and I_SettlementOwner Isparta = georgia
- and I_SettlementOwner Sinop = georgia
- and I_SettlementOwner Trebizond = georgia
- and I_SettlementOwner Rhodes = georgia
- and I_SettlementOwner Iraklion = georgia
+ and FactionType kievan_rus 
+ and I_SettlementOwner Constantinople = kievan_rus
+ and I_SettlementOwner Thessalonica = kievan_rus
+ and I_SettlementOwner Nicaea = kievan_rus
+ and I_SettlementOwner Athens = kievan_rus
+ and I_SettlementOwner Arta = kievan_rus
+ and I_SettlementOwner Canakkale = kievan_rus
+ and I_SettlementOwner Adrianople = kievan_rus
+ and I_SettlementOwner Smyrna = kievan_rus
+ and I_SettlementOwner Isparta = kievan_rus
+ and I_SettlementOwner Sinop = kievan_rus
+ and I_SettlementOwner Trebizond = kievan_rus
+ and I_SettlementOwner Rhodes = kievan_rus
+ and I_SettlementOwner Iraklion = kievan_rus
  and not FactionwideAncillaryExists crown_byzantium
  
  AcquireAncillary crown_byzantium chance 100 
@@ -12673,16 +12673,16 @@ Trigger machiavelli_anc_trigger
  AcquireAncillary machiavelli chance 25 
  
 ;------------------------------------------ 
-;Trigger george_of_antioch 
-; WhenToTest PostBattle 
-; Condition IsGeneral 
-; and WonBattle 
-; and BattleOdds < 1 
-; and FactionType sicily 
-; and I_EventCounter george_of_antioch_in = 1
-; 
-; AcquireAncillary george_of_antioch chance 100 
-; 
+Trigger george_of_antioch 
+ WhenToTest PostBattle 
+ Condition IsGeneral 
+ and WonBattle 
+ and BattleOdds < 1 
+ and FactionType sicily 
+ and I_EventCounter george_of_antioch_in = 1
+ 
+ AcquireAncillary george_of_antioch chance 100 
+ 
 ;------------------------------------------ 
 Trigger francis_of_assisi 
  WhenToTest GeneralJoinCrusade 
@@ -12979,7 +12979,6 @@ Trigger chancellor_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and Attribute Loyalty >= 6
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -13002,7 +13001,6 @@ Trigger chancellor_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and Attribute Loyalty >= 5
  and Trait GovernorInclination >= 1
  and EndedInSettlement
@@ -13150,7 +13148,6 @@ Trigger seneschal_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13167,7 +13164,6 @@ Trigger seneschal_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and SettlementBuildingExists >= fairground 
  and SettlementBuildingExists >= council_chambers 
@@ -13258,7 +13254,6 @@ Trigger chamberlain_mongol
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and SettlementBuildingExists >= council_chambers 
@@ -13557,7 +13552,6 @@ Trigger marshall_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13581,7 +13575,6 @@ Trigger marshall_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13760,7 +13753,6 @@ Trigger moh_mongol
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and not IsFactionLeader
  and not IsFactionHeir
@@ -13865,7 +13857,6 @@ Trigger steward_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and SettlementBuildingExists >= council_chambers 
  and FactionIsLocal ;for player only
@@ -13881,7 +13872,6 @@ Trigger steward_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and not IsFactionLeader
  and not IsFactionHeir
  and EndedInSettlement
@@ -14006,7 +13996,6 @@ Trigger treasurer_mongol_player
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and EndedInSettlement
  and RemainingMPPercentage = 100
  and IsFactionLeader
@@ -14028,7 +14017,6 @@ Trigger treasurer_mongol_ai
  and not CharFactionType egypt
  and not CharFactionType turks
  and not CharFactionType kwarezm
- and not CharFactionType sicily ;hafsids
  and not IsFactionLeader
  and not IsFactionHeir
  and Treasury > 10000
@@ -22426,7 +22414,7 @@ Trigger conquer_britain17
 
  Condition IsFactionLeader 
  and EndedInSettlement 
- and FactionType kievan_rus 
+ and FactionType moors 
  and I_SettlementOwner London = moors
  and I_SettlementOwner Nottingham = moors
  and I_SettlementOwner York = moors
@@ -28852,18 +28840,18 @@ Trigger crown_jerusalem10
  AcquireAncillary crown_jerusalem chance 100 
 
 ;------------------------------------------
-;Trigger crown_jerusalem11
-; WhenToTest CharacterTurnEnd
-; 
-; Condition IsFactionLeader 
-; and EndedInSettlement
-; and SettlementName Jerusalem
-; and FactionType sicily
-; and I_SettlementOwner Jerusalem = sicily
-; and not I_WorldwideAncillaryExists crown_jerusalem
-; 
-; AcquireAncillary crown_jerusalem chance 100 
-;
+Trigger crown_jerusalem11
+ WhenToTest CharacterTurnEnd
+ 
+ Condition IsFactionLeader 
+ and EndedInSettlement
+ and SettlementName Jerusalem
+ and FactionType sicily
+ and I_SettlementOwner Jerusalem = sicily
+ and not I_WorldwideAncillaryExists crown_jerusalem
+ 
+ AcquireAncillary crown_jerusalem chance 100 
+
 ;------------------------------------------
 Trigger crown_jerusalem12
  WhenToTest CharacterTurnEnd
