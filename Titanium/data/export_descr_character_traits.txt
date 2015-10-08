@@ -25267,6 +25267,8 @@ Trigger factionleader_normalfactions
 
  Condition not Trait FactionFutureRegent = 1
        and not Trait FactionFutureUsurper = 1
+       and not Trait FactionRegent = 1
+       and not Trait FactionUsurper = 1
        and not FactionType teutonic_order
        and not FactionType venice
        and not FactionType milan
@@ -39398,6 +39400,7 @@ and not FactionType milan
 and not FactionType sicily
 and not FactionType venice
 and not FactionType papal_states
+and not FactionType slave
 and not HasAncType office_military1
 and Trait MilitaryInclination = 1
 and Trait Military_Career_SEurope_Iberia = 0
@@ -39416,6 +39419,7 @@ and CultureType southern_european
 and not FactionType spain
 and not FactionType aragon
 and not FactionType portugal
+and not FactionType slave
 and not HasAncType office_military1
 and Trait MilitaryInclination = 1
 and Trait Military_Career_SEurope_Italy = 0
@@ -39484,6 +39488,7 @@ and not FactionType milan
 and not FactionType sicily
 and not FactionType venice
 and not FactionType papal_states
+and not FactionType slave
 and not HasAncType office_military1
 and Trait GoodCommander >= 1
 and Trait Military_Career_SEurope_Iberia = 0
@@ -39502,6 +39507,7 @@ and CultureType southern_european
 and not FactionType spain
 and not FactionType aragon
 and not FactionType portugal
+and not FactionType slave
 and not HasAncType office_military1
 and Trait GoodCommander >= 1
 and Trait Military_Career_SEurope_Italy = 0
@@ -39640,6 +39646,7 @@ and not FactionType milan
 and not FactionType sicily
 and not FactionType venice
 and not FactionType papal_states
+and not FactionType slave
 and HasAncType office_military1
 and Trait Military_Career_SEurope_Iberia2 < 1
 and Trait Military_Career_SEurope_Iberia < 2
@@ -39658,6 +39665,7 @@ and not FactionType milan
 and not FactionType sicily
 and not FactionType venice
 and not FactionType papal_states
+and not FactionType slave
 and HasAncType office_military1
 and Trait Military_Career_SEurope_Iberia2 < 1
 and Trait Military_Career_SEurope_Iberia = 2
@@ -39676,6 +39684,7 @@ and not FactionType milan
 and not FactionType sicily
 and not FactionType venice
 and not FactionType papal_states
+and not FactionType slave
 and HasAncType office_military1
 and Trait Military_Career_SEurope_Iberia2 < 1
 and Trait Military_Career_SEurope_Iberia = 3
@@ -39694,6 +39703,7 @@ and not FactionType spain
 and not FactionType aragon
 and not FactionType portugal
 and not FactionType sicily
+and not FactionType slave
 and HasAncType office_military1
 and Trait Military_Career_SEurope_Italy2 < 1
 and Trait Military_Career_SEurope_Italy < 2
@@ -39712,6 +39722,7 @@ and not FactionType spain
 and not FactionType aragon
 and not FactionType portugal
 and not FactionType sicily
+and not FactionType slave
 and HasAncType office_military1
 and Trait Military_Career_SEurope_Italy2 < 1
 and Trait Military_Career_SEurope_Italy = 2
@@ -39730,6 +39741,7 @@ and not FactionType spain
 and not FactionType aragon
 and not FactionType portugal
 and not FactionType sicily
+and not FactionType slave
 and HasAncType office_military1
 and Trait Military_Career_SEurope_Italy2 < 1
 and Trait Military_Career_SEurope_Italy = 3

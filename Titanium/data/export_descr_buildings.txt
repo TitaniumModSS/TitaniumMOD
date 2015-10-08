@@ -12436,8 +12436,16 @@ building city_hall
         agent diplomat  0  requires factions { eastern_european, }
         agent diplomat  0  requires factions { greek, }
         agent diplomat  0  requires factions { southern_european, }
+        recruit_pool "Forlorn Hope"  0   0.084   1  0  requires factions { hre, } and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Famiglia Ducale"  0   0.025   1  0  requires factions { milan, } and event_counter MATCHLOCK 1
+        recruit_pool "Kievan Palace Guard"  0   0.05   1  0  requires factions { kievan_rus, } and event_counter HEAVY_MAIL_ARMOR 1
         recruit_pool "Carroccio Standard M"  1   0.0625   1  0  requires factions { milan, }
         recruit_pool "Carroccio Standard V"  1   0.0625   1  0  requires factions { venice, }
+        
+        ;recruit_pool "English Huscarls"  0.8   0.042   1  1  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
+        ;Varangian can be retrained but not recruited before 1200
+        ;recruit_pool "Varangian Guard"  0.6   0.0358   0.9  0  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
+        recruit_pool "Varangian Guard"  0   0.0358   1  0  requires factions { byzantium, }; and event_counter HEAVY_MAIL_ARMOR 1
         
         law_bonus bonus 3
         population_health_bonus bonus 3
@@ -12469,8 +12477,10 @@ building city_hall
         recruit_pool "Carroccio Standard M"  1   0.1   2  0  requires factions { milan, }
         recruit_pool "Carroccio Standard V"  1   0.1   2  0  requires factions { venice, }
         
-        recruit_pool "English Huscarls"  1   0.05   1  1  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
-        recruit_pool "Varangian Guard"  1   0.05   1  0  requires factions { byzantium, } and event_counter HEAVY_MAIL_ARMOR 1
+        ;recruit_pool "English Huscarls"  1   0.05   1  2  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
+        ;Varangian can be retrained but not recruited before 1200
+        ;recruit_pool "Varangian Guard"  0   0.05   0.9  1  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
+        recruit_pool "Varangian Guard"  1   0.05   1  1  requires factions { byzantium, }; and event_counter HEAVY_MAIL_ARMOR 1
         
         law_bonus bonus 3
         population_health_bonus bonus 4

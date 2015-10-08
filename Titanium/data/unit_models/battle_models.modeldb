@@ -1,4 +1,4 @@
-22 serialization::archive 3 0 0 0 0 1267 0 0 
+22 serialization::archive 3 0 0 0 0 1269 0 0 
 10 mount_pony 
 1.12 0 0 3 0 0 
 52 unit_models/Mounts/Medium_Horse/mount_pony_lod0.mesh 121 
@@ -14278,7 +14278,7 @@
 66 unit_models/_Units/EN_Peasant_Padded/peasant_crossbowmen_lod1.mesh 900 
 66 unit_models/_Units/EN_Peasant_Padded/peasant_crossbowmen_lod2.mesh 2500 
 66 unit_models/_Units/EN_Peasant_Padded/peasant_crossbowmen_lod3.mesh 20000 
-9 
+10 
 6 france 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_france.texture 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
@@ -14311,11 +14311,15 @@
 84 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_papal_states.texture 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
 56 unit_sprites/papal_states_Peasant_Crossbowmen_sprite.spr 
+6 sicily 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_rebels.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
+49 unit_sprites/slave_Peasant_Crossbowmen_sprite.spr 
 5 slave 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_rebels.texture 
 79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
 49 unit_sprites/slave_Peasant_Crossbowmen_sprite.spr 
-9 
+10 
 6 france 
 68 unit_models/AttachmentSets/Final European CB Gun_france_diff.texture 
 68 unit_models/AttachmentSets/Final European CB Gun_france_norm.texture 0 
@@ -14340,6 +14344,9 @@
 12 papal_states 
 74 unit_models/AttachmentSets/Final European CB Gun_papal_states_diff.texture 
 74 unit_models/AttachmentSets/Final European CB Gun_papal_states_norm.texture 0 
+6 sicily 
+67 unit_models/AttachmentSets/Final European CB Gun_slave_diff.texture 
+67 unit_models/AttachmentSets/Final European CB Gun_slave_norm.texture 0 
 5 slave 
 67 unit_models/AttachmentSets/Final European CB Gun_slave_diff.texture 
 67 unit_models/AttachmentSets/Final European CB Gun_slave_norm.texture 0 
@@ -14356,7 +14363,7 @@
 70 unit_models/_Units/EN_Peasant_Padded/peasant_crossbowmen_ug1_lod1.mesh 900 
 70 unit_models/_Units/EN_Peasant_Padded/peasant_crossbowmen_ug1_lod2.mesh 2500 
 70 unit_models/_Units/EN_Peasant_Padded/peasant_crossbowmen_ug1_lod3.mesh 20000 
-9 
+10 
 6 france 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_france.texture 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
@@ -14389,11 +14396,15 @@
 84 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_papal_states.texture 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
 60 unit_sprites/papal_states_Peasant_Crossbowmen_ug1_sprite.spr 
+6 sicily 
+78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_rebels.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
+53 unit_sprites/slave_Peasant_Crossbowmen_ug1_sprite.spr 
 5 slave 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_rebels.texture 
 79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
 53 unit_sprites/slave_Peasant_Crossbowmen_ug1_sprite.spr 
-9 
+10 
 6 france 
 68 unit_models/AttachmentSets/Final European CB Gun_france_diff.texture 
 68 unit_models/AttachmentSets/Final European CB Gun_france_norm.texture 0 
@@ -14418,6 +14429,9 @@
 12 papal_states 
 74 unit_models/AttachmentSets/Final European CB Gun_papal_states_diff.texture 
 74 unit_models/AttachmentSets/Final European CB Gun_papal_states_norm.texture 0 
+6 sicily 
+67 unit_models/AttachmentSets/Final European CB Gun_slave_diff.texture 
+67 unit_models/AttachmentSets/Final European CB Gun_slave_norm.texture 0 
 5 slave 
 67 unit_models/AttachmentSets/Final European CB Gun_slave_diff.texture 
 67 unit_models/AttachmentSets/Final European CB Gun_slave_norm.texture 0 
@@ -14434,7 +14448,7 @@
 67 unit_models/_Units/EN_Lmail_Hmail/peasant_crossbowmen_ug2_lod1.mesh 900 
 67 unit_models/_Units/EN_Lmail_Hmail/peasant_crossbowmen_ug2_lod2.mesh 2500 
 67 unit_models/_Units/EN_Lmail_Hmail/peasant_crossbowmen_ug2_lod3.mesh 20000 
-9 
+10 
 6 france 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_france.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
@@ -14467,11 +14481,15 @@
 78 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_papal_states.texture 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal.texture 
 60 unit_sprites/papal_states_Peasant_Crossbowmen_ug2_sprite.spr 
+6 sicily 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_rebels.texture 
+73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
+53 unit_sprites/slave_Peasant_Crossbowmen_ug2_sprite.spr 
 5 slave 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_rebels.texture 
 73 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_normal8.texture 
 53 unit_sprites/slave_Peasant_Crossbowmen_ug2_sprite.spr 
-9 
+10 
 6 france 
 68 unit_models/AttachmentSets/Final European CB Gun_france_diff.texture 
 68 unit_models/AttachmentSets/Final European CB Gun_france_norm.texture 0 
@@ -14496,6 +14514,9 @@
 12 papal_states 
 74 unit_models/AttachmentSets/Final European CB Gun_papal_states_diff.texture 
 74 unit_models/AttachmentSets/Final European CB Gun_papal_states_norm.texture 0 
+6 sicily 
+67 unit_models/AttachmentSets/Final European CB Gun_slave_diff.texture 
+67 unit_models/AttachmentSets/Final European CB Gun_slave_norm.texture 0 
 5 slave 
 67 unit_models/AttachmentSets/Final European CB Gun_slave_diff.texture 
 67 unit_models/AttachmentSets/Final European CB Gun_slave_norm.texture 0 
@@ -30046,7 +30067,7 @@
 70 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/me_bodyguard_ug1_lod1.mesh 900 
 70 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/me_bodyguard_ug1_lod2.mesh 2500 
 70 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/me_bodyguard_ug1_lod3.mesh 20000 
-6 
+7 
 7 kwarezm 
 94 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_kwarezm2.texture 
 93 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_normal3.texture 
@@ -30067,11 +30088,15 @@
 94 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_kwarezm2.texture 
 93 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_normal3.texture 
 46 unit_sprites/turks_ME_Bodyguard_ug1_sprite.spr 
+8 portugal 
+91 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_mercs.texture 
+92 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_normal.texture 
+46 unit_sprites/turks_ME_Bodyguard_ug1_sprite.spr 
 5 slave 
 91 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_mercs.texture 
 92 unit_models/_Units/ME_Mail_Plate_Hvy_Mplate/textures/ME_Mail_Plate_Hvy_Mplate_normal.texture 
 46 unit_sprites/turks_ME_Bodyguard_ug1_sprite.spr 
-6 
+7 
 7 kwarezm 
 68 unit_models/AttachmentSets/Final Middle Eastern_kwarezm_diff.texture 
 66 unit_models/AttachmentSets/Final Middle Eastern_egypt_norm.texture 0 
@@ -30085,6 +30110,9 @@
 66 unit_models/AttachmentSets/Final Middle Eastern_turks_diff.texture 
 66 unit_models/AttachmentSets/Final Middle Eastern_turks_norm.texture 0 
 8 timurids 
+69 unit_models/AttachmentSets/Final Middle Eastern_timurids_diff.texture 
+69 unit_models/AttachmentSets/Final Middle Eastern_timurids_norm.texture 0 
+8 portugal 
 69 unit_models/AttachmentSets/Final Middle Eastern_timurids_diff.texture 
 69 unit_models/AttachmentSets/Final Middle Eastern_timurids_norm.texture 0 
 5 slave 
@@ -46631,10 +46659,10 @@
 84 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_papal_states.texture 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
 57 unit_sprites/papal_states_Dummy_EN_Archers_ug1_sprite.spr 
-7 ireland 
-79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_ireland.texture 
-78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal.texture 
-52 unit_sprites/ireland_Dummy_EN_Archers_ug1_sprite.spr 
+5 slave 
+77 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_mercs.texture 
+79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
+45 unit_sprites/merc_Prussian_Archers_sprite.spr 
 6 norway 
 78 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_norway.texture 
 79 unit_models/_Units/EN_Peasant_Padded/textures/EN_Peasant_Padded_normal1.texture 
@@ -46695,9 +46723,9 @@
 12 papal_states 
 74 unit_models/AttachmentSets/Final European Archer_papal_states_diff.texture 
 74 unit_models/AttachmentSets/Final European Archer_papal_states_norm.texture 0 
-7 ireland 
-69 unit_models/AttachmentSets/Final European Archer_ireland_diff.texture 
-69 unit_models/AttachmentSets/Final European Archer_ireland_norm.texture 0 
+5 slave 
+66 unit_models/AttachmentSets/Final European Archer_merc_diff.texture 
+66 unit_models/AttachmentSets/Final European Archer_merc_norm.texture 0 
 6 norway 
 68 unit_models/AttachmentSets/Final European Archer_norway_diff.texture 
 68 unit_models/AttachmentSets/Final European Archer_norway_norm.texture 0 
@@ -57648,15 +57676,22 @@
 16 norman_serjeants 
 1 1 
 60 unit_models/_Units/EN_Lmail_Hmail/norman_sergeants_lod0.mesh 20000 
-1 
+2 
 7 england 
 77 unit_models/_Units/EN_Lmail_Hmail/textures/en_lmail_hmail_normansarge.texture 
 82 unit_models/_Units/EN_Lmail_Hmail/textures/en_lmail_hmail_normansarge_norm.texture 
 53 unit_sprites/england_Dummy_EN_Spearmen_ug2_sprite.spr 
-1 
+5 slave 
+77 unit_models/_Units/EN_Lmail_Hmail/textures/en_lmail_hmail_normansarge.texture 
+82 unit_models/_Units/EN_Lmail_Hmail/textures/en_lmail_hmail_normansarge_norm.texture 
+53 unit_sprites/england_Dummy_EN_Spearmen_ug2_sprite.spr 
+2 
 7 england 
 58 unit_models/AttachmentSets/Final Kite_england_diff.texture 
 58 unit_models/AttachmentSets/Final Kite_england_norm.texture 0 
+5 slave 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
 1 
 4 None 
 10 MTW2_Spear 0 
@@ -57768,7 +57803,7 @@
 14 norman_cavalry 
 1 1 
 49 unit_models/_Units/EN_Lmail_Hmail/miles_lod0.mesh 20000 
-3 
+4 
 7 england 
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norman.texture 
 77 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norman_norm.texture 
@@ -57781,7 +57816,11 @@
 72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norman.texture 
 77 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norman_norm.texture 
 52 unit_sprites/sicily_Dummy_EN_Mail_Knights_sprite.spr 
-3 
+5 slave 
+72 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norman.texture 
+77 unit_models/_Units/EN_Lmail_Hmail/textures/EN_Lmail_Hmail_norman_norm.texture 
+52 unit_sprites/sicily_Dummy_EN_Mail_Knights_sprite.spr 
+4 
 7 england 
 58 unit_models/AttachmentSets/Final Kite_england_diff.texture 
 58 unit_models/AttachmentSets/Final Kite_england_norm.texture 0 
@@ -57791,6 +57830,9 @@
 9 jerusalem 
 60 unit_models/AttachmentSets/Final Kite_jerusalem_diff.texture 
 60 unit_models/AttachmentSets/Final Kite_jerusalem_norm.texture 0 
+5 slave 
+55 unit_models/AttachmentSets/Final Kite_merc_diff.texture 
+55 unit_models/AttachmentSets/Final Kite_merc_norm.texture 0 
 1 
 5 Horse 
 13 MTW2_HR_Lance 
@@ -61411,6 +61453,48 @@
 2 
 18 MTW2_Spear_primary 
 14 fs_test_shield 0 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+19 Turkmen_Atli_Okcusu 
+1 1
+53 unit_models/_Units/erol/Turkmen_Atli_Okcusu_lod0.mesh 6400
+1
+4 merc 
+65 unit_models/_Units/erol/textures/Turkmen_Atli_Okcusu_diff.texture
+65 unit_models/_Units/erol/textures/Turkmen_Atli_Okcusu_norm.texture 
+39 unit_sprites/turks_Turkomans_sprite.spr 
+1
+4 merc 
+62 unit_models/_Units/erol/textures/karaislam_attach_diff.texture
+62 unit_models/_Units/erol/textures/karaislam_attach_norm.texture 0
+1 
+5 Horse 
+11 MTW2_HR_Bow 
+13 MTW2_HR_Sword 2 
+19 MTW2_HR_Bow_Primary 
+14 fs_test_shield 2 
+18 MTW2_Sword_Primary 
+14 fs_test_shield 
+16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
+23 Turkmen_Atli_Okcusu_ug1 
+1 1
+57 unit_models/_Units/erol/Turkmen_Atli_Okcusu_ug1_lod0.mesh 6400
+1
+4 merc 
+57 unit_models/_Units/erol/textures/Turkmen_Alp_diff.texture
+57 unit_models/_Units/erol/textures/Turkmen_Alp_norm.texture 
+43 unit_sprites/turks_Turkomans_ug1_sprite.spr 
+1
+4 merc 
+62 unit_models/_Units/erol/textures/karaislam_attach_diff.texture
+62 unit_models/_Units/erol/textures/karaislam_attach_norm.texture 0
+1 
+5 Horse 
+11 MTW2_HR_Bow 
+13 MTW2_HR_Sword 2 
+19 MTW2_HR_Bow_Primary 
+14 fs_test_shield 2 
+18 MTW2_Sword_Primary 
+14 fs_test_shield 
 16 -0.090000004 0 0 -0.34999999 0.80000001 0.60000002 
 13 baltest_2haxe 
 1 4 

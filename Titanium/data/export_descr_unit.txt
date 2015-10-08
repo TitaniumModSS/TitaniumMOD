@@ -803,7 +803,7 @@ stat_cost        1, 1110, 600, 120, 95, 1110, 4, 180
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Feudal_Knights, Feudal_Knights, Feudal_Knights_ug1, Feudal_Knights_ug1
 ownership        england, aragon, spain, portugal, milan, venice, papal_states, hungary, slave, hre, france, scotland, denmark, norway
-era 1            england, aragon, spain, portugal, milan, venice, hungary
+era 1            england, aragon, spain, portugal, milan, venice, hungary, scotland
 recruit_priority_offset    40
 
 
@@ -948,8 +948,8 @@ stat_food        60, 300
 stat_cost        1, 1175, 600, 130, 100, 1175, 4, 230
 armour_ug_levels 22, 30, 37, 40
 armour_ug_models Chivalric_Knights, Chivalric_Knights_ug1, Chivalric_Knights_ug1, Chivalric_Knights_ug1
-ownership        denmark, spain, sicily, slave, france
-era 1            denmark, spain, sicily
+ownership        denmark, spain, sicily, slave, france, scotland
+era 1            denmark, spain, sicily, scotland
 era 2            sicily
 recruit_priority_offset    50
 
@@ -1237,8 +1237,8 @@ stat_food        60, 300
 stat_cost        14, 2475, 400, 120, 95, 2075, 4, 190
 armour_ug_levels 38, 40
 armour_ug_models Gendarmes, Gendarmes
-ownership        france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, sicily, poland
-era 2            france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, sicily, poland
+ownership        france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, sicily, poland, scotland
+era 2            france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, sicily, poland, scotland
 recruit_priority_offset    60
 
 
@@ -2564,8 +2564,8 @@ stat_food        60, 300
 stat_cost        5, 1530, 365, 120, 95, 1165, 4, 230
 armour_ug_levels 35, 40, 41, 43
 armour_ug_models Reiters, Reiters_ug1, Reiters_ug1, Reiters_ug1
-ownership        portugal, aragon, england, spain, france, hre, denmark, milan, papal_states, sicily, poland, russia, norway, hungary, venice, slave
-era 2            portugal, aragon, england, spain, france, hre, denmark, milan, papal_states, sicily, poland, russia, norway, hungary, venice
+ownership        portugal, aragon, england, spain, france, hre, denmark, milan, papal_states, sicily, poland, russia, norway, hungary, venice, scotland, slave
+era 2            portugal, aragon, england, spain, france, hre, denmark, milan, papal_states, sicily, poland, russia, norway, hungary, venice, scotland
 recruit_priority_offset    50
 
 
@@ -3400,7 +3400,7 @@ stat_food        60, 300
 stat_cost        1, 80, 80, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1, 4 
 armour_ug_models Peasant_Crossbowmen, Peasant_Crossbowmen_ug1, Peasant_Crossbowmen_ug2
-ownership        france, hre, spain, aragon, portugal, milan, venice, papal_states, slave
+ownership        france, hre, spain, aragon, portugal, milan, venice, papal_states, sicily, slave
 era 0            france, hre, spain, aragon, portugal, milan, venice, papal_states 
 era 1            france, hre, spain, aragon, portugal, milan, venice, papal_states 
 era 2            france, hre, spain, aragon, portugal, milan, venice, papal_states 
@@ -3633,8 +3633,8 @@ stat_food        60, 300
 stat_cost        1, 640, 300, 100, 75, 1085, 4, 200
 armour_ug_levels 22, 37, 40
 armour_ug_models Scots_Guard, Scots_Guard, Scots_Guard
-ownership        france
-era 2            france
+ownership        france, scotland
+era 2            france, scotland
 recruit_priority_offset    30
 
 
@@ -6711,8 +6711,8 @@ stat_food        60, 300
 stat_cost        1, 900, 480, 90, 70, 900, 4, 150
 armour_ug_levels 22, 30, 37, 40
 armour_ug_models Dismounted_Chivalric_Knights, Dismounted_Chivalric_Knights_ug1, Dismounted_Chivalric_Knights_ug1, Dismounted_Chivalric_Knights_ug1
-ownership        france, denmark, spain
-era 1            france, denmark, spain
+ownership        france, denmark, spain, scotland
+era 1            france, denmark, spain, scotland
 era 2            france
 recruit_priority_offset    35
 
@@ -9999,8 +9999,8 @@ stat_food        60, 300
 stat_cost        1, 420, 270, 90, 70, 685, 4, 180
 armour_ug_levels 24, 34, 37, 40
 armour_ug_models halberd_maa, halberd_maa_ug1, halberd_maa_ug1, halberd_maa_ug1, 
-ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order
-era 2            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order
+ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order, scotland
+era 2            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order, scotland
 recruit_priority_offset    30
 
 
@@ -12342,8 +12342,8 @@ stat_food        60, 300
 stat_cost        1, 595, 340, 100, 75, 1005, 4, 140
 armour_ug_levels 24, 34, 37, 40
 armour_ug_models Armats, Armats_ug1, Armats_ug1, Armats_ug1
-ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal
-era 1            aragon, france, denmark, spain, norway, england, hungary, poland, portugal
+ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, scotland
+era 1            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, scotland
 recruit_priority_offset    40
 
 
@@ -12417,8 +12417,8 @@ stat_food        60, 300
 stat_cost        1, 480, 270, 90, 70, 775, 4, 140
 armour_ug_levels 24, 34, 37, 40
 armour_ug_models Dismounted_Armats, Dismounted_Armats_ug1, Dismounted_Armats_ug1, Dismounted_Armats_ug1
-ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal
-era 1            aragon, france, denmark, spain, norway, england, hungary, poland, portugal
+ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, scotland
+era 1            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, scotland
 recruit_priority_offset    25
 
 
@@ -12681,7 +12681,7 @@ stat_food        60, 300
 stat_cost        1, 280, 180, 75, 55, 445, 4, 100
 armour_ug_levels 7, 14, 19
 armour_ug_models light_swordsmen, light_swordsmen_ug1, light_swordsmen_ug1
-ownership        hre, portugal, milan, venice, papal_states, hungary, poland, spain, teutonic_order, slave
+ownership        hre, portugal, milan, venice, papal_states, hungary, poland, spain, scotland, teutonic_order, slave
 recruit_priority_offset    10
 
 
@@ -12992,7 +12992,7 @@ stat_food        60, 300
 stat_cost        1, 280, 205, 85, 65, 420, 4, 130
 armour_ug_levels 7
 armour_ug_models norman_serjeants
-ownership        england
+ownership        england, slave
 era 0            england
 era 1            england
 recruit_priority_offset    5
@@ -13434,8 +13434,8 @@ stat_food        60, 300
 stat_cost        8, 1165, 225, 100, 75, 940, 4, 220
 armour_ug_levels 35, 40, 41, 43
 armour_ug_models Halberdiers, Halberdiers_ug1, Halberdiers_ug1, Halberdiers_ug1
-ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order
-era 2            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order
+ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order, scotland
+era 2            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order, scotland
 recruit_priority_offset    30 
  
 

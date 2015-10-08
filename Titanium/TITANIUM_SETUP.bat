@@ -45,6 +45,7 @@ rd data\ui\northern_european\eventpics /s /q
 rd data\ui\middle_eastern\eventpics /s /q
 rd data\ui\greek\buildings /s /q 
 rd data\ui\eastern_european\eventpics /s /q
+rd data\terrain\aerial_map /s /q
 del data\ui\northern_european\stratpage_03.tga
 del data\ui\northern_european\interface\battlepage_01.tga_mouseover.tga
 del data\ui\northern_european\interface\battlepage_02.tga
@@ -750,6 +751,13 @@ del data\sounds\events.dat
 del data\world\maps\base\map.rwm
 del data\campaign\backup\world\maps\base\map.rwm
 
+del data\models_strat\residences\textures\east_eu_minor_stone_walls.tga
+del data\models_strat\residences\textures\north_eu_minor_stone_walls.tga
+del data\models_strat\residences\textures\south_eu_minor_stone_walls.tga
+del data\models_strat\residences\textures\crusader_stone_fort.tga
+del data\models_strat\residences\textures\islamic_stone_fort.tga
+del data\models_strat\residences\textures\ne_stone_fort.tga
+
 :CHECK
 if exist "titanium_data\" (GOTO REPLACE) else (GOTO NOTFOUND)
 
@@ -772,7 +780,7 @@ ECHO Titanium campaign and submods installation...
 rmdir /s /q data\campaign
 md data\campaign
 xcopy /e /y "titanium_data" "data\"
-if not exist "titanium_music\" GOTO FINISH
+if not exist "titanium_music\" GOTO STEAM
 
 CLS
 ECHO Do you wish to install new music files?
@@ -794,6 +802,25 @@ del "data\sounds\music\(Frontend_3)_Impending_Boom.mp3"
 del "data\sounds\music\(Frontend_4)_Private_Reflection.mp3"
 xcopy /e /y "titanium_music" "data\sounds\music\"
 rmdir /s /q "titanium_music"
+
+:STEAM
+@echo off
+if not exist "steam_users\" GOTO FINISH
+CLS
+ECHO Are you using Steam version of M2TW?
+ECHO This add some extra strings.bin files needed to avoid a bug of Steam's M2TW
+ECHO.
+ECHO        1 = YES (ADD EXTRA strings.bin files)
+ECHO        2 = NO (FINISH SETUP)
+ECHO.
+
+set /p inputChoice=[1,2]?:
+if "%inputChoice%"=="1" (GOTO STEAM2) else (GOTO FINISH)
+
+:STEAM2
+@echo off
+xcopy /e /y "steam_users\text" "data\campaign\early\"
+xcopy /e /y "steam_users\text" "data\campaign\early1139\"
 
 :FINISH
 @echo off

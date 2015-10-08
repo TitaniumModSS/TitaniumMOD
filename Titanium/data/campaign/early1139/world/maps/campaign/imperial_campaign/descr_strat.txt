@@ -2952,6 +2952,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -3403,7 +3407,7 @@ character_record		HeinrichI Salier, 	male, age 63, dead 14, past_leader; (age 63
 character_record		Bertha von_Savoyen, 	female, age 81, dead 52, never_a_leader
 character_record		Heinrich Salier, 	male, age 89, dead 33, past_leader; (age 89)
 
-relative 	Leopold Babenberg,	Agnes Babenberg,	Heinrich Babenberg, Leopold von_Osterreich,	end
+relative 	Leopold Babenberg,	Agnes Babenberg,	Heinrich Babenberg,	Leopold von_Osterreich,	end
 ;
 relative 	Conrad von_Hohenstaufen,	Gerdrud von_Sulzbach,	Heinrich Berengar,	end
 relative 	Frederick von_Hohenstaufen,	Judith,	Friedrich,	Bertha,	Conrad,	end
@@ -3443,6 +3447,10 @@ settlement castle
 	}
 	building
 	{
+		type temple_catholic_castle small_chapel
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
 	}
 }
@@ -3467,6 +3475,10 @@ settlement castle
 	building
 	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3893,7 +3905,7 @@ settlement
 	}
 	building
 	{
-		type city_hall council_chambers
+		type city_hall city_hall
 	}
 	building
 	{
@@ -3907,20 +3919,24 @@ settlement
 
 settlement
 {
-	level town
+	level large_town
 	region Caffa_Province; Chersonesos Province
 
 	year_founded 0
-	population 1300
+	population 1800
 	plan_set default_set
 	faction_creator kievan_rus
 	building
 	{
-		type core_building wooden_pallisade
+		type core_building wooden_wall
 	}
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type market corn_exchange
 	}
 }
 
@@ -4314,7 +4330,7 @@ unit		Siphonatores				exp 1 armour 0 weapon_lvl 0
 
 ;Nicaea
 character	Manouil Komnenos, named character, male, age 21, x 291, y 137 
-traits LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , GoodAdministrator 2 , Greek_Edu 2 , Just 2 , PublicFaith 2 , Upright 1 , Intelligent 1 , Energetic 1 
+traits LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , NaturalMilitarySkill 1 , GoodAdministrator 2 , Greek_Edu 2 , Just 2 , PublicFaith 2 , Upright 1 , Intelligent 1 , Energetic 2 
 ancillaries mentor
 army
 unit		Greek Bodyguard				exp 6 armour 0 weapon_lvl 0
@@ -4367,7 +4383,7 @@ unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
 
 ;Adrianople
 character	AndronikosI, named character, male, age 21, x 269, y 146 
-traits LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , Greek_Edu 1 , Intelligent 1 , Royal_Blood_Greek 1 , Military_Career_In_Byzantium 2 , HatesCatholic 1 
+traits LoyaltyStarter 1 , ReligionStarter 1 , GovernorInclination 1 , Greek_Edu 1 , Intelligent 1 , Royal_Blood_Greek 1 , Military_Career_In_Byzantium 2 , HatesCatholic 1 , StrategyDread 2 , Xenophobia 1 , DeceiverVirtue 2 
 army
 unit		Greek Bodyguard				exp 0 armour 0 weapon_lvl 0
 unit		Contaratoi				exp 0 armour 0 weapon_lvl 0
@@ -5612,8 +5628,8 @@ character	Remon Berenguer, named character, heir, male, age 26, x 94, y 145
 traits FactionFutureRegent 1 , LoyaltyStarter 1 , ReligionStarter 1 , WifeIsAragonese 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Military_Edu 1 , GoodCommander 1 , Brave 1
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Jinetes					exp 2 armour 0 weapon_lvl 0
-unit		Jinetes					exp 2 armour 0 weapon_lvl 0
+unit		Alforrats					exp 2 armour 0 weapon_lvl 0
+unit		Alforrats					exp 2 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 1 armour 0 weapon_lvl 0
 unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
@@ -6292,8 +6308,8 @@ relative 	Magnus Haakonsson,	Margret,	Eystein Oysteinsen,	Sigurd Sigurdsson,	Ola
 faction	jerusalem, fortified smith
 ai_label		catholic
 denari	10000
-;denari_kings_purse	1700
-denari_kings_purse	2200
+denari_kings_purse	1700
+;denari_kings_purse	2200
 settlement
 {
 	level large_city
@@ -6550,8 +6566,6 @@ unit		Knights of Jerusalem		exp 3 armour 0 weapon_lvl 0
 unit		Knights Templar			exp 1 armour 0 weapon_lvl 0
 unit		Dismounted Knights Templar		exp 1 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
-unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
-unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
 unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
 
 ;Acre
@@ -6559,7 +6573,6 @@ character	Guillaume de_Bures, named character, male, age 33, x 330, y 83
 traits LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 3 , GoodCommander 2 
 army
 unit		NE Bodyguard				exp 0 armour 0 weapon_lvl 0
-unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
 unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
 unit		Pilgrims				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 2 weapon_lvl 0
@@ -6583,7 +6596,6 @@ unit		Armenian Infantry			exp 3 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 unit		Sergeant Spearmen			exp 6 armour 3 weapon_lvl 0
 unit		Pisan and Geonese sailors		exp 3 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Edessa
 character	Joscelin, named character, male, age 23, x 357, y 113 
@@ -6595,8 +6607,6 @@ unit		Knights of Jerusalem		exp 3 armour 0 weapon_lvl 0
 unit		Dismounted Knights Templar		exp 1 armour 0 weapon_lvl 0
 unit		Dismounted Knights Templar		exp 1 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
-unit		Sergeant Spearmen			exp 3 armour 3 weapon_lvl 0
-unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 unit		Peasant Archers				exp 3 armour 2 weapon_lvl 0
 
 ;Tripoli, Levant
@@ -6631,7 +6641,6 @@ army
 unit		Dismounted Knights Hospitaller		exp 1 armour 0 weapon_lvl 0
 unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
 unit		Sergeant Spearmen			exp 1 armour 3 weapon_lvl 0
-unit		Crossbow Militia			exp 0 armour 2 weapon_lvl 0
 unit		Crossbow Militia			exp 0 armour 2 weapon_lvl 0
 
 character	Claude de_Pise, admiral, male, age 39, x 327, y 79 
@@ -9489,7 +9498,7 @@ unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
 ;London
 character	sub_faction england, Stephen de_Blois, named character, male, age 47, x 77, y 216
-traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_English 1 , Offensive_To_Nobles 2 
+traits Factionleader 2 , LoyaltyStarter 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodCommander 2 , ReligionStarter 1 , Royal_Blood_English 1 , Offensive_To_Nobles 2 
 army
 unit		NE Bodyguard				exp 4 armour 0 weapon_lvl 0
 unit		Norman Cavalry				exp 2 armour 0 weapon_lvl 0

@@ -3314,10 +3314,11 @@ Trigger TurksBig
     WhenToTest FactionTurnStart
 
     Condition FactionType turks
-	and I_NumberOfSettlements turks > 10
+	;and I_NumberOfSettlements turks > 10
+	and I_NumberOfSettlements turks > 8 ; to instigate more animosity early on
 
     FactionStanding factions { egypt } normalise -1 80
-    FactionStanding factions { kwarezm, georgia } normalise -1 100
+    FactionStanding factions { kwarezm, timurids, georgia } normalise -1 100
 
 ;------------------------------------------
 Trigger Egypt
@@ -3672,9 +3673,10 @@ Trigger KwarezmBig
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
-	and I_NumberOfSettlements kwarezm > 10
+	;and I_NumberOfSettlements kwarezm > 10
+	and I_NumberOfSettlements kwarezm > 8 ; to instigate more animosity early on
 
-    FactionStanding factions { turks } normalise -1 80
+    FactionStanding factions { turks, timurids } normalise -1 80
     FactionStanding factions { egypt } normalise -1 100
 ;------------------------------------------
 Trigger Papal_States

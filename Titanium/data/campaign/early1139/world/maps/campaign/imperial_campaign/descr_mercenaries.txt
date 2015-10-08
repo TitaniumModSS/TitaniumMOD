@@ -16,6 +16,7 @@ pool Scotland
 	unit Crusader Sergeants			exp 1 cost 110 replenish 0.15 - 0.5 max 4 initial 0 religions { catholic } crusading
 	unit Highland Pikemen Mercs		exp 1 cost 470 replenish 0.03 - 0.09 max 2 initial 1 events { new_era_begins }
 	unit Gwent Raiders			exp 0 cost 255 replenish 0.06 - 0.18 max 2 initial 0 start_year 1100
+	unit English Huscarls			exp 4 cost 505 replenish 0.03 - 0.09 max 1 initial 1 end_year 1160
 
 pool Ireland
 	regions Dublin_Province
@@ -26,6 +27,7 @@ pool Ireland
 	unit Galloglaich Mercs			exp 2 cost 430 replenish 0.04 - 0.13 max 2 initial 0
 	unit Pilgrims				exp 0 cost 35 replenish 0.06 - 0.18 max 1 initial 1 religions { catholic } crusading
 	unit Crusader Sergeants			exp 1 cost 110 replenish 0.08 - 0.24 max 4 initial 0 religions { catholic } crusading
+	unit English Huscarls			exp 4 cost 505 replenish 0.03 - 0.09 max 1 initial 1 end_year 1160
 
 pool England_Wales
 	regions York_Province Caernarvon_Province Nottingham_Province London_Province Winchester_Province
@@ -39,7 +41,7 @@ pool England_Wales
 	unit Crusader Sergeants			exp 0 cost 150 replenish 0.07 - 0.17 max 3 initial 0 religions { catholic } crusading
 	unit Welsh Longbowmen			exp 4 cost 490 replenish 0.08 - 0.25 max 3 initial 0 start_year 1180
 	unit Welsh Spearmen			exp 1 cost 265 replenish 0.06 - 0.18 max 2 initial 1
-	unit English Huscarls			exp 4 cost 505 replenish 0.06 - 0.18 max 2 initial 0 end_year 1180
+	unit English Huscarls			exp 4 cost 505 replenish 0.06 - 0.18 max 1 initial 1 end_year 1145
 	unit Gwent Raiders			exp 0 cost 255 replenish 0.06 - 0.18 max 2 initial 0
 
 pool Scandinavia
@@ -382,6 +384,7 @@ pool East_Greece
 	unit Crusader Sergeants			exp 0 cost 150 replenish 0.07 - 0.17 max 3 initial 0 religions { catholic } crusading
 	unit Dismounted Crusader Knights	exp 0 cost 220 replenish 0.07 - 0.17 max 2 initial 0 religions { catholic } crusading
 	unit Armenian Infantry			exp 0 cost 270 replenish 0.04 - 0.13 max 1 initial 0 start_year 1160
+	unit English Huscarls			exp 4 cost 505 replenish 0.06 - 0.18 max 1 initial 1 religions { orthodox } end_year 1145
 
 pool West_Greece
 	regions Thessalonica_Province Arta_Province Durazzo_Province Corinth_Province

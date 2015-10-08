@@ -3383,6 +3383,10 @@ settlement castle
 	}
 	building
 	{
+		type temple_catholic_castle small_chapel
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
 	}
 }
@@ -3407,6 +3411,10 @@ settlement castle
 	building
 	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3439,6 +3447,12 @@ traits LoyaltyStarter 1 , NaturalMilitarySkill 1 , MilitaryInclination 1 , GoodC
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
+
+;Bristol Province Fort (Winchester)
+character	Bernard, general, male, age 21, x 68, y 213 
+army
+unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Caen Province Fort (Le_Mans)
@@ -3795,7 +3809,7 @@ settlement
 	}
 	building
 	{
-		type city_hall council_chambers
+		type city_hall city_hall
 	}
 	building
 	{
@@ -3809,13 +3823,21 @@ settlement
 
 settlement
 {
-	level village
+	level large_town
 	region Caffa_Province; Chersonesos Province
 
 	year_founded 0
-	population 900
+	population 1800
 	plan_set default_set
 	faction_creator kievan_rus
+	building
+	{
+		type core_building wooden_wall
+	}
+	building
+	{
+		type market corn_exchange
+	}
 }
 
 settlement castle
@@ -6344,7 +6366,7 @@ settlement
 	}
 	building
 	{
-		type barracks town_watch
+		type barracks town_guard
 	}
 	building
 	{
@@ -6877,6 +6899,10 @@ settlement
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -8881,12 +8907,6 @@ unit		Irish Kerns				exp 2 armour 0 weapon_lvl 0
 unit		Irish Kerns				exp 1 armour 0 weapon_lvl 0
 unit		Galloglaich Mercs			exp 1 armour 0 weapon_lvl 0
 unit		Galloglaich Mercs			exp 0 armour 0 weapon_lvl 0
-
-;Bristol Province Fort (Winchester)
-character	sub_faction england, Bernard, general, male, age 21, x 68, y 213 
-army
-unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
-unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
 ;*ITALY*
 ;Milan
