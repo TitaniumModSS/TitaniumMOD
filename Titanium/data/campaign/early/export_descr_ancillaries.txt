@@ -8825,15 +8825,17 @@ Ancillary crown_poland_2
 ;------------------------------------------ 
 Ancillary hre_elector_frankfurt ;Archbishop of Mainz
  Type hre_elector2
- Transferable 1
+ Transferable 0 ;1
  Image elector_mainz.tga
  Description hre_elector_desc
+ Effect Authority 1
 ;------------------------------------------ 
 Ancillary hre_elector_cologne ;Archbishop of Cologne
  Type hre_elector6
- Transferable 1
+ Transferable 0 ;1
  Image elector_cologne.tga
  Description hre_elector_desc
+ Effect Command 1
 ;------------------------------------------ 
 Ancillary hre_elector_prague ; Kingdom of Bohemia
  Type hre_elector1
@@ -8861,9 +8863,10 @@ Ancillary hre_elector_frankfurt2 ; County Palatine of the Rhine
 ;------------------------------------------ 
 Ancillary hre_elector_metz ; Archbishop of Trier
  Type hre_elector7
- Transferable 1
+ Transferable 0 ;1
  Image elector_trier.tga
  Description hre_elector_desc
+ Effect Loyalty 1
 ;------------------------------------------ 
 ;------------------------------------------ 
 ;Ancillary hre_elector_orb

@@ -30,7 +30,6 @@ declare_counter tarnovo_courtesan_id
 ;Cities where courtesans are available:
 monitor_event PreFactionTurnStart TrueCondition
  and I_TurnNumber < 1
-	set_event_counter rlc_event 1
 	console_command create_building Constantinople royal_court
 	console_command create_building London royal_court
 	console_command create_building Frankfurt royal_court

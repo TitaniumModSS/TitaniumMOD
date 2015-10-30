@@ -16,6 +16,7 @@
 		<percentage_pool_reduction_exterminate uint="100"/>
 		<max_agents_per_turn uint="1"/>
 	</recruitment>
+	<!-- KER Conversion rates at 0.5x, it takes twice as much time than normal -->
 	<religion>
 		<max_witches_per_region uint="1"/>
 		<max_witches uint="15"/>
@@ -24,14 +25,14 @@
 		<max_heretics_conversion_modifier float="1.0"/>
 		<max_inquisitors_per_region uint="1"/>
 		<max_inquisitors uint="12"/>
-		<heretic_conversion_rate_modifier float="0.0075"/>
-		<heretic_conversion_rate_offset float="0.025"/>
+		<heretic_conversion_rate_modifier float="0.00375"/>
+		<heretic_conversion_rate_offset float="0.0125"/>
 		<witch_conversion_rate_modifier float="0.0"/>
-		<witch_conversion_rate_offset float="0.02"/>
-		<inquisitor_conversion_rate_modifier float="0.010"/>
-		<inquisitor_conversion_rate_offset float="0.04"/>
-		<priest_conversion_rate_modifier float="0.004"/>
-		<priest_conversion_rate_offset float="0.015"/>
+		<witch_conversion_rate_offset float="0.01"/>
+		<inquisitor_conversion_rate_modifier float="0.005"/>
+		<inquisitor_conversion_rate_offset float="0.02"/>
+		<priest_conversion_rate_modifier float="0.002"/>
+		<priest_conversion_rate_offset float="0.0075"/>
 		<witch_creation_modifier float="2.0"/>
 		<heretic_creation_modifier float="0.2"/>
 		<inquisitor_creation_modifier float="0.1"/>
@@ -105,7 +106,7 @@
 		<captive_ransom_chance_chiv_mod float="6.67"/>
 		<captive_ransom_chance_tm_mod float="-10.0"/>
 		<captive_ransom_chance_msm_mod float="10.0"/>
-		<captive_ransom_for_slave bool="false"/>
+		<captive_ransom_for_slave bool="true"/>
 	</ransom>
 	<autoresolve>
 		<min_capture_percent float="5.0"/>
@@ -135,9 +136,9 @@
 		<no_towers_only_for_city_level string="huge_city"/>
 		<no_towers_only_for_castle_level string="moot_and_bailey"/>
 		<min_turn_keep_rebel_garrison int="5"/>
-		<destroy_empty_forts bool="true"/>
+		<destroy_empty_forts bool="false"/>
 		<can_build_forts bool="true"/>
-		<fort_fortification_level string="1"/>
+		<fort_fortification_level string="3"/>
 	</settlement>
 	<revolt>
 		<end_turn_modifier float="2"/>

@@ -497,8 +497,8 @@ resource	wine,	25,	144
 resource	iron,	367,	9
 
 ;Beleb_el_Anab_Province; Laibach
-resource	fish,	176,	175;*NEW*
-resource	silver,	176,	172;*NEW*Trieste Fort Toll
+resource	fish,	176,	173;*NEW*
+;resource	silver,	176,	172;*NEW*Trieste Fort Toll
 
 ;Astrakhan_Province
 resource	sulfur,	434,	181
@@ -539,7 +539,7 @@ resource	amber,	234,	224
 resource	grain,	168,	158
 
 ;Athens_Province; Zara Province
-resource	silver,	197,	160;*NEW*Spalato Fort Toll
+;resource	silver,	197,	160;*NEW*Spalato Fort Toll
 
 ;Bergen_Province
 resource	fish,	114,	279
@@ -2261,7 +2261,7 @@ relative 	Tugor of_the_Oghuz,	Checheg,	Bonyak of_the_Oghuz,	Otrak of_the_Oghuz,	
 
 faction	turks, balanced smith
 ai_label		islam
-denari	10000
+denari	15000
 denari_kings_purse	2200
 settlement
 {
@@ -3078,7 +3078,7 @@ relative 	LouisI Capet,	Ade#laide de_Savoie,	Louis Capet,	Robert de_Dreux,	Const
 
 faction	hre, balanced smith
 ai_label		catholic
-denari	20000
+denari	10000
 denari_kings_purse	2500
 settlement
 {
@@ -3314,7 +3314,7 @@ unit		Spear Militia				exp 0 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 0 armour 0 weapon_lvl 0
 
 ;Staufen Province Fort (Speyer)
-character	Friedrich, named character, male, heir, age 17, x 138, y 200, label hre4heir 
+character	FriedrichI von_Hohenstaufen, named character, male, heir, age 17, x 138, y 200, label hre4heir 
 traits Factionheir 1 , LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Western_Edu 2 , GoodCommander 1 , GoodAdministrator 1 , Intelligent 3 , Feck 1 , HaleAndHearty 7 , Energetic 2 , Royal_Blood_HRE 1 
 army
 unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
@@ -3389,7 +3389,7 @@ traits NaturalSpySkill 1
 character	Peter von_Koln, priest, male, age 45, x 136, y 214 
 traits NaturalPriestSkill 1 , StrongFaith 3 , PriestLevel 1 
 
-character		Bertha, princess, female, age 16, x 132, y 190 
+character	Bertha, princess, female, age 16, x 132, y 190 
 traits IAmPrincess 1 , NaturalPrincess 2 , GoodPrincess 1 , Princess_Royal_Blood_HRE 1 
 
 character_record		Agnes Babenberg, 	female, age 67, alive, never_a_leader; (age 67)
@@ -3410,7 +3410,7 @@ character_record		Heinrich Salier, 	male, age 89, dead 33, past_leader; (age 89)
 relative 	Leopold Babenberg,	Agnes Babenberg,	Heinrich Babenberg,	Leopold von_Osterreich,	end
 ;
 relative 	Conrad von_Hohenstaufen,	Gerdrud von_Sulzbach,	Heinrich Berengar,	end
-relative 	Frederick von_Hohenstaufen,	Judith,	Friedrich,	Bertha,	Conrad,	end
+relative 	Frederick von_Hohenstaufen,	Judith,	FriedrichI von_Hohenstaufen,	Bertha,	Conrad,	end
 relative 	Friedrich von_Hohenstaufen,	Agnes Salier,	Frederick von_Hohenstaufen,	Conrad von_Hohenstaufen,	end
 ;
 relative 	HeinrichI Salier,	Matilde,	end
@@ -3574,10 +3574,10 @@ character_record		Geoffrey, 	male, age 5, alive, never_a_leader
 character_record		Henry, 	male, age 6, alive, current_heir
 character_record		Maud de_Normandie, 	female, age 37, alive, never_a_leader
 ;
-character_record		William de_Normandie, 	male, age 36, dead 19, past_leader
+character_record		William de_Normandie, 	male, age 36, dead 19, never_a_leader
 ;
 character_record		Matilda, 	female, age 59, dead 21, never_a_leader
-character_record		Henry de_Normandie, 	male, age 71, dead 4, never_a_leader
+character_record		Henry de_Normandie, 	male, age 71, dead 4, past_leader
 
 relative 	Robert of_Gloucestre,	Mabel of_Gloucestre,	William of_Gloucestre,	end
 relative 	Geoffrey d_Anjou,	Maud de_Normandie,	Henry,	Geoffrey,	William,	end
@@ -9216,6 +9216,12 @@ unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
 unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
 
+;Caen Province Fort (Rouen)
+character	sub_faction england, Richard, general, male, age 21, x 85, y 202 
+army
+unit		Fyrd Spearmen				exp 1 armour 0 weapon_lvl 0
+unit		Peasant Archers				exp 1 armour 0 weapon_lvl 0
+
 ;*CENTRAL EUROPE*
 ;Prague
 character	sub_faction hre, Wilhelm von_Bohmen, named character, male, age 23, x 181, y 207 
@@ -9619,7 +9625,7 @@ unit		Peasant Crossbowmen			exp 0 armour 0 weapon_lvl 0
 unit		Peasant Crossbowmen			exp 0 armour 0 weapon_lvl 0
 
 ;Laibach Province Fort (Trieste)
-character	sub_faction milan, Alberto, general, male, age 23, x 176, y 172 
+character	sub_faction milan, Alberto, general, male, age 23, x 177, y 174 
 army
 unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 0 armour 0 weapon_lvl 0
@@ -10954,43 +10960,43 @@ faction_relationships 	slave, at_war_with 	hungary, spain, aragon, byzantium, li
 
 ; BRITAIN
 region Inverness_Province
-fort 53 266 stone_fort_b culture northern_european
+fort 53 266 stone_fort_b culture european
 
 region Eikundarsund_Province; Scottish Isles Province, Kirkjuvagr
-fort 45 236 stone_fort_b culture northern_european
+fort 45 236 stone_fort_b culture european
 
 region Edinburgh_Province
-fort 47 247 stone_fort_b culture northern_european
-fort 42 241 stone_fort_b culture northern_european
-fort 62 257 stone_fort_b culture northern_european
+fort 47 247 stone_fort_b culture european
+fort 42 241 stone_fort_b culture european
+fort 62 257 stone_fort_b culture european
 
 region York_Province
-fort 64 246 stone_fort_b culture northern_european
+fort 64 246 stone_fort_b culture european
 
 ;region Nottingham_Province
 
 ;region London_Province
 
 region Winchester_Province
-fort 68 213 stone_fort_b culture northern_european
-fort 52 211 stone_fort_b culture northern_european
+fort 68 213 stone_fort_b culture european
+fort 52 211 stone_fort_b culture european
 
 region Caernarvon_Province
-fort 56 218 stone_fort_b culture northern_european
+fort 56 218 stone_fort_b culture european
 
 region Dublin_Province
-fort 31 233 stone_fort_b culture northern_european
-fort 13 230 stone_fort_b culture northern_european
-fort 17 220 stone_fort_b culture northern_european
+fort 31 233 stone_fort_b culture european
+fort 13 230 stone_fort_b culture european
+fort 17 220 stone_fort_b culture european
 
 ; SCANDINAVIA
 ;region Oslo_Province
 
 region Arhus_Province
-fort 141 244 stone_fort_b culture northern_european
+fort 141 244 stone_fort_b culture european
 
 region Bergen_Province
-fort 121 267 stone_fort_b culture northern_european
+fort 121 267 stone_fort_b culture european
 
 ;region Visby_Province
 
@@ -10999,19 +11005,19 @@ fort 121 267 stone_fort_b culture northern_european
 ;region Lund_Province
 
 region Kalmar_Province
-fort 201 269 stone_fort_b culture northern_european
-fort 206 276 stone_fort_b culture northern_european
-fort 175 265 stone_fort_b culture northern_european
+fort 201 269 stone_fort_b culture european
+fort 206 276 stone_fort_b culture european
+fort 175 265 stone_fort_b culture european
 
 ; RUSLAND-STEPPES
 region Novgorod_Province
-fort 338 256 stone_fort_c culture eastern_european
-fort 326 264 stone_fort_c culture eastern_european
+fort 338 256 stone_fort_c culture european
+fort 326 264 stone_fort_c culture european
 
 ;region Pskov_Province
 
 region Polotsk_Province
-fort 275 234 stone_fort_c culture eastern_european
+fort 275 234 stone_fort_c culture european
 
 ;region Hrodna_Province
 
@@ -11020,75 +11026,75 @@ fort 275 234 stone_fort_c culture eastern_european
 ;region Zhytomyr_Province; Volhynia Province, Volodymyr
 
 region Halych_Province
-fort 257 196 stone_fort_c culture eastern_european
+fort 257 196 stone_fort_c culture european
 
 region Kiev_Province
-fort 283 208 stone_fort_c culture eastern_european
+fort 283 208 stone_fort_c culture european
 
 region Bryansk_Province; Chernihivskyi Province, Chernigov
-fort 325 231 stone_fort_c culture eastern_european
-fort 317 221 stone_fort_c culture eastern_european
+fort 325 231 stone_fort_c culture european
+fort 317 221 stone_fort_c culture european
 
 region Pereyaslav_Province
-fort 326 204 stone_fort_c culture eastern_european
+fort 326 204 stone_fort_c culture european
 
 ;region Smolensk_Province
 
 region Yaroslavl_Province; Sarskoye Province, Rostov
-fort 348 248 stone_fort_c culture eastern_european
-fort 365 261 stone_fort_c culture eastern_european
-fort 368 253 stone_fort_c culture eastern_european
+fort 348 248 stone_fort_c culture european
+fort 365 261 stone_fort_c culture european
+fort 368 253 stone_fort_c culture european
 
 region Murom_Province
-fort 363 240 stone_fort_c culture eastern_european
-fort 377 239 stone_fort_c culture eastern_european
+fort 363 240 stone_fort_c culture european
+fort 377 239 stone_fort_c culture european
 
 ;region Oleshe_Province
 
 region Caffa_Province; Taurica Province, Chersonesos
-fort 330 170 bz_fort_m culture greek
+fort 330 170 bz_fort_m culture european
 
 ;region Azaq_Province
 
 ;region Astrakhan_Province
 
 region Serdobinskaya_Province; Burtaslaria Province, Voronezh
-fort 350 202 stone_fort_c culture eastern_european
+fort 350 202 stone_fort_c culture european
 
 region Bulgar_Province
-fort 435 267 stone_fort_c culture eastern_european
-fort 431 247 stone_fort_c culture eastern_european
-fort 440 241 stone_fort_c culture eastern_european
-fort 452 247 stone_fort_c culture eastern_european
+fort 435 267 stone_fort_c culture european
+fort 431 247 stone_fort_c culture european
+fort 440 241 stone_fort_c culture european
+fort 452 247 stone_fort_c culture european
 
 region Jaiksk_Province; Aktobe Province
-fort 395 224 stone_fort_c culture eastern_european
-fort 418 221 stone_fort_c culture eastern_european
-fort 447 214 stone_fort_c culture eastern_european
-fort 495 195 stone_fort_c culture eastern_european
+fort 395 224 stone_fort_c culture european
+fort 418 221 stone_fort_c culture european
+fort 447 214 stone_fort_c culture european
+fort 495 195 stone_fort_c culture european
 
 ; EASTERN EUROPE
 region Krakow_Province
-fort 241 214 stone_fort_c culture eastern_european
+fort 241 214 stone_fort_c culture european
 
 ;region Khiva_Province; Poznan Province
 
 ;region Wroclaw_Province
 
 region Plock_Province
-fort 210 228 stone_fort_c culture eastern_european
+fort 210 228 stone_fort_c culture european
 
 ;region Thorn_Province; Kdanzk
 
 ;region Stettin_Province
 
 region Riga_Province
-fort 271 264 stone_fort_c culture eastern_european
+fort 271 264 stone_fort_c culture european
 
 ;region Reval_Province
 
 region Vilnius_Province; Kaunas
-fort 257 240 stone_fort_c culture eastern_european
+fort 257 240 stone_fort_c culture european
 
 ;region Palanga_Province; Twangste Province
 
@@ -11099,54 +11105,54 @@ fort 257 240 stone_fort_c culture eastern_european
 ;region Esztergom_Province
 
 region Kassa_Province
-fort 209 197 stone_fort_c culture eastern_european
+fort 209 197 stone_fort_c culture european
 
 ;region Varad_Province
 
 region Brasov_Province; Gyulafehevar Province
-fort 261 176 stone_fort_c culture eastern_european
+fort 261 176 stone_fort_c culture european
 
 region Targoviste_Province
-fort 243 166 stone_fort_c culture eastern_european
+fort 243 166 stone_fort_c culture european
 
 region Baia_Province; Iasi
-fort 266 188 stone_fort_c culture eastern_european
+fort 266 188 stone_fort_c culture european
 
 ; CENTRAL EUROPE
 ;region Magdeburg_Province; Brandenburg Province
 
 region Hamburg_Province; Saxony Province, Bremen
-fort 149 231 holyr_fort_b culture northern_european
+fort 149 231 holyr_fort_b culture european
 
 region Embi_Province; Thuringia Province, Erfurt
-fort 161 220 holyr_fort_b culture northern_european
+fort 161 220 holyr_fort_b culture european
 
 region Damghan_Province; Mecklenburg Province, Liubice/Lubeck
-fort 164 235 holyr_fort_b culture northern_european
+fort 164 235 holyr_fort_b culture european
 
 region Cologne_Province
-fort 121 210 holyr_fort_b culture northern_european
+fort 121 210 holyr_fort_b culture european
 
 region Frankfurt_Province
-fort 141 217 holyr_fort_b culture northern_european
+fort 141 217 holyr_fort_b culture european
 
 ;region Nuremburg_Province
 
 region Staufen_Province
-fort 138 200 holyr_fort_b culture northern_european
+fort 138 200 holyr_fort_b culture european
 
 ;region Groningen_Province; Holland Province, Utrecht
 
 region Skara_Province; Friesland Province, Groningen
-fort 119 229 holyr_fort_b culture northern_european
+fort 119 229 holyr_fort_b culture european
 
 region Vienna_Province
-fort 181 184 holyr_fort_b culture northern_european
+fort 181 184 holyr_fort_b culture european
 
 ;region Salzburg_Province
 
 region Bern_Province; Zurich Province
-fort 132 184 holyr_fort_b culture northern_european
+fort 132 184 holyr_fort_b culture european
 
 ;region Innsbruck_Province
 
@@ -11154,16 +11160,16 @@ fort 132 184 holyr_fort_b culture northern_european
 ;region Bruges_Province; Artois Province, Arras
 
 region Antwerp_Province; Flanders Province, Ghent
-fort 101 214 stone_fort_b culture northern_european
+fort 101 214 stone_fort_b culture european
 
 region Sharjah_Province; Brabant Province, Leuven
-fort 110 214 stone_fort_b culture northern_european
+fort 110 214 stone_fort_b culture european
 
 region Metz_Province
-fort 126 202 stone_fort_b culture northern_european
+fort 126 202 stone_fort_b culture european
 
 region Rheims_Province
-fort 106 194 stone_fort_b culture northern_european
+fort 106 194 stone_fort_b culture european
 
 ;region Dijon_Province
 
@@ -11172,7 +11178,8 @@ fort 106 194 stone_fort_b culture northern_european
 ;region Khlynov_Province; Orleanais Province, Orleans
 
 region Caen_Province
-fort 79 191 stone_fort_b culture northern_european
+fort 79 191 stone_fort_b culture european
+fort 85 202 stone_fort_b culture european
 
 ;region Angers_Province
 
@@ -11189,14 +11196,14 @@ fort 79 191 stone_fort_b culture northern_european
 ;region Lyon_Province
 
 region Marseille_Province; Arles
-fort 117 158 stone_fort_b culture northern_european
+fort 117 158 stone_fort_b culture european
 
 ; BALKANS
 region Zagreb_Province; Knin
-fort 192 176 stone_fort_c culture eastern_european
+fort 192 176 stone_fort_c culture european
 
 region Ryazan_Province; Raska Province, Ras
-fort 225 167 stone_fort_c culture eastern_european
+fort 225 167 stone_fort_c culture european
 
 ;region Sofia_Province; Sredets
 
@@ -11205,20 +11212,20 @@ fort 225 167 stone_fort_c culture eastern_european
 ;region Adrianople_Province
 
 region Corinth_Province
-fort 249 119 bz_fort_m culture greek
+fort 249 119 bz_fort_m culture european
 
 region Thessalonica_Province
-fort 231 148 bz_fort_m culture greek
+fort 231 148 bz_fort_m culture european
 
 region Arta_Province
-fort 234 124 bz_fort_m culture greek
+fort 234 124 bz_fort_m culture european
 
 ;region Durazzo_Province
 
 ;region Ragusa_Province
 
 region Athens_Province; Dalmatia Province, Zara
-fort 197 160 stone_fort_c culture eastern_european
+fort 197 160 stone_fort_c culture european
 
 ;region Belgrade_Province; Nysos
 
@@ -11227,8 +11234,8 @@ fort 197 160 stone_fort_c culture eastern_european
 ;region Moscow_Province; Duklja Province, Shkoder
 
 region Scopia_Province; Tarnovo
-fort 282 164 stone_fort_c culture eastern_european
-fort 268 154 stone_fort_b bz_fort_m culture greek
+fort 282 164 stone_fort_c culture european
+fort 268 154 stone_fort_b bz_fort_m culture european
 
 ;region Iraklion_Province
 
@@ -11236,7 +11243,7 @@ fort 268 154 stone_fort_b bz_fort_m culture greek
 ;region Rome_Province
 
 region Pisa_Province; Pisa-Ajaccio Province
-fort 141 148 stone_fort_d culture southern_european
+fort 141 148 stone_fort_d culture european
 
 ;region Bologna_Province
 
@@ -11245,7 +11252,7 @@ fort 141 148 stone_fort_d culture southern_european
 ;region Nykoeping_Province; Tuscany Province, Florence
 
 region Milan_Province
-fort 133 170 stone_fort_d culture southern_european
+fort 133 170 stone_fort_d culture european
 
 ;region Ajaccio_Province; Cote-d'Azur Province, Nice
 
@@ -11254,26 +11261,26 @@ fort 133 170 stone_fort_d culture southern_european
 ;region Venice_Province
 
 region Beleb_el_Anab_Province; Carniola Province, Laibach
-fort 176 172 stone_fort_d culture southern_european
+fort 177 174 stone_fort_d culture european
 
 ;region Naples_Province
 
 region Bari_Province
-fort 202 138 stone_fort_d culture southern_european
+fort 202 138 stone_fort_d culture european
 
 ;region Ancona_Province
 
 ;region Syracuse_Province; Calabria Province, Reggio
 
 region Palermo_Province
-fort 187 113 stone_fort_d culture southern_european
+fort 187 113 stone_fort_d culture european
 
 region Cagliari_Province
-fort 144 141 stone_fort_d culture southern_european
+fort 144 141 stone_fort_d culture european
 
 ; IBERIA
 region Leon_Province
-fort 37 142 stone_fort_d culture southern_european
+fort 37 142 stone_fort_d culture european
 
 ;region Salamanca_Province; Galicia Province, Santiago de Compostela
 
@@ -11284,7 +11291,7 @@ fort 37 142 stone_fort_d culture southern_european
 ;region Pamplona_Province
 
 region Zaragoza_Province
-fort 75 150 stone_fort_d culture southern_european
+fort 75 150 stone_fort_d culture european
 
 ;region Barcelona_Province
 
@@ -11312,33 +11319,33 @@ fort 75 150 stone_fort_d culture southern_european
 
 ; AFRICA
 region Fes_Province
-fort 38 103 bz_fort_m culture middle_eastern
-fort 56 100 bz_fort_m culture middle_eastern
+fort 38 103 bz_fort_m culture african_asian
+fort 56 100 bz_fort_m culture african_asian
 
 region Marrakesh_Province
-fort 16 66 bz_fort_m culture middle_eastern
+fort 16 66 bz_fort_m culture african_asian
 
 region Melilla_Province; Tlemcen
-fort 46 71 bz_fort_m culture middle_eastern
-fort 74 103 bz_fort_m culture middle_eastern
-fort 83 98 bz_fort_m culture middle_eastern
+fort 46 71 bz_fort_m culture african_asian
+fort 74 103 bz_fort_m culture african_asian
+fort 83 98 bz_fort_m culture african_asian
 
 region Algiers_Province
-fort 110 99 bz_fort_m culture middle_eastern
-fort 111 111 bz_fort_m culture middle_eastern
-fort 125 106 bz_fort_m culture middle_eastern
-fort 133 112 bz_fort_m culture middle_eastern
+fort 110 99 bz_fort_m culture african_asian
+fort 111 111 bz_fort_m culture african_asian
+fort 125 106 bz_fort_m culture african_asian
+fort 133 112 bz_fort_m culture african_asian
 
 region Tunis_Province
-fort 149 103 bz_fort_m culture middle_eastern
+fort 149 103 bz_fort_m culture african_asian
 
 region Al-Mahdiya_Province
-fort 155 97 bz_fort_m culture middle_eastern
+fort 155 97 bz_fort_m culture african_asian
 
 ;region Tripoli_Province; Tarabulus, Maghreb
 
 region Benghazi_Province
-fort 250 76 bz_fort_m culture middle_eastern
+fort 250 76 bz_fort_m culture african_asian
 
 ;region Alexandria_Province
 
@@ -11350,7 +11357,7 @@ fort 250 76 bz_fort_m culture middle_eastern
 
 ; CAUCASUS
 region Sarkel_Province
-fort 409 168 stone_fort_c culture eastern_european
+fort 409 168 stone_fort_c culture european
 
 ;region Tmutarakan_Province
 
@@ -11359,13 +11366,13 @@ fort 409 168 stone_fort_c culture eastern_european
 ;region Kutaisi_Province
 
 region Baku_Province; Shamakhi
-fort 436 137 bz_fort_m culture middle_eastern
-fort 430 133 bz_fort_m culture middle_eastern
-fort 412 138 bz_fort_m culture middle_eastern
-fort 425 147 stone_fort_c culture eastern_european
+fort 436 137 bz_fort_m culture african_asian
+fort 430 133 bz_fort_m culture african_asian
+fort 412 138 bz_fort_m culture african_asian
+fort 425 147 stone_fort_c culture european
 
 region Yerevan_Province; Greater Armenia Province, Ani
-fort 398 135 bz_fort_m culture middle_eastern
+fort 398 135 bz_fort_m culture african_asian
 
 ;region Qarisiya_Province; Van Province
 
@@ -11379,8 +11386,8 @@ fort 398 135 bz_fort_m culture middle_eastern
 ;region Iconium_Province
 
 region Adana_Province; Cilicia Province, Sis
-fort 328 113 bz_fort_m culture middle_eastern
-fort 332 112 bz_fort_m culture middle_eastern
+fort 328 113 bz_fort_m culture african_asian
+fort 332 112 bz_fort_m culture african_asian
 
 ;region Sinop_Province
 
@@ -11393,13 +11400,13 @@ fort 332 112 bz_fort_m culture middle_eastern
 ;region Rhodes_Province; Chaldia Province, Sivas
 
 region Isparta_Province
-fort 283 122 bz_fort_m culture middle_eastern
+fort 283 122 bz_fort_m culture african_asian
 
 ;region Edessa_Province
 
 region Smyrna_Province
-fort 279 107 bz_fort_m culture middle_eastern
-fort 280 111 bz_fort_m culture middle_eastern
+fort 279 107 bz_fort_m culture african_asian
+fort 280 111 bz_fort_m culture african_asian
 
 ;region Diyarbakir_Province
 
@@ -11407,25 +11414,25 @@ fort 280 111 bz_fort_m culture middle_eastern
 ;region Antioch_Province
 
 region Tortosa_Province; Tripoli, Levant
-fort 336 98 bz_fort_m culture middle_eastern
-fort 339 97 bz_fort_m culture middle_eastern
+fort 336 98 bz_fort_m culture african_asian
+fort 339 97 bz_fort_m culture african_asian
 
 region Aleppo_Province
-fort 356 101 bz_fort_m culture middle_eastern
+fort 356 101 bz_fort_m culture african_asian
 
 region Damascus_Province
-fort 337 76 bz_fort_m culture middle_eastern
-fort 353 95 bz_fort_m culture middle_eastern
+fort 337 76 bz_fort_m culture african_asian
+fort 353 95 bz_fort_m culture african_asian
 
 region Acre_Province
-fort 332 82 bz_fort_m culture middle_eastern
+fort 332 82 bz_fort_m culture african_asian
 
 ;region Jerusalem_Province
 
 ;region Kerak_Province
 
 region Gaza_Province
-fort 323 70 bz_fort_m culture middle_eastern
+fort 323 70 bz_fort_m culture african_asian
 
 ;region Nicosia_Province
 
@@ -11437,17 +11444,17 @@ fort 323 70 bz_fort_m culture middle_eastern
 ;region Medina_Province; Wasit Province
 
 region Mosul_Province
-fort 369 98 bz_fort_m culture middle_eastern
+fort 369 98 bz_fort_m culture african_asian
 
 ;region Tayma_Province; Jazira Province, Ar-Raqqah
 
 ; ARABIA
 region Mecca_Province
-fort 354 44 bz_fort_m culture middle_eastern
-fort 362 22 bz_fort_m culture middle_eastern
+fort 354 44 bz_fort_m culture african_asian
+fort 362 22 bz_fort_m culture african_asian
 
 region Al-Mu'miniya_Province
-fort 477 29 bz_fort_m culture middle_eastern
+fort 477 29 bz_fort_m culture african_asian
 
 ;region Al_Aqaba_Province
 
@@ -11459,10 +11466,10 @@ fort 477 29 bz_fort_m culture middle_eastern
 ;region Kerman_Province
 
 region Urgench_Province
-fort 505 147 bz_fort_m culture middle_eastern
+fort 505 147 bz_fort_m culture african_asian
 
 region Ray_Province
-fort 468 105 bz_fort_m culture middle_eastern
+fort 468 105 bz_fort_m culture african_asian
 
 ;region Isfahan_Province
 
@@ -11473,19 +11480,19 @@ fort 468 105 bz_fort_m culture middle_eastern
 ;region Konjikala_Province
 
 region Yazd_Province
-fort 502 90 bz_fort_m culture middle_eastern
+fort 502 90 bz_fort_m culture african_asian
 
 region Alamut_Province
-fort 430 114 bz_fort_m culture middle_eastern
+fort 430 114 bz_fort_m culture african_asian
 
 region Kermanshah_Province
-fort 426 96 bz_fort_m culture middle_eastern
+fort 426 96 bz_fort_m culture african_asian
 
 ;region Ahvaz_Province
 
 ;EMPTY LAND
 region Kazan_Province; Un-Inhabited Region
-fort 239 280 stone_fort_c culture eastern_european
+fort 239 280 stone_fort_c culture european
 
 script
 campaign_script.txt

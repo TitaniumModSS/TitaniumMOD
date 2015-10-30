@@ -746,6 +746,16 @@ del data\unit_models\_units\as_lamellar_heavy\textures\as_lamellar_timurids.dds
 del data\unit_models\_units\perkunas\en_peasant_padded_teutonic_order.texture
 del data\unit_models\_units\banzai\banzai_mount_chariot_britons_lod0_merged_animby_med_elephant_die_forward_2_modified_modified.ms3d
 del data\unit_models\_units\banzai\banzai_mount_war_wagon_lod0.ms3d
+del data\unit_models\_generals_and_captains\northern_captain_early\textures\russia_captain_russia.texture
+del data\unit_models\_generals_and_captains\northern_captain_early\textures\russia_captain_normal.texture
+del data\unit_models\_units\en_pplate\dismounted_english_knights_lod0.mesh
+del data\unit_models\_units\en_pplate\dismounted_english_knights_lod1.mesh
+del data\unit_models\_units\en_pplate\dismounted_english_knights_lod2.mesh
+del data\unit_models\_units\en_pplate\textures\mtw2_em_pplate_england.texture
+del data\unit_models\_units\en_pplate\textures\mtw2_em_pplate_normal.texture
+del data\unit_models\_units\en_pplate\textures\mtw2_en_ppalte_england.texture
+del data\unit_models\_units\en_pplate\textures\mtw2_en_ppalte_normal.texture
+del data\unit_models\_units\en_pplate\textures\mtw2_en_ppalte_english_knights.texture
 del data\sounds\events.idx
 del data\sounds\events.dat
 del data\world\maps\base\map.rwm

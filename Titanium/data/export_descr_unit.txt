@@ -6822,35 +6822,35 @@ recruit_priority_offset    45
 
 
 type             English Huscarls
-dictionary       English_Huscarls      ; English Huscarls, m
+dictionary       English_Huscarls      ; Mercenary Húskarlar, m, ELITE
 category         infantry
 class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          English_Huscarls, 48, 0, 1.125, 0.5
+soldier          English_Huscarls, 48, 0, 1.15, 0.5
 officer          northern_captain
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
 mount_effect     horse +1, camel +1
-attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
+attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
-stat_health      1, 1
-stat_pri         14, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_health      1, 2
+stat_pri         16, 5, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  5, 8, 0, metal ;slung shield +1 armour ;
+stat_pri_armour  6, 9, 0, metal ;slung shield +1 armour ;
 stat_sec_armour  0, 0, flesh
-stat_heat        8
+stat_heat        9
 stat_ground      0, -2, 1, 0 
-stat_mental      9, normal, trained
+stat_mental      12, disciplined, trained
 stat_charge_dist 6
 stat_fire_delay  0
 stat_food        60, 300
-stat_cost        1, 360, 360, 90, 70, 495, 4, 90
-armour_ug_levels 7
-armour_ug_models English_Huscarls
+stat_cost        1, 400, 400, 90, 70, 495, 4, 90
+armour_ug_levels 7, 14
+armour_ug_models English_Huscarls, English_Huscarls
 ownership        slave, england, hre, byzantium
 recruit_priority_offset    15
 

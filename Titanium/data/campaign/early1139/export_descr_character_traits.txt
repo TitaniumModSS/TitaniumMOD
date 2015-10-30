@@ -16768,6 +16768,8 @@ Trigger Royal_Founder_FactionLeader
  WhenToTest CharacterTurnStart
 
  Condition IsFactionLeader
+       and not Trait FactionRegent >= 1
+       and not Trait FactionUsurper >= 1
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -25265,10 +25267,10 @@ Trigger factionleader_TO
 Trigger factionleader_normalfactions
  WhenToTest BecomesFactionLeader
 
- Condition not Trait FactionFutureRegent = 1
-       and not Trait FactionFutureUsurper = 1
-       and not Trait FactionRegent = 1
-       and not Trait FactionUsurper = 1
+ Condition not Trait FactionFutureRegent >= 1
+       and not Trait FactionFutureUsurper >= 1
+       and not Trait FactionRegent >= 1
+       and not Trait FactionUsurper >= 1
        and not FactionType teutonic_order
        and not FactionType venice
        and not FactionType milan
@@ -39004,6 +39006,19 @@ Affects LeaderGodNotMine -1 Chance 100
 ;------------------------------------------
 ;Catching inconsistencies
 ;------------------------------------------
+Trigger ExMuslimHatesMuslim
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and Trait HatesIslam >= 1
+and Trait Muslim >= 1
+and not FactionReligion islam
+and RandomPercent > 50
+
+Affects Muslim -7 Chance 100
+Affects PublicAtheism 2 Chance 100
+
+;------------------------------------------
 Trigger MuslimHatesMuslim_Revert
 WhenToTest CharacterTurnStart
 
@@ -39022,6 +39037,19 @@ and Trait FearsIslam >= 1
 and Trait Muslim >= 1
 
 Affects FearsIslam -7 Chance 100
+
+;------------------------------------------
+Trigger ExCatholicHatesCatholic
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and Trait HatesCatholic >= 1
+and Trait Catholic >= 1
+and not FactionReligion catholic
+and RandomPercent > 50
+
+Affects Catholic -7 Chance 100
+Affects PublicAtheism 2 Chance 100
 
 ;------------------------------------------
 Trigger CatholicHatesCatholic_Revert
@@ -39044,6 +39072,19 @@ and Trait Catholic >= 1
 Affects FearsCatholic -7 Chance 100
 
 ;------------------------------------------
+Trigger ExOrthodoxHatesOrthodox
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and Trait HatesOrthodox >= 1
+and Trait Orthodox >= 1
+and not FactionReligion orthodox
+and RandomPercent > 50
+
+Affects Orthodox -7 Chance 100
+Affects PublicAtheism 2 Chance 100
+
+;------------------------------------------
 Trigger OrthodoxHatesOrthodox_Revert
 WhenToTest CharacterTurnStart
 
@@ -39062,6 +39103,19 @@ and Trait FearsOrthodox >= 1
 and Trait Orthodox >= 1
 
 Affects FearsOrthodox -7 Chance 100
+
+;------------------------------------------
+Trigger ExPaganHatesPagan
+WhenToTest CharacterTurnStart
+
+Condition IsGeneral
+and Trait HatesPagan >= 1
+and Trait Pagan >= 1
+and not FactionReligion pagan
+and RandomPercent > 50
+
+Affects Pagan -7 Chance 100
+Affects PublicAtheism 2 Chance 100
 
 ;------------------------------------------
 Trigger PaganHatesPagan_Revert
@@ -40984,7 +41038,8 @@ Trigger elector_prince_favourite
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector1
-       and HasAncType hre_elector2
+       ;and HasAncType hre_elector2
+       and HighestAttSharedChar Authority priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41036,7 +41091,8 @@ Trigger elector_prince_favourite5
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector1
-       and HasAncType hre_elector6
+       ;and HasAncType hre_elector6
+       and HighestAttSharedChar Command priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41049,7 +41105,8 @@ Trigger elector_prince_favourite6
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector1
-       and HasAncType hre_elector7
+       ;and HasAncType hre_elector7
+       and HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41061,8 +41118,9 @@ Trigger elector_prince_favourite7
        and Trait HRE_Elector_Prince = 1
        and not IsFactionLeader
        and not IsFactionHeir
-       and HasAncType hre_elector2
+       ;and HasAncType hre_elector2
        and HasAncType hre_elector3
+       and HighestAttSharedChar Authority priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41074,8 +41132,9 @@ Trigger elector_prince_favourite8
        and Trait HRE_Elector_Prince = 1
        and not IsFactionLeader
        and not IsFactionHeir
-       and HasAncType hre_elector2
+       ;and HasAncType hre_elector2
        and HasAncType hre_elector4
+       and HighestAttSharedChar Authority priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41087,37 +41146,42 @@ Trigger elector_prince_favourite9
        and Trait HRE_Elector_Prince = 1
        and not IsFactionLeader
        and not IsFactionHeir
-       and HasAncType hre_elector2
+       ;and HasAncType hre_elector2
        and HasAncType hre_elector5
+       and HighestAttSharedChar Authority priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
 ;------------------------------------------
-Trigger elector_prince_favourite10
- WhenToTest CharacterTurnEnd
-
- Condition IsGeneral
-       and Trait HRE_Elector_Prince = 1
-       and not IsFactionLeader
-       and not IsFactionHeir
-       and HasAncType hre_elector2
-       and HasAncType hre_elector6
-
- Affects HRE_Elector_Prince 1 Chance 100
-
+;Trigger elector_prince_favourite10
+; WhenToTest CharacterTurnEnd
+;
+; Condition IsGeneral
+;       and Trait HRE_Elector_Prince = 1
+;       and not IsFactionLeader
+;       and not IsFactionHeir
+;       ;and HasAncType hre_elector2
+;       ;and HasAncType hre_elector6
+;       and HighestAttSharedChar Authority priest = 1
+;       and HighestAttSharedChar Command priest = 1
+;
+; Affects HRE_Elector_Prince 1 Chance 100
+;
 ;------------------------------------------
-Trigger elector_prince_favourite11
- WhenToTest CharacterTurnEnd
-
- Condition IsGeneral
-       and Trait HRE_Elector_Prince = 1
-       and not IsFactionLeader
-       and not IsFactionHeir
-       and HasAncType hre_elector2
-       and HasAncType hre_elector7
-
- Affects HRE_Elector_Prince 1 Chance 100
-
+;Trigger elector_prince_favourite11
+; WhenToTest CharacterTurnEnd
+;
+; Condition IsGeneral
+;       and Trait HRE_Elector_Prince = 1
+;       and not IsFactionLeader
+;       and not IsFactionHeir
+;       ;and HasAncType hre_elector2
+;       ;and HasAncType hre_elector7
+;       and HighestAttSharedChar Authority priest = 1
+;       and HighestAttSharedChar Loyalty priest = 1
+;
+; Affects HRE_Elector_Prince 1 Chance 100
+;
 ;------------------------------------------
 Trigger elector_prince_favourite12
  WhenToTest CharacterTurnEnd
@@ -41153,7 +41217,8 @@ Trigger elector_prince_favourite14
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector3
-       and HasAncType hre_elector6
+       ;and HasAncType hre_elector6
+       and HighestAttSharedChar Command priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41166,7 +41231,8 @@ Trigger elector_prince_favourite15
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector3
-       and HasAncType hre_elector7
+       ;and HasAncType hre_elector7
+       and HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41192,7 +41258,8 @@ Trigger elector_prince_favourite17
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector4
-       and HasAncType hre_elector6
+       ;and HasAncType hre_elector6
+       and HighestAttSharedChar Command priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41205,7 +41272,8 @@ Trigger elector_prince_favourite18
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector4
-       and HasAncType hre_elector7
+       ;and HasAncType hre_elector7
+       and HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41218,7 +41286,8 @@ Trigger elector_prince_favourite19
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector5
-       and HasAncType hre_elector6
+       ;and HasAncType hre_elector6
+       and HighestAttSharedChar Command priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
@@ -41231,23 +41300,26 @@ Trigger elector_prince_favourite20
        and not IsFactionLeader
        and not IsFactionHeir
        and HasAncType hre_elector5
-       and HasAncType hre_elector7
+       ;and HasAncType hre_elector7
+       and HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince 1 Chance 100
 
 ;------------------------------------------
-Trigger elector_prince_favourite21
- WhenToTest CharacterTurnEnd
-
- Condition IsGeneral
-       and Trait HRE_Elector_Prince = 1
-       and not IsFactionLeader
-       and not IsFactionHeir
-       and HasAncType hre_elector6
-       and HasAncType hre_elector7
-
- Affects HRE_Elector_Prince 1 Chance 100
-
+;Trigger elector_prince_favourite21
+; WhenToTest CharacterTurnEnd
+;
+; Condition IsGeneral
+;       and Trait HRE_Elector_Prince = 1
+;       and not IsFactionLeader
+;       and not IsFactionHeir
+;       ;and HasAncType hre_elector6
+;       ;and HasAncType hre_elector7
+;       and HighestAttSharedChar Command priest = 1
+;       and HighestAttSharedChar Loyalty priest = 1
+;
+; Affects HRE_Elector_Prince 1 Chance 100
+;
 ;------------------------------------------
 ;------------------------------------------
 Trigger elector_trait_remove
@@ -41256,12 +41328,12 @@ Trigger elector_trait_remove
  Condition IsGeneral
 	and Trait HRE_Elector_Prince >= 1
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 
  Affects HRE_Elector_Prince -2 Chance 100
 
@@ -41272,31 +41344,37 @@ Trigger elector_trait_decrease1
  Condition IsGeneral
        and Trait HRE_Elector_Prince = 2
        and HasAncType hre_elector1
-       and not HasAncType hre_elector2
+       ;and not HasAncType hre_elector2
+       and not HighestAttSharedChar Authority priest = 1
        and not HasAncType hre_elector3
        and not HasAncType hre_elector4
        and not HasAncType hre_elector5
-       and not HasAncType hre_elector6
-       and not HasAncType hre_elector7
+       ;and not HasAncType hre_elector6
+       and not HighestAttSharedChar Command priest = 1
+       ;and not HasAncType hre_elector7
+       and not HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince -1 Chance 100
 
 ;------------------------------------------
-Trigger elector_trait_decrease2
- WhenToTest CharacterTurnEnd
-
- Condition IsGeneral
-       and Trait HRE_Elector_Prince = 2
-       and not HasAncType hre_elector1
-       and HasAncType hre_elector2
-       and not HasAncType hre_elector3
-       and not HasAncType hre_elector4
-       and not HasAncType hre_elector5
-       and not HasAncType hre_elector6
-       and not HasAncType hre_elector7
-
- Affects HRE_Elector_Prince -1 Chance 100
-
+;Trigger elector_trait_decrease2
+; WhenToTest CharacterTurnEnd
+;
+; Condition IsGeneral
+;       and Trait HRE_Elector_Prince = 2
+;       and not HasAncType hre_elector1
+;       ;and HasAncType hre_elector2
+;       and HighestAttSharedChar Authority priest = 1
+;       and not HasAncType hre_elector3
+;       and not HasAncType hre_elector4
+;       and not HasAncType hre_elector5
+;       ;and not HasAncType hre_elector6
+;       and not HighestAttSharedChar Command priest = 1
+;       ;and not HasAncType hre_elector7
+;       and not HighestAttSharedChar Loyalty priest = 1
+;
+; Affects HRE_Elector_Prince -1 Chance 100
+;
 ;------------------------------------------
 Trigger elector_trait_decrease3
  WhenToTest CharacterTurnEnd
@@ -41304,12 +41382,15 @@ Trigger elector_trait_decrease3
  Condition IsGeneral
        and Trait HRE_Elector_Prince = 2
        and not HasAncType hre_elector1
-       and not HasAncType hre_elector2
+       ;and not HasAncType hre_elector2
+       and not HighestAttSharedChar Authority priest = 1
        and HasAncType hre_elector3
        and not HasAncType hre_elector4
        and not HasAncType hre_elector5
-       and not HasAncType hre_elector6
-       and not HasAncType hre_elector7
+       ;and not HasAncType hre_elector6
+       and not HighestAttSharedChar Command priest = 1
+       ;and not HasAncType hre_elector7
+       and not HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince -1 Chance 100
 
@@ -41320,12 +41401,15 @@ Trigger elector_trait_decrease4
  Condition IsGeneral
        and Trait HRE_Elector_Prince = 2
        and not HasAncType hre_elector1
-       and not HasAncType hre_elector2
+       ;and not HasAncType hre_elector2
+       and not HighestAttSharedChar Authority priest = 1
        and not HasAncType hre_elector3
        and HasAncType hre_elector4
        and not HasAncType hre_elector5
-       and not HasAncType hre_elector6
-       and not HasAncType hre_elector7
+       ;and not HasAncType hre_elector6
+       and not HighestAttSharedChar Command priest = 1
+       ;and not HasAncType hre_elector7
+       and not HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince -1 Chance 100
 
@@ -41336,47 +41420,55 @@ Trigger elector_trait_decrease5
  Condition IsGeneral
        and Trait HRE_Elector_Prince = 2
        and not HasAncType hre_elector1
-       and not HasAncType hre_elector2
+       ;and not HasAncType hre_elector2
+       and not HighestAttSharedChar Authority priest = 1
        and not HasAncType hre_elector3
        and not HasAncType hre_elector4
        and HasAncType hre_elector5
-       and not HasAncType hre_elector6
-       and not HasAncType hre_elector7
+       ;and not HasAncType hre_elector6
+       and not HighestAttSharedChar Command priest = 1
+       ;and not HasAncType hre_elector7
+       and not HighestAttSharedChar Loyalty priest = 1
 
  Affects HRE_Elector_Prince -1 Chance 100
 
 ;------------------------------------------
-Trigger elector_trait_decrease6
- WhenToTest CharacterTurnEnd
-
- Condition IsGeneral
-       and Trait HRE_Elector_Prince = 2
-       and not HasAncType hre_elector1
-       and not HasAncType hre_elector2
-       and not HasAncType hre_elector3
-       and not HasAncType hre_elector4
-       and not HasAncType hre_elector5
-       and HasAncType hre_elector6
-       and not HasAncType hre_elector7
-
- Affects HRE_Elector_Prince -1 Chance 100
-
+;Trigger elector_trait_decrease6
+; WhenToTest CharacterTurnEnd
+;
+; Condition IsGeneral
+;       and Trait HRE_Elector_Prince = 2
+;       and not HasAncType hre_elector1
+;       ;and not HasAncType hre_elector2
+;       and not HighestAttSharedChar Authority priest = 1
+;       and not HasAncType hre_elector3
+;       and not HasAncType hre_elector4
+;       and not HasAncType hre_elector5
+;       ;and HasAncType hre_elector6
+;       and HighestAttSharedChar Command priest = 1
+;       ;and not HasAncType hre_elector7
+;       and not HighestAttSharedChar Loyalty priest = 1
+;
+; Affects HRE_Elector_Prince -1 Chance 100
+;
 ;------------------------------------------
-Trigger elector_trait_decrease7
- WhenToTest CharacterTurnEnd
-
- Condition IsGeneral
-       and Trait HRE_Elector_Prince = 2
-       and not HasAncType hre_elector1
-       and not HasAncType hre_elector2
-       and not HasAncType hre_elector3
-       and not HasAncType hre_elector4
-       and not HasAncType hre_elector5
-       and not HasAncType hre_elector6
-       and HasAncType hre_elector7
-
- Affects HRE_Elector_Prince -1 Chance 100
-
+;Trigger elector_trait_decrease7
+; WhenToTest CharacterTurnEnd
+;
+; Condition IsGeneral
+;       and Trait HRE_Elector_Prince = 2
+;       and not HasAncType hre_elector1
+;       ;and not HasAncType hre_elector2
+;       and not HighestAttSharedChar Authority priest = 1
+;       and not HasAncType hre_elector3
+;       and not HasAncType hre_elector4
+;       and not HasAncType hre_elector5
+;       and not HasAncType hre_elector6
+;       ;and HasAncType hre_elector7
+;       and HighestAttSharedChar Loyalty priest = 1
+;
+; Affects HRE_Elector_Prince -1 Chance 100
+;
 ;------------------------------------------
 ;------------------------------------------
 Trigger elector_trait_stripped
@@ -41386,12 +41478,12 @@ Trigger elector_trait_stripped
 	and not IsFactionLeader
 	and not IsFactionHeir
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and not HasAncType office
 	and not HasAncType office_military1
 	and not HasAncType office_military2
@@ -41409,14 +41501,14 @@ Trigger elector_trait_stripped_remove1
  Affects Stripped_HRE -3 Chance 100
 
 ;------------------------------------------
-Trigger elector_trait_stripped_remove2
- WhenToTest CharacterTurnEnd
-
- Condition Trait Stripped_HRE >= 1
-	and HasAncType hre_elector2
-
- Affects Stripped_HRE -3 Chance 100
-
+;Trigger elector_trait_stripped_remove2
+; WhenToTest CharacterTurnEnd
+;
+; Condition Trait Stripped_HRE >= 1
+;	and HasAncType hre_elector2
+;
+; Affects Stripped_HRE -3 Chance 100
+;
 ;------------------------------------------
 Trigger elector_trait_stripped_remove3
  WhenToTest CharacterTurnEnd
@@ -41445,23 +41537,23 @@ Trigger elector_trait_stripped_remove5
  Affects Stripped_HRE -3 Chance 100
 
 ;------------------------------------------
-Trigger elector_trait_stripped_remove6
- WhenToTest CharacterTurnEnd
-
- Condition Trait Stripped_HRE >= 1
-	and HasAncType hre_elector6
-
- Affects Stripped_HRE -3 Chance 100
-
+;Trigger elector_trait_stripped_remove6
+; WhenToTest CharacterTurnEnd
+;
+; Condition Trait Stripped_HRE >= 1
+;	and HasAncType hre_elector6
+;
+; Affects Stripped_HRE -3 Chance 100
+;
 ;------------------------------------------
-Trigger elector_trait_stripped_remove7
- WhenToTest CharacterTurnEnd
-
- Condition Trait Stripped_HRE >= 1
-	and HasAncType hre_elector7
-
- Affects Stripped_HRE -3 Chance 100
-
+;Trigger elector_trait_stripped_remove7
+; WhenToTest CharacterTurnEnd
+;
+; Condition Trait Stripped_HRE >= 1
+;	and HasAncType hre_elector7
+;
+; Affects Stripped_HRE -3 Chance 100
+;
 ;------------------------------------------
 Trigger elector_trait_concession1
  WhenToTest CharacterTurnEnd
@@ -41470,12 +41562,12 @@ Trigger elector_trait_concession1
 	and not IsFactionLeader
 	and not IsFactionHeir
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office
 	and not Trait Stripped_HRE >= 1
 
@@ -41489,12 +41581,12 @@ Trigger elector_trait_concession2
 	and not IsFactionLeader
 	and not IsFactionHeir
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office_military1
 	and not Trait Stripped_HRE >= 1
 
@@ -41508,12 +41600,12 @@ Trigger elector_trait_concession3
 	and not IsFactionLeader
 	and not IsFactionHeir
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office_military2
 	and not Trait Stripped_HRE >= 1
 
@@ -41525,12 +41617,12 @@ Trigger elector_trait_stripped_to_concession1
 
  Condition Trait Stripped_HRE = 3
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office
 
  Affects Stripped_HRE -1 Chance 100
@@ -41541,12 +41633,12 @@ Trigger elector_trait_stripped_to_concession2
 
  Condition Trait Stripped_HRE = 3
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office_military1
 
  Affects Stripped_HRE -1 Chance 100
@@ -41557,12 +41649,12 @@ Trigger elector_trait_stripped_to_concession3
 
  Condition Trait Stripped_HRE = 3
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office_military2
 
  Affects Stripped_HRE -1 Chance 100
@@ -41573,12 +41665,12 @@ Trigger elector_trait_stripped_again
 
  Condition Trait Stripped_HRE = 2
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and not HasAncType office
 	and not HasAncType office_military1
 	and not HasAncType office_military2
@@ -41591,12 +41683,12 @@ Trigger elector_trait_stripped_again_to_concession1
 
  Condition Trait Stripped_HRE = 1
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office
 
  Affects Stripped_HRE 1 Chance 100
@@ -41607,12 +41699,12 @@ Trigger elector_trait_stripped_again_to_concession2
 
  Condition Trait Stripped_HRE = 1
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office_military1
 
  Affects Stripped_HRE 1 Chance 100
@@ -41623,12 +41715,12 @@ Trigger elector_trait_stripped_again_to_concession3
 
  Condition Trait Stripped_HRE = 1
 	and not HasAncType hre_elector1
-	and not HasAncType hre_elector2
+	;and not HasAncType hre_elector2
 	and not HasAncType hre_elector3
 	and not HasAncType hre_elector4
 	and not HasAncType hre_elector5
-	and not HasAncType hre_elector6
-	and not HasAncType hre_elector7
+	;and not HasAncType hre_elector6
+	;and not HasAncType hre_elector7
 	and HasAncType office_military2
 
  Affects Stripped_HRE 1 Chance 100
@@ -41700,10 +41792,10 @@ Trigger archbishop_trait_remove1
 
  Condition AgentType = priest
        and Trait HRE_Elector_Bishop = 1
-       and not HasAncType hre_elector1
+       ;and not HasAncType hre_elector1
        and not HasAncType hre_elector2
-       and not HasAncType hre_elector4
-       and not HasAncType hre_elector5
+       ;and not HasAncType hre_elector4
+       ;and not HasAncType hre_elector5
        and not HasAncType hre_elector6
        and not HasAncType hre_elector7
 
