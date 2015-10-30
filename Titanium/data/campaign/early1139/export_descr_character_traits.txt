@@ -13138,333 +13138,6 @@ Trait RoyalLadyC
    Threshold 1
 
    Effect Charm 1
-;------------------------------------------
-;------------------------------------------
-Trait PretentiousWomanRLC
- Characters princess
- NoGoingBackLevel 2 
- AntiTraits HumbleWomanRLC
-
- Level Pretentious
-   Description Pretentious_desc
-   EffectsDescription Pretentious_effects_desc
-   Threshold 1 
-
-   Effect Charm -1 
-
- Level Utter_Snob
-   Description Utter_Snob_desc
-   EffectsDescription Utter_Snob_effects_desc
-;   Epithet Utter_Snob_epithet_desc
-   Threshold 2 
-
-   Effect Charm -2 
-
-;------------------------------------------
-Trait HumbleWomanRLC
- Characters princess
- AntiTraits PretentiousWomanRLC
-
- Level Humble
-   Description Humble_desc
-   EffectsDescription Humble_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Respectful
-   Description Respectful_desc
-   EffectsDescription Respectful_effects_desc
-   Threshold 2 
-
-   Effect Charm 2 
-
-;------------------------------------------
-Trait PrettyWomanRLC
- Characters princess
- NoGoingBackLevel 1 
- AntiTraits UglyWomanRLC
-
- Level Attractive
-   Description Attractive_desc
-   EffectsDescription Attractive_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Head_Turner
-   Description Head_Turner_desc
-   EffectsDescription Head_Turner_effects_desc
-   Threshold 2 
-
-   Effect Charm 2 
-
- Level Vision_of_Beauty
-   Description Vision_of_Beauty_desc
-   EffectsDescription Vision_of_Beauty_effects_desc
-;   Epithet Vision_of_Beauty_epithet_desc
-   Threshold 3 
-
-   Effect Charm 3 
-   Effect Fertility 1 
-
-;------------------------------------------
-Trait UglyWomanRLC
- Characters princess
- NoGoingBackLevel 1 
- AntiTraits PrettyWomanRLC
-
- Level Flawed_Features
-   Description Flawed_Features_desc
-   EffectsDescription Flawed_Features_effects_desc
-   Threshold 1 
-
-   Effect Charm -1 
-
- Level Hideous
-   Description Hideous_desc
-   EffectsDescription Hideous_effects_desc
-;   Epithet Hideous_epithet_desc
-   Threshold 2 
-
-   Effect Charm -2 
-   Effect Fertility -1 
-
-;------------------------------------------
-Trait DesperateWomanRLC
- Characters princess
- AntiTraits PrettyWomanRLC, SpiritedWomanRLC
-
- Level Bruised_Confidence
-   Description Bruised_Confidence_desc
-   EffectsDescription Bruised_Confidence_effects_desc
-   Threshold 2 
-
-   Effect Charm 1 
-
- Level Insecure
-   Description Insecure_desc
-   EffectsDescription Insecure_effects_desc
-   Threshold 3 
-
-   Effect Charm -2 
-
- Level Desperate
-   Description Desperate_desc
-   EffectsDescription Desperate_effects_desc
-;   Epithet Desperate_epithet_desc
-   Threshold 4 
-
-   Effect Charm -3 
-
-;------------------------------------------
-Trait SpiritedWomanRLC
- Characters princess
- AntiTraits DesperateWomanRLC
-
- Level Spirited
-   Description Spirited_desc
-   EffectsDescription Spirited_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Engaging
-   Description Engaging_desc
-   EffectsDescription Engaging_effects_desc
-   Threshold 2 
-
-   Effect Charm 2 
-
- Level Self-serving
-   Description Self-serving_desc
-   EffectsDescription Self-serving_effects_desc
-   Threshold 3 
-
-   Effect Charm -1 
-
-;------------------------------------------
-Trait FaithfulWomanRLC
- Characters princess
- AntiTraits UnchasteWomanRLC
-
- Level Reliable
-   Description Reliable_desc
-   EffectsDescription Reliable_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Faithful
-   Description Faithful_desc
-   EffectsDescription Faithful_effects_desc
-   Threshold 2 
-
-   Effect Charm 2 
-
- Level Unquestionably_Loyal
-   Description Unquestionably_Loyal_desc
-   EffectsDescription Unquestionably_Loyal_effects_desc
-   Threshold 4 
-
-   Effect Loyalty 1 
-   Effect Charm 2 
-
-;------------------------------------------
-Trait UnchasteWomanRLC
- Characters princess
- AntiTraits FaithfulWomanRLC, PassionateWomanRLC
-
- Level Suggestive
-   Description Suggestive_desc
-   EffectsDescription Suggestive_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Scarlet_Woman
-   Description Scarlet_Woman_desc
-   EffectsDescription Scarlet_Woman_effects_desc
-   Threshold 2 
-
-   Effect Charm 2 
-
- Level Brazen_Hussy
-   Description Brazen_Hussy_desc
-   EffectsDescription Brazen_Hussy_effects_desc
-   Threshold 3 
-
-   Effect Charm -2 
-
-;------------------------------------------
-Trait VapidWomanRLC
- Characters princess
- AntiTraits EducatedWomanRLC
-
- Level Simplistic
-   Description Simplistic_desc
-   EffectsDescription Simplistic_effects_desc
-   Threshold 1 
-
-   Effect Charm -1 
-
- Level Vapid
-   Description Vapid_desc
-   EffectsDescription Vapid_effects_desc
-   Threshold 2 
-
-   Effect Charm -2 
-
- Level Total_Bimbo
-   Description Total_Bimbo_desc
-   EffectsDescription Total_Bimbo_effects_desc
-;   Epithet Total_Bimbo_epithet_desc
-   Threshold 3 
-
-   Effect Charm -2 
-
-;------------------------------------------
-Trait EducatedWomanRLC
- Characters princess
- AntiTraits VapidWomanRLC
-
- Level Intelligent
-   Description Intelligent_desc
-   EffectsDescription Intelligent_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Educated
-   Description Educated_desc
-   EffectsDescription Educated_effects_desc
-   Threshold 2 
-
-   Effect Charm 2 
-
- Level Scholarly
-   Description Scholarly_desc
-   EffectsDescription Scholarly_effects_desc
-   Threshold 3 
-
-   Effect Charm 2 
-
-;------------------------------------------
-Trait PassionateWomanRLC
- Characters princess
- AntiTraits ColdWomanRLC, UnchasteWomanRLC
-
- Level Warm
-   Description Warm_desc
-   EffectsDescription Warm_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Passionate
-   Description Passionate_desc
-   EffectsDescription Passionate_effects_desc
-;   Epithet Passionate_epithet_desc
-   Threshold 2 
-
-   Effect Charm 1
-   Effect Fertility 1 
-
- Level Insatiable
-   Description Insatiable_desc
-   EffectsDescription Insatiable_effects_desc
-   Threshold 3 
-
-   Effect Charm 2 
-   Effect Fertility -1 
-
-;------------------------------------------
-Trait ColdWomanRLC
- Characters princess
- AntiTraits PassionateWomanRLC, UglyWomanRLC
-
- Level Prudish
-   Description Prudish_desc
-   EffectsDescription Prudish_effects_desc
-   Threshold 1 
-
-   Effect Charm -1 
-
- Level Cold
-   Description Cold_desc
-   EffectsDescription Cold_effects_desc
-   Threshold 2 
-
-   Effect Charm -2 
-
- Level Ice_Queen
-   Description Ice_Queen_desc
-   EffectsDescription Ice_Queen_effects_desc
-   Threshold 3 
-
-   Effect Charm 1 
-   Effect Fertility -1 
-
-;------------------------------------------
-Trait DykeWomanRLC
- Characters princess
- NoGoingBackLevel 2 
- AntiTraits PassionateWomanRLC
-
- Level Potentially_Confused
-   Description Potentially_Confused_desc
-   EffectsDescription Potentially_Confused_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Prefers_Women
-   Description Prefers_Women_desc
-   EffectsDescription Prefers_Women_effects_desc
-   Threshold 2 
-
-   Effect Charm -1 
-   Effect Fertility -5 
 
 ;------------------------------------------
 ;==========================================
@@ -34230,7 +33903,7 @@ WhenToTest CharacterTurnEnd
 Condition EndedInSettlement
 and Treasury > 25000
 and AgentType = princess
-and Trait IAmPrincess = 1
+;and Trait IAmPrincess = 1
 and SettlementBuildingExists >= pleasure_palace
 and RemainingMPPercentage = 100
 
@@ -34242,7 +33915,7 @@ WhenToTest CharacterTurnEnd
 
 Condition EndedInSettlement
 and AgentType = princess
-and Trait IAmPrincess = 1
+;and Trait IAmPrincess = 1
 and SettlementBuildingExists >= church
 and RemainingMPPercentage = 100
 
@@ -34254,7 +33927,7 @@ WhenToTest CharacterTurnEnd
 
 Condition EndedInSettlement
 and AgentType = princess
-and Trait IAmPrincess = 1
+;and Trait IAmPrincess = 1
 and SettlementBuildingExists >= inn
 and RemainingMPPercentage = 100
 
@@ -34266,7 +33939,7 @@ WhenToTest CharacterTurnEnd
 
 Condition EndedInSettlement
 and AgentType = princess
-and Trait IAmPrincess = 1
+;and Trait IAmPrincess = 1
 and SettlementBuildingExists >= cathedral
 and RemainingMPPercentage = 100
 
@@ -36866,7 +36539,7 @@ Trigger troubadours_accepted_princess
 
  Condition AgentType = princess
        and I_EventCounter troubadours_event_accepted = 1
-       and Trait IAmPrincess = 1
+       ;and Trait IAmPrincess = 1
        and DistanceCapital <= 50
 
  Affects FairWoman 1 Chance 50
@@ -36888,7 +36561,7 @@ Trigger troubadours_refused_princess
 
  Condition AgentType = princess
        and I_EventCounter troubadours_event_declined = 1
-       and Trait IAmPrincess = 1
+       ;and Trait IAmPrincess = 1
        and DistanceCapital <= 50
 
  Affects VapidWoman 1 Chance 50

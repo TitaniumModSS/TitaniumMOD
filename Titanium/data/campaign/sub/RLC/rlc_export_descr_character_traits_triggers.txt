@@ -2,188 +2,34 @@
 ;**********************RLC TRIGGERS*********************
 ;******************************************************
 ;------------------------------------------
-Trigger royal_lady_humble_trigger
+Trigger royal_lady_startup_trigger
  WhenToTest CharacterTurnStart
 
  Condition AgentType = princess
  	and Trait IAmPrincess = 0
  	and Trait RoyalLadyC = 0
 
- Affects HumbleWomanRLC 1 Chance 2 
- Affects PretentiousWomanRLC 1 Chance 1
+ Affects PrettyWoman 2 Chance 29 
+ Affects UglyWoman 1 Chance 15 
+ Affects UglyWoman 1 Chance 3 
+ Affects HumbleWoman 1 Chance 2 
+ Affects PretentiousWoman 1 Chance 1
+ Affects BraveWoman 1 Chance 39 
 
 ;------------------------------------------
-Trigger royal_lady_pretty_trigger
+Trigger royal_lady_startup_trigger2
  WhenToTest CharacterTurnStart
 
  Condition AgentType = princess
  	and Trait IAmPrincess = 0
  	and Trait RoyalLadyC = 0
 
- Affects PrettyWomanRLC 1 Chance 100 
- Affects PrettyWomanRLC 2 Chance 29 
- Affects UglyWomanRLC 1 Chance 15 
- Affects UglyWomanRLC 1 Chance 3 
-
-;------------------------------------------
-Trigger royal_lady_trigger
- WhenToTest CharacterTurnStart
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 0
- 	and Trait RoyalLadyC = 0
-
- Affects RoyalLadyC 1 Chance 100 
- Affects RoyalLady 1 Chance 100 
- Affects AgentPiety 1 Chance 100
-;
+ Affects BraveWoman 2 Chance 75 
  Affects NaturalPrincess 1 Chance 5 
  Affects GoodPrincess 1 Chance 7 
- Affects UnchasteWomanRLC 1 Chance 3 
- Affects SpiritedWomanRLC 1 Chance 16 
-
-;------------------------------------------
-Trigger royal_lady_brave_trigger
- WhenToTest CharacterTurnStart
-
- Condition AgentType = princess
- 	and Trait IAmPrincess = 0
- 	and Trait BraveWoman = 0
-
- Affects BraveWoman 1 Chance 39 
- Affects BraveWoman 2 Chance 75 
-
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger2
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and Treasury > 25000
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= pleasure_palace
-and RemainingMPPercentage = 100
-
-Affects DykeWomanRLC 1 Chance 10
-
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger3
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= church
-and RemainingMPPercentage = 100
-
-Affects EducatedWomanRLC 1 Chance 15
-
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger4
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= inn
-and RemainingMPPercentage = 100
-
-Affects UnchasteWomanRLC 1 Chance 5
-
-;------------------------------------------
-Trigger RLC_sitting_around_town_vnv_trigger5
-WhenToTest CharacterTurnEnd
-
-Condition EndedInSettlement
-and AgentType = princess
-and Trait RoyalLadyC = 1
-and SettlementBuildingExists >= cathedral
-and RemainingMPPercentage = 100
-
-Affects FaithfulWomanRLC 1 Chance 20 
-
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_troubadours_accepted_princess
- WhenToTest CharacterTurnEnd
-
- Condition AgentType = princess
-       and I_EventCounter troubadours_event_accepted = 1
-       and Trait RoyalLadyC = 1
-       and DistanceCapital <= 50
-
- Affects FairWoman 1 Chance 50
- Affects FaithfulWomanRLC 1 Chance 50
-
-;------------------------------------------
-Trigger RLC_troubadours_refused_princess
- WhenToTest CharacterTurnEnd
-
- Condition AgentType = princess
-       and I_EventCounter troubadours_event_declined = 1
-       and Trait RoyalLadyC = 1
-       and DistanceCapital <= 50
-
- Affects VapidWomanRLC 1 Chance 50
- 
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_selfperpetuating54
- WhenToTest CharacterTurnEnd
-
- Condition Trait PassionateWomanRLC >= 1
-
- Affects PassionateWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating55
- WhenToTest CharacterTurnEnd
-
- Condition Trait ColdWomanRLC >= 1
-
- Affects ColdWomanRLC 1 Chance 4 
-
-;------------------------------------------
-;------------------------------------------
-Trigger RLC_selfperpetuating60
- WhenToTest CharacterTurnEnd
-
- Condition Trait DesperateWomanRLC >= 1
-
- Affects DesperateWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating61
- WhenToTest CharacterTurnEnd
-
- Condition Trait SpiritedWomanRLC >= 1
-
- Affects SpiritedWomanRLC 1 Chance 4 
-
-
-;------------------------------------------
-Trigger RLC_selfperpetuating62
- WhenToTest CharacterTurnEnd
-
- Condition Trait FaithfulWomanRLC >= 1
-
- Affects FaithfulWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating63
- WhenToTest CharacterTurnEnd
-
- Condition Trait UnchasteWomanRLC >= 1
-
- Affects UnchasteWomanRLC 1 Chance 4 
-
-;------------------------------------------
-Trigger RLC_selfperpetuating64
- WhenToTest CharacterTurnEnd
-
- Condition Trait EducatedWomanRLC >= 1
-
- Affects EducatedWomanRLC 1 Chance 4 
+ Affects UnchasteWoman 1 Chance 3 
+ Affects SpiritedWoman 1 Chance 16 
+;
+ Affects RoyalLadyC 1 Chance 100 
 
 ;------------------------------------------
