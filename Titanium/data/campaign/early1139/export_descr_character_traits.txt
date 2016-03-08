@@ -232,8 +232,6 @@ Trait EgyptHero
 ;------------------------------------------
 Trait PaganPriestHigh
  Characters priest
- NoGoingBackLevel 1 
- AntiTraits PaganPriest
 
  Level Pagan_High_Priest
    Description Pagan_High_Priest_desc
@@ -248,7 +246,6 @@ Trait PaganPriestHigh
 Trait PaganPriest
  Characters priest
  Hidden
- AntiTraits PaganPriestHigh
 
  Level Pagan_Priest
    Description Pagan_Priest_desc
@@ -260,19 +257,43 @@ Trait PaganPriest
 ;------------------------------------------
 Trait DivineProtectionPagan
  Characters priest
- AntiTraits Doomsayer
+
+ Level Doomsayer
+   Description Doomsayer_desc
+   EffectsDescription Doomsayer_effects_desc
+   Epithet Doomsayer_epithet_desc
+   Threshold 1 
+
+   Effect Unorthodoxy 2 
+   Effect Violence -2 
+
+ Level Forsaken
+   Description Forsaken_desc
+   EffectsDescription Forsaken_effects_desc
+   Threshold 3 
+
+   Effect Unorthodoxy 1 
+   Effect Violence -1 
+
+ Level Morbid
+   Description Morbid_desc
+   EffectsDescription Morbid_effects_desc
+   Threshold 6 
+
+   Effect Unorthodoxy 1 
+   Effect Violence -1 
 
  Level Blessed_by_the_Gods
    Description Blessed_by_the_Gods_desc
    EffectsDescription Blessed_by_the_Gods_effects_desc
-   Threshold 1 
+   Threshold 7 
 
    Effect Violence 1 
 
  Level Protected_by_the_Gods
    Description Protected_by_the_Gods_desc
    EffectsDescription Protected_by_the_Gods_effects_desc
-   Threshold 3 
+   Threshold 9 
 
    Effect Piety 1 
    Effect Violence 1 
@@ -281,7 +302,7 @@ Trait DivineProtectionPagan
    Description Chosen_by_the_Gods_desc
    EffectsDescription Chosen_by_the_Gods_effects_desc
    Epithet Chosen_by_the_Gods_epithet_desc
-   Threshold 6 
+   Threshold 12 
 
    Effect Piety 2 
    Effect Violence 2 
@@ -304,7 +325,7 @@ Trait TOEmergeID
 ;------------------------------------------
 Trait FactionleaderTO
  Characters family
- AntiTraits FactionheirTO
+ ;AntiTraits FactionheirTO
 
  Level Hochmeister
    Description Hochmeister_desc
@@ -320,7 +341,7 @@ Trait FactionleaderTO
 ;------------------------------------------
 Trait FactionheirTO
  Characters family
- AntiTraits FactionleaderTO
+ ;AntiTraits FactionleaderTO
 
  Level Grosskomtur
    Description Grosskomtur_desc
@@ -1639,42 +1660,14 @@ Trait MarriedAPrincess
 ;------------------------------------------
 Trait WifeIsCharming
  Characters family
- AntiTraits WifeIsHorrid
 
- Level Wife_is_Fair
-   Description Wife_is_Fair_desc
-   EffectsDescription Wife_is_Fair_effects_desc
+ Level Wife_is_a_Wretch
+   Description Wife_is_a_Wretch_desc
+   EffectsDescription Wife_is_a_Wretch_effects_desc
    Threshold 1 
 
-   Effect Fertility 1 
-
- Level Wife_is_Charming
-   Description Wife_is_Charming_desc
-   EffectsDescription Wife_is_Charming_effects_desc
-   Threshold 2 
-
-   Effect LocalPopularity 1 
-   Effect Fertility 1 
-
- Level Wife_is_Lovely
-   Description Wife_is_Lovely_desc
-   EffectsDescription Wife_is_Lovely_effects_desc
-   Threshold 3 
-
-   Effect LocalPopularity 2 
-   Effect Fertility 2 
-
-;------------------------------------------
-Trait WifeIsHorrid
- Characters family
- AntiTraits WifeIsCharming
-
- Level Wife_lacks_Charm
-   Description Wife_lacks_Charm_desc
-   EffectsDescription Wife_lacks_Charm_effects_desc
-   Threshold 1 
-
-   Effect Fertility -1 
+   Effect LocalPopularity -2 
+   Effect Fertility -3
 
  Level Wife_is_Undesireable
    Description Wife_is_Undesireable_desc
@@ -1684,51 +1677,47 @@ Trait WifeIsHorrid
    Effect LocalPopularity -1 
    Effect Fertility -2
 
- Level Wife_is_a_Wretch
-   Description Wife_is_a_Wretch_desc
-   EffectsDescription Wife_is_a_Wretch_effects_desc
+ Level Wife_lacks_Charm
+   Description Wife_lacks_Charm_desc
+   EffectsDescription Wife_lacks_Charm_effects_desc
    Threshold 3 
 
-   Effect LocalPopularity -2 
-   Effect Fertility -3
+   Effect Fertility -1 
+
+ Level Wife_is_Fair
+   Description Wife_is_Fair_desc
+   EffectsDescription Wife_is_Fair_effects_desc
+   Threshold 4 
+
+   Effect Fertility 1 
+
+ Level Wife_is_Charming
+   Description Wife_is_Charming_desc
+   EffectsDescription Wife_is_Charming_effects_desc
+   Threshold 5 
+
+   Effect LocalPopularity 1 
+   Effect Fertility 1 
+
+ Level Wife_is_Lovely
+   Description Wife_is_Lovely_desc
+   EffectsDescription Wife_is_Lovely_effects_desc
+   Threshold 6 
+
+   Effect LocalPopularity 2 
+   Effect Fertility 2 
 
 ;------------------------------------------
 Trait WifeIsFertile
  Characters family
- AntiTraits WifeIsBarren
+; AntiTraits WifeIsBarren
 
- Level Wife_is_Fertile
-   Description Wife_is_Fertile_desc
-   EffectsDescription Wife_is_Fertile_effects_desc
+ Level Wife_is_Cursed
+   Description Wife_is_Cursed_desc
+   EffectsDescription Wife_is_Cursed_effects_desc
    Threshold 1 
 
-   Effect Fertility 1 
-
- Level Wife_is_Very_Fertile
-   Description Wife_is_Very_Fertile_desc
-   EffectsDescription Wife_is_Very_Fertile_effects_desc
-   Threshold 2 
-
-   Effect Fertility 2 
-
- Level Wife_is_Ripe
-   Description Wife_is_Ripe_desc
-   EffectsDescription Wife_is_Ripe_effects_desc
-   Threshold 3 
-
-   Effect Fertility 3 
-
-;------------------------------------------
-Trait WifeIsBarren
- Characters family
- AntiTraits WifeIsFertile
-
- Level Wife_is_Barren
-   Description Wife_is_Barren_desc
-   EffectsDescription Wife_is_Barren_effects_desc
-   Threshold 1 
-
-   Effect Fertility -1 
+   Effect Fertility -5 
 
  Level Wife_is_Infertile
    Description Wife_is_Infertile_desc
@@ -1737,12 +1726,33 @@ Trait WifeIsBarren
 
    Effect Fertility -3 
 
- Level Wife_is_Cursed
-   Description Wife_is_Cursed_desc
-   EffectsDescription Wife_is_Cursed_effects_desc
+ Level Wife_is_Barren
+   Description Wife_is_Barren_desc
+   EffectsDescription Wife_is_Barren_effects_desc
    Threshold 3 
 
-   Effect Fertility -5 
+   Effect Fertility -1 
+
+ Level Wife_is_Fertile
+   Description Wife_is_Fertile_desc
+   EffectsDescription Wife_is_Fertile_effects_desc
+   Threshold 4 
+
+   Effect Fertility 1 
+
+ Level Wife_is_Very_Fertile
+   Description Wife_is_Very_Fertile_desc
+   EffectsDescription Wife_is_Very_Fertile_effects_desc
+   Threshold 5 
+
+   Effect Fertility 2 
+
+ Level Wife_is_Ripe
+   Description Wife_is_Ripe_desc
+   EffectsDescription Wife_is_Ripe_effects_desc
+   Threshold 6 
+
+   Effect Fertility 3 
 
 ;------------------------------------------
 Trait WifeIsWise
@@ -1867,51 +1877,13 @@ Trait NaturalPrincess
 ;------------------------------------------
 Trait GoodPrincess
  Characters princess
- AntiTraits BadPrincess
 
- Level Diplomatic_Ability
-   Description Diplomatic_Ability_desc
-   EffectsDescription Diplomatic_Ability_effects_desc
-   GainMessage Diplomatic_Ability_gain_desc
-   Threshold 1 
-
-   Effect Charm 1 
-
- Level Delicate_Diplomat
-   Description Delicate_Diplomat_desc
-   EffectsDescription Delicate_Diplomat_effects_desc
-   GainMessage Delicate_Diplomat_gain_desc
+ Level Royally_Offensive
+   Description Royally_Offensive_desc
+   EffectsDescription Royally_Offensive_effects_desc
    Threshold 2 
 
-   Effect Charm 2 
-
- Level Diplomatic_Weapon
-   Description Diplomatic_Weapon_desc
-   EffectsDescription Diplomatic_Weapon_effects_desc
-   GainMessage Diplomatic_Weapon_gain_desc
-   Threshold 3 
-
-   Effect Charm 3 
-
- Level Mistress_of_Negotiations
-   Description Mistress_of_Negotiations_desc
-   EffectsDescription Mistress_of_Negotiations_effects_desc
-   GainMessage Mistress_of_Negotiations_gain_desc
-   Threshold 4 
-
-   Effect Charm 4 
-
-;------------------------------------------
-Trait BadPrincess
- Characters princess
- AntiTraits GoodPrincess
-
- Level Lost_in_Conversation
-   Description Lost_in_Conversation_desc
-   EffectsDescription Lost_in_Conversation_effects_desc
-   Threshold 2 
-
-   Effect Charm -1 
+   Effect Charm -3 
 
  Level Not_Diplomatic
    Description Not_Diplomatic_desc
@@ -1920,58 +1892,93 @@ Trait BadPrincess
 
    Effect Charm -2 
 
- Level Royally_Offensive
-   Description Royally_Offensive_desc
-   EffectsDescription Royally_Offensive_effects_desc
+ Level Lost_in_Conversation
+   Description Lost_in_Conversation_desc
+   EffectsDescription Lost_in_Conversation_effects_desc
    Threshold 6 
 
-   Effect Charm -3 
+   Effect Charm -1 
+
+ Level Neutral_Diplomatic_Ability
+   Description Neutral_Diplomatic_Ability_desc
+   EffectsDescription Neutral_Diplomatic_Ability_effects_desc
+   Threshold 7 
+
+ Level Diplomatic_Ability
+   Description Diplomatic_Ability_desc
+   EffectsDescription Diplomatic_Ability_effects_desc
+   GainMessage Diplomatic_Ability_gain_desc
+   Threshold 8 
+
+   Effect Charm 1 
+
+ Level Delicate_Diplomat
+   Description Delicate_Diplomat_desc
+   EffectsDescription Delicate_Diplomat_effects_desc
+   GainMessage Delicate_Diplomat_gain_desc
+   Threshold 9 
+
+   Effect Charm 2 
+
+ Level Diplomatic_Weapon
+   Description Diplomatic_Weapon_desc
+   EffectsDescription Diplomatic_Weapon_effects_desc
+   GainMessage Diplomatic_Weapon_gain_desc
+   Threshold 10 
+
+   Effect Charm 3 
+
+ Level Mistress_of_Negotiations
+   Description Mistress_of_Negotiations_desc
+   EffectsDescription Mistress_of_Negotiations_effects_desc
+   GainMessage Mistress_of_Negotiations_gain_desc
+   Threshold 11 
+
+   Effect Charm 4 
 
 ;------------------------------------------
-Trait PretentiousWoman
+Trait HumbleWoman
  Characters princess
- NoGoingBackLevel 2 
- AntiTraits HumbleWoman
-
- Level Pretentious
-   Description Pretentious_desc
-   EffectsDescription Pretentious_effects_desc
-   Threshold 1 
-
-   Effect Charm -1 
 
  Level Utter_Snob
    Description Utter_Snob_desc
    EffectsDescription Utter_Snob_effects_desc
    Epithet Utter_Snob_epithet_desc
-   Threshold 2 
+   Threshold 1 
 
    Effect Charm -2 
 
-;------------------------------------------
-Trait HumbleWoman
- Characters princess
- AntiTraits PretentiousWoman
+ Level Pretentious
+   Description Pretentious_desc
+   EffectsDescription Pretentious_effects_desc
+   Threshold 2 
+
+   Effect Charm -1 
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 3 
 
  Level Humble
    Description Humble_desc
    EffectsDescription Humble_effects_desc
-   Threshold 1 
+   Threshold 4 
 
    Effect Charm 1 
 
  Level Respectful
    Description Respectful_desc
    EffectsDescription Respectful_effects_desc
-   Threshold 2 
+   Threshold 5 
 
    Effect Charm 2 
 
 ;------------------------------------------
 Trait PrettyWoman
  Characters princess
- NoGoingBackLevel 1 
- AntiTraits UglyWoman
+ ;NoGoingBackLevel 1 
+ ;AntiTraits UglyWoman
 
  Level Attractive
    Description Attractive_desc
@@ -1999,8 +2006,8 @@ Trait PrettyWoman
 ;------------------------------------------
 Trait UglyWoman
  Characters princess
- NoGoingBackLevel 1 
- AntiTraits PrettyWoman
+ ;NoGoingBackLevel 1 
+ ;AntiTraits PrettyWoman
 
  Level Flawed_Features
    Description Flawed_Features_desc
@@ -2021,12 +2028,40 @@ Trait UglyWoman
 ;------------------------------------------
 Trait BraveWoman
  Characters princess
- AntiTraits TimidWoman
+ ;AntiTraits TimidWoman
+
+ Level Nuerotic
+   Description Nuerotic_desc
+   EffectsDescription Nuerotic_effects_desc
+   Threshold 1 
+
+   Effect Charm -3 
+   Effect PersonalSecurity 2
+
+ Level Skittish
+   Description Skittish_desc
+   EffectsDescription Skittish_effects_desc
+   Threshold 2 
+
+   Effect Charm -2 
+   Effect PersonalSecurity 1
+
+ Level Timid
+   Description Timid_desc
+   EffectsDescription Timid_effects_desc
+   Threshold 3 
+
+   Effect Charm -1 
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 5 
 
  Level Brave_Woman
    Description Brave_Woman_desc
    EffectsDescription Brave_Woman_effects_desc
-   Threshold 1 
+   Threshold 6 
 
    Effect Charm 1 
    Effect PersonalSecurity 1
@@ -2034,130 +2069,83 @@ Trait BraveWoman
  Level Dauntless_Woman
    Description Dauntless_Woman_desc
    EffectsDescription Dauntless_Woman_effects_desc
-   Threshold 2 
+   Threshold 7 
 
    Effect Charm 2 
    Effect PersonalSecurity 2
 
 ;------------------------------------------
-Trait TimidWoman
- Characters princess
- AntiTraits BraveWoman
-
- Level Timid
-   Description Timid_desc
-   EffectsDescription Timid_effects_desc
-   Threshold 2 
-
-   Effect Charm -1 
-
- Level Skittish
-   Description Skittish_desc
-   EffectsDescription Skittish_effects_desc
-   Threshold 3 
-
-   Effect Charm -2 
-   Effect PersonalSecurity 1
-
- Level Nuerotic
-   Description Nuerotic_desc
-   EffectsDescription Nuerotic_effects_desc
-   Threshold 4 
-
-   Effect Charm -3 
-   Effect PersonalSecurity 2
-
+;Trait TimidWoman
+; Characters princess
+; AntiTraits BraveWoman
 ;------------------------------------------
-Trait DesperateWoman
+;Trait DesperateWoman
+; Characters princess
+; AntiTraits PrettyWoman, SpiritedWoman
+;------------------------------------------
+Trait SpiritedWoman
  Characters princess
- AntiTraits PrettyWoman, SpiritedWoman
-
- Level Bruised_Confidence
-   Description Bruised_Confidence_desc
-   EffectsDescription Bruised_Confidence_effects_desc
-   Threshold 2 
-
-   Effect Charm 1 
-
- Level Insecure
-   Description Insecure_desc
-   EffectsDescription Insecure_effects_desc
-   Threshold 3 
-
-   Effect Charm -2 
+ ;AntiTraits DesperateWoman
 
  Level Desperate
    Description Desperate_desc
    EffectsDescription Desperate_effects_desc
    Epithet Desperate_epithet_desc
-   Threshold 4 
+   Threshold 1 
 
    Effect Charm -3 
 
-;------------------------------------------
-Trait SpiritedWoman
- Characters princess
- AntiTraits DesperateWoman
+ Level Insecure
+   Description Insecure_desc
+   EffectsDescription Insecure_effects_desc
+   Threshold 2 
+
+   Effect Charm -2 
+
+ Level Bruised_Confidence
+   Description Bruised_Confidence_desc
+   EffectsDescription Bruised_Confidence_effects_desc
+   Threshold 3 
+
+   Effect Charm 1 
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 5 
 
  Level Spirited
    Description Spirited_desc
    EffectsDescription Spirited_effects_desc
-   Threshold 1 
+   Threshold 6 
 
    Effect Charm 1 
 
  Level Engaging
    Description Engaging_desc
    EffectsDescription Engaging_effects_desc
-   Threshold 2 
+   Threshold 7 
 
    Effect Charm 2 
 
  Level Self-serving
    Description Self-serving_desc
    EffectsDescription Self-serving_effects_desc
-   Threshold 3 
+   Threshold 8 
 
    Effect Charm -1 
 
 ;------------------------------------------
 Trait FaithfulWoman
  Characters princess
- AntiTraits UnchasteWoman
+ ;AntiTraits UnchasteWoman
 
- Level Reliable
-   Description Reliable_desc
-   EffectsDescription Reliable_effects_desc
+ Level Brazen_Hussy
+   Description Brazen_Hussy_desc
+   EffectsDescription Brazen_Hussy_effects_desc
    Threshold 1 
 
-   Effect Charm 1 
-
- Level Faithful
-   Description Faithful_desc
-   EffectsDescription Faithful_effects_desc
-   Threshold 2 
-
-   Effect Charm 2 
-
- Level Unquestionably_Loyal
-   Description Unquestionably_Loyal_desc
-   EffectsDescription Unquestionably_Loyal_effects_desc
-   Threshold 4 
-
-   Effect Loyalty 1 
-   Effect Charm 2 
-
-;------------------------------------------
-Trait UnchasteWoman
- Characters princess
- AntiTraits FaithfulWoman, PassionateWoman
-
- Level Suggestive
-   Description Suggestive_desc
-   EffectsDescription Suggestive_effects_desc
-   Threshold 1 
-
-   Effect Charm 1 
+   Effect Charm -2 
 
  Level Scarlet_Woman
    Description Scarlet_Woman_desc
@@ -2166,17 +2154,48 @@ Trait UnchasteWoman
 
    Effect Charm 2 
 
- Level Brazen_Hussy
-   Description Brazen_Hussy_desc
-   EffectsDescription Brazen_Hussy_effects_desc
+ Level Suggestive
+   Description Suggestive_desc
+   EffectsDescription Suggestive_effects_desc
    Threshold 3 
 
-   Effect Charm -2 
+   Effect Charm 1 
 
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 4 
+
+ Level Reliable
+   Description Reliable_desc
+   EffectsDescription Reliable_effects_desc
+   Threshold 5 
+
+   Effect Charm 1 
+
+ Level Faithful
+   Description Faithful_desc
+   EffectsDescription Faithful_effects_desc
+   Threshold 6 
+
+   Effect Charm 2 
+
+ Level Unquestionably_Loyal
+   Description Unquestionably_Loyal_desc
+   EffectsDescription Unquestionably_Loyal_effects_desc
+   Threshold 7 
+
+   Effect Loyalty 1 
+   Effect Charm 2 
+
+;------------------------------------------
+;Trait UnchasteWoman
+; Characters princess
+; AntiTraits FaithfulWoman, PassionateWoman
 ;------------------------------------------
 Trait VapidWoman
  Characters princess
- AntiTraits EducatedWoman
+ ;AntiTraits EducatedWoman
 
  Level Simplistic
    Description Simplistic_desc
@@ -2203,7 +2222,7 @@ Trait VapidWoman
 ;------------------------------------------
 Trait EducatedWoman
  Characters princess
- AntiTraits VapidWoman
+ ;AntiTraits VapidWoman
 
  Level Intelligent
    Description Intelligent_desc
@@ -2465,7 +2484,7 @@ Trait HarshWoman
 ;------------------------------------------
 Trait BiologicalSon
  Characters family
- AntiTraits BastardSon
+ ;AntiTraits BastardSon
  
  Level BiologicalSon
    Description BiologicalSon_desc
@@ -2475,7 +2494,7 @@ Trait BiologicalSon
 ;------------------------------------------
 Trait BastardSon
  Characters family
- AntiTraits BiologicalSon 
+ ;AntiTraits BiologicalSon 
  
  Level BastardSon
    Description BastardSon_desc
@@ -2519,7 +2538,7 @@ Trait DaughterofKingPrince
 ;------------------------------------------
 Trait Hates_Father
  Characters family
- AntiTraits Loves_Father
+ ;AntiTraits Loves_Father
 
  Level Hatedad1
    Description Hatedad1_desc
@@ -2538,7 +2557,7 @@ Trait Hates_Father
 ;------------------------------------------
 Trait Loves_Father
  Characters family
- AntiTraits Hates_Father
+ ;AntiTraits Hates_Father
 
  Level Lovedad1
    Description Lovedad1_desc
@@ -2640,7 +2659,7 @@ Trait HaleAndHearty
 Trait Diseased
  Characters family
  Hidden
- AntiTraits Healed
+ ;AntiTraits Healed
  
  Level Diseased
    Description Diseased_desc
@@ -2650,7 +2669,7 @@ Trait Diseased
 ;------------------------------------------
 Trait Pneumonia
  Characters family
- AntiTraits Healed
+ ;AntiTraits Healed
  
  Level Pneumonia
    Description Pneumonia_desc
@@ -2695,7 +2714,7 @@ Trait Leprosy
 ;------------------------------------------
 Trait Scurvy
  Characters family
- AntiTraits Healed
+ ;AntiTraits Healed
  
  Level Scurvy
    Description Scurvy_desc
@@ -2721,7 +2740,7 @@ Trait ScurvyEncounter
 Trait Healed
  Characters family
  Hidden
- AntiTraits Pneumonia, Scurvy, Diseased
+ ;AntiTraits Pneumonia, Scurvy, Diseased
  
  Level Healed
    Description Healed_desc
@@ -4104,7 +4123,7 @@ Trait SeverelyWounded
 ;------------------------------------------
 Trait FactionFutureRegent
  Characters family
- AntiTraits FactionRegent, Next_Heir_Trait, Desinherited_Trait
+ ;AntiTraits FactionRegent, Next_Heir_Trait, Desinherited_Trait
 
  Level FactionFutureRegent
    Description FactionFutureRegent_desc
@@ -4116,7 +4135,7 @@ Trait FactionFutureRegent
 ;------------------------------------------
 Trait FactionRegent
  Characters family
- AntiTraits FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
+ ;AntiTraits FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
 
  Level FactionRegent
    Description FactionRegent_desc
@@ -4718,8 +4737,8 @@ Trait VendettaGeorgia
 ;------------------------------------------
 Trait Factionleader
  Characters family
- NoGoingBackLevel 1
- AntiTraits Factionheir, FactionUsurper, FactionFutureUsurper, Next_Heir_Trait, Desinherited_Trait
+ ;NoGoingBackLevel 1
+ ;AntiTraits Factionheir, FactionUsurper, FactionFutureUsurper, Next_Heir_Trait, Desinherited_Trait
 
  Level Faction_Leader
    Description Faction_Leader_desc
@@ -4745,7 +4764,7 @@ Trait Factionleader
 ;------------------------------------------
 Trait Factionheir
  Characters family
- AntiTraits Factionleader, Next_Heir_Trait, Desinherited_Trait
+ ;AntiTraits Factionleader, Next_Heir_Trait, Desinherited_Trait
 
  Level Heir_Apparent
    Description Heir_Apparent_desc
@@ -11508,44 +11527,15 @@ Trait OpenMinded
 ;------------------------------------------
 Trait DivineProtection
  Characters priest
- AntiTraits Doomsayer
 
- Level Blessedly_Lucky
-   Description Blessedly_Lucky_desc
-   EffectsDescription Blessedly_Lucky_effects_desc
+ Level Doomsayer
+   Description Doomsayer_desc
+   EffectsDescription Doomsayer_effects_desc
+   Epithet Doomsayer_epithet_desc
    Threshold 1 
 
-   Effect Violence 1 
-
- Level Divine_Protection
-   Description Divine_Protection_desc
-   EffectsDescription Divine_Protection_effects_desc
-   Threshold 3 
-
-   Effect Piety 1 
-   Effect Violence 1 
-
- Level The_Chosen_One
-   Description The_Chosen_One_desc
-   EffectsDescription The_Chosen_One_effects_desc
-   Epithet The_Chosen_One_epithet_desc
-   Threshold 6 
-
-   Effect Piety 2 
-   Effect Violence 2 
-
-;------------------------------------------
-Trait Doomsayer
- Characters priest
- AntiTraits DivineProtection, DivineProtectionPagan
-
- Level Morbid
-   Description Morbid_desc
-   EffectsDescription Morbid_effects_desc
-   Threshold 1 
-
-   Effect Unorthodoxy 1 
-   Effect Violence -1 
+   Effect Unorthodoxy 2 
+   Effect Violence -2 
 
  Level Forsaken
    Description Forsaken_desc
@@ -11555,14 +11545,37 @@ Trait Doomsayer
    Effect Unorthodoxy 1 
    Effect Violence -1 
 
- Level Doomsayer
-   Description Doomsayer_desc
-   EffectsDescription Doomsayer_effects_desc
-   Epithet Doomsayer_epithet_desc
+ Level Morbid
+   Description Morbid_desc
+   EffectsDescription Morbid_effects_desc
    Threshold 6 
 
-   Effect Unorthodoxy 2 
-   Effect Violence -2 
+   Effect Unorthodoxy 1 
+   Effect Violence -1 
+
+ Level Blessedly_Lucky
+   Description Blessedly_Lucky_desc
+   EffectsDescription Blessedly_Lucky_effects_desc
+   Threshold 7 
+
+   Effect Violence 1 
+
+ Level Divine_Protection
+   Description Divine_Protection_desc
+   EffectsDescription Divine_Protection_effects_desc
+   Threshold 9 
+
+   Effect Piety 1 
+   Effect Violence 1 
+
+ Level The_Chosen_One
+   Description The_Chosen_One_desc
+   EffectsDescription The_Chosen_One_effects_desc
+   Epithet The_Chosen_One_epithet_desc
+   Threshold 12 
+
+   Effect Piety 2 
+   Effect Violence 2 
 
 ;------------------------------------------
 Trait Purifier
@@ -13296,6 +13309,96 @@ Trait Muslim
    
    
 ;------------------------------------------
+Trait Muslim_Sunni
+ Characters family
+ AntiTraits Muslim_Shia
+
+   Level Sunni
+   Description Sunni_desc
+   EffectsDescription NormalHealth_effects_desc
+   Threshold 1
+
+   Level Sunni
+   Description Sunni_desc
+   EffectsDescription Sunni_effects_desc
+   Threshold 2
+
+   Effect Piety 1
+   Effect Loyalty 1
+
+;------------------------------------------
+Trait Muslim_Shia
+ Characters family
+ AntiTraits Muslim_Sunni
+
+   Level Shia
+   Description Shia_desc
+   EffectsDescription NormalHealth_effects_desc
+   Threshold 1
+
+   Level Shia
+   Description Shia_desc
+   EffectsDescription Shia_effects_desc
+   Threshold 2
+
+   Effect Piety 1
+   Effect Loyalty 1
+
+;------------------------------------------
+Trait ShiaHeresy
+ Characters family
+
+   Level ShiaHeresy1
+   Description ShiaHeresy1_desc
+   EffectsDescription ShiaHeresy1_effects_desc
+   Threshold  1 
+
+   Effect Piety -1 
+   Effect Unrest  1 
+   Effect Loyalty -1
+   Effect Authority -2 
+
+   Level ShiaHeresy2
+   Description ShiaHeresy2_desc
+   EffectsDescription ShiaHeresy2_effects_desc
+   Threshold  3 
+
+   Effect Piety -2 
+   Effect Unrest  2 
+   Effect Loyalty -2 
+   Effect Authority -4 
+
+   Level ShiaHeresy3
+   Description ShiaHeresy3_desc
+   EffectsDescription ShiaHeresy3_effects_desc
+   Epithet ShiaHeresy3_epithet_desc
+   Threshold  5 
+	
+   Effect Unrest  2 
+   Effect Loyalty -4 
+   Effect Authority -5 
+
+;------------------------------------------
+Trait ShiaHeresyTrack
+ Characters family
+ Hidden
+
+   Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 1
+
+   Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 3
+
+   Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 5
+
+;------------------------------------------
 Trait Catholic
  Characters family
  
@@ -13508,6 +13611,113 @@ Trait WifeHasConverted
    Threshold 1
    
    Effect LocalPopularity 1
+
+;------------------------------------------
+;******** ISLAMIC FACTION ETHNIC TRAITS  ********
+Trait IslamicEthnicity
+ Characters family
+
+ Level Arab
+   Description Arab_desc
+   EffectsDescription Arab_effects_desc
+   Threshold 1
+
+ Level Turk
+   Description Turk_desc
+   EffectsDescription Turk_effects_desc
+   Threshold 2
+
+ Level Kurd
+   Description Kurd_desc
+   EffectsDescription Kurd_effects_desc
+   Threshold 3
+
+ Level Berber
+   Description Berber_desc
+   EffectsDescription Berber_effects_desc
+   Threshold 4
+
+ Level Persian
+   Description Persian_desc
+   EffectsDescription Persian_effects_desc
+   Threshold 5
+
+;------------------------------------------
+Trait IslamicEthnicityWife
+ Characters family
+
+ Level ArabWife
+   Description ArabWife_desc
+   EffectsDescription ArabWife_effects_desc
+   Threshold 1
+
+ Level TurkWife
+   Description TurkWife_desc
+   EffectsDescription TurkWife_effects_desc
+   Threshold 2
+
+ Level KurdWife
+   Description KurdWife_desc
+   EffectsDescription KurdWife_effects_desc
+   Threshold 3
+
+ Level BerberWife
+   Description BerberWife_desc
+   EffectsDescription BerberWife_effects_desc
+   Threshold 4
+
+ Level PersianWife
+   Description PersianWife_desc
+   EffectsDescription PersianWife_effects_desc
+   Threshold 5
+
+;------------------------------------------
+Trait IslamicEthnicityPrincess
+ Characters princess
+ Hidden
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 1
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 2
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 3
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 4
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_effects_desc
+   Threshold 5
+
+;------------------------------------------
+Trait IslamicEthnicityBonus
+ Characters family
+
+ Level IslamicEthnicityBonus
+   Description IslamicEthnicityBonus_desc
+   EffectsDescription IslamicEthnicityBonus_effects_desc
+   Threshold 1
+
+   Effect Loyalty 1
+
+ Level IslamicEthnicityMalus
+   Description IslamicEthnicityMalus_desc
+   EffectsDescription IslamicEthnicityMalus_effects_desc
+   Threshold 1
+
+   Effect Loyalty -1
 
 ;------------------------------------------
 ;******** FEUDAL EUROPEAN MILITARY CAREER  ********
@@ -14079,7 +14289,7 @@ Trait Byzantium_Triumph
 ;------------------------------------------
 Trait FactionFutureUsurper
  Characters family
- AntiTraits Factionleader, FactionUsurper, Next_Heir_Trait, Desinherited_Trait
+ ;AntiTraits Factionleader, FactionUsurper, Next_Heir_Trait, Desinherited_Trait
 
  Level ThroneClaimant
    Description ThroneClaimant_desc
@@ -14091,8 +14301,8 @@ Trait FactionFutureUsurper
 ;------------------------------------------
 Trait FactionUsurper
  Characters family
- NoGoingBackLevel 1
- AntiTraits Factionleader, FactionFutureUsurper, FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
+ ;NoGoingBackLevel 1
+ ;AntiTraits Factionleader, FactionFutureUsurper, FactionFutureRegent, Next_Heir_Trait, Desinherited_Trait
 
  Level Usurper
    Description Usurper_desc
@@ -14172,7 +14382,7 @@ Trait Crusader_General_Levels
 ;-------------------------------------------
 Trait Jerusalem_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Jerusalem_Heir
 
  Level Crusader_Jerusalem_Ruler
@@ -14186,7 +14396,7 @@ Trait Jerusalem_Ruler
 ;------------------------------------------
 Trait Antioch_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Antioch_Heir
 
  Level Crusader_Antioch_Ruler
@@ -14200,7 +14410,7 @@ Trait Antioch_Ruler
 ;------------------------------------------
 Trait Edessa_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Edessa_Heir
 
  Level Crusader_Edessa_Ruler
@@ -14211,7 +14421,7 @@ Trait Edessa_Ruler
 ;------------------------------------------
 Trait Tortosa_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Tortosa_Heir
 
  Level Crusader_Tortosa_Ruler
@@ -14222,7 +14432,7 @@ Trait Tortosa_Ruler
 ;------------------------------------------
 Trait Nicosia_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Nicosia_Heir
 
  Level Crusader_Nicosia_Ruler
@@ -14233,7 +14443,7 @@ Trait Nicosia_Ruler
 ;------------------------------------------
 Trait Rhodes_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Rhodes_Heir
 
  Level Crusader_Rhodes_Ruler
@@ -14244,7 +14454,7 @@ Trait Rhodes_Ruler
 ;------------------------------------------
 Trait Constantinople_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Constantinople_Heir
 
  Level Crusader_Constantinople_Ruler
@@ -14258,7 +14468,7 @@ Trait Constantinople_Ruler
 ;------------------------------------------
 Trait Athens_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Athens_Heir
 
  Level Crusader_Athens_Ruler
@@ -14269,7 +14479,7 @@ Trait Athens_Ruler
 ;------------------------------------------
 Trait Corinth_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Corinth_Heir
 
  Level Crusader_Corinth_Ruler
@@ -14280,7 +14490,7 @@ Trait Corinth_Ruler
 ;------------------------------------------
 Trait Thessalonica_Ruler
  Characters family
- NoGoingBackLevel 1
+ ;NoGoingBackLevel 1
  AntiTraits Thessalonica_Heir
 
  Level Crusader_Thessalonica_Ruler
@@ -14505,8 +14715,8 @@ Trait Stripped_HRE
 
 Trait Venice_Factionleader
  Characters family
- NoGoingBackLevel 1
- AntiTraits Venice_Factionheir
+ ;NoGoingBackLevel 1
+ ;AntiTraits Venice_Factionheir
 
  Level Venice_Doge
    Description Venice_Doge_desc
@@ -14523,7 +14733,7 @@ Trait Venice_Factionleader
 ;------------------------------------------
 Trait Venice_Factionheir
  Characters family
- AntiTraits Venice_Factionleader
+ ;AntiTraits Venice_Factionleader
 
  Level Consigliere
    Description Consigliere_desc
@@ -14744,8 +14954,8 @@ Trait Venice_Signoria_Age_Penalty
 
 Trait Genoa_Factionleader
  Characters family
- NoGoingBackLevel 1
- AntiTraits Genoa_Factionheir
+ ;NoGoingBackLevel 1
+ ;AntiTraits Genoa_Factionheir
 
  Level Genoa_Doge
    Description Genoa_Doge_desc
@@ -14762,7 +14972,7 @@ Trait Genoa_Factionleader
 ;------------------------------------------
 Trait Genoa_Factionheir
  Characters family
- AntiTraits Genoa_Factionleader
+ ;AntiTraits Genoa_Factionleader
 
  Level Genoa_Consigliere
    Description Genoa_Consigliere_desc
@@ -14955,8 +15165,8 @@ Trait Genoa_Comune_Approval
 
 Trait Novgorod_Factionleader
  Characters family
- NoGoingBackLevel 1
- AntiTraits Novgorod_Factionheir
+ ;NoGoingBackLevel 1
+ ;AntiTraits Novgorod_Factionheir
 
  Level Novgorod_Knyaz
    Description Novgorod_Knyaz_desc
@@ -14972,7 +15182,7 @@ Trait Novgorod_Factionleader
 ;------------------------------------------
 Trait Novgorod_Factionheir
  Characters family
- AntiTraits Novgorod_Factionleader
+ ;AntiTraits Novgorod_Factionleader
 
  Level Novgorod_Naslednik
    Description Novgorod_Naslednik_desc
@@ -15096,7 +15306,7 @@ Trait Novgorod_Veche_Approval
 ;------------------------------------------
 Trait Next_Heir_Trait
  Characters family
- AntiTraits Desinherited_Trait, Factionleader, Factionheir, FactionRegent, FactionFutureRegent, FactionUsurper, FactionFutureUsurper
+ ;AntiTraits Desinherited_Trait, Factionleader, Factionheir, FactionRegent, FactionFutureRegent, FactionUsurper, FactionFutureUsurper
 
  Level Next_Heir
    Description Next_Heir_desc
@@ -15112,7 +15322,7 @@ Trait Next_Heir_Trait
 ;------------------------------------------
 Trait Desinherited_Trait
  Characters family
- AntiTraits Next_Heir_Trait, Factionleader, Factionheir, FactionRegent, FactionFutureRegent, FactionUsurper, FactionFutureUsurper
+ ;AntiTraits Next_Heir_Trait, Factionleader, Factionheir, FactionRegent, FactionFutureRegent, FactionUsurper, FactionFutureUsurper
 
  Level Former_Next_Heir
    Description Former_Next_Heir_desc
@@ -15739,70 +15949,6 @@ Trigger ScriptedBesiegerTraitRemoval
  Affects ScriptedBesieger -1 Chance 100 
 
 ;------------------------------------------
-;------------------------------------------
-Trigger priestinit14
- WhenToTest AgentCreated
-
- Condition AgentType = priest
-       and CharacterReligion pagan
-       and SettlementBuildingExists = dievas_temple
-       and FactionType lithuania
-
- Affects PaganPriestHigh 1 Chance 100 
-
-;------------------------------------------
-Trigger priestinit15
- WhenToTest AgentCreated
-
- Condition AgentType = priest
-       and CharacterReligion pagan
-       and SettlementBuildingExists = perkunas_temple
-       and FactionType lithuania
-
- Affects PaganPriestHigh 1 Chance 100 
-
-;------------------------------------------
-Trigger priestinit16
- WhenToTest AgentCreated
-
- Condition AgentType = priest
-       and CharacterReligion pagan
-       and SettlementBuildingExists = giltine_temple
-       and FactionType lithuania
-
- Affects PaganPriestHigh 1 Chance 100 
-
-;------------------------------------------
-Trigger priestinit18
- WhenToTest AgentCreated
-
- Condition AgentType = priest
-       and CharacterReligion pagan
-       and SettlementBuildingExists = tengir_temple
-       and FactionType cumans
-
- Affects PaganPriestHigh 1 Chance 100 
- 
-;------------------------------------------
-Trigger priestinit18
- WhenToTest AgentCreated
-
- Condition AgentType = priest
-       and CharacterReligion pagan
-       and SettlementBuildingExists = tengir_temple
-       and FactionType mongols
-
- Affects PaganPriestHigh 1 Chance 100 
-
-;------------------------------------------
-Trigger priestinit19
- WhenToTest AgentCreated
-
- Condition AgentType = priest
-       and not FactionIsLocal
-
- Affects UnorthodoxyBonus 1 Chance 100 
-
 ;=BGR -like- triggers here! ===============
 ;------------------------------------------
 Trigger ArmyCost_add_turn_0_20
@@ -15943,7 +16089,7 @@ Trigger BiologicalSonComesofAge
 Trigger HorridWifeNotMother1
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsHorrid = 1
+ Condition FatherTrait WifeIsCharming = 3
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -15956,7 +16102,7 @@ Trigger HorridWifeNotMother1
 Trigger HorridWifeNotMother2
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsHorrid = 2
+ Condition FatherTrait WifeIsCharming = 2
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -15969,7 +16115,7 @@ Trigger HorridWifeNotMother2
 Trigger HorridWifeNotMother3
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsHorrid = 3
+ Condition FatherTrait WifeIsCharming = 1
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -16021,7 +16167,7 @@ Trigger BitchWifeNotMother3
 Trigger BarrenWifeNotMother1
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBarren = 1
+ Condition FatherTrait WifeIsFertile = 3
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -16034,7 +16180,7 @@ Trigger BarrenWifeNotMother1
 Trigger BarrenWifeNotMother2
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBarren = 2
+ Condition FatherTrait WifeIsFertile = 2
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -16047,7 +16193,7 @@ Trigger BarrenWifeNotMother2
 Trigger BarrenWifeNotMother3
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBarren = 3
+ Condition FatherTrait WifeIsFertile = 1
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -16070,10 +16216,19 @@ Trigger UnfaithfulFather1
  Affects BastardSon 2 Chance 45
 
 ;------------------------------------------
+Trigger BastardSonComesOfAgeCatch
+ WhenToTest CharacterComesOfAge
+
+ Condition Trait BastardSon >= 1
+ 
+ Affects BiologicalSon -2 Chance 100
+
+;------------------------------------------
 Trigger HorridWifeNotMother4
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsHorrid >= 1
+ Condition FatherTrait WifeIsCharming <= 3
+       and FatherTrait WifeIsCharming > 0
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 30
@@ -16082,7 +16237,8 @@ Trigger HorridWifeNotMother4
 Trigger HorridWifeNotMother5
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsHorrid >= 2
+ Condition FatherTrait WifeIsCharming <= 2
+       and FatherTrait WifeIsCharming > 0
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 50
@@ -16091,7 +16247,7 @@ Trigger HorridWifeNotMother5
 Trigger HorridWifeNotMother6
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsHorrid >= 3
+ Condition FatherTrait WifeIsCharming = 1
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 80
@@ -16127,7 +16283,8 @@ Trigger BitchWifeNotMother6
 Trigger BarrenWifeNotMother4
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBarren >= 1
+ Condition FatherTrait WifeIsFertile <= 3
+       and FatherTrait WifeIsFertile > 0
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 20
@@ -16136,7 +16293,8 @@ Trigger BarrenWifeNotMother4
 Trigger BarrenWifeNotMother5
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBarren >= 2
+ Condition FatherTrait WifeIsFertile <= 2
+       and FatherTrait WifeIsFertile > 0
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 35
@@ -16145,7 +16303,7 @@ Trigger BarrenWifeNotMother5
 Trigger BarrenWifeNotMother6
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBarren >= 3
+ Condition FatherTrait WifeIsFertile = 1
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 60
@@ -16336,7 +16494,19 @@ Trigger Love_or_Hate_dad
  WhenToTest CharacterComesOfAge
 
  Affects Loves_Father 1 Chance 10 
- Affects Hates_Father 1 Chance 10
+ Affects Loves_Father 2 Chance 5 
+ Affects Hates_Father 1 Chance 10 
+ Affects Hates_Father 2 Chance 5 
+
+;------------------------------------------
+Trigger Love_or_Hate_dad2
+ WhenToTest CharacterComesOfAge
+
+ Condition Trait Loves_Father > 0
+       and Trait Hates_Father > 0
+
+ Affects Loves_Father -4 Chance 100 
+ Affects Hates_Father -4 Chance 100 
 
 
 ;=== Poulains Triggers ====================
@@ -19238,6 +19408,15 @@ Trigger AIScurvyAtSeaTest
  Affects Scurvy 1 Chance 1
 
 ;------------------------------------------
+Trigger ScurvyRemoveHealed
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait Scurvy = 1
+       and Trait Healed = 1
+
+ Affects Healed -2 Chance 100
+
+;------------------------------------------
 Trigger ScurvyDetermined
  WhenToTest CharacterTurnEnd
 
@@ -19333,6 +19512,15 @@ Trigger RobustAITownRecoveryScurvy
        and not FactionIsLocal
 
  Affects Healed 2 Chance 100
+
+;------------------------------------------
+Trigger HealedRemoveScurvy
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait Scurvy = 1
+       and Trait Healed = 1
+
+ Affects Scurvy -2 Chance 100
 
 ;------------------------------------------
 Trigger ScurvyRemoveHealth
@@ -19517,6 +19705,15 @@ Trigger AIPneumoniaBastionHealth
  Affects Pneumonia 1 Chance 1
 
 ;------------------------------------------
+Trigger PneumoniaRemoveHealed
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait Pneumonia = 1
+       and Trait Healed = 1
+
+ Affects Healed -2 Chance 100
+
+;------------------------------------------
 Trigger PneumoniaDetermined
  WhenToTest CharacterTurnEnd
 
@@ -19624,6 +19821,15 @@ Trigger RobustAITownRecoveryPneumonia
        and not FactionIsLocal
 
  Affects Healed 2 Chance 90
+
+;------------------------------------------
+Trigger HealedRemovePneumonia
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait Pneumonia = 1
+       and Trait Healed = 1
+
+ Affects Pneumonia -2 Chance 100
 
 ;*********** Pnut's Diseases - Leprosy ***************
 ;------------------------------------------
@@ -19733,6 +19939,15 @@ Trigger LeprosyRemoveHealth
        and Trait HaleAndHearty > 0 
 
  Affects HaleAndHearty -25 Chance 100
+
+;------------------------------------------
+Trigger RemoveDiseased
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait Healed = 1
+       and Trait Diseased = 1 
+
+ Affects Diseased -2 Chance 100
 
 ;************ Pnut's Health Loss/Recovery *****************
 ;------------------------------------------
@@ -20726,7 +20941,8 @@ Trigger Loyalty_Check_Similar_Attributes
 Trigger family_generalmarries_1
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseTrait UnchasteWoman > 0
+ Condition SpouseTrait FaithfulWoman > 0
+ and SpouseTrait FaithfulWoman < 4
 
  Affects Cuckold 2 Chance 85
 
@@ -20743,24 +20959,64 @@ Trigger family_generalmarries_charming_1
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseAttribute Charm > 4
+       and SpouseAttribute Charm <= 6 
 
- Affects WifeIsCharming 1 Chance 85 
+ Affects WifeIsCharming 4 Chance 85 
 
 ;------------------------------------------
 Trigger family_generalmarries_charming_2
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseAttribute Charm > 6
+       and SpouseAttribute Charm <= 8 
+       and RandomPercent <= 97
 
- Affects WifeIsCharming 1 Chance 85 
+ Affects WifeIsCharming 4 Chance 100 
+ Affects WifeIsCharming 1 Chance 72 
 
 ;------------------------------------------
 Trigger family_generalmarries_charming_3
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseAttribute Charm > 8
+       and RandomPercent <= 99
 
- Affects WifeIsCharming 1 Chance 85
+ Affects WifeIsCharming 4 Chance 100 
+ Affects WifeIsCharming 1 Chance 72 
+ Affects WifeIsCharming 1 Chance 61 
+
+;------------------------------------------
+Trigger family_generalmarries_horrid_0
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseAttribute Charm < 4
+
+ Affects WifeIsCharming 3 Chance 50 
+
+;------------------------------------------
+Trigger family_generalmarries_horrid_1
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseAttribute Charm < 3
+
+ Affects WifeIsCharming -1 Chance 50 
+
+;------------------------------------------
+Trigger family_generalmarries_horrid_2
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseAttribute Charm < 2
+
+ Affects WifeIsCharming -1 Chance 50 
+
+;------------------------------------------
+Trigger family_generalmarries_horrid_3
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseAttribute Charm < 1
+       and Trait WifeIsCharming > 1 
+
+ Affects WifeIsCharming -1 Chance 50 
 
 ;------------------------------------------
 Trigger family_generalmarries_domineering_1
@@ -20782,25 +21038,54 @@ Trigger family_generalmarries_domineering_2
 Trigger family_generalmarries_fertile_1
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseAttribute Fertility > 1
+ Condition SpouseAttribute Fertility = 2
 
- Affects WifeIsFertile 1 Chance 85 
+ Affects WifeIsFertile 4 Chance 85 
 
 ;------------------------------------------
 Trigger family_generalmarries_fertile_2
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseAttribute Fertility > 2
+ Condition SpouseAttribute Fertility = 3
+       and RandomPercent <= 97
 
- Affects WifeIsFertile 1 Chance 85 
+ Affects WifeIsFertile 4 Chance 100 
+ Affects WifeIsFertile 1 Chance 72 
 
 ;------------------------------------------
 Trigger family_generalmarries_fertile_3
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseAttribute Fertility > 3
+       and RandomPercent <= 99
 
- Affects WifeIsFertile 1 Chance 85 
+ Affects WifeIsFertile 4 Chance 100 
+ Affects WifeIsFertile 1 Chance 72 
+ Affects WifeIsFertile 1 Chance 61 
+
+;------------------------------------------
+Trigger family_generalmarries_barren_1
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseAttribute Fertility < 0
+
+ Affects WifeIsFertile 3 Chance 85 
+
+;------------------------------------------
+Trigger family_generalmarries_barren_2
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseAttribute Fertility < -1
+
+ Affects WifeIsFertile -1 Chance 85 
+
+;------------------------------------------
+Trigger family_generalmarries_barren_3
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseAttribute Fertility < -2
+
+ Affects WifeIsFertile -1 Chance 85 
 
 ;------------------------------------------
 Trigger family_generalmarries_educated_1
@@ -20870,7 +21155,7 @@ Trigger family_generalmarries_humble_2
 Trigger family_generalmarries_humble_3
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseTrait BraveWoman >= 1
+ Condition SpouseTrait BraveWoman >= 5
 
  Affects WifeIsNoble 1 Chance 85 
 
@@ -20878,7 +21163,7 @@ Trigger family_generalmarries_humble_3
 Trigger family_generalmarries_spirited_1
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseTrait SpiritedWoman >= 1
+ Condition SpouseTrait SpiritedWoman >= 5
 
  Affects WifeIsNoble 1 Chance 85 
 
@@ -20886,7 +21171,7 @@ Trigger family_generalmarries_spirited_1
 Trigger family_generalmarries_spirited_2
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseTrait SpiritedWoman >= 2
+ Condition SpouseTrait SpiritedWoman >= 6
 
  Affects WifeIsNoble 1 Chance 85 
 
@@ -20894,39 +21179,16 @@ Trigger family_generalmarries_spirited_2
 Trigger family_generalmarries_spirited_3
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseTrait SpiritedWoman = 3
+ Condition SpouseTrait SpiritedWoman = 7
 
  Affects WifeIsNoble 1 Chance 85 
-
-;------------------------------------------
-Trigger family_generalmarries_barren_1
- WhenToTest CharacterMarriesPrincess
-
- Condition SpouseAttribute Fertility < 0
-
- Affects WifeIsBarren 1 Chance 85 
-
-;------------------------------------------
-Trigger family_generalmarries_barren_2
- WhenToTest CharacterMarriesPrincess
-
- Condition SpouseAttribute Fertility < -1
-
- Affects WifeIsBarren 1 Chance 85 
-
-;------------------------------------------
-Trigger family_generalmarries_barren_3
- WhenToTest CharacterMarriesPrincess
-
- Condition SpouseAttribute Fertility < -2
-
- Affects WifeIsBarren 1 Chance 85 
 
 ;------------------------------------------
 Trigger family_generalmarries_bitch_1
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseTrait PretentiousWoman >= 1
+ Condition SpouseTrait HumbleWoman < 3
+       and SpouseTrait HumbleWoman > 0
 
  Affects WifeIsBitch 1 Chance 75 
 
@@ -20934,7 +21196,7 @@ Trigger family_generalmarries_bitch_1
 Trigger family_generalmarries_bitch_2
  WhenToTest CharacterMarriesPrincess
 
- Condition SpouseTrait PretentiousWoman >= 2
+ Condition SpouseTrait HumbleWoman = 1
 
  Affects WifeIsBitch 1 Chance 75 
 
@@ -20945,38 +21207,6 @@ Trigger family_generalmarries_bitch_3
  Condition SpouseTrait HarshWoman >= 1
 
  Affects WifeIsBitch 1 Chance 85 
-
-;------------------------------------------
-Trigger family_generalmarries_horrid_0
- WhenToTest CharacterMarriesPrincess
-
- Condition SpouseAttribute Charm < 4
-
- Affects WifeIsHorrid 1 Chance 50
-
-;------------------------------------------
-Trigger family_generalmarries_horrid_1
- WhenToTest CharacterMarriesPrincess
-
- Condition SpouseAttribute Charm < 3
-
- Affects WifeIsHorrid 1 Chance 50
-
-;------------------------------------------
-Trigger family_generalmarries_horrid_2
- WhenToTest CharacterMarriesPrincess
-
- Condition SpouseAttribute Charm < 2
-
- Affects WifeIsHorrid 1 Chance 50
-
-;------------------------------------------
-Trigger family_generalmarries_horrid_3
- WhenToTest CharacterMarriesPrincess
-
- Condition SpouseAttribute Charm < 1
-
- Affects WifeIsHorrid 1 Chance 50
 
 
 ;*********** AUTHORITY/KING TRIGGERS ************
@@ -21014,7 +21244,7 @@ Trigger Cleanup_the_king3
  Condition IsFactionLeader
        and Trait Loves_Father > 0
 
- Affects Hates_Father 1 Chance 100
+ Affects Loves_Father -4 Chance 100
 
 ;------------------------------------------
 Trigger cleanup_the_king4
@@ -21023,7 +21253,7 @@ Trigger cleanup_the_king4
  Condition IsFactionLeader
        and Trait Hates_Father > 0
 
- Affects Loves_Father 1 Chance 100
+ Affects Hates_Father -4 Chance 100
 
 ;------------------------------------------
 Trigger cleanup_the_king5
@@ -22798,13 +23028,12 @@ Trigger MerchantSkills_add_1
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait GoodAdministrator > 0
-       and not LosingMoney
-       and Attribute Authority > 4
-       and Attribute Piety < 5
-       and Trait Epicurean < 2
+       and FactionIncome > 1500
+       and Attribute Authority > 2
+       and not Trait Epicurean > 1
+       and not Trait ExpensiveTastes > 1
 
- Affects MerchantSkills 1 Chance 15
+ Affects MerchantSkills 1 Chance 2
  
 ;------------------------------------------
 Trigger MerchantSkills_add_2
@@ -22812,9 +23041,11 @@ Trigger MerchantSkills_add_2
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Attribute Piety < 4
-       and Attribute Authority > 5
-       and Trait GoodAdministrator > 0
+       and FactionIncome > 1000
+       and Attribute Authority > 2
+       and not Trait Epicurean > 1
+       and not Trait ExpensiveTastes > 1
+       and Trait MathematicsSkill > 0
 
  Affects MerchantSkills 1 Chance 5
 
@@ -22824,10 +23055,13 @@ Trigger MerchantSkills_add_3
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Attribute Piety < 4
-       and Attribute Authority > 5
+       and FactionIncome > 1000
+       and Attribute Authority > 2
+       and not Trait Epicurean > 1
+       and not Trait ExpensiveTastes > 1
+       and Trait GoodTrader > 0
 
- Affects MerchantSkills 1 Chance 1
+ Affects MerchantSkills 1 Chance 5
 
 ;------------------------------------------
 Trigger MerchantSkillsWideSet_add
@@ -22866,15 +23100,13 @@ Trigger StrictlyReligious_add_1
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait PublicFaith > 1
-       and Trait ReligiousActivity > 0
        and Trait Genocide = 0
        and Trait Feck = 0
        and Trait Perverted = 0
        and not FactionReligion pagan
-       and Attribute Piety > 4
+       and Attribute Piety > 3
 
- Affects StrictlyReligious 1 Chance 10
+ Affects StrictlyReligious 1 Chance 2
  
 ;------------------------------------------
 Trigger StrictlyReligious_add_2
@@ -22882,13 +23114,44 @@ Trigger StrictlyReligious_add_2
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Attribute Piety > 4
        and Trait Genocide = 0
        and Trait Feck = 0
        and Trait Perverted = 0
        and not FactionReligion pagan
+       and Attribute Piety > 3
+       and Trait ReligiousActivity > 0
+       
+ Affects StrictlyReligious 1 Chance 4
+ 
+;------------------------------------------
+Trigger StrictlyReligious_add_3
+ WhenToTest CharacterTurnEnd
+
+ Condition IsFactionLeader
+       and Trait WideTraitSet = 0
+       and Trait Genocide = 0
+       and Trait Feck = 0
+       and Trait Perverted = 0
+       and not FactionReligion pagan
+       and Attribute Piety > 3  
+       and Trait ReligiousActivity > 0
 
  Affects StrictlyReligious 1 Chance 4
+ 
+;------------------------------------------
+Trigger StrictlyReligious_add_4
+ WhenToTest CharacterTurnEnd
+
+ Condition IsFactionLeader
+       and Trait WideTraitSet = 0
+       and Trait Genocide = 0
+       and Trait Feck = 0
+       and Trait Perverted = 0
+       and not FactionReligion pagan
+       and Attribute Piety > 3
+       and Trait Austere > 1
+
+ Affects StrictlyReligious 1 Chance 4 
 
 ;------------------------------------------
 Trigger StrictlyReligiousWideSet_add
@@ -22944,21 +23207,16 @@ Trigger StrictlyReligiousGeneral_remove
 ;==========================================
 ;------------------------------------------
 Trigger ThinksOfHisPeople_add_1
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait GoodAdministrator = 0
-       and Trait BadAdministrator = 0
-       and Trait Slothful = 0
-       and Trait Arse = 0
-       and Trait Feck = 0
-       and Trait StrategyDread = 0
-       and Trait Perverted = 0
-       and Attribute Chivalry > 4
-       and CharacterNumTurnsIdle > 1
+       and Trait BadAdministrator < 1
+       and Trait StrategyDread < 1
+       and Trait Unjust < 1
+       and Attribute Chivalry > 2
 
- Affects ThinksOfHisPeople 1 Chance 4
+ Affects ThinksOfHisPeople 1 Chance 2
  
 ;------------------------------------------
 Trigger ThinksOfHisPeople_add_2
@@ -22966,26 +23224,29 @@ Trigger ThinksOfHisPeople_add_2
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait GoodAdministrator > 0
-       and Trait Slothful = 0
-       and Trait Arse = 0
-       and Trait Feck = 0
-       and Trait StrategyDread = 0
-       and Trait Perverted = 0
-       and Attribute Chivalry > 4
+       and Trait BadAdministrator < 1
+       and Trait StrategyDread < 1
+       and Trait Unjust < 1
+       and Attribute Chivalry > 2
        and CharacterNumTurnsIdle > 1
+       and Trait Gregarious > 1
 
- Affects ThinksOfHisPeople 1 Chance 15
-
+ Affects ThinksOfHisPeople 1 Chance 5
+ 
 ;------------------------------------------
 Trigger ThinksOfHisPeople_add_3
  WhenToTest CharacterTurnEnd
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and CharacterNumTurnsIdle > 2
+       and Trait BadAdministrator < 1
+       and Trait StrategyDread < 1
+       and Trait Unjust < 1
+       and Attribute Chivalry > 2
+       and CharacterNumTurnsIdle > 1
+       and Trait KindRuler > 0
 
- Affects ThinksOfHisPeople 1 Chance 2
+ Affects ThinksOfHisPeople 1 Chance 5
 
 ;------------------------------------------
 Trigger ThinksOfHisPeopleWideSet_add
@@ -23000,20 +23261,16 @@ Trigger ThinksOfHisPeopleWideSet_add
 ;==========================================
 ;------------------------------------------
 Trigger GreedyRuler_add_1
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait BattleChivalry < 2
-       and Trait CaptorChivalry < 2
-       and Trait RansomChivalry < 2
-       and Trait Feck = 0
-       and Trait Arse = 0
        and Trait StrategyChivalry < 2
-       and Attribute Chivalry < 4
-       and Attribute Piety < 4
-
- Affects GreedyRuler 1 Chance 3
+       and Attribute Chivalry < 3
+       and Attribute Piety < 3
+       and Trait Corrupt > 0
+       
+ Affects GreedyRuler 1 Chance 5
  
 ;------------------------------------------
 Trigger GreedyRuler_add_2
@@ -23021,16 +23278,12 @@ Trigger GreedyRuler_add_2
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait BattleChivalry = 0
-       and Trait CaptorChivalry = 0
-       and Trait RansomChivalry = 0
-       and Trait Feck > 0
-       and Trait Arse > 0
-       and Trait StrategyChivalry = 0
-       and Attribute Chivalry < 2
-       and Attribute Piety < 2
-
- Affects GreedyRuler 1 Chance 50
+       and Trait StrategyChivalry < 2
+       and Attribute Chivalry < 3
+       and Attribute Piety < 3  Trait 
+       and Trait Embezzler > 0
+       
+ Affects GreedyRuler 1 Chance 5
 
 ;------------------------------------------
 Trigger GreedyRulerWideSet_add
@@ -23070,12 +23323,11 @@ Trigger ShadyConnections_add_1
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait BattleDread > 0
-       and Trait RansomDread > 0
-       and Trait StrategyDread > 0
-       and Attribute Chivalry < -2
+       and Attribute Chivalry < 0
+       and Attribute Piety < 2
+       and Trait Superstitious > 0
 
- Affects ShadyConnections 1 Chance 20
+ Affects ShadyConnections 1 Chance 5
  
 ;------------------------------------------
 Trigger ShadyConnections_add_2
@@ -23083,9 +23335,22 @@ Trigger ShadyConnections_add_2
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Attribute Chivalry < 2
+       and Attribute Chivalry < 0
        and Attribute Piety < 2
+       and Trait Gambling > 0
+                         
+ Affects ShadyConnections 1 Chance 5
+ 
+;------------------------------------------
+Trigger ShadyConnections_add_3
+ WhenToTest CharacterTurnEnd
 
+ Condition IsFactionLeader
+       and Trait WideTraitSet = 0
+       and Attribute Chivalry < 0
+       and Attribute Piety < 2
+       and Trait Deranged > 0
+                         
  Affects ShadyConnections 1 Chance 5
 
 ;------------------------------------------
@@ -23142,105 +23407,45 @@ Trigger ShadyConnectionsAgentAssassin_remove
 ;==========================================
 ;------------------------------------------
 Trigger WiseAdministrator_add_1
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and HasAncType Academic
-       and Trait GoodAdministrator > 0
-       and Trait GoodBuilder > 0
-       and Trait ExpensiveTastes = 0
+       and not Trait BadAdministrator > 0
+       and Attribute Authority > 2  
+       and not Trait Unjust > 0      
+       and not Trait Rabblerouser > 1
+       and Trait GoodBuilder > 0      
 
- Affects WiseAdministrator 1 Chance 15
+ Affects WiseAdministrator 1 Chance 5
 
 ;------------------------------------------
 Trigger WiseAdministrator_add_2a
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and HasAncType Academic
-       and Trait GoodAdministrator > 0
-       and Trait GoodBuilder = 0
-       and Trait ExpensiveTastes = 0
+       and not Trait BadAdministrator > 0
+       and Attribute Authority > 2  
+       and not Trait Unjust > 0
+       and not Trait Rabblerouser > 1
+       and Trait LogisticalSkill > 0      
 
- Affects WiseAdministrator 1 Chance 7
+ Affects WiseAdministrator 1 Chance 5
 
 ;------------------------------------------
 Trigger WiseAdministrator_add_2b
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and HasAncType Academic
-       and Trait GoodAdministrator = 0
-       and Trait GoodBuilder > 0
-       and Trait ExpensiveTastes = 0
-
- Affects WiseAdministrator 1 Chance 7
-
-;------------------------------------------
-Trigger WiseAdministrator_add_3
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and Trait WideTraitSet = 0
-       and not HasAncType Academic
+       and not Trait BadAdministrator > 0
+       and Attribute Authority > 2  
+       and not Trait Unjust > 0
+       and not Trait Rabblerouser > 1
        and Trait GoodAdministrator > 0
-       and Trait GoodBuilder > 0
-       and Trait ExpensiveTastes = 0
-
- Affects WiseAdministrator 1 Chance 6
-
-;------------------------------------------
-Trigger WiseAdministrator_add_4a
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and Trait WideTraitSet = 0
-       and not HasAncType Academic
-       and Trait GoodAdministrator > 0
-       and Trait GoodBuilder = 0
-       and Trait ExpensiveTastes = 0
 
  Affects WiseAdministrator 1 Chance 4
-
-;------------------------------------------
-Trigger WiseAdministrator_add_4b
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and Trait WideTraitSet = 0
-       and not HasAncType Academic
-       and Trait GoodAdministrator = 0
-       and Trait GoodBuilder > 0
-       and Trait ExpensiveTastes = 0
-
- Affects WiseAdministrator 1 Chance 3
-
-;------------------------------------------
-Trigger WiseAdministrator_add_5
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and Trait WideTraitSet = 0
-       and HasAncType Academic
-       and Trait BadAdministrator = 0
-       and Trait ExpensiveTastes = 0
-
- Affects WiseAdministrator 1 Chance 2
-
-;------------------------------------------
-Trigger WiseAdministrator_add_6
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and Trait WideTraitSet = 0
-       and not HasAncType Academic
-       and Trait BadAdministrator = 0
-       and Trait ExpensiveTastes = 0
-
- Affects WiseAdministrator 1 Chance 1
 
 ;------------------------------------------
 Trigger WiseAdministratorWideSet_add
@@ -23255,45 +23460,42 @@ Trigger WiseAdministratorWideSet_add
 ;==========================================
 ;------------------------------------------
 Trigger Protector_add_1
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Attribute Chivalry >= 4
+       and not Trait Unjust > 0
+       and Attribute Chivalry > 1
+       and Attribute Authority > 3
        and Trait StrategyChivalry > 1
-
- Affects Protector 1 Chance 15
-
-;------------------------------------------
-Trigger Protector_add_2
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and Trait WideTraitSet = 0
-       and Trait Intelligent > 0
-
- Affects Protector 1 Chance 8
-
-;------------------------------------------
-Trigger Protector_add_3
- WhenToTest CharacterTurnEnd
-
- Condition IsFactionLeader
-       and Trait WideTraitSet = 0
-       and Attribute Chivalry >= 4
-       and Trait StrategyChivalry < 2
 
  Affects Protector 1 Chance 5
 
 ;------------------------------------------
-Trigger Protector_add_4
- WhenToTest CharacterTurnEnd
+Trigger Protector_add_2
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Attribute Chivalry > 0
+       and not Trait Unjust > 0
+       and Attribute Chivalry > 1
+       and Attribute Authority > 3
+       and Trait MajorCount > 0          
 
- Affects Protector 1 Chance 1
+ Affects Protector 1 Chance 5
+
+;------------------------------------------
+Trigger Protector_add_3
+ WhenToTest CharacterTurnEndInSettlement
+
+ Condition IsFactionLeader
+       and Trait WideTraitSet = 0
+       and not Trait Unjust > 0
+       and Attribute Chivalry > 1
+       and Attribute Authority > 3
+       and Trait Brave > 0          
+
+ Affects Protector 1 Chance 5
 
 ;------------------------------------------
 Trigger ProtectorWideSet_add
@@ -23308,23 +23510,45 @@ Trigger ProtectorWideSet_add
 ;==========================================
 ;------------------------------------------
 Trigger PassiveRuler_add_1
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
-       and Trait StrategyChivalry = 0
+       and Trait Slothful > 0
 
- Affects PassiveRuler 1 Chance 9
+ Affects PassiveRuler 1 Chance 5
 
 ;------------------------------------------
 Trigger PassiveRuler_add_2
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
+       and Trait BoringSpeaker > 0
 
- Affects PassiveRuler 1 Chance 2
+ Affects PassiveRuler 1 Chance 5
 
+;------------------------------------------
+Trigger PassiveRuler_add_3
+ WhenToTest CharacterTurnEndInSettlement
+
+ Condition IsFactionLeader
+       and Trait WideTraitSet = 0
+       and CharacterNumTurnsIdle > 4
+
+ Affects PassiveRuler 1 Chance 3
+ 
+;------------------------------------------
+Trigger PassiveRuler_remove1
+ WhenToTest FactionLeaderPrisonersRansomedCaptor
+
+ Condition NumCapturedSoldiers > 200
+       and Trait PassiveRuler = 1
+       and Trait WideTraitSet = 1
+
+ Affects PassiveRuler -1 Chance 100         
+ Affects WideTraitSet -1 Chance 100  
+                                  
 ;------------------------------------------
 Trigger PassiveRulerWideSet_add
  WhenToTest CharacterTurnEnd
@@ -23338,13 +23562,43 @@ Trigger PassiveRulerWideSet_add
 ;==========================================
 ;------------------------------------------
 Trigger AbsentMinded_add_1
- WhenToTest CharacterTurnEnd
+ WhenToTest CharacterTurnEndInSettlement
 
  Condition IsFactionLeader
        and Trait WideTraitSet = 0
+       and CharacterNumTurnsIdle > 1
+       and Attribute Chivalry < 3
+       and Attribute Authority < 5
+       and Trait Drink > 2
 
- Affects AbsentMinded 1 Chance 9
+ Affects AbsentMinded 1 Chance 3
 
+;------------------------------------------
+Trigger AbsentMinded_add_2
+ WhenToTest CharacterTurnEndInSettlement
+
+ Condition IsFactionLeader
+       and Trait WideTraitSet = 0
+       and CharacterNumTurnsIdle > 2
+       and Attribute Chivalry < 3
+       and Attribute Authority < 5
+       and Trait Introvert > 0         
+
+ Affects AbsentMinded 1 Chance 3
+
+;------------------------------------------
+Trigger AbsentMinded_add_3
+ WhenToTest CharacterTurnEndInSettlement
+
+ Condition IsFactionLeader
+       and Trait WideTraitSet = 0
+       and CharacterNumTurnsIdle > 2
+       and Attribute Chivalry < 3
+       and Attribute Authority < 5
+       and Trait Girls > 1         
+
+ Affects AbsentMinded 1 Chance 3
+  
 ;------------------------------------------
 Trigger AbsentMindedWideSet_add
  WhenToTest CharacterTurnEnd
@@ -24934,6 +25188,8 @@ Trigger factionleader_TO
  Condition FactionType teutonic_order
 
  Affects FactionleaderTO 2 Chance 100
+ Affects FactionheirTO -2 Chance 100 
+ Affects MinorRanksTO -5 Chance 100 
 
 ;------------------------------------------
 
@@ -24951,6 +25207,7 @@ Trigger factionleader_normalfactions
        and not FactionType jerusalem
 
  Affects Factionleader 2 Chance 100 
+ Affects Factionheir -2 Chance 100 
 
 
 ;==========================================
@@ -25208,6 +25465,7 @@ Trigger becomesfactionregent
        and not FactionType hre; no regents for empires
 
  Affects FactionRegent 2 Chance 100
+ Affects FactionFutureRegent -2 Chance 100 
 
 ;********* NoHeirYet ********* FIXED and Simplified
 ;------------------------------------------
@@ -33524,6 +33782,18 @@ Trigger princess_base
  Affects AgentPiety 1 Chance 100
 
 ;------------------------------------------
+Trigger princess_base_neutral_traits
+ WhenToTest CharacterComesOfAge
+
+ Condition AgentType = princess
+
+ Affects HumbleWoman 3 Chance 100 
+ Affects GoodPrincess 4 Chance 100 
+ Affects BraveWoman 5 Chance 100 
+ Affects SpiritedWoman 5 Chance 100 
+ Affects FaithfulWoman 4 Chance 100 
+
+;------------------------------------------
 Trigger princess_base1
  WhenToTest CharacterComesOfAge
 
@@ -33541,6 +33811,7 @@ Trigger princess_dad_was_ugly
 
  Condition FatherTrait Ugly >= 1
        and AgentType = princess
+       and Trait PrettyWoman < 1
 
  Affects UglyWoman 1 Chance 33 
  Affects UglyWoman 1 Chance 25 
@@ -33551,6 +33822,7 @@ Trigger princess_dad_was_ugly2
 
  Condition FatherTrait Ugly >= 2
        and AgentType = princess
+       and Trait PrettyWoman < 1
 
  Affects UglyWoman 1 Chance 33 
  Affects UglyWoman 1 Chance 25 
@@ -33561,6 +33833,7 @@ Trigger princess_dad_was_ugly3
 
  Condition FatherTrait Ugly >= 3
        and AgentType = princess
+       and Trait PrettyWoman < 1
 
  Affects UglyWoman 1 Chance 33 
  Affects UglyWoman 1 Chance 25 
@@ -33571,6 +33844,7 @@ Trigger princess_dad_was_handsome
 
  Condition FatherTrait Handsome >= 1
        and AgentType = princess
+       and Trait UglyWoman < 1
 
  Affects PrettyWoman 1 Chance 33 
  Affects PrettyWoman 1 Chance 25 
@@ -33581,6 +33855,7 @@ Trigger princess_dad_was_handsome2
 
  Condition FatherTrait Handsome >= 2
        and AgentType = princess
+       and Trait UglyWoman < 1
 
  Affects PrettyWoman 1 Chance 33 
  Affects PrettyWoman 1 Chance 25 
@@ -33591,6 +33866,7 @@ Trigger princess_dad_was_handsome3
 
  Condition FatherTrait Handsome >= 3
        and AgentType = princess
+       and Trait UglyWoman < 1
 
  Affects PrettyWoman 1 Chance 33 
  Affects PrettyWoman 1 Chance 25 
@@ -33613,6 +33889,16 @@ Trigger princess_dad_was_intelligent2
        and AgentType = princess
 
  Affects EducatedWoman 1 Chance 33 
+ Affects EducatedWoman -1 Chance 33 
+
+;------------------------------------------
+Trigger princess_dad_was_intelligent3
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Intelligent >= 2
+       and AgentType = princess
+       and Trait EducatedWoman < 1
+
  Affects VapidWoman 1 Chance 33 
 
 ;------------------------------------------
@@ -33633,6 +33919,16 @@ Trigger princess_dad_was_ignorant2
        and AgentType = princess
 
  Affects VapidWoman 1 Chance 33 
+ Affects VapidWoman -1 Chance 25 
+
+;------------------------------------------
+Trigger princess_dad_was_ignorant3
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Ignorance >= 2
+       and AgentType = princess
+       and Trait VapidWoman < 1
+
  Affects EducatedWoman 1 Chance 25 
 
 ;------------------------------------------
@@ -33652,8 +33948,8 @@ Trigger princess_dad_was_womaniser
  Condition FatherTrait Girls >= 1
        and AgentType = princess
 
- Affects UnchasteWoman 1 Chance 33 
- Affects UnchasteWoman 1 Chance 25 
+ Affects FaithfulWoman -1 Chance 33 
+ Affects FaithfulWoman -1 Chance 25 
 
 ;------------------------------------------
 Trigger princess_dad_was_perverted
@@ -33662,7 +33958,7 @@ Trigger princess_dad_was_perverted
  Condition FatherTrait Perverted >= 1
        and AgentType = princess
 
- Affects UnchasteWoman 1 Chance 33 
+ Affects FaithfulWoman -1 Chance 33 
  Affects ColdWoman 1 Chance 25 
 
 ;------------------------------------------
@@ -33722,7 +34018,7 @@ Trigger princess_dad_was_harshruler
  Condition FatherTrait HarshRuler >= 1
        and AgentType = princess
 
- Affects PretentiousWoman 1 Chance 33 
+ Affects HumbleWoman -1 Chance 33 
  Affects HumbleWoman 1 Chance 25 
 
 ;------------------------------------------
@@ -33733,7 +34029,7 @@ Trigger princess_dad_was_kindruler
        and AgentType = princess
 
  Affects HumbleWoman 1 Chance 33 
- Affects PretentiousWoman 1 Chance 25 
+ Affects HumbleWoman -1 Chance 25 
 
 ;------------------------------------------
 Trigger princess_dad_was_authoritarian
@@ -33764,7 +34060,6 @@ and Trait IAmPrincess = 1
 
 Affects NaturalPrincess 1 Chance 75
 Affects PassionateWoman 1 Chance 50
-Affects PrettyWoman 1 Chance 33
 Affects BraveWoman 1 Chance 15
 Affects DykeWoman 1 Chance 5
 
@@ -33777,7 +34072,6 @@ and Trait IAmPrincess = 1
 
 Affects NaturalPrincess 1 Chance 66
 Affects PassionateWoman 1 Chance 33
-Affects PrettyWoman 1 Chance 15
 Affects BraveWoman 1 Chance 5
 Affects DykeWoman 1 Chance 3
 
@@ -33790,8 +34084,19 @@ and Trait IAmPrincess = 1
 
 Affects NaturalPrincess 1 Chance 33
 Affects PassionateWoman 1 Chance 15
-Affects PrettyWoman 1 Chance 5
 Affects BraveWoman 1 Chance 3
+
+;------------------------------------------
+Trigger princess_base_prettywoman
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and Trait IAmPrincess = 1
+and Trait UglyWoman < 1
+
+Affects PrettyWoman 1 Chance 33
+Affects PrettyWoman 1 Chance 15
+Affects PrettyWoman 1 Chance 5
 
 ;------------------------------------------
 Trigger princess_base5
@@ -33799,12 +34104,15 @@ WhenToTest CharacterComesOfAge
 
 Condition AgentType = princess
 and Trait IAmPrincess = 1
-and not Trait PrettyWoman > 0
+and Trait PrettyWoman < 1
 
-Affects HumbleWoman 1 Chance 50
 Affects UglyWoman 1 Chance 50
-Affects SpiritedWoman 1 Chance 10
+Affects UglyWoman 1 Chance 15
+Affects HumbleWoman 1 Chance 50
 Affects BraveWoman 1 Chance 5
+Affects SpiritedWoman 1 Chance 10
+Affects SpiritedWoman -1 Chance 5
+Affects SpiritedWoman -1 Chance 5
 
 ;------------------------------------------
 Trigger princess_base5a
@@ -33814,10 +34122,10 @@ Condition AgentType = princess
 and Trait IAmPrincess = 1
 and Trait PrettyWoman > 0
 
-Affects PretentiousWoman 1 Chance 33
-Affects PretentiousWoman 1 Chance 10
 Affects HumbleWoman 1 Chance 33
 Affects HumbleWoman 1 Chance 10
+Affects HumbleWoman -1 Chance 33
+Affects HumbleWoman -1 Chance 10
 
 ;------------------------------------------
 Trigger princess_base6
@@ -33826,11 +34134,10 @@ WhenToTest CharacterComesOfAge
 Condition AgentType = princess
 and Trait IAmPrincess = 1
 
-Affects PretentiousWoman 1 Chance 33
-Affects UglyWoman 1 Chance 15
+Affects HumbleWoman -1 Chance 33
 Affects SpiritedWoman 1 Chance 15
 Affects BraveWoman 1 Chance 5
-Affects TimidWoman 1 Chance 5
+Affects BraveWoman -1 Chance 5
 
 ;------------------------------------------
 Trigger princess_base9
@@ -33841,8 +34148,6 @@ and Trait IAmPrincess = 1
 
 Affects FaithfulWoman 1 Chance 5
 Affects FaithfulWoman 1 Chance 5
-Affects DesperateWoman 1 Chance 5
-Affects DesperateWoman 1 Chance 5
 
 ;------------------------------------------
 Trigger princess_base10
@@ -33851,8 +34156,8 @@ WhenToTest CharacterComesOfAge
 Condition AgentType = princess
 and Trait IAmPrincess = 1
 
-Affects UnchasteWoman 1 Chance 5
-Affects UnchasteWoman 1 Chance 5
+Affects FaithfulWoman -1 Chance 5
+Affects FaithfulWoman -1 Chance 5
 Affects HarshWoman 1 Chance 5
 Affects HarshWoman 1 Chance 5
 
@@ -33891,7 +34196,7 @@ and FactionBuildingExists >= wooden_castle
 
 Affects BraveWoman 1 Chance 10
 Affects SpiritedWoman 1 Chance 10
-Affects UnchasteWoman 1 Chance 10
+Affects FaithfulWoman -1 Chance 10
 Affects ColdWoman 1 Chance 5
 Affects FairWoman 1 Chance 5
 Affects HarshWoman 1 Chance 5
@@ -33931,7 +34236,7 @@ and AgentType = princess
 and SettlementBuildingExists >= inn
 and RemainingMPPercentage = 100
 
-Affects UnchasteWoman 1 Chance 5
+Affects FaithfulWoman -1 Chance 5
 
 ;------------------------------------------
 Trigger sitting_around_town_vnv_trigger5
@@ -33949,7 +34254,7 @@ Affects FaithfulWoman 1 Chance 20
 Trigger princess_mom_was_charming_1
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsCharming >= 1
+Condition FatherTrait WifeIsCharming >= 4
 and AgentType = princess
 
 Affects PrettyWoman 1 Chance 20
@@ -33959,7 +34264,7 @@ Affects PassionateWoman 1 Chance 20
 Trigger princess_mom_was_charming_2
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsCharming >= 2
+Condition FatherTrait WifeIsCharming >= 5
 and AgentType = princess
 
 Affects PrettyWoman 1 Chance 20
@@ -33970,17 +34275,28 @@ Affects PassionateWoman 1 Chance 20
 Trigger princess_mom_was_charming_3
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsCharming >= 3
+Condition FatherTrait WifeIsCharming >= 6
 and AgentType = princess
 
 Affects PrettyWoman 1 Chance 20
 Affects PassionateWoman 1 Chance 20
 
 ;------------------------------------------
+
+Trigger princess_mom_was_charming_fix
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and Trait UglyWoman > 0
+
+Affects PrettyWoman -3 Chance 100
+
+;------------------------------------------
 Trigger princess_mom_was_horrid_1
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsHorrid >= 1
+Condition FatherTrait WifeIsCharming <= 3
+and FatherTrait WifeIsCharming > 0
 and AgentType = princess
 
 Affects UglyWoman 1 Chance 20
@@ -33990,7 +34306,8 @@ Affects ColdWoman 1 Chance 20
 Trigger princess_mom_was_horrid_2
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsHorrid >= 2
+Condition FatherTrait WifeIsCharming <= 2
+and FatherTrait WifeIsCharming > 0
 and AgentType = princess
 
 Affects UglyWoman 1 Chance 20
@@ -34000,10 +34317,20 @@ Affects ColdWoman 1 Chance 20
 Trigger princess_mom_was_horrid_3
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsHorrid >= 3
+Condition FatherTrait WifeIsCharming = 1
 and AgentType = princess
 
 Affects ColdWoman 1 Chance 20
+
+;------------------------------------------
+
+Trigger princess_mom_was_horrid_fix
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and Trait PrettyWoman > 0
+
+Affects UglyWoman -2 Chance 100
 
 ;------------------------------------------
 Trigger princess_mom_was_fertile_1
@@ -34019,7 +34346,8 @@ Affects FertileWoman 1 Chance 25
 Trigger princess_mom_was_infertile_1
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsBarren >= 1
+Condition FatherTrait WifeIsFertile <= 3
+and FatherTrait WifeIsFertile > 0
 and AgentType = princess
 
 Affects InfertileWoman 1 Chance 20
@@ -34076,7 +34404,7 @@ Condition FatherTrait WifeIsBitch >= 1
 and AgentType = princess
 
 Affects HarshWoman 1 Chance 20
-Affects PretentiousWoman 1 Chance 20
+Affects HumbleWoman -1 Chance 20
 
 ;------------------------------------------
 Trigger princess_mom_was_bitch_2
@@ -34086,7 +34414,7 @@ Condition FatherTrait WifeIsBitch >= 2
 and AgentType = princess
 
 Affects HarshWoman 1 Chance 20
-Affects PretentiousWoman 1 Chance 20
+Affects HumbleWoman -1 Chance 20
 
 ;------------------------------------------
 Trigger princess_mom_was_bitch_3
@@ -34104,7 +34432,7 @@ WhenToTest CharacterComesOfAge
 Condition FatherTrait Cuckold >= 2
 and AgentType = princess
 
-Affects UnchasteWoman 1 Chance 20
+Affects FaithfulWoman -1 Chance 20
 Affects FaithfulWoman 1 Chance 20
 
 ;------------------------------------------
@@ -34114,7 +34442,7 @@ WhenToTest CharacterComesOfAge
 Condition FatherTrait Cuckold >= 3
 and AgentType = princess
 
-Affects UnchasteWoman 1 Chance 20
+Affects FaithfulWoman -1 Chance 20
 Affects FaithfulWoman 1 Chance 20
 
 ;------------------------------------------
@@ -34124,7 +34452,7 @@ WhenToTest CharacterComesOfAge
 Condition FatherTrait Cuckold >= 4
 and AgentType = princess
 
-Affects UnchasteWoman 1 Chance 20
+Affects FaithfulWoman -1 Chance 20
 Affects FaithfulWoman 1 Chance 20
 
 ;------------------------------------------
@@ -34137,12 +34465,31 @@ and AgentType = princess
 Affects FaithfulWoman 1 Chance 20
 
 ;------------------------------------------
+Trigger HowDareThey_first_time
+ WhenToTest SufferAssassinationAttempt
+
+ Condition AgentType = princess
+ and Trait BraveWoman < 1
+
+ Affects BraveWoman 5 Chance 100 
+
+;------------------------------------------
 Trigger HowDareThey_a
  WhenToTest SufferAssassinationAttempt
 
  Condition AgentType = princess
+ and Trait BraveWoman > 1
 
- Affects TimidWoman 1 Chance 33 
+ Affects BraveWoman -1 Chance 33 
+
+;------------------------------------------
+Trigger HowDareThey_first_time2
+ WhenToTest ExecutesAnAssassinOnAMission
+
+ Condition AgentType = princess
+ and Trait BraveWoman < 1
+
+ Affects BraveWoman 5 Chance 100 
 
 ;------------------------------------------
 Trigger HowDareThey_b
@@ -34285,6 +34632,30 @@ Trigger Priest_stripped_Bishop
  
  Affects PriestLevel -1 Chance 100
 
+
+;========= Pagan Priests Description Workaround =======
+;------------------------------------------
+Trigger paganpriest_fake_descr_turn_one
+ WhenToTest CharacterTurnStart
+
+ Condition AgentType = priest
+ and CharacterReligion pagan
+ and Trait PaganPriest = 0
+ and Trait PaganPriestHigh = 0
+
+ Affects PaganPriest 1 Chance 100
+
+;------------------------------------------
+Trigger paganpriest_fake_descr_recruitment
+ WhenToTest AgentCreated
+
+ Condition AgentType = priest
+ ;and Trait PaganPriest = 0
+ ;and Trait PaganPriestHigh = 0
+ and CharacterReligion pagan
+
+ Affects PaganPriest 1 Chance 100
+
 ;------------------------------------------
 ;********* PRIEST TRAITS TRIGGERS *********
 ;------------------------------------------
@@ -34346,8 +34717,6 @@ Trigger priestinit4
  Affects Peaceful 1 Chance 60
  Affects Dogmatic 1 Chance 30
  
-
-
 ;------------------------------------------
 Trigger priestinit5
  WhenToTest AgentCreated
@@ -34480,8 +34849,20 @@ Trigger agents41a
  WhenToTest SufferAssassinationAttempt
 
  Condition AgentType = priest
+       and not CharacterReligion pagan
+       and Trait DivineProtection > 1 
 
- Affects Doomsayer 1 Chance 85 
+ Affects DivineProtection -1 Chance 85 
+
+;------------------------------------------
+Trigger agents41a_first_time
+ WhenToTest SufferAssassinationAttempt
+
+ Condition AgentType = priest
+       and not CharacterReligion pagan
+       and Trait DivineProtection < 1 
+
+ Affects DivineProtection 6 Chance 85 
 
 ;------------------------------------------
 Trigger agents41b
@@ -34489,17 +34870,59 @@ Trigger agents41b
 
  Condition AgentType = priest
        and not CharacterReligion pagan
+       and Trait DivineProtection >= 1
 
  Affects DivineProtection 1 Chance 85 
  
 ;------------------------------------------
-Trigger agents41c
+Trigger agents41b_first_time
+ WhenToTest ExecutesAnAssassinOnAMission
+
+ Condition AgentType = priest
+       and not CharacterReligion pagan
+       and Trait DivineProtection < 1 
+
+ Affects DivineProtection 7 Chance 85 
+ 
+;------------------------------------------
+Trigger agents41a_pagan
+ WhenToTest SufferAssassinationAttempt
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and Trait DivineProtectionPagan > 1 
+
+ Affects DivineProtectionPagan -1 Chance 85 
+
+;------------------------------------------
+Trigger agents41a_first_time_pagan
+ WhenToTest SufferAssassinationAttempt
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and Trait DivineProtectionPagan < 1 
+
+ Affects DivineProtectionPagan 6 Chance 85 
+
+;------------------------------------------
+Trigger agents41b_pagan
  WhenToTest ExecutesAnAssassinOnAMission
 
  Condition AgentType = priest
        and CharacterReligion pagan
+       and Trait DivineProtectionPagan >= 1
 
  Affects DivineProtectionPagan 1 Chance 85 
+
+;------------------------------------------
+Trigger agents41b_pagan_first_time
+ WhenToTest ExecutesAnAssassinOnAMission
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and Trait DivineProtectionPagan < 1 
+
+ Affects DivineProtectionPagan 7 Chance 85 
 
 ;------------------------------------------
 Trigger agents42_normal_denouncement
@@ -34608,6 +35031,75 @@ Trigger priestinit13b
  Affects Dogmatic 1 Chance 30
 
 ;------------------------------------------
+Trigger priestinit14
+ WhenToTest AgentCreated
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and SettlementBuildingExists = dievas_temple
+       and FactionType lithuania
+
+ Affects PaganPriestHigh 1 Chance 100 
+ Affects PaganPriest -1 Chance 100 
+
+;------------------------------------------
+Trigger priestinit15
+ WhenToTest AgentCreated
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and SettlementBuildingExists = perkunas_temple
+       and FactionType lithuania
+
+ Affects PaganPriestHigh 1 Chance 100 
+ Affects PaganPriest -1 Chance 100 
+
+;------------------------------------------
+Trigger priestinit16
+ WhenToTest AgentCreated
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and SettlementBuildingExists = giltine_temple
+       and FactionType lithuania
+
+ Affects PaganPriestHigh 1 Chance 100 
+ Affects PaganPriest -1 Chance 100 
+
+;------------------------------------------
+Trigger priestinit18
+ WhenToTest AgentCreated
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and SettlementBuildingExists = tengir_temple
+       and FactionType cumans
+
+ Affects PaganPriestHigh 1 Chance 100 
+ Affects PaganPriest -1 Chance 100 
+ 
+;------------------------------------------
+Trigger priestinit18
+ WhenToTest AgentCreated
+
+ Condition AgentType = priest
+       and CharacterReligion pagan
+       and SettlementBuildingExists = tengir_temple
+       and FactionType mongols
+
+ Affects PaganPriestHigh 1 Chance 100 
+ Affects PaganPriest -1 Chance 100 
+
+;------------------------------------------
+Trigger priestinit19
+ WhenToTest AgentCreated
+
+ Condition AgentType = priest
+       and not FactionIsLocal
+
+ Affects UnorthodoxyBonus 1 Chance 100 
+
+;------------------------------------------
 Trigger cardinalinit1
  WhenToTest CardinalPromoted
 
@@ -34695,28 +35187,6 @@ Trigger cardinalinit11
  Condition Trait Righteous >= 2
 
  Affects Righteous 1 Chance 33
-
-;------------------------------------------
-Trigger paganpriest_fake_descr_turn_one
- WhenToTest CharacterTurnStart
-
- Condition AgentType = priest
- and Trait PaganPriest = 0
- and Trait PaganPriestHigh = 0
- and CharacterReligion pagan
-
- Affects PaganPriest 1 Chance 100
-
-;------------------------------------------
-Trigger paganpriest_fake_descr_recruitment
- WhenToTest AgentCreated
-
- Condition AgentType = priest
- and Trait PaganPriest = 0
- and Trait PaganPriestHigh = 0
- and CharacterReligion pagan
-
- Affects PaganPriest 1 Chance 100
 
 ;********* INQUISITOR TRAITS TRIGGERS *********
 ;------------------------------------------
@@ -36296,7 +36766,7 @@ Trigger selfperpetuating51
 Trigger selfperpetuating52
  WhenToTest CharacterTurnEnd
 
- Condition Trait BraveWoman >= 1
+ Condition Trait BraveWoman >= 5
 
  Affects BraveWoman 1 Chance 4 
 
@@ -36304,9 +36774,10 @@ Trigger selfperpetuating52
 Trigger selfperpetuating53
  WhenToTest CharacterTurnEnd
 
- Condition Trait TimidWoman >= 1
+ Condition Trait BraveWoman > 1
+ and Trait BraveWoman < 4
 
- Affects TimidWoman 1 Chance 4 
+ Affects BraveWoman -1 Chance 4 
 
 ;------------------------------------------
 Trigger selfperpetuating54
@@ -36360,15 +36831,16 @@ Trigger selfperpetuating59
 Trigger selfperpetuating60
  WhenToTest CharacterTurnEnd
 
- Condition Trait DesperateWoman >= 1
+ Condition Trait SpiritedWoman < 4
+ and Trait SpiritedWoman > 1
 
- Affects DesperateWoman 1 Chance 4 
+ Affects SpiritedWoman -1 Chance 4 
 
 ;------------------------------------------
 Trigger selfperpetuating61
  WhenToTest CharacterTurnEnd
 
- Condition Trait SpiritedWoman >= 1
+ Condition Trait SpiritedWoman > 4
 
  Affects SpiritedWoman 1 Chance 4 
 
@@ -36385,9 +36857,10 @@ Trigger selfperpetuating62
 Trigger selfperpetuating63
  WhenToTest CharacterTurnEnd
 
- Condition Trait UnchasteWoman >= 1
+ Condition Trait FaithfulWoman >= 1
+ and Trait FaithfulWoman < 4
 
- Affects UnchasteWoman 1 Chance 4 
+ Affects FaithfulWoman -1 Chance 4 
 
 ;------------------------------------------
 Trigger selfperpetuating64
@@ -36565,7 +37038,7 @@ Trigger troubadours_refused_princess
        and DistanceCapital <= 50
 
  Affects VapidWoman 1 Chance 50
- Affects BadPrincess 1 Chance 50
+ Affects GoodPrincess -1 Chance 50
 
 ;------------ Great Councils ------------------
 Trigger Great_Council_accepted_leader
@@ -36696,9 +37169,10 @@ Trigger ai_bad_traits_desperatewo
 
  Condition AgentType = princess
        and not FactionIsLocal
-       and Trait DesperateWoman > 0
+       and Trait SpiritedWoman < 5
+       and Trait SpiritedWoman > 1
 
- Affects DesperateWoman -1 Chance 70
+ Affects SpiritedWoman -1 Chance 70
 
 ;------------------------------------------
 Trigger ai_bad_traits_discontentgen
@@ -36953,7 +37427,7 @@ Trigger ai_bad_traits_uglywoman
 
  Condition AgentType = princess
        and not FactionIsLocal
-       and Trait UglyWoman > 0
+       and Trait UglyWoman >= 1
 
  Affects UglyWoman -1 Chance 70
 
@@ -36963,9 +37437,10 @@ Trigger ai_bad_traits_unchastewo
 
  Condition AgentType = princess
        and not FactionIsLocal
-       and Trait UnchasteWoman > 1
+       and Trait FaithfulWoman <= 4
+       and Trait FaithfulWoman > 1
 
- Affects UnchasteWoman -1 Chance 70
+ Affects FaithfulWoman 1 Chance 70
 
 ;------------------------------------------
 Trigger ai_bad_traits_vapidwo
@@ -36983,9 +37458,10 @@ Trigger ai_bad_traits_barrenwo
 
  Condition IsGeneral
        and not FactionIsLocal
-       and Trait WifeIsBarren > 0
+       and Trait WifeIsFertile < 4
+       and Trait WifeIsFertile > 0
 
- Affects WifeIsBarren -1 Chance 70
+ Affects WifeIsFertile 1 Chance 70
 
 ;------------------------------------------
 Trigger ai_bad_traits_horridwo
@@ -36993,9 +37469,10 @@ Trigger ai_bad_traits_horridwo
 
  Condition IsGeneral
        and not FactionIsLocal
-       and Trait WifeIsHorrid > 0
+       and Trait WifeIsCharming < 4
+       and Trait WifeIsCharming > 0
 
- Affects WifeIsHorrid -1 Chance 70
+ Affects WifeIsCharming 1 Chance 70
 
 ;------------------------------------------
 Trigger ai_bad_traits_xenoph
@@ -37031,7 +37508,7 @@ Trigger spawn_char_trait_boost_priest_pagan
  Affects Warmonger 1 Chance 25
  Affects StrongFaith 1 Chance 65
  Affects StrongFaith 1 Chance 55
- Affects DivineProtectionPagan 1 Chance 45
+ Affects DivineProtectionPagan 7 Chance 45
  Affects HeresyImmunityAI 1 Chance 80
  
 ;------------------------------------------
@@ -37049,7 +37526,7 @@ Trigger spawn_char_trait_boost_priest
  Affects Peaceful 1 Chance 35
  Affects StrongFaith 1 Chance 65
  Affects Dogmatic 1 Chance 85
- Affects DivineProtection 1 Chance 45
+ Affects DivineProtection 7 Chance 45
  Affects HeresyImmunityAI 1 Chance 80
 
 ;------------------------------------------
@@ -37979,7 +38456,7 @@ and not Trait Princess_Muslim > 0
 Affects Princess_Muslim 1 Chance 100
 
 ;------------------------------------------
-Trigger Princess_Mulsim_Faith_Show
+Trigger Princess_Muslim_Faith_Show
 WhenToTest CharacterTurnEnd
 
 Condition AgentType = princess
@@ -38274,7 +38751,7 @@ and Attribute Piety < 4
 Affects WifeIsMuslim 1 Chance 100
 
 ;------------------------------------------
-Trigger WifeIsMulsim_remove
+Trigger WifeIsMuslim_remove
 WhenToTest CharacterTurnEnd
 
 Condition Trait WifeIsMuslim = 1
@@ -38812,6 +39289,623 @@ Affects FearsPagan -7 Chance 100
 
 ;------------------------------------------
 ;****END WIFE TRAITS EXPANDED TRIGGERS****
+;------------------------------------------
+;****MUSLIM FACTIONS EXPANDED TRIGGERS****
+;------------------------------------------
+Trigger Islam_Branch_Hereditary1
+WhenToTest CharacterComesOfAge
+
+Condition IsGeneral
+and CharacterReligion islam
+and FatherTrait Muslim_Sunni >= 1
+and Trait Pagan < 1
+and Trait Catholic < 1
+and Trait Orthodox < 1
+
+Affects Muslim_Sunni 1 Chance 100
+
+;------------------------------------------
+Trigger Islam_Branch_Hereditary2
+WhenToTest CharacterComesOfAge
+
+Condition IsGeneral
+and CharacterReligion islam
+and FatherTrait Muslim_Shia >= 1
+and Trait Pagan < 1
+and Trait Catholic < 1
+and Trait Orthodox < 1
+
+Affects Muslim_Shia 1 Chance 100
+
+;------------------------------------------
+Trigger Islam_Branch_Leader_Influence1
+WhenToTest CharacterComesOfAge
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Shia < 1
+and Trait Muslim_Sunni < 1
+and FactionLeaderTrait Muslim_Sunni >= 1
+and Trait Pagan < 1
+and Trait Catholic < 1
+and Trait Orthodox < 1
+
+Affects Muslim_Sunni 1 Chance 70
+
+;------------------------------------------
+Trigger Islam_Branch_Leader_Influence2
+WhenToTest CharacterComesOfAge
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Shia < 1
+and Trait Muslim_Sunni < 1
+and FactionLeaderTrait Muslim_Shia >= 1
+and Trait Pagan < 1
+and Trait Catholic < 1
+and Trait Orthodox < 1
+
+Affects Muslim_Shia 1 Chance 70
+
+;------------------------------------------
+Trigger Islam_Branch_BirthCatch
+WhenToTest CharacterComesOfAge
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Shia < 1
+and Trait Muslim_Sunni < 1
+and Trait Pagan < 1
+and Trait Catholic < 1
+and Trait Orthodox < 1
+
+Affects Muslim_Sunni 1 Chance 100
+Affects Muslim_Shia 2 Chance 50
+
+;------------------------------------------
+Trigger Islam_Branch_Adoption1
+WhenToTest OfferedForAdoption
+
+Condition IsGeneral
+and FactionReligion islam
+and FactionLeaderTrait Muslim_Sunni >= 1
+
+Affects Muslim_Sunni 1 Chance 100
+Affects Muslim_Shia 2 Chance 30
+
+;------------------------------------------
+Trigger Islam_Branch_Adoption2
+WhenToTest OfferedForAdoption
+
+Condition IsGeneral
+and FactionReligion islam
+and FactionLeaderTrait Muslim_Shia >= 1
+
+Affects Muslim_Shia 1 Chance 100
+Affects Muslim_Sunni 2 Chance 30
+
+;------------------------------------------
+Trigger Islam_Branch_Leader_Influence3
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Convert >= 1
+and Trait Muslim_Shia < 1
+and Trait Muslim_Sunni < 1
+and FactionLeaderTrait Muslim_Sunni >= 1
+
+Affects Muslim_Sunni 1 Chance 70
+
+;------------------------------------------
+Trigger Islam_Branch_Leader_Influence4
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Convert >= 1
+and Trait Muslim_Shia < 1
+and Trait Muslim_Sunni < 1
+and FactionLeaderTrait Muslim_Shia >= 1
+
+Affects Muslim_Shia 1 Chance 70
+
+;------------------------------------------
+Trigger Islam_Branch_Catch
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Shia < 1
+and Trait Muslim_Sunni < 1
+and Trait Pagan < 1
+and Trait Catholic < 1
+and Trait Orthodox < 1
+
+Affects Muslim_Sunni 1 Chance 100
+Affects Muslim_Shia 2 Chance 50
+
+;------------------------------------------
+Trigger Islam_Branch_Sunni_Advance
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Sunni = 1
+and FactionLeaderTrait Muslim_Sunni >= 1
+
+Affects Muslim_Sunni 1 Chance 25
+
+;------------------------------------------
+Trigger Islam_Branch_Shia_Advance
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Shia = 1
+and FactionLeaderTrait Muslim_Shia >= 1
+
+Affects Muslim_Shia 1 Chance 25
+
+;------------------------------------------
+Trigger Islam_Branch_Sunni_Setback
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Sunni = 2
+and FactionLeaderTrait Muslim_Sunni < 1
+
+Affects Muslim_Sunni -1 Chance 100
+
+;------------------------------------------
+Trigger Islam_Branch_Shia_Setback
+WhenToTest CharacterTurnEnd
+
+Condition IsGeneral
+and CharacterReligion islam
+and Trait Muslim_Shia = 2
+and FactionLeaderTrait Muslim_Shia < 1
+
+Affects Muslim_Shia -1 Chance 100
+
+;------------------------------------------
+;;;;;;;;;shia heresy;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Trigger ShiaHeresy1_trigger
+WhenToTest CharacterTurnEnd
+
+Condition CharacterReligion islam
+and FactionLeaderTrait Muslim_Sunni >= 1
+and Trait Muslim_Shia >= 1
+and Trait ShiaHeresy = 0
+and Attribute Piety > 5
+and not AtSea 
+and PopulationHeretic >= 15
+and RandomPercent <= 5
+
+Affects ShiaHeresy 1  Chance  100
+Affects ShiaHeresyTrack 1  Chance  100
+
+;------------------------------------------
+Trigger ShiaHeresy2_trigger
+WhenToTest CharacterTurnEnd
+
+Condition CharacterReligion islam
+and FactionLeaderTrait Muslim_Sunni >= 1
+and Trait ShiaHeresy >= 1 
+and not AtSea 
+and PopulationHeretic >= 10
+and RandomPercent <= 15
+
+Affects ShiaHeresy 1  Chance  100
+Affects ShiaHeresyTrack 1  Chance  100
+
+;------------------------------------------
+Trigger ShiaHeresy3_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait ShiaHeresyTrack = 3
+
+Affects ShiaHeresyTrack 3  Chance  95
+
+;------------------------------------------
+Trigger ShiaHeresy4_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FactionLeaderTrait Muslim_Sunni >= 1
+and Trait ShiaHeresyTrack = 2
+
+Affects ShiaHeresyTrack 3  Chance  100
+
+;------------------------------------------
+Trigger ShiaHeresy_remove_trigger
+WhenToTest CharacterTurnStart
+
+Condition CharacterReligion islam
+and FactionLeaderTrait Muslim_Shia >= 1
+and Trait ShiaHeresy >= 1 
+
+Affects ShiaHeresy -6  Chance  100
+
+;------------------------------------------
+Trigger ShiaHeresy_trigger5
+WhenToTest CharacterTurnEnd
+
+Condition CharacterReligion islam
+and FactionLeaderTrait Muslim_Sunni >= 1
+and Trait ShiaHeresyTrack = 1
+and Trait ShiaHeresy < 1
+
+Affects ShiaHeresy 1  Chance  100
+
+;------------------------------------------
+Trigger ShiaHeresy_trigger6
+WhenToTest CharacterTurnEnd
+
+Condition CharacterReligion islam
+and FactionLeaderTrait Muslim_Sunni >= 1
+and Trait ShiaHeresyTrack = 2
+and Trait ShiaHeresy < 2
+
+Affects ShiaHeresy -6  Chance  100
+Affects ShiaHeresy 3  Chance  100
+
+;------------------------------------------
+Trigger ShiaHeresy_trigger7
+WhenToTest CharacterTurnEnd
+
+Condition CharacterReligion islam
+and FactionLeaderTrait Muslim_Sunni >= 1
+and Trait ShiaHeresyTrack = 3
+and Trait ShiaHeresy < 3
+
+Affects ShiaHeresy -6  Chance  100
+Affects ShiaHeresy 5  Chance  100
+
+;------------------------------------------
+;=== Islamic Ethnic Triggers ===
+1=Arab 2=Turk 3=Kurd 4=Berber 5=Persian
+;------------------------------------------
+Trigger Islamic_Ethnic_Arab_Adoption_trigger
+WhenToTest OfferedForAdoption
+
+Condition FactionReligion islam
+and FactionLeaderTrait IslamicEthnicity = 1
+
+Affects IslamicEthnicity 1  Chance  99
+Affects IslamicEthnicity 1  Chance  5
+Affects IslamicEthnicity 1  Chance  5
+Affects IslamicEthnicity 1  Chance  5
+Affects IslamicEthnicity 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Turk_Adoption_trigger
+WhenToTest OfferedForAdoption
+
+Condition FactionReligion islam
+and FactionLeaderTrait IslamicEthnicity = 2
+
+Affects IslamicEthnicity 1  Chance  99
+Affects IslamicEthnicity 1  Chance  95
+Affects IslamicEthnicity 1  Chance  5
+Affects IslamicEthnicity 1  Chance  5
+Affects IslamicEthnicity 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Kurd_Adoption_trigger
+WhenToTest OfferedForAdoption
+
+Condition FactionReligion islam
+and FactionLeaderTrait IslamicEthnicity = 3
+
+Affects IslamicEthnicity 1  Chance  99
+Affects IslamicEthnicity 1  Chance  95
+Affects IslamicEthnicity 1  Chance  97
+Affects IslamicEthnicity 1  Chance  5
+Affects IslamicEthnicity 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Berber_Adoption_trigger
+WhenToTest OfferedForAdoption
+
+Condition FactionReligion islam
+and FactionLeaderTrait IslamicEthnicity = 4
+
+Affects IslamicEthnicity 1  Chance  99
+Affects IslamicEthnicity 1  Chance  95
+Affects IslamicEthnicity 1  Chance  97
+Affects IslamicEthnicity 1  Chance  98
+Affects IslamicEthnicity 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Persian_Adoption_trigger
+WhenToTest OfferedForAdoption
+
+Condition FactionReligion islam
+and FactionLeaderTrait IslamicEthnicity = 5
+
+Affects IslamicEthnicity 1  Chance  99
+Affects IslamicEthnicity 1  Chance  95
+Affects IslamicEthnicity 1  Chance  97
+Affects IslamicEthnicity 1  Chance  98
+Affects IslamicEthnicity 1  Chance  99
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Arab_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity = 1
+
+Affects IslamicEthnicity 1  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Turk_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity = 2
+
+Affects IslamicEthnicity 2  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Kurd_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity = 3
+
+Affects IslamicEthnicity 3  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Berber_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity = 4
+
+Affects IslamicEthnicity 4  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_Persian_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity = 5
+
+Affects IslamicEthnicity 5  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_ArabMother_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity < 1
+and FatherTrait IslamicEthnicityWife = 1
+
+Affects IslamicEthnicity 1  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_TurkMother_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity < 1
+and FatherTrait IslamicEthnicityWife = 2
+
+Affects IslamicEthnicity 2  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_KurdMother_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity < 1
+and FatherTrait IslamicEthnicityWife = 3
+
+Affects IslamicEthnicity 3  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_BerberMother_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity < 1
+and FatherTrait IslamicEthnicityWife = 4
+
+Affects IslamicEthnicity 4  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_PersianMother_Birth_trigger
+WhenToTest CharacterComesOfAge
+
+Condition CharacterReligion islam
+and FatherTrait IslamicEthnicity < 1
+and FatherTrait IslamicEthnicityWife = 5
+
+Affects IslamicEthnicity 5  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_ArabDaughter_trigger
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and FatherTrait IslamicEthnicity = 1
+
+Affects IslamicEthnicityPrincess 1  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_TurkDaughter_trigger
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and CharacterReligion islam
+and FatherTrait IslamicEthnicity = 2
+
+Affects IslamicEthnicityPrincess 2  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_KurdDaughter_trigger
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and CharacterReligion islam
+and FatherTrait IslamicEthnicity = 3
+
+Affects IslamicEthnicityPrincess 3  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_BerberDaughter_trigger
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and CharacterReligion islam
+and FatherTrait IslamicEthnicity = 4
+
+Affects IslamicEthnicityPrincess 4  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_PersianDaughter_trigger
+WhenToTest CharacterComesOfAge
+
+Condition AgentType = princess
+and CharacterReligion islam
+and FatherTrait IslamicEthnicity = 5
+
+Affects IslamicEthnicityPrincess 5  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_ArabWife_trigger
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and SpouseTrait IslamicEthnicityPrincess = 1
+
+Affects IslamicEthnicityWife 1  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_ArabWife_trigger2
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and FactionLeaderTrait IslamicEthnicity = 1
+and SpouseTrait IAmPrincess = 0
+and SpouseTrait RoyalLadyC = 0
+
+Affects IslamicEthnicityWife 1  Chance  99
+Affects IslamicEthnicityWife 1  Chance  5
+Affects IslamicEthnicityWife 1  Chance  5
+Affects IslamicEthnicityWife 1  Chance  5
+Affects IslamicEthnicityWife 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_TurkWife_trigger
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and SpouseTrait IslamicEthnicityPrincess = 2
+
+Affects IslamicEthnicityWife 2  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_TurkWife_trigger2
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and FactionLeaderTrait IslamicEthnicity = 2
+and SpouseTrait IAmPrincess = 0
+and SpouseTrait RoyalLadyC = 0
+
+Affects IslamicEthnicityWife 1  Chance  99
+Affects IslamicEthnicityWife 1  Chance  95
+Affects IslamicEthnicityWife 1  Chance  5
+Affects IslamicEthnicityWife 1  Chance  5
+Affects IslamicEthnicityWife 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_KurdWife_trigger
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and SpouseTrait IslamicEthnicityPrincess = 3
+
+Affects IslamicEthnicityWife 3  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_KurdWife_trigger2
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and FactionLeaderTrait IslamicEthnicity = 3
+and SpouseTrait IAmPrincess = 0
+and SpouseTrait RoyalLadyC = 0
+
+Affects IslamicEthnicityWife 1  Chance  99
+Affects IslamicEthnicityWife 1  Chance  95
+Affects IslamicEthnicityWife 1  Chance  97
+Affects IslamicEthnicityWife 1  Chance  5
+Affects IslamicEthnicityWife 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_BerberWife_trigger
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and SpouseTrait IslamicEthnicityPrincess = 4
+
+Affects IslamicEthnicityWife 4  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_BerberWife_trigger2
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and FactionLeaderTrait IslamicEthnicity = 4
+and SpouseTrait IAmPrincess = 0
+and SpouseTrait RoyalLadyC = 0
+
+Affects IslamicEthnicityWife 1  Chance  99
+Affects IslamicEthnicityWife 1  Chance  95
+Affects IslamicEthnicityWife 1  Chance  97
+Affects IslamicEthnicityWife 1  Chance  98
+Affects IslamicEthnicityWife 1  Chance  5
+
+;------------------------------------------
+Trigger Islamic_Ethnic_PersianWife_trigger
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and SpouseTrait IslamicEthnicityPrincess = 5
+
+Affects IslamicEthnicityWife 5  Chance  100
+
+;------------------------------------------
+Trigger Islamic_Ethnic_PersianWife_trigger2
+WhenToTest CharacterMarries
+
+Condition CharacterReligion islam
+and Trait IslamicEthnicity < 1
+and FactionLeaderTrait IslamicEthnicity = 5
+and SpouseTrait IAmPrincess = 0
+and SpouseTrait RoyalLadyC = 0
+
+Affects IslamicEthnicityWife 1  Chance  99
+Affects IslamicEthnicityWife 1  Chance  95
+Affects IslamicEthnicityWife 1  Chance  97
+Affects IslamicEthnicityWife 1  Chance  98
+Affects IslamicEthnicityWife 1  Chance  99
+
 ;------------------------------------------
 ;===============================================================
 ;== FEUDAL MILITARY TRIGGERS START HERE ==
@@ -40463,6 +41557,7 @@ Trigger UsurperTakesThrone
        and not FactionType hre; no auto civil war for empires
 
  Affects FactionUsurper 2 Chance 100 
+ Affects FactionFutureUsurper -2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 100
 
 ;------------------------------------------
@@ -40495,6 +41590,7 @@ Trigger UsurperRecognized
        and not FactionType jerusalem
 
  Affects Factionleader 2 Chance 100 
+ Affects FactionUsurper -2 Chance 100
 
 ;------------------------------------------
 ;RELIGION CONVERTED KINGDOMS
@@ -40568,6 +41664,7 @@ Trigger UsurperbecomesFactionLeader_BYZ
        and FactionType byzantium
 
  Affects Factionleader 2 Chance 100 
+ Affects FactionFutureUsurper -2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 50
 
 ;------------------------------------------
@@ -40639,6 +41736,7 @@ Trigger Usurperbecomesfactionleader_HRE
        and FactionType hre
 
  Affects FactionUsurper 2 Chance 100
+ Affects FactionFutureUsurper -2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 50
 
 ;------------------------------------------
@@ -40650,6 +41748,7 @@ Trigger UsurperElectorbecomesfactionleader_HRE
        and FactionType hre
 
  Affects Factionleader 2 Chance 100
+ Affects FactionFutureUsurper -2 Chance 100
  Affects Offensive_To_Nobles 1 Chance 15
 
 ;------------------------------------------
@@ -42645,6 +43744,7 @@ Trigger Venice_Factionleader_Trigger
  Affects Venice_Public_Office -2 Chance 100
  Affects Venice_Podesta -2 Chance 100
  Affects Venice_Public_Person -2 Chance 100 
+ Affects Venice_Factionheir -2 Chance 100 
 
 ;------------------------------------------
 Trigger Venice_FactionHeir_Trigger
@@ -43334,6 +44434,7 @@ Trigger Genoa_Factionleader_Trigger
  Affects Genoa_Public_Office -2 Chance 100
  Affects Genoa_Public_Person -2 Chance 100
  Affects Genoa_Consul -4 Chance 100 
+ Affects Genoa_Factionheir -2 Chance 100 
 
 ;------------------------------------------
 Trigger Genoa_FactionHeir_Trigger
@@ -43890,6 +44991,7 @@ Trigger Novgorod_Factionleader_Trigger
  Condition FactionType russia
 
  Affects Novgorod_Factionleader 2 Chance 100
+ Affects Novgorod_Factionheir -2 Chance 100 
 
 ;------------------------------------------
 Trigger Novgorod_FactionHeir_Trigger
@@ -44309,6 +45411,20 @@ and not FactionType timurids
 and not FactionType georgia
 
 Affects Desinherited_Trait -2 Chance 100
+
+;------------------------------------------
+Trigger Next_Heir_Trait_Remove_All
+WhenToTest BecomesFactionHeir
+
+Affects Desinherited_Trait -2 Chance 100
+Affects Next_Heir_Trait -2 Chance 100
+
+;------------------------------------------
+Trigger Next_Heir_Trait_Remove_All2
+WhenToTest BecomesFactionLeader
+
+Affects Desinherited_Trait -2 Chance 100
+Affects Next_Heir_Trait -2 Chance 100
 
 ;------------------------------------------
 ;===============================================================
@@ -46059,5 +47175,100 @@ Condition Attribute Authority < 0
 and Trait Fix_Authority_Trait4 < 9
 
 Affects Fix_Authority_Trait4 1 Chance 100
+
+;------------------------------------------
+;NEUTRAL TRAITS REMOVAL/FIX
+;------------------------------------------
+Trigger princess_pretentiouswoman_fix
+ WhenToTest CharacterComesOfAge
+
+Condition Trait HumbleWoman < 1
+
+ Affects HumbleWoman 1 Chance 100 
+
+;------------------------------------------
+Trigger troubadours_refused_princess_fix
+ WhenToTest CharacterTurnEnd
+
+ Condition AgentType = princess
+       and Trait GoodPrincess > 1
+
+ Affects GoodPrincess 2 Chance 100
+
+;------------------------------------------
+Trigger princess_vapidwoman_fix
+ WhenToTest CharacterComesOfAge
+
+Condition Trait EducatedWoman >= 1
+       and Trait VapidWoman >= 1
+
+ Affects VapidWoman -1 Chance 100 
+ Affects HumbleWoman -1 Chance 100 
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove1
+ WhenToTest CharacterComesOfAge
+
+Condition Trait HumbleWoman = 3
+
+ Affects HumbleWoman -3 Chance 100 
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove2
+ WhenToTest CharacterComesOfAge
+
+Condition Trait SpiritedWoman = 4
+
+ Affects SpiritedWoman -5 Chance 100 
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove3
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait SpiritedWoman = 4
+
+ Affects SpiritedWoman -5 Chance 100
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove4
+ WhenToTest CharacterComesOfAge
+
+ Condition Trait FaithfulWoman = 4
+
+ Affects FaithfulWoman -5 Chance 100
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove5
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait FaithfulWoman = 4
+
+ Affects FaithfulWoman -4 Chance 100
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove6
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait BraveWoman = 4
+
+ Affects BraveWoman -5 Chance 100
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove7
+ WhenToTest SufferAssassinationAttempt
+
+ Condition AgentType = princess
+ and Trait BraveWoman = 4
+
+ Affects BraveWoman -5 Chance 100 
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove8
+ WhenToTest ExecutesAnAssassinOnAMission
+
+ Condition AgentType = princess
+ and Trait BraveWoman = 4
+
+ Affects BraveWoman -5 Chance 100 
 
 ;------------------------------------------
