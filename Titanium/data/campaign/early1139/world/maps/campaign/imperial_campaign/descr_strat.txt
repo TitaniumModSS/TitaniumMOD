@@ -5550,7 +5550,7 @@ traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1
 
 character_record		IstvanI, 	male, age 6, alive, never_a_leader
 character_record		Laszlo, 	male, age 8, alive, never_a_leader
-character_record		Geza, 	male, age 9, alive, current_heir
+character_record		GezaI, 	male, age 9, alive, current_heir
 character_record		Gertrud, 	female, age 11, alive, never_a_leader
 character_record		Ilona, 	female, age 25, alive, never_a_leader
 ;
@@ -5564,7 +5564,7 @@ character_record		Kalman Arpadhazi, 	male, age 69, dead 23, past_leader
 character_record		Zsofia, 	female, age 90, dead 51, never_a_leader; (age 97)
 character_record		Geza Arpadhazi, 	male, age 90, dead 62, past_leader; (age 99)
 
-relative 	Bela Arpadhazi,	Ilona,	Gertrud,	Geza,	Laszlo,	IstvanI,	end
+relative 	Bela Arpadhazi,	Ilona,	Gertrud,	GezaI,	Laszlo,	IstvanI,	end
 relative 	Almos Arpadhazi,	Predslava,	Bela Arpadhazi,	end
 relative 	Kalman Arpadhazi,	Eufemia,	Istvan Arpadhazi,	end
 relative 	Geza Arpadhazi,	Zsofia,	Kalman Arpadhazi,	Almos Arpadhazi,	end
