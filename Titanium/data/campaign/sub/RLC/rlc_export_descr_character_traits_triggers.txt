@@ -10,11 +10,22 @@ Trigger royal_lady_startup_trigger
  	and Trait RoyalLadyC = 0
 
  Affects PrettyWoman 2 Chance 29 
+ Affects PrettyWoman -1 Chance 15 
+ Affects HumbleWoman 4 Chance 2 
+ Affects HumbleWoman -2 Chance 1 
+ Affects BraveWoman 6 Chance 39 
+
+;------------------------------------------
+Trigger royal_lady_startup_trigger_Ugly
+ WhenToTest CharacterTurnStart
+
+ Condition AgentType = princess
+ 	and Trait IAmPrincess = 0
+ 	and Trait RoyalLadyC = 0
+ 	and Trait PrettyWoman = 0
+
  Affects UglyWoman 1 Chance 15 
  Affects UglyWoman 1 Chance 3 
- Affects HumbleWoman 1 Chance 2 
- Affects PretentiousWoman 1 Chance 1
- Affects BraveWoman 1 Chance 39 
 
 ;------------------------------------------
 Trigger royal_lady_startup_trigger2
@@ -26,9 +37,9 @@ Trigger royal_lady_startup_trigger2
 
  Affects BraveWoman 2 Chance 75 
  Affects NaturalPrincess 1 Chance 5 
- Affects GoodPrincess 1 Chance 7 
- Affects UnchasteWoman 1 Chance 3 
- Affects SpiritedWoman 1 Chance 16 
+ Affects GoodPrincess 8 Chance 7 
+ Affects FaithfulWoman 5 Chance 3 
+ Affects SpiritedWoman 6 Chance 16 
 ;
  Affects RoyalLadyC 1 Chance 100 
 

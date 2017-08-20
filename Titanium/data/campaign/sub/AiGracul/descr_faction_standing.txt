@@ -153,7 +153,7 @@ Trigger Catholic_Build_Cathedral
     FactionStanding factions { papal_states, teutonic_order } 0.1
     FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } 0.01
     FactionStanding factions { byzantium, russia, kievan_rus, georgia } -0.01
-    FactionStanding factions { moors, egypt, turks, kwarezm ,cumans, lithuania, timurids, mongols } -0.02
+    FactionStanding factions { moors, egypt, turks, kwarezm, cumans, lithuania, timurids, mongols } -0.02
 
 ;------------------------------------------
 Trigger Catholic_Build_Huge_Cathedral
@@ -1844,7 +1844,7 @@ Trigger 0042_P_Own_Pope_Elected
 
     FactionStanding factions { papal_states } 0.1
     FactionStanding religion catholic 0.05
-    FactionStanding factions { moors, egypt, turks, mongols, kwarezm , cumans, timurids } -0.2
+    FactionStanding factions { moors, egypt, turks, mongols, kwarezm, cumans, timurids } -0.2
 
 ;------------------------------------------
 Trigger 0043_P_Allied_Pope_Elected
@@ -2884,8 +2884,8 @@ Trigger Turks
     FactionStanding factions { spain, milan, venice, sicily } normalise -1 70
     FactionStanding factions { russia, kievan_rus, georgia, cumans } normalise -1 90
     FactionStanding factions { england, france, hre } normalise -1 95
-    FactionStanding factions { egypt, moors, kwarezm } normalise 1 45
-    FactionStanding factions { timurids } normalise 1 60
+    FactionStanding factions { egypt, moors, kwarezm } normalise 1 25
+    FactionStanding factions { timurids } normalise 1 30
 
 ;------------------------------------------
 Trigger Egypt
@@ -2897,7 +2897,7 @@ Trigger Egypt
     FactionStanding factions { spain, england, france, hre } normalise -1 60
     FactionStanding factions { milan, venice, sicily } normalise -1 70
     FactionStanding factions { byzantium, russia, kievan_rus, georgia, jerusalem } normalise -1 80
-    FactionStanding factions { turks, moors, kwarezm } normalise 1 45
+    FactionStanding factions { turks, moors, kwarezm } normalise 1 25
 
 ;------------------------------------------
 Trigger Denmark
@@ -3008,7 +3008,8 @@ Trigger Kwarezm
 
     FactionStanding factions { mongols } normalise -1 30
     FactionStanding factions { cumans } normalise -1 60
-    FactionStanding factions { turks, egypt, timurids } normalise 1 60
+    FactionStanding factions { turks, timurids } normalise 1 10
+    FactionStanding factions { egypt } normalise 1 20
 
 ;------------------------------------------
 Trigger Papal_States
@@ -3056,6 +3057,7 @@ Trigger Abbasids
 
     FactionStanding factions { mongols } normalise -1 60
     FactionStanding factions { egypt } normalise -1 120
+    FactionStanding factions { turks, kwarezm } normalise -1 10
 
 ------------------------------------------
 Trigger Georgia

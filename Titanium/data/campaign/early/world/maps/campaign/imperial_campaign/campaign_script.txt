@@ -13,9 +13,8 @@
 ;---- Whose turn is on?
 ;---- AI Citadel check
 ;---x Ageing Script
-;---x Great People Ancillaries
 ;* 3) OTHER AI STUFF
-;---- Byzantine Leader Battle Models
+;---- Leader Battle Models
 ;---- Church Titles
 ;---- Hanseatic System
 ;---- Faction Leader Global Traits
@@ -34,10 +33,10 @@
 ;---- William Wallace Uprising
 ;---- Saladin Emergent
 ;---- Crusaders Reinforce
+;---- Pagan Baltics
 ;---- Teutonic Order Emergent
 ;---- Golden Horde Emergent
 ;---- Bulgarian Uprising
-;---x Timurids Invasion
 ;* 6) G5 BAI STUFF
 ;* 7) TITANIUM ADDITIONAL SCRIPTS
 ;---- Loan Script
@@ -81,8 +80,6 @@ restrict_strat_radar false
 ;	KINGDOM EMPIRE AND REPUBLICS SCRIPTS
 ;	Re-Emerging Factions script
 ;
-declare_counter orleans_exist
-set_counter orleans_exist 1
 set_event_counter obotrites_exist 1; For use in other files
 set_event_counter abbasids_exist 1; For use in other files
 set_event_counter georgia_exist 1; For use in other files
@@ -90,6 +87,7 @@ set_event_counter zirids_exist 1; For use in other files
 set_event_counter hafsids_exist 0; For use in other files
 set_event_counter bulgaria_exist 0; For use in other files
 set_event_counter rlc_event 1; For use in other files
+set_event_counter does_not_exist 0; For use in other files
 freeze_faction_ai dummies
 
 ;====================== Setup AI ========================
@@ -661,6 +659,7 @@ declare_counter status_mongols
 set_counter status_mongols -1; Faction does not exist at campaign start
 declare_counter status_timurids
 set_counter status_timurids -1; Faction does not exist at campaign start
+declare_counter status_cumans
 monitor_event CeasedFactionLeader FactionType teutonic_order
 	set_event_counter status_teutonic_order 0
 end_monitor
@@ -678,6 +677,12 @@ monitor_event CeasedFactionLeader FactionType timurids
 end_monitor
 monitor_event BecomesFactionLeader FactionType timurids; even if abbasids they'll get this at campaign start
 	set_counter status_timurids 1
+end_monitor
+monitor_event CeasedFactionLeader FactionType cumans
+	set_counter status_cumans 0
+end_monitor
+monitor_event BecomesFactionLeader FactionType cumans
+	set_counter status_cumans 1
 end_monitor
 monitor_event BecomesFactionLeader FactionType venice
 	set_counter status_venice 1; used for Republics death script workaround
@@ -707,7 +712,7 @@ end_monitor
 declare_counter new_fturn
 declare_counter christian_faction
 set_event_counter lithuania_catholic 0 ; Used in descr_faction_standing.txt
-set_event_counter PaganLithuania 1 ; Used in the EDU
+set_event_counter PaganLithuania 1 ; Used in the EDB
 
 monitor_event PreFactionTurnStart not IsFactionAIControlled
 	set_counter new_fturn 0
@@ -951,10 +956,6 @@ end_monitor
 ;===================== DISABLED =====================
 ;==================================================
 
-;============= Great People Ancillaries =================
-;========== was moved to descr_events.txt ===========
-;========================================================
-
 
 ;========================================================
 ;********************************************************
@@ -962,13 +963,37 @@ end_monitor
 ;********************************************************
 ;========================================================
 
-;========== Byzantine Leader Battle Models ==============
+;========== Leader Battle Models ==============
 monitor_event BecomesFactionLeader FactionType byzantium
 	change_battle_model byzantium leader byzantine_emperor
 end_monitor
 
 monitor_event BecomesFactionHeir FactionType byzantium
 	change_battle_model byzantium heir byzantine_heir
+end_monitor
+
+monitor_event BecomesFactionLeader FactionType egypt
+	change_battle_model egypt leader eastern_sultan
+end_monitor
+
+monitor_event BecomesFactionLeader FactionType moors
+	change_battle_model moors leader eastern_sultan
+end_monitor
+
+monitor_event BecomesFactionLeader FactionType turks
+	change_battle_model turks leader eastern_sultan
+end_monitor
+
+monitor_event BecomesFactionLeader FactionType kwarezm
+	change_battle_model kwarezm leader eastern_sultan
+end_monitor
+
+monitor_event BecomesFactionLeader FactionType timurids
+	change_battle_model timurids leader eastern_sultan
+end_monitor
+
+monitor_event BecomesFactionLeader FactionType portugal
+	change_battle_model portugal leader eastern_sultan
 end_monitor
 
 ;=================== Church Titles ======================
@@ -1248,6 +1273,7 @@ end_monitor
 ;- Startup Reinforcements
 ;- Merchant&Priest&Ship Support Spawn with Turn10 Reinforcement
 ;- No Heir Reinforcement
+;- Remove Anachronistic Rebel Troops
 
 ;========= Constantinople JIHAD garrison script =========
 declare_counter conple_jgs
@@ -3197,9 +3223,9 @@ monitor_event FactionTurnStart FactionType slave
 	end_if
 
 	if I_IsFactionAIControlled cumans
+	and I_FactionLeaderAttribute cumans Command < 999
 	and I_NumberOfHeirs cumans < 4
 	and I_CompareCounter heir_cumans < 3
-	and I_NumberOfSettlements cumans >= 1
 		spawn_army
 			faction cumans
 			character	random_name, named character, age 20, x 440, y 250, family
@@ -3255,6 +3281,42 @@ monitor_event FactionTurnStart FactionType slave
 		inc_counter heir_timurids 1
 		inc_counter no_other_heir_spawn 1
 	end_if
+	
+	;---- Remove Anachronistic Rebel Troops ----
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0; 1100-1200
+			destroy_units slave Feudal Knights
+			destroy_units slave Chivalric Knights
+			destroy_units slave Serbian Knights
+			destroy_units slave Scots Pike Militia
+			destroy_units slave Swiss Pikemen
+			destroy_units slave Swiss Halberdiers
+			destroy_units slave Halberd Militia
+			destroy_units slave Mamluks
+			destroy_units slave Mamluk Archers
+			destroy_units slave Flemish Pikemen
+			destroy_units slave Pavise Spear Militia
+			destroy_units slave Pavise Crossbow Militia
+			destroy_units slave Free Company Longbowmen
+			destroy_units slave Free Company Men at Arms
+			destroy_units slave Dismounted Feudal Knights
+			destroy_units slave Dismounted Chivalric Knights
+			destroy_units slave Polish Nobles
+		end_if
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; 1200-1300
+		and I_EventCounter new_era_begins = 0
+			destroy_units slave Chivalric Knights
+			destroy_units slave Serbian Knights
+			destroy_units slave Scots Pike Militia
+			destroy_units slave Swiss Pikemen
+			destroy_units slave Swiss Halberdiers
+			destroy_units slave Halberd Militia
+			destroy_units slave Flemish Pikemen
+			destroy_units slave Pavise Crossbow Militia
+			destroy_units slave Free Company Longbowmen
+			destroy_units slave Free Company Men at Arms
+		end_if
+		;if I_EventCounter new_era_begins = 1; 1300-?
+		;end_if
 	
 	;if I_CompareCounter no_other_heir_spawn = 84; [3 times x 28 factions]
 	;	terminate_monitor
@@ -6349,11 +6411,6 @@ monitor_event FactionTurnStart not IsFactionAIControlled
 		end_if
 		set_counter byzantium_anarchy 0
 		if I_CompareCounter byzantium_king = 0
-			if I_CompareCounter byzantium_civil_war_counter < 1
-			and I_FactionLeaderTrait byzantium Offensive_To_Nobles = 2
-				set_counter byzantium_civil_war_counter 1
-				historic_event byzantium_civil_war_start
-			end_if
 			if I_CompareCounter byzantium_civil_war_counter = 1
 				if I_FactionLeaderTrait byzantium Offensive_To_Nobles >= 1
 				and I_EventCounter is_the_ai = 0
@@ -6363,6 +6420,11 @@ monitor_event FactionTurnStart not IsFactionAIControlled
 					set_counter byzantium_civil_war_counter 0
 					historic_event byzantium_civil_war_end
 				end_if
+			end_if
+			if I_CompareCounter byzantium_civil_war_counter < 1
+			and I_FactionLeaderTrait byzantium Offensive_To_Nobles = 2
+				set_counter byzantium_civil_war_counter 1
+				historic_event byzantium_civil_war_start
 			end_if
 		end_if
 	end_if
@@ -8768,6 +8830,7 @@ end_monitor
 monitor_event FactionSturnStart FactionType slave
 	and I_CompareCounter wallace_spawned = -1
 	and I_CompareCounter pagan_rebel = -1
+	and I_CompareCounter cilician_rebel = -1
 	and I_CompareCounter bulgarians_rebel = -1
 	and I_CompareCounter TO_spawned = -1
 	and I_CompareCounter mongols_spawned = -1
@@ -9209,14 +9272,122 @@ monitor_event FactionTurnStart FactionType jerusalem
 terminate_monitor
 end_monitor
 
-;============== Teutonic Order Emergent =================
+;============== Pagan Baltics =================
+;Rebel reinforcements for pagan baltic settlements
+declare_counter delay_prussia_reinf
+declare_counter delay_livonia_reinf
+declare_counter delay_estonia_reinf
+declare_counter delay_lithuania_reinf
+;
 ;Spawning rebel pagan armies before TO invasion
 declare_counter pagan_rebel
-declare_counter TO_spawned
 declare_counter rebelmindaugas
 declare_counter rebeldaumantas
 declare_counter rebelramvaldas
-declare_counter teutonickonrad
+
+monitor_event Transgression TransgressionName = TC_INSTIGATE_SIEGE
+	and not FactionReligion pagan
+	and TargetFactionType slave
+	and not I_SettlementUnderSiege Palanga
+
+	if I_EventCounter gunpowder_discovered = 1
+	 terminate_monitor
+	end_if
+
+ if I_SettlementOwner Palanga = slave
+
+	campaign_wait 0.1
+	
+	if I_CompareCounter delay_prussia_reinf > 9
+		set_counter delay_prussia_reinf 0
+	end_if
+	if I_SettlementUnderSiege Palanga
+	and I_CompareCounter delay_prussia_reinf < 5
+		console_command create_unit Palanga "Prussian Spearmen" 4 5 2 0
+		console_command create_unit Palanga "EE Archer Militia" 4 4 1 0
+		console_command create_unit Palanga "Lithuanian Cavalry" 2 6 1 0
+	end_if
+	inc_counter delay_prussia_reinf 1
+ end_if
+end_monitor
+
+monitor_event Transgression TransgressionName = TC_INSTIGATE_SIEGE
+	and not FactionReligion pagan
+	and TargetFactionType slave
+	and not I_SettlementUnderSiege Riga
+
+	if I_EventCounter gunpowder_discovered = 1
+	 terminate_monitor
+	end_if
+
+ if I_SettlementOwner Riga = slave
+
+	campaign_wait 0.1
+	
+	if I_CompareCounter delay_livonia_reinf > 9
+		set_counter delay_livonia_reinf 0
+	end_if
+	if I_SettlementUnderSiege Riga
+	and I_CompareCounter delay_livonia_reinf < 5
+		console_command create_unit Riga "EE Spear Militia" 4 5 2 0
+		console_command create_unit Riga "Lithuanian Archers" 4 4 1 0
+		console_command create_unit Riga "Lithuanian Cavalry" 2 6 1 0
+	end_if
+	inc_counter delay_livonia_reinf 1
+ end_if
+end_monitor
+
+monitor_event Transgression TransgressionName = TC_INSTIGATE_SIEGE
+	and not FactionReligion pagan
+	and TargetFactionType slave
+	and not I_SettlementUnderSiege Vilnius
+
+	if I_EventCounter gunpowder_discovered = 1
+	 terminate_monitor
+	end_if
+
+ if I_SettlementOwner Vilnius = slave
+
+	campaign_wait 0.1
+	
+	if I_CompareCounter delay_lithuania_reinf > 9
+		set_counter delay_lithuania_reinf 0
+	end_if
+	if I_SettlementUnderSiege Riga
+	and I_CompareCounter delay_lithuania_reinf < 5
+		console_command create_unit Vilnius "EE Spear Militia" 4 5 2 0
+		console_command create_unit Vilnius "Lithuanian Archers" 4 4 1 0
+		console_command create_unit Vilnius "Lithuanian Cavalry" 2 6 1 0
+	end_if
+	inc_counter delay_lithuania_reinf 1
+ end_if
+end_monitor
+
+monitor_event Transgression TransgressionName = TC_INSTIGATE_SIEGE
+	and not FactionReligion pagan
+	and TargetFactionType slave
+	and not I_SettlementUnderSiege Reval
+
+	if I_EventCounter gunpowder_discovered = 1
+	 terminate_monitor
+	end_if
+
+ if I_SettlementOwner Reval = slave
+
+	campaign_wait 0.1
+	
+	if I_CompareCounter delay_lithuania_reinf > 9
+		set_counter delay_lithuania_reinf 0
+	end_if
+	if I_SettlementUnderSiege Reval
+	and I_CompareCounter delay_lithuania_reinf < 5
+		console_command create_unit Reval "EE Spear Militia" 4 5 2 0
+		console_command create_unit Reval "EE Archer Militia" 4 4 1 0
+		console_command create_unit Reval "Lithuanian Cavalry" 2 6 1 0
+	end_if
+	inc_counter delay_lithuania_reinf 1
+ end_if
+end_monitor
 
 monitor_event CharacterTurnStart CharFactionType slave
 	and Trait InvasionCharacterCounter = 1
@@ -9342,11 +9513,11 @@ monitor_event FactionTurnStart FactionType slave
 	end_if
 
 	;###### "Phase1"
-	if I_SettlementOwner Vilnius != slave
+	;if I_SettlementOwner Vilnius != slave; Spawn armies even if settlement are rebel already
 		spawn_army
 			faction dummies
 			character 	Mindaugas, named character, age 21, x 250, y 247, label mindaugas4pagan
-			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 3 , PublicFaith 2 , Intelligent 1 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 3 
+			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 3 , PublicFaith 2 , Intelligent 1 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 3, ofLithuaniaName 1 
 			unit	Lith Bodyguard 		exp 5 armour 0 weapon_lvl 0
 			unit	Lithuanian Cavalry 	exp 1 armour 1 weapon_lvl 0
 			unit	Lithuanian Cavalry 	exp 1 armour 1 weapon_lvl 0
@@ -9366,12 +9537,12 @@ monitor_event FactionTurnStart FactionType slave
 		end
 		give_everything_to_faction dummies slave false
 		add_money slave 10000
-	end_if
-	if I_SettlementOwner Palanga != slave
+	;end_if
+	;if I_SettlementOwner Palanga != slave
 		spawn_army
 			faction dummies
 			character	Daumantas, named character, age 39, x 229, y 229, label daumantas4pagan
-			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 4 , PublicFaith 2 , Intelligent 1 , GoodCommander 2 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 1 
+			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , Pagan_Edu 4 , PublicFaith 2 , Intelligent 1 , GoodCommander 2 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 1, ofPrussiaName 1 
 			unit	Lith Bodyguard 		exp 5 armour 0 weapon_lvl 0
 			unit	Lithuanian Cavalry 	exp 3 armour 1 weapon_lvl 0
 			unit	Lithuanian Cavalry 	exp 3 armour 1 weapon_lvl 0
@@ -9392,12 +9563,12 @@ monitor_event FactionTurnStart FactionType slave
 		end
 		give_everything_to_faction dummies slave false
 		add_money slave 10000
-	end_if
-	if I_SettlementOwner Riga != slave
+	;end_if
+	;if I_SettlementOwner Riga != slave
 		spawn_army 
 			faction dummies
 			character Ramvaldas, named character, age 31, x 242, y 257, label ramvaldas4pagan
-			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Pagan_Edu 2 , PublicFaith 3 , Intelligent 1 , GoodCommander 2 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 2 
+			traits		LoyaltyStarter 1 , ReligionStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 2 , Pagan_Edu 2 , PublicFaith 3 , Intelligent 1 , GoodCommander 2 , Bloodthirsty 2 , BattleDread 1 , StrategyDread 2, ofLivoniaName 1 
 			unit		Lith Bodyguard		exp 3 armour 0 weapon_lvl 0
 			unit		Lithuanian Cavalry	exp 3 armour 1 weapon_lvl 0
 			unit		Woodsmen			exp 3 armour 0 weapon_lvl 0
@@ -9419,7 +9590,7 @@ monitor_event FactionTurnStart FactionType slave
 		end
 		give_everything_to_faction dummies slave false
 		add_money slave 10000
-	end_if
+	;end_if
 
 	set_counter pagan_rebel 1
 
@@ -9458,9 +9629,13 @@ monitor_event FactionTurnStart FactionType slave
 	end_if
 end_monitor
 
-;TEUTONIC ORDER EMERGENT PROPER
+;============== Teutonic Order Emergent =================
+declare_counter TO_spawned
+declare_counter teutonickonrad
+
 monitor_event EventCounter EventCounterType inquisition
 	and EventCounter > 0
+	and I_NumberOfSettlements hre > 3
 
 	add_events
 		event emergent_faction teutonic_order
@@ -9863,12 +10038,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	Genghis, named character, age 48, x 505, y 153, label mongols4genghis, family
 		traits Factionleader 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
@@ -9890,12 +10065,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	Jebe, named character, age 25, x 505, y 146, label mongols4jebe, family
 		traits Factionheir 1 , MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
@@ -9920,10 +10095,10 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Lubchiten Horse Archers	exp 3 armour 0 weapon_lvl 0
@@ -9945,10 +10120,10 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Lubchiten Horse Archers	exp 3 armour 0 weapon_lvl 0
@@ -9970,10 +10145,10 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Lubchiten Horse Archers	exp 3 armour 0 weapon_lvl 0
@@ -10022,12 +10197,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	random_name, named character, age 48, x 500, y 143
 		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
@@ -10048,12 +10223,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	random_name, named character, age 48, x 500, y 147
 		traits MilitaryInclination 1 , Military_Edu 3 , NaturalMilitarySkill 2 , GoodCommander 3 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , GoodCavalryGeneral 2 , ReligionStarter 1
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
@@ -10074,12 +10249,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	Chindu, named character, age 25, x 490, y 125, label mongols4chindu, family
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 3 , Bloodthirsty 2 , BattleDread 4 , StrategyDread 2 , PublicFaith 1 , Loyal 3 , ContentGeneral 3 , ReligionStarter 1 , InvasionCharacterCounter 3 
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
@@ -10205,10 +10380,10 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 6 armour 0 weapon_lvl 0
 		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
 		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
@@ -10232,11 +10407,11 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut	exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut	exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut	exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut	exp 4 armour 0 weapon_lvl 0
 		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
 		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
 		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
@@ -10259,9 +10434,9 @@ monitor_event EventCounter EventCounterType mongols_invasion ;make sure the hord
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers			exp 7 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Khorchi Horse Archers		exp 6 armour 0 weapon_lvl 0
@@ -10382,12 +10557,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
@@ -10409,10 +10584,10 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
@@ -10437,7 +10612,7 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Nukeri Horse Archers	exp 5 armour 0 weapon_lvl 0
@@ -10461,13 +10636,13 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	random_name, named character, age 25, x 504, y 144
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
@@ -10507,12 +10682,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
@@ -10534,10 +10709,10 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
@@ -10603,12 +10778,12 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
 		unit	Merguen Archers		exp 5 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 3 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 3 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
 		unit	Hoschuchi Lancers		exp 5 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
@@ -10627,13 +10802,13 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	Jagadai, named character, age 25, x 502, y 144
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
@@ -10653,13 +10828,13 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	random_name, named character, age 25, x 504, y 144
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 2 , Anger 3 , BattleDread 2 , StrategyDread 2 , PublicFaith 1 , Loyal 2 , ContentGeneral 3
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
 		unit	Lubchiten Horse Archers		exp 4 armour 0 weapon_lvl 0
@@ -10693,11 +10868,11 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	Hulegu, named character, age 25, x 498, y 120
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 2 , GoodCommander 2 , Genocide 2 , BattleDread 2 , StrategyDread 3 , PublicFaith 3 , Loyal 2 , ContentGeneral 3 , ReligionStarter 1
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut		exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
@@ -10719,11 +10894,11 @@ monitor_event EventCounter EventCounterType mongols_invasion
 		character	Kitbuqa, named character, age 24, x 507, y 92
 		traits MilitaryInclination 1 , Military_Edu 2 , NaturalMilitarySkill 1 , GoodCommander 3 , BattleDread 2 , StrategyDread 2 , Loyal 2 , ContentGeneral 3
 		unit	Keshikten Bodyguard		exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 6 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
-		unit	Disamounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 6 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
+		unit	Dismounted Turhagut			exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 4 armour 0 weapon_lvl 0
 		unit	Khabutu Archers		exp 6 armour 0 weapon_lvl 0
@@ -10774,12 +10949,12 @@ monitor_event PreFactionTurnStart FactionType mongols
 
 	if I_EventCounter DifficultyLevel >= 2
 		if I_SettlementOwner Jaiksk = mongols
-			create_unit Jaiksk, Disamounted Turhagut, num 1, exp 1, arm 0, wep 0
+			create_unit Jaiksk, Dismounted Turhagut, num 1, exp 1, arm 0, wep 0
 			create_unit Jaiksk, Hoshiga Horse Archers, num 2, exp 3, arm 0, wep 0
 			add_money mongols 3000
 		end_if
 		if I_SettlementOwner Astrakhan = mongols
-			create_unit Astrakhan, Disamounted Turhagut, num 2, exp 4, arm 0, wep 0
+			create_unit Astrakhan, Dismounted Turhagut, num 2, exp 4, arm 0, wep 0
 			create_unit Astrakhan, Hoshiga Horse Archers, num 2, exp 3, arm 0, wep 0
 			create_unit Astrakhan, ME Catapult, num 1, exp 5, arm 0, wep 0
 			add_money mongols 3000
@@ -10793,14 +10968,14 @@ monitor_event PreFactionTurnStart FactionType mongols
 
 	if I_EventCounter DifficultyLevel >= 3
 		if I_SettlementOwner Sarkel = mongols
-			create_unit Sarkel, Disamounted Turhagut, num 1, exp 3, arm 0, wep 0
+			create_unit Sarkel, Dismounted Turhagut, num 1, exp 3, arm 0, wep 0
 			create_unit Sarkel, Nukeri Horse Archers, num 1, exp 4, arm 0, wep 0
 			create_unit Sarkel, Turhagut Lancers, num 1, exp 4, arm 0, wep 0
 			create_unit Sarkel, ME Trebuchet, num 1, exp 5, arm 0, wep 0
 			add_money mongols 3000
 		end_if
 		if I_SettlementOwner Tmutarakan = mongols
-			create_unit Tmutarakan, Disamounted Turhagut, num 2, exp 4, arm 0, wep 0
+			create_unit Tmutarakan, Dismounted Turhagut, num 2, exp 4, arm 0, wep 0
 			create_unit Tmutarakan, Hoshiga Horse Archers, num 1, exp 4, arm 0, wep 0
 			add_money mongols 3000
 		end_if
@@ -10821,14 +10996,14 @@ monitor_event PreFactionTurnStart FactionType mongols
 			add_money mongols 3000
 		end_if
 		if I_SettlementOwner Yazd = mongols
-			create_unit Yazd, Disamounted Turhagut, num 2, exp 1, arm 0, wep 0
+			create_unit Yazd, Dismounted Turhagut, num 2, exp 1, arm 0, wep 0
 			add_money mongols 3000
 		end_if
 	end_if
 
 	if I_SettlementOwner Gorgan = mongols
 		create_unit Gorgan, Khabutu Archers, num 1, exp 3, arm 0, wep 0
-		create_unit Gorgan, Disamounted Turhagut, num 1, exp 4, arm 0, wep 0
+		create_unit Gorgan, Dismounted Turhagut, num 1, exp 4, arm 0, wep 0
 		create_unit Gorgan, Turhagut Lancers, num 1, exp 4, arm 0, wep 0
 		add_money mongols 3000
 	end_if
@@ -11015,13 +11190,21 @@ monitor_event FactionTurnStart FactionType mongols
 end_monitor
 
 ;================= BULGARIAN UPRISING ===================
+;============= and Cilicia Armenian Uprising =================
 declare_counter bulgarians_rebel
 declare_counter rebelpeter
 declare_counter rebelivan
 declare_counter rebelkalman
+declare_counter rebelthoros
+declare_counter cilician_rebel
+declare_counter extrabrebels
 add_events
-		event	counter	BulgarianUprisingSet
-		date	50 85
+		event	counter	PreBulgarianUprisingSet
+		date	50 55
+		event	counter	PreBulgarianUprisingSet
+		date	65 70
+		event	counter	PreBulgarianUprisingSet
+		date	80 85
 end_add_events
 
 monitor_event CharacterTurnStart CharFactionType slave
@@ -11045,6 +11228,162 @@ monitor_event CharacterTurnStart CharFactionType slave
 		console_command remove_trait kalman4slave InvasionCharacterCounter 3
 		terminate_monitor
 end_monitor
+monitor_event CharacterTurnStart CharFactionType slave
+	and Trait InvasionCharacterCounter = 4
+	and I_CompareCounter cilician_rebel = 1
+		set_counter rebelthoros 1
+		console_command remove_trait thoros4slave InvasionCharacterCounter 4
+		terminate_monitor
+end_monitor
+
+monitor_event EventCounter EventCounterType PreBulgarianUprisingSet
+	set_counter extrabrebels 1
+	if I_EventCounter PreBulgarianUprisingSet = 1
+	and RandomPercent > 75
+		set_event_counter BulgarianUprisingSet 1
+		terminate_monitor
+	end_if
+	if I_EventCounter PreBulgarianUprisingSet = 2
+	and RandomPercent > 50
+		set_event_counter BulgarianUprisingSet 1
+		terminate_monitor
+	end_if
+	if I_EventCounter PreBulgarianUprisingSet = 3
+		set_event_counter BulgarianUprisingSet 1
+		terminate_monitor
+	end_if
+end_monitor
+monitor_event PreFactionTurnStart FactionType slave
+	and I_CompareCounter extrabrebels = 1
+	set_counter extrabrebels 0
+	spawn_army
+		faction dummies
+		character Boril, general, age 21, x 250, y 151
+		unit		Mailed Knights		exp 2 armour 0 weapon_lvl 0
+		unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+		unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0     
+		unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+		unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
+		unit		Croat Axemen		exp 2 armour 0 weapon_lvl 0
+		unit		Pechenegs			exp 2 armour 0 weapon_lvl 0
+	end
+	spawn_army
+		faction dummies
+		character Vladislav, general, age 21, x 237, y 155
+		unit		Tartar Lancers		exp 2 armour 0 weapon_lvl 0
+		unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+		unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0     
+		unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+		unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
+		unit		Croat Axemen		exp 2 armour 0 weapon_lvl 0
+		unit		Pechenegs			exp 2 armour 0 weapon_lvl 0
+	end
+	spawn_army
+		faction dummies
+		character Dobromir, general, age 21, x 265, y 159
+		unit		Sibiryaki Senior Militia	exp 2 armour 0 weapon_lvl 0
+		unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0
+		unit		Bulgarian Brigands	exp 2 armour 0 weapon_lvl 0     
+		unit		Slav Levies			exp 2 armour 0 weapon_lvl 0
+		unit		Balkan Archers		exp 2 armour 0 weapon_lvl 0
+		unit		Croat Axemen		exp 2 armour 0 weapon_lvl 0
+		unit		Pechenegs			exp 2 armour 0 weapon_lvl 0
+	end
+	give_everything_to_faction dummies slave false
+	if I_EventCounter PreBulgarianUprisingSet = 3
+		terminate_monitor
+	end_if
+end_monitor
+
+monitor_event FactionTurnStart FactionType slave
+	and I_EventCounter PreBulgarianUprisingSet = 1
+
+	;###### "Phase2"(next turn)
+	if I_CompareCounter cilician_rebel = 1
+		spawn_army
+			faction dummies
+			character	Temporary, named character, x 20, y 20, label temp4cilicia
+			unit		Aldari	exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies papal_states false
+		console_command move_character temp4cilicia 61,1
+		console_command mp temp4cilicia -1
+
+		if I_CharacterExists thoros4slave
+		and I_SettlementOwner Adana != slave
+		and I_SettlementUnderSiege Adana
+		and I_CharacterTypeNearTile slave, named_character, 2, 335, 116 ;Sis
+			set_counter scripted_siege 1
+			console_command move_character temp4cilicia 335,116
+			set_counter besieging_test 1
+			move temp4cilicia, 334, 116
+
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4cilicia 336,116
+				move temp4cilicia, 335, 116
+			end_if
+			if I_CompareCounter scripted_siege = 1
+				console_command move_character temp4cilicia 334,116
+				move temp4cilicia, 335, 116
+			end_if
+			set_counter besieging_test 0
+			console_command move_character temp4cilicia 61,1
+
+			if I_CompareCounter scripted_siege = 0
+			and I_CompareCounter rebelthoros = 1
+				siege_settlement thoros4slave, Adana, attack
+				log always Cilicia Sis Siege Script Successful! ~Melooo182
+			end_if
+		end_if
+
+		set_counter scripted_siege -1
+		set_counter cilician_rebel -1
+		kill_character temp4cilicia
+	 terminate_monitor
+	end_if
+
+	;###### "Phase1"
+	if I_CompareCounter cilician_rebel = 0
+		spawn_army 
+			faction dummies
+			character	T#oros, named character, age 42, x 334, y 112, direction NE, label thoros4slave
+			traits 	LoyaltyStarter 1 , ReligionStarter 1 , GoodCommander 4, BattleChivalry 3, StrategyChivalry 2, PublicFaith 1, NaturalMilitarySkill 2, ofCiliciaName 1 
+			unit			Armenian Cavalry				exp 6 armour 1 weapon_lvl 0
+			unit			Armenian Cavalry				exp 1 armour 1 weapon_lvl 0
+			unit			Armenian Cavalry				exp 0 armour 1 weapon_lvl 0
+			unit			ME Spear Militia				exp 1 armour 1 weapon_lvl 0
+			unit			ME Spear Militia				exp 1 armour 1 weapon_lvl 0
+			unit			ME Spear Militia				exp 0 armour 1 weapon_lvl 0
+			unit			ME Spear Militia				exp 0 armour 1 weapon_lvl 0
+			unit			Armenian Infantry			exp 3 armour 1 weapon_lvl 0
+			unit			Armenian Infantry			exp 2 armour 1 weapon_lvl 0
+			unit			Armenian Infantry			exp 1 armour 0 weapon_lvl 0
+			unit			Armenian Infantry			exp 0 armour 0 weapon_lvl 0
+			unit			Armenians of Celicia			exp 3 armour 1 weapon_lvl 0
+			unit			Armenians of Celicia			exp 3 armour 1 weapon_lvl 0
+			unit			Armenians of Celicia			exp 0 armour 0 weapon_lvl 0
+			unit			Armenian Archers				exp 2 armour 0 weapon_lvl 0
+			unit			Armenian Archers				exp 2 armour 0 weapon_lvl 0
+			unit			Armenian Archers				exp 0 armour 0 weapon_lvl 0
+			unit			Armenian Archers				exp 0 armour 0 weapon_lvl 0
+		end
+		give_everything_to_faction dummies slave false
+		add_money slave 10000
+	end_if
+	set_counter cilician_rebel 1
+
+	if I_SettlementOwner Adana != slave
+	and ! I_SettlementUnderSiege Adana
+		siege_settlement thoros4slave, Adana, maintain
+		if ! I_SettlementUnderSiege Adana
+			move thoros4slave, 334,112
+		end_if
+		if I_SettlementUnderSiege Adana
+			console_command give_trait thoros4slave ScriptedBesieger 1
+			console_command give_trait thoros4slave InvasionCharacterCounter 4
+		end_if
+	end_if
+end_monitor
 
 monitor_event FactionTurnStart FactionType slave
 	and I_EventCounter BulgarianUprisingSet = 1
@@ -11063,7 +11402,7 @@ monitor_event FactionTurnStart FactionType slave
 		if I_CharacterExists peter4bulgaria
 		and I_SettlementOwner Sofia != slave
 		and I_SettlementUnderSiege Sofia
-		and I_CharacterTypeNearTile slave, named_character, 2, 246, 153 ;Sofia
+		and I_CharacterTypeNearTile slave, named_character, 2, 246, 153 ;Sredets
 			set_counter scripted_siege 1
 			console_command move_character temp4bulgaria 246,153
 			set_counter besieging_test 1
@@ -11268,8 +11607,6 @@ monitor_event FactionTurnStart FactionType slave
 end_monitor
 
 
-;================== TIMURIDS INVASION ===================
-;;;;;;;;;;;;;;;;;;;;;;;;DISABLED;;;;;;;;;;;;;;;;;;;;;;;;;
 ;========================================================
 ;===================== G5 BAI STUFF =====================
 ;========================================================
@@ -36916,6 +37253,7 @@ declare_counter conversion_vienna
 declare_counter conversion_hamburg
 declare_counter conversion_nuremburg
 declare_counter conversion_cologne
+declare_counter conversion_lubeck
 declare_counter conversion_milan
 declare_counter conversion_genoa
 declare_counter conversion_venice
@@ -36971,7 +37309,6 @@ declare_counter conversion_al_mahdiya
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Khlynov; Orleans
 	and not FactionType france
-	and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 	end_monitor
 ;BRITISH ISLES
@@ -36998,6 +37335,10 @@ declare_counter conversion_al_mahdiya
 	and not FactionType hre
 			add_settlement_turmoil Vienna 6
 	end_monitor
+	monitor_event GeneralCaptureSettlement SettlementName Damghan; Lubeck
+	and not FactionType lithuania; obotrites
+			add_settlement_turmoil Damghan 8
+	end_monitor
 ;ITALY
 	monitor_event GeneralCaptureSettlement SettlementName Milan
 			add_settlement_turmoil Milan 6
@@ -37019,8 +37360,10 @@ declare_counter conversion_al_mahdiya
 			add_settlement_turmoil Palermo 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Nykoeping; Florence
-	and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 8
+	end_monitor
+	monitor_event GeneralCaptureSettlement SettlementName Pisa
+			add_settlement_turmoil Pisa 6
 	end_monitor
 ;IBERIA
 	monitor_event GeneralCaptureSettlement SettlementName Toledo
@@ -37051,8 +37394,32 @@ declare_counter conversion_al_mahdiya
 			add_settlement_turmoil Krakow 8
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Vilnius
-	and not FactionType lithuania
+	and not FactionReligion pagan
 			add_settlement_turmoil Vilnius 8
+		if I_EventCounter status_teutonic_order != 1
+			add_settlement_turmoil Vilnius 14
+		end_if
+	end_monitor
+	monitor_event GeneralCaptureSettlement SettlementName Riga
+	and not FactionReligion pagan
+			add_settlement_turmoil Riga 5
+		if I_EventCounter status_teutonic_order != 1
+			add_settlement_turmoil Riga 10
+		end_if
+	end_monitor
+	monitor_event GeneralCaptureSettlement SettlementName Reval
+	and not FactionReligion pagan
+			add_settlement_turmoil Reval 5
+		if I_EventCounter status_teutonic_order != 1
+			add_settlement_turmoil Reval 10
+		end_if
+	end_monitor
+	monitor_event GeneralCaptureSettlement SettlementName Palanga
+	and not FactionReligion pagan
+			add_settlement_turmoil Palanga 5
+		if I_EventCounter status_teutonic_order != 1
+			add_settlement_turmoil Palanga 10
+		end_if
 	end_monitor
 ;SCANDINAVIA
 	monitor_event GeneralCaptureSettlement SettlementName Arhus
@@ -37081,7 +37448,6 @@ declare_counter conversion_al_mahdiya
 			add_settlement_turmoil Constantinople 10
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Ryazan; Ras
-	and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 	end_monitor
 	monitor_event GeneralCaptureSettlement SettlementName Sofia
@@ -37196,7 +37562,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = turks
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -37248,6 +37613,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = turks
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = turks
 			add_settlement_turmoil Milan 6
@@ -37275,7 +37645,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = turks
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -37356,7 +37725,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = turks
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -37493,7 +37861,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = egypt
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -37545,6 +37912,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = egypt
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = egypt
 			add_settlement_turmoil Milan 6
@@ -37572,7 +37944,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = egypt
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -37653,7 +38024,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = egypt
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -37790,7 +38160,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = moors
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -37842,6 +38211,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = moors
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = moors
 			add_settlement_turmoil Milan 6
@@ -37869,7 +38243,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = moors
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -37950,7 +38323,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = moors
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -38087,7 +38459,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = kwarezm
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -38139,6 +38510,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = kwarezm
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = kwarezm
 			add_settlement_turmoil Milan 6
@@ -38166,7 +38542,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = kwarezm
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -38247,7 +38622,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = kwarezm
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -38384,7 +38758,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = timurids
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -38436,6 +38809,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = timurids
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = timurids
 			add_settlement_turmoil Milan 6
@@ -38463,7 +38841,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = timurids
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -38544,7 +38921,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = timurids
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -38681,7 +39057,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = venice
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -38733,6 +39108,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = venice
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = venice
 			add_settlement_turmoil Milan 6
@@ -38760,7 +39140,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = venice
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -38841,7 +39220,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = venice
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -38978,7 +39356,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = sicily
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -39030,6 +39407,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = sicily
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = sicily
 			add_settlement_turmoil Milan 6
@@ -39057,7 +39439,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = sicily
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -39138,7 +39519,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = sicily
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -39275,7 +39655,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = milan
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -39327,6 +39706,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = milan
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = milan
 			add_settlement_turmoil Milan 6
@@ -39354,7 +39738,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = milan
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -39435,7 +39818,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = milan
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -39572,7 +39954,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = spain
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -39624,6 +40005,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = spain
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = spain
 			add_settlement_turmoil Milan 6
@@ -39651,7 +40037,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = spain
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -39732,7 +40117,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = spain
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -39869,7 +40253,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = aragon
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -39921,6 +40304,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = aragon
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = aragon
 			add_settlement_turmoil Milan 6
@@ -39948,7 +40336,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = aragon
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -40029,7 +40416,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = aragon
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -40166,7 +40552,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = portugal
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -40218,6 +40603,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = portugal
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = portugal
 			add_settlement_turmoil Milan 6
@@ -40245,7 +40635,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = portugal
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -40326,7 +40715,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = portugal
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -40463,7 +40851,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = france
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -40515,6 +40902,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = france
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = france
 			add_settlement_turmoil Milan 6
@@ -40542,7 +40934,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = france
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -40623,7 +41014,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = france
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -40760,7 +41150,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = england
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -40812,6 +41201,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = england
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = england
 			add_settlement_turmoil Milan 6
@@ -40839,7 +41233,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = england
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -40920,7 +41313,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = england
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -41057,7 +41449,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = scotland
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -41109,6 +41500,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = scotland
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = scotland
 			add_settlement_turmoil Milan 6
@@ -41136,7 +41532,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = scotland
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -41217,7 +41612,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = scotland
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -41354,7 +41748,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = hre
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -41406,6 +41799,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = hre
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = hre
 			add_settlement_turmoil Milan 6
@@ -41433,7 +41831,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = hre
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -41514,7 +41911,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = hre
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -41651,7 +42047,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = denmark
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -41703,6 +42098,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = denmark
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = denmark
 			add_settlement_turmoil Milan 6
@@ -41730,7 +42130,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = denmark
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -41811,7 +42210,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = denmark
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -41948,7 +42346,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = norway
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -42000,6 +42397,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = norway
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = norway
 			add_settlement_turmoil Milan 6
@@ -42027,7 +42429,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = norway
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -42108,7 +42509,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = norway
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -42245,7 +42645,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = hungary
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -42297,6 +42696,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = hungary
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = hungary
 			add_settlement_turmoil Milan 6
@@ -42324,7 +42728,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = hungary
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -42405,7 +42808,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = hungary
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -42542,7 +42944,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = poland
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -42594,6 +42995,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = poland
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = poland
 			add_settlement_turmoil Milan 6
@@ -42621,7 +43027,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = poland
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -42702,7 +43107,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = poland
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -42839,7 +43243,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = jerusalem
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -42891,6 +43294,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = jerusalem
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = jerusalem
 			add_settlement_turmoil Milan 6
@@ -42918,7 +43326,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = jerusalem
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -42999,7 +43406,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = jerusalem
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -43136,7 +43542,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = teutonic_order
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -43188,6 +43593,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = teutonic_order
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = teutonic_order
 			add_settlement_turmoil Milan 6
@@ -43215,7 +43625,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = teutonic_order
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -43296,7 +43705,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = teutonic_order
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -43433,7 +43841,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = byzantium
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -43485,6 +43892,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = byzantium
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = byzantium
 			add_settlement_turmoil Milan 6
@@ -43512,7 +43924,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = byzantium
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -43593,7 +44004,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = byzantium
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -43730,7 +44140,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = kievan_rus
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -43782,6 +44191,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = kievan_rus
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = kievan_rus
 			add_settlement_turmoil Milan 6
@@ -43809,7 +44223,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = kievan_rus
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -43890,7 +44303,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = kievan_rus
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -44027,7 +44439,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = russia
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -44079,6 +44490,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = russia
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = russia
 			add_settlement_turmoil Milan 6
@@ -44106,7 +44522,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = russia
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -44187,7 +44602,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = russia
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -44324,7 +44738,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = lithuania
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -44376,6 +44789,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = lithuania
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = lithuania
 			add_settlement_turmoil Milan 6
@@ -44403,7 +44821,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = lithuania
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -44484,7 +44901,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = lithuania
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -44621,7 +45037,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = cumans
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -44673,6 +45088,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = cumans
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = cumans
 			add_settlement_turmoil Milan 6
@@ -44700,7 +45120,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = cumans
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -44781,7 +45200,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = cumans
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -44918,7 +45336,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = mongols
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -44970,6 +45387,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = mongols
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = mongols
 			add_settlement_turmoil Milan 6
@@ -44997,7 +45419,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = mongols
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -45078,7 +45499,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = mongols
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -45215,7 +45635,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Toulouse 0.05
 			end_if
 			if I_SettlementOwner Khlynov = georgia
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Khlynov 5
 			set_counter conversion_orleans 5
 			set_settlement_founding_conversion_rate Khlynov 0.05
@@ -45267,6 +45686,11 @@ declare_counter conversion_al_mahdiya
 			set_counter conversion_cologne 4
 			set_settlement_founding_conversion_rate Cologne 0.05
 			end_if
+			if I_SettlementOwner Damghan = georgia
+			add_settlement_turmoil Damghan 8
+			set_counter conversion_lubeck 8
+			set_settlement_founding_conversion_rate Damghan 0.05
+			end_if
 		;ITALY
 			if I_SettlementOwner Milan = georgia
 			add_settlement_turmoil Milan 6
@@ -45294,7 +45718,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Palermo 0.05
 			end_if
 			if I_SettlementOwner Nykoeping = georgia
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Nykoeping 6
 			set_counter conversion_florence 6
 			set_settlement_founding_conversion_rate Nykoeping 0.05
@@ -45375,7 +45798,6 @@ declare_counter conversion_al_mahdiya
 			set_settlement_founding_conversion_rate Constantinople 0.05
 			end_if
 			if I_SettlementOwner Ryazan = georgia
-			and I_CompareCounter orleans_exist = 1
 			add_settlement_turmoil Ryazan 5
 			set_counter conversion_ras 5
 			set_settlement_founding_conversion_rate Ryazan 0.05
@@ -45557,6 +45979,12 @@ declare_counter conversion_al_mahdiya
 			inc_counter conversion_cologne -1
 			if I_CompareCounter conversion_cologne = 0
 				set_owner_founding_conversion_rate Cologne 0.0005
+			end_if
+		end_if
+		if I_CompareCounter conversion_lubeck > 0
+			inc_counter conversion_lubeck -1
+			if I_CompareCounter conversion_lubeck = 0
+				set_owner_founding_conversion_rate Damghan 0.0005
 			end_if
 		end_if
 
@@ -45818,7 +46246,7 @@ declare_counter conversion_al_mahdiya
 declare_counter istanople
 
 monitor_event GeneralCaptureSettlement SettlementName Constantinople
-	and CharFactionType turks
+	and FactionReligion islam
 	and I_CompareCounter istanople = 0
 
 	set_counter istanople 1
@@ -45846,6 +46274,17 @@ monitor_event GeneralCaptureSettlement SettlementName Damghan
 	end_if
 end_monitor
 
+monitor_event GeneralCaptureSettlement SettlementName Magdeburg
+	campaign_wait 0.1
+	if I_SettlementOwner Magdeburg = hre
+		change_settlement_name Magdeburg Brandenburg
+		terminate_monitor
+	end_if
+	if I_SettlementOwner Magdeburg = teutonic_order
+		change_settlement_name Magdeburg Brandenburg
+		terminate_monitor
+	end_if
+end_monitor
 
 monitor_event SettlementUpgraded SettlementName Palanga
 
@@ -45884,22 +46323,20 @@ end_monitor
 	set_counter me_crusader 0
 	declare_counter eu_crusader
 	set_counter eu_crusader 0
-	
-	declare_counter turn_vlr
 
 ;Scotland
 	declare_counter edinburgh_riot
 	set_counter edinburgh_riot 0
 	declare_counter inverness_riot
 	set_counter inverness_riot 0
-	declare_counter scotland_emerge
-	set_counter scotland_emerge 0
+	;declare_counter scotland_emerge
+	;set_counter scotland_emerge 0
 
 ;Venice
 	declare_counter venice_riot
 	set_counter venice_riot 0
-	declare_counter venice_emerge
-	set_counter venice_emerge 0
+	;declare_counter venice_emerge
+	;set_counter venice_emerge 0
 
 ;Sicily
 	declare_counter palermo_riot
@@ -45908,22 +46345,22 @@ end_monitor
 	set_counter syracuse_riot 0
 	declare_counter naples_riot
 	set_counter naples_riot 0
-	declare_counter sicily_emerge
-	set_counter sicily_emerge 0
+	;declare_counter sicily_emerge
+	;set_counter sicily_emerge 0
 
 ;Milan/Genoa
 	declare_counter genoa_riot
 	set_counter genoa_riot 0
-	declare_counter milan_emerge
-	set_counter milan_emerge 0
+	;declare_counter milan_emerge
+	;set_counter milan_emerge 0
 
 ;Denmark
 	declare_counter arhus_riot
 	set_counter arhus_riot 0
 	declare_counter roskilde_riot
 	set_counter roskilde_riot 0
-	declare_counter denmark_emerge
-	set_counter denmark_emerge 0
+	;declare_counter denmark_emerge
+	;set_counter denmark_emerge 0
 
 ;Cumans
 	declare_counter jaiksk_riot
@@ -45932,8 +46369,8 @@ end_monitor
 	set_counter azaq_riot 0
 	declare_counter baia_riot
 	set_counter baia_riot 0
-	declare_counter cumans_emerge
-	set_counter cumans_emerge 0
+	;declare_counter cumans_emerge
+	;set_counter cumans_emerge 0
 
 ;Turks/Seljuks
 	declare_counter caesarea_riot
@@ -45944,8 +46381,8 @@ end_monitor
 	set_counter iconium_riot 0
 	declare_counter diyarbakir_riot
 	set_counter diyarbakir_riot 0
-	declare_counter turks_emerge
-	set_counter turks_emerge 0
+	;declare_counter turks_emerge
+	;set_counter turks_emerge 0
 
 ;France
 	declare_counter paris_riot
@@ -45956,8 +46393,8 @@ end_monitor
 	set_counter clermont_riot 0
 	declare_counter angers_riot
 	set_counter angers_riot 0
-	declare_counter france_emerge
-	set_counter france_emerge 0
+	;declare_counter france_emerge
+	;set_counter france_emerge 0
 
 ;HRE
 	declare_counter frankfurt_riot
@@ -45970,8 +46407,8 @@ end_monitor
 	set_counter staufen_riot 0
 	declare_counter nuremburg_riot
 	set_counter nuremburg_riot 0
-	declare_counter hre_emerge
-	set_counter hre_emerge 0
+	;declare_counter hre_emerge
+	;set_counter hre_emerge 0
 
 ;England
 	declare_counter london_riot
@@ -45980,16 +46417,16 @@ end_monitor
 	set_counter nottingham_riot 0
 	declare_counter winchester_riot
 	set_counter winchester_riot 0
-	declare_counter england_emerge
-	set_counter england_emerge 0
+	;declare_counter england_emerge
+	;set_counter england_emerge 0
 
 ;Portugal
 	declare_counter al_mahdiya_riot
 	set_counter al_mahdiya_riot 0
 	declare_counter tunis_riot
 	set_counter tunis_riot 0
-	declare_counter portugal_emerge
-	set_counter portugal_emerge 0
+	;declare_counter portugal_emerge
+	;set_counter portugal_emerge 0
 
 ;Poland
 	declare_counter krakow_riot
@@ -45998,8 +46435,8 @@ end_monitor
 	set_counter poznan_riot 0
 	declare_counter plock_riot
 	set_counter plock_riot 0
-	declare_counter poland_emerge
-	set_counter poland_emerge 0
+	;declare_counter poland_emerge
+	;set_counter poland_emerge 0
 
 ;Byzantium
 	declare_counter constantinople_riot
@@ -46010,8 +46447,8 @@ end_monitor
 	set_counter arta_riot 0
 	declare_counter trebizond_riot
 	set_counter trebizond_riot 0
-	declare_counter byzantium_emerge
-	set_counter byzantium_emerge 0
+	;declare_counter byzantium_emerge
+	;set_counter byzantium_emerge 0
 
 ;Moors
 	declare_counter marrakesh_riot
@@ -46020,14 +46457,14 @@ end_monitor
 	set_counter fes_riot 0
 	declare_counter melilla_riot
 	set_counter melilla_riot 0
-	declare_counter moors_emerge
-	set_counter moors_emerge 0
+	;declare_counter moors_emerge
+	;set_counter moors_emerge 0
 
 ;Russia/Novgorod
 	declare_counter novgorod_riot
 	set_counter novgorod_riot 0
-	declare_counter russia_emerge
-	set_counter russia_emerge 0
+	;declare_counter russia_emerge
+	;set_counter russia_emerge 0
 
 ;Spain/Leon
 	declare_counter leon_riot
@@ -46038,8 +46475,8 @@ end_monitor
 	set_counter salamanca_riot 0
 	declare_counter burgos_riot
 	set_counter burgos_riot 0
-	declare_counter spain_emerge
-	set_counter spain_emerge 0
+	;declare_counter spain_emerge
+	;set_counter spain_emerge 0
 
 ;Hungary
 	declare_counter varad_riot
@@ -46048,8 +46485,8 @@ end_monitor
 	set_counter esztergom_riot 0
 	declare_counter kassa_riot
 	set_counter kassa_riot 0
-	declare_counter hungary_emerge
-	set_counter hungary_emerge 0
+	;declare_counter hungary_emerge
+	;set_counter hungary_emerge 0
 
 ;Aragon
 	declare_counter zaragoza_riot
@@ -46058,34 +46495,34 @@ end_monitor
 	set_counter pamplona_riot 0
 	declare_counter barcelona_riot
 	set_counter barcelona_riot 0
-	declare_counter aragon_emerge
-	set_counter aragon_emerge 0
+	;declare_counter aragon_emerge
+	;set_counter aragon_emerge 0
 
 ;Lithuania/Obotrites
 	declare_counter lubeck_riot
 	set_counter lubeck_riot 0
-	declare_counter lithuania_emerge
-	set_counter lithuania_emerge 0
+	;declare_counter lithuania_emerge
+	;set_counter lithuania_emerge 0
 
 ;Kievan Rus
 	declare_counter kiev_riot
 	set_counter kiev_riot 0
-	declare_counter kievan_rus_emerge
-	set_counter kievan_rus_emerge 0
+	;declare_counter kievan_rus_emerge
+	;set_counter kievan_rus_emerge 0
 
 ;Norway
 	declare_counter bergen_riot
 	set_counter bergen_riot 0
-	declare_counter norway_emerge
-	set_counter norway_emerge 0
+	;declare_counter norway_emerge
+	;set_counter norway_emerge 0
 
 ;Kwarezm
 	declare_counter urgench_riot
 	set_counter urgench_riot 0
 	declare_counter konjikala_riot
 	set_counter konjikala_riot 0
-	declare_counter kwarezm_emerge
-	set_counter kwarezm_emerge 0
+	;declare_counter kwarezm_emerge
+	;set_counter kwarezm_emerge 0
 
 ;Egypt/Fatimids
 	declare_counter cairo_riot
@@ -46094,8 +46531,8 @@ end_monitor
 	set_counter alexandria_riot 0
 	declare_counter damietta_riot
 	set_counter damietta_riot 0
-	declare_counter egypt_emerge
-	set_counter egypt_emerge 0
+	;declare_counter egypt_emerge
+	;set_counter egypt_emerge 0
 
 ;Jerusalem/Crusader States
 	declare_counter nicosia_riot
@@ -46104,8 +46541,8 @@ end_monitor
 	set_counter jerusalem_riot 0
 	declare_counter acre_riot
 	set_counter acre_riot 0
-	declare_counter jerusalem_emerge
-	set_counter jerusalem_emerge 0
+	;declare_counter crusaders_emerge
+	;set_counter crusaders_emerge 0
 	
 ;Teutonic Order
 	declare_counter thorn_riot
@@ -46114,24 +46551,24 @@ end_monitor
 	set_counter palanga_riot 0
 	declare_counter riga_riot
 	set_counter riga_riot 0
-	declare_counter teutonic_order_emerge
-	set_counter teutonic_order_emerge 0
+	;declare_counter teutonic_emerge
+	;set_counter teutonic_emerge 0
 	
 ;Abbasids(timurids)
 	declare_counter baghdad_riot
 	set_counter baghdad_riot 0
 	declare_counter basra_riot
 	set_counter basra_riot 0
-	declare_counter abbasids_emerge
-	set_counter abbasids_emerge 0
+	;declare_counter abbasids_emerge
+	;set_counter abbasids_emerge 0
 	
 ;Georgia
 	declare_counter kutaisi_riot
 	set_counter kutaisi_riot 0
 	declare_counter tbilisi_riot
 	set_counter tbilisi_riot 0
-	declare_counter georgia_emerge
-	set_counter georgia_emerge 0
+	;declare_counter georgia_emerge
+	;set_counter georgia_emerge 0
 ;
 ;---------------------------------------------------------------------------------------
 ;-------Check if settlements are rioting and factions meet conditions to re-emerge--------
@@ -46151,16 +46588,18 @@ end_monitor
 	  and I_NumberOfSettlements scotland = 0
 	  and I_IsFactionAIControlled scotland
 	  ;and not I_SettlementOwner Edinburgh = scotland
-	  and I_CompareCounter scotland_emerge = 0
+	  and I_EventCounter scotland_emerge < 1
 	    set_counter edinburgh_riot 1
+	    random_counter_inc scotland_ticket 1 4
 	    set_counter faction_emerge_id 1
 	end_monitor
 	monitor_event CityRiots SettlementName Inverness
 	  and I_NumberOfSettlements scotland = 0
 	  and I_IsFactionAIControlled scotland
 	  ;and not I_SettlementOwner Inverness = scotland
-	  and I_CompareCounter scotland_emerge = 0
+	  and I_EventCounter scotland_emerge < 1
 	    set_counter inverness_riot 1
+	    random_counter_inc scotland_ticket 1 4
 	    set_counter faction_emerge_id 1
 	end_monitor
 
@@ -46169,8 +46608,9 @@ end_monitor
 	  and I_NumberOfSettlements venice = 0
 	  and I_IsFactionAIControlled venice
 	  ;and not I_SettlementOwner Venice = venice
-	  and I_CompareCounter venice_emerge = 0
+	  and I_EventCounter venice_emerge < 1
 	    set_counter venice_riot 1
+	    random_counter_inc venice_ticket 1 4
 	    set_counter faction_emerge_id 2
 	end_monitor
 
@@ -46179,24 +46619,27 @@ end_monitor
 	  and I_NumberOfSettlements sicily = 0
 	  and I_IsFactionAIControlled sicily
 	  ;and not I_SettlementOwner Palermo = sicily
-	  and I_CompareCounter sicily_emerge = 0
+	  and I_EventCounter sicily_emerge < 1
 	    set_counter palermo_riot 1
+	    random_counter_inc sicily_ticket 1 4
 	    set_counter faction_emerge_id 3
 	end_monitor
 	monitor_event CityRiots SettlementName Syracuse
 	  and I_NumberOfSettlements sicily = 0
 	  and I_IsFactionAIControlled sicily
 	  ;and not I_SettlementOwner Syracuse = sicily
-	  and I_CompareCounter sicily_emerge = 0
+	  and I_EventCounter sicily_emerge < 1
 	    set_counter syracuse_riot 1
+	    random_counter_inc sicily_ticket 1 4
 	    set_counter faction_emerge_id 3
 	end_monitor
 	monitor_event CityRiots SettlementName Naples
 	  and I_NumberOfSettlements sicily = 0
 	  and I_IsFactionAIControlled sicily
 	  ;and not I_SettlementOwner Naples = sicily
-	  and I_CompareCounter sicily_emerge = 0
+	  and I_EventCounter sicily_emerge < 1
 	    set_counter naples_riot 1
+	    random_counter_inc sicily_ticket 1 4
 	    set_counter faction_emerge_id 3
 	end_monitor
 
@@ -46205,8 +46648,9 @@ end_monitor
 	  and I_NumberOfSettlements milan = 0
 	  and I_IsFactionAIControlled milan
 	  ;and not I_SettlementOwner Genoa = milan
-	  and I_CompareCounter milan_emerge = 0
+	  and I_EventCounter milan_emerge < 1
 	    set_counter genoa_riot 1
+	    random_counter_inc milan_ticket 1 4
 	    set_counter faction_emerge_id 4
 	end_monitor
 
@@ -46215,16 +46659,18 @@ end_monitor
 	  and I_NumberOfSettlements denmark = 0
 	  and I_IsFactionAIControlled denmark
 	  ;and not I_SettlementOwner Arhus = denmark
-	  and I_CompareCounter denmark_emerge = 0
+	  and I_EventCounter denmark_emerge < 1
 	    set_counter arhus_riot 1
+	    random_counter_inc denmark_ticket 1 4
 	    set_counter faction_emerge_id 5
 	end_monitor
 	monitor_event CityRiots SettlementName Roskilde
 	  and I_NumberOfSettlements denmark = 0
 	  and I_IsFactionAIControlled denmark
 	  ;and not I_SettlementOwner Roskilde = denmark
-	  and I_CompareCounter denmark_emerge = 0
+	  and I_EventCounter denmark_emerge < 1
 	    set_counter roskilde_riot 1
+	    random_counter_inc denmark_ticket 1 4
 	    set_counter faction_emerge_id 5
 	end_monitor
 
@@ -46233,24 +46679,30 @@ end_monitor
 	  and I_NumberOfSettlements cumans = 0
 	  and I_IsFactionAIControlled cumans
 	  ;and not I_SettlementOwner Jaiksk = cumans
-	  and I_CompareCounter cumans_emerge = 0
+	  and I_EventCounter cumans_emerge < 1
+	  and I_CompareCounter status_cumans = 0
 	    set_counter jaiksk_riot 1
+	    random_counter_inc cumans_ticket 1 4
 	    set_counter faction_emerge_id 6
 	end_monitor
 	monitor_event CityRiots SettlementName Azaq
 	  and I_NumberOfSettlements cumans = 0
 	  and I_IsFactionAIControlled cumans
 	  ;and not I_SettlementOwner Azaq = cumans
-	  and I_CompareCounter cumans_emerge = 0
+	  and I_EventCounter cumans_emerge < 1
+	  and I_CompareCounter status_cumans = 0
 	    set_counter azaq_riot 1
+	    random_counter_inc cumans_ticket 1 4
 	    set_counter faction_emerge_id 6
 	end_monitor
 	monitor_event CityRiots SettlementName Baia
 	  and I_NumberOfSettlements cumans = 0
 	  and I_IsFactionAIControlled cumans
 	  ;and not I_SettlementOwner Baia = cumans
-	  and I_CompareCounter cumans_emerge = 0
+	  and I_EventCounter cumans_emerge < 1
+	  and I_CompareCounter status_cumans = 0
 	    set_counter baia_riot 1
+	    random_counter_inc cumans_ticket 1 4
 	    set_counter faction_emerge_id 6
 	end_monitor
 
@@ -46259,33 +46711,37 @@ end_monitor
 	  and I_NumberOfSettlements turks = 0
 	  and I_IsFactionAIControlled turks
 	  ;and not I_SettlementOwner Caesarea = turks
-	  and I_CompareCounter turks_emerge = 0
+	  and I_EventCounter turks_emerge < 1
 	    set_counter caesarea_riot 1
+	    random_counter_inc turks_ticket 1 4
 	    set_counter faction_emerge_id 7
 	end_monitor
 	monitor_event CityRiots SettlementName Ankara
 	  and I_NumberOfSettlements turks = 0
 	  and I_IsFactionAIControlled turks
 	  ;and not I_SettlementOwner Ankara = turks
-	  and I_CompareCounter turks_emerge = 0
+	  and I_EventCounter turks_emerge < 1
 	    set_counter ankara_riot 1
+	    random_counter_inc turks_ticket 1 4
 	    set_counter faction_emerge_id 7
 	end_monitor
 	monitor_event CityRiots SettlementName Iconium
 	  and I_NumberOfSettlements turks = 0
 	  and I_IsFactionAIControlled turks
 	  ;and not I_SettlementOwner Iconium = turks
-	  and I_CompareCounter turks_emerge = 0
+	  and I_EventCounter turks_emerge < 1
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter iconium_riot 1
+	    random_counter_inc turks_ticket 1 4
 	    set_counter faction_emerge_id 7
 	end_monitor
 	monitor_event CityRiots SettlementName Diyarbakir
 	  and I_NumberOfSettlements turks = 0
 	  and I_IsFactionAIControlled turks
 	  ;and not I_SettlementOwner Diyarbakir = turks
-	  and I_CompareCounter turks_emerge = 0
+	  and I_EventCounter turks_emerge < 1
 	    set_counter diyarbakir_riot 1
+	    random_counter_inc turks_ticket 1 4
 	    set_counter faction_emerge_id 7
 	end_monitor
 
@@ -46294,32 +46750,36 @@ end_monitor
 	  and I_NumberOfSettlements france = 0
 	  and I_IsFactionAIControlled france
 	  ;and not I_SettlementOwner Paris = france
-	  and I_CompareCounter france_emerge = 0
+	  and I_EventCounter france_emerge < 1
 	    set_counter paris_riot 1
+	    random_counter_inc france_ticket 1 4
 	    set_counter faction_emerge_id 8
 	end_monitor
 	monitor_event CityRiots SettlementName Rheims
 	  and I_NumberOfSettlements france = 0
 	  and I_IsFactionAIControlled france
 	  ;and not I_SettlementOwner Rheims = france
-	  and I_CompareCounter france_emerge = 0
+	  and I_EventCounter france_emerge < 1
 	    set_counter rheims_riot 1
+	    random_counter_inc france_ticket 1 4
 	    set_counter faction_emerge_id 8
 	end_monitor
 	monitor_event CityRiots SettlementName Clermont
 	  and I_NumberOfSettlements france = 0
 	  and I_IsFactionAIControlled france
 	  ;and not I_SettlementOwner Clermont = france
-	  and I_CompareCounter france_emerge = 0
+	  and I_EventCounter france_emerge < 1
 	    set_counter clermont_riot 1
+	    random_counter_inc france_ticket 1 4
 	    set_counter faction_emerge_id 8
 	end_monitor
 	monitor_event CityRiots SettlementName Angers
 	  and I_NumberOfSettlements france = 0
 	  and I_IsFactionAIControlled france
 	  ;and not I_SettlementOwner Angers = france
-	  and I_CompareCounter france_emerge = 0
+	  and I_EventCounter france_emerge < 1
 	    set_counter angers_riot 1
+	    random_counter_inc france_ticket 1 4
 	    set_counter faction_emerge_id 8
 	end_monitor
 
@@ -46328,43 +46788,48 @@ end_monitor
 	  and I_NumberOfSettlements hre = 0
 	  and I_IsFactionAIControlled hre
 	  ;and not I_SettlementOwner Frankfurt = hre
-	  and I_CompareCounter hre_emerge = 0
+	  and I_EventCounter hre_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter frankfurt_riot 1
+	    random_counter_inc hre_ticket 1 4
 	    set_counter faction_emerge_id 9
 	end_monitor
 	monitor_event CityRiots SettlementName Vienna
 	  and I_NumberOfSettlements hre = 0
 	  and I_IsFactionAIControlled hre
 	  ;and not I_SettlementOwner Vienna = hre
-	  and I_CompareCounter hre_emerge = 0
+	  and I_EventCounter hre_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter vienna_riot 1
+	    random_counter_inc hre_ticket 1 4
 	    set_counter faction_emerge_id 9
 	end_monitor
 	monitor_event CityRiots SettlementName Prague
 	  and I_NumberOfSettlements hre = 0
 	  and I_IsFactionAIControlled hre
 	  ;and not I_SettlementOwner Prague = hre
-	  and I_CompareCounter hre_emerge = 0
+	  and I_EventCounter hre_emerge < 1
 	    set_counter prague_riot 1
+	    random_counter_inc hre_ticket 1 4
 	    set_counter faction_emerge_id 9
 	end_monitor
 	monitor_event CityRiots SettlementName Staufen
 	  and I_NumberOfSettlements hre = 0
 	  and I_IsFactionAIControlled hre
 	  ;and not I_SettlementOwner Staufen = hre
-	  and I_CompareCounter hre_emerge = 0
+	  and I_EventCounter hre_emerge < 1
 	    set_counter staufen_riot 1
+	    random_counter_inc hre_ticket 1 4
 	    set_counter faction_emerge_id 9
 	end_monitor
 	monitor_event CityRiots SettlementName Nuremburg
 	  and I_NumberOfSettlements hre = 0
 	  and I_IsFactionAIControlled hre
 	  ;and not I_SettlementOwner Nuremburg = hre
-	  and I_CompareCounter hre_emerge = 0
+	  and I_EventCounter hre_emerge < 1
 	    set_counter nuremburg_riot 1
+	    random_counter_inc hre_ticket 1 4
 	    set_counter faction_emerge_id 9
 	end_monitor
 
@@ -46373,24 +46838,27 @@ end_monitor
 	  and I_NumberOfSettlements england = 0
 	  and I_IsFactionAIControlled england
 	  ;and not I_SettlementOwner London = england
-	  and I_CompareCounter england_emerge = 0
+	  and I_EventCounter england_emerge < 1
 	    set_counter london_riot 1
+	    random_counter_inc england_ticket 1 4
 	    set_counter faction_emerge_id 10
 	end_monitor
 	monitor_event CityRiots SettlementName Nottingham
 	  and I_NumberOfSettlements england = 0
 	  and I_IsFactionAIControlled england
 	  ;and not I_SettlementOwner Nottingham = england
-	  and I_CompareCounter england_emerge = 0
+	  and I_EventCounter england_emerge < 1
 	    set_counter nottingham_riot 1
+	    random_counter_inc england_ticket 1 4
 	    set_counter faction_emerge_id 10
 	end_monitor
 	monitor_event CityRiots SettlementName Winchester
 	  and I_NumberOfSettlements england = 0
 	  and I_IsFactionAIControlled england
 	  ;and not I_SettlementOwner Winchester = england
-	  and I_CompareCounter england_emerge = 0
+	  and I_EventCounter england_emerge < 1
 	    set_counter winchester_riot 1
+	    random_counter_inc england_ticket 1 4
 	    set_counter faction_emerge_id 10
 	end_monitor
 
@@ -46399,16 +46867,18 @@ end_monitor
 	  and I_NumberOfSettlements portugal = 0
 	  and I_IsFactionAIControlled portugal
 	  ;and not I_SettlementOwner Al-Mahdiya = portugal
-	  and I_CompareCounter portugal_emerge = 0
+	  and I_EventCounter portugal_emerge < 1
 	    set_counter al_mahdiya_riot 1
+	    random_counter_inc portugal_ticket 1 4
 	    set_counter faction_emerge_id 11
 	end_monitor
 	monitor_event CityRiots SettlementName Tunis
 	  and I_NumberOfSettlements portugal = 0
 	  and I_IsFactionAIControlled portugal
 	  ;and not I_SettlementOwner Tunis = portugal
-	  and I_CompareCounter portugal_emerge = 0
+	  and I_EventCounter portugal_emerge < 1
 	    set_counter tunis_riot 1
+	    random_counter_inc portugal_ticket 1 4
 	    set_counter faction_emerge_id 11
 	end_monitor
 
@@ -46417,24 +46887,27 @@ end_monitor
 	  and I_NumberOfSettlements poland = 0
 	  and I_IsFactionAIControlled poland
 	  ;and not I_SettlementOwner Krakow = poland
-	  and I_CompareCounter poland_emerge = 0
+	  and I_EventCounter poland_emerge < 1
 	    set_counter krakow_riot 1
+	    random_counter_inc poland_ticket 1 4
 	    set_counter faction_emerge_id 12
 	end_monitor
 	monitor_event CityRiots SettlementName Khiva ;Poznan
 	  and I_NumberOfSettlements poland = 0
 	  and I_IsFactionAIControlled poland
 	  ;and not I_SettlementOwner Khiva = poland
-	  and I_CompareCounter poland_emerge = 0
+	  and I_EventCounter poland_emerge < 1
 	    set_counter poznan_riot 1
+	    random_counter_inc poland_ticket 1 4
 	    set_counter faction_emerge_id 12
 	end_monitor
 	monitor_event CityRiots SettlementName Plock
 	  and I_NumberOfSettlements poland = 0
 	  and I_IsFactionAIControlled poland
 	  ;and not I_SettlementOwner Plock = poland
-	  and I_CompareCounter poland_emerge = 0
+	  and I_EventCounter poland_emerge < 1
 	    set_counter plock_riot 1
+	    random_counter_inc poland_ticket 1 4
 	    set_counter faction_emerge_id 12
 	end_monitor
 
@@ -46443,34 +46916,38 @@ end_monitor
 	  and I_NumberOfSettlements byzantium = 0
 	  and I_IsFactionAIControlled byzantium
 	  ;and not I_SettlementOwner Constantinople = byzantium
-	  and I_CompareCounter byzantium_emerge = 0
+	  and I_EventCounter byzantium_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter constantinople_riot 1
+	    random_counter_inc byzantium_ticket 1 4
 	    set_counter faction_emerge_id 13
 	end_monitor
 	monitor_event CityRiots SettlementName Nicaea
 	  and I_NumberOfSettlements byzantium = 0
 	  and I_IsFactionAIControlled byzantium
 	  ;and not I_SettlementOwner Nicaea = byzantium
-	  and I_CompareCounter byzantium_emerge = 0
+	  and I_EventCounter byzantium_emerge < 1
 	    set_counter nicaea_riot 1
+	    random_counter_inc byzantium_ticket 1 4
 	    set_counter faction_emerge_id 13
 	end_monitor
 	monitor_event CityRiots SettlementName Arta
 	  and I_NumberOfSettlements byzantium = 0
 	  and I_IsFactionAIControlled byzantium
 	  ;and not I_SettlementOwner Arta = byzantium
-	  and I_CompareCounter byzantium_emerge = 0
+	  and I_EventCounter byzantium_emerge < 1
 	    set_counter arta_riot 1
+	    random_counter_inc byzantium_ticket 1 4
 	    set_counter faction_emerge_id 13
 	end_monitor
 	monitor_event CityRiots SettlementName Trebizond
 	  and I_NumberOfSettlements byzantium = 0
 	  and I_IsFactionAIControlled byzantium
 	  ;and not I_SettlementOwner Trebizond = byzantium
-	  and I_CompareCounter byzantium_emerge = 0
+	  and I_EventCounter byzantium_emerge < 1
 	    set_counter trebizond_riot 1
+	    random_counter_inc byzantium_ticket 1 4
 	    set_counter faction_emerge_id 13
 	end_monitor
 
@@ -46479,24 +46956,27 @@ end_monitor
 	  and I_NumberOfSettlements moors = 0
 	  and I_IsFactionAIControlled moors
 	  ;and not I_SettlementOwner Marrakesh = moors
-	  and I_CompareCounter moors_emerge = 0
+	  and I_EventCounter moors_emerge < 1
 	    set_counter marrakesh_riot 1
+	    random_counter_inc moors_ticket 1 4
 	    set_counter faction_emerge_id 14
 	end_monitor
 	monitor_event CityRiots SettlementName Fes
 	  and I_NumberOfSettlements moors = 0
 	  and I_IsFactionAIControlled moors
 	  ;and not I_SettlementOwner Fes = moors
-	  and I_CompareCounter moors_emerge = 0
+	  and I_EventCounter moors_emerge < 1
 	    set_counter fes_riot 1
+	    random_counter_inc moors_ticket 1 4
 	    set_counter faction_emerge_id 14
 	end_monitor
 	monitor_event CityRiots SettlementName Melilla
 	  and I_NumberOfSettlements moors = 0
 	  and I_IsFactionAIControlled moors
 	  ;and not I_SettlementOwner Melilla = moors
-	  and I_CompareCounter moors_emerge = 0
+	  and I_EventCounter moors_emerge < 1
 	    set_counter melilla_riot 1
+	    random_counter_inc moors_ticket 1 4
 	    set_counter faction_emerge_id 14
 	end_monitor
 
@@ -46505,8 +46985,9 @@ end_monitor
 	  and I_NumberOfSettlements russia = 0
 	  and I_IsFactionAIControlled russia
 	  ;and not I_SettlementOwner Novgorod = russia
-	  and I_CompareCounter russia_emerge = 0
+	  and I_EventCounter russia_emerge < 1
 	    set_counter novgorod_riot 1
+	    random_counter_inc russia_ticket 1 4
 	    set_counter faction_emerge_id 15
 	end_monitor
 
@@ -46515,33 +46996,37 @@ end_monitor
 	  and I_NumberOfSettlements spain = 0
 	  and I_IsFactionAIControlled spain
 	  ;and not I_SettlementOwner Leon = spain
-	  and I_CompareCounter spain_emerge = 0
+	  and I_EventCounter spain_emerge < 1
 	    set_counter leon_riot 1
+	    random_counter_inc spain_ticket 1 4
 	    set_counter faction_emerge_id 16
 	end_monitor
 	monitor_event CityRiots SettlementName Toledo
 	  and I_NumberOfSettlements spain = 0
 	  and I_IsFactionAIControlled spain
 	  ;and not I_SettlementOwner Toledo = spain
-	  and I_CompareCounter spain_emerge = 0
+	  and I_EventCounter spain_emerge < 1
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter toledo_riot 1
+	    random_counter_inc spain_ticket 1 4
 	    set_counter faction_emerge_id 16
 	end_monitor
 	monitor_event CityRiots SettlementName Salamanca
 	  and I_NumberOfSettlements spain = 0
 	  and I_IsFactionAIControlled spain
 	  ;and not I_SettlementOwner Salamanca = spain
-	  and I_CompareCounter spain_emerge = 0
+	  and I_EventCounter spain_emerge < 1
 	    set_counter salamanca_riot 1
+	    random_counter_inc spain_ticket 1 4
 	    set_counter faction_emerge_id 16
 	end_monitor
 	monitor_event CityRiots SettlementName Burgos
 	  and I_NumberOfSettlements spain = 0
 	  and I_IsFactionAIControlled spain
 	  ;and not I_SettlementOwner Burgos = spain
-	  and I_CompareCounter spain_emerge = 0
+	  and I_EventCounter spain_emerge < 1
 	    set_counter burgos_riot 1
+	    random_counter_inc spain_ticket 1 4
 	    set_counter faction_emerge_id 16
 	end_monitor
 
@@ -46550,24 +47035,27 @@ end_monitor
 	  and I_NumberOfSettlements hungary = 0
 	  and I_IsFactionAIControlled hungary
 	  ;and not I_SettlementOwner Varad = hungary
-	  and I_CompareCounter hungary_emerge = 0
+	  and I_EventCounter hungary_emerge < 1
 	    set_counter varad_riot 1
+	    random_counter_inc hungary_ticket 1 4
 	    set_counter faction_emerge_id 17
 	end_monitor
 	monitor_event CityRiots SettlementName Esztergom
 	  and I_NumberOfSettlements hungary = 0
 	  and I_IsFactionAIControlled hungary
 	  ;and not I_SettlementOwner Esztergom = hungary
-	  and I_CompareCounter hungary_emerge = 0
+	  and I_EventCounter hungary_emerge < 1
 	    set_counter esztergom_riot 1
+	    random_counter_inc hungary_ticket 1 4
 	    set_counter faction_emerge_id 17
 	end_monitor
 	monitor_event CityRiots SettlementName Kassa
 	  and I_NumberOfSettlements hungary = 0
 	  and I_IsFactionAIControlled hungary
 	  ;and not I_SettlementOwner Kassa = hungary
-	  and I_CompareCounter hungary_emerge = 0
+	  and I_EventCounter hungary_emerge < 1
 	    set_counter kassa_riot 1
+	    random_counter_inc hungary_ticket 1 4
 	    set_counter faction_emerge_id 17
 	end_monitor
 
@@ -46576,24 +47064,27 @@ end_monitor
 	  and I_NumberOfSettlements aragon = 0
 	  and I_IsFactionAIControlled aragon
 	  ;and not I_SettlementOwner Zaragoza = aragon
-	  and I_CompareCounter aragon_emerge = 0
+	  and I_EventCounter aragon_emerge < 1
 	    set_counter zaragoza_riot 1
+	    random_counter_inc aragon_ticket 1 4
 	    set_counter faction_emerge_id 18
 	end_monitor
 	monitor_event CityRiots SettlementName Pamplona
 	  and I_NumberOfSettlements aragon = 0
 	  and I_IsFactionAIControlled aragon
 	  ;and not I_SettlementOwner Pamplona = aragon
-	  and I_CompareCounter aragon_emerge = 0
+	  and I_EventCounter aragon_emerge < 1
 	    set_counter pamplona_riot 1
+	    random_counter_inc aragon_ticket 1 4
 	    set_counter faction_emerge_id 18
 	end_monitor
 	monitor_event CityRiots SettlementName Barcelona
 	  and I_NumberOfSettlements aragon = 0
 	  and I_IsFactionAIControlled aragon
 	  ;and not I_SettlementOwner Barcelona = aragon
-	  and I_CompareCounter aragon_emerge = 0
+	  and I_EventCounter aragon_emerge < 1
 	    set_counter barcelona_riot 1
+	    random_counter_inc aragon_ticket 1 4
 	    set_counter faction_emerge_id 18
 	end_monitor
 
@@ -46602,8 +47093,9 @@ end_monitor
 	  and I_NumberOfSettlements lithuania = 0
 	  and I_IsFactionAIControlled lithuania
 	  ;and not I_SettlementOwner Damghan = lithuania
-	  and I_CompareCounter lithuania_emerge = 0
+	  and I_EventCounter lithuania_emerge < 1
 	    set_counter lubeck_riot 1
+	    random_counter_inc lithuania_ticket 1 4
 	    set_counter faction_emerge_id 19
 	end_monitor
 
@@ -46612,8 +47104,9 @@ end_monitor
 	  and I_NumberOfSettlements kievan_rus = 0
 	  and I_IsFactionAIControlled kievan_rus
 	  ;and not I_SettlementOwner Kiev = kievan_rus
-	  and I_CompareCounter kievan_rus_emerge = 0
+	  and I_EventCounter kievan_rus_emerge < 1
 	    set_counter kiev_riot 1
+	    random_counter_inc kievan_ticket 1 4
 	    set_counter faction_emerge_id 20
 	end_monitor
 
@@ -46622,8 +47115,9 @@ end_monitor
 	  and I_NumberOfSettlements norway = 0
 	  and I_IsFactionAIControlled norway
 	  ;and not I_SettlementOwner Bergen = norway
-	  and I_CompareCounter norway_emerge = 0
+	  and I_EventCounter norway_emerge < 1
 	    set_counter bergen_riot 1
+	    random_counter_inc norway_ticket 1 4
 	    set_counter faction_emerge_id 21
 	end_monitor
 
@@ -46632,16 +47126,18 @@ end_monitor
 	  and I_NumberOfSettlements kwarezm = 0
 	  and I_IsFactionAIControlled kwarezm
 	  ;and not I_SettlementOwner Urgench = kwarezm
-	  and I_CompareCounter kwarezm_emerge = 0
+	  and I_EventCounter kwarezm_emerge < 1
 	    set_counter urgench_riot 1
+	    random_counter_inc kwarezm_ticket 1 4
 	    set_counter faction_emerge_id 22
 	end_monitor
 	monitor_event CityRiots SettlementName Konjikala
 	  and I_NumberOfSettlements kwarezm = 0
 	  and I_IsFactionAIControlled kwarezm
 	  ;and not I_SettlementOwner Konjikala = kwarezm
-	  and I_CompareCounter kwarezm_emerge = 0
+	  and I_EventCounter kwarezm_emerge < 1
 	    set_counter konjikala_riot 1
+	    random_counter_inc kwarezm_ticket 1 4
 	    set_counter faction_emerge_id 22
 	end_monitor
 
@@ -46650,30 +47146,33 @@ end_monitor
 	  and I_NumberOfSettlements egypt = 0
 	  and I_IsFactionAIControlled egypt
 	  ;and not I_SettlementOwner Cairo = egypt
-	  and I_CompareCounter egypt_emerge = 0
+	  and I_EventCounter egypt_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter cairo_riot 1
+	    random_counter_inc egypt_ticket 1 4
 	    set_counter faction_emerge_id 23
 	end_monitor
 	monitor_event CityRiots SettlementName Alexandria
 	  and I_NumberOfSettlements egypt = 0
 	  and I_IsFactionAIControlled egypt
 	  ;and not I_SettlementOwner Alexandria = egypt
-	  and I_CompareCounter egypt_emerge = 0
+	  and I_EventCounter egypt_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter alexandria_riot 1
+	    random_counter_inc egypt_ticket 1 4
 	    set_counter faction_emerge_id 23
 	end_monitor
 	monitor_event CityRiots SettlementName Damietta
 	  and I_NumberOfSettlements egypt = 0
 	  and I_IsFactionAIControlled egypt
 	  ;and not I_SettlementOwner Damietta = egypt
-	  and I_CompareCounter egypt_emerge = 0
+	  and I_EventCounter egypt_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter damietta_riot 1
+	    random_counter_inc egypt_ticket 1 4
 	    set_counter faction_emerge_id 23
 	end_monitor
 
@@ -46715,8 +47214,9 @@ end_monitor
 	  ;and not I_SettlementOwner Nicosia = jerusalem
 	  and I_CrusadeInProgress
 	  and I_CompareCounter me_crusader = 1
-	  and I_CompareCounter jerusalem_emerge = 0
+	  and I_EventCounter crusaders_emerge < 1
 	    set_counter nicosia_riot 1
+	    random_counter_inc crusaders_ticket 1 4
 	    set_counter faction_emerge_id 24
 	end_monitor
 	monitor_event CityRiots SettlementName Jerusalem
@@ -46725,10 +47225,11 @@ end_monitor
 	  ;and not I_SettlementOwner Jerusalem = jerusalem
 	  and I_CrusadeInProgress
 	  and I_CompareCounter me_crusader = 1
-	  and I_CompareCounter jerusalem_emerge = 0
+	  and I_EventCounter crusaders_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter jerusalem_riot 1
+	    random_counter_inc crusaders_ticket 1 4
 	    set_counter faction_emerge_id 24
 	end_monitor
 	monitor_event CityRiots SettlementName Acre
@@ -46736,10 +47237,12 @@ end_monitor
 	  and I_IsFactionAIControlled jerusalem
 	  ;and not I_SettlementOwner Acre = jerusalem
 	  and I_CrusadeInProgress
-	  and I_CompareCounter jerusalem_emerge = 0
+	  and I_CompareCounter me_crusader = 1
+	  and I_EventCounter crusaders_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter acre_riot 1
+	    random_counter_inc crusaders_ticket 1 4
 	    set_counter faction_emerge_id 24
 	end_monitor
 
@@ -46757,6 +47260,9 @@ end_monitor
 	monitor_event CrusadeCalled TargetSettlementName Vienna
 	    set_counter eu_crusader 1
 	end_monitor
+	monitor_event CrusadeCalled TargetSettlementName Damghan
+	    set_counter eu_crusader 1
+	end_monitor
 	monitor_event CityRiots SettlementName Thorn
 	  and I_NumberOfSettlements teutonic_order = 0
 	  and I_EventCounter status_teutonic_order = 0
@@ -46764,8 +47270,9 @@ end_monitor
 	  ;and not I_SettlementOwner Thorn = teutonic_order
 	  and I_CrusadeInProgress
 	  and I_CompareCounter eu_crusader = 1
-	  and I_CompareCounter teutonic_order_emerge = 0
+	  and I_EventCounter teutonic_emerge < 1
 	    set_counter thorn_riot 1
+	    random_counter_inc teutonic_ticket 1 4
 	    set_counter faction_emerge_id 25
 	end_monitor
 	monitor_event CityRiots SettlementName Palanga
@@ -46775,8 +47282,9 @@ end_monitor
 	  ;and not I_SettlementOwner Palanga = teutonic_order
 	  and I_CrusadeInProgress
 	  and I_CompareCounter eu_crusader = 1
-	  and I_CompareCounter teutonic_order_emerge = 0
+	  and I_EventCounter teutonic_emerge < 1
 	    set_counter palanga_riot 1
+	    random_counter_inc teutonic_ticket 1 4
 	    set_counter faction_emerge_id 25
 	end_monitor
 	monitor_event CityRiots SettlementName Riga
@@ -46786,9 +47294,10 @@ end_monitor
 	  ;and not I_SettlementOwner Riga = teutonic_order
 	  and I_CrusadeInProgress
 	  and I_CompareCounter eu_crusader = 1
-	  and I_CompareCounter teutonic_order_emerge = 0
+	  and I_EventCounter teutonic_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter riga_riot 1
+	    random_counter_inc teutonic_ticket 1 4
 	    set_counter faction_emerge_id 25
 	end_monitor
 
@@ -46798,10 +47307,11 @@ end_monitor
 	  and I_EventCounter abbasids_exist = 1
 	  and I_IsFactionAIControlled timurids
 	  ;and not I_SettlementOwner Baghdad = timurids
-	  and I_CompareCounter abbasids_emerge = 0
+	  and I_EventCounter abbasids_emerge < 1
 	  and not IsCrusadeTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	  and not IsJihadTarget;	avoid possible CTD in case the settlement is i a crusade/jihad target
 	    set_counter baghdad_riot 1
+	    random_counter_inc abbasids_ticket 1 4
 	    set_counter faction_emerge_id 26
 	end_monitor
 	monitor_event CityRiots SettlementName Basra
@@ -46809,8 +47319,9 @@ end_monitor
 	  and I_EventCounter abbasids_exist = 1
 	  and I_IsFactionAIControlled timurids
 	  ;and not I_SettlementOwner Basra = timurids
-	  and I_CompareCounter abbasids_emerge = 0
+	  and I_EventCounter abbasids_emerge < 1
 	    set_counter basra_riot 1
+	    random_counter_inc abbasids_ticket 1 4
 	    set_counter faction_emerge_id 26
 	end_monitor
 
@@ -46820,8 +47331,9 @@ end_monitor
 	  and I_EventCounter georgia_exist = 1
 	  and I_IsFactionAIControlled georgia
 	  ;and not I_SettlementOwner Kutaisi = georgia
-	  and I_CompareCounter georgia_emerge = 0
+	  and I_EventCounter georgia_emerge < 1
 	    set_counter kutaisi_riot 1
+	    random_counter_inc georgia_ticket 1 4
 	    set_counter faction_emerge_id 27
 	end_monitor
 	monitor_event CityRiots SettlementName Tbilisi
@@ -46829,8 +47341,9 @@ end_monitor
 	  and I_EventCounter georgia_exist = 1
 	  and I_IsFactionAIControlled georgia
 	  ;and not I_SettlementOwner Tbilisi = georgia
-	  and I_CompareCounter georgia_emerge = 0
+	  and I_EventCounter georgia_emerge < 1
 	    set_counter tbilisi_riot 1
+	    random_counter_inc georgia_ticket 1 4
 	    set_counter faction_emerge_id 27
 	end_monitor
 
@@ -46840,264 +47353,299 @@ end_monitor
 		if I_SettlementOwner Edinburgh = slave
 		and I_NumberOfSettlements scotland = 0
 		and I_IsFactionAIControlled scotland
-		and I_CompareCounter scotland_emerge = 0
+		and I_EventCounter scotland_emerge < 1
 		and RandomPercent > 66
 			set_counter edinburgh_riot 1
+			random_counter_inc scotland_ticket 1 4
 			set_counter faction_emerge_id 1
 		end_if
 		if I_SettlementOwner Venice = slave
 		and I_NumberOfSettlements venice = 0
 		and I_IsFactionAIControlled venice
-		and I_CompareCounter venice_emerge = 0
+		and I_EventCounter venice_emerge < 1
 		and RandomPercent > 66
 			set_counter venice_riot 1
+			random_counter_inc venice_ticket 1 4
 			set_counter faction_emerge_id 2
 		end_if
 		if I_SettlementOwner Palermo = slave
 		and I_NumberOfSettlements sicily = 0
 		and I_IsFactionAIControlled sicily
-		and I_CompareCounter sicily_emerge = 0
+		and I_EventCounter sicily_emerge < 1
 		and RandomPercent > 66
 			set_counter palermo_riot 1
+			random_counter_inc sicily_ticket 1 4
 			set_counter faction_emerge_id 3
 		end_if
 		if I_SettlementOwner Genoa = slave
 		and I_NumberOfSettlements milan = 0
 		and I_IsFactionAIControlled milan
-		and I_CompareCounter milan_emerge = 0
+		and I_EventCounter milan_emerge < 1
 		and RandomPercent > 66
 			set_counter genoa_riot 1
+			random_counter_inc milan_ticket 1 4
 			set_counter faction_emerge_id 4
 		end_if
 		if I_SettlementOwner Arhus = slave
 		and I_NumberOfSettlements denmark = 0
 		and I_IsFactionAIControlled denmark
-		and I_CompareCounter denmark_emerge = 0
+		and I_EventCounter denmark_emerge < 1
 		and RandomPercent > 66
 			set_counter arhus_riot 1
+			random_counter_inc denmark_ticket 1 4
 			set_counter faction_emerge_id 5
 		end_if
 		if I_SettlementOwner Jaiksk = slave
 		and I_NumberOfSettlements cumans = 0
 		and I_IsFactionAIControlled cumans
-		and I_CompareCounter cumans_emerge = 0
+		and I_EventCounter cumans_emerge < 1
+		and I_CompareCounter status_cumans = 0
 		and RandomPercent > 66
 			set_counter jaiksk_riot 1
+			random_counter_inc cumans_ticket 1 4
 			set_counter faction_emerge_id 6
 		end_if
 		if I_SettlementOwner Caesarea = slave
 		and I_NumberOfSettlements turks = 0
 		and I_IsFactionAIControlled turks
-		and I_CompareCounter turks_emerge = 0
+		and I_EventCounter turks_emerge < 1
 		and RandomPercent > 66
 			set_counter caesarea_riot 1
+			random_counter_inc turks_ticket 1 4
 			set_counter faction_emerge_id 7
 		end_if
 		if I_SettlementOwner Paris = slave
 		and I_NumberOfSettlements france = 0
 		and I_IsFactionAIControlled france
-		and I_CompareCounter france_emerge = 0
+		and I_EventCounter france_emerge < 1
 		and RandomPercent > 66
 			set_counter paris_riot 1
+			random_counter_inc france_ticket 1 4
 			set_counter faction_emerge_id 8
 		end_if
 		if I_SettlementOwner Frankfurt = slave
 		and I_NumberOfSettlements hre = 0
 		and I_IsFactionAIControlled hre
-		and I_CompareCounter hre_emerge = 0
+		and I_EventCounter hre_emerge < 1
 		and RandomPercent > 66
 			set_counter frankfurt_riot 1
+			random_counter_inc hre_ticket 1 4
 			set_counter faction_emerge_id 9
 		end_if
 		if I_SettlementOwner Vienna = slave
 		and I_NumberOfSettlements hre = 0
 		and I_IsFactionAIControlled hre
-		and I_CompareCounter hre_emerge = 0
+		and I_EventCounter hre_emerge < 1
 		and RandomPercent > 66
 			set_counter vienna_riot 1
+			random_counter_inc hre_ticket 1 4
 			set_counter faction_emerge_id 9
 		end_if
 		if I_SettlementOwner London = slave
 		and I_NumberOfSettlements england = 0
 		and I_IsFactionAIControlled england
-		and I_CompareCounter england_emerge = 0
+		and I_EventCounter england_emerge < 1
 		and RandomPercent > 66
 			set_counter london_riot 1
+			random_counter_inc england_ticket 1 4
 			set_counter faction_emerge_id 10
 		end_if
 		if I_SettlementOwner Al-Mahdiya = slave
 		and I_NumberOfSettlements portugal = 0
 		and I_IsFactionAIControlled portugal
-		and I_CompareCounter portugal_emerge = 0
+		and I_EventCounter portugal_emerge < 1
 		and RandomPercent > 66
 			set_counter al_mahdiya_riot 1
+			random_counter_inc portugal_ticket 1 4
 			set_counter faction_emerge_id 11
 		end_if
 		if I_SettlementOwner Krakow = slave
 		and I_NumberOfSettlements poland = 0
 		and I_IsFactionAIControlled poland
-		and I_CompareCounter poland_emerge = 0
+		and I_EventCounter poland_emerge < 1
 		and RandomPercent > 66
 			set_counter krakow_riot 1
+			random_counter_inc poland_ticket 1 4
 			set_counter faction_emerge_id 12
 		end_if
 		if I_SettlementOwner Constantinople = slave
 		and I_NumberOfSettlements byzantium = 0
 		and I_IsFactionAIControlled byzantium
-		and I_CompareCounter byzantium_emerge = 0
+		and I_EventCounter byzantium_emerge < 1
 		and RandomPercent > 66
 			set_counter constantinople_riot 1
+			random_counter_inc byzantium_ticket 1 4
 			set_counter faction_emerge_id 13
 		end_if
 		if I_SettlementOwner Nicaea = slave
 		and I_NumberOfSettlements byzantium = 0
 		and I_IsFactionAIControlled byzantium
-		and I_CompareCounter byzantium_emerge = 0
+		and I_EventCounter byzantium_emerge < 1
 		and RandomPercent > 66
 			set_counter nicaea_riot 1
+			random_counter_inc byzantium_ticket 1 4
 			set_counter faction_emerge_id 13
 		end_if
 		if I_SettlementOwner Marrakesh = slave
 		and I_NumberOfSettlements moors = 0
 		and I_IsFactionAIControlled moors
-		and I_CompareCounter moors_emerge = 0
+		and I_EventCounter moors_emerge < 1
 		and RandomPercent > 66
 			set_counter marrakesh_riot 1
+			random_counter_inc moors_ticket 1 4
 			set_counter faction_emerge_id 14
 		end_if
 		if I_SettlementOwner Novgorod = slave
 		and I_NumberOfSettlements russia = 0
 		and I_IsFactionAIControlled russia
-		and I_CompareCounter russia_emerge = 0
+		and I_EventCounter russia_emerge < 1
 		and RandomPercent > 66
 			set_counter novgorod_riot 1
+			random_counter_inc russia_ticket 1 4
 			set_counter faction_emerge_id 15
 		end_if
 		if I_SettlementOwner Toledo = slave
 		and I_NumberOfSettlements spain = 0
 		and I_IsFactionAIControlled spain
-		and I_CompareCounter spain_emerge = 0
+		and I_EventCounter spain_emerge < 1
 		and RandomPercent > 66
 			set_counter toledo_riot 1
+			random_counter_inc spain_ticket 1 4
 			set_counter faction_emerge_id 16
 		end_if
 		if I_SettlementOwner Esztergom = slave
 		and I_NumberOfSettlements hungary = 0
 		and I_IsFactionAIControlled hungary
-		and I_CompareCounter hungary_emerge = 0
+		and I_EventCounter hungary_emerge < 1
 		and RandomPercent > 66
 			set_counter esztergom_riot 1
+			random_counter_inc hungary_ticket 1 4
 			set_counter faction_emerge_id 17
 		end_if
 		if I_SettlementOwner Zaragoza = slave
 		and I_NumberOfSettlements aragon = 0
 		and I_IsFactionAIControlled aragon
-		and I_CompareCounter aragon_emerge = 0
+		and I_EventCounter aragon_emerge < 1
 		and RandomPercent > 66
 			set_counter zaragoza_riot 1
+			random_counter_inc aragon_ticket 1 4
 			set_counter faction_emerge_id 18
 		end_if
 		if I_SettlementOwner Damghan = slave
 		and I_NumberOfSettlements lithuania = 0
 		and I_IsFactionAIControlled lithuania
-		and I_CompareCounter lithuania_emerge = 0
+		and I_EventCounter lithuania_emerge < 1
 		and RandomPercent > 66
 			set_counter lubeck_riot 1
+			random_counter_inc lithuania_ticket 1 4
 			set_counter faction_emerge_id 19
 		end_if
 		if I_SettlementOwner Kiev = slave
 		and I_NumberOfSettlements kievan_rus = 0
 		and I_IsFactionAIControlled kievan_rus
-		and I_CompareCounter kievan_rus_emerge = 0
+		and I_EventCounter kievan_rus_emerge < 1
 		and RandomPercent > 66
 			set_counter kiev_riot 1
+			random_counter_inc kievan_ticket 1 4
 			set_counter faction_emerge_id 20
 		end_if
 		if I_SettlementOwner Bergen = slave
 		and I_NumberOfSettlements norway = 0
 		and I_IsFactionAIControlled norway
-		and I_CompareCounter norway_emerge = 0
+		and I_EventCounter norway_emerge < 1
 		and RandomPercent > 66
 			set_counter bergen_riot 1
+			random_counter_inc norway_ticket 1 4
 			set_counter faction_emerge_id 21
 		end_if
 		if I_SettlementOwner Urgench = slave
 		and I_NumberOfSettlements kwarezm = 0
 		and I_IsFactionAIControlled kwarezm
-		and I_CompareCounter kwarezm_emerge = 0
+		and I_EventCounter kwarezm_emerge < 1
 		and RandomPercent > 66
 			set_counter urgench_riot 1
+			random_counter_inc kwarezm_ticket 1 4
 			set_counter faction_emerge_id 22
 		end_if
 		if I_SettlementOwner Cairo = slave
 		and I_NumberOfSettlements egypt = 0
 		and I_IsFactionAIControlled egypt
-		and I_CompareCounter egypt_emerge = 0
+		and I_EventCounter egypt_emerge < 1
 		and RandomPercent > 66
 			set_counter cairo_riot 1
+			random_counter_inc egypt_ticket 1 4
 			set_counter faction_emerge_id 23
 		end_if
 		if I_SettlementOwner Acre = slave
 		and I_NumberOfSettlements jerusalem = 0
 		and I_IsFactionAIControlled jerusalem
-		and I_CompareCounter jerusalem_emerge = 0
+		and I_EventCounter crusaders_emerge < 1
 		and RandomPercent > 66
 			set_counter acre_riot 1
+			random_counter_inc crusaders_ticket 1 4
 			set_counter faction_emerge_id 24
 		end_if
 		if I_SettlementOwner Thorn = slave
 		and I_NumberOfSettlements teutonic_order = 0
 		and I_EventCounter status_teutonic_order = 0
 		;and I_IsFactionAIControlled teutonic_order
-		and I_CompareCounter teutonic_order_emerge = 0
+		and I_EventCounter teutonic_emerge < 1
 		and RandomPercent > 66
 			set_counter thorn_riot 1
+			random_counter_inc teutonic_ticket 1 4
 			set_counter faction_emerge_id 25
 		end_if
 		if I_SettlementOwner Baghdad = slave
 		and I_EventCounter abbasids_exist = 1
 		and I_NumberOfSettlements timurids = 0
 		and I_IsFactionAIControlled timurids
-		and I_CompareCounter abbasids_emerge = 0
+		and I_EventCounter abbasids_emerge < 1
 		and RandomPercent > 66
 			set_counter baghdad_riot 1
+			random_counter_inc abbasids_ticket 1 4
 			set_counter faction_emerge_id 26
 		end_if
 		if I_SettlementOwner Kutaisi = slave
 		and I_EventCounter georgia_exist = 1
 		and I_NumberOfSettlements georgia = 0
 		and I_IsFactionAIControlled georgia
-		and I_CompareCounter georgia_emerge = 0
+		and I_EventCounter georgia_emerge < 1
 		and RandomPercent > 66
 			set_counter kutaisi_riot 1
+			random_counter_inc georgia_ticket 1 4
 			set_counter faction_emerge_id 27
 		end_if
 
 	;Historical Uprisings
 		if I_EventCounter WilliamWallaceSet > 0
+		and I_EventCounter new_era_begins != 1
 		and I_CompareCounter wallace_spawned = 0
 		and I_NumberOfSettlements scotland = 0
 		and I_IsFactionAIControlled scotland
-		and I_CompareCounter scotland_emerge = 0
+		and I_EventCounter scotland_emerge < 1
 			set_counter edinburgh_riot 1
+			random_counter_inc scotland_ticket 1 4
 			set_counter faction_emerge_id 1
 		end_if
 		if I_EventCounter joan_of_arc_in = 1
 		and I_NumberOfSettlements france = 0
 		and I_IsFactionAIControlled france
-		and I_CompareCounter france_emerge = 0
+		and I_EventCounter france_emerge < 1
 			set_counter angers_riot 1
 			set_counter clermont_riot 1
+			random_counter_inc france_ticket 1 4
 			set_counter faction_emerge_id 8
 		end_if
 		if I_EventCounter SaladinSet > 0
+		and I_EventCounter first_wheelbarrow != 1
 		and I_CompareCounter saladin_spawned = 0
 		and I_NumberOfSettlements egypt = 0
 		and I_IsFactionAIControlled egypt
-		and I_CompareCounter egypt_emerge = 0
+		and I_EventCounter egypt_emerge < 1
 		and not I_CrusadeInProgress;	avoid possible CTD in case the settlement is i a crusade/jihad target
 		and not I_JihadInProgress;	avoid possible CTD in case the settlement is i a crusade/jihad target
 			set_counter cairo_riot 1
+			random_counter_inc egypt_ticket 1 4
 			set_counter faction_emerge_id 23
 		end_if
 	end_monitor
@@ -47107,11 +47655,173 @@ end_monitor
 ;------------------------------------------------------------------
 
 ;Global
-;monitor_event FactionTurnEnd FactionType slave ; For normalizing emerge counters every turn regardless if a faction emerged or not
-;	set_counter turn_vlr 1
-;if I_CompareCounter faction_emerge_id >= 1
 monitor_event FactionTurnEnd FactionType slave
 and I_CompareCounter faction_emerge_id >= 1
+	;Decide which faction will emerge this turn randomly if there are multiple candidates
+		if I_EventCounter crusaders_ticket > 2
+			set_counter faction_emerge_id 24
+		end_if
+		if I_EventCounter cumans_ticket > 2
+			set_counter faction_emerge_id 6
+		end_if
+		if I_EventCounter scotland_ticket > 2
+			set_counter faction_emerge_id 1
+		end_if
+		if I_EventCounter france_ticket > 2
+			set_counter faction_emerge_id 8
+		end_if
+		if I_EventCounter england_ticket > 2
+			set_counter faction_emerge_id 10
+		end_if
+		if I_EventCounter sicily_ticket > 2
+			set_counter faction_emerge_id 3
+		end_if
+		if I_EventCounter turks_ticket > 2
+			set_counter faction_emerge_id 7
+		end_if
+		if I_EventCounter portugal_ticket > 2
+			set_counter faction_emerge_id 11
+		end_if
+		if I_EventCounter teutonic_ticket > 2
+			set_counter faction_emerge_id 25
+		end_if
+		if I_EventCounter hre_ticket > 2
+			set_counter faction_emerge_id 9
+		end_if
+		if I_EventCounter poland_ticket > 2
+			set_counter faction_emerge_id 12
+		end_if
+		if I_EventCounter abbasid_ticket > 2
+			set_counter faction_emerge_id 26
+		end_if
+		if I_EventCounter venice_ticket > 2
+			set_counter faction_emerge_id 2
+		end_if
+		if I_EventCounter moors_ticket > 2
+			set_counter faction_emerge_id 14
+		end_if
+		if I_EventCounter georgia_ticket > 2
+			set_counter faction_emerge_id 27
+		end_if
+		if I_EventCounter russia_ticket > 2
+			set_counter faction_emerge_id 15
+		end_if
+		if I_EventCounter byzantium_ticket > 2
+			set_counter faction_emerge_id 13
+		end_if
+		if I_EventCounter denmark_ticket > 2
+			set_counter faction_emerge_id 5
+		end_if
+		if I_EventCounter kwarezm_ticket > 2
+			set_counter faction_emerge_id 22
+		end_if
+		if I_EventCounter hungary_ticket > 2
+			set_counter faction_emerge_id 17
+		end_if
+		if I_EventCounter aragon_ticket > 2
+			set_counter faction_emerge_id 18
+		end_if
+		if I_EventCounter spain_ticket > 2
+			set_counter faction_emerge_id 16
+		end_if
+		if I_EventCounter norway_ticket > 2
+			set_counter faction_emerge_id 21
+		end_if
+		if I_EventCounter lithuania_ticket > 2
+			set_counter faction_emerge_id 19
+		end_if
+		if I_EventCounter milan_ticket > 2
+			set_counter faction_emerge_id 4
+		end_if
+		if I_EventCounter kievan_ticket > 2
+			set_counter faction_emerge_id 20
+		end_if
+		if I_EventCounter egypt_ticket > 2
+			set_counter faction_emerge_id 23
+		end_if
+		;
+		if I_EventCounter kievan_ticket > 4
+			set_counter faction_emerge_id 20
+		end_if
+		if I_EventCounter milan_ticket > 4
+			set_counter faction_emerge_id 4
+		end_if
+		if I_EventCounter spain_ticket > 4
+			set_counter faction_emerge_id 16
+		end_if
+		if I_EventCounter aragon_ticket > 4
+			set_counter faction_emerge_id 18
+		end_if
+		if I_EventCounter hungary_ticket > 4
+			set_counter faction_emerge_id 17
+		end_if
+		if I_EventCounter kwarezm_ticket > 4
+			set_counter faction_emerge_id 22
+		end_if
+		if I_EventCounter teutonic_ticket > 4
+			set_counter faction_emerge_id 25
+		end_if
+		if I_EventCounter denmark_ticket > 4
+			set_counter faction_emerge_id 5
+		end_if
+		if I_EventCounter portugal_ticket > 4
+			set_counter faction_emerge_id 11
+		end_if
+		if I_EventCounter lithuania_ticket > 4
+			set_counter faction_emerge_id 19
+		end_if
+		if I_EventCounter byzantium_ticket > 4
+			set_counter faction_emerge_id 13
+		end_if
+		if I_EventCounter egypt_ticket > 4
+			set_counter faction_emerge_id 23
+		end_if
+		if I_EventCounter russia_ticket > 4
+			set_counter faction_emerge_id 15
+		end_if
+		if I_EventCounter norway_ticket > 4
+			set_counter faction_emerge_id 21
+		end_if
+		if I_EventCounter georgia_ticket > 4
+			set_counter faction_emerge_id 27
+		end_if
+		if I_EventCounter moors_ticket > 4
+			set_counter faction_emerge_id 14
+		end_if
+		if I_EventCounter england_ticket > 4
+			set_counter faction_emerge_id 10
+		end_if
+		if I_EventCounter venice_ticket > 4
+			set_counter faction_emerge_id 2
+		end_if
+		if I_EventCounter abbasid_ticket > 4
+			set_counter faction_emerge_id 26
+		end_if
+		if I_EventCounter poland_ticket > 4
+			set_counter faction_emerge_id 12
+		end_if
+		if I_EventCounter hre_ticket > 4
+			set_counter faction_emerge_id 9
+		end_if
+		if I_EventCounter crusaders_ticket > 4
+			set_counter faction_emerge_id 24
+		end_if
+		if I_EventCounter turks_ticket > 4
+			set_counter faction_emerge_id 7
+		end_if
+		if I_EventCounter sicily_ticket > 4
+			set_counter faction_emerge_id 3
+		end_if
+		if I_EventCounter france_ticket > 4
+			set_counter faction_emerge_id 8
+		end_if
+		if I_EventCounter scotland_ticket > 4
+			set_counter faction_emerge_id 1
+		end_if
+		if I_EventCounter cumans_ticket > 4
+			set_counter faction_emerge_id 6
+		end_if
+	;Now that the script has chosen which faction will re-emerge, it will place PO buildings
 	set_counter ros_po_building 1
 	console_command create_building Oslo ros_po_bonus
 	console_command create_building Nykoeping ros_po_bonus
@@ -47710,7 +48420,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	historic_event scotland_emerged
 	set_counter edinburgh_riot 0
 	set_counter inverness_riot 0
-	set_counter scotland_emerge 5
+	set_event_counter scotland_emerge 2
+	set_event_counter scotland_ticket 0
 	add_money scotland 40000
   end_if
 
@@ -47914,7 +48625,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	end_if
 	historic_event venice_emerged
 	set_counter venice_riot 0
-	set_counter venice_emerge 5
+	set_event_counter venice_emerge 2
+	set_event_counter venice_ticket 0
 	add_money venice 40000
   end_if
 
@@ -48354,7 +49066,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter palermo_riot 0
 	set_counter syracuse_riot 0
 	set_counter naples_riot 0
-	set_counter sicily_emerge 5
+	set_event_counter sicily_emerge 2
+	set_event_counter sicily_ticket 0
 	add_money sicily 40000
   end_if
 
@@ -48558,7 +49271,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	end_if
 	historic_event milan_emerged
 	set_counter genoa_riot 0
-	set_counter milan_emerge 5
+	set_event_counter milan_emerge 2
+	set_event_counter milan_ticket 0
 	add_money milan 40000
   end_if
 
@@ -48856,7 +49570,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	historic_event denmark_emerged
 	set_counter arhus_riot 0
 	set_counter roskilde_riot 0
-	set_counter denmark_emerge 5
+	set_event_counter denmark_emerge 2
+	set_event_counter denmark_ticket 0
 	add_money denmark 40000
   end_if
 
@@ -49296,7 +50011,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter jaiksk_riot 0
 	set_counter azaq_riot 0
 	set_counter baia_riot 0
-	set_counter cumans_emerge 5
+	set_event_counter cumans_emerge 2
+	set_event_counter cumans_ticket 0
 	add_money cumans 40000
   end_if
 
@@ -49878,7 +50594,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter ankara_riot 0
 	set_counter iconium_riot 0
 	set_counter diyarbakir_riot 0
-	set_counter turks_emerge 5
+	set_event_counter turks_emerge 2
+	set_event_counter turks_ticket 0
 	add_money turks 40000
   end_if
 
@@ -50460,7 +51177,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter rheims_riot 0
 	set_counter clermont_riot 0
 	set_counter angers_riot 0
-	set_counter france_emerge 5
+	set_event_counter france_emerge 2
+	set_event_counter france_ticket 0
 	add_money france 40000
   end_if
 
@@ -51184,7 +51902,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter prague_riot 0
 	set_counter staufen_riot 0
 	set_counter nuremburg_riot 0
-	set_counter hre_emerge 5
+	set_event_counter hre_emerge 2
+	set_event_counter hre_ticket 0
 	add_money hre 40000
   end_if
 
@@ -51624,7 +52343,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter london_riot 0
 	set_counter nottingham_riot 0
 	set_counter winchester_riot 0
-	set_counter england_emerge 5
+	set_event_counter england_emerge 2
+	set_event_counter england_ticket 0
 	add_money england 40000
   end_if
 
@@ -51922,7 +52642,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	historic_event zirids_emerged
 	set_counter al_mahdiya_riot 0
 	set_counter tunis_riot 0
-	set_counter portugal_emerge 5
+	set_event_counter portugal_emerge 2
+	set_event_counter portugal_ticket 0
 	add_money portugal 40000
   end_if
 
@@ -52362,7 +53083,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter krakow_riot 0
 	set_counter poznan_riot 0
 	set_counter plock_riot 0
-	set_counter poland_emerge 5
+	set_event_counter poland_emerge 2
+	set_event_counter poland_ticket 0
 	add_money poland 40000
   end_if
 
@@ -52992,7 +53714,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter nicaea_riot 0
 	set_counter arta_riot 0
 	set_counter trebizond_riot 0
-	set_counter byzantium_emerge 5
+	set_event_counter byzantium_emerge 2
+	set_event_counter byzantium_ticket 0
 	add_money byzantium 40000
   end_if
 
@@ -53432,7 +54155,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter marrakesh_riot 0
 	set_counter fes_riot 0
 	set_counter melilla_riot 0
-	set_counter moors_emerge 5
+	set_event_counter moors_emerge 2
+	set_event_counter moors_ticket 0
 	add_money moors 40000
   end_if
 
@@ -53636,7 +54360,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	end_if
 	historic_event russia_emerged
 	set_counter novgorod_riot 0
-	set_counter russia_emerge 5
+	set_event_counter russia_emerge 2
+	set_event_counter russia_ticket 0
 	add_money russia 40000
   end_if
 
@@ -54218,7 +54943,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter toledo_riot 0
 	set_counter salamanca_riot 0
 	set_counter burgos_riot 0
-	set_counter spain_emerge 5
+	set_event_counter spain_emerge 2
+	set_event_counter spain_ticket 0
 	add_money spain 40000
   end_if
 
@@ -54658,7 +55384,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter varad_riot 0
 	set_counter esztergom_riot 0
 	set_counter kassa_riot 0
-	set_counter hungary_emerge 5
+	set_event_counter hungary_emerge 2
+	set_event_counter hungary_ticket 0
 	add_money hungary 40000
   end_if
 
@@ -55098,7 +55825,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter zaragoza_riot 0
 	set_counter pamplona_riot 0
 	set_counter barcelona_riot 0
-	set_counter aragon_emerge 5
+	set_event_counter aragon_emerge 2
+	set_event_counter aragon_ticket 0
 	add_money aragon 40000
   end_if
 
@@ -55302,7 +56030,8 @@ and I_CompareCounter faction_emerge_id >= 1
 		historic_event obotrites_emerged
 		set_counter lubeck_riot 0
 	end_if
-	set_counter lithuania_emerge 5
+	set_event_counter lithuania_emerge 2
+	set_event_counter lithuania_ticket 0
 	add_money lithuania 40000
   end_if
 
@@ -55506,7 +56235,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	end_if
 	historic_event kievan_rus_emerged
 	set_counter kiev_riot 0
-	set_counter kievan_rus_emerge 5
+	set_event_counter kievan_rus_emerge 2
+	set_event_counter kievan_ticket 0
 	add_money kievan_rus 40000
   end_if
 
@@ -55710,7 +56440,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	end_if
 	historic_event norway_emerged
 	set_counter bergen_riot 0
-	set_counter norway_emerge 5
+	set_event_counter norway_emerge 2
+	set_event_counter norway_ticket 0
 	add_money norway 40000
   end_if
 
@@ -56056,7 +56787,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	historic_event kwarezm_emerged
 	set_counter urgench_riot 0
 	set_counter konjikala_riot 0
-	set_counter kwarezm_emerge 5
+	set_event_counter kwarezm_emerge 2
+	set_event_counter kwarezm_ticket 0
 	add_money kwarezm 40000
   end_if
 
@@ -56496,7 +57228,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter cairo_riot 0
 	set_counter alexandria_riot 0
 	set_counter damietta_riot 0
-	set_counter egypt_emerge 5
+	set_event_counter egypt_emerge 2
+	set_event_counter egypt_ticket 0
 	add_money egypt 40000
   end_if
 
@@ -57174,7 +57907,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter nicosia_riot 0
 	set_counter jerusalem_riot 0
 	set_counter acre_riot 0
-	set_counter jerusalem_emerge 5
+	set_event_counter crusaders_emerge 2
+	set_event_counter crusaders_ticket 0
 	add_money jerusalem 40000
   end_if
 
@@ -57679,7 +58413,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	set_counter thorn_riot 0
 	set_counter palanga_riot 0
 	set_counter riga_riot 0
-	set_counter teutonic_order_emerge 5
+	set_event_counter teutonic_emerge 2
+	set_event_counter teutonic_ticket 0
 	add_money teutonic_order 40000
   end_if
 
@@ -57971,7 +58706,8 @@ and I_CompareCounter faction_emerge_id >= 1
 	historic_event abbasids_emerged
 	set_counter baghdad_riot 0
 	set_counter basra_riot 0
-	set_counter abbasids_emerge 5
+	set_event_counter abbasids_emerge 2
+	set_event_counter abbasids_ticket 0
 	add_money timurids 40000
   end_if
 
@@ -58269,21 +59005,19 @@ and I_CompareCounter faction_emerge_id >= 1
 	historic_event georgia_emerged
 	set_counter kutaisi_riot 0
 	set_counter tbilisi_riot 0
-	set_counter georgia_emerge 5
+	set_event_counter georgia_emerge 2
+	set_event_counter georgia_ticket 0
 	add_money georgia 40000
   end_if
   set_counter faction_emerge_id 0
-;end_if
 end_monitor
 
 ;--------------------------------------------------------------------------------
 ;---------------------Destroy PO Buildings, Reset Counter------------------------
 ;--------------------------------------------------------------------------------
 
-;monitor_event PreFactionTurnStart I_CompareCounter turn_vlr = 1 ; For normalizing emerge counters every turn regardless if a faction emerged or not
-;	set_counter turn_vlr 0
-;	if I_CompareCounter ros_po_building = 1
 monitor_event PreFactionTurnStart I_CompareCounter ros_po_building = 1
+	;Issue destroy command
 		destroy_buildings venice ros_temp_buildings false
 		destroy_buildings sicily ros_temp_buildings false
 		destroy_buildings milan ros_temp_buildings false
@@ -58346,88 +59080,168 @@ monitor_event PreFactionTurnStart I_CompareCounter ros_po_building = 1
 		destroy_buildings georgia ros_temp_buildings false
 		destroy_buildings slave ros_temp_buildings false
 		set_counter ros_po_building 0
-	;end_if
-	;Normalize emerge counters
-		if I_CompareCounter scotland_emerge > 0
-			inc_counter scotland_emerge -1
+	;Normalize emerge/ticket counters
+		if I_EventCounter scotland_ticket > 2
+			set_event_counter scotland_ticket 2
 		end_if
-		if I_CompareCounter venice_emerge > 0
-			inc_counter venice_emerge -1
+		if I_EventCounter venice_ticket > 2
+			set_event_counter venice_ticket 2
 		end_if
-		if I_CompareCounter sicily_emerge > 0
-			inc_counter sicily_emerge -1
+		if I_EventCounter sicily_ticket > 2
+			set_event_counter sicily_ticket 2
 		end_if
-		if I_CompareCounter milan_emerge > 0
-			inc_counter milan_emerge -1
+		if I_EventCounter milan_ticket > 2
+			set_event_counter milan_ticket 2
 		end_if
-		if I_CompareCounter denmark_emerge > 0
-			inc_counter denmark_emerge -1
+		if I_EventCounter denmark_ticket > 2
+			set_event_counter denmark_ticket 2
 		end_if
-		if I_CompareCounter cumans_emerge > 0
-			inc_counter cumans_emerge -1
+		if I_EventCounter cumans_ticket > 2
+			set_event_counter cumans_ticket 2
 		end_if
-		if I_CompareCounter turks_emerge > 0
-			inc_counter turks_emerge -1
+		if I_EventCounter turks_ticket > 2
+			set_event_counter turks_ticket 2
 		end_if
-		if I_CompareCounter france_emerge > 0
-			inc_counter france_emerge -1
+		if I_EventCounter france_ticket > 2
+			set_event_counter france_ticket 2
 		end_if
-		if I_CompareCounter hre_emerge > 0
-			inc_counter hre_emerge -1
+		if I_EventCounter hre_ticket > 2
+			set_event_counter hre_ticket 2
 		end_if
-		if I_CompareCounter england_emerge > 0
-			inc_counter england_emerge -1
+		if I_EventCounter england_ticket > 2
+			set_event_counter england_ticket 2
 		end_if
-		if I_CompareCounter portugal_emerge > 0
-			inc_counter portugal_emerge -1
+		if I_EventCounter portugal_ticket > 2
+			set_event_counter portugal_ticket 2
 		end_if
-		if I_CompareCounter poland_emerge > 0
-			inc_counter poland_emerge -1
+		if I_EventCounter poland_ticket > 2
+			set_event_counter poland_ticket 2
 		end_if
-		if I_CompareCounter byzantium_emerge > 0
-			inc_counter byzantium_emerge -1
+		if I_EventCounter byzantium_ticket > 2
+			set_event_counter byzantium_ticket 2
 		end_if
-		if I_CompareCounter moors_emerge > 0
-			inc_counter moors_emerge -1
+		if I_EventCounter moors_ticket > 2
+			set_event_counter moors_ticket 2
 		end_if
-		if I_CompareCounter russia_emerge > 0
-			inc_counter russia_emerge -1
+		if I_EventCounter russia_ticket > 2
+			set_event_counter russia_ticket 2
 		end_if
-		if I_CompareCounter spain_emerge > 0
-			inc_counter spain_emerge -1
+		if I_EventCounter spain_ticket > 2
+			set_event_counter spain_ticket 2
 		end_if
-		if I_CompareCounter hungary_emerge > 0
-			inc_counter hungary_emerge -1
+		if I_EventCounter hungary_ticket > 2
+			set_event_counter hungary_ticket 2
 		end_if
-		if I_CompareCounter aragon_emerge > 0
-			inc_counter aragon_emerge -1
+		if I_EventCounter aragon_ticket > 2
+			set_event_counter aragon_ticket 2
 		end_if
-		if I_CompareCounter lithuania_emerge > 0
-			inc_counter lithuania_emerge -1
+		if I_EventCounter lithuania_ticket > 2
+			set_event_counter lithuania_ticket 2
 		end_if
-		if I_CompareCounter kievan_rus_emerge > 0
-			inc_counter kievan_rus_emerge -1
+		if I_EventCounter kievan_ticket > 2
+			set_event_counter kievan_ticket 2
 		end_if
-		if I_CompareCounter norway_emerge > 0
-			inc_counter norway_emerge -1
+		if I_EventCounter norway_ticket > 2
+			set_event_counter norway_ticket 2
 		end_if
-		if I_CompareCounter kwarezm_emerge > 0
-			inc_counter kwarezm_emerge -1
+		if I_EventCounter kwarezm_ticket > 2
+			set_event_counter kwarezm_ticket 2
 		end_if
-		if I_CompareCounter egypt_emerge > 0
-			inc_counter egypt_emerge -1
+		if I_EventCounter egypt_ticket > 2
+			set_event_counter egypt_ticket 2
 		end_if
-		if I_CompareCounter jerusalem_emerge > 0
-			inc_counter jerusalem_emerge -1
+		if I_EventCounter crusaders_ticket > 2
+			set_event_counter crusaders_ticket 2
 		end_if
-		if I_CompareCounter teutonic_order_emerge > 0
-			inc_counter teutonic_order_emerge -1
+		if I_EventCounter teutonic_ticket > 2
+			set_event_counter teutonic_ticket 2
 		end_if
-		if I_CompareCounter abbasids_emerge > 0
-			inc_counter abbasids_emerge -1
+		if I_EventCounter abbasids_ticket > 2
+			set_event_counter abbasids_ticket 2
 		end_if
-		if I_CompareCounter georgia_emerge > 0
-			inc_counter georgia_emerge -1
+		if I_EventCounter georgia_ticket > 2
+			set_event_counter georgia_ticket 2
+		end_if
+		if I_EventCounter scotland_emerge > 0
+			random_counter_inc scotland_emerge -2 -1
+		end_if
+		if I_EventCounter venice_emerge > 0
+			random_counter_inc venice_emerge -2 -1
+		end_if
+		if I_EventCounter sicily_emerge > 0
+			random_counter_inc sicily_emerge -2 -1
+		end_if
+		if I_EventCounter milan_emerge > 0
+			random_counter_inc milan_emerge -2 -1
+		end_if
+		if I_EventCounter denmark_emerge > 0
+			random_counter_inc denmark_emerge -2 -1
+		end_if
+		if I_EventCounter cumans_emerge > 0
+			random_counter_inc cumans_emerge -2 -1
+		end_if
+		if I_EventCounter turks_emerge > 0
+			random_counter_inc turks_emerge -2 -1
+		end_if
+		if I_EventCounter france_emerge > 0
+			random_counter_inc france_emerge -2 -1
+		end_if
+		if I_EventCounter hre_emerge > 0
+			random_counter_inc hre_emerge -2 -1
+		end_if
+		if I_EventCounter england_emerge > 0
+			random_counter_inc england_emerge -2 -1
+		end_if
+		if I_EventCounter portugal_emerge > 0
+			random_counter_inc portugal_emerge -2 -1
+		end_if
+		if I_EventCounter poland_emerge > 0
+			random_counter_inc poland_emerge -2 -1
+		end_if
+		if I_EventCounter byzantium_emerge > 0
+			random_counter_inc byzantium_emerge -2 -1
+		end_if
+		if I_EventCounter moors_emerge > 0
+			random_counter_inc moors_emerge -2 -1
+		end_if
+		if I_EventCounter russia_emerge > 0
+			random_counter_inc russia_emerge -2 -1
+		end_if
+		if I_EventCounter spain_emerge > 0
+			random_counter_inc spain_emerge -2 -1
+		end_if
+		if I_EventCounter hungary_emerge > 0
+			random_counter_inc hungary_emerge -2 -1
+		end_if
+		if I_EventCounter aragon_emerge > 0
+			random_counter_inc aragon_emerge -2 -1
+		end_if
+		if I_EventCounter lithuania_emerge > 0
+			random_counter_inc lithuania_emerge -2 -1
+		end_if
+		if I_EventCounter kievan_rus_emerge > 0
+			random_counter_inc kievan_rus_emerge -2 -1
+		end_if
+		if I_EventCounter norway_emerge > 0
+			random_counter_inc norway_emerge -2 -1
+		end_if
+		if I_EventCounter kwarezm_emerge > 0
+			random_counter_inc kwarezm_emerge -2 -1
+		end_if
+		if I_EventCounter egypt_emerge > 0
+			random_counter_inc egypt_emerge -2 -1
+		end_if
+		if I_EventCounter crusaders_emerge > 0
+			random_counter_inc crusaders_emerge -2 -1
+		end_if
+		if I_EventCounter teutonic_emerge > 0
+			random_counter_inc teutonic_emerge -2 -1
+		end_if
+		if I_EventCounter abbasids_emerge > 0
+			random_counter_inc abbasids_emerge -2 -1
+		end_if
+		if I_EventCounter georgia_emerge > 0
+			random_counter_inc georgia_emerge -2 -1
 		end_if
 end_monitor
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -59578,7 +60392,7 @@ monitor_event FactionTurnEnd FactionType slave
 		console_command diplomatic_stance timurids lithuania neutral
 		console_command diplomatic_stance papal_states lithuania neutral
 	end_if
-	if I_NumberOfSettlements cumans < 1 ; checks if faction is dead
+	if I_CompareCounter status_cumans = 0 ; checks if faction is dead
 	and I_CompareCounter dead_diplomacy_cumans != 1
 		set_counter dead_diplomacy_cumans 1
 		console_command diplomatic_stance venice cumans neutral
@@ -59786,8 +60600,8 @@ monitor_event EventCounter EventCounterType spawn_minor_settlement_labels
 	console_command mp Novhorod_Siverskyi_Fort -1
 	spawn_character dummies, Poltava_Fort, princess, age 14, x 326, y 204
 	console_command mp Poltava_Fort -1
-	;spawn_character dummies, Moscow_Fort, princess, age 14, x 348, y 248
-	;console_command mp Moscow_Fort -1
+	spawn_character dummies, Moscow_Fort, princess, age 14, x 348, y 248
+	console_command mp Moscow_Fort -1
 	spawn_character dummies, Yaroslavl_Fort, princess, age 14, x 365, y 261
 	console_command mp Yaroslavl_Fort -1
 	spawn_character dummies, Suzdal_Fort, princess, age 14, x 368, y 253
@@ -60079,9 +60893,9 @@ monitor_event EventCounter EventCounterType reposition_minor_settlement_labels
 	if not I_CharacterTypeNearTile dummies princess, 0 326,204
 	console_command move_character Poltava_Fort 326,204
 	end_if
-	;if not I_CharacterTypeNearTile dummies princess, 0 348,248
-	;console_command move_character Moscow_Fort 348,248
-	;end_if
+	if not I_CharacterTypeNearTile dummies princess, 0 348,248
+	console_command move_character Moscow_Fort 348,248
+	end_if
 	if not I_CharacterTypeNearTile dummies princess, 0 365,261
 	console_command move_character Yaroslavl_Fort 365,261
 	end_if

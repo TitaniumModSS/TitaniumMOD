@@ -529,7 +529,7 @@ Trigger Muslim_Build_First_Cathedral_Faction
     Condition NumBuildingsCompletedFaction jama = 1
 
     FactionStanding factions { papal_states } -0.12
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.008
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.008
 
 ;------------------------------------------
 Trigger Muslim_Build_First_Huge_Cathedral_Faction
@@ -1290,7 +1290,7 @@ Trigger General_Arrives_Jihad_Catholic_Target
     Condition IsJihad
 	and TargetFactionReligion catholic
 
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } per_unit -0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } per_unit -0.002
 
 ;------------------------------------------
 Trigger General_Arrives_Jihad_Orthodox_Target
@@ -1338,7 +1338,7 @@ Trigger General_Takes_Jihad_Catholic_Target
 	and TargetFactionReligion catholic
 
     FactionStanding factions { papal_states } -0.1
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order  } per_unit -0.005
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order  } per_unit -0.005
     FactionStanding target_faction per_unit -0.0025
     FactionStanding target_allies -0.012
     FactionStanding target_enemies 0.001
@@ -1429,7 +1429,7 @@ Trigger 0031_P_Faction_Excommunicated
     WhenToTest FactionExcommunicated
 
     FactionStanding factions { papal_states } -1.0
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.2
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.2
 
 ;------------------------------------------
 Trigger 0031_P_Faction_Excommunicated_g
@@ -1876,7 +1876,7 @@ Trigger 0039_P_War_Declared
     Condition  TargetFactionType papal_states
 
     FactionStanding factions { papal_states, teutonic_order } -1.0
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.25
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.25
 
 
 ;########################## CARDINALS AND ELECTIONS ##################################
@@ -2888,7 +2888,7 @@ Trigger FranceBig
 	and I_NumberOfSettlements france > 7
 
     FactionStanding factions { england } normalise -1 80
-    FactionStanding factions { aragon, milan } normalise -1 80
+    FactionStanding factions { aragon, milan, sicily } normalise -1 80
 ;------------------------------------------
 Trigger FranceHuge
     WhenToTest FactionTurnStart
@@ -2896,7 +2896,7 @@ Trigger FranceHuge
     Condition FactionType france
 	and I_NumberOfSettlements france > 10
 
-    FactionStanding factions { aragon, milan } normalise -1 80
+    FactionStanding factions { aragon, milan, sicily } normalise -1 80
     FactionStanding factions { spain } normalise -1 80
 ;------------------------------------------
 Trigger FranceToulouse
@@ -2937,6 +2937,7 @@ Trigger Hre_Bologna
 	and I_SettlementOwner Bologna = hre
 
     FactionStanding factions { venice, milan } normalise -1 60
+    FactionStanding factions { sicily } normalise -1 80
 ;------------------------------------------
 Trigger HreBig
     WhenToTest FactionTurnStart
@@ -3030,13 +3031,14 @@ Trigger VeniceNotHRE
 
     Condition FactionType venice
 	and not I_SettlementOwner Bologna = hre
-	and not I_SettlementOwner Florence = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
 	and not I_SettlementOwner Rome = hre
 	and not I_SettlementOwner Venice = hre
 	and not I_SettlementOwner Milan = hre
 	and not I_SettlementOwner Genoa = hre
 
     FactionStanding factions { milan } normalise -1 60
+    FactionStanding factions { sicily } normalise -1 100
 ;------------------------------------------
 Trigger VeniceAI
     WhenToTest FactionTurnStart
@@ -3048,36 +3050,48 @@ Trigger VeniceAI
     FactionStanding factions { france } normalise 1 80
     FactionStanding factions { aragon } normalise 1 80
 ;------------------------------------------
-Trigger Hafsids
+Trigger Sicily
     WhenToTest FactionTurnStart
 
     Condition FactionType sicily
-	and I_EventCounter hafsids_exist = 1
 
-    FactionStanding factions { hre, aragon, milan } normalise -1 40
-    FactionStanding factions { moors } normalise -1 15
-    FactionStanding factions { egypt } normalise -1 80
-    
+    FactionStanding factions { moors } normalise -1 40
+    FactionStanding factions { turks, egypt, mongols, timurids } normalise -1 60
+    FactionStanding factions { byzantium } normalise -1 50
+    FactionStanding factions { england } normalise 1 100
+
 ;------------------------------------------
-Trigger HafsidsAI
+Trigger SicilyAI
     WhenToTest FactionTurnStart
 
     Condition FactionType sicily
-	and I_EventCounter hafsids_exist = 1
 	and not FactionIsLocal
 
-    FactionStanding factions { moors, egypt } normalise 1 50
-    
+    FactionStanding factions { france, hungary } normalise 1 100
+    FactionStanding factions { portugal } normalise 1 60
 ;------------------------------------------
-Trigger HafsidsBig
+Trigger SicilyBig
     WhenToTest FactionTurnStart
 
     Condition FactionType sicily
-	and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements portugal > 5
+	and I_NumberOfSettlements sicily > 7
 
-    FactionStanding factions { papal_states, france, spain, venice } normalise -1 40
-    FactionStanding factions { hre, aragon, milan, moors, egypt } normalise -1 100
+    FactionStanding factions { aragon } normalise -1 80
+    FactionStanding factions { venice, milan, france } normalise -1 100
+;------------------------------------------
+Trigger Sicily_Hre
+    WhenToTest FactionTurnStart
+
+    Condition FactionType sicily
+	and not I_SettlementOwner Bologna = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
+	and not I_SettlementOwner Rome = hre
+	and not I_SettlementOwner Venice = hre
+	and not I_SettlementOwner Milan = hre
+	and not I_SettlementOwner Genoa = hre
+
+    FactionStanding factions { venice } normalise -1 80
+    FactionStanding factions { milan } normalise -1 100
 
 ;------------------------------------------
 Trigger Milan
@@ -3103,7 +3117,7 @@ Trigger MilanNotHRE
 
     Condition FactionType milan
 	and not I_SettlementOwner Bologna = hre
-	and not I_SettlementOwner Florence = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
 	and not I_SettlementOwner Rome = hre
 	and not I_SettlementOwner Venice = hre
 	and not I_SettlementOwner Milan = hre
@@ -3189,7 +3203,7 @@ Trigger BulgariaBig
 
     FactionStanding factions { turks } normalise -1 120
     FactionStanding factions { byzantium, hungary, jerusalem } normalise -1 60
-    FactionStanding factions { georgia } normalise -1 40
+    FactionStanding factions { kievan_rus } normalise -1 40
 ;------------------------------------------
 Trigger Byzantium
     WhenToTest FactionTurnStart
@@ -3198,7 +3212,7 @@ Trigger Byzantium
 
     FactionStanding factions { mongols, turks, timurids } normalise -1 40
     FactionStanding factions { egypt, venice } normalise -1 60
-    FactionStanding factions { hungary, georgia, cumans } normalise -1 80
+    FactionStanding factions { hungary, kievan_rus, cumans } normalise -1 80
     FactionStanding factions { papal_states } normalise -1 100
 ;------------------------------------------
 Trigger ByzantiumAI
@@ -3499,33 +3513,6 @@ Trigger LithuaniaBig
     FactionStanding factions { russia } normalise -1 80
     FactionStanding factions { kievan_rus } normalise -1 100
 ;------------------------------------------
-Trigger Kievan_Rus
-    WhenToTest FactionTurnStart
-
-    Condition FactionType kievan_rus
-
-    FactionStanding factions { mongols, timurids } normalise -1 30
-    FactionStanding factions { turks } normalise -1 60
-    FactionStanding factions { poland, hre, teutonic_order, denmark, milan } normalise -1 75
-    ;FactionStanding factions { russia, georgia, cumans } normalise 1 40
-;------------------------------------------
-Trigger Kievan_RusAI
-    WhenToTest FactionTurnStart
-
-    Condition FactionType kievan_rus
-	and not FactionIsLocal
-
-    FactionStanding factions { russia, georgia } normalise 1 80
-    FactionStanding factions { lithuania } normalise 1 100
-;------------------------------------------
-Trigger Kievan_RusBig
-    WhenToTest FactionTurnStart
-
-    Condition FactionType kievan_rus
-	and I_NumberOfSettlements kievan_rus > 7
-
-    FactionStanding factions { russia, byzantium, lithuania, georgia, cumans } normalise -1 100
-;------------------------------------------
 Trigger Aragon
     WhenToTest FactionTurnStart
 
@@ -3580,15 +3567,14 @@ Trigger AragonBig
     FactionStanding factions { spain } normalise -1 80
     FactionStanding factions { portugal, france } normalise -1 100
 ;------------------------------------------
-Trigger Norway
+Trigger Sweden
     WhenToTest FactionTurnStart
 
     Condition FactionType norway
 
-    FactionStanding factions { lithuania, byzantium, russia } normalise -1 100
-    FactionStanding factions { england, scotland } normalise -1 100
+    FactionStanding factions { lithuania, russia } normalise -1 100
 ;-----------------------------------------
-Trigger NorwayAI
+Trigger SwedenAI
     WhenToTest FactionTurnStart
 
     Condition FactionType norway
@@ -3597,41 +3583,40 @@ Trigger NorwayAI
     FactionStanding factions { france, hre } normalise 1 80
     FactionStanding factions { denmark } normalise 1 120
 ;------------------------------------------
-Trigger NorwayBig
+Trigger SwedenBig
     WhenToTest FactionTurnStart
 
     Condition FactionType norway
 	and I_NumberOfSettlements norway > 6
 
     FactionStanding factions { denmark } normalise -1 60
-    FactionStanding factions { england, scotland } normalise -1 100
-    FactionStanding factions { russia } normalise -1 100
+    FactionStanding factions { russia, lithuania } normalise -1 100
 ;------------------------------------------
-Trigger Kwarezm
+Trigger Hafsids
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
 
-    FactionStanding factions { mongols, timurids } normalise -1 30
+    FactionStanding factions { moors, egypt } normalise -1 10
+    FactionStanding factions { venice, milan } normalise -1 60
 ;------------------------------------------
-Trigger KwarezmAI
+Trigger HafsidsAI
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
 	and not FactionIsLocal
 
-    FactionStanding factions { egypt } normalise 1 80
-    FactionStanding factions { turks } normalise 1 100
-    FactionStanding factions { moors } normalise 1 150
+    FactionStanding factions { egypt } normalise 1 60
+    FactionStanding factions { moors } normalise 1 30
 ;------------------------------------------
-Trigger KwarezmBig
+Trigger HafsidsBig
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
 	and I_NumberOfSettlements kwarezm > 10
 
     FactionStanding factions { turks } normalise -1 80
-    FactionStanding factions { egypt } normalise -1 100
+    FactionStanding factions { egypt, moors } normalise -1 100
 ;------------------------------------------
 Trigger Papal_States
     WhenToTest FactionTurnStart
@@ -3657,7 +3642,7 @@ Trigger Timurids
 
     FactionStanding exclude_factions { } normalise -1 40
 
-------------------------------------------
+;------------------------------------------
 Trigger Teutonic_Order
     WhenToTest FactionTurnStart
 
@@ -3717,7 +3702,7 @@ Trigger JerusalemAI
 Trigger Serbia
     WhenToTest FactionTurnStart
 
-    Condition FactionType georgia
+    Condition FactionType kievan_rus
 
     FactionStanding factions { turks } normalise -1 90
     FactionStanding factions { byzantium, cumans } normalise -1 30
@@ -3726,21 +3711,49 @@ Trigger Serbia
 Trigger SerbiaAI
     WhenToTest FactionTurnStart
 
-    Condition FactionType georgia
+    Condition FactionType kievan_rus
 	and not FactionIsLocal
 
     FactionStanding factions { venice } normalise 1 20
+    FactionStanding factions { russia } normalise 1 40
+;------------------------------------------
+Trigger SerbiaStronk
+    WhenToTest FactionTurnStart
+
+    Condition FactionType kievan_rus
+	and I_NumberOfSettlements kievan_rus > 5
+
+    FactionStanding factions { venice } normalise -1 30
+    FactionStanding factions { byzantium, cumans, hungary } normalise -1 80
+    FactionStanding factions { turks } normalise -1 120 
+;------------------------------------------
+Trigger Georgia
+    WhenToTest FactionTurnStart
+
+    Condition FactionType georgia
+
+    FactionStanding factions { turks } normalise -1 60
+    FactionStanding factions { mongols, timurids } normalise -1 40
+    FactionStanding factions { egypt } normalise -1 10
+;------------------------------------------
+Trigger GeorgiaAI
+    WhenToTest FactionTurnStart
+
+    Condition FactionType georgia
+	and not FactionIsLocal
+
+    FactionStanding factions { jerusalem, byzantium } normalise 1 20
     FactionStanding factions { russia, kievan_rus } normalise 1 40
 ;------------------------------------------
-Trigger SerbiaBig
+Trigger GeorgiaBig
     WhenToTest FactionTurnStart
 
     Condition FactionType georgia
 	and I_NumberOfSettlements georgia > 5
 
-    FactionStanding factions { jerusalem, kievan_rus, venice } normalise -1 30
-    FactionStanding factions { byzantium, cumans, hungary } normalise -1 80
-    FactionStanding factions { turks } normalise -1 120
+    FactionStanding factions { jerusalem } normalise -1 30
+    FactionStanding factions { byzantium } normalise -1 80
+    FactionStanding factions { turks, egypt } normalise -1 120
 
 ;==================================================================================
 ;ALTERNATE TRIGGERS
@@ -3757,15 +3770,6 @@ Trigger Catholic_Build_Small_Church_Lithuania
     FactionStanding factions { lithuania } 0.004
 
 ;------------------------------------------
-Trigger Catholic_Build_Small_Church_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = small_church
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.004
-
-;------------------------------------------
 Trigger Catholic_Build_Church_Lithuania
     WhenToTest BuildingCompleted
 
@@ -3773,15 +3777,6 @@ Trigger Catholic_Build_Church_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } 0.004
-
-;------------------------------------------
-Trigger Catholic_Build_Church_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = church
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.004
 
 ;------------------------------------------
 Trigger Catholic_Build_Abbey_Lithuania
@@ -3793,15 +3788,6 @@ Trigger Catholic_Build_Abbey_Lithuania
     FactionStanding factions { lithuania } 0.017
 
 ;------------------------------------------
-Trigger Catholic_Build_Abbey_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = abbey
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.017
-
-;------------------------------------------
 Trigger Catholic_Build_Cathedral_Lithuania
     WhenToTest BuildingCompleted
 
@@ -3809,15 +3795,6 @@ Trigger Catholic_Build_Cathedral_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } 0.024
-
-;------------------------------------------
-Trigger Catholic_Build_Cathedral_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = cathedral
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.024
 
 ;------------------------------------------
 Trigger Catholic_Build_Huge_Cathedral_Lithuania
@@ -3829,15 +3806,6 @@ Trigger Catholic_Build_Huge_Cathedral_Lithuania
     FactionStanding factions { lithuania } 0.048
 
 ;------------------------------------------
-Trigger Catholic_Build_Huge_Cathedral_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = huge_cathedral
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.048
-
-;------------------------------------------
 Trigger Catholic_Build_Small_Chapel_Lithuania
     WhenToTest BuildingCompleted
 
@@ -3847,15 +3815,6 @@ Trigger Catholic_Build_Small_Chapel_Lithuania
     FactionStanding factions { lithuania } 0.004
 
 ;------------------------------------------
-Trigger Catholic_Build_Small_Chapel_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = small_chapel
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.004
-
-;------------------------------------------
 Trigger Catholic_Build_Chapel_Lithuania
     WhenToTest BuildingCompleted
 
@@ -3863,15 +3822,6 @@ Trigger Catholic_Build_Chapel_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } 0.004
-
-;------------------------------------------
-Trigger Catholic_Build_Chapel_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = chapel
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.004
 
 ;------------------------------------------
 ;------------------------------------------
@@ -3894,15 +3844,6 @@ Trigger Catholic_Build_First_Huge_Cathedral_Faction_Lithuania
     FactionStanding factions { lithuania } 0.02
 
 ;------------------------------------------
-Trigger Catholic_Build_First_Huge_Cathedral_Faction_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction huge_cathedral = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.02
-
-;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
 Trigger Catholic_Build_First_Cathedral_World_Lithuania
@@ -3914,15 +3855,6 @@ Trigger Catholic_Build_First_Cathedral_World_Lithuania
     FactionStanding factions { lithuania } 0.06
 
 ;------------------------------------------
-Trigger Catholic_Build_First_Cathedral_World_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted cathedral = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.06
-
-;------------------------------------------
 Trigger Catholic_Build_First_Huge_Cathedral_World_Lithuania
     WhenToTest BuildingCompleted
 
@@ -3931,15 +3863,6 @@ Trigger Catholic_Build_First_Huge_Cathedral_World_Lithuania
 
     FactionStanding factions { lithuania } -0.02
 
-;------------------------------------------
-Trigger Catholic_Build_First_Huge_Cathedral_World_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted huge_cathedral = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.124
-    
 ;=========== ORTHODOX =====================
 ;------------------------------------------
 Trigger Orthodox_Build_Small_Church_Lithuania
@@ -3951,15 +3874,6 @@ Trigger Orthodox_Build_Small_Church_Lithuania
     FactionStanding factions { lithuania } 0.002
 
 ;------------------------------------------
-Trigger Orthodox_Build_Small_Church_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = small_church_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.002
-
-;------------------------------------------
 Trigger Orthodox_Build_Church_Lithuania
     WhenToTest BuildingCompleted
 
@@ -3967,15 +3881,6 @@ Trigger Orthodox_Build_Church_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } 0.002
-
-;------------------------------------------
-Trigger Orthodox_Build_Church_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = church_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.002
 
 ;------------------------------------------
 Trigger Orthodox_Build_Abbey_Lithuania
@@ -3987,15 +3892,6 @@ Trigger Orthodox_Build_Abbey_Lithuania
     FactionStanding factions { lithuania } 0.007
 
 ;------------------------------------------
-Trigger Orthodox_Build_Abbey_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = abbey_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.007
-
-;------------------------------------------
 Trigger Orthodox_Build_Cathedral_Lithuania
     WhenToTest BuildingCompleted
 
@@ -4003,15 +3899,6 @@ Trigger Orthodox_Build_Cathedral_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } 0.008
-
-;------------------------------------------
-Trigger Orthodox_Build_Cathedral_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = cathedral_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.008
 
 ;------------------------------------------
 Trigger Orthodox_Build_Huge_Cathedral_Lithuania
@@ -4023,15 +3910,6 @@ Trigger Orthodox_Build_Huge_Cathedral_Lithuania
     FactionStanding factions { lithuania } 0.016
 
 ;------------------------------------------
-Trigger Orthodox_Build_Huge_Cathedral_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = huge_cathedral_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.016
-
-;------------------------------------------
 Trigger Orthodox_Build_Small_Chapel_Lithuania
     WhenToTest BuildingCompleted
 
@@ -4039,15 +3917,6 @@ Trigger Orthodox_Build_Small_Chapel_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } 0.002
-
-;------------------------------------------
-Trigger Orthodox_Build_Small_Chapel_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = small_chapel_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.002
 
 ;------------------------------------------
 Trigger Orthodox_Build_Chapel_Lithuania
@@ -4058,15 +3927,6 @@ Trigger Orthodox_Build_Chapel_Lithuania
 
     FactionStanding factions { lithuania } 0.002
     
-;------------------------------------------
-Trigger Orthodox_Build_Chapel_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = chapel_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.002
-
 ;------------------------------------------
 ;------------------------------------------
 ;------------------------------------------
@@ -4079,15 +3939,6 @@ Trigger Orthodox_Build_First_Cathedral_Faction_Lithuania
     FactionStanding factions { lithuania } 0.008
 
 ;------------------------------------------
-Trigger Orthodox_Build_First_Cathedral_Faction_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction cathedral_o = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.008
-
-;------------------------------------------
 Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Lithuania
     WhenToTest BuildingCompleted
 
@@ -4095,15 +3946,6 @@ Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania }  0.016
-
-;------------------------------------------
-Trigger Orthodox_Build_First_Huge_Cathedral_Faction_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction huge_cathedral_o = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily }  -0.016
 
 ;------------------------------------------
 ;------------------------------------------
@@ -4117,15 +3959,6 @@ Trigger Orthodox_Build_First_Cathedral_World_Lithuania
     FactionStanding factions { lithuania }  0.04
 
 ;------------------------------------------
-Trigger Orthodox_Build_First_Cathedral_World_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted cathedral_o = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily }  -0.04
-
-;------------------------------------------
 Trigger Orthodox_Build_First_Huge_Cathedral_World_Lithuania
     WhenToTest BuildingCompleted
 
@@ -4133,119 +3966,6 @@ Trigger Orthodox_Build_First_Huge_Cathedral_World_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } 0.08
-
-;------------------------------------------
-Trigger Orthodox_Build_First_Huge_Cathedral_World_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted huge_cathedral_o = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.08
-
-;=========== MUSLIM =====================
-;------------------------------------------
-Trigger Muslim_Build_Small_Church_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = small_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.004
-
-;------------------------------------------
-Trigger Muslim_Build_Church_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.004
-
-;------------------------------------------
-Trigger Muslim_Build_Abbey_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = minareted_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.01
-
-;------------------------------------------
-Trigger Muslim_Build_Cathedral_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = jama
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.024
-
-;------------------------------------------
-Trigger Muslim_Build_Huge_Cathedral_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = great_jama
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.048
-
-;------------------------------------------
-Trigger Muslim_Build_Small_Chapel_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = c_small_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.004
-
-;------------------------------------------
-Trigger Muslim_Build_Chapel_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition SettlementBuildingFinished = c_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.004
-
-;------------------------------------------
-;------------------------------------------
-;------------------------------------------
-Trigger Muslim_Build_First_Cathedral_Faction_Sicily
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction jama = 1
-	and I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily }  -0.008
-
-;------------------------------------------
-Trigger Muslim_Build_First_Huge_Cathedral_Faction_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompletedFaction huge_cathedral_o = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.02
-
-;------------------------------------------
-;------------------------------------------
-;------------------------------------------
-Trigger Muslim_Build_First_Cathedral_World_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted jama = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.04
-
-;------------------------------------------
-Trigger Muslim_Build_First_Huge_Cathedral_World_Hafsids
-    WhenToTest BuildingCompleted
-
-    Condition NumBuildingsCompleted great_jama = 1
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.08
 
 ;=========== PAGAN =====================
 ;------------------------------------------
@@ -4306,15 +4026,6 @@ Trigger Catholic_Destroy_Small_Church_Lithuania
     FactionStanding factions { lithuania } -0.008
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Small_Church_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_church
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.008
-
-;------------------------------------------
 Trigger Catholic_Destroy_Church_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4322,15 +4033,6 @@ Trigger Catholic_Destroy_Church_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } -0.014
-
-;------------------------------------------
-Trigger Catholic_Destroy_Church_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = church
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.014
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Abbey_Lithuania
@@ -4342,15 +4044,6 @@ Trigger Catholic_Destroy_Abbey_Lithuania
     FactionStanding factions { lithuania } -0.032
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Abbey_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = abbey
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.032
-
-;------------------------------------------
 Trigger Catholic_Destroy_Cathedral_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4358,15 +4051,6 @@ Trigger Catholic_Destroy_Cathedral_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } -0.06
-
-;------------------------------------------
-Trigger Catholic_Destroy_Cathedral_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = cathedral
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.06
 
 ;------------------------------------------
 Trigger Catholic_Destroy_Huge_Cathedral_Lithuania
@@ -4378,15 +4062,6 @@ Trigger Catholic_Destroy_Huge_Cathedral_Lithuania
     FactionStanding factions { lithuania } -0.14
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Huge_Cathedral_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = huge_cathedral
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.14
-
-;------------------------------------------
 Trigger Catholic_Destroy_Small_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4396,15 +4071,6 @@ Trigger Catholic_Destroy_Small_Chapel_Lithuania
     FactionStanding factions { lithuania } -0.014
 
 ;------------------------------------------
-Trigger Catholic_Destroy_Small_Chapel_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_chapel
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.014
-
-;------------------------------------------
 Trigger Catholic_Destroy_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4412,15 +4078,6 @@ Trigger Catholic_Destroy_Chapel_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } -0.014
-
-;------------------------------------------
-Trigger Catholic_Destroy_Chapel_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = chapel
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.014
 
 ;=========== ORTHODOX =====================
 ;------------------------------------------
@@ -4433,15 +4090,6 @@ Trigger Orthodox_Destroy_Small_Church_Lithuania
     FactionStanding factions { lithuania } -0.002
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Small_Church_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_church_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.002
-
-;------------------------------------------
 Trigger Orthodox_Destroy_Church_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4449,15 +4097,6 @@ Trigger Orthodox_Destroy_Church_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } -0.004
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Church_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = church_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.004
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Abbey_Lithuania
@@ -4469,15 +4108,6 @@ Trigger Orthodox_Destroy_Abbey_Lithuania
     FactionStanding factions { lithuania } -0.008
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Abbey_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = abbey_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.008
-
-;------------------------------------------
 Trigger Orthodox_Destroy_Cathedral_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4485,15 +4115,6 @@ Trigger Orthodox_Destroy_Cathedral_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } -0.015
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Cathedral_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = cathedral_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.015
 
 ;------------------------------------------
 Trigger Orthodox_Destroy_Huge_Cathedral_Lithuania
@@ -4505,15 +4126,6 @@ Trigger Orthodox_Destroy_Huge_Cathedral_Lithuania
     FactionStanding factions { lithuania } -0.04
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Huge_Cathedral_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = huge_cathedral_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.04
-
-;------------------------------------------
 Trigger Orthodox_Destroy_Small_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4523,15 +4135,6 @@ Trigger Orthodox_Destroy_Small_Chapel_Lithuania
     FactionStanding factions { lithuania } -0.004
 
 ;------------------------------------------
-Trigger Orthodox_Destroy_Small_Chapel_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_chapel_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.004
-
-;------------------------------------------
 Trigger Orthodox_Destroy_Chapel_Lithuania
     WhenToTest BuildingDestroyed
 
@@ -4539,79 +4142,6 @@ Trigger Orthodox_Destroy_Chapel_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } -0.004
-
-;------------------------------------------
-Trigger Orthodox_Destroy_Chapel_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = chapel_o
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } 0.004
-
-;=========== ISLAMIC =====================
-;------------------------------------------
-Trigger Islamic_Destroy_Small_Church_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = small_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.01
-
-;------------------------------------------
-Trigger Islamic_Destroy_Church_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.016
-
-;------------------------------------------
-Trigger Islamic_Destroy_Abbey_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = minareted_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.032
-
-;------------------------------------------
-Trigger Islamic_Destroy_Cathedral_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = jama
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.06
-
-;------------------------------------------
-Trigger Islamic_Destroy_Huge_Cathedral_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = great_jama
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.14
-
-;------------------------------------------
-Trigger Islamic_Destroy_Small_Chapel_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = c_small_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.01
-
-;------------------------------------------
-Trigger Islamic_Destroy_Chapel_Hafsids
-    WhenToTest BuildingDestroyed
-
-    Condition BuildingName = c_masjid
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.016
 
 ;=========== PAGAN =====================
 ;------------------------------------------
@@ -4725,16 +4255,6 @@ Trigger Pagan_Destroy_Cathedral4_Lithuania
 ;####################### CRUSADES / JIHADS ###############################
 ;================== CRUSADES ==============
 ;------------------------------------------
-Trigger General_Arrives_Crusade_Islamic_Target_Hafsids
-    WhenToTest GeneralArrivesCrusadeTargetRegion
-
-    Condition IsCrusade
-	and TargetFactionReligion islam
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } per_unit -0.002
-
-;------------------------------------------
 Trigger General_Arrives_Crusade_Pagan_Target_Lithuania
     WhenToTest GeneralArrivesCrusadeTargetRegion
 
@@ -4746,16 +4266,6 @@ Trigger General_Arrives_Crusade_Pagan_Target_Lithuania
 
 ;------------------------------------------
 ;------------------------------------------
-;------------------------------------------
-Trigger General_Takes_Crusade_Islamic_Target_Hafsids
-    WhenToTest GeneralTakesCrusadeTarget
-
-    Condition IsCrusade
-	and TargetFactionReligion islam
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } per_unit -0.005
-
 ;------------------------------------------
 Trigger General_Takes_Crusade_Pagan_Target_Lithuania
     WhenToTest GeneralTakesCrusadeTarget
@@ -4776,16 +4286,6 @@ Trigger General_Arrives_Jihad_Catholic_Target_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } per_unit -0.002
-
-;------------------------------------------
-Trigger General_Arrives_Jihad_Catholic_Target_Sicily
-    WhenToTest GeneralArrivesCrusadeTargetRegion
-
-    Condition IsJihad
-	and TargetFactionReligion catholic
-	and I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily } per_unit -0.002
 
 ;------------------------------------------
 ;------------------------------------------
@@ -4811,16 +4311,6 @@ Trigger General_Takes_Jihad_Catholic_Target_Lithuania
     FactionStanding factions { lithuania } per_unit -0.005
 
 ;------------------------------------------
-Trigger General_Takes_Jihad_Catholic_Target_Sicily
-    WhenToTest GeneralTakesCrusadeTarget
-
-    Condition IsJihad
-	and TargetFactionReligion catholic
-	and I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily  } per_unit -0.005
-
-;------------------------------------------
 ;------------------------------------------
 Trigger General_Takes_Jihad_Pagan_Target_Lithuania
     WhenToTest GeneralTakesCrusadeTarget
@@ -4842,23 +4332,8 @@ Trigger 0031_P_Faction_Excommunicated_Lithuania
     FactionStanding factions { lithuania } -0.2
 
 ;------------------------------------------
-Trigger 0031_P_Faction_Excommunicated_Sicily
-    WhenToTest FactionExcommunicated
-
-    Condition I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily } -0.2
-
 ;------------------------------------------
 ;------------------------------------------
-;------------------------------------------
-Trigger 0039_P_War_Declared_Sicily
-    WhenToTest FactionWarDeclared
-
-    Condition  TargetFactionType papal_states
-	and I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily } -0.25
 
 
 
@@ -4873,52 +4348,7 @@ Trigger 0042_P_Own_Pope_Elected_Lithuania_Pagan
     FactionStanding factions { lithuania } -0.2
 
 ;------------------------------------------
-Trigger 0042_P_Own_Pope_Elected_Hafsids
-    WhenToTest PopeElected
-
-    Condition FactionEqualsTarget
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.2
-
-;------------------------------------------
 ;###################### FACTION RELATIONS ###################################
-;------------------------------------------
-Trigger Sicily_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType hre
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } normalise -1 60
-
-;------------------------------------------
-Trigger SicilyBig_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType hre
-	and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements hre > 7
-
-    FactionStanding factions { sicily } normalise -1 100
-;------------------------------------------
-Trigger MoorsBig_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType moors
-    and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements moors > 10
-
-    FactionStanding factions { sicily } normalise -1 100
-;------------------------------------------
-Trigger EgyptBig_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType egypt
-    and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements egypt > 10
-
-    FactionStanding factions { sicily } normalise -1 100
 ;------------------------------------------
 Trigger Lithuania_Catholic
     WhenToTest FactionTurnStart

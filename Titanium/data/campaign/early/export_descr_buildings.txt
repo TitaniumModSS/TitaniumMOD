@@ -1,15 +1,15 @@
 ;SS 6.4 EDB edited by gracul: Jan-2011
-;Titanium Early Era Campaign
-;Edited by Melooo182: Dic-2014
+;Titanium Early Era Campaign 1100
+;Edited by Melooo182: Jul-2017
 
-hidden_resources Constable Iqta Constantinople Khassaki river silk_road crusader crusade jihad horde_target no_pirates no_brigands wonder1 wonder2 wonder3 wonder4 wonder5 wonder6 wonder7 wonder8 venice scotland england france portugal spain aragon moors milan papal_states sicily hre norway denmark poland russia lithuania cumans kwarezm turks jerusalem prussia egypt byzantium hungary kievan_rus ireland teutonic_knights_chapter_house montesa_chapter_house knights_of_santiago_chapter_house templars_chapter_house st_johns_chapter_house chapter_hq teutonic_hq georgia
+hidden_resources Constable Iqta Khassaki river silk_road crusader crusade jihad horde_target no_pirates no_brigands wonder1 wonder2 wonder3 wonder4 wonder5 wonder6 wonder7 wonder8 venice scotland england france portugal spain aragon moors milan papal_states sicily hre norway denmark poland russia lithuania cumans kwarezm turks jerusalem prussia egypt byzantium hungary kievan_rus ireland teutonic_knights_chapter_house montesa_chapter_house knights_of_santiago_chapter_house templars_chapter_house st_johns_chapter_house chapter_hq teutonic_hq georgia italy
 
 building core_building
 {
   convert_to core_castle_building
   levels wooden_pallisade wooden_wall stone_wall large_stone_wall huge_stone_wall
   {
-    wooden_pallisade city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    wooden_pallisade city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       convert_to 1
       capability
@@ -18,7 +18,14 @@ building core_building
         tower_level 1
         free_upkeep bonus 2
         happiness_bonus bonus 1 requires not event_counter is_the_ai 1
-        recruitment_slots 1 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 1 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 2 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 2 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 2 requires building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 2 requires event_counter is_the_ai 1
         law_bonus bonus 2 requires event_counter is_the_ai 1
         population_growth_bonus bonus 2 requires event_counter is_the_ai 1 and not event_counter thinks_of_his_people 1
@@ -42,7 +49,7 @@ building core_building
         wooden_wall
       }
     }
-    wooden_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    wooden_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       convert_to 2
       capability
@@ -52,7 +59,14 @@ building core_building
         tower_level 1
         free_upkeep bonus 2
         happiness_bonus bonus 2 requires not event_counter is_the_ai 1
-        recruitment_slots 2 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 2 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 3 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 3 requires event_counter is_the_ai 1
         law_bonus bonus 3 requires event_counter is_the_ai 1
         population_growth_bonus bonus 1 requires event_counter is_the_ai 1 and not event_counter thinks_of_his_people 1
@@ -76,7 +90,7 @@ building core_building
         stone_wall
       }
     }
-    stone_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    stone_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       capability
       {
@@ -143,7 +157,7 @@ building core_building
         recruit_pool "Dismounted Feudal Knights"  0   0.0625   1  0  requires factions { denmark, } and event_counter HALF_PLATE_ARMOR 1
         
         recruit_pool "Christ Knights"  0   0.0625   1  0  requires factions { teutonic_order, }
-
+        
         recruit_pool "Knights of Antioch"  0   0.025   1  0  requires factions { jerusalem, }
 
         recruit_pool "Norman Knights"  0   0.042   1  0  requires factions { sicily, } and event_counter HEAVY_MAIL_ARMOR 1
@@ -173,7 +187,14 @@ building core_building
         free_upkeep bonus 3 requires not event_counter protector 1
         free_upkeep bonus 5 requires event_counter protector 1
         happiness_bonus bonus 2 requires not event_counter is_the_ai 1
-        recruitment_slots 3 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 4 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 4 requires event_counter is_the_ai 1
         law_bonus bonus 3 requires event_counter is_the_ai 1
         population_growth_bonus bonus 2 requires event_counter is_the_ai 1 and not event_counter thinks_of_his_people 1
@@ -197,7 +218,7 @@ building core_building
         large_stone_wall
       }
     }
-    large_stone_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    large_stone_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       capability
       {
@@ -392,7 +413,14 @@ building core_building
         free_upkeep bonus 4 requires not event_counter protector 1
         free_upkeep bonus 6 requires event_counter protector 1
         happiness_bonus bonus 3 requires not event_counter is_the_ai 1
-        recruitment_slots 4 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 5 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 5 requires event_counter is_the_ai 1
         law_bonus bonus 3 requires event_counter is_the_ai 1
         trade_base_income_bonus bonus 3 requires event_counter is_the_ai 1
@@ -416,7 +444,7 @@ building core_building
         huge_stone_wall
       }
     }
-    huge_stone_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    huge_stone_wall city requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       capability
       {
@@ -656,7 +684,14 @@ building core_building
         free_upkeep bonus 5 requires not event_counter protector 1
         free_upkeep bonus 7 requires event_counter protector 1
         happiness_bonus bonus 3 requires not event_counter is_the_ai 1
-        recruitment_slots 5 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 6 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 8 requires building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 5 requires event_counter is_the_ai 1
         law_bonus bonus 3 requires event_counter is_the_ai 1
         trade_base_income_bonus bonus 5 requires event_counter is_the_ai 1
@@ -705,7 +740,7 @@ building core_castle_building
   convert_to core_building
   levels motte_and_bailey wooden_castle castle fortress citadel
   {
-    motte_and_bailey castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    motte_and_bailey castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       capability
       {
@@ -713,7 +748,14 @@ building core_castle_building
         tower_level 1
         free_upkeep bonus 1
         law_bonus bonus 1 requires not event_counter is_the_ai 1
-        recruitment_slots 1 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 1 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level castle_barracks mustering_hall
+        recruitment_slots 2 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 2 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 2 requires building_present_min_level castle_barracks mustering_hall and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 2 requires event_counter is_the_ai 1
         law_bonus bonus 3 requires event_counter is_the_ai 1
         population_growth_bonus bonus 2 requires event_counter is_the_ai 1 and not event_counter thinks_of_his_people 1
@@ -738,7 +780,7 @@ building core_castle_building
         wooden_castle
       }
     }
-    wooden_castle castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    wooden_castle castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       convert_to 0
       capability
@@ -748,7 +790,14 @@ building core_castle_building
         gate_strength 2
         free_upkeep bonus 2
         law_bonus bonus 2 requires not event_counter is_the_ai 1
-        recruitment_slots 2 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 2 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level castle_barracks mustering_hall
+        recruitment_slots 3 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires building_present_min_level castle_barracks mustering_hall and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 2 requires event_counter is_the_ai 1
         law_bonus bonus 4 requires event_counter is_the_ai 1
         population_growth_bonus bonus 1 requires event_counter is_the_ai 1 and not event_counter thinks_of_his_people 1
@@ -773,7 +822,7 @@ building core_castle_building
         castle
       }
     }
-    castle castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    castle castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       convert_to 1
       capability
@@ -871,7 +920,14 @@ building core_castle_building
         free_upkeep bonus 3 requires not event_counter protector 1
         free_upkeep bonus 4 requires event_counter protector 1
         law_bonus bonus 3 requires not event_counter is_the_ai 1
-        recruitment_slots 3 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level castle_barracks mustering_hall
+        recruitment_slots 4 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires building_present_min_level castle_barracks mustering_hall and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 2 requires event_counter is_the_ai 1
         law_bonus bonus 5 requires event_counter is_the_ai 1
         population_growth_bonus bonus 2 requires event_counter is_the_ai 1 and not event_counter thinks_of_his_people 1
@@ -896,7 +952,7 @@ building core_castle_building
         fortress
       }
     }
-    fortress castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    fortress castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       convert_to 2
       capability
@@ -1103,7 +1159,14 @@ building core_castle_building
         free_upkeep bonus 3 requires not event_counter protector 1
         free_upkeep bonus 4 requires event_counter protector 1
         law_bonus bonus 4 requires not event_counter is_the_ai 1
-        recruitment_slots 4 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level castle_barracks mustering_hall
+        recruitment_slots 5 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires building_present_min_level castle_barracks mustering_hall and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 2 requires event_counter is_the_ai 1
         law_bonus bonus 6 requires event_counter is_the_ai 1
         trade_base_income_bonus bonus 2 requires event_counter is_the_ai 1
@@ -1129,7 +1192,7 @@ building core_castle_building
         citadel
       }
     }
-    citadel castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, }
+    citadel castle requires factions { northern_european, middle_eastern, eastern_european, greek, southern_european, roman, }
     {
       convert_to 2
       capability
@@ -1381,7 +1444,14 @@ building core_castle_building
         free_upkeep bonus 3 requires not event_counter protector 1
         free_upkeep bonus 4 requires event_counter protector 1
         law_bonus bonus 5 requires not event_counter is_the_ai 1
-        recruitment_slots 5 requires not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level castle_barracks mustering_hall
+        recruitment_slots 6 requires building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires building_present_min_level castle_barracks mustering_hall and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 8 requires building_present_min_level castle_barracks mustering_hall and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
         happiness_bonus bonus 2 requires event_counter is_the_ai 1
         law_bonus bonus 7 requires event_counter is_the_ai 1
         trade_base_income_bonus bonus 4 requires event_counter is_the_ai 1
@@ -1877,8 +1947,8 @@ building equestrian
         recruit_pool "Hoshiga Horse Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         recruit_pool "Hoschuchi Lancers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
         recruit_pool "Hoschuchi Lancers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
-        recruit_pool "Lubchiten Horse Archers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks
-        recruit_pool "Lubchiten Horse Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks
+        recruit_pool "Lubchiten Horse Archers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Lubchiten Horse Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         recruit_pool "Turhagut Lancers"  1   0.084   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
         recruit_pool "Turhagut Lancers"  0   0.0625   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
@@ -2091,7 +2161,7 @@ building equestrian
         recruit_pool "Italian MAA"  0   0.0625   1  0  requires factions { milan, papal_states, } and event_counter HALF_PLATE_ARMOR 1 and not hidden_resource milan and not hidden_resource venice and not hidden_resource papal_states
         recruit_pool "Italian MAA"  1   0.0625   2  0  requires factions { venice, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource milan or hidden_resource venice or hidden_resource papal_states
         recruit_pool "Italian MAA"  0   0.042   1  0  requires factions { venice, } and event_counter HALF_PLATE_ARMOR 1 and not hidden_resource milan and not hidden_resource venice and not hidden_resource papal_states
-
+        
         recruit_pool "Armats"  1   0.0625   1  0  requires factions { spain, england, } and event_counter new_era_begins 1 and hidden_resource aragon or hidden_resource france or hidden_resource denmark or hidden_resource spain or hidden_resource norway or hidden_resource england or hidden_resource hungary or hidden_resource poland or hidden_resource portugal
         recruit_pool "Armats"  0   0.042   1  0  requires factions { spain, england, } and event_counter new_era_begins 1 and not hidden_resource aragon and not hidden_resource france and not hidden_resource denmark and not hidden_resource spain and not hidden_resource norway and not hidden_resource england and not hidden_resource hungary and not hidden_resource poland and not hidden_resource portugal
         recruit_pool "Armats"  1   0.084   1  0  requires factions { poland, hungary, } and event_counter new_era_begins 1 and hidden_resource aragon or hidden_resource france or hidden_resource denmark or hidden_resource spain or hidden_resource norway or hidden_resource england or hidden_resource hungary or hidden_resource poland or hidden_resource portugal
@@ -2173,9 +2243,9 @@ building equestrian
         recruit_pool "Pechenegs"  1   0.125   2  0  requires factions { cumans, } and hidden_resource cumans
         recruit_pool "Pechenegs"  0   0.084   1  0  requires factions { cumans, } and hidden_resource kwarezm or hidden_resource russia or hidden_resource kievan_rus
         recruit_pool "Pechenegs"  0   0.0625   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, lithuania, kwarezm, turks, jerusalem, egypt, byzantium, hungary, teutonic_order, georgia, } and hidden_resource cumans
-        recruit_pool "Khagan Druzhina"  1   0.125   2  0  requires factions { cumans, } and hidden_resource cumans and event_counter science_da_vinci_ornithopter 1              
+        recruit_pool "Khagan Druzhina"  1   0.125   2  0  requires factions { cumans, } and hidden_resource cumans and event_counter science_da_vinci_ornithopter 1
         recruit_pool "Khagan Druzhina"  0   0.084   1  0  requires factions { cumans, } and not hidden_resource cumans and event_counter science_da_vinci_ornithopter 1
-        recruit_pool "Khagan Druzhina"  1   0.17   3  0  requires factions { cumans, } and hidden_resource cumans and not event_counter science_da_vinci_ornithopter 1                
+        recruit_pool "Khagan Druzhina"  1   0.17   3  0  requires factions { cumans, } and hidden_resource cumans and not event_counter science_da_vinci_ornithopter 1
         recruit_pool "Khagan Druzhina"  0   0.125   2  0  requires factions { cumans, } and not hidden_resource cumans and not event_counter science_da_vinci_ornithopter 1
         
         recruit_pool "Sibyan al Khass"  1   0.125   1  0  requires factions { kwarezm, } and hidden_resource kwarezm and event_counter HALF_PLATE_ARMOR 1
@@ -3033,22 +3103,22 @@ building barracks
         recruit_pool "Ducal Axe"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania
         recruit_pool "Ducal Axe"  0   0.0625   1  0  requires factions { lithuania, } and not hidden_resource lithuania
         
-        recruit_pool "Late Lithuanian Spearman"  0   0.25   3  0  requires factions { lithuania, } and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
+        recruit_pool "Late Lithuanian Spearman"  0   0.25   3  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
         
-        recruit_pool "Late Lithuanian Spearman"  0   0.17   2  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
+        recruit_pool "Late Lithuanian Spearman"  0   0.17   2  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
         
-        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
         
         recruit_pool "Sword Brethren"  0   0.034   1  0  requires factions { teutonic_order, }
         recruit_pool "Prussian Infantry"  0   0.0625   2  0  requires factions { teutonic_order, } and hidden_resource prussia
@@ -3228,8 +3298,8 @@ building barracks
         ;recruit_pool "ME Peasants"  0   0.17   5  0  requires factions { timurids, }
         ;recruit_pool "Afghan Javelinmen"  0   0.125   4  0  requires factions { timurids, } and hidden_resource kwarezm
         ;recruit_pool "Afghan Javelinmen"  0   0.1   3  0  requires factions { timurids, } and hidden_resource turks
-        recruit_pool "Disamounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
-        recruit_pool "Disamounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Light Swordsmen"  0   0.05   1  0  requires factions { teutonic_order, } and not hidden_resource prussia and not hidden_resource hre
 
@@ -3501,18 +3571,18 @@ building barracks
         
         recruit_pool "L Regular Infantry"  0   0.17   2  0  requires factions { lithuania, } and event_counter new_era_begins 1
         recruit_pool "Late Lithuanian Spearman"  0   0.25   3  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
         
         recruit_pool "Southern Peasants"  0   0.1   1  0  requires factions { byzantium, }
         recruit_pool "Scoutatoi Swordsmen"  0   0.25   3  0  requires factions { byzantium, }
@@ -3739,8 +3809,8 @@ building barracks
         ;recruit_pool "ME Peasants"  0   0.17   5  0  requires factions { timurids, }
         ;recruit_pool "Afghan Javelinmen"  0   0.125   4  0  requires factions { timurids, } and hidden_resource kwarezm
         ;recruit_pool "Afghan Javelinmen"  0   0.1   3  0  requires factions { timurids, } and hidden_resource turks
-        recruit_pool "Disamounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
-        recruit_pool "Disamounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Light Swordsmen"  0   0.0625   1  0  requires factions { teutonic_order, } and not event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
         recruit_pool "Light Swordsmen"  0   0.05   1  0  requires factions { teutonic_order, } and event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
@@ -4064,18 +4134,18 @@ building barracks
         
         recruit_pool "L Regular Infantry"  0   0.17   2  0  requires factions { lithuania, } and event_counter new_era_begins 1
         recruit_pool "Late Lithuanian Spearman"  0   0.25   3  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
         
         recruit_pool "Southern Peasants"  0   0.1   1  0  requires factions { byzantium, }
         recruit_pool "Scoutatoi Swordsmen"  0   0.25   3  0  requires factions { byzantium, }
@@ -4302,8 +4372,8 @@ building barracks
         ;recruit_pool "ME Peasants"  0   0.17   5  0  requires factions { timurids, }
         ;recruit_pool "Afghan Javelinmen"  0   0.125   4  0  requires factions { timurids, } and hidden_resource kwarezm
         ;recruit_pool "Afghan Javelinmen"  0   0.1   3  0  requires factions { timurids, } and hidden_resource turks
-        recruit_pool "Disamounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
-        recruit_pool "Disamounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Light Swordsmen"  0   0.0625   1  0  requires factions { teutonic_order, } and not event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
         recruit_pool "Light Swordsmen"  0   0.05   1  0  requires factions { teutonic_order, } and event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
@@ -4393,7 +4463,7 @@ building barracks
         
         recruit_pool "Constable of Jerusalem"  0   0.05   1  0  requires factions { jerusalem, } and hidden_resource Constable
         recruit_pool "Edessan Guard"  0   0.34   3  0  requires factions { jerusalem, }
-
+        
         recruit_pool "Pisan and Geonese sailors"  1   0.125   2  0  requires factions { jerusalem, } and event_counter new_era_begins 1
         recruit_pool "NE_Urban_Militia"  1   0.125   2  0  requires factions { jerusalem, } and event_counter new_era_begins 1
         recruit_pool "Partisan Militia"  1   0.125   2  0  requires factions { jerusalem, } and event_counter new_era_begins 1
@@ -4477,7 +4547,7 @@ building barracks
         recruit_pool "Spear Militia"  1   0.5   7  0  requires factions { england, } and not event_counter HEAVY_MAIL_ARMOR 1
         
         recruit_pool "Archer Militia"  1   0.42   6  0  requires factions { england, }
-
+        
         recruit_pool "Partisan Militia"  1   0.25   4  0  requires factions { france, } and event_counter new_era_begins 1
         recruit_pool "Urban Spear Militia"  1   0.42   6  0  requires factions { france, } and event_counter new_era_begins 1
         recruit_pool "Urban Spear Militia"  1   0.5   7  0  requires factions { france, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter new_era_begins 1
@@ -4513,13 +4583,13 @@ building barracks
         recruit_pool "Gasmuli"  1   0.25   4  0  requires factions { byzantium, } and event_counter new_era_begins 1
         recruit_pool "Toxotae"  1   0.25   4  0  requires factions { byzantium, } and event_counter new_era_begins 1
         recruit_pool "Toxotae"  1   0.42   6  0  requires factions { byzantium, } and not event_counter new_era_begins 1
-           
+        
         recruit_pool "Swordsmen Militia"  1   0.34   5  0  requires factions { spain, aragon, } and event_counter new_era_begins 1
         recruit_pool "Swordsmen Militia"  1   0.25   4  0  requires factions { spain, aragon, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter new_era_begins 1
         recruit_pool "Urban Spear Militia"  1   0.34   5  0  requires factions { spain, aragon, } and event_counter new_era_begins 1
         recruit_pool "Urban Spear Militia"  1   0.42   6  0  requires factions { spain, aragon, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter new_era_begins 1
         recruit_pool "Spear Militia"  1  0.5   7  0  requires factions { spain, aragon, } and not event_counter HEAVY_MAIL_ARMOR 1
-                  
+        
         ;recruit_pool "Swordsmen Militia"  1   0.34   5  0  requires factions { portugal, } and event_counter new_era_begins 1
         ;recruit_pool "Swordsmen Militia"  1   0.25   4  0  requires factions { portugal, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter new_era_begins 1
         ;recruit_pool "Urban Spear Militia"  1   0.34   5  0  requires factions { portugal, } and event_counter new_era_begins 1
@@ -4655,18 +4725,18 @@ building barracks
         
         recruit_pool "L Regular Infantry"  0   0.17   2  0  requires factions { lithuania, } and event_counter new_era_begins 1
         recruit_pool "Late Lithuanian Spearman"  0   0.25   3  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
         
         recruit_pool "Southern Peasants"  0   0.1   1  0  requires factions { byzantium, }
         recruit_pool "Scoutatoi Swordsmen"  0   0.25   3  0  requires factions { byzantium, }
@@ -4893,8 +4963,8 @@ building barracks
         ;recruit_pool "ME Peasants"  0   0.17   5  0  requires factions { timurids, }
         ;recruit_pool "Afghan Javelinmen"  0   0.125   4  0  requires factions { timurids, } and hidden_resource kwarezm
         ;recruit_pool "Afghan Javelinmen"  0   0.1   3  0  requires factions { timurids, } and hidden_resource turks
-        recruit_pool "Disamounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
-        recruit_pool "Disamounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Light Swordsmen"  0   0.0625   1  0  requires factions { teutonic_order, } and not event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
         recruit_pool "Light Swordsmen"  0   0.05   1  0  requires factions { teutonic_order, } and event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
@@ -5028,7 +5098,7 @@ building barracks
         recruit_pool "Moorish Auxiliaries"  1   0.125   2  0  requires factions { moors, }
         recruit_pool "ME Spear Militia"  1   0.25   4  0  requires factions { moors, } and event_counter HEAVY_MAIL_ARMOR 1
         recruit_pool "ME Spear Militia"  1   0.42   6  0  requires factions { moors, } and not event_counter HEAVY_MAIL_ARMOR 1
-           
+        
         recruit_pool "Halberd Militia"  1   0.34   5  0  requires factions { papal_states, sicily, } and event_counter new_era_begins 1
         recruit_pool "Pavise Spear Militia"  1   0.5   7  0  requires factions { papal_states, sicily, } and event_counter new_era_begins 1
         recruit_pool "Pavise Spear Militia"  1   0.5   7  1  requires factions { papal_states, sicily, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter new_era_begins 1
@@ -5151,7 +5221,7 @@ building barracks
         recruit_pool "Urban Spear Militia"  1   0.42   6  0  requires factions { spain, aragon, } and event_counter new_era_begins 1
         recruit_pool "Urban Spear Militia"  1  0.5   7  0  requires factions { spain, aragon, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter new_era_begins 1
         recruit_pool "Spear Militia"  1  0.5   7  1  requires factions { spain, aragon, } and not event_counter HEAVY_MAIL_ARMOR 1
-               
+        
         ;recruit_pool "Swordsmen Militia"  1   0.42   6  0  requires factions { portugal, } and event_counter new_era_begins 1
         ;recruit_pool "Swordsmen Militia"  1   0.34   5  0  requires factions { portugal, } and event_counter HEAVY_MAIL_ARMOR 1 and not event_counter new_era_begins 1
         ;recruit_pool "Urban Spear Militia"  1   0.42   6  0  requires factions { portugal, } and event_counter new_era_begins 1
@@ -5229,18 +5299,18 @@ building barracks
         
         recruit_pool "L Regular Infantry"  0   0.17   2  0  requires factions { lithuania, } and event_counter new_era_begins 1
         recruit_pool "Late Lithuanian Spearman"  0   0.25   3  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1 0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.1   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.125   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  0   0.034   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.05   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.0625   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
         
         recruit_pool "Southern Peasants"  0   0.1   1  0  requires factions { byzantium, }
         recruit_pool "Scoutatoi Swordsmen"  0   0.25   3  0  requires factions { byzantium, }
@@ -5467,8 +5537,8 @@ building barracks
         ;recruit_pool "ME Peasants"  0   0.17   5  0  requires factions { timurids, }
         ;recruit_pool "Afghan Javelinmen"  0   0.125   4  0  requires factions { timurids, } and hidden_resource kwarezm
         ;recruit_pool "Afghan Javelinmen"  0   0.1   3  0  requires factions { timurids, } and hidden_resource turks
-        recruit_pool "Disamounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
-        recruit_pool "Disamounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.05   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.034   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Light Swordsmen"  0   0.0625   1  0  requires factions { teutonic_order, } and not event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
         recruit_pool "Light Swordsmen"  0   0.05   1  0  requires factions { teutonic_order, } and event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
@@ -5557,16 +5627,16 @@ building hinterland_byzantine_imperial_barracks
 {
   levels imperial_barracks
   {
-    imperial_barracks city requires factions { byzantium, }
+    imperial_barracks city requires factions { byzantium, } ;and event_counter does_not_exist 1
     {
       capability
       {
-        recruit_pool "Scholarii"  0   0.025   0.4  0  requires factions { byzantium, } and not event_counter lateran_council4 1
-        recruit_pool "Scholarii"  0   0.25   2  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource Constantinople
-        recruit_pool "Spartharii tou Vasileos"  0   0.025   0.4  0  requires factions { byzantium, } and not event_counter lateran_council4 1
-        recruit_pool "Spartharii tou Vasileos"  0   0.125   1  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource Constantinople
-        recruit_pool "Siphonatores"  0   0.025   0.4  0  requires factions { byzantium, } and not event_counter lateran_council4 1
-        recruit_pool "Siphonatores"  0   0.125   1  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource Constantinople
+        recruit_pool "Scholarii"  0   0.025   0.9  0  requires factions { byzantium, } and not hidden_resource italy or hidden_resource italy and not event_counter lateran_council4 1
+        recruit_pool "Scholarii"  0   0.25   2  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource italy
+        recruit_pool "Spartharii tou Vasileos"  0   0.025   0.9  0  requires factions { byzantium, } and not hidden_resource italy or hidden_resource italy and not event_counter lateran_council4 1
+        recruit_pool "Spartharii tou Vasileos"  0   0.125   1  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource italy
+        recruit_pool "Siphonatores"  0   0.025   0.9  0  requires factions { byzantium, } and not hidden_resource italy or hidden_resource italy and not event_counter lateran_council4 1
+        recruit_pool "Siphonatores"  0   0.125   1  0  requires factions { byzantium, } and event_counter lateran_council4 1 and hidden_resource italy
         law_bonus bonus 1
       }
       material stone
@@ -6130,28 +6200,28 @@ building castle_barracks
         recruit_pool "Ducal Axe"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania
         recruit_pool "Ducal Axe"  0   0.084   1  0  requires factions { lithuania, } and not hidden_resource lithuania
         
-        recruit_pool "Late Lithuanian Spearman"  1   0.34   3  0  requires factions { lithuania, } and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.0625   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Axemen"  0   0.0625   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1
+        recruit_pool "Late Lithuanian Spearman"  1   0.34   3  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  0   0.0625   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Axemen"  0   0.0625   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1
         
-        recruit_pool "Late Lithuanian Spearman"  1   0.25   2  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  1   0.17   3  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
-        recruit_pool "Lithuanian Axemen"  0   0.084   1  0  requires factions { lithuania, } and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1  and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Axemen"  0   0.084   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter HALF_PLATE_ARMOR 1 and not event_counter new_era_begins 1
+        recruit_pool "Late Lithuanian Spearman"  1   0.25   2  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  1   0.125   2  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.0625   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Axemen"  1   0.17   3  0  requires factions { lithuania, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  0   0.084   1  0  requires factions { lithuania, } and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Axemen"  0   0.084   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and event_counter new_era_begins 1 and not event_counter HALF_PLATE_ARMOR 1
         
-        recruit_pool "Lithuanian Skirmishers"  1   0.17   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Skirmishers"  0   0.084   1  0  requires factions { lithuania, } and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Skirmishers"  0   0.084   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Axemen"  1   0.17   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
-        recruit_pool "Lithuanian Axemen"  0   0.084   1  0  requires factions { lithuania, } and not event_counter HALF_PLATE_ARMOR 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
-        recruit_pool "Lithuanian Axemen"  0   0.084   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter HALF_PLATE_ARMOR 1
+        recruit_pool "Lithuanian Skirmishers"  1   0.17   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Skirmishers"  0   0.084   1  0  requires factions { lithuania, } and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Skirmishers"  0   0.084   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  1   0.17   3  0  requires factions { lithuania, } and hidden_resource lithuania and not event_counter new_era_begins 1
+        recruit_pool "Lithuanian Axemen"  0   0.084   1  0  requires factions { lithuania, } and not event_counter new_era_begins 1 and hidden_resource poland or hidden_resource hungary or hidden_resource russia
+        recruit_pool "Lithuanian Axemen"  0   0.084   2  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, cumans, kwarezm, turks, jerusalem, egypt, byzantium, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource lithuania and not event_counter new_era_begins 1
         
         recruit_pool "Sword Brethren"  1   0.042   1  0  requires factions { teutonic_order, }
         recruit_pool "Prussian Infantry"  1   0.084   2  0  requires factions { teutonic_order, } and hidden_resource prussia
@@ -6332,8 +6402,8 @@ building castle_barracks
         ;recruit_pool "ME Peasants"  1   0.25   5  0  requires factions { timurids, }
         ;recruit_pool "Afghan Javelinmen"  1   0.17   4  0  requires factions { timurids, } and hidden_resource kwarezm
         ;recruit_pool "Afghan Javelinmen"  0   0.125   3  0  requires factions { timurids, } and hidden_resource turks
-        recruit_pool "Disamounted Turhagut"  1   0.0625   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
-        recruit_pool "Disamounted Turhagut"  0   0.042   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  1   0.0625   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.042   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Light Swordsmen"  0   0.0625   1  0  requires factions { teutonic_order, } and not hidden_resource prussia and not hidden_resource hre
 
@@ -6770,8 +6840,8 @@ building castle_barracks
         ;recruit_pool "ME Peasants"  1   0.25   5  0  requires factions { timurids, }
         ;recruit_pool "Afghan Javelinmen"  1   0.17   4  0  requires factions { timurids, } and hidden_resource kwarezm
         ;recruit_pool "Afghan Javelinmen"  0   0.125   3  0  requires factions { timurids, } and hidden_resource turks
-        recruit_pool "Disamounted Turhagut"  1   0.0625   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
-        recruit_pool "Disamounted Turhagut"  0   0.042   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  1   0.0625   1  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Dismounted Turhagut"  0   0.042   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Light Swordsmen"  0   0.084   1  0  requires factions { teutonic_order, } and not event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
         recruit_pool "Light Swordsmen"  0   0.0625   1  0  requires factions { teutonic_order, } and event_counter new_era_begins 1 and not hidden_resource prussia and not hidden_resource hre
@@ -6898,7 +6968,7 @@ building castle_barracks
         recruit_pool "Urban Spear Militia"  0   0.34   6  0  requires factions { papal_states, sicily, } and not event_counter HEAVY_MAIL_ARMOR 1
         
         recruit_pool "Pavise Crossbow Militia"  0   0.125   3  0  requires factions { papal_states, sicily, } and event_counter new_era_begins 1 and not event_counter spanish_inquisition 1
-        recruit_pool "Urban Crossbow Militia"  0   0.17   4  0  requires factions { papal_states, sicily,} and not event_counter new_era_begins 1
+        recruit_pool "Urban Crossbow Militia"  0   0.17   4  0  requires factions { papal_states, sicily, } and not event_counter new_era_begins 1
         
         recruit_pool "Militia Serjeants"  0   0.1   2  0  requires factions { england, } and event_counter new_era_begins 1
         recruit_pool "NE_Urban_Militia"  0   0.125   3  0  requires factions { england, } and event_counter new_era_begins 1
@@ -7142,7 +7212,7 @@ building missiles
         recruit_pool "ME Peasant Archers"  1   0.25   3  0  requires factions { turks, timurids, }
         recruit_pool "ME Peasant Archers"  1   0.17   3  0  requires factions { mongols, }
         recruit_pool "S Peasant Archers"  1   0.17   3  0  requires factions { byzantium, georgia, slave, }
-        recruit_pool "Toxotae"  1   0.084   2  0  requires factions { byzantium, }
+        ;recruit_pool "Toxotae"  1   0.084   2  0  requires factions { byzantium, }
         law_bonus bonus 1 requires event_counter is_the_ai 1
         recruitment_slots 1 requires not event_counter freeze_recr_pool 1
       }
@@ -7267,9 +7337,9 @@ building missiles
         recruit_pool "Mourtatoi"  1   0.084   2  0  requires factions { byzantium, } and hidden_resource byzantium
         recruit_pool "Mourtatoi"  0   0.042   1  0  requires factions { byzantium, } and hidden_resource turks or hidden_resource georgia
         recruit_pool "Mourtatoi"  0   0.042   1  0  requires factions { venice, scotland, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, lithuania, cumans, kwarezm, turks, jerusalem, egypt, hungary, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource byzantium
-        recruit_pool "Toxotae"  1   0.084   2  0  requires factions { byzantium, }
-        recruit_pool "S Peasant Archers"  1   0.17   1  0  requires factions { byzantium, } and event_counter HEAVY_MAIL_ARMOR 1
-        recruit_pool "S Peasant Archers"  1   0.25   2  0  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
+        ;recruit_pool "Toxotae"  1   0.084   2  0  requires factions { byzantium, }
+        recruit_pool "S Peasant Archers"  1   0.17   2  0  requires factions { byzantium, } and hidden_resource byzantium or hidden_resource turks or hidden_resource georgia
+        recruit_pool "S Peasant Archers"  1   0.25   2  0  requires factions { byzantium, } and not hidden_resource byzantium and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Desert Archers"  1   0.125   1  0  requires factions { moors, } and hidden_resource moors
         recruit_pool "Desert Archers"  0   0.084   1 0  requires factions { moors, } and hidden_resource egypt or hidden_resource spain
@@ -7503,9 +7573,9 @@ building missiles
         recruit_pool "Mourtatoi"  1   0.125   3  0  requires factions { byzantium, } and hidden_resource byzantium
         recruit_pool "Mourtatoi"  0   0.0625   1  0  requires factions { byzantium, } and hidden_resource turks or hidden_resource georgia
         recruit_pool "Mourtatoi"  0   0.0625   2  0  requires factions { venice, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, lithuania, cumans, kwarezm, turks, jerusalem, egypt, hungary, scotland, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource byzantium
-        recruit_pool "Toxotae"  1   0.125   3  0  requires factions { byzantium, }
-        recruit_pool "S Peasant Archers"  1   0.25   2  0  requires factions { byzantium, } and event_counter HEAVY_MAIL_ARMOR 1
-        recruit_pool "S Peasant Archers"  1   0.34   3  0  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
+        ;recruit_pool "Toxotae"  1   0.125   3  0  requires factions { byzantium, }
+        recruit_pool "S Peasant Archers"  1   0.25   2  0  requires factions { byzantium, } and hidden_resource byzantium or hidden_resource turks or hidden_resource georgia
+        recruit_pool "S Peasant Archers"  1   0.34   3  0  requires factions { byzantium, } and not hidden_resource byzantium and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "Granadine CB Cav"  1   0.125   2  0  requires factions { moors, } and hidden_resource moors and event_counter new_era_begins 1
         recruit_pool "Granadine CB Cav"  0   0.0625   1  0  requires factions { moors, } and event_counter new_era_begins 1 and hidden_resource egypt or hidden_resource spain
@@ -7812,9 +7882,9 @@ building missiles
         recruit_pool "Mourtatoi"  1   0.17   4  0  requires factions { byzantium, } and hidden_resource byzantium
         recruit_pool "Mourtatoi"  0   0.084   2  0  requires factions { byzantium, } and hidden_resource turks or hidden_resource georgia
         recruit_pool "Mourtatoi"  0   0.084   2  0  requires factions { venice, england, france, portugal, spain, aragon, moors, milan, papal_states, sicily, hre, norway, denmark, poland, russia, lithuania, cumans, kwarezm, turks, jerusalem, egypt, hungary, scotland, kievan_rus, teutonic_order, mongols, slave, timurids, georgia, } and hidden_resource byzantium
-        recruit_pool "Toxotae"  1   0.17   4  0  requires factions { byzantium, }
-        recruit_pool "S Peasant Archers"  1   0.25   2  0  requires factions { byzantium, } and event_counter HEAVY_MAIL_ARMOR 1
-        recruit_pool "S Peasant Archers"  1   0.34   4  0  requires factions { byzantium, } and not event_counter HEAVY_MAIL_ARMOR 1
+        ;recruit_pool "Toxotae"  1   0.17   4  0  requires factions { byzantium, }
+        recruit_pool "S Peasant Archers"  1   0.25   2  0  requires factions { byzantium, } and hidden_resource byzantium or hidden_resource turks or hidden_resource georgia
+        recruit_pool "S Peasant Archers"  1   0.34   4  0  requires factions { byzantium, } and not hidden_resource byzantium and not hidden_resource turks and not hidden_resource georgia
         
         recruit_pool "ME Heavy Archers"  1   0.25   2  0  requires factions { moors, } and event_counter new_era_begins 1
         recruit_pool "Granadine CB Cav"  1   0.17   3  0  requires factions { moors, } and hidden_resource moors and event_counter new_era_begins 1
@@ -7927,7 +7997,7 @@ building siege
       convert_to 0
       capability
       {
-        recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, }
+        recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, }
         recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, }
         recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { byzantium, }
         recruit_pool "ME Ballista"  1  0.072  2  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -7948,12 +8018,12 @@ building siege
       convert_to 1
       capability
       {
-        recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, }
+        recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, }
         recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, }
         recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { byzantium, }
         recruit_pool "ME Catapult"  1  0.072  2  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
         recruit_pool "ME Catapult"  1  0.072  2  0  requires factions { mongols, timurids, georgia, }
-        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, }
+        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, }
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, }
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { byzantium, }
         recruit_pool "ME Ballista"  1  0.05  1  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -7974,7 +8044,7 @@ building siege
       convert_to 2
       capability
       {
-        recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
+        recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
         recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and event_counter first_rudder 1
         recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { byzantium, }
         recruit_pool "ME Trebuchet"  1  0.072  2  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -7983,16 +8053,16 @@ building siege
         recruit_pool "Mangonel"  1  0.05  1  0  requires factions { poland, hungary, }
         recruit_pool "Mangonel"  1  0.05  1  0  requires factions { byzantium, georgia, }
         recruit_pool "Mangonel"  1  0.05  1  0  requires factions { england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  teutonic_order, jerusalem, }
-        recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
+        recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
         recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and event_counter first_rudder 1
-        recruit_pool "NE Catapult"  1  0.1  3  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
+        recruit_pool "NE Catapult"  1  0.1  3  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
         recruit_pool "NE Catapult"  1  0.1  3  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and not event_counter first_rudder 1
         recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { byzantium, }
         recruit_pool "ME Catapult"  1  0.05  1  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
         recruit_pool "ME Catapult"  1  0.05  1  0  requires factions { mongols, timurids, georgia, }
-        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
+        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and event_counter first_rudder 1
-        recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
+        recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
         recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and not event_counter first_rudder 1
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { byzantium, }
         recruit_pool "ME Ballista"  1  0.05  1  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -8024,7 +8094,7 @@ building castle_siege
       convert_to 0
       capability
       {
-        recruit_pool "NE Ballista"  1   0.05   1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, }
+        recruit_pool "NE Ballista"  1   0.05   1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, }
         recruit_pool "NE Ballista"  1   0.05   1  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, }
         recruit_pool "NE Ballista"  1   0.05   1  0  requires factions { byzantium, }
         recruit_pool "ME Ballista"  1   0.05   1  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -8045,12 +8115,12 @@ building castle_siege
       convert_to 1
       capability
       {
-        recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, }
+        recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, }
         recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, }
         recruit_pool "NE Catapult"  1  0.072  2  0  requires factions { byzantium, }
         recruit_pool "ME Catapult"  1  0.072  2  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
         recruit_pool "ME Catapult"  1  0.072  2  0  requires factions { mongols, timurids, georgia, }
-        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, }
+        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, }
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, }
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { byzantium, }
         recruit_pool "ME Ballista"  1  0.05  1  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -8071,7 +8141,7 @@ building castle_siege
       convert_to 2
       capability
       {
-        recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
+        recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
         recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and event_counter first_rudder 1
         recruit_pool "NE Trebuchet"  1  0.072  2  0  requires factions { byzantium, }
         recruit_pool "ME Trebuchet"  1  0.072  2  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -8080,16 +8150,16 @@ building castle_siege
         recruit_pool "Mangonel"  1  0.05  1  0  requires factions { poland, hungary, }
         recruit_pool "Mangonel"  1  0.05  1  0  requires factions { byzantium, georgia, }
         recruit_pool "Mangonel"  1  0.05  1  0  requires factions { england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  teutonic_order, jerusalem, }
-        recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
+        recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
         recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and event_counter first_rudder 1
-        recruit_pool "NE Catapult"  1  0.1  3  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
+        recruit_pool "NE Catapult"  1  0.1  3  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
         recruit_pool "NE Catapult"  1  0.1  3  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and not event_counter first_rudder 1
         recruit_pool "NE Catapult"  1  0.05  1  0  requires factions { byzantium, }
         recruit_pool "ME Catapult"  1  0.05  1  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
         recruit_pool "ME Catapult"  1  0.05  1  0  requires factions { mongols, timurids, georgia, }
-        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
+        recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and event_counter first_rudder 1
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and event_counter first_rudder 1
-        recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
+        recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily, norway, jerusalem, teutonic_order, } and not event_counter first_rudder 1
         recruit_pool "NE Ballista"  1  0.072  2  0  requires factions { poland, lithuania, russia, kievan_rus, hungary, } and not event_counter first_rudder 1
         recruit_pool "NE Ballista"  1  0.05  1  0  requires factions { byzantium, }
         recruit_pool "ME Ballista"  1  0.05  1  0  requires factions { moors, egypt, turks, kwarezm, cumans, portugal, }
@@ -8482,9 +8552,9 @@ building smith
         ;Advanced Metallurgy
         armour 40 requires factions { venice, sicily, milan, papal_states, hre, england, } and event_counter ADVANCED_METALLURGY 1
         ;Advanced Metallurgy
-        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
+        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
         ;Advanced Metallurgy
-        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
+        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
         ;Renaissance 3-Quarter Plate
         armour 41 requires factions { northern_european, southern_european, eastern_european, } and event_counter first_watch 1
         ;Renaissance 3-Quarter Plate
@@ -8685,9 +8755,9 @@ building castle_smith
         ;Advanced Metallurgy
         armour 40 requires factions { venice, sicily, milan, papal_states, hre, england, } and event_counter ADVANCED_METALLURGY 1
         ;Advanced Metallurgy
-        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
+        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, } and event_counter ADVANCED_METALLURGY 1 and hidden_resource venice or hidden_resource sicily or hidden_resource milan or hidden_resource papal_states or hidden_resource hre or hidden_resource england
         ;Advanced Metallurgy
-        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order,  norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
+        armour 40 requires factions { denmark, scotland, france, poland, russia, spain, hungary, aragon, kievan_rus, teutonic_order, norway, } and event_counter ADV_MATCHLOCK 1 and not hidden_resource venice and not hidden_resource sicily and not hidden_resource milan and not hidden_resource papal_states and not hidden_resource hre and not hidden_resource england
         ;Renaissance 3-Quarter Plate
         armour 41 requires factions { northern_european, southern_european, eastern_european, } and event_counter first_watch 1
         ;Renaissance 3-Quarter Plate
@@ -9250,7 +9320,7 @@ building hinterland_roads
         highways
       }
     }
-    highways city requires factions { greek, }
+    highways city requires factions { byzantium, }
     {
       convert_to 2
       capability
@@ -9313,7 +9383,7 @@ building hinterland_castle_roads
         c_highways
       }
     }
-    c_highways castle requires factions { greek, }
+    c_highways castle requires factions { byzantium, }
     {
       convert_to 2
       capability
@@ -9620,7 +9690,7 @@ building temple_dievas
   religion pagan
   levels dievas_altar dievas_sanctuary dievas_temple
   {
-    dievas_altar city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_perkunas 
+    dievas_altar city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       convert_to 0
       capability
@@ -9640,7 +9710,7 @@ building temple_dievas
         dievas_sanctuary
       }
     }
-    dievas_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_perkunas 
+    dievas_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       capability
       {
@@ -9659,7 +9729,7 @@ building temple_dievas
         dievas_temple
       }
     }
-    dievas_temple city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_perkunas 
+    dievas_temple city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       capability
       {
@@ -9690,7 +9760,7 @@ building temple_dievas_castle
   religion pagan
   levels c_dievas_altar
   {
-    c_dievas_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine_castle and not building_present temple_perkunas_castle 
+    c_dievas_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       convert_to 0
       capability
@@ -9720,7 +9790,7 @@ building temple_perkunas
   religion pagan
   levels perkunas_altar perkunas_sanctuary perkunas_temple
   {
-    perkunas_altar city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_dievas
+    perkunas_altar city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       convert_to 0
       capability
@@ -9740,7 +9810,7 @@ building temple_perkunas
         perkunas_sanctuary
       }
     }
-    perkunas_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_dievas 
+    perkunas_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       capability
       {
@@ -9760,7 +9830,7 @@ building temple_perkunas
         perkunas_temple
       }
     }
-    perkunas_temple city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine and not building_present temple_dievas 
+    perkunas_temple city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       capability
       {
@@ -9791,7 +9861,7 @@ building temple_perkunas_castle
   religion pagan
   levels c_perkunas_altar
   {
-    c_perkunas_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_giltine_castle and not building_present temple_dievas_castle 
+    c_perkunas_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1 
     {
       convert_to 0
       capability
@@ -9822,7 +9892,7 @@ building temple_giltine
   religion pagan
   levels giltine_altar giltine_sanctuary giltine_temple
   {
-    giltine_altar city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas and not building_present temple_dievas 
+    giltine_altar city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       convert_to 0
       capability
@@ -9841,7 +9911,7 @@ building temple_giltine
         giltine_sanctuary
       }
     }
-    giltine_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas and not building_present temple_dievas 
+    giltine_sanctuary city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       capability
       {
@@ -9859,7 +9929,7 @@ building temple_giltine
         giltine_temple
       }
     }
-    giltine_temple city requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas and not building_present temple_dievas 
+    giltine_temple city requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       capability
       {
@@ -9889,7 +9959,7 @@ building temple_giltine_castle
   religion pagan
   levels c_giltine_altar
   {
-    c_giltine_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1 and not building_present temple_perkunas_castle and not building_present temple_dievas_castle 
+    c_giltine_altar castle requires factions { lithuania, } and event_counter PaganLithuania 1
     {
       convert_to 0
       capability
@@ -11357,10 +11427,10 @@ building templars_chapter_house
       convert_to 0
       capability
       {
-        recruit_pool "Knights Templar"  0.75   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not hidden_resource crusader and not hidden_resource portugal and not hidden_resource aragon
-        recruit_pool "Knights Templar"  1   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and hidden_resource crusader or hidden_resource portugal or hidden_resource aragon
-        recruit_pool "Dismounted Knights Templar"  0.50   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not hidden_resource crusader and not hidden_resource portugal and not hidden_resource aragon
-        recruit_pool "Dismounted Knights Templar"  1   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and hidden_resource crusader or hidden_resource portugal or hidden_resource aragon
+        recruit_pool "Knights Templar"  0.75   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not hidden_resource crusader and not hidden_resource portugal and not hidden_resource aragon
+        recruit_pool "Knights Templar"  1   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and hidden_resource crusader or hidden_resource portugal or hidden_resource aragon
+        recruit_pool "Dismounted Knights Templar"  0.50   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not hidden_resource crusader and not hidden_resource portugal and not hidden_resource aragon
+        recruit_pool "Dismounted Knights Templar"  1   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and hidden_resource crusader or hidden_resource portugal or hidden_resource aragon
 
         ;****Teutonic Order Special****
         recruit_pool "Knights Templar"  0   0.042   1  0  requires factions { teutonic_order, }
@@ -11371,6 +11441,12 @@ building templars_chapter_house
         recruit_pool "Knights Templar"  1   0.05   1  0  requires factions { jerusalem, } and hidden_resource crusader
         recruit_pool "Dismounted Knights Templar"  1   0.028   1  0  requires factions { jerusalem, } and not hidden_resource crusader
         recruit_pool "Dismounted Knights Templar"  1   0.032   1  0  requires factions { jerusalem, } and hidden_resource crusader
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights Templar"  0.75   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not hidden_resource crusader and not hidden_resource portugal and not hidden_resource aragon
+        recruit_pool "Knights Templar"  1   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and hidden_resource crusader or hidden_resource portugal or hidden_resource aragon
+        recruit_pool "Dismounted Knights Templar"  0.50   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not hidden_resource crusader and not hidden_resource portugal and not hidden_resource aragon
+        recruit_pool "Dismounted Knights Templar"  1   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and hidden_resource crusader or hidden_resource portugal or hidden_resource aragon
 
 	free_upkeep bonus 1
       }
@@ -11388,8 +11464,8 @@ building templars_chapter_house
       convert_to 1
       capability
       {
-        recruit_pool "Knights Templar"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
-        recruit_pool "Dismounted Knights Templar"  1   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
+        recruit_pool "Knights Templar"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
+        recruit_pool "Dismounted Knights Templar"  1   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights Templar"  0   0.05   1  1  requires factions { teutonic_order, }
@@ -11402,6 +11478,10 @@ building templars_chapter_house
         recruit_pool "Dismounted Knights Templar"  1   0.042   1  1  requires factions { jerusalem, } and hidden_resource crusader
 
         recruit_pool "Templar Confrere Knights"  1   0.042   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights Templar"  1   0.05   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted Knights Templar"  1   0.032   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         trade_base_income_bonus bonus 1
         free_upkeep bonus 1
@@ -11420,8 +11500,8 @@ building templars_chapter_house
       convert_to 2
       capability
       {
-        recruit_pool "Knights Templar"  1   0.0625   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
-        recruit_pool "Dismounted Knights Templar"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
+        recruit_pool "Knights Templar"  1   0.0625   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
+        recruit_pool "Dismounted Knights Templar"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights Templar"  0   0.0625   1  2  requires factions { teutonic_order, }
@@ -11435,7 +11515,11 @@ building templars_chapter_house
 
         recruit_pool "Templar Confrere Knights"  1   0.042   1  0  requires factions { jerusalem, } and event_counter council_of_troyes 1 and hidden_resource crusader
  
-       population_health_bonus bonus 1
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights Templar"  1   0.0625   3  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted Knights Templar"  1   0.042   2  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
+
+        trade_base_income_bonus bonus 1
         free_upkeep bonus 2
       }
       material stone
@@ -11461,10 +11545,10 @@ building st_johns_chapter_house
       convert_to 0
       capability
       {
-        recruit_pool "Knights Hospitaller"  0.75   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not hidden_resource crusader and not hidden_resource aragon
-        recruit_pool "Knights Hospitaller"  1   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and hidden_resource crusader or hidden_resource aragon
-        recruit_pool "Dismounted Knights Hospitaller"  0.50   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not hidden_resource crusader and not hidden_resource aragon
-        recruit_pool "Dismounted Knights Hospitaller"  1   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and hidden_resource crusader or hidden_resource aragon
+        recruit_pool "Knights Hospitaller"  0.75   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not hidden_resource crusader and not hidden_resource aragon
+        recruit_pool "Knights Hospitaller"  1   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and hidden_resource crusader or hidden_resource aragon
+        recruit_pool "Dismounted Knights Hospitaller"  0.50   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not hidden_resource crusader and not hidden_resource aragon
+        recruit_pool "Dismounted Knights Hospitaller"  1   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and hidden_resource crusader or hidden_resource aragon
 
         ;****Teutonic Order Special****
         recruit_pool "Knights Hospitaller"  0   0.042   1  0  requires factions { teutonic_order, }
@@ -11475,6 +11559,12 @@ building st_johns_chapter_house
         recruit_pool "Knights Hospitaller"  1   0.05   1  0  requires factions { jerusalem, } and hidden_resource crusader
         recruit_pool "Dismounted Knights Hospitaller"  1   0.028   1  0  requires factions { jerusalem, } and not hidden_resource crusader
         recruit_pool "Dismounted Knights Hospitaller"  1   0.032   1  0  requires factions { jerusalem, } and hidden_resource crusader
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights Hospitaller"  0.75   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not hidden_resource crusader and not hidden_resource aragon
+        recruit_pool "Knights Hospitaller"  1   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and hidden_resource crusader or hidden_resource aragon
+        recruit_pool "Dismounted Knights Hospitaller"  0.50   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not hidden_resource crusader and not hidden_resource aragon
+        recruit_pool "Dismounted Knights Hospitaller"  1   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and hidden_resource crusader or hidden_resource aragon
 
         free_upkeep bonus 1
       }
@@ -11492,8 +11582,8 @@ building st_johns_chapter_house
       convert_to 1
       capability
       {
-        recruit_pool "Knights Hospitaller"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
-        recruit_pool "Dismounted Knights Hospitaller"  1   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
+        recruit_pool "Knights Hospitaller"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
+        recruit_pool "Dismounted Knights Hospitaller"  1   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights Hospitaller"  0   0.05   1  1  requires factions { teutonic_order, }
@@ -11504,6 +11594,10 @@ building st_johns_chapter_house
         recruit_pool "Knights Hospitaller"  2   0.0625   2  1  requires factions { jerusalem, } and hidden_resource crusader
         recruit_pool "Dismounted Knights Hospitaller"  1   0.032   1  1  requires factions { jerusalem, } and not hidden_resource crusader
         recruit_pool "Dismounted Knights Hospitaller"  1   0.042   1  1  requires factions { jerusalem, } and hidden_resource crusader
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights Hospitaller"  1   0.05   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted Knights Hospitaller"  1   0.032   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         population_health_bonus bonus 1
         free_upkeep bonus 1
@@ -11522,8 +11616,8 @@ building st_johns_chapter_house
       convert_to 2
       capability
       {
-        recruit_pool "Knights Hospitaller"  1   0.0625   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
-        recruit_pool "Dismounted Knights Hospitaller"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, }
+        recruit_pool "Knights Hospitaller"  1   0.0625   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
+        recruit_pool "Dismounted Knights Hospitaller"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights Hospitaller"  0   0.0625   1  2  requires factions { teutonic_order, }
@@ -11534,6 +11628,10 @@ building st_johns_chapter_house
         recruit_pool "Knights Hospitaller"  2   0.072   3  2 requires factions { jerusalem, } and hidden_resource crusader
         recruit_pool "Dismounted Knights Hospitaller"  1   0.042   2  2  requires factions { jerusalem, } and not hidden_resource crusader
         recruit_pool "Dismounted Knights Hospitaller"  1   0.05   2  2  requires factions { jerusalem, } and hidden_resource crusader
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights Hospitaller"  1   0.0625   3  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted Knights Hospitaller"  1   0.042   2  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         population_health_bonus bonus 1
         free_upkeep bonus 2
@@ -11561,10 +11659,10 @@ building teutonic_knights_chapter_house
       convert_to 0
       capability
       {
-        recruit_pool "Ritterbruder"  0.75   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not event_counter status_teutonic_order 1
-        recruit_pool "Ritterbruder"  0   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  0.50   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  0   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0.75   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0.50   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and event_counter status_teutonic_order 1
 
         ;****Teutonic Order Special****
         recruit_pool "Ritterbruder"  1   0.042   1  0  requires factions { teutonic_order, }
@@ -11575,6 +11673,12 @@ building teutonic_knights_chapter_house
         recruit_pool "Ritterbruder"  1   0.05   1  0  requires factions { jerusalem, } and hidden_resource crusader
         recruit_pool "Dismounted Ritterbruder"  1   0.028   1  0  requires factions { jerusalem, } and not hidden_resource crusader
         recruit_pool "Dismounted Ritterbruder"  1   0.032   1  0  requires factions { jerusalem, } and hidden_resource crusader
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Ritterbruder"  0.75   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0.50   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1 and event_counter status_teutonic_order 1
 
         free_upkeep bonus 1
       }
@@ -11592,10 +11696,10 @@ building teutonic_knights_chapter_house
       convert_to 1
       capability
       {
-        recruit_pool "Ritterbruder"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not event_counter status_teutonic_order 1
-        recruit_pool "Ritterbruder"  0.50   0.05   1  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  1   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  0   0.032   1  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0.50   0.05   1  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  1   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0   0.032   1  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and event_counter status_teutonic_order 1
 
         ;****Teutonic Order Special****
         recruit_pool "Ritterbruder"  1   0.05   2  1  requires factions { teutonic_order, }
@@ -11606,6 +11710,12 @@ building teutonic_knights_chapter_house
         recruit_pool "Ritterbruder"  2   0.0625   2  1  requires factions { jerusalem, } and hidden_resource crusader
         recruit_pool "Dismounted Ritterbruder"  1   0.032   1  1  requires factions { jerusalem, } and not hidden_resource crusader
         recruit_pool "Dismounted Ritterbruder"  1   0.042   1  1  requires factions { jerusalem, } and hidden_resource crusader
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Ritterbruder"  1   0.05   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0.50   0.05   1  1  requires factions { lithuania, } and event_counter CatholicLithuania 1 and event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  1   0.032   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0   0.032   1  1  requires factions { lithuania, } and event_counter CatholicLithuania 1 and event_counter status_teutonic_order 1
 
         religion_level bonus 1
         free_upkeep bonus 1
@@ -11624,10 +11734,10 @@ building teutonic_knights_chapter_house
       convert_to 2
       capability
       {
-        recruit_pool "Ritterbruder"  1   0.0625   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not event_counter status_teutonic_order 1
-        recruit_pool "Ritterbruder"  0.75   0.0625   1  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and not event_counter status_teutonic_order 1
-        recruit_pool "Dismounted Ritterbruder"  0.50   0.042   1  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, lithuania, } and event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  1   0.0625   3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0.75   0.0625   1  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0.50   0.042   1  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, spain, aragon, hre, } and event_counter status_teutonic_order 1
 
         ;****Teutonic Order Special****
         recruit_pool "Ritterbruder"  1   0.0625   3  2  requires factions { teutonic_order, }
@@ -11639,7 +11749,13 @@ building teutonic_knights_chapter_house
         recruit_pool "Dismounted Ritterbruder"  1   0.042   2  2  requires factions { jerusalem, } and not hidden_resource crusader
         recruit_pool "Dismounted Ritterbruder"  1   0.05   2  2  requires factions { jerusalem, } and hidden_resource crusader
 
-        population_health_bonus bonus 1
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Ritterbruder"  1   0.0625   3  2  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Ritterbruder"  0.75   0.0625   1  2  requires factions { lithuania, } and event_counter CatholicLithuania 1 and event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  1   0.042   2  2  requires factions { lithuania, } and event_counter CatholicLithuania 1 and not event_counter status_teutonic_order 1
+        recruit_pool "Dismounted Ritterbruder"  0.50   0.042   1  2  requires factions { lithuania, } and event_counter CatholicLithuania 1 and event_counter status_teutonic_order 1
+
+        religion_level bonus 1
         free_upkeep bonus 2
       }
       material stone
@@ -11665,8 +11781,8 @@ building knights_of_santiago_chapter_house
       convert_to 0
       capability
       {
-        recruit_pool "Knights of Santiago"  0.50   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
-        recruit_pool "Dismounted Knights of Santiago"  0   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
+        recruit_pool "Knights of Santiago"  0.50   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
+        recruit_pool "Dismounted Knights of Santiago"  0   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights of Santiago"  0   0.042   1  0  requires factions { teutonic_order, }
@@ -11675,6 +11791,10 @@ building knights_of_santiago_chapter_house
         ;****Iberian Kingdoms Special****
         recruit_pool "Knights of Santiago"  1   0.05   1  0  requires factions { spain, aragon, }
         recruit_pool "Dismounted Knights of Santiago"  1   0.032   1  0  requires factions { spain, aragon, }
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights of Santiago"  0.50   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted Knights of Santiago"  0   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         free_upkeep bonus 1
       }
@@ -11692,8 +11812,8 @@ building knights_of_santiago_chapter_house
       convert_to 1
       capability
       {
-        recruit_pool "Knights of Santiago"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
-        recruit_pool "Dismounted Knights of Santiago"  0   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
+        recruit_pool "Knights of Santiago"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
+        recruit_pool "Dismounted Knights of Santiago"  0   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights of Santiago"  0   0.05   1  1  requires factions { teutonic_order, }
@@ -11702,6 +11822,10 @@ building knights_of_santiago_chapter_house
         ;****Iberian Kingdoms Special****
         recruit_pool "Knights of Santiago"  1   0.0625   2  1  requires factions { spain, aragon, }
         recruit_pool "Dismounted Knights of Santiago"  1   0.042   2  1  requires factions { spain, aragon, }
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights of Santiago"  1   0.05   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted Knights of Santiago"  0   0.032   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         free_upkeep bonus 1
         law_bonus bonus 1
@@ -11720,8 +11844,8 @@ building knights_of_santiago_chapter_house
       convert_to 2
       capability
       {
-        recruit_pool "Knights of Santiago"  1   0.0625    3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
-        recruit_pool "Dismounted Knights of Santiago"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
+        recruit_pool "Knights of Santiago"  1   0.0625    3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
+        recruit_pool "Dismounted Knights of Santiago"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights of Santiago"  0   0.0625   1  2  requires factions { teutonic_order, }
@@ -11731,8 +11855,12 @@ building knights_of_santiago_chapter_house
         recruit_pool "Knights of Santiago"  2   0.072   3  2  requires factions {  spain, aragon, }
         recruit_pool "Dismounted Knights of Santiago"  1   0.05   2  2  requires factions {  spain, aragon, }
 
-        population_health_bonus bonus 1
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights of Santiago"  1   0.0625    3  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted Knights of Santiago"  1   0.042   2  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
+
         free_upkeep bonus 2
+        law_bonus bonus 1
       }
       material stone
       construction  8
@@ -11757,8 +11885,8 @@ building montesa_chapter_house
       convert_to 0
       capability
       {
-        recruit_pool "Knights of Montesa"  0.50   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
-        recruit_pool "Dismounted KM"  0   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
+        recruit_pool "Knights of Montesa"  0.50   0.042   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
+        recruit_pool "Dismounted KM"  0   0.028   1  0  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights of Montesa"  0   0.042   1  0  requires factions { teutonic_order, }
@@ -11767,6 +11895,10 @@ building montesa_chapter_house
         ;****Iberian Kingdoms Special****
         recruit_pool "Knights of Montesa"  1   0.05   1  0  requires factions { spain, aragon, }
         recruit_pool "Dismounted KM"  1   0.032   1  0  requires factions { spain, aragon, }
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights of Montesa"  0.50   0.042   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted KM"  0   0.028   1  0  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         free_upkeep bonus 1
       }
@@ -11784,8 +11916,8 @@ building montesa_chapter_house
       convert_to 1
       capability
       {
-        recruit_pool "Knights of Montesa"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
-        recruit_pool "Dismounted KM"  0   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
+        recruit_pool "Knights of Montesa"  1   0.05   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
+        recruit_pool "Dismounted KM"  0   0.032   2  1  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights of Montesa"  0   0.05   1  1  requires factions { teutonic_order, }
@@ -11794,6 +11926,10 @@ building montesa_chapter_house
         ;****Iberian Kingdoms Special****
         recruit_pool "Knights of Montesa"  1   0.0625   2  1  requires factions { spain, aragon, }
         recruit_pool "Dismounted KM"  1   0.042   2  1  requires factions { spain, aragon, }
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights of Montesa"  1   0.05   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted KM"  0   0.032   2  1  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         population_health_bonus bonus 1
         free_upkeep bonus 1
@@ -11812,8 +11948,8 @@ building montesa_chapter_house
       convert_to 2
       capability
       {
-        recruit_pool "Knights of Montesa"  1   0.0625    3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
-        recruit_pool "Dismounted KM"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, lithuania, }
+        recruit_pool "Knights of Montesa"  1   0.0625    3  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
+        recruit_pool "Dismounted KM"  1   0.042   2  2  requires factions { england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, hre, }
 
         ;****Teutonic Order Special****
         recruit_pool "Knights of Montesa"  0   0.0625   1  2  requires factions { teutonic_order, }
@@ -11822,6 +11958,10 @@ building montesa_chapter_house
         ;****Iberian Kingdoms Special****
         recruit_pool "Knights of Montesa"  2   0.072   3  2  requires factions {  spain, aragon, }
         recruit_pool "Dismounted KM"  1   0.05   2  2  requires factions {  spain, aragon, }
+
+        ;****Lithuania/Obotrites Special****
+        recruit_pool "Knights of Montesa"  1   0.0625    3  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
+        recruit_pool "Dismounted KM"  1   0.042   2  2  requires factions { lithuania, } and event_counter CatholicLithuania 1
 
         population_health_bonus bonus 1
         free_upkeep bonus 2
@@ -12040,7 +12180,8 @@ building logging_camp
       {
         construction_cost_bonus_wooden bonus 5
         population_loyalty_bonus bonus 1
-        income_bonus bonus 100 requires factions { cumans, lithuania, }
+        income_bonus bonus 100 requires factions { cumans, }
+        income_bonus bonus 100 requires factions { lithuania, } and event_counter PaganLithuania 1
       }
       material wooden
       construction  2
@@ -12447,7 +12588,7 @@ building guild_merchants_guild
       capability
       {
         recruit_pool "L Cavalry Militia"  1   0.0625   1  0  requires factions { lithuania, }
-        recruit_pool "Merchant Cavalry Militia"  1   0.0625   1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary,  norway, teutonic_order, }
+        recruit_pool "Merchant Cavalry Militia"  1   0.0625   1  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary, norway, teutonic_order, }
         recruit_pool "Italian Cavalry Militia"  1   0.0625   1  0  requires factions { milan, venice, papal_states, sicily, }
         recruit_pool "Senior Mounted Militia"  1   0.0625   1  0  requires factions { russia, kievan_rus, }
         recruit_pool "Arab Cavalry"  1   0.0625   1  0  requires factions { moors, egypt, timurids, portugal, }
@@ -12467,7 +12608,7 @@ building guild_merchants_guild
       capability
       {
         recruit_pool "L Cavalry Militia"  1   0.084   2  0  requires factions { lithuania, }
-        recruit_pool "Merchant Cavalry Militia"  1   0.084   2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary,  norway, teutonic_order, }
+        recruit_pool "Merchant Cavalry Militia"  1   0.084   2  0  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary, norway, teutonic_order, }
         recruit_pool "Italian Cavalry Militia"  1   0.084   2  0  requires factions { milan, venice, papal_states, sicily, }
         recruit_pool "Senior Mounted Militia"  1   0.084   2  0  requires factions { russia, kievan_rus, }
         recruit_pool "Arab Cavalry"  1   0.084   2  0  requires factions { moors, egypt, timurids, portugal, }
@@ -12492,7 +12633,7 @@ building guild_merchants_guild
       capability
       {
         recruit_pool "L Cavalry Militia"  1   0.125   3  1  requires factions { lithuania, }
-        recruit_pool "Merchant Cavalry Militia"  1   0.125   3  1  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary,  norway, teutonic_order, }
+        recruit_pool "Merchant Cavalry Militia"  1   0.125   3  1  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary, norway, teutonic_order, }
         recruit_pool "Italian Cavalry Militia"  1   0.125   3  1  requires factions { milan, venice, papal_states, sicily, }
         recruit_pool "Senior Mounted Militia"  1   0.125   3  1  requires factions { russia, kievan_rus, }
         recruit_pool "Arab Cavalry"  1   0.125   3  1  requires factions { moors, egypt, timurids, portugal, }
@@ -12904,7 +13045,7 @@ building guild_hanseatic_guild
       capability
       {
         recruit_pool "L Cavalry Militia"  1   0.125   3  1  requires factions { lithuania, }
-        recruit_pool "Merchant Cavalry Militia"  1   0.125   3  1  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary,  norway, teutonic_order, }
+        recruit_pool "Merchant Cavalry Militia"  1   0.125   3  1  requires factions { england, scotland, france, hre, denmark, spain, aragon, poland, hungary, norway, teutonic_order, }
         recruit_pool "Italian Cavalry Militia"  1   0.125   3  1  requires factions { milan, venice, papal_states, sicily, }
         recruit_pool "Senior Mounted Militia"  1   0.125   3  1  requires factions { russia, kievan_rus, }
         recruit_pool "Arab Cavalry"  1   0.125   3  1  requires factions { moors, egypt, timurids, portugal, }
@@ -13059,7 +13200,290 @@ building convert_to_city
   plugins
   {
   }
-} 
+}
+;
+building nomadic_build
+{
+  convert_to nomadic_build
+  levels nomad_small_camp nomad_camp nomad_big_camp nomad_huge_camp
+  {
+    nomad_small_camp requires factions { cumans, mongols, }
+    {
+      convert_to 0
+      capability
+      {
+        ;CUMANS
+        recruit_pool "Pechenegs"  1   0.125   2  1  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Pechenegs"  0   0.084   1  1  requires factions { cumans, } and hidden_resource kwarezm or hidden_resource russia or hidden_resource kievan_rus
+
+
+        recruit_pool "Dismounted Cuman Militia"  1   0.125   2  0  requires factions { cumans, }
+        recruit_pool "Cuman Horse Militia"  1   0.125   1  0  requires factions { cumans, }
+
+
+        recruit_pool "Dismounted Tartar Lancers"  1   0.125   2  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Dismounted Tartar Lancers"  0   0.0625   1  0  requires factions { cumans, } and hidden_resource kwarezm or hidden_resource russia or hidden_resource kievan_rus
+
+
+        ;MONGOLS *****************************************************************************************************************************
+        ;*************************************************************************************************************************************
+        recruit_pool "Hoshiga Horse Archers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans or hidden_resource kwarezm or hidden_resource turks or hidden_resource georgia
+        recruit_pool "Hoshiga Horse Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans and not hidden_resource kwarezm and not hidden_resource turks and not hidden_resource georgia
+
+
+        recruit_pool "Kashtim Thralls"  1   0.125   2  0  requires factions { mongols, }
+
+
+        ;*************************************************************************************************************************************
+        recruitment_slots 2 requires factions { cumans, mongols, } and not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 3 requires factions { cumans, mongols, } and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 3 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+
+        law_bonus bonus 1 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        religion_level bonus 1 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        income_bonus bonus 150 requires factions { cumans, mongols, } and not building_present_min_level core_building stone_wall and not building_present_min_level core_castle_building fortress
+        ;AI only
+        law_bonus bonus 3 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+        religion_level bonus 2 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+      }
+      material wooden
+      construction  2
+      cost  2000
+      settlement_min village
+      upgrades
+      {
+        nomad_camp
+      }
+    }
+    nomad_camp requires factions { cumans, mongols, } and hidden_resource cumans or hidden_resource kievan_rus or hidden_resource georgia
+    {
+      convert_to 1
+      capability
+      {
+        ;CUMANS
+        recruit_pool "Tartar Lancers"  1   0.125   2  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Tartar Lancers"  0   0.0625   1  0  requires factions { cumans, } and not hidden_resource cumans
+        recruit_pool "Pechenegs"  1   0.125   2  1  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Pechenegs"  0   0.084   1  1  requires factions { cumans, } and not hidden_resource cumans
+
+
+        recruit_pool "Dismounted Cuman Militia"  1   0.17   3  0  requires factions { cumans, }
+        recruit_pool "Cuman Horse Militia"  1   0.125   2  0  requires factions { cumans, }
+
+
+        recruit_pool "Dismounted Tartar Lancers"  1   0.17   3  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Dismounted Tartar Lancers"  0   0.084   1  0  requires factions { cumans, } and not hidden_resource cumans
+
+
+        ;MONGOLS *****************************************************************************************************************************
+        ;*************************************************************************************************************************************
+        recruit_pool "Hoshiga Horse Archers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Hoshiga Horse Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans
+        recruit_pool "Hoschuchi Lancers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Hoschuchi Lancers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans
+
+
+        recruit_pool "Kashtim Thralls"  1   0.17   3  0  requires factions { mongols, }
+        recruit_pool "Sibiryaki Junior Militia"  1   0.17   2  0  requires factions { mongols, }
+
+
+        recruit_pool "Khabutu Archers"  1   0.125   2  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Khabutu Archers"  0   0.0625   1  0  requires factions { mongols, } and not hidden_resource cumans
+
+
+        ;*************************************************************************************************************************************
+        recruitment_slots 3 requires factions { cumans, mongols, } and not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 4 requires factions { cumans, mongols, } and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 4 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+
+        law_bonus bonus 2 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        religion_level bonus 1 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        income_bonus bonus 175 requires factions { cumans, mongols, } and not building_present_min_level core_building stone_wall and not building_present_min_level core_castle_building fortress
+        ;AI only
+        law_bonus bonus 3 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+        religion_level bonus 2 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+      }
+      material wooden
+      construction  4
+      cost  4000
+      settlement_min village
+      upgrades
+      {
+        nomad_big_camp
+      }
+    }
+    nomad_big_camp requires factions { cumans, mongols, } and hidden_resource cumans or hidden_resource kievan_rus or hidden_resource georgia
+    {
+      convert_to 2
+      capability
+      {
+        ;CUMANS
+        recruit_pool "Behk Druzhina"  1   0.05   1  0  requires factions { cumans, }
+
+
+        recruit_pool "Yasi Archers"  1   0.125   2  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Yasi Archers"  0   0.0625   1  0  requires factions { cumans, } and not hidden_resource cumans
+        recruit_pool "Tartar Lancers"  1   0.125   2  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Tartar Lancers"  0   0.0625   1  0  requires factions { cumans, } and not hidden_resource cumans
+        recruit_pool "Pechenegs"  1   0.125   2  1  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Pechenegs"  0   0.084   1  1  requires factions { cumans, } and not hidden_resource cumans
+        recruit_pool "Khagan Druzhina"  1   0.084   1  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Khagan Druzhina"  0   0.0625   1  0  requires factions { cumans, } and not hidden_resource cumans
+
+
+        recruit_pool "Dismounted Cuman Militia"  1   0.25   4  0  requires factions { cumans, }
+        recruit_pool "Cuman Horse Militia"  1   0.125   2  0  requires factions { cumans, }
+
+
+        recruit_pool "Dismounted Khagan Druzhina"  1   0.084   1  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Dismounted Khagan Druzhina"  0   0.0625   1  0  requires factions { cumans, } and not hidden_resource cumans
+        recruit_pool "Dismounted Tartar Lancers"  1   0.25   4  0  requires factions { cumans, } and hidden_resource cumans
+        recruit_pool "Dismounted Tartar Lancers"  0   0.125   2  0  requires factions { cumans, } and not hidden_resource cumans
+
+
+        ;MONGOLS *****************************************************************************************************************************
+        ;*************************************************************************************************************************************
+        recruit_pool "Hoshiga Horse Archers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Hoshiga Horse Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans
+        recruit_pool "Hoschuchi Lancers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Hoschuchi Lancers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans
+        recruit_pool "Lubchiten Horse Archers"  1   0.17   2  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Lubchiten Horse Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans
+        recruit_pool "Turhagut Lancers"  1   0.084   1  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Turhagut Lancers"  0   0.0625   1  0  requires factions { mongols, } and not hidden_resource cumans
+
+
+        recruit_pool "Kashtim Thralls"  1   0.17   3  0  requires factions { mongols, }
+        recruit_pool "Sibiryaki Junior Militia"  1   0.17   3  0  requires factions { mongols, }
+        recruit_pool "Sibiryaki Senior Militia"  1   0.125   2  0  requires factions { mongols, }
+
+
+        recruit_pool "Dismounted Turhagut"  1   0.0625   1  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Dismounted Turhagut"  0   0.042   1  0  requires factions { mongols, } and not hidden_resource cumans
+
+
+        recruit_pool "Khabutu Archers"  1   0.17   3  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Khabutu Archers"  0   0.084   1  0  requires factions { mongols, } and not hidden_resource cumans
+        recruit_pool "Merguen Archers"  1   0.084   1  0  requires factions { mongols, } and hidden_resource cumans
+        recruit_pool "Merguen Archers"  0   0.0625   1  0  requires factions { mongols, } and not hidden_resource cumans
+
+
+        ;*************************************************************************************************************************************
+        recruitment_slots 4 requires factions { cumans, mongols, } and not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 5 requires factions { cumans, mongols, } and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 5 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+
+        law_bonus bonus 3 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        religion_level bonus 1 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        income_bonus bonus 250 requires factions { cumans, mongols, } and not building_present_min_level core_building stone_wall and not building_present_min_level core_castle_building fortress
+        ;AI only
+        law_bonus bonus 4 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+        religion_level bonus 2 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+      }
+      material wooden
+      construction  6
+      cost  6000
+      settlement_min village
+      upgrades
+      {
+        nomad_huge_camp
+      }
+    }
+    nomad_huge_camp requires factions { cumans, mongols, } and hidden_resource cumans
+    {
+      convert_to 3
+      capability
+      {
+        ;CUMANS
+        recruit_pool "Behk Druzhina"  1   0.072   2  0  requires factions { cumans, }
+        recruit_pool "Dismounted Bekh Druzhina"  1   0.05   1  0  requires factions { cumans, }
+        recruit_pool "Cuman Bodyguard"  0   0.025   1  0  requires factions { cumans, }
+
+
+        recruit_pool "Yasi Archers"  1   0.17   3  0  requires factions { cumans, }
+        recruit_pool "Tartar Lancers"  1   0.125   2  0  requires factions { cumans, }
+        recruit_pool "Pechenegs"  1   0.125   2  1  requires factions { cumans, }
+        recruit_pool "Khagan Druzhina"  1   0.125   2  0  requires factions { cumans, }
+
+
+        recruit_pool "Dismounted Cuman Militia"  1   0.34   5  0  requires factions { cumans, }
+        recruit_pool "Cuman Horse Militia"  1   0.17   3  0  requires factions { cumans, }
+
+
+        recruit_pool "Dismounted Khagan Druzhina"  1   0.084   1  0  requires factions { cumans, }
+        recruit_pool "Dismounted Tartar Lancers"  1   0.25   4  0  requires factions { cumans, }
+
+        ;MONGOLS *****************************************************************************************************************************
+        ;*************************************************************************************************************************************
+        recruit_pool "Keshikten Bodyguard"  1   0.025   1  0  requires factions { mongols, }
+
+
+        recruit_pool "Hoshiga Horse Archers"  1   0.17   2  0  requires factions { mongols, }
+        recruit_pool "Hoschuchi Lancers"  1   0.17   2  0  requires factions { mongols, }
+        recruit_pool "Lubchiten Horse Archers"  1   0.17   2  0  requires factions { mongols, }
+        recruit_pool "Nukeri Horse Archers"  1   0.17   2  0  requires factions { mongols, }
+        recruit_pool "Turhagut Lancers"  1   0.084   1  0  requires factions { mongols, }
+        recruit_pool "Khorchi Horse Archers"  1   0.084   1  0  requires factions { mongols, }
+
+
+        recruit_pool "Kashtim Thralls"  1   0.25   4  0  requires factions { mongols, }
+        recruit_pool "Sibiryaki Junior Militia"  1   0.25   4  0  requires factions { mongols, }
+        recruit_pool "Sibiryaki Senior Militia"  1   0.17   3  0  requires factions { mongols, }
+
+
+        recruit_pool "Dismounted Turhagut"  1   0.0625   1  0  requires factions { mongols, }
+
+
+        recruit_pool "Khabutu Archers"  1   0.25   4  0  requires factions { mongols, }
+        recruit_pool "Merguen Archers"  1   0.125   2  0  requires factions { mongols, }
+        recruit_pool "Dismounted Khorchi Archers"  1   0.084   1  0  requires factions { mongols, }
+
+
+        ;*************************************************************************************************************************************
+        recruitment_slots 5 requires factions { cumans, mongols, } and not event_counter freeze_recr_pool 1 and not building_present_min_level equestrian stables and not building_present_min_level missiles bowyer and not building_present_min_level barracks town_watch
+        recruitment_slots 6 requires factions { cumans, mongols, } and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 6 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 7 requires factions { cumans, mongols, } and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+        recruitment_slots 8 requires factions { cumans, mongols, } and building_present_min_level barracks town_watch and building_present_min_level missiles bowyer and building_present_min_level equestrian stables and not event_counter freeze_recr_pool 1
+
+        law_bonus bonus 4 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        religion_level bonus 1 requires factions { cumans, mongols, } and not event_counter is_the_ai 1
+        income_bonus bonus 300 requires factions { cumans, mongols, } and not building_present_min_level core_building stone_wall and not building_present_min_level core_castle_building fortress
+        ;AI only
+        law_bonus bonus 5 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+        religion_level bonus 2 requires factions { cumans, mongols, } and event_counter is_the_ai 1
+      }
+      material wooden
+      construction  8
+      cost  8000
+      settlement_min village
+      upgrades
+      {
+      }
+    }
+  }
+  plugins
+  {
+  }
+}
 ; Royal court building version 6.4
 building hinterland_royal_court
 {
@@ -13091,7 +13515,7 @@ building ros_temp_buildings
 {
  levels ros_po_bonus ros_target
  {
-    ros_po_bonus city requires factions {   }
+    ros_po_bonus requires factions { } and event_counter does_not_exist 1
     {
        capability
         {
@@ -13108,7 +13532,7 @@ building ros_temp_buildings
             ros_target
         }
     }
-    ros_target city requires factions {   }
+    ros_target requires factions { } and event_counter does_not_exist 1
     {
         capability
         {

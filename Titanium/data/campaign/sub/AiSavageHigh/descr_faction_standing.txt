@@ -529,7 +529,7 @@ Trigger Muslim_Build_First_Cathedral_Faction
     Condition NumBuildingsCompletedFaction jama = 1
 
     FactionStanding factions { papal_states } -0.12
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.008
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order, byzantium, russia, kievan_rus, georgia, cumans, lithuania, mongols }  -0.008
 
 ;------------------------------------------
 Trigger Muslim_Build_First_Huge_Cathedral_Faction
@@ -1290,7 +1290,7 @@ Trigger General_Arrives_Jihad_Catholic_Target
     Condition IsJihad
 	and TargetFactionReligion catholic
 
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } per_unit -0.002
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } per_unit -0.002
 
 ;------------------------------------------
 Trigger General_Arrives_Jihad_Orthodox_Target
@@ -1338,7 +1338,7 @@ Trigger General_Takes_Jihad_Catholic_Target
 	and TargetFactionReligion catholic
 
     FactionStanding factions { papal_states } -0.1
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order  } per_unit -0.005
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order  } per_unit -0.005
     FactionStanding target_faction per_unit -0.0025
     FactionStanding target_allies -0.012
     FactionStanding target_enemies 0.001
@@ -1429,7 +1429,7 @@ Trigger 0031_P_Faction_Excommunicated
     WhenToTest FactionExcommunicated
 
     FactionStanding factions { papal_states } -1.0
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.2
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem, teutonic_order } -0.2
 
 ;------------------------------------------
 Trigger 0031_P_Faction_Excommunicated_g
@@ -1876,7 +1876,7 @@ Trigger 0039_P_War_Declared
     Condition  TargetFactionType papal_states
 
     FactionStanding factions { papal_states, teutonic_order } -1.0
-    FactionStanding factions { england, france, spain, portugal, milan, venice, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.25
+    FactionStanding factions { england, france, spain, portugal, milan, venice, sicily, hre, hungary, poland, denmark, scotland, norway, aragon, jerusalem } -0.25
 
 
 ;########################## CARDINALS AND ELECTIONS ##################################
@@ -2888,7 +2888,7 @@ Trigger FranceBig
 	and I_NumberOfSettlements france > 7
 
     FactionStanding factions { england } normalise -1 80
-    FactionStanding factions { aragon, milan } normalise -1 80
+    FactionStanding factions { aragon, milan, sicily } normalise -1 80
 ;------------------------------------------
 Trigger FranceHuge
     WhenToTest FactionTurnStart
@@ -2896,7 +2896,7 @@ Trigger FranceHuge
     Condition FactionType france
 	and I_NumberOfSettlements france > 10
 
-    FactionStanding factions { aragon, milan } normalise -1 80
+    FactionStanding factions { aragon, milan, sicily } normalise -1 80
     FactionStanding factions { spain } normalise -1 80
 ;------------------------------------------
 Trigger FranceToulouse
@@ -2937,6 +2937,7 @@ Trigger Hre_Bologna
 	and I_SettlementOwner Bologna = hre
 
     FactionStanding factions { venice, milan } normalise -1 60
+    FactionStanding factions { sicily } normalise -1 80
 ;------------------------------------------
 Trigger HreBig
     WhenToTest FactionTurnStart
@@ -3030,13 +3031,14 @@ Trigger VeniceNotHRE
 
     Condition FactionType venice
 	and not I_SettlementOwner Bologna = hre
-	and not I_SettlementOwner Florence = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
 	and not I_SettlementOwner Rome = hre
 	and not I_SettlementOwner Venice = hre
 	and not I_SettlementOwner Milan = hre
 	and not I_SettlementOwner Genoa = hre
 
     FactionStanding factions { milan } normalise -1 60
+    FactionStanding factions { sicily } normalise -1 100
 ;------------------------------------------
 Trigger VeniceAI
     WhenToTest FactionTurnStart
@@ -3048,36 +3050,48 @@ Trigger VeniceAI
     FactionStanding factions { france } normalise 1 80
     FactionStanding factions { aragon } normalise 1 80
 ;------------------------------------------
-Trigger Hafsids
+Trigger Sicily
     WhenToTest FactionTurnStart
 
     Condition FactionType sicily
-	and I_EventCounter hafsids_exist = 1
 
-    FactionStanding factions { hre, aragon, milan } normalise -1 40
-    FactionStanding factions { moors } normalise -1 15
-    FactionStanding factions { egypt } normalise -1 80
-    
+    FactionStanding factions { moors } normalise -1 40
+    FactionStanding factions { turks, egypt, mongols, timurids } normalise -1 60
+    FactionStanding factions { byzantium } normalise -1 50
+    FactionStanding factions { france, hungary } normalise 1 100
+
 ;------------------------------------------
-Trigger HafsidsAI
+Trigger SicilyAI
     WhenToTest FactionTurnStart
 
     Condition FactionType sicily
-	and I_EventCounter hafsids_exist = 1
 	and not FactionIsLocal
 
-    FactionStanding factions { moors, egypt } normalise 1 50
-    
+    FactionStanding factions { france, hungary } normalise 1 100
+    FactionStanding factions { portugal } normalise 1 60
 ;------------------------------------------
-Trigger HafsidsBig
+Trigger SicilyBig
     WhenToTest FactionTurnStart
 
     Condition FactionType sicily
-	and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements portugal > 5
+	and I_NumberOfSettlements sicily > 7
 
-    FactionStanding factions { papal_states, france, spain, venice } normalise -1 40
-    FactionStanding factions { hre, aragon, milan, moors, egypt } normalise -1 100
+    FactionStanding factions { aragon } normalise -1 80
+    FactionStanding factions { venice, milan, france } normalise -1 100
+;------------------------------------------
+Trigger Sicily_Hre
+    WhenToTest FactionTurnStart
+
+    Condition FactionType sicily
+	and not I_SettlementOwner Bologna = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
+	and not I_SettlementOwner Rome = hre
+	and not I_SettlementOwner Venice = hre
+	and not I_SettlementOwner Milan = hre
+	and not I_SettlementOwner Genoa = hre
+
+    FactionStanding factions { venice } normalise -1 80
+    FactionStanding factions { milan } normalise -1 100
 
 ;------------------------------------------
 Trigger Milan
@@ -3103,13 +3117,14 @@ Trigger MilanNotHRE
 
     Condition FactionType milan
 	and not I_SettlementOwner Bologna = hre
-	and not I_SettlementOwner Florence = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
 	and not I_SettlementOwner Rome = hre
 	and not I_SettlementOwner Venice = hre
 	and not I_SettlementOwner Milan = hre
 	and not I_SettlementOwner Genoa = hre
 
     FactionStanding factions { venice } normalise -1 60
+    FactionStanding factions { sicily } normalise -1 100
 ;------------------------------------------
 Trigger Milan_Marseille
     WhenToTest FactionTurnStart
@@ -3137,6 +3152,7 @@ Trigger MilanAI
     FactionStanding factions { jerusalem } normalise 1 80
     FactionStanding factions { portugal } normalise 1 100
     FactionStanding factions { byzantium, spain } normalise 1 80
+    FactionStanding factions { sicily } normalise 1 120
 ;------------------------------------------
 Trigger Scotland
     WhenToTest FactionTurnStart
@@ -3169,9 +3185,9 @@ Trigger Bulgaria
 
     Condition FactionType cumans
 
-    FactionStanding factions { mongols, kievan_rus } normalise -1 50
+    FactionStanding factions { mongols } normalise -1 50
     FactionStanding factions { turks } normalise -1 60
-    FactionStanding factions { byzantium, jerusalem } normalise -1 20
+    FactionStanding factions { byzantium, jerusalem, kievan_rus } normalise -1 20
 ;------------------------------------------
 Trigger BulgariaAI
     WhenToTest FactionTurnStart
@@ -3189,7 +3205,7 @@ Trigger BulgariaBig
 
     FactionStanding factions { turks } normalise -1 120
     FactionStanding factions { byzantium, hungary, jerusalem } normalise -1 60
-    FactionStanding factions { georgia } normalise -1 40
+    FactionStanding factions { kievan_rus } normalise -1 40
 ;------------------------------------------
 Trigger Byzantium
     WhenToTest FactionTurnStart
@@ -3197,8 +3213,8 @@ Trigger Byzantium
     Condition FactionType byzantium
 
     FactionStanding factions { mongols, turks, timurids } normalise -1 40
-    FactionStanding factions { egypt, venice } normalise -1 60
-    FactionStanding factions { hungary, georgia, cumans } normalise -1 80
+    FactionStanding factions { egypt, venice, sicily } normalise -1 60
+    FactionStanding factions { hungary, kievan_rus, cumans } normalise -1 80
     FactionStanding factions { papal_states } normalise -1 100
 ;------------------------------------------
 Trigger ByzantiumAI
@@ -3216,7 +3232,7 @@ Trigger ByzantiumBig
     Condition FactionType byzantium
 	and I_NumberOfSettlements byzantium > 7
 
-    FactionStanding factions { kievan_rus, georgia, cumans } normalise -1 80
+    FactionStanding factions { kievan_rus, cumans } normalise -1 80
 ;------------------------------------------
 Trigger Russia
     WhenToTest FactionTurnStart
@@ -3244,7 +3260,7 @@ Trigger RussiaBig
 
     FactionStanding factions { poland, hre, teutonic_order, cumans, denmark } normalise -1 100
     FactionStanding factions { norway } normalise -1 120
-    FactionStanding factions { kievan_rus, lithuania } normalise -1 120
+    FactionStanding factions { lithuania } normalise -1 120
 ;------------------------------------------
 Trigger RussiaHuge
     WhenToTest FactionTurnStart
@@ -3254,7 +3270,7 @@ Trigger RussiaHuge
 
     FactionStanding factions { poland, hre, teutonic_order, cumans, denmark } normalise -1 100
     FactionStanding factions { norway } normalise -1 120
-    FactionStanding factions { kievan_rus, lithuania } normalise -1 60
+    FactionStanding factions { lithuania } normalise -1 60
 
 ;------------------------------------------
 Trigger Moors
@@ -3282,7 +3298,7 @@ Trigger MoorsBig
     Condition FactionType moors
 	and I_NumberOfSettlements moors > 10
 
-    FactionStanding factions { egypt } normalise -1 100
+    FactionStanding factions { egypt, kwarezm } normalise -1 100
     FactionStanding factions { france, venice } normalise -1 100
     FactionStanding factions { sicily } normalise -1 60
     FactionStanding factions { milan } normalise -1 60
@@ -3499,33 +3515,6 @@ Trigger LithuaniaBig
     FactionStanding factions { russia } normalise -1 80
     FactionStanding factions { kievan_rus } normalise -1 100
 ;------------------------------------------
-Trigger Kievan_Rus
-    WhenToTest FactionTurnStart
-
-    Condition FactionType kievan_rus
-
-    FactionStanding factions { mongols, timurids } normalise -1 30
-    FactionStanding factions { turks } normalise -1 60
-    FactionStanding factions { poland, hre, teutonic_order, denmark, milan } normalise -1 75
-    ;FactionStanding factions { russia, georgia, cumans } normalise 1 40
-;------------------------------------------
-Trigger Kievan_RusAI
-    WhenToTest FactionTurnStart
-
-    Condition FactionType kievan_rus
-	and not FactionIsLocal
-
-    FactionStanding factions { russia, georgia } normalise 1 80
-    FactionStanding factions { lithuania } normalise 1 100
-;------------------------------------------
-Trigger Kievan_RusBig
-    WhenToTest FactionTurnStart
-
-    Condition FactionType kievan_rus
-	and I_NumberOfSettlements kievan_rus > 7
-
-    FactionStanding factions { russia, byzantium, lithuania, georgia, cumans } normalise -1 100
-;------------------------------------------
 Trigger Aragon
     WhenToTest FactionTurnStart
 
@@ -3580,15 +3569,14 @@ Trigger AragonBig
     FactionStanding factions { spain } normalise -1 80
     FactionStanding factions { portugal, france } normalise -1 100
 ;------------------------------------------
-Trigger Norway
+Trigger Sweden
     WhenToTest FactionTurnStart
 
     Condition FactionType norway
 
-    FactionStanding factions { lithuania, byzantium, russia } normalise -1 100
-    FactionStanding factions { england, scotland } normalise -1 100
+    FactionStanding factions { lithuania, russia } normalise -1 100
 ;-----------------------------------------
-Trigger NorwayAI
+Trigger SwedenAI
     WhenToTest FactionTurnStart
 
     Condition FactionType norway
@@ -3597,41 +3585,40 @@ Trigger NorwayAI
     FactionStanding factions { france, hre } normalise 1 80
     FactionStanding factions { denmark } normalise 1 120
 ;------------------------------------------
-Trigger NorwayBig
+Trigger SwedenBig
     WhenToTest FactionTurnStart
 
     Condition FactionType norway
 	and I_NumberOfSettlements norway > 6
 
     FactionStanding factions { denmark } normalise -1 60
-    FactionStanding factions { england, scotland } normalise -1 100
-    FactionStanding factions { russia } normalise -1 100
+    FactionStanding factions { russia, lithuania } normalise -1 100
 ;------------------------------------------
-Trigger Kwarezm
+Trigger Hafsids
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
 
-    FactionStanding factions { mongols, timurids } normalise -1 30
+    FactionStanding factions { moors, egypt } normalise -1 10
+    FactionStanding factions { venice, milan } normalise -1 60
 ;------------------------------------------
-Trigger KwarezmAI
+Trigger HafsidsAI
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
 	and not FactionIsLocal
 
-    FactionStanding factions { egypt } normalise 1 80
-    FactionStanding factions { turks } normalise 1 100
-    FactionStanding factions { moors } normalise 1 150
+    FactionStanding factions { egypt } normalise 1 60
+    FactionStanding factions { moors } normalise 1 30
 ;------------------------------------------
-Trigger KwarezmBig
+Trigger HafsidsBig
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
 	and I_NumberOfSettlements kwarezm > 10
 
     FactionStanding factions { turks } normalise -1 80
-    FactionStanding factions { egypt } normalise -1 100
+    FactionStanding factions { egypt, moors } normalise -1 100
 ;------------------------------------------
 Trigger Papal_States
     WhenToTest FactionTurnStart
@@ -3717,7 +3704,7 @@ Trigger JerusalemAI
 Trigger Serbia
     WhenToTest FactionTurnStart
 
-    Condition FactionType georgia
+    Condition FactionType kievan_rus
 
     FactionStanding factions { turks } normalise -1 90
     FactionStanding factions { byzantium, cumans } normalise -1 30
@@ -3726,21 +3713,49 @@ Trigger Serbia
 Trigger SerbiaAI
     WhenToTest FactionTurnStart
 
-    Condition FactionType georgia
+    Condition FactionType kievan_rus
 	and not FactionIsLocal
 
     FactionStanding factions { venice } normalise 1 20
+    FactionStanding factions { russia } normalise 1 40
+;------------------------------------------
+Trigger SerbiaStronk
+    WhenToTest FactionTurnStart
+
+    Condition FactionType kievan_rus
+	and I_NumberOfSettlements kievan_rus > 5
+
+    FactionStanding factions { venice } normalise -1 30
+    FactionStanding factions { byzantium, cumans, hungary } normalise -1 80
+    FactionStanding factions { turks } normalise -1 120 
+;------------------------------------------
+Trigger Georgia
+    WhenToTest FactionTurnStart
+
+    Condition FactionType georgia
+
+    FactionStanding factions { turks } normalise -1 60
+    FactionStanding factions { mongols, timurids } normalise -1 40
+    FactionStanding factions { egypt } normalise -1 10
+;------------------------------------------
+Trigger GeorgiaAI
+    WhenToTest FactionTurnStart
+
+    Condition FactionType georgia
+	and not FactionIsLocal
+
+    FactionStanding factions { jerusalem, byzantium } normalise 1 20
     FactionStanding factions { russia, kievan_rus } normalise 1 40
 ;------------------------------------------
-Trigger SerbiaBig
+Trigger GeorgiaBig
     WhenToTest FactionTurnStart
 
     Condition FactionType georgia
 	and I_NumberOfSettlements georgia > 5
 
-    FactionStanding factions { jerusalem, kievan_rus, venice } normalise -1 30
-    FactionStanding factions { byzantium, cumans, hungary } normalise -1 80
-    FactionStanding factions { turks } normalise -1 120
+    FactionStanding factions { jerusalem } normalise -1 30
+    FactionStanding factions { byzantium } normalise -1 80
+    FactionStanding factions { turks, egypt } normalise -1 120
 
 ;==================================================================================
 ;ALTERNATE TRIGGERS
@@ -4725,16 +4740,6 @@ Trigger Pagan_Destroy_Cathedral4_Lithuania
 ;####################### CRUSADES / JIHADS ###############################
 ;================== CRUSADES ==============
 ;------------------------------------------
-Trigger General_Arrives_Crusade_Islamic_Target_Hafsids
-    WhenToTest GeneralArrivesCrusadeTargetRegion
-
-    Condition IsCrusade
-	and TargetFactionReligion islam
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } per_unit -0.002
-
-;------------------------------------------
 Trigger General_Arrives_Crusade_Pagan_Target_Lithuania
     WhenToTest GeneralArrivesCrusadeTargetRegion
 
@@ -4746,16 +4751,6 @@ Trigger General_Arrives_Crusade_Pagan_Target_Lithuania
 
 ;------------------------------------------
 ;------------------------------------------
-;------------------------------------------
-Trigger General_Takes_Crusade_Islamic_Target_Hafsids
-    WhenToTest GeneralTakesCrusadeTarget
-
-    Condition IsCrusade
-	and TargetFactionReligion islam
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } per_unit -0.005
-
 ;------------------------------------------
 Trigger General_Takes_Crusade_Pagan_Target_Lithuania
     WhenToTest GeneralTakesCrusadeTarget
@@ -4776,16 +4771,6 @@ Trigger General_Arrives_Jihad_Catholic_Target_Lithuania
 	and I_EventCounter lithuania_catholic = 1
 
     FactionStanding factions { lithuania } per_unit -0.002
-
-;------------------------------------------
-Trigger General_Arrives_Jihad_Catholic_Target_Sicily
-    WhenToTest GeneralArrivesCrusadeTargetRegion
-
-    Condition IsJihad
-	and TargetFactionReligion catholic
-	and I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily } per_unit -0.002
 
 ;------------------------------------------
 ;------------------------------------------
@@ -4811,16 +4796,6 @@ Trigger General_Takes_Jihad_Catholic_Target_Lithuania
     FactionStanding factions { lithuania } per_unit -0.005
 
 ;------------------------------------------
-Trigger General_Takes_Jihad_Catholic_Target_Sicily
-    WhenToTest GeneralTakesCrusadeTarget
-
-    Condition IsJihad
-	and TargetFactionReligion catholic
-	and I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily  } per_unit -0.005
-
-;------------------------------------------
 ;------------------------------------------
 Trigger General_Takes_Jihad_Pagan_Target_Lithuania
     WhenToTest GeneralTakesCrusadeTarget
@@ -4842,23 +4817,8 @@ Trigger 0031_P_Faction_Excommunicated_Lithuania
     FactionStanding factions { lithuania } -0.2
 
 ;------------------------------------------
-Trigger 0031_P_Faction_Excommunicated_Sicily
-    WhenToTest FactionExcommunicated
-
-    Condition I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily } -0.2
-
 ;------------------------------------------
 ;------------------------------------------
-;------------------------------------------
-Trigger 0039_P_War_Declared_Sicily
-    WhenToTest FactionWarDeclared
-
-    Condition  TargetFactionType papal_states
-	and I_EventCounter hafsids_exist != 1
-
-    FactionStanding factions { sicily } -0.25
 
 
 
@@ -4873,52 +4833,7 @@ Trigger 0042_P_Own_Pope_Elected_Lithuania_Pagan
     FactionStanding factions { lithuania } -0.2
 
 ;------------------------------------------
-Trigger 0042_P_Own_Pope_Elected_Hafsids
-    WhenToTest PopeElected
-
-    Condition FactionEqualsTarget
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } -0.2
-
-;------------------------------------------
 ;###################### FACTION RELATIONS ###################################
-;------------------------------------------
-Trigger Sicily_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType hre
-	and I_EventCounter hafsids_exist = 1
-
-    FactionStanding factions { sicily } normalise -1 60
-
-;------------------------------------------
-Trigger SicilyBig_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType hre
-	and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements hre > 7
-
-    FactionStanding factions { sicily } normalise -1 100
-;------------------------------------------
-Trigger MoorsBig_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType moors
-    and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements moors > 10
-
-    FactionStanding factions { sicily } normalise -1 100
-;------------------------------------------
-Trigger EgyptBig_Hafsids
-    WhenToTest FactionTurnStart
-
-    Condition FactionType egypt
-    and I_EventCounter hafsids_exist = 1
-	and I_NumberOfSettlements egypt > 10
-
-    FactionStanding factions { sicily } normalise -1 100
 ;------------------------------------------
 Trigger Lithuania_Catholic
     WhenToTest FactionTurnStart

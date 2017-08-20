@@ -384,6 +384,72 @@ settlement
             data/models_building/offmap_city_east.cas	        200         0
         }
 	}
+
+	culture african_asian
+	{
+		level village		    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_east.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_city_east.cas	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_city_east.cas 	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_city_east.cas	        200         0
+        }
+	}
+
+	culture roman
+	{
+		level village		    
+        {
+            data/models_building/offmap_village_dummy.cas	    200         0
+        }
+
+		level town		    
+        {
+            data/models_building/offmap_town_roman.cas	        200         0
+        }
+
+		level large_town	    
+        {
+            data/models_building/offmap_town_roman.cas	        200         0
+        }
+
+		level city		    
+        {
+            data/models_building/offmap_city_roman.cas 	        200         0
+        }
+
+		level large_city		
+        {
+            data/models_building/offmap_city_roman.cas 	        200         0
+        }
+
+		level huge_city		
+        {
+            data/models_building/offmap_city_roman.cas	        200         0
+        }
+	}
 }
 
 port
@@ -500,6 +566,52 @@ port
 		level dockyard
 		{
             data/models_building/offmap_port_east.cas	        200         0
+		}
+	}
+
+	culture african_asian
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_east.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_east.cas	        200         0
+		}
+	}
+
+	culture roman
+	{        
+		level fishing_village
+		{
+			data/models_building/offmap_fishing_village_roman.CAS	        200         0
+		}
+
+		level sea_port
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+
+		level shipwright
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
+		}
+
+		level dockyard
+		{
+            data/models_building/offmap_port_roman.cas	        200         0
 		}
 	}
 }

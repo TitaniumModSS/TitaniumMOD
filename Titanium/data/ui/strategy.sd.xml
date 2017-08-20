@@ -6,9 +6,9 @@
 			<page file="stratpage_01.tga" width="512" height="512" force32bit="0"/>
 			<page file="stratpage_02.tga" width="512" height="512" force32bit="0"/>
 			<page file="stratpage_03.tga" width="512" height="512" force32bit="0"/>
-			<page file="shieldpage_00.tga" width="448" height="438" force32bit="0"/>
+			<page file="shieldpage_00.tga" width="512" height="511" force32bit="0"/>
 		</texture_pages>
-		<sprites count="323">
+		<sprites count="337">
 			<sprite index="0" name="BUILD_BUTTON_IMAGE" page="2" left="4" right="84" top="274" bottom="355" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 			<sprite index="1" name="BLANK_BUTTON_IMAGE" page="2" left="257" right="324" top="199" bottom="266" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 			<sprite index="2" name="TRAIN_BUTTON_IMAGE" page="2" left="4" right="84" top="101" bottom="182" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
@@ -298,45 +298,60 @@
 			<sprite index="285" name="FACTION_LOGO_BYZANTIUM" page="3"			left="256" right="319" top="0" bottom="72" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 			<sprite index="286" name="FACTION_LOGO_HUNGARY" page="3"				left="320" right="383" top="0" bottom="72" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 			<sprite index="287" name="FACTION_LOGO_POLAND" page="3"				left="384" right="447" top="0" bottom="72" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="288" name="FACTION_LOGO_ENGLAND" page="3"				left="448" right="511" top="0" bottom="72" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 
-			<sprite index="288" name="FACTION_LOGO_ENGLAND" page="3"				left="0" right="63" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="289" name="FACTION_LOGO_PORTUGAL" page="3"				left="64" right="127" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="290" name="FACTION_LOGO_CUMANS" page="3"				left="128" right="191" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="291" name="FACTION_LOGO_REBELS" page="3"				left="192" right="255" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="292" name="FACTION_LOGO_FRANCE" page="3"				left="256" right="319" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="293" name="FACTION_LOGO_TURKS" page="3"				left="320" right="383" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="294" name="FACTION_LOGO_JERUSALEM" page="3"				left="384" right="447" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="289" name="FACTION_LOGO_PORTUGAL" page="3"				left="0" right="63" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="290" name="FACTION_LOGO_CUMANS" page="3"				left="64" right="127" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="291" name="FACTION_LOGO_REBELS" page="3"				left="128" right="191" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="292" name="FACTION_LOGO_FRANCE" page="3"				left="192" right="255" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="293" name="FACTION_LOGO_TURKS" page="3"				left="256" right="319" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="294" name="FACTION_LOGO_DENMARK" page="3"				left="320" right="383" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="295" name="FACTION_LOGO_RUSSIA" page="3"				left="384" right="447" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="296" name="FACTION_LOGO_MOORS" page="3"				left="448" right="511" top="73" bottom="145" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 
-			<sprite index="295" name="FACTION_LOGO_DENMARK" page="3"				left="0" right="63" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="296" name="FACTION_LOGO_RUSSIA" page="3"				left="64" right="127" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="297" name="FACTION_LOGO_MOORS" page="3"				left="128" right="191" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="298" name="FACTION_LOGO_SCOTLAND" page="3"				left="192" right="255" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="299" name="FACTION_LOGO_MONGOLS" page="3"				left="256" right="319" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="300" name="FACTION_LOGO_NORWAY" page="3"				left="320" right="383" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="301" name="FACTION_LOGO_TEUTONIC_ORDER" page="3"		left="384" right="447" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="297" name="FACTION_LOGO_SCOTLAND" page="3"				left="0" right="63" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="298" name="FACTION_LOGO_MONGOLS" page="3"				left="64" right="127" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="299" name="FACTION_LOGO_NORWAY" page="3"				left="128" right="191" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="300" name="FACTION_LOGO_TEUTONIC_ORDER" page="3"		left="192" right="255" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="301" name="FACTION_LOGO_LITHUANIA" page="3"				left="256" right="319" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="302" name="FACTION_LOGO_KWAREZM" page="3"				left="320" right="383" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="303" name="FACTION_LOGO_KIEVAN_RUS" page="3"			left="384" right="447" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="304" name="FACTION_LOGO_ARAGON" page="3"				left="448" right="511" top="146" bottom="218" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 
-			<sprite index="302" name="FACTION_LOGO_LITHUANIA" page="3"				left="0" right="63" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="303" name="FACTION_LOGO_KWAREZM" page="3"				left="64" right="127" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="304" name="FACTION_LOGO_KIEVAN_RUS" page="3"			left="128" right="191" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="305" name="FACTION_LOGO_ARAGON" page="3"				left="192" right="255" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="306" name="FACTION_LOGO_SPAIN" page="3"				left="256" right="319" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="307" name="FACTION_LOGO_HRE" page="3"					left="320" right="383" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="308" name="FACTION_LOGO_EGYPT" page="3"				left="384" right="447" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="305" name="FACTION_LOGO_SPAIN" page="3"				left="0" right="63" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="306" name="FACTION_LOGO_HRE" page="3"					left="64" right="127" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="307" name="FACTION_LOGO_EGYPT" page="3"				left="128" right="191" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="308" name="FACTION_LOGO_TIMURIDS" page="3"				left="192" right="255" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="309" name="FACTION_LOGO_ABBASIDS" page="3"				left="256" right="319" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="310" name="FACTION_LOGO_OBOTRITES" page="3"			left="320" right="383" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="311" name="FACTION_LOGO_GEORGIA" page="3"				left="384" right="447" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="312" name="FACTION_LOGO_ZIRIDS" page="3"				left="448" right="511" top="219" bottom="291" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 
-			<sprite index="309" name="FACTION_LOGO_TIMURIDS" page="3"				left="0" right="63" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="310" name="FACTION_LOGO_ABBASIDS" page="3"				left="64" right="127" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="311" name="FACTION_LOGO_OBOTRITES" page="3"			left="128" right="191" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="312" name="FACTION_LOGO_GEORGIA" page="3"				left="192" right="255" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="313" name="FACTION_LOGO_ZIRIDS" page="3"				left="256" right="319" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="314" name="FACTION_LOGO_SERBIA" page="3"				left="320" right="383" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="315" name="FACTION_LOGO_RUM" page="3"					left="384" right="447" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="313" name="FACTION_LOGO_OTTOMAN" page="3"				left="0" right="63" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="314" name="FACTION_LOGO_SERBIA" page="3"				left="64" right="127" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="315" name="FACTION_LOGO_BULGARIA" page="3"				left="128" right="191" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="316" name="FACTION_LOGO_NAPLES" page="3"				left="192" right="255" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="317" name="FACTION_LOGO_SWEDEN" page="3"				left="256" right="319" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="318" name="FACTION_LOGO_HAFSIDS" page="3"				left="320" right="383" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="319" name="FACTION_LOGO_MARINIDS" page="3"				left="384" right="447" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="320" name="FACTION_LOGO_MAMLUKS" page="3"				left="448" right="511" top="292" bottom="364" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 
-			<sprite index="316" name="FACTION_LOGO_BULGARIA" page="3"				left="0" right="63" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="317" name="FACTION_LOGO_U" page="3"					left="64" right="127" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="318" name="FACTION_LOGO_V" page="3"					left="128" right="191" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="319" name="FACTION_LOGO_W" page="3"					left="192" right="255" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="320" name="FACTION_LOGO_X" page="3"					left="256" right="319" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="321" name="FACTION_LOGO_Y" page="3"					left="320" right="383" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
-			<sprite index="322" name="FACTION_LOGO_Z" page="3"					left="384" right="447" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="321" name="FACTION_LOGO_GOLDEN_HORDE" page="3"			left="0" right="63" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="322" name="FACTION_LOGO_ILKHANATE" page="3"				left="64" right="127" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="323" name="FACTION_LOGO_RUM" page="3"					left="128" right="191" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="324" name="FACTION_LOGO_JERUSALEM" page="3"				left="192" right="255" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="325" name="FACTION_LOGO_O" page="3"					left="256" right="319" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="326" name="FACTION_LOGO_P" page="3"					left="320" right="383" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="327" name="FACTION_LOGO_Q" page="3"					left="384" right="447" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="328" name="FACTION_LOGO_R" page="3"					left="448" right="511" top="365" bottom="437" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+
+			<sprite index="329" name="FACTION_LOGO_S" page="3"					left="0" right="63" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="330" name="FACTION_LOGO_T" page="3"					left="64" right="127" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="331" name="FACTION_LOGO_U" page="3"					left="128" right="191" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="332" name="FACTION_LOGO_V" page="3"					left="192" right="255" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="333" name="FACTION_LOGO_W" page="3"					left="256" right="319" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="334" name="FACTION_LOGO_X" page="3"					left="320" right="383" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="335" name="FACTION_LOGO_Y" page="3"					left="384" right="447" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
+			<sprite index="336" name="FACTION_LOGO_Z" page="3"					left="448" right="511" top="438" bottom="510" x_offset="0" y_offset="0" alpha="1" cursor="0"/>
 		</sprites>
 	</root>

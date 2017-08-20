@@ -1,7 +1,8 @@
 ;SS6.4 EDU edited by gracul: Jan-2011
 ;Edited by Melooo182: Jul-2015, RC2.0
 ;K/T Polearm and Axes Rebalance
-;High Era
+;Charge Bonus Reduction Oct-2015
+;High Era 1300
 ;
 ; Medieval 2 Total War Unit Details spreadsheet-generated unit descriptions
 ;
@@ -235,7 +236,7 @@ stat_food        60, 300
 stat_cost        2, 1540, 350, 250, 250, 1500, 4, 370
 armour_ug_levels 0
 armour_ug_models Peasants
-ownership        northern_european, venice, milan, papal_states, eastern_european, greek
+ownership        northern_european, venice, sicily, milan, papal_states, eastern_european, greek
 recruit_priority_offset    -55 
 
 
@@ -438,7 +439,7 @@ stat_food        60, 300
 stat_cost        2, 660, 150, 100, 100, 520, 4, 130
 armour_ug_levels 0
 armour_ug_models Peasants
-ownership        milan, papal_states, venice, jerusalem
+ownership        milan, papal_states, sicily, venice, jerusalem
 recruit_priority_offset    -60 
 
 
@@ -862,7 +863,7 @@ formation        1.5, 4.4, 2.5, 6, 2, square ; , wedge
 stat_health      1, 3
 stat_pri         5, 13, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
-stat_sec         12, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_sec         10, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  15, 4, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -912,8 +913,9 @@ stat_food        60, 300
 stat_cost        1, 1175, 600, 130, 100, 1175, 4, 230
 armour_ug_levels 22, 30, 37, 40
 armour_ug_models Chivalric_Knights, Chivalric_Knights_ug1, Chivalric_Knights_ug1, Chivalric_Knights_ug1
-ownership        denmark, spain, slave, france
-era 1            denmark, spain
+ownership        denmark, spain, sicily, slave, france
+era 1            denmark, spain, sicily
+era 2            sicily
 recruit_priority_offset    50
 
 
@@ -1165,8 +1167,8 @@ stat_food        60, 300
 stat_cost        14, 2475, 400, 120, 95, 2075, 4, 190
 armour_ug_levels 38, 40
 armour_ug_models Gendarmes, Gendarmes
-ownership        france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, poland
-era 2            france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, poland
+ownership        france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, sicily, poland
+era 2            france, spain, aragon, england, hre, denmark, portugal, milan, venice, papal_states, hungary, norway, sicily, poland
 recruit_priority_offset    60
 
 
@@ -1200,8 +1202,8 @@ stat_food        60, 300
 stat_cost        1, 595, 340, 100, 75, 1005, 4, 140
 armour_ug_levels 24, 34, 37, 39
 armour_ug_models Italian_MAA, Italian_MAA_ug1, Italian_MAA_ug1, Italian_MAA_ug2
-ownership        milan, venice, papal_states, hre, teutonic_order, slave
-era 1            milan, venice, papal_states, hre
+ownership        milan, venice, papal_states, sicily, hre, teutonic_order, slave
+era 1            milan, venice, papal_states, sicily, hre
 recruit_priority_offset    45
 
 
@@ -1235,7 +1237,8 @@ stat_food        60, 300
 stat_cost        1, 1270, 750, 130, 100, 1270, 4, 220
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Norman_Knights, Norman_Knights, Norman_Knights_ug1, Norman_Knights_ug1
-ownership        hre, slave
+ownership        sicily, slave
+era 0            sicily
 recruit_priority_offset    40
 
 
@@ -1339,10 +1342,10 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 345, 170, 100, 75, 380, 4, 130
 armour_ug_levels 14, 19, 24, 37
-armour_ug_models Italian_Cavalry_Militia, Italian_Cavalry_Militia, Italian_Cavalry_Militia_ug1, Italian_Cavalry_Militia_ug1
-ownership        milan, venice, papal_states
-era 0            milan, venice, papal_states
-era 1            milan, venice, papal_states
+armour_ug_models Italian_Cavalry_Militia_Early, Italian_Cavalry_Militia, Italian_Cavalry_Militia_ug1, Italian_Cavalry_Militia_ug1
+ownership        milan, venice, papal_states, sicily, slave
+era 0            milan, venice, papal_states, sicily
+era 1            milan, venice, papal_states, sicily
 recruit_priority_offset    20
 
 
@@ -1362,7 +1365,7 @@ formation        2, 4.4, 3, 6, 3, square ; , wedge
 stat_health      1, 2
 stat_pri         6, 5, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
-stat_sec         9, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 4, 3, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -1447,9 +1450,9 @@ stat_food        60, 300
 stat_cost        1, 1175, 600, 130, 100, 1175, 4, 220
 armour_ug_levels 22, 30, 37, 40
 armour_ug_models E_Chivalric_Knights, E_Chivalric_Knights_ug1, E_Chivalric_Knights_ug1, E_Chivalric_Knights_ug1
-ownership        hungary, georgia, slave
-era 1            hungary, georgia
-era 2            hungary, georgia
+ownership        hungary, kievan_rus, slave
+era 1            hungary, kievan_rus
+era 2            hungary, kievan_rus
 recruit_priority_offset    50
 
 
@@ -1633,7 +1636,7 @@ recruit_priority_offset    25
 
 
 type             Huscarls
-dictionary       Huscarls      ; Huscarls, f
+dictionary       Huscarls      ; Húskarlar Cavalry, f
 category         cavalry
 class            heavy
 voice_type       Heavy
@@ -1647,7 +1650,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, can_formed_c
 move_speed_mod	 0.9
 formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 2
-stat_pri         11, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         9, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -1770,10 +1773,10 @@ stat_food        60, 300
 stat_cost        1, 555, 0, 60, 50, 555, 1, 100
 armour_ug_levels 19, 22, 30, 38
 armour_ug_models SE_Bodyguard, SE_Bodyguard_ug1, SE_Late_Bodyguard, SE_Late_Bodyguard_ug1
-ownership        spain, aragon, portugal, milan, venice, papal_states, georgia
-era 0            spain, aragon, portugal, milan, venice, papal_states, georgia
-era 1            spain, aragon, portugal, milan, venice, papal_states, georgia
-era 2            spain, aragon, portugal, milan, venice, papal_states, georgia
+ownership        spain, aragon, portugal, milan, venice, papal_states, sicily, kievan_rus
+era 0            spain, aragon, portugal, milan, venice, papal_states, sicily, kievan_rus
+era 1            spain, aragon, portugal, milan, venice, papal_states, sicily, kievan_rus
+era 2            spain, aragon, portugal, milan, venice, papal_states, sicily, kievan_rus
 recruit_priority_offset    40
 
 
@@ -1808,10 +1811,10 @@ stat_food        60, 300
 stat_cost        1, 530, 0, 60, 50, 530, 1, 100
 armour_ug_levels 20, 28, 37
 armour_ug_models EE_Bodyguard, EE_Bodyguard_ug1, EE_late_bodyguard
-ownership        russia, kievan_rus, georgia, slave
-era 0            russia, kievan_rus, georgia
-era 1            russia, kievan_rus, georgia
-era 2            russia, kievan_rus, georgia
+ownership        russia, slave
+era 0            russia
+era 1            russia
+era 2            russia
 recruit_priority_offset    20
 
 
@@ -1882,7 +1885,7 @@ stat_food        60, 300
 stat_cost        1, 1450, 250, 130, 100, 1450, 4, 220
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Knights_Templar, Knights_Templar, Knights_Templar_ug1, Knights_Templar_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -1921,7 +1924,7 @@ stat_food        60, 300
 stat_cost        1, 1450, 250, 130, 100, 1450, 4, 220
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Knights_Hospitaller, Knights_Hospitaller, Knights_Hospitaller_ug1, Knights_Hospitaller_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -1960,7 +1963,7 @@ stat_food        60, 300
 stat_cost        1, 1320, 250, 130, 100, 1320, 4, 220
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Knights_of_Santiago, Knights_of_Santiago, Knights_of_Santiago_ug1, Knights_of_Santiago_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 1            spain, aragon, portugal
 era 2            spain, aragon, portugal
 info_pic_dir	 KnightOrders
@@ -2138,8 +2141,8 @@ stat_food        60, 300
 stat_cost        1, 835, 835, 100, 75, 1315, 4, 130
 armour_ug_levels 30, 37, 40, 43
 armour_ug_models Condottieri, Condottieri, Condottieri, Condottieri
-ownership        slave, hre
-era 2            hre, papal_states
+ownership        slave, sicily
+era 2            sicily, papal_states
 recruit_priority_offset    55
 
 
@@ -2209,7 +2212,7 @@ stat_food        60, 300
 stat_cost        1, 655, 655, 130, 100, 970, 4, 220
 armour_ug_levels 11, 17, 37
 armour_ug_models Crusader_Knights, Crusader_Knights, Crusader_Knights
-ownership        slave, england, france, hre, spain, venice, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
+ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
 recruit_priority_offset    20
 
 
@@ -2243,9 +2246,9 @@ stat_food        60, 300
 stat_cost        1, 305, 225, 100, 75, 475, 4, 110
 armour_ug_levels 2, 7, 8, 23
 armour_ug_models Mounted_Sergeants, Mounted_Sergeants_ug1, Mounted_Sergeants_ug1, Mounted_Sergeants_ug1
-ownership        all; france, hre, milan, venice, papal_states, jerusalem, teutonic_order, slave
-era 0            france, hre, milan, venice, papal_states, jerusalem
-era 1            france, hre, milan, venice, papal_states, jerusalem
+ownership        all; france, hre, milan, venice, papal_states, sicily, jerusalem, teutonic_order, slave
+era 0            france, hre, milan, venice, papal_states, sicily, jerusalem
+era 1            france, hre, milan, venice, papal_states, sicily, jerusalem
 recruit_priority_offset    0
 
 
@@ -2409,7 +2412,7 @@ formation        2, 4.4, 3, 6, 4, square
 stat_health      1, 2
 stat_pri         3, 6, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_sec         5, 4, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  2, 0, 3, leather
 stat_sec_armour  0, 0, flesh
@@ -2527,9 +2530,9 @@ stat_food        60, 300
 stat_cost        1, 595, 595, 120, 95, 895, 4, 130
 armour_ug_levels 5
 armour_ug_models alan_aldary
-ownership        mongols, timurids, cumans, slave
-era 0            mongols, timurids, cumans
-era 1            mongols, timurids, cumans
+ownership        mongols, timurids, cumans, georgia, slave
+era 0            mongols, timurids, cumans, georgia
+era 1            mongols, timurids, cumans, georgia
 recruit_priority_offset    15
 
 
@@ -2597,9 +2600,9 @@ stat_food        60, 300
 stat_cost        6, 825, 200, 90, 70, 625, 4, 110
 armour_ug_levels 4, 16, 23
 armour_ug_models Mounted_Crossbowmen, Mounted_Crossbowmen_ug1, Mounted_Crossbowmen_ug1
-ownership        hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, teutonic_order
-era 1            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, teutonic_order
-era 2            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, teutonic_order
+ownership        hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order
+era 1            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order
+era 2            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order
 recruit_priority_offset    10
 
 
@@ -2619,7 +2622,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 1, militia_javelin, 50, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  4, 2, 2, flesh ; shield -1
 stat_sec_armour  0, 0, flesh
@@ -2833,7 +2836,7 @@ formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
 stat_pri         7, 5, average_mounted_light_crossbow_bolt, 100, 45, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         5, 5, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  3, 0, 0, leather ;slung shield +1 armour ;
 stat_sec_armour  0, 0, flesh
@@ -2883,7 +2886,7 @@ stat_food        60, 300
 stat_cost        1, 515, 150, 100, 75, 655, 4, 190
 armour_ug_levels 0
 armour_ug_models cum_militia_cav_a_sw_ug0
-ownership        slave, cumans 
+ownership        slave, cumans, georgia 
 era 0            cumans 
 era 1            cumans 
 era 2            cumans 
@@ -2917,10 +2920,12 @@ stat_food        60, 300
 stat_cost        1, 80, 55, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models Peasant_Archers, Peasant_Archers_ug1
-ownership        england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, slave
-era 0            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem
-era 1            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem
-era 2            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem
+ownership        england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily, kievan_rus, slave
+era 0            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+era 1            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+era 2            england, norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+info_pic_dir	 Peasants
+card_pic_dir	 Peasants
 recruit_priority_offset    -20 
 
 
@@ -2938,7 +2943,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
 stat_pri         1, 1, peasant_arrow, 80, 40, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 0, 0, flesh
 stat_sec_armour  0, 0, flesh
@@ -3037,7 +3042,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         2, 1, militia_arrow, 100, 40, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 4, 1, flesh ; shield -1
 stat_sec_armour  0, 0, flesh
@@ -3071,7 +3076,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         5, 3, elite_war_arrow, 140, 35, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         6, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  6, 7, 2, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -3117,7 +3122,7 @@ stat_food        60, 300
 stat_cost        1, 80, 80, 65, 50, 80, 4, 50
 armour_ug_levels 0, 1, 4 
 armour_ug_models Peasant_Crossbowmen, Peasant_Crossbowmen_ug1, Peasant_Crossbowmen_ug2
-ownership        france, hre, spain, aragon, portugal, milan, venice, papal_states, slave
+ownership        france, hre, spain, aragon, portugal, milan, venice, papal_states, sicily, slave
 era 0            france, hre, spain, aragon, portugal, milan, venice, papal_states 
 era 1            france, hre, spain, aragon, portugal, milan, venice, papal_states 
 era 2            france, hre, spain, aragon, portugal, milan, venice, papal_states 
@@ -3138,7 +3143,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         8, 2, average_crossbow_bolt, 120, 25, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  4, 5, 0, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -3171,7 +3176,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         14, 3, elite_steel_crossbow_bolt, 170, 15, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         7, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  10, 8, 0, metal
 stat_sec_armour  0, 0, flesh
@@ -3204,7 +3209,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0,1
 stat_pri_attr    area
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  4, 3, 7, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -3217,9 +3222,9 @@ stat_food        60, 300
 stat_cost        1, 240, 180, 65, 50, 360, 4, 120
 armour_ug_levels 4, 16 
 armour_ug_models Pavise_Crossbowmen, Pavise_Crossbowmen_ug1
-ownership        hre, spain, aragon, portugal, papal_states, poland, slave
-era 1            hre, spain, aragon, portugal, papal_states, poland
-era 2            hre, spain, aragon, portugal, papal_states, poland
+ownership        hre, spain, aragon, portugal, papal_states, sicily, poland, slave
+era 1            hre, spain, aragon, portugal, papal_states, sicily, poland
+era 2            hre, spain, aragon, portugal, papal_states, sicily, poland
 recruit_priority_offset    15
 
 
@@ -3238,7 +3243,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 2, militia_heavy_crossbow_bolt, 135, 20, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         2, 2, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
+stat_sec         2, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  4, 2, 6, metal ; shield -1 
 stat_sec_armour  0, 0, flesh
@@ -3251,7 +3256,7 @@ stat_food        60, 300
 stat_cost        1, 270, 150, 65, 50, 270, 4, 120
 armour_ug_levels 4, 16 
 armour_ug_models Pavise_Crossbow_Militia, Pavise_Crossbow_Militia_ug1
-ownership        venice, papal_states, hungary, slave
+ownership        venice, papal_states, sicily, hungary, slave
 era 1            venice
 era 2            venice
 recruit_priority_offset    10
@@ -3272,7 +3277,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         11, 4, elite_heavy_crossbow_bolt, 150, 20, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         5, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         5, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  5, 6, 7, metal
 stat_sec_armour  0, 0, flesh
@@ -3306,7 +3311,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  4, 3, 7, metal
 stat_sec_armour  0, 0, flesh
@@ -3337,7 +3342,7 @@ formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
 stat_pri         6, 4, elite_missile_longbow_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         6, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  12, 5, 0, metal
 stat_sec_armour  0, 0, flesh
@@ -3432,7 +3437,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         5, 2, superior_composite_arrow, 150, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
+stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
 stat_pri_armour  2, 6, 0, leather ; 
 stat_sec_armour  0, 0, flesh
@@ -3595,7 +3600,7 @@ formation        1, 1.2, 1, 1.2, 4, square
 stat_health      1, 2
 stat_pri         19, 2, average_early_arquebus_bullet, 80, 12, missile, missile_gunpowder, piercing, none, musket_shot_set, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  7, 5, 0, metal
 stat_sec_armour  0, 0, flesh
@@ -3608,8 +3613,8 @@ stat_food        60, 300
 stat_cost        1, 585, 140, 65, 50, 445, 4, 110
 armour_ug_levels 16, 23
 armour_ug_models Latin_Handgunners, Latin_Handgunners
-ownership        england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, poland, russia, hungary, jerusalem, portugal, teutonic_order
-era 2            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, poland, russia, hungary, jerusalem, portugal, teutonic_order
+ownership        england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, poland, russia, hungary, jerusalem, portugal, teutonic_order
+era 2            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, sicily, poland, russia, hungary, jerusalem, portugal, teutonic_order
 recruit_priority_offset    15
 
 
@@ -3627,7 +3632,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         3, 2, average_war_arrow, 120, 35, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  0, 8, 3, flesh
 stat_sec_armour  0, 0, flesh
@@ -3662,7 +3667,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         3, 2, average_war_arrow, 120, 35, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  0, 7, 3, flesh
 stat_sec_armour  0, 0, flesh
@@ -3696,7 +3701,7 @@ formation        1.2, 1.2, 1.2, 1.2, 4, square
 stat_health      1, 2
 stat_pri         15, 2, average_hand_gun_bullet, 55, 12, missile, missile_gunpowder, piercing, none, musket_shot_set, 0, 1
 stat_pri_attr    area
-stat_sec         4, 3, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  8, 4, 7, metal
 stat_sec_armour  0, 0, flesh
@@ -3709,9 +3714,9 @@ stat_food        60, 300
 stat_cost        4, 870, 225, 75, 55, 645, 4, 160
 armour_ug_levels 15, 21
 armour_ug_models hand_gunners_pavise, hand_gunners_pavise_ug1
-ownership        hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, poland, teutonic_order
-era 1            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, poland, teutonic_order
-era 2            hre, denmark, norway, spain, aragon, portugal, venice, papal_states, poland, teutonic_order
+ownership        hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, poland, teutonic_order
+era 1            hre, denmark, norway, spain, aragon, portugal, milan, venice, papal_states, sicily, poland, teutonic_order
+era 2            hre, denmark, norway, spain, aragon, portugal, venice, papal_states, sicily, poland, teutonic_order
 recruit_priority_offset    10
 
 
@@ -3729,7 +3734,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         3, 2, average_war_arrow, 120, 35, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  2, 6, 3, leather
 stat_sec_armour  0, 0, flesh
@@ -3763,7 +3768,7 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         6, 3, elite_missile_longbow_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 3, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  5, 7, 2, metal
 stat_sec_armour  0, 0, flesh
@@ -3795,7 +3800,7 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         4, 2, average_missile_longbow_arrow, 180, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  6, 4, 0, metal
 stat_sec_armour  0, 0, flesh
@@ -3861,7 +3866,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 1, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  6, 4, 7, metal
 stat_sec_armour  0, 0, flesh
@@ -3892,7 +3897,7 @@ formation        1.0, 1.2, 1.0, 1.2, 4, square
 stat_health      1, 2
 stat_pri         19, 1, average_early_arquebus_bullet, 80, 12, missile, missile_gunpowder, piercing, none, musket_shot_set, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  4, 6, 0, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -3956,7 +3961,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         4, 2, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  2, 6, 2, leather
 stat_sec_armour  0, 0, flesh
@@ -3988,7 +3993,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         8, 1, average_crossbow_bolt, 120, 25, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  2, 7, 0, leather
 stat_sec_armour  0, 0, flesh
@@ -4064,11 +4069,13 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 armour_ug_levels 0, 1
-armour_ug_models levy_infantry, town_militia_ug1
+armour_ug_models Peasants, Peasants_ug1
 ownership        england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, teutonic_order
 era 0            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
 era 1            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
 era 2            england, slave , norway, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states
+info_pic_dir	 Peasants
+card_pic_dir	 Peasants
 recruit_priority_offset    -50 
 
 
@@ -4100,10 +4107,10 @@ stat_food        60, 300
 stat_cost        1, 180, 85, 65, 50, 180, 4, 20
 armour_ug_levels 0, 2
 armour_ug_models Southern_Peasants, southern_Peasants_ug1
-ownership        byzantium, georgia, slave
-era 0            byzantium, georgia
-era 1            byzantium, georgia
-era 2            byzantium, georgia
+ownership        sicily, byzantium, georgia, kievan_rus, slave
+era 0            sicily, byzantium, georgia, kievan_rus
+era 1            sicily, byzantium, georgia, kievan_rus
+era 2            sicily, byzantium, georgia, kievan_rus
 recruit_priority_offset    -50 
 
 
@@ -4120,7 +4127,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, peasant, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.8, 7, square
 stat_health      1, 0
-stat_pri         1, 1, no, 0, 0, melee, melee_simple, slashing, axe, 45, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_simple, slashing, axe, 45, 1
 stat_pri_attr    no ; ap ; 1H axe (hatchet)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4154,7 +4161,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, hardy, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 2.4, 5, square
 stat_health      1, 1
-stat_pri         8, 2, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4190,7 +4197,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, f
 move_speed_mod	 0.9
 formation        1.4, 1.2, 2.8, 2.4, 4, square, shield_wall
 stat_health      1, 1
-stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4225,7 +4232,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         11, 2, average_javelin, 55, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  0, 6, 2, flesh
 stat_sec_armour  0, 0, flesh
@@ -4259,7 +4266,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         12, 3, superior_javelin, 60, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         5, 3, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  0, 7, 2, flesh
 stat_sec_armour  0, 0, flesh
@@ -4293,7 +4300,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         14, 4, elite_javelin, 65, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_sec         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  0, 9, 2, flesh
 stat_sec_armour  0, 0, flesh
@@ -4327,7 +4334,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 3, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1 ; light sword
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1 ; light sword
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4342,8 +4349,8 @@ stat_food        60, 300
 stat_cost        8, 940, 225, 90, 70, 715, 4, 130
 armour_ug_levels 7, 35, 35, 35
 armour_ug_models Sword_and_Buckler_Men, Sword_and_Buckler_Men_ug1, Sword_and_Buckler_Men_ug1, Sword_and_Buckler_Men_ug1
-ownership        spain, aragon, hre
-era 2            spain, aragon
+ownership        spain, aragon, sicily
+era 2            spain, aragon, sicily
 recruit_priority_offset    30
 
 
@@ -4432,7 +4439,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 2.4, 4, square
 stat_health      1, 1
-stat_pri         11, 3, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4502,7 +4509,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 2.4, 4, square
 stat_health      1, 1
-stat_pri         13, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         12, 2, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4536,7 +4543,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 1
-stat_pri         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 150, 1
+stat_pri         5, 2, no, 0, 0, melee, melee_blade, slashing, axe, 150, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (crude poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4607,7 +4614,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         14, 3, elite_javelin, 65, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         4, 3, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
+stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
 stat_sec_attr    light_spear
 stat_pri_armour  3, 4, 4, leather
 stat_sec_armour  0, 0, flesh
@@ -4704,7 +4711,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit, disband_1
 formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4772,7 +4779,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 0
-stat_pri         1, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4807,7 +4814,7 @@ attributes       sea_faring, hide_forest, can_withdraw, hardy, pike, start_phala
 move_speed_mod	 0.70
 formation        1.2, 1.5, 1.2, 1.5, 8, square, phalanx ; formation        1.25, 0, 2.0, 2.0, 8, square, phalanx
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         3, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4843,7 +4850,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4858,9 +4865,9 @@ stat_food        60, 300
 stat_cost        1, 210, 200, 85, 65, 300, 4, 100
 armour_ug_levels 0, 1, 6, 10
 armour_ug_models Sergeant_Spearmen, Sergeant_Spearmen_ug1, Sergeant_Spearmen_ug2, Armored_Sergeants_ug1
-ownership        france, hre, milan, venice, papal_states, jerusalem, slave
-era 0            france, hre, milan, venice, papal_states, jerusalem
-era 1            france, hre, milan, venice, papal_states, jerusalem
+ownership        france, hre, milan, venice, papal_states, sicily, jerusalem, slave
+era 0            france, hre, milan, venice, papal_states, sicily, jerusalem
+era 1            france, hre, milan, venice, papal_states, sicily, jerusalem
 recruit_priority_offset    0
 
 
@@ -4880,7 +4887,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4895,10 +4902,10 @@ stat_food        60, 300
 stat_cost        1, 280, 200, 85, 65, 420, 4, 130
 armour_ug_levels 7, 14, 19
 armour_ug_models Armored_Sergeants, Armored_Sergeants_ug1, Armored_Sergeants_ug1
-ownership        all; england, france, hre, milan, venice, papal_states, slave
-era 0            england, france, hre, milan, venice, papal_states, slave
-era 1            england, france, hre, milan, venice, papal_states, slave
-era 2            england, france, hre, venice, papal_states, slave
+ownership        all; england, france, hre, milan, venice, papal_states, sicily, slave
+era 0            england, france, hre, milan, venice, papal_states, sicily, slave
+era 1            england, france, hre, milan, venice, papal_states, sicily, slave
+era 2            england, france, hre, venice, papal_states, sicily, slave
 recruit_priority_offset    5
 
 
@@ -4916,7 +4923,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.2, 1.2, 2.4, 2.4, 5, square, schiltrom
 stat_health      1, 0
-stat_pri         1, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5025,7 +5032,7 @@ formation        1.2, 1.5, 1.2, 1.5, 8, square, phalanx ; formation        1.2, 
 stat_health      1, 1
 stat_pri         3, 4, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    spear, long_pike
-;stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+;stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  3, 2, 0, metal 
@@ -5063,7 +5070,7 @@ stat_health      1, 1
 stat_pri         2, 3, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-;stat_sec	 4, 3, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+;stat_sec	 4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  2, 1, 0, leather 
 stat_sec_armour  0, 0, flesh
@@ -5112,7 +5119,7 @@ stat_food        60, 300
 stat_cost        1, 310, 200, 60, 50, 310, 4, 30
 armour_ug_levels 0, 1, 4, 16
 armour_ug_models Pike_Militia, Pike_Militia_ug1, Pike_Militia_ug2, Pike_Militia_ug3
-ownership        france, hre, spain, aragon, portugal, milan, venice, papal_states, jerusalem
+ownership        france, hre, spain, aragon, portugal, milan, venice, papal_states, sicily, jerusalem
 recruit_priority_offset    10
 
 
@@ -5167,7 +5174,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.2, 1.2, 2.4, 2.4, 5, square, schiltrom
 stat_health      1, 0
-stat_pri         1, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5202,7 +5209,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.8
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5237,7 +5244,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5252,9 +5259,9 @@ stat_food        60, 300
 stat_cost        1, 290, 200, 85, 65, 300, 4, 90
 armour_ug_levels 1, 4, 16
 armour_ug_models Italian_Spear_Militia, Italian_Spear_Militia_ug1, Italian_Spear_Militia_ug2
-ownership        milan, venice, papal_states, slave, england, norway, scotland, france, hre, denmark, spain, aragon, portugal
-era 0            milan, venice, papal_states
-era 1            milan, venice, papal_states
+ownership        milan, venice, papal_states, sicily, slave, england, norway, scotland, france, hre, denmark, spain, aragon, portugal
+era 0            milan, venice, papal_states, sicily
+era 1            milan, venice, papal_states, sicily
 era 2            milan 
 recruit_priority_offset    0
 
@@ -5273,7 +5280,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.8
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         1, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5288,10 +5295,10 @@ stat_food        60, 300
 stat_cost        1, 340, 200, 85, 65, 450, 4, 110
 armour_ug_levels 4, 16, 23
 armour_ug_models Pavise_Spearmen, Pavise_Spearmen_ug1, Pavise_Spearmen_ug1
-ownership        milan, venice, papal_states, slave, hungary, poland
-era 0            milan, venice, papal_states
-era 1            milan, venice, papal_states
-era 2            venice, papal_states, milan
+ownership        milan, venice, papal_states, sicily, slave, hungary, poland
+era 0            milan, venice, papal_states, sicily
+era 1            milan, venice, papal_states, sicily
+era 2            venice, papal_states, sicily, milan
 recruit_priority_offset    5
 
 ; Italians - Urban Spearmen from beginning, Pavise Sp.M. from cca 1220. 
@@ -5314,7 +5321,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         5, 4, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri         5, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5349,7 +5356,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5383,10 +5390,10 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, pike, start_
 move_speed_mod	 0.80
 formation        1.0, 2.0, 1.0, 2.0, 10, square, phalanx ; formation        1.10, 0, 2.0, 2.0, 8, square, phalanx
 stat_health      1, 1
-stat_pri         7, 4, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri         7, 3, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-;stat_sec	 6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
+;stat_sec	 6, 2, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 2, 0, flesh ; 
 stat_sec_armour  0, 0, flesh
@@ -5453,7 +5460,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5487,7 +5494,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, crusadin
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5502,7 +5509,7 @@ stat_food        60, 300
 stat_cost        1, 310, 310, 85, 65, 465, 4, 120
 armour_ug_levels 7
 armour_ug_models Crusader_Sergeants
-ownership        slave, england, france, hre, spain, venice, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
+ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
 recruit_priority_offset    15
 
 
@@ -5522,7 +5529,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, pike, start_phala
 move_speed_mod	 0.75
 formation        1.2, 1.5, 1.2, 1.5, 6, square, phalanx ; formation        1.2, 0, 2.0, 2.0, 8, square, phalanx
 stat_health      1, 1
-stat_pri         5, 4, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         5, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5556,7 +5563,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5590,7 +5597,7 @@ mount_effect	 horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         11, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         10, 3, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (billhook)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5626,7 +5633,7 @@ mount_effect	 horse +4, camel +4
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         11, 5, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_pri         10, 3, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (billhook)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5659,7 +5666,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         14, 7, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1 ; Claymore attack 8+elite 3+reckless 2+elite quality weapon 1
+stat_pri         14, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1 ; Claymore attack 8+elite 3+reckless 2+elite quality weapon 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5695,7 +5702,7 @@ attributes       sea_faring, hide_forest, can_withdraw, start_phalanxing
 move_speed_mod	 0.70
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         14, 5, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
+stat_pri         14, 3, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5730,7 +5737,7 @@ mount_effect	 horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         10, 7, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1 
+stat_pri         10, 3, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1 
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5764,7 +5771,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         10, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5797,7 +5804,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 2, square
 stat_health      1, 1
-stat_pri         10, 6, no, 0, 0, melee, melee_blade, piercing, sword, 90, 1
+stat_pri         10, 3, no, 0, 0, melee, melee_blade, piercing, sword, 90, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5863,7 +5870,7 @@ mount_effect	 horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         10, 4, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
+stat_pri         10, 3, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5896,7 +5903,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, start_
 move_speed_mod	 0.65
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         7, 4, no, 0, 0, melee, melee_blade, piercing, sword, 105, 1
+stat_pri         7, 3, no, 0, 0, melee, melee_blade, piercing, sword, 105, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5934,7 +5941,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, start_
 move_speed_mod	 0.65
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         13, 4, no, 0, 0, melee, melee_blade, piercing, axe, 135, 1
+stat_pri         10, 3, no, 0, 0, melee, melee_blade, piercing, axe, 135, 1
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5968,7 +5975,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, start_
 move_speed_mod	 0.65
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         13, 4, no, 0, 0, melee, melee_blade, piercing, axe, 150, 1
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, piercing, axe, 150, 1
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5983,7 +5990,7 @@ stat_food        60, 300
 stat_cost        1, 290, 150, 65, 50, 345, 4, 70
 armour_ug_levels 4, 16, 23, 33
 armour_ug_models Halberd_Militia_ug2, Halberd_Militia_ug3, Halberd_Militia_ug3, Obudshaer
-ownership        hre, papal_states, poland, hungary, slave, england, scotland, spain, aragon, portugal, milan, venice, russia, kievan_rus, teutonic_order, lithuania
+ownership        hre, papal_states, sicily, poland, hungary, slave, england, scotland, spain, aragon, portugal, milan, venice, russia, kievan_rus, teutonic_order, lithuania
 recruit_priority_offset    10
 
 
@@ -6003,7 +6010,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         2, 3, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; warhammer
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; warhammer
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6037,7 +6044,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         14, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         13, 3, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6069,7 +6076,7 @@ soldier          Battlefield_Assassins, 24, 0, 0.85, 0.35
 attributes       sea_faring, hide_improved_forest, very_hardy, can_withdraw, hide_anywhere, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         10, 4, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6106,7 +6113,7 @@ attributes       sea_faring, hide_forest, can_withdraw, hardy
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6128,7 +6135,7 @@ recruit_priority_offset    20
 
 
 type             Norse Axemen
-dictionary       Norse_Axemen      ; Norse Huskarl Axemen, ep
+dictionary       Norse_Axemen      ; Húskarlar Axmenn, ep
 category         infantry
 class            heavy
 voice_type       Heavy
@@ -6142,7 +6149,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, frighten_foot, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         18, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         17, 2, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6179,7 +6186,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, start_phalanxing
 move_speed_mod	 0.75
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         13, 6, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
+stat_pri         13, 4, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6214,7 +6221,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6248,7 +6255,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6285,7 +6292,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         10, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri         10, 4, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
 stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6320,7 +6327,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6356,7 +6363,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         11, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri         11, 4, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
 stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6389,7 +6396,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6425,7 +6432,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         13, 7, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_pri         13, 4, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6445,42 +6452,8 @@ era 2            hre
 recruit_priority_offset    45
 
 
-type             English Huscarls
-dictionary       English_Huscarls      ; English Huscarls, m
-category         infantry
-class            heavy
-voice_type       Heavy
-banner faction   main_infantry
-banner holy      crusade
-soldier          English_Huscarls, 48, 0, 1.125, 0.5
-officer          northern_captain
-officer          northern_captain_early_flag
-officer          northern_captain_early_flag
-mount_effect     horse +1, camel +1
-attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
-formation        1.2, 1.0, 2.4, 2.0, 4, square
-stat_health      1, 1
-stat_pri         14, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    no ; ap ; 2H axe
-stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-stat_sec_attr    no
-stat_pri_armour  5, 8, 0, metal ;slung shield +1 armour ;
-stat_sec_armour  0, 0, flesh
-stat_heat        8
-stat_ground      0, -2, 1, 0 
-stat_mental      9, normal, trained
-stat_charge_dist 6
-stat_fire_delay  0
-stat_food        60, 300
-stat_cost        1, 360, 360, 90, 70, 495, 4, 90
-armour_ug_levels 7
-armour_ug_models English_Huscarls
-ownership        slave, england, hre, byzantium
-recruit_priority_offset    15
-
-
 type             Dismounted Huscarls
-dictionary       Dismounted_Huscarls      ; Dismounted Huscarls, f
+dictionary       Dismounted_Huscarls      ; Húskarlar, f
 category         infantry
 class            heavy
 voice_type       Heavy
@@ -6494,7 +6467,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, free_upkeep_
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square, shield_wall
 stat_health      1, 1
-stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 30, 1
+stat_pri         10, 1, no, 0, 0, melee, melee_blade, slashing, axe, 30, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6530,7 +6503,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         10, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri         10, 4, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
 stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6566,7 +6539,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6581,8 +6554,8 @@ stat_food        60, 300
 stat_cost        1, 480, 270, 75, 55, 775, 4, 110
 armour_ug_levels 24, 34, 37, 39
 armour_ug_models Dismounted_Italian_MAA, Dismounted_Italian_MAA_ug1, Dismounted_Italian_MAA_ug1, Dismounted_Italian_MAA_ug2
-ownership        milan, venice, papal_states, hre, teutonic_order, slave
-era 1            milan, venice, papal_states, hre
+ownership        milan, venice, papal_states, sicily, hre, teutonic_order, slave
+era 1            milan, venice, papal_states, sicily, hre
 recruit_priority_offset    30
 
 
@@ -6603,7 +6576,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, start_phalan
 move_speed_mod	 0.75
 formation        1.2, 1.2, 2.4, 2.4, 4, phalanx, square
 stat_health      1, 1
-stat_pri         14, 6, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1
+stat_pri         16, 4, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6638,7 +6611,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         11, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
+stat_pri         11, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6653,8 +6626,9 @@ stat_food        60, 300
 stat_cost        1, 1035, 600, 90, 70, 1035, 4, 140
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Dismounted_Norman_Knights, Dismounted_Norman_Knights, Dismounted_Norman_Knights_ug1, Dismounted_Norman_Knights_ug1
-ownership        hre
-era 0            hre
+ownership        sicily
+era 0            sicily
+era 1            sicily
 recruit_priority_offset    25
 
 
@@ -6673,7 +6647,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6710,7 +6684,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6725,8 +6699,8 @@ stat_food        60, 300
 stat_cost        6, 1295, 225, 75, 55, 1070, 4, 120
 armour_ug_levels 30, 37, 38, 40
 armour_ug_models Dismounted_Broken_Lances, Dismounted_Broken_Lances, Dismounted_Broken_Lances_ug1, Dismounted_Broken_Lances_ug1
-ownership        milan, venice, papal_states
-era 2            milan, venice, papal_states
+ownership        milan, venice, papal_states, sicily
+era 2            milan, venice, papal_states, sicily
 recruit_priority_offset    40
 
 
@@ -6745,7 +6719,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri         10, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6780,7 +6754,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6816,7 +6790,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6831,9 +6805,9 @@ stat_food        60, 300
 stat_cost        1, 910, 480, 90, 70, 910, 4, 140
 armour_ug_levels 22, 30, 37, 40
 armour_ug_models Dismounted_E_Chivalric_Knights, Dismounted_E_Chivalric_Knights_ug1, Dismounted_E_Chivalric_Knights_ug1, Dismounted_E_Chivalric_Knights_ug1
-ownership        hungary, georgia
-era 1            hungary, georgia
-era 2            hungary, georgia
+ownership        hungary, kievan_rus
+era 1            hungary, kievan_rus
+era 2            hungary, kievan_rus
 recruit_priority_offset    40
 
 
@@ -6853,7 +6827,7 @@ formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
 stat_pri         7, 5, elite_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    no
-stat_sec         4, 5, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_sec_attr    ap
 stat_pri_armour  5, 3, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -6866,10 +6840,10 @@ stat_food        60, 300
 stat_cost        1, 585, 585, 120, 95, 970, 4, 170
 armour_ug_levels 5, 9
 armour_ug_models alan_druzhina_aldarov, alan_druzhina_aldarov
-ownership        all ; slave, mongols, timurids, cumans
-era 0            mongols, timurids, cumans 
-era 1            mongols, timurids, cumans  
-era 2            mongols, timurids, cumans  
+ownership        all ; slave, mongols, timurids, cumans, georgia
+era 0            mongols, timurids, cumans, georgia 
+era 1            mongols, timurids, cumans, georgia  
+era 2            mongols, timurids, cumans, georgia  
 recruit_priority_offset 0
 
 
@@ -6887,8 +6861,8 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         12, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
-stat_pri_attr    no ; ap ; 1H axe
+stat_pri         13, 2, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 8, 0, metal ; slung shield ; 
@@ -6922,7 +6896,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         7, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri         7, 3, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
 stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -6955,7 +6929,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -7003,7 +6977,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 540, 150, 90, 70, 685, 4, 100
 armour_ug_levels 0, 1
-armour_ug_models Turkish_Horse_Archers, Turkish_Horse_Archers_ug1
+armour_ug_models Turkmen_Atli_Okcusu, Turkmen_Atli_Okcusu_ug1
 ownership        all; turks
 era 0            turks
 era 1            turks
@@ -7039,7 +7013,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 745, 370, 90, 70, 905, 4, 120
 armour_ug_levels 0, 1, 6
-armour_ug_models Turkomans, Turkomans_ug1, Turkomans_ug2
+armour_ug_models Turkmen_Atli_Okcusu, Turkmen_Atli_Okcusu_ug1, Turkmen_Atli_Okcusu_ug2
 ownership        all; turks, kwarezm, slave
 era 0            turks, kwarezm
 era 1            turks, kwarezm
@@ -7077,10 +7051,10 @@ stat_food        60, 300
 stat_cost        1, 820, 375, 100, 75, 820, 4, 190
 armour_ug_levels 7, 11, 17, 37
 armour_ug_models Sipahis, Sipahis_ug1, Sipahis_ug2, Sipahis_ug2
-ownership        turks, moors, sicily
-era 0            turks, moors, sicily
-era 1            turks, moors, sicily
-era 2            turks, moors, sicily
+ownership        turks, moors
+era 0            turks, moors
+era 1            turks, moors
+era 2            turks, moors
 recruit_priority_offset    35
 
 
@@ -7186,10 +7160,10 @@ stat_food        60, 300
 stat_cost        1, 320, 175, 100, 75, 460, 4, 130
 armour_ug_levels 0, 1
 armour_ug_models Desert_Cavalry, Desert_Cavalry_ug1
-ownership        all; moors, egypt, sicily, slave
-era 0            moors, egypt, sicily
-era 1            moors, egypt, sicily
-era 2            moors, egypt, sicily
+ownership        all; moors, egypt, slave
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    0
 
 
@@ -7298,10 +7272,10 @@ stat_food        60, 300
 stat_cost        6, 955, 200, 100, 75, 755, 4, 120
 armour_ug_levels 2, 7, 14
 armour_ug_models Arab_Cavalry, Arab_Cavalry_ug1, Arab_Cavalry_ug2
-ownership        moors, egypt, sicily, slave
-era 0            moors, egypt, sicily
-era 1            moors, egypt, sicily
-era 2            moors, egypt, sicily
+ownership        moors, egypt, slave
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    15
 
 
@@ -7446,10 +7420,10 @@ stat_food        60, 300
 stat_cost        1, 455, 200, 100, 75, 635, 4, 160
 armour_ug_levels 7, 14
 armour_ug_models Granadine_Jinetes, Granadine_Jinetes_ug1
-ownership        all; moors, sicily, slave
-era 0            moors, sicily
-era 1            moors, sicily
-era 2            moors, sicily
+ownership        all; moors, slave
+era 0            moors
+era 1            moors
+era 2            moors
 recruit_priority_offset    20
 
 
@@ -7734,10 +7708,10 @@ stat_food        60, 300
 stat_cost        1, 520, 0, 60, 50, 520, 1, 110
 armour_ug_levels 19, 27, 37
 armour_ug_models ME_Bodyguard, ME_Bodyguard_ug1, ME_Late_Bodyguard
-ownership        moors, egypt, turks, kwarezm, sicily, slave
-era 0            moors, egypt, turks, kwarezm, sicily
-era 1            moors, egypt, turks, kwarezm, sicily
-era 2            moors, egypt, turks, kwarezm, sicily
+ownership        moors, egypt, turks, kwarezm, slave
+era 0            moors, egypt, turks, kwarezm
+era 1            moors, egypt, turks, kwarezm
+era 2            moors, egypt, turks, kwarezm
 recruit_priority_offset    40
 
 
@@ -7808,7 +7782,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 335, 335, 90, 70, 530, 4, 130
 armour_ug_levels 1
-armour_ug_models Turkopoles
+armour_ug_models Turkopole_Mercenary
 ownership        slave, jerusalem
 era 0            jerusalem
 era 1            jerusalem
@@ -7931,7 +7905,7 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         4, 3, average_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         5, 3, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  5, 7, 3, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -7965,7 +7939,7 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         7, 2, elite_missile_composite_arrow, 210, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
+stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
 stat_pri_armour  5, 6, 0, metal ; 
 stat_sec_armour  0, 0, metal
@@ -8032,7 +8006,7 @@ formation        1.4, 1.4, 2.8, 2.4, 2, square
 stat_health      1, 3
 stat_pri         15, 2, nahptha_bomb, 40, 5, missile, missile_gunpowder, blunt, none, 0, 1
 stat_pri_attr    ap
-stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  4, 5, 0, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -8079,10 +8053,10 @@ stat_food        60, 300
 stat_cost        1, 480, 150, 65, 50, 505, 4, 90
 armour_ug_levels 0, 1
 armour_ug_models desert_archers, desert_archers_ug1
-ownership        all; moors, egypt, sicily, slave
-era 0            moors, egypt, sicily
-era 1            moors, egypt, sicily
-era 2            moors, egypt, sicily
+ownership        all; moors, egypt, slave
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    10
 
 
@@ -8100,7 +8074,7 @@ formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
 stat_pri         5, 2, superior_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
 stat_pri_armour  0, 6, 0, flesh
 stat_sec_armour  0, 0, flesh
@@ -8130,7 +8104,7 @@ formation        1.2, 1.2, 1.2, 1.2, 4, square
 stat_health      1, 2
 stat_pri         15, 3, average_hand_gun_bullet, 55, 12, missile, missile_gunpowder, piercing, none, musket_shot_set, 0, 1
 stat_pri_attr    area
-stat_sec         6, 3, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_sec         6, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  4, 6, 0, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -8143,9 +8117,9 @@ stat_food        60, 300
 stat_cost        4, 670, 225, 90, 70, 445, 4, 210
 armour_ug_levels 7, 14
 armour_ug_models ME_Hand_Gunners, ME_Hand_Gunners_ug1
-ownership        moors, turks, kwarezm, timurids, sicily
-era 1            moors, turks, kwarezm, sicily
-era 2            moors, turks, kwarezm, timurids, sicily
+ownership        moors, turks, kwarezm, timurids
+era 1            moors, turks, kwarezm
+era 2            moors, turks, kwarezm, timurids
 recruit_priority_offset    20
 
 
@@ -8176,7 +8150,7 @@ stat_food        60, 300
 stat_cost        1, 135, 70, 65, 50, 135, 4, 50
 armour_ug_levels 0, 1
 armour_ug_models ME_Archer_Militia, ME_Archer_Militia_ug1
-ownership        egypt, kwarezm
+ownership        egypt, kwarezm, georgia
 recruit_priority_offset    0
 
 
@@ -8305,7 +8279,7 @@ stat_food        60, 300
 stat_cost        1, 155, 115, 65, 50, 200, 4, 80
 armour_ug_levels 7, 14
 armour_ug_models ME_Crossbow_Militia, ME_Crossbow_Militia_ug1
-ownership        moors, sicily, slave
+ownership        moors, slave
 recruit_priority_offset    10
 
 
@@ -8323,7 +8297,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         4, 2, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  0, 7, 2, flesh
 stat_sec_armour  0, 0, flesh
@@ -8336,8 +8310,8 @@ stat_food        60, 300
 stat_cost        4, 255, 255, 65, 50, 405, 4, 90
 armour_ug_levels 0
 armour_ug_models Armenian_Archers
-ownership        slave, turks
-era 2            turks
+ownership        slave, turks, georgia
+era 2            turks, georgia
 recruit_priority_offset    10
 
 
@@ -8472,10 +8446,10 @@ stat_food        60, 300
 stat_cost        1, 160, 115, 75, 60, 170, 4, 70
 armour_ug_levels 0, 1
 armour_ug_models ME_Spear_Militia, ME_Spear_Militia_ug1
-ownership        kwarezm, moors, egypt, turks, sicily, slave
-era 0            kwarezm, moors, egypt, turks, sicily
-era 1            kwarezm, moors, egypt, turks, sicily
-era 2            kwarezm, timurids, sicily
+ownership        kwarezm, moors, egypt, turks, georgia, slave
+era 0            kwarezm, moors, egypt, turks, georgia
+era 1            kwarezm, moors, egypt, turks, georgia
+era 2            kwarezm, timurids, georgia
 recruit_priority_offset    0
 
 
@@ -8493,7 +8467,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8530,7 +8504,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8599,7 +8573,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         12, 3, superior_javelin, 60, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
 stat_pri_armour  0, 8, 3, flesh
 stat_sec_armour  0, 0, flesh
@@ -8632,7 +8606,7 @@ officer		eastern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8667,7 +8641,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8682,10 +8656,10 @@ stat_food        60, 300
 stat_cost        4, 595, 180, 75, 55, 415, 4, 100
 armour_ug_levels 2, 7, 11
 armour_ug_models Dismounted_Arab_Cavalry, Dismounted_Arab_Cavalry_ug1, Dismounted_Arab_Cavalry_ug2
-ownership        moors, egypt, sicily
-era 0            moors, egypt, sicily
-era 1            moors, egypt, sicily
-era 2            moors, egypt, sicily
+ownership        moors, egypt
+era 0            moors, egypt
+era 1            moors, egypt
+era 2            moors, egypt
 recruit_priority_offset    10
 
 
@@ -8702,7 +8676,7 @@ officer		 eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit, disband_1
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         8, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8735,7 +8709,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit, disband_2
 formation        1.4, 1.4, 2.8, 2.8, 4, square
 stat_health      1, 1
-stat_pri         7, 2, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
+stat_pri         7, 1, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8769,7 +8743,7 @@ mount_effect     horse +6, camel +6
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         17, 6, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 ; -1 attack shield
+stat_pri         17, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 ; -1 attack shield
 stat_pri_attr    no ; ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8802,7 +8776,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8838,7 +8812,7 @@ mount_effect     horse +6, camel +6
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         13, 4, no, 0, 0, melee, melee_blade, slashing, axe, 135, 1
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 135, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8853,8 +8827,8 @@ stat_food        60, 300
 stat_cost        1, 295, 150, 75, 55, 350, 4, 120
 armour_ug_levels 7, 14
 armour_ug_models ME_Halberd_Militia, ME_Halberd_Militia_ug1
-ownership        egypt, turks, kwarezm, timurids
-era 2            egypt, turks, kwarezm, timurids
+ownership        egypt, turks, kwarezm, timurids, georgia
+era 2            egypt, turks, kwarezm, timurids, georgia
 recruit_priority_offset    15
 
 
@@ -8869,7 +8843,7 @@ soldier          Hashishim, 30, 0, 1.05, 0.35
 attributes       sea_faring, hide_improved_forest, very_hardy, can_withdraw, hide_anywhere, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 3, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1 ; light sword
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1 ; light sword
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8884,9 +8858,9 @@ stat_food        60, 300
 stat_cost        12, 810, 190, 55, 45, 620, 4, 105
 armour_ug_levels 10, 37
 armour_ug_models Hashishim, Hashishim
-ownership        moors, egypt, turks, kwarezm, sicily, slave
-era 1            moors, egypt, turks, kwarezm, sicily
-era 2            moors, egypt, turks, kwarezm, sicily
+ownership        moors, egypt, turks, kwarezm, slave
+era 1            moors, egypt, turks, kwarezm
+era 2            moors, egypt, turks, kwarezm
 recruit_priority_offset    10
 
 
@@ -8905,7 +8879,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         16, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         15, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8939,7 +8913,7 @@ officer		 eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.0, 2.4, 2.0, 5, square
 stat_health      1, 1
-stat_pri         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8954,9 +8928,9 @@ stat_food        60, 300
 stat_cost        1, 330, 150, 75, 55, 415, 4, 100
 armour_ug_levels 7, 14
 armour_ug_models Urban_Militia, Urban_Militia_ug1
-ownership        moors, sicily
-era 1            moors, sicily
-era 2            moors, sicily
+ownership        moors
+era 1            moors
+era 2            moors
 recruit_priority_offset    25
 
 
@@ -8974,7 +8948,7 @@ officer          eastern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         8, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         8, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -9010,7 +8984,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -9085,7 +9059,7 @@ formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 2
 stat_pri         7, 12, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
-stat_sec         9, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 
+stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 2, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -9246,8 +9220,8 @@ era 2            mongols
 recruit_priority_offset    5
 
 
-type             Disamounted Turhagut
-dictionary       mon_torhaguti_inf      ; Disamounted Turhagut, ep
+type             Dismounted Turhagut
+dictionary       mon_torhaguti_inf      ; Dismounted Turhagut, ep
 category         infantry
 class            heavy
 voice_type       Heavy
@@ -9259,7 +9233,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 0, 1.8, 1.8, 3, square
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -9365,7 +9339,7 @@ formation        1.4, 1.4, 2.8, 2.8, 3, square
 stat_health      1, 0
 stat_pri         7, 3, exceptional_composite_arrow, 170, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         8, 3, no, 0, 0, melee, melee_simple, slashing, sword, 15, 1 ; light sword
+stat_sec         8, 1, no, 0, 0, melee, melee_simple, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
 stat_pri_armour  6, 9, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -9400,7 +9374,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -9435,7 +9409,7 @@ formation        1.2, 1.2, 2.4, 2.4, 3, square
 stat_health      1, 2
 stat_pri         7, 2, elite_missile_composite_arrow, 210, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         2, 2, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
+stat_sec         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
 stat_sec_attr    ap
 stat_pri_armour  8, 5, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -9518,7 +9492,7 @@ stat_food        60, 300
 stat_cost        2, 500, 150, 90, 70, 370, 4, 90
 armour_ug_levels 1
 armour_ug_models NE_Ballista_Crew
-ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, papal_states, teutonic_order, jerusalem, eastern_european, greek
+ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, sicily, papal_states, teutonic_order, jerusalem, eastern_european, greek
 era 0            northern_european, southern_european
 era 1            northern_european, southern_european
 recruit_priority_offset    -25 
@@ -9539,7 +9513,7 @@ mount_effect     horse +6, camel +6
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         15, 6, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
+stat_pri         15, 4, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -9554,8 +9528,8 @@ stat_food        60, 300
 stat_cost        1, 420, 270, 90, 70, 685, 4, 180
 armour_ug_levels 24, 34, 37, 40
 armour_ug_models halberd_maa, halberd_maa_ug1, halberd_maa_ug1, halberd_maa_ug1, 
-ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, papal_states, teutonic_order
-era 2            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, papal_states, teutonic_order
+ownership        aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order
+era 2            aragon, france, denmark, spain, norway, england, hungary, poland, portugal, hre, milan, venice, sicily, papal_states, teutonic_order
 recruit_priority_offset    30
 
 
@@ -9586,7 +9560,7 @@ stat_food        60, 300
 stat_cost        1, 175, 150, 65, 50, 185, 4, 50
 armour_ug_levels 0, 1, 4 
 armour_ug_models Crossbow_Militia, Crossbow_Militia_ug1, Crossbow_Militia_ug2
-ownership        milan, venice, papal_states, hungary, hre, slave
+ownership        milan, venice, papal_states, sicily, hungary, slave
 recruit_priority_offset    0
 
 
@@ -9619,9 +9593,9 @@ stat_food        60, 300
 stat_cost        1, 500, 150, 90, 70, 370, 4, 90
 armour_ug_levels 1
 armour_ug_models ME_Ballista_Crew
-ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 0            turks, moors, egypt, kwarezm, cumans
-era 1            turks, moors, egypt, kwarezm, cumans
+ownership        turks, moors, egypt, kwarezm, mongols, timurids, georgia, cumans
+era 0            turks, moors, egypt, kwarezm, cumans, georgia
+era 1            turks, moors, egypt, kwarezm, cumans, georgia
 recruit_priority_offset    -25 
 
 
@@ -9654,9 +9628,9 @@ stat_food        60, 300
 stat_cost        2, 600, 150, 90, 70, 400, 4, 100
 armour_ug_levels 1
 armour_ug_models NE_Catapult_Crew
-ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, eastern_european, greek, papal_states, teutonic_order, jerusalem
-era 0            northern_european, southern_european
-era 1            northern_european, southern_european
+ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, sicily, hungary, poland, russia, kievan_rus, lithuania, byzantium, papal_states, teutonic_order, jerusalem
+era 0            northern_european, southern_european, hungary, poland, russia, kievan_rus, lithuania, byzantium
+era 1            northern_european, southern_european, hungary, poland, russia, kievan_rus, lithuania, byzantium
 recruit_priority_offset    -20 
 
 
@@ -9689,9 +9663,9 @@ stat_food        60, 300
 stat_cost        2, 600, 150, 90, 70, 400, 4, 100
 armour_ug_levels 1
 armour_ug_models ME_Catapult_Crew
-ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 0            turks, moors, egypt, kwarezm, cumans
-era 1            turks, moors, egypt, kwarezm, cumans
+ownership        turks, moors, egypt, kwarezm, mongols, timurids, georgia, cumans
+era 0            turks, moors, egypt, kwarezm, cumans, georgia
+era 1            turks, moors, egypt, kwarezm, cumans, georgia
 recruit_priority_offset    -20 
 
 
@@ -9726,8 +9700,8 @@ stat_food        60, 300
 stat_cost        2, 700, 250, 90, 70, 430, 4, 100
 armour_ug_levels 1
 armour_ug_models NE_Trebuchet_Crew
-ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, eastern_european, greek, papal_states, teutonic_order, jerusalem
-era 1            northern_european, southern_european
+ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, sicily, hungary, poland, russia, kievan_rus, lithuania, byzantium, papal_states, teutonic_order, jerusalem
+era 1            northern_european, southern_european, hungary, poland, russia, kievan_rus, lithuania, byzantium
 recruit_priority_offset    -10 
 
 
@@ -9745,7 +9719,7 @@ formation        1.0, 1.2, 1.0, 1.2, 3, square
 stat_health      1, 2
 stat_pri         26, 1, elite_arquebus_bullet, 110, 12, missile, missile_gunpowder, piercing, none, musket_shot_set, 0, 1
 stat_pri_attr    area
-stat_sec         9, 3, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1 ; light sword
+stat_sec         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1 ; light sword
 stat_sec_attr    no
 stat_pri_armour  5, 10, 0, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -9793,8 +9767,8 @@ stat_food        60, 300
 stat_cost        2, 700, 250, 90, 70, 430, 4, 100
 armour_ug_levels 1
 armour_ug_models ME_Trebuchet_Crew
-ownership        turks, moors, egypt, kwarezm, mongols, timurids, cumans
-era 1            turks, moors, egypt, kwarezm, cumans
+ownership        turks, moors, egypt, kwarezm, mongols, timurids, georgia, cumans
+era 1            turks, moors, egypt, kwarezm, cumans, georgia
 recruit_priority_offset    -10 
 
 
@@ -9829,7 +9803,7 @@ stat_food        60, 300
 stat_cost        4, 900, 250, 90, 70, 610, 4, 150
 armour_ug_levels 1
 armour_ug_models NE_Bombard_Crew
-ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, papal_states, teutonic_order, jerusalem, eastern_european, greek
+ownership        england,  norway, scotland, hre, france, denmark, portugal, spain, aragon, venice, milan, sicily, papal_states, teutonic_order, jerusalem, eastern_european, greek
 era 1            northern_european, southern_european
 recruit_priority_offset    -10 
 
@@ -9851,7 +9825,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, start_phalan
 move_speed_mod	 0.80
 formation        1.2, 1.2, 2.4, 2.4, 4, phalanx, square
 stat_health      1, 1
-stat_pri         20, 6, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri         19, 4, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -9885,7 +9859,7 @@ formation        1.2, 1.2, 1.2, 1.2, 4, square
 stat_health      1, 2
 stat_pri         20, 4, superior_arquebus_bullet, 85, 12, missile, missile_gunpowder, piercing, none, musket_shot_set, 0, 1
 stat_pri_attr    area
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
+stat_sec         7, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
 stat_sec_attr    no
 stat_pri_armour  5, 8, 0, metal ; 
 stat_sec_armour  0, 0, metal
@@ -9957,7 +9931,7 @@ stat_health      1, 1
 stat_pri         7, 4, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-;stat_sec	 6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
+;stat_sec	 6, 2, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
 stat_sec_attr    no
 stat_pri_armour  12, 1, 0, metal
 stat_sec_armour  0, 0, flesh
@@ -10040,7 +10014,7 @@ stat_food        60, 300
 stat_cost        4, 1200, 250, 90, 70, 730, 4, 180
 armour_ug_levels 1
 armour_ug_models NE_Cannon_Crew
-ownership        france, hre, spain, aragon, portugal, milan, teutonic_order, russia, kievan_rus, lithuania, byzantium
+ownership        france, hre, spain, aragon, portugal, milan, teutonic_order, russia, kievan_rus, lithuania, byzantium, georgia
 era 1            france, hre, spain, aragon, portugal, milan, teutonic_order
 recruit_priority_offset    -15 
 
@@ -10061,7 +10035,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10076,9 +10050,9 @@ stat_food        60, 300
 stat_cost        4, 800, 180, 75, 55, 620, 4, 100
 armour_ug_levels 14, 19, 37
 armour_ug_models me_heavy_spearmen, me_heavy_spearmen_ug1, me_heavy_spearmen_ug1
-ownership        kwarezm, turks, egypt, moors, sicily
-era 1            kwarezm, turks, egypt, moors, sicily
-era 2            kwarezm, turks, egypt, moors, sicily
+ownership        kwarezm, turks, egypt, moors
+era 1            kwarezm, turks, egypt, moors
+era 2            kwarezm, turks, egypt, moors
 recruit_priority_offset    15
 
 
@@ -10147,9 +10121,9 @@ stat_food        60, 300
 stat_cost        4, 800, 250, 90, 70, 520, 4, 130
 armour_ug_levels 1
 armour_ug_models NE_Mortar_Crew
-ownership        england,  norway, scotland, venice, papal_states, jerusalem
-era 1            england,  norway, scotland, venice, papal_states, jerusalem
-era 2            england,  norway, scotland, venice, papal_states, jerusalem
+ownership        england,  norway, scotland, venice, papal_states, sicily, jerusalem
+era 1            england,  norway, scotland, venice, papal_states, sicily, jerusalem
+era 2            england,  norway, scotland, venice, papal_states, sicily, jerusalem
 recruit_priority_offset    -10 
 
 
@@ -10182,8 +10156,8 @@ stat_food        60, 300
 stat_cost        4, 650, 250, 90, 70, 400, 4, 100
 armour_ug_levels 1
 armour_ug_models NE_Ribault_Crew
-ownership        england,  norway, scotland, denmark, spain, aragon, portugal, venice, milan, papal_states, poland, hungary
-era 2            england,  norway, scotland, denmark, spain, aragon, portugal, venice, milan, papal_states
+ownership        england,  norway, scotland, denmark, spain, aragon, portugal, venice, milan, papal_states, sicily, poland, hungary
+era 2            england,  norway, scotland, denmark, spain, aragon, portugal, venice, milan, papal_states, sicily
 recruit_priority_offset    -10 
 
 
@@ -10250,8 +10224,8 @@ stat_food        60, 300
 stat_cost        4, 1300, 250, 90, 70, 870, 4, 210
 armour_ug_levels 1
 armour_ug_models NE_Cannon_Crew
-ownership        hre, denmark, norway, teutonic_order, poland, russia, kievan_rus, lithuania, byzantium
-era 2            hre, denmark, norway, teutonic_order
+ownership        hre, sicily, denmark, norway, teutonic_order, poland, russia, kievan_rus, lithuania, byzantium, georgia
+era 2            hre, sicily, denmark, norway, teutonic_order
 recruit_priority_offset    -5 
 
 
@@ -10272,7 +10246,7 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         5, 2, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
+stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_sec_attr    no
 stat_pri_armour  7, 6, 3, flesh
 stat_sec_armour  0, 0, flesh
@@ -10285,9 +10259,9 @@ stat_food        60, 300
 stat_cost        8, 1090, 185, 65, 50, 905, 4, 90
 armour_ug_levels 11, 17, 37
 armour_ug_models saracen_archers, saracen_archers_ug1
-ownership        kwarezm, turks, egypt, moors, sicily
-era 1            kwarezm, turks, egypt, moors, sicily
-era 2            kwarezm, turks, egypt, moors, sicily
+ownership        kwarezm, turks, egypt, moors
+era 1            kwarezm, turks, egypt, moors
+era 2            kwarezm, turks, egypt, moors
 recruit_priority_offset    25
 
 
@@ -10371,7 +10345,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         5, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_pri_attr    no ; ap ; 1H axe (hatchet)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10391,6 +10365,40 @@ era 0            moors
 era 1            moors
 ;unit_info        7, 0, 10
 recruit_priority_offset    0
+
+
+type             NE Basilisk
+dictionary       NE_Basilisk      ; Basilisk
+category         siege
+class            missile
+voice_type       Heavy
+banner faction   main_missile
+banner holy      crusade
+soldier          NE_Basilisk_Crew, 16, 2, 0.8, 0.30
+officer		 northern_captain
+engine           basilisk
+
+attributes       sea_faring, hardy, can_withdraw, gunpowder_unit, cannon, artillery, explode, stakes, stakes
+formation        1.5, 1.5, 3, 3, 3, square
+stat_health      1, 3
+stat_pri         1, 1, no, 0, 0, melee, artillery_gunpowder, piercing, knife, 15, 1
+stat_pri_attr    no
+stat_sec         65, 3, basilisk_shot, 450, 30, siege_missile, artillery_gunpowder, blunt, none, 0, 1
+stat_sec_attr    ap, bp, area, launching
+stat_pri_armour  2, 3, 0, leather
+stat_sec_armour  0, 0, flesh
+stat_heat        1
+stat_ground      0, 0, 0, 0
+stat_mental      8, disciplined, highly_trained
+stat_charge_dist 6
+stat_fire_delay  0
+stat_food        60, 300
+stat_cost        4, 1600, 400, 90, 70, 1080, 4, 270
+armour_ug_levels 1
+armour_ug_models NE_Basilisk_Crew
+ownership        france, hre, spain, aragon, portugal, teutonic_order, russia, hungary, kievan_rus
+era 2            hre, teutonic_order
+recruit_priority_offset    -5 
 
 
 type             NE Monster Ribault
@@ -10476,7 +10484,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10513,7 +10521,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, standard, command
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10550,7 +10558,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         14, 3, elite_steel_crossbow_bolt, 170, 20, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
+stat_sec         7, 2, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
 stat_sec_attr    no
 stat_pri_armour  5, 10, 0, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -10583,7 +10591,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, s
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 2
-stat_pri         7, 4, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
+stat_pri         7, 2, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10623,7 +10631,7 @@ attributes       sea_faring, hide_forest, can_withdraw, pike, start_phalanxing, 
 move_speed_mod	 0.70
 formation        1.2, 1.5, 1.2, 1.5, 8, square, phalanx ; formation        1.25, 0, 2.0, 2.0, 8, square, phalanx
 stat_health      1, 1
-stat_pri         3, 4, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         3, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10671,7 +10679,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 385, 385, 90, 70, 620, 4, 120
 armour_ug_levels 0
-armour_ug_models Turkomans
+armour_ug_models Turkmen_Atli_Okcusu
 ownership        slave
 recruit_priority_offset    10
 
@@ -10826,7 +10834,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit, c
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10841,7 +10849,7 @@ stat_food        60, 300
 stat_cost        1, 520, 520, 100, 75, 795, 4, 170
 armour_ug_levels 11, 17, 37
 armour_ug_models Dismounted_Crusader_Knights, Dismounted_Crusader_Knights, Dismounted_Crusader_Knights
-ownership        slave, england, france, hre, spain, venice, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
+ownership        slave, england, france, hre, spain, venice, sicily, milan, scotland, denmark, portugal, poland, hungary, papal_states, jerusalem
 recruit_priority_offset    15
 
 
@@ -10865,7 +10873,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         12, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; 5+4+1+2
+stat_pri         12, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; 5+4+1+2
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10880,7 +10888,7 @@ stat_food        60, 300
 stat_cost        1, 1030, 200, 90, 70, 1030, 4, 150
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Dismounted_Knights_Templar, Dismounted_Knights_Templar, Dismounted_Knights_Templar_ug1, Dismounted_Knights_Templar_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -10904,7 +10912,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         10, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10919,7 +10927,7 @@ stat_food        60, 300
 stat_cost        1, 1030, 200, 90, 70, 1030, 4, 150
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Dismounted_Knights_Hospitaller, Dismounted_Knights_Hospitaller, Dismounted_Knights_Hospitaller_ug1, Dismounted_Knights_Hospitaller_ug2
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 0            jerusalem
 era 1            jerusalem
 era 2            jerusalem
@@ -10943,7 +10951,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         11, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
+stat_pri         11, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -10958,7 +10966,7 @@ stat_food        60, 300
 stat_cost        1, 1030, 200, 90, 70, 1030, 4, 150
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Dismounted_Knights_of_Santiago, Dismounted_Knights_of_Santiago, Dismounted_Knights_of_Santiago_ug1, Dismounted_Knights_of_Santiago_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 1            spain, aragon, portugal
 era 2            spain, aragon, portugal
 info_pic_dir	 KnightOrders
@@ -10983,7 +10991,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         4, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11019,7 +11027,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 7, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
+stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
 stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11050,7 +11058,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 2.4, 4, square
 stat_health      1, 1
-stat_pri         5, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11086,7 +11094,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11121,7 +11129,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         12, 7, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11157,7 +11165,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11225,7 +11233,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upk
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11291,7 +11299,7 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         4, 1, average_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  4, 2, 3, metal 
 stat_sec_armour  0, 0, flesh
@@ -11324,7 +11332,7 @@ formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
 stat_pri         3, 5, average_mounted_missile_composite_arrow, 160, 45, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 ; -1 to attack 
+stat_sec         1, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 ; -1 to attack 
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  4, 0, 3, metal ; defense -1 so -1 to attack
 stat_sec_armour  0, 0, flesh
@@ -11357,7 +11365,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         16, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         15, 3, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11392,7 +11400,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_pri         11, 1, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11491,7 +11499,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         11, 1, average_javelin, 55, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  2, 4, 3, flesh
 stat_sec_armour  0, 0, flesh
@@ -11525,7 +11533,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         5, 4, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri         5, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11559,7 +11567,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11574,7 +11582,7 @@ stat_food        60, 300
 stat_cost        1, 785, 160, 75, 55, 755, 4, 130
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models dismounted_km, dismounted_km, dismounted_km_ug1, dismounted_km_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 1            spain, aragon, portugal
 era 2            spain, aragon, portugal
 info_pic_dir	 KnightOrders
@@ -11614,7 +11622,7 @@ stat_food        60, 300
 stat_cost        1, 1165, 200, 130, 100, 1150, 4, 220
 armour_ug_levels 11, 17, 22, 37
 armour_ug_models Knights_of_Montesa, Knights_of_Montesa, Knights_of_Montesa_ug1, Knights_of_Montesa_ug1
-ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, slave
+ownership        england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, teutonic_order, lithuania, slave
 era 1            spain, aragon, portugal
 era 2            spain, aragon, portugal
 info_pic_dir	 KnightOrders
@@ -11713,7 +11721,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11745,7 +11753,7 @@ soldier          Hashishim, 24, 0, 1.05, 0.35
 attributes       sea_faring, hide_improved_forest, very_hardy, can_withdraw, hide_anywhere, mercenary_unit
 formation        1.2, 1.2, 2.4, 2.4, 2, square
 stat_health      1, 1
-stat_pri         10, 3, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11777,7 +11785,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         8, 3, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11813,7 +11821,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11860,7 +11868,7 @@ stat_food        60, 300
 stat_cost        1, 315, 315, 65, 50, 420, 4, 50
 armour_ug_levels 4, 16, 23, 33
 armour_ug_models Arbalesters, Arbalesters, Hussites, Hussites
-ownership        slave, venice, milan, france
+ownership        slave, sicily, venice, milan, france
 recruit_priority_offset    15
 
 
@@ -11878,7 +11886,7 @@ attributes       sea_faring, hide_forest, can_withdraw, pike, start_phalanxing, 
 move_speed_mod	 0.70
 formation        1.2, 1.5, 1.2, 1.5, 8, square, phalanx ; formation        1.25, 0, 2.0, 2.0, 8, square, phalanx
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         3, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11943,7 +11951,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         5, 3, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -11977,7 +11985,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 1
-stat_pri         5, 3, no, 0, 0, melee, melee_blade, slashing sword, 60, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, slashing sword, 60, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12011,7 +12019,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         5, 3, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12046,7 +12054,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         10, 6, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
+stat_pri         10, 3, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12080,7 +12088,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12095,7 +12103,7 @@ stat_food        60, 300
 stat_cost        1, 255, 255, 75, 55, 380, 4, 140
 armour_ug_levels 7
 armour_ug_models macemen
-ownership        slave, england, france, hungary
+ownership        slave, england, france, hungary, sicily
 recruit_priority_offset    15
 
 
@@ -12112,7 +12120,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 1
-stat_pri         13, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         12, 2, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12146,7 +12154,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12178,7 +12186,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12210,7 +12218,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12273,44 +12281,6 @@ era 0            turks
 recruit_priority_offset    30
 
  
-type             Breton Light Cavalry
-dictionary       Breton_Light_Cavalry      ; Breton Light Cavalry, m
-category         cavalry
-class            missile; skirmish
-voice_type       Light
-banner faction   main_cavalry
-banner holy      crusade_cavalry
-soldier          Breton_Light_Cavalry, 24, 0, 1
-mount            medium horse HA
-mount_effect     elephant -4, camel -4
-attributes       sea_faring, hide_forest, can_withdraw, horse_javelinmen, mercenary_unit
-move_speed_mod	 1.05
-formation        2, 4.4, 3, 4.4, 3, square
-stat_health      1, 3
-stat_pri         11, 6, average_mounted_javelin, 55, 8, thrown, missile_mechanical, piercing, spear, 0, 1
-;stat_pri_ex      0, 0, 0
-stat_pri_attr    thrown
-stat_sec         2, 7, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
-;stat_sec_ex      0, 0, 0
-stat_sec_attr    no
-stat_pri_armour  4, 0, 0, metal
-;stat_armour_ex   2, 3, 0, 0, 2, 6, 6, leather
-stat_sec_armour  0, 0, flesh
-stat_heat        4
-stat_ground      0, 0, 0, 2
-stat_mental      7, normal, trained
-stat_charge_dist 20
-stat_fire_delay  0
-stat_food        60, 300
-stat_cost        1, 265, 265, 55, 135, 430, 1, 150
-armour_ug_levels 5
-armour_ug_models breton_light_cavalry
-ownership        all
-era 0            england, france
-era 1            england, france
-recruit_priority_offset    10
-
- 
 type             Nukeri Horse Archers
 dictionary       mon_nukeri      ; Nukeri Horse Archers, l
 category         cavalry
@@ -12362,7 +12332,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square, shield_wall
 stat_health      1, 1
-stat_pri         10, 4, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -12471,7 +12441,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         5, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_pri         5, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -12511,7 +12481,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1, 0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -12550,9 +12520,9 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         14, 6, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1 ;-2 attack hampered by large shield 
+stat_pri         14, 2, no, 0, 0, melee, melee_blade, piercing, axe, 105, 1 ;-2 attack hampered by large shield 
 ;stat_pri_ex      0, 0, 0
-stat_pri_attr    light_spear ; ap ; Polearm Rebalance (poleaxe)
+stat_pri_attr    light_spear ; ap ; Polearm Rebalance (bladed poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
@@ -12589,7 +12559,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, frighten_foo
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         12, 4, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri         12, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -12608,7 +12578,7 @@ stat_food        60, 300
 stat_cost        1, 960, 600, 65, 155, 960, 2, 200; Old Cost
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Dismounted_Ritterbruder, Dismounted_Ritterbruder, Dismounted_Ritterbruder_ug1, Dismounted_Ritterbruder_ug1
-ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, slave
+ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, lithuania, slave
 era 0            teutonic_order, hre
 era 1            teutonic_order, hre
 era 2            teutonic_order, hre
@@ -12631,7 +12601,7 @@ stat_health      1, 2
 stat_pri         3, 2, average_missile_war_arrow, 160, 35, missile, missile_mechanical, piercing, none, 0, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
-stat_sec         2, 2, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
+stat_sec         2, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
 stat_pri_armour  2, 6, 1, leather ; shield -1 
@@ -12646,7 +12616,7 @@ stat_food        60, 300
 stat_cost        1, 255, 120, 75, 55, 415, 4, 120
 armour_ug_levels 2, 7
 armour_ug_models Prussian_Archers, Prussian_Archers_ug1
-ownership        teutonic_order, hre, england, scotland, france, denmark, spain, aragon, portugal, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
+ownership        teutonic_order, hre, england, scotland, france, denmark, spain, aragon, portugal, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus, slave
 era 0            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, portugal, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
 era 1            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, portugal, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
 recruit_priority_offset    5
@@ -12667,7 +12637,7 @@ stat_health      1, 2
 stat_pri         10, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 200, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
 stat_pri_armour  2, 3, 7, leather ; 
@@ -12705,7 +12675,7 @@ stat_health      1, 3
 stat_pri         5, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         6, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    ap
 stat_pri_armour  8, 4, 5, metal ; 
@@ -12839,7 +12809,7 @@ stat_food        60, 300
 stat_cost        1, 1230, 800, 85, 205, 1230, 2, 290; Old cost values
 armour_ug_levels 11, 17, 22, 30
 armour_ug_models Ritterbruder, Ritterbruder, Ritterbruder_ug1, Ritterbruder_ug1
-ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, poland, hungary, jerusalem, spain, aragon, portugal, hre, slave
+ownership        teutonic_order, england, scotland, france, denmark, norway, milan, venice, papal_states, sicily, poland, hungary, jerusalem, spain, aragon, portugal, hre, lithuania, slave
 era 0            teutonic_order, hre
 era 1            teutonic_order, hre
 era 2            teutonic_order, hre
@@ -12908,7 +12878,7 @@ stat_health      1, 3
 stat_pri         6, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         11, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_sec         9, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  8, 4, 3, metal ; 
@@ -13024,7 +12994,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13061,7 +13031,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         17, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         16, 3, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13101,7 +13071,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13139,7 +13109,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13178,7 +13148,7 @@ stat_health      1, 2
 stat_pri         9, 3, elite_crossbow_bolt, 130, 25, missile, missile_mechanical, piercing, none, 0, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_sec         7, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
 stat_pri_armour  7, 7, 0, metal ; 
@@ -13217,7 +13187,7 @@ stat_health      1, 3
 stat_pri         7, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         12, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_sec         10, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  9, 3, 3, metal ; 
@@ -13254,7 +13224,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 5, square
 stat_health      1, 1
-stat_pri         13, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         12, 2, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13294,7 +13264,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command, frighten_foot
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         16, 7, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; 10+4+1+2-1
+stat_pri         16, 4, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; 10+4+1+2-1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13335,7 +13305,7 @@ formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
 stat_pri         6, 5, elite_mounted_missile_composite_arrow, 190, 45, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         3, 5, no, 0, 0, melee, melee_blade, blunt, mace, 90, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, blunt, mace, 90, 1
 stat_sec_attr    ap
 stat_pri_armour  13, 4, 2, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -13368,7 +13338,7 @@ officer          eastern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -13403,7 +13373,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
 stat_pri_armour  4, 5, 0, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -13516,7 +13486,7 @@ officer          eastern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, mace, 45, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, mace, 45, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13554,7 +13524,7 @@ officer          eastern_captain_early_flag
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13641,8 +13611,8 @@ stat_food        60, 300
 stat_cost        2, 590, 200, 30, 75, 590, 1, 170
 armour_ug_levels 1
 armour_ug_models ne_mangonel_crew
-ownership        england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  teutonic_order, jerusalem, poland, hungary, byzantium, turks, egypt, moors, cumans, kwarezm
-era 1            england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily,  teutonic_order, jerusalem
+ownership        england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order, jerusalem, poland, hungary, byzantium, turks, egypt, moors, cumans, kwarezm, georgia
+era 1            england, norway, scotland, france, hre, denmark, spain, aragon, portugal, milan, venice, papal_states, sicily, teutonic_order, jerusalem
 recruit_priority_offset    -15 
 
 
@@ -13661,7 +13631,7 @@ stat_health      1, 2
 stat_pri         5, 1, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
-stat_sec         7, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 3, 0, metal ; 
@@ -13693,7 +13663,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 30, 1
@@ -13728,7 +13698,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, frighten_foot
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         16, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         13, 3, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no ; ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13764,7 +13734,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, frighten_foot
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 7, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri         9, 3, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    ap ;polearm rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -13804,7 +13774,7 @@ formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 3
 stat_pri         12, 3, superior_javelin, 60, 2, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown, prec
-stat_sec         9, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_sec         7, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  6, 3, 4, metal ;;
 stat_sec_armour  0, 0, flesh
@@ -13838,7 +13808,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         15, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         14, 2, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -13871,7 +13841,7 @@ formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
 stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  2, 3, 2, leather
 stat_sec_armour  0, 0, flesh
@@ -13905,7 +13875,7 @@ stat_health      1, 2
 stat_pri         8, 2, average_crossbow_bolt, 120, 20, missile, missile_mechanical, piercing, none, 0, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
 stat_pri_armour  2, 5, 7, leather
@@ -13940,7 +13910,7 @@ stat_health      1, 2
 stat_pri         19, 2, average_early_arquebus_bullet, 80, 12, missile, missile_gunpowder, piercing, none, musket_shot_set, 0, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
 stat_pri_armour  0, 7, 0, flesh
@@ -13977,7 +13947,7 @@ formation        2, 4.4, 3, 4.4, 4, square
 stat_health      1, 3
 stat_pri         12, 4, superior_mounted_javelin, 60, 3, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         10, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_sec         8, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  6, 2, 3, metal 
 stat_sec_armour  0, 0, flesh
@@ -14123,7 +14093,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, frighten_foo
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri         9, 1, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14194,7 +14164,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14231,7 +14201,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14268,7 +14238,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 2, militia_javelin, 50, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  0, 6, 0, leather
 stat_sec_armour  0, 0, flesh
@@ -14528,7 +14498,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14566,7 +14536,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14643,7 +14613,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         16, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         15, 3, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14678,7 +14648,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
@@ -14751,7 +14721,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 3, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14790,7 +14760,7 @@ formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 2
 stat_pri         5, 12, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
-stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 
+stat_sec         5, 5, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 0, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -14825,7 +14795,7 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 6, square
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -14860,7 +14830,7 @@ formation        1.4, 1.4, 2.8, 2.8, 3, square
 stat_health      1, 0
 stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    no
-stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
 stat_pri_armour  0, 5, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -14901,7 +14871,7 @@ stat_pri         7, 11, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
 stat_sec         4, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_sec_attr    ap
-stat_pri_armour  10, 6, 3, metal 
+stat_pri_armour  9, 6, 3, metal 
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      -1, -2, -3, 0 
@@ -14982,7 +14952,7 @@ stat_food        60, 300
 stat_cost        1, 290, 120, 65, 50, 300, 4, 70
 armour_ug_levels 0, 1
 armour_ug_models cum_militia_a_sw, cum_militia_a_sw 
-ownership        slave, cumans
+ownership        slave, cumans, georgia
 era 0            cumans
 era 1            cumans
 era 2            cumans
@@ -15002,7 +14972,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.80
 formation        1.2, 1.0, 2.4, 2.0, 5, square
 stat_health      1, 1
-stat_pri         5, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1 
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1 
 stat_pri_attr    spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15038,7 +15008,7 @@ formation        1.2, 1.2, 2.4, 2.4, 3, square
 stat_health      1, 2
 stat_pri         7, 4, exceptional_missile_composite_arrow, 220, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_sec         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  6, 9, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -15058,7 +15028,7 @@ recruit_priority_offset    40
 
 
 type             Pechenegs
-dictionary       cum_pecheneg_cav_a_sw   ; Pechenegs, l
+dictionary       cum_pecheneg_cav_a_sw   ; Nomad Tribal Cavalry, l
 category         cavalry
 class            missile; skirmish
 voice_type       Light
@@ -15073,7 +15043,7 @@ formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
 stat_pri         4, 5, average_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    no
-stat_sec         4, 5, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sw
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sw
 stat_sec_attr    no
 stat_pri_armour  0, 2, 3, flesh
 stat_sec_armour  0, 0, flesh
@@ -15109,7 +15079,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         12, 7, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri         12, 4, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15178,7 +15148,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15214,7 +15184,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15281,7 +15251,7 @@ officer          russia_captain_early_flag
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
@@ -15422,7 +15392,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15455,7 +15425,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit,
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15563,7 +15533,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upk
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square, shield_wall
 stat_health      1, 1
-stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15601,7 +15571,7 @@ formation        2, 4.4, 3, 4.4, 4, square
 stat_health      1, 3
 stat_pri         11, 5, average_mounted_javelin, 55, 6, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
+stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  4, 0, 3, metal ; mail
 stat_sec_armour  0, 0, flesh
@@ -15636,7 +15606,7 @@ attributes       sea_faring, hide_forest, can_withdraw, shield_wall
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         4, 3, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15672,7 +15642,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 0
-stat_pri         3, 2, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -15713,7 +15683,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 1
 stat_pri         9, 1, peasant_militia_javelin, 45, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         5, 1,  no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         3, 1,  no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe
 stat_pri_armour  0, 4, 1, flesh ; shield -1
 stat_sec_armour  0, 0, flesh
@@ -15749,7 +15719,7 @@ formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 3
 stat_pri         11, 2, average_javelin, 55, 4, thrown, missile_mechanical, piercing, spear, 0, 1
 stat_pri_attr    area, thrown
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
 stat_pri_armour  2, 6, 3, leather
 stat_sec_armour  0, 0, flesh
@@ -15823,7 +15793,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -15934,7 +15904,7 @@ attributes       sea_faring, hide_forest, can_withdraw, shield_wall
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square, shield_wall
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -16046,7 +16016,7 @@ formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
 stat_pri         10, 2, superior_heavy_crossbow_bolt, 145, 20, missile, missile_mechanical, piercing, none, 200, 1
 stat_pri_attr    area 
-stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
 stat_pri_armour  4, 7, 0, metal ; mail
 stat_sec_armour  0, 0, flesh
@@ -16059,9 +16029,9 @@ stat_food        60, 300
 stat_cost        1, 465, 335, 65, 50, 560, 4, 120
 armour_ug_levels 7
 armour_ug_models Gasmuli
-ownership        byzantium
-era 1            byzantium
-era 2            byzantium
+ownership        byzantium, georgia
+era 1            byzantium, georgia
+era 2            byzantium, georgia
 recruit_priority_offset    15
 
 
@@ -16083,7 +16053,7 @@ formation        1.5, 4.4, 2.5, 6, 2, square ;  ; , wedge
 stat_health      1, 3
 stat_pri         4, 15, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_sec         7, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  10, 3, 5, metal ; mail
 stat_sec_armour  0, 0, flesh
@@ -16117,7 +16087,7 @@ formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
 stat_pri         5, 2, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    no
-stat_sec         3, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  2, 6, 3, leather
 stat_sec_armour  0, 0, flesh
@@ -16224,7 +16194,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.8
 formation        1.0, 1.0, 2.0, 2.0, 5, square
 stat_health      1, 1
-stat_pri         4, 4, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -16259,7 +16229,7 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.8
 formation        1.2, 1.0, 2.4, 2.0, 4, square, shield_wall
 stat_health      1, 1
-stat_pri         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -16295,7 +16265,7 @@ stat_health      1, 3
 stat_pri         7, 3, greek_fire, 30, 2, missile, missile_gunpowder, slashing, none, 25, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    ap, bp
-stat_sec         4, 3, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
 stat_pri_armour  7, 6, 0, metal
@@ -16367,7 +16337,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square, shield_wall
 stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_pri         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -16476,7 +16446,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command, frighten_foot
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         17, 5, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
+stat_pri         16, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -16508,7 +16478,7 @@ soldier          Viking_Raiders, 48, 0, 0.75, 0.45
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 1
-stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 0
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 0
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no ; ap ; 1H axe (hatchet)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -16576,7 +16546,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 move_speed_mod	 0.9
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 
+stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -16598,20 +16568,17 @@ recruit_priority_offset    0
 
 type             Royal Envoy
 dictionary       Royal_Envoy      ; Royal Envoy
-category         non_combatant
+category         siege
 class            spearmen
 voice_type       Light
-soldier          NE_Bodyguard, 8, 0, 1
-officer          northern_captain_early_flag
-;mount            barded horse brawler charger
-;mount_effect     elephant -4, camel -4 
+soldier          Carroccio_Standard, 8, 0, 1
+engine           great_standart_milan
 attributes       sea_faring, can_withdraw, no_custom, princess
-move_speed_mod	 0.95
 formation        1.5, 4.4, 2, 6, 2, square
 stat_health      1, 3
-stat_pri         5, 14, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
+stat_pri         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_pri_attr    no
-stat_sec         10, 5, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
+stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
 stat_pri_armour  8, 9, 3, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -16624,8 +16591,8 @@ stat_food        60, 300
 ;stat_cost        1, 1, 125, 75, 60, 6000, 4, 70;TEST
 stat_cost        8, 6000, 125, 75, 60, 6000, 4, 70
 armour_ug_levels 11
-armour_ug_models NE_Bodyguard
-ownership        byzantium, england, scotland, france, hre, denmark, norway, spain, aragon, portugal, milan, venice, hungary, poland, lithuania, russia, kievan_rus, jerusalem, georgia, cumans
+armour_ug_models Carroccio_Standard
+ownership        byzantium, england, scotland, france, hre, denmark, norway, spain, aragon, portugal, sicily, milan, venice, hungary, poland, lithuania, russia, kievan_rus, jerusalem, georgia, cumans
 info_pic_dir	 RLC
 card_pic_dir	 RLC
 recruit_priority_offset    -75

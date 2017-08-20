@@ -134,7 +134,6 @@ resource	coal,	48,	218
 resource	wool,	56,	224
 
 ;Thorn_Province; Kdanzk
-resource	dogs,	205,	226
 resource	fish,	210,	238
 
 ;Nottingham_Province
@@ -165,7 +164,6 @@ resource	timber,	166,	222
 resource	dogs,	263,	195
 
 ;Krakow_Province
-resource	amber,	218,	217
 resource	sulfur,	226,	211
 resource	tobacco,	220,	206
 
@@ -298,6 +296,7 @@ resource	textiles,	138,	167
 
 ;Pisa_Province
 resource	tin,	155,	158
+resource	wine,	144,	145; Corsica
 
 ;Trebizond_Province
 resource	silver,	361,	136
@@ -328,12 +327,12 @@ resource	wool,	28,	135;*ADDED*
 ;Thessalonica_Province
 resource	sulfur,	237,	139
 resource	timber,	239,	130
+resource	wool,	232,	145; Scopia
 
 ;Arta_Province
 resource	marble,	231,	127
 
 ;Ajaccio_Province; Nice Province
-resource	wine,	144,	145
 
 ;Nicaea_Province
 resource	silk,	290,	140
@@ -346,7 +345,6 @@ resource	marble,	165,	151
 resource	wool,	184,	144
 
 ;Caesarea_Province
-resource	wool,	345,	132
 
 ;Baghdad_Province
 resource	cotton,	406,	83
@@ -376,6 +374,7 @@ resource	textiles,	335,	112
 
 ;Mosul_Province
 resource	cotton,	387,	113
+resource	textiles,	377,	96
 
 ;Cagliari_Province
 resource	silver,	140,	137
@@ -385,6 +384,7 @@ resource	silk,	346,	113
 
 ;Smyrna_Province
 resource	cotton,	278,	118
+resource	wine,	278,	107; Rhodes island
 
 ;Antioch_Province
 resource	cotton,	339,	103
@@ -401,7 +401,6 @@ resource	textiles,	348,	102
 resource	textiles,	359,	98;*ADDED*
 
 ;Medina_Province; Wasit Province
-resource	spices,	353,	20
 
 ;Palermo_Province
 resource	cotton,	179,	114
@@ -411,7 +410,7 @@ resource	sugar,	182,	113;*ADDED*
 
 ;Corinth_Province
 resource	marble,	238,	118
-resource	wine,	246,	122
+resource	wine,	246,	122; Attica, Athens
 
 ;Marrakesh_Province
 resource	gold,	27,	66
@@ -458,7 +457,7 @@ resource	dyes,	301,	56
 resource	sugar,	305,	61
 
 ;Qarisiya_Province; Van Province
-resource	textiles,	377,	96
+resource	marble,	379,	129
 
 ;Benghazi_Province
 resource	slaves,	224,	72
@@ -496,17 +495,18 @@ resource	dogs,	25,	147
 
 ;Mecca_Province
 resource	iron,	367,	9
+resource	spices,	353,	20; Medina
 
 ;Beleb_el_Anab_Province; Laibach
 resource	fish,	176,	173;*NEW*
 ;resource	silver,	176,	172;*NEW*Trieste Fort Toll
 
-;Astrakhan_Province
+;Astrakhan_Province; Saksin
 resource	sulfur,	434,	181
 resource	wool,	416,	179
 
 ;Luxor_Province
-resource	silk,	313,	28
+resource	silk,	311,	28
 resource	sulfur,	326,	23
 
 ;Clermont_Province
@@ -530,7 +530,6 @@ resource	textiles,	97,	186;*NEW*
 resource	tobacco,	173,	194
 
 ;Diyarbakir_Province
-resource	marble,	379,	129
 
 ;Plock_Province
 resource	camels,	234,	218
@@ -561,7 +560,7 @@ resource	dogs,	21,	117
 resource	fish,	23,	114
 
 ;Scopia_Province; Tarnovo Province
-resource	wool,	232,	145
+resource	sugar,	264,	150
 
 ;Baku_Province; Shamakhi
 resource	slaves,	430,	138
@@ -642,6 +641,7 @@ resource	textiles,	487,	42
 resource	cotton,	504,	155
 resource	gold,	506,	152
 resource	tin,	449,	169
+resource	textiles,	506,	144
 
 ;Ray_Province
 resource	grain,	446,	99
@@ -662,8 +662,9 @@ resource	silk,	504,	6
 ;Gorgan_Province
 resource	wool,	473,	114
 
-;Khiva_Province
-resource	textiles,	506,	144
+;Khiva_Province; Poznan Province
+resource	dogs,	205,	226
+resource	amber,	218,	217
 
 ;Kazan_Province; Un-Inhabited Region
 ;*REMOVED*;resource	gold,	491,	277
@@ -710,7 +711,7 @@ resource	furs,	244,	280
 resource	grain,	36,	96
 
 ;Rhodes_Province; Chaldia Province, Sivas
-resource	wine,	278,	107
+resource	wool,	346,	134;*ADDED*
 
 ;Kermanshah_Province
 resource	silk,	418,	98
@@ -725,7 +726,6 @@ resource	wool,	410,	112
 resource	grain,	323,	200
 
 ;Adrianople_Province
-resource	sugar,	264,	150
 
 ;Aberdeen_Province; Alania
 resource	timber,	409,	159;*NEW*
@@ -786,7 +786,7 @@ resource	sugar,	421,	60
 resource	spices,	332,	87
 
 ;Tortosa_Province; Tripoli, Levant
-resource	glass,	337,	95
+resource	chocolate,	337,	95
 
 ;Iraklion_Province
 resource	wine,	260,	98
@@ -795,7 +795,7 @@ resource	wine,	260,	98
 resource	tin,	268,	131
 
 ;Isparta_Province
-resource	textiles,	295,	110
+resource	textiles,	300,	113
 
 ;Sinop_Province
 resource	marble,	328,	143
@@ -837,19 +837,11 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type market market
 	}
 	building
 	{
-		type barracks town_guard
+		type taverns inn
 	}
 	building
 	{
@@ -857,22 +849,42 @@ settlement
 	}
 	building
 	{
+		type smith leather_tanner
+	}
+	building
+	{
+		type barracks town_guard
+	}
+	building
+	{
 		type port port
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
+	building
+	{
+		type hinterland_roads roads
 	}
 }
 
-settlement castle
+settlement
 {
 	level large_town
-	region Ragusa_Province
+	region Athens_Province; Zara Province
 
 	year_founded 0
-	population 1500
+	population 2000
 	plan_set default_set
 	faction_creator venice
 	building
 	{
-		type core_castle_building castle
+		type core_building wooden_wall
+	}
+	building
+	{
+		type barracks town_watch
 	}
 	building
 	{
@@ -880,15 +892,19 @@ settlement castle
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type market corn_exchange
 	}
 	building
 	{
-		type hinterland_castle_roads c_roads
+		type port port
 	}
 	building
 	{
-		type castle_port c_port
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -901,13 +917,19 @@ unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 
-;Ragusa
-character	Ordelafo Falier, named character, male, heir, age 40, x 207, y 154 
+;Zara 
+character	Ordelafo Falier, named character, male, heir, age 40, x 187, y 164 
 traits Venice_Factionheir 1 , LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , GoodAdministrator 2 , Energetic 2 , ReligionStarter 1 
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		Urban Crossbow Militia			exp 1 armour 0 weapon_lvl 0
+
+;Zara Province Fort (Spalato)
+character	Paolo, general, male, age 21, x 197, y 160
+army
+unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
+unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
 
 character	Paolo Natale, admiral, male, age 29, x 167, y 171 
 army
@@ -929,8 +951,6 @@ ancillaries drillmaster
 army
 unit		SE Bodyguard				exp 1 armour 0 weapon_lvl 0
 unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0
-unit		Urban Spear Militia			exp 1 armour 0 weapon_lvl 0s
 
 character	Guido Basilio, diplomat, male, age 29, x 158, y 171 
 traits NaturalDiplomatSkill 2 , GoodDiplomat 1 
@@ -985,7 +1005,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_siege c_catapult_range
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1012,10 +1040,6 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type temple_catholic small_church
 	}
 	building
@@ -1029,6 +1053,14 @@ settlement
 	building
 	{
 		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -1051,11 +1083,15 @@ settlement
 	}
 	building
 	{
+		type port port
+	}
+	building
+	{
 		type hinterland_roads roads
 	}
 	building
 	{
-		type port port
+		type hinterland_farms farms
 	}
 }
 
@@ -1155,15 +1191,23 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type city_hall town_hall
 	}
 	building
 	{
+		type siege catapult_range
+	}
+	building
+	{
 		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -1257,19 +1301,19 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads paved_roads
-	}
-	building
-	{
 		type taverns inn
 	}
 	building
 	{
-		type hinterland_farms farms+1
+		type port port
 	}
 	building
 	{
-		type port port
+		type hinterland_roads paved_roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -1327,15 +1371,23 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type city_hall town_hall
 	}
 	building
 	{
+		type siege catapult_range
+	}
+	building
+	{
 		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1361,6 +1413,10 @@ settlement
 	{
 		type temple_catholic small_church
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -1380,6 +1436,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1478,15 +1538,7 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
 		type education_university school
-	}
-	building
-	{
-		type hinterland_roads roads
 	}
 	building
 	{
@@ -1498,7 +1550,19 @@ settlement
 	}
 	building
 	{
+		type siege siege_works
+	}
+	building
+	{
 		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+2
 	}
 }
 
@@ -1517,15 +1581,19 @@ settlement castle
 	}
 	building
 	{
-		type hinterland_castle_roads c_roads
-	}
-	building
-	{
 		type equestrian stables
 	}
 	building
 	{
 		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1564,7 +1632,7 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
+		type hinterland_farms farms+1
 	}
 }
 
@@ -1589,6 +1657,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -1611,6 +1683,10 @@ settlement castle
 	building
 	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1638,6 +1714,10 @@ settlement
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1785,7 +1865,15 @@ settlement
 	}
 	building
 	{
+		type siege catapult_range
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1805,6 +1893,10 @@ settlement castle
 	building
 	{
 		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1882,6 +1974,10 @@ settlement
 	}
 	building
 	{
+		type nomadic_build nomad_camp
+	}
+	building
+	{
 		type hinterland_roads roads
 	}
 }
@@ -1901,7 +1997,7 @@ settlement castle
 	}
 	building
 	{
-		type hinterland_castle_roads c_roads
+		type equestrian stables
 	}
 	building
 	{
@@ -1909,7 +2005,11 @@ settlement castle
 	}
 	building
 	{
-		type equestrian stables
+		type nomadic_build nomad_camp
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
 	}
 }
 
@@ -1925,6 +2025,18 @@ settlement castle
 	building
 	{
 		type core_castle_building motte_and_bailey
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type nomadic_build nomad_small_camp
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -1943,11 +2055,19 @@ settlement castle
 	}
 	building
 	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type nomadic_build nomad_small_camp
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type hinterland_farms farms
 	}
 }
 
@@ -1967,6 +2087,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type nomadic_build nomad_small_camp
 	}
 	building
 	{
@@ -1993,6 +2117,10 @@ settlement
 	}
 	building
 	{
+		type nomadic_build nomad_small_camp
+	}
+	building
+	{
 		type market corn_exchange
 	}
 }
@@ -2016,11 +2144,15 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
+		type temple_tengir tengir_altar
 	}
 	building
 	{
-		type temple_tengir tengir_altar
+		type nomadic_build nomad_camp
+	}
+	building
+	{
+		type hinterland_roads roads
 	}
 }
 
@@ -2186,7 +2318,15 @@ settlement
 	}
 	building
 	{
+		type siege catapult_range
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2213,6 +2353,10 @@ settlement
 	}
 	building
 	{
+		type city_hall town_hall
+	}
+	building
+	{
 		type temple_muslim small_masjid
 	}
 	building
@@ -2222,10 +2366,6 @@ settlement
 	building
 	{
 		type hinterland_farms farms
-	}
-	building
-	{
-		type city_hall town_hall
 	}
 }
 
@@ -2256,15 +2396,19 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type city_hall town_hall
 	}
 	building
 	{
 		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2293,20 +2437,36 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
 {
-	level village
+	level town
 	region Qarisiya_Province; Van Province
 
 	year_founded 0
-	population 1000
+	population 2500
 	plan_set default_set
 	faction_creator turks
 	building
 	{
-		type core_castle_building motte_and_bailey
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2330,6 +2490,10 @@ settlement castle
 	building
 	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2357,6 +2521,10 @@ settlement
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2389,6 +2557,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -2416,6 +2588,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -2442,6 +2618,10 @@ settlement
 	building
 	{
 		type market corn_exchange
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2629,15 +2809,19 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
 		type market market
 	}
 	building
 	{
+		type siege siege_works
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -2656,15 +2840,15 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
 		type barracks town_guard
 	}
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2693,6 +2877,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -2719,6 +2907,10 @@ settlement
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2749,15 +2941,15 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
 		type market market
 	}
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -2867,15 +3059,19 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
 		type market corn_exchange
 	}
 	building
 	{
+		type siege siege_works
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -2905,6 +3101,10 @@ settlement castle
 	{
 		type castle_port c_port
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -2926,11 +3126,15 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
+		type equestrian stables
 	}
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -2963,6 +3167,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -2994,6 +3202,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms+1
+	}
 }
 
 settlement castle
@@ -3021,6 +3233,10 @@ settlement castle
 	{
 		type equestrian stables
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -3046,11 +3262,15 @@ settlement
 	}
 	building
 	{
+		type port port
+	}
+	building
+	{
 		type hinterland_roads roads
 	}
 	building
 	{
-		type port port
+		type hinterland_farms farms+1
 	}
 }
 
@@ -3075,24 +3295,32 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
 {
-	level town
+	level large_town
 	region Cologne_Province
 
 	year_founded 0
-	population 2400
+	population 3400
 	plan_set default_set
 	faction_creator hre
 	building
 	{
-		type core_building wooden_pallisade
+		type core_building wooden_wall
 	}
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type market corn_exchange
 	}
 	building
 	{
@@ -3101,6 +3329,10 @@ settlement
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3294,7 +3526,7 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
+		type hinterland_farms farms+1
 	}
 }
 
@@ -3313,15 +3545,15 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type barracks town_watch
 	}
 	building
 	{
 		type temple_catholic small_church
+	}
+	building
+	{
+		type hinterland_roads roads
 	}
 	building
 	{
@@ -3354,6 +3586,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -3379,15 +3615,23 @@ settlement castle
 	}
 	building
 	{
-		type castle_port c_port
-	}
-	building
-	{
 		type temple_catholic_castle small_chapel
 	}
 	building
 	{
+		type castle_siege c_catapult_range
+	}
+	building
+	{
+		type castle_port c_port
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -3526,7 +3770,7 @@ settlement
 	region Al-Mahdiya_Province
 
 	year_founded 0
-	population 2400
+	population 3400
 	plan_set default_set
 	faction_creator portugal
 	building
@@ -3547,7 +3791,15 @@ settlement
 	}
 	building
 	{
+		type smith leather_tanner
+	}
+	building
+	{
 		type port port
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3557,7 +3809,7 @@ settlement castle
 	region Tunis_Province
 
 	year_founded 0
-	population 1800
+	population 2800
 	plan_set default_set
 	faction_creator portugal
 	building
@@ -3566,7 +3818,7 @@ settlement castle
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type castle_barracks garrison_quarters
 	}
 	building
 	{
@@ -3574,7 +3826,15 @@ settlement castle
 	}
 	building
 	{
+		type missiles bowyer
+	}
+	building
+	{
 		type castle_port c_port
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3654,6 +3914,10 @@ settlement
 	}
 	building
 	{
+		type equestrian stables
+	}
+	building
+	{
 		type temple_catholic small_church
 	}
 	building
@@ -3662,11 +3926,19 @@ settlement
 	}
 	building
 	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type siege catapult_range
+	}
+	building
+	{
 		type hinterland_roads roads
 	}
 	building
 	{
-		type city_hall town_hall
+		type hinterland_farms farms
 	}
 }
 
@@ -3691,6 +3963,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -3712,11 +3988,15 @@ settlement
 	}
 	building
 	{
+		type market corn_exchange
+	}
+	building
+	{
 		type hinterland_roads roads
 	}
 	building
 	{
-		type market corn_exchange
+		type hinterland_farms farms
 	}
 }
 
@@ -3803,7 +4083,7 @@ settlement
 	}
 	building
 	{
-		type market corn_exchange
+		type market market
 	}
 	building
 	{
@@ -3811,11 +4091,11 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads paved_roads
+		type city_hall city_hall
 	}
 	building
 	{
-		type city_hall city_hall
+		type taverns inn
 	}
 	building
 	{
@@ -3823,7 +4103,23 @@ settlement
 	}
 	building
 	{
-		type port port
+		type smith blacksmith
+	}
+	building
+	{
+		type siege siege_works
+	}
+	building
+	{
+		type port dockyard
+	}
+	building
+	{
+		type hinterland_roads paved_roads
+	}
+	building
+	{
+		type hinterland_farms farms+2
 	}
 }
 
@@ -3839,6 +4135,10 @@ settlement
 	building
 	{
 		type core_building wooden_wall
+	}
+	building
+	{
+		type barracks town_watch
 	}
 	building
 	{
@@ -3867,20 +4167,75 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
 {
-	level large_town
+	level city
 	region Thessalonica_Province
 
 	year_founded 0
-	population 3000
+	population 4000
 	plan_set default_set
 	faction_creator byzantium
 	building
 	{
-		type core_building wooden_wall
+		type core_building stone_wall
+	}
+	building
+	{
+		type barracks town_guard
+	}
+	building
+	{
+		type city_hall council_chambers
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type taverns brothel
+	}
+	building
+	{
+		type smith leather_tanner
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
+	}
+	building
+	{
+		type hinterland_mines mines
+	}
+}
+
+settlement
+{
+	level city
+	region Nicaea_Province
+
+	year_founded 0
+	population 3500
+	plan_set default_set
+	faction_creator byzantium
+	building
+	{
+		type core_building stone_wall
 	}
 	building
 	{
@@ -3892,30 +4247,23 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-}
-
-settlement
-{
-	level large_town
-	region Nicaea_Province
-
-	year_founded 0
-	population 3500
-	plan_set default_set
-	faction_creator byzantium
-	building
-	{
-		type core_building wooden_wall
+		type market corn_exchange
 	}
 	building
 	{
-		type barracks town_guard
+		type taverns brothel
+	}
+	building
+	{
+		type port port
 	}
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3935,6 +4283,14 @@ settlement castle
 	building
 	{
 		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3958,6 +4314,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -3984,11 +4344,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_port c_port
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
 	}
 	building
 	{
-		type castle_port c_port
+		type hinterland_farms farms
 	}
 }
 
@@ -4013,6 +4377,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -4036,6 +4404,10 @@ settlement
 	{
 		type port port
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -4053,7 +4425,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4080,7 +4460,19 @@ settlement castle
 	}
 	building
 	{
+		type castle_smith c_blacksmith
+	}
+	building
+	{
+		type castle_port c_port
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4100,6 +4492,10 @@ settlement castle
 	building
 	{
 		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4361,7 +4757,19 @@ settlement
 	}
 	building
 	{
+		type city_hall town_hall
+	}
+	building
+	{
 		type market market
+	}
+	building
+	{
+		type smith blacksmith
+	}
+	building
+	{
+		type siege siege_works
 	}
 	building
 	{
@@ -4369,11 +4777,7 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
-		type city_hall town_hall
+		type hinterland_farms farms+2
 	}
 }
 
@@ -4396,7 +4800,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4427,7 +4839,15 @@ settlement
 	}
 	building
 	{
+		type smith leather_tanner
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4456,6 +4876,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -4479,6 +4903,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -4498,6 +4926,10 @@ settlement
 	{
 		type barracks town_watch
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -4516,6 +4948,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4538,14 +4974,6 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
-		type port port
-	}
-	building
-	{
 		type temple_muslim small_masjid
 	}
 	building
@@ -4555,6 +4983,18 @@ settlement
 	building
 	{
 		type city_hall town_hall
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4577,14 +5017,6 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
-		type port port
-	}
-	building
-	{
 		type temple_muslim small_masjid
 	}
 	building
@@ -4594,6 +5026,18 @@ settlement
 	building
 	{
 		type city_hall town_hall
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -4617,6 +5061,10 @@ settlement castle
 	building
 	{
 		type equestrian stables
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4768,7 +5216,19 @@ settlement
 	}
 	building
 	{
+		type taverns inn
+	}
+	building
+	{
+		type siege catapult_range
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -4791,11 +5251,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
 	}
 	building
 	{
-		type castle_smith c_leather_tanner
+		type hinterland_farms farms
 	}
 }
 
@@ -4893,11 +5357,19 @@ settlement
 	}
 	building
 	{
+		type smith blacksmith
+	}
+	building
+	{
 		type port port
 	}
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4924,7 +5396,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_siege c_catapult_range
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -4953,6 +5433,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -4972,6 +5456,14 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type missiles bowyer
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -4989,7 +5481,19 @@ settlement castle
 	}
 	building
 	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5096,7 +5600,19 @@ settlement castle
 	}
 	building
 	{
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
+		type siege catapult_range
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5127,7 +5643,15 @@ settlement
 	}
 	building
 	{
+		type taverns brothel
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5156,6 +5680,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -5173,7 +5701,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5226,17 +5762,19 @@ unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 character	Nehemias, priest, male, age 34, x 217, y 192 
 traits NaturalPriestSkill 2 , GoodDenouncer 2 , PriestLevel 1 
 
-character_record		Geza, 	male, age 60, dead 23, past_leader
-character_record		Zsofia, 	female, age 58, dead 12, never_a_leader
+character_record		Bela Arpadhazi, 	male, age 2, alive, never_a_leader
+character_record		Adelaide Arpadhazi, 	female, age 10, alive, never_a_leader
 character_record		Predslava, 	female, age 24, alive, never_a_leader
+;
+character_record		Istvan Arpadhazi, 	male, age 0, alive, never_a_leader
 character_record		Eufemia, 	female, age 30, alive, never_a_leader
-character_record		Adelaide, 	female, age 10, alive, never_a_leader
-character_record		Bela, 	male, age 2, alive, never_a_leader
-character_record		Istvan, 	male, age 0, alive, never_a_leader
+;
+character_record		Zsofia, 	female, age 58, dead 12, never_a_leader
+character_record		Geza Arpadhazi, 	male, age 60, dead 23, past_leader
 
-relative 	Kalman Arpadhazi,	Eufemia,	Istvan,	end
-relative 	Almos Arpadhazi,	Predslava,	Adelaide,	Bela,	end
-relative 	Geza,	Zsofia,	Kalman Arpadhazi,	Almos Arpadhazi,	end
+relative 	Almos Arpadhazi,	Predslava,	Adelaide Arpadhazi,	Bela Arpadhazi,	end
+relative 	Kalman Arpadhazi,	Eufemia,	Istvan Arpadhazi,	end
+relative 	Geza Arpadhazi,	Zsofia,	Kalman Arpadhazi,	Almos Arpadhazi,	end
 
 faction	aragon, trader smith
 ai_label		catholic
@@ -5265,11 +5803,19 @@ settlement castle
 	}
 	building
 	{
+		type temple_catholic_castle small_chapel
+	}
+	building
+	{
+		type castle_smith c_blacksmith
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
 	}
 	building
 	{
-		type temple_catholic_castle small_chapel
+		type hinterland_farms farms
 	}
 }
 
@@ -5347,15 +5893,15 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type market market
 	}
 	building
 	{
 		type temple_perkunas perkunas_sanctuary
+	}
+	building
+	{
+		type hinterland_roads roads
 	}
 }
 
@@ -5431,11 +5977,7 @@ settlement
 	}
 	building
 	{
-		type temple_orthodox small_church_o
-	}
-	building
-	{
-		type hinterland_roads roads
+		type temple_orthodox church_o
 	}
 	building
 	{
@@ -5445,20 +5987,52 @@ settlement
 	{
 		type market corn_exchange
 	}
+	building
+	{
+		type siege catapult_range
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
 {
-	level village
+	level town
 	region Bryansk_Province; Chernigov Province
 
 	year_founded 0
-	population 900
+	population 2900
 	plan_set default_set
 	faction_creator kievan_rus
 	building
 	{
-		type core_castle_building motte_and_bailey
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type castle_barracks garrison_quarters
+	}
+	building
+	{
+		type missiles bowyer
+	}
+	building
+	{
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
+		type temple_orthodox_castle small_chapel_o
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5483,6 +6057,14 @@ settlement castle
 	{
 		type equestrian stables
 	}
+	building
+	{
+		type temple_orthodox_castle small_chapel_o
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -5504,7 +6086,15 @@ settlement
 	}
 	building
 	{
+		type market corn_exchange
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5624,10 +6214,6 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
-	}
-	building
-	{
 		type market great_market
 	}
 	building
@@ -5648,7 +6234,15 @@ settlement
 	}
 	building
 	{
+		type siege siege_works
+	}
+	building
+	{
 		type hinterland_roads paved_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5673,6 +6267,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -5694,15 +6292,19 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type market corn_exchange
 	}
 	building
 	{
 		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5786,7 +6388,19 @@ settlement castle
 	}
 	building
 	{
+		type temple_catholic_castle small_chapel
+	}
+	building
+	{
+		type castle_siege c_catapult_range
+	}
+	building
+	{
 		type castle_port c_port
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5806,6 +6420,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5896,14 +6514,6 @@ settlement
 	}
 	building
 	{
-		type barracks town_guard
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type wonders3 wonder_holy_sepulchre
 	}
 	building
@@ -5912,11 +6522,27 @@ settlement
 	}
 	building
 	{
+		type barracks town_guard
+	}
+	building
+	{
 		type taverns brothel
 	}
 	building
 	{
+		type siege siege_works
+	}
+	building
+	{
 		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5939,7 +6565,23 @@ settlement
 	}
 	building
 	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type taverns brothel
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -5970,11 +6612,19 @@ settlement
 	}
 	building
 	{
+		type taverns inn
+	}
+	building
+	{
 		type port port
 	}
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6150,10 +6800,6 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type barracks town_guard
 	}
 	building
@@ -6171,6 +6817,14 @@ settlement
 	building
 	{
 		type city_hall town_hall
+	}
+	building
+	{
+		type siege catapult_range
+	}
+	building
+	{
+		type hinterland_roads roads
 	}
 	building
 	{
@@ -6193,10 +6847,6 @@ settlement
 	}
 	building
 	{
-		type hinterland_roads roads
-	}
-	building
-	{
 		type barracks town_guard
 	}
 	building
@@ -6213,11 +6863,15 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
+		type city_hall town_hall
 	}
 	building
 	{
-		type city_hall town_hall
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6376,7 +7030,7 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
+		type market corn_exchange
 	}
 	building
 	{
@@ -6384,7 +7038,7 @@ settlement
 	}
 	building
 	{
-		type market corn_exchange
+		type hinterland_farms farms
 	}
 }
 
@@ -6478,6 +7132,10 @@ settlement castle
 	{
 		type missiles bowyer
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -6501,6 +7159,10 @@ settlement
 	{
 		type market corn_exchange
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -6516,6 +7178,10 @@ settlement
 	{
 		type core_building wooden_pallisade
 		plugin hansa hansa
+	}
+	building
+	{
+		type market corn_exchange
 	}
 }
 
@@ -6539,6 +7205,10 @@ settlement castle
 	building
 	{
 		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6567,6 +7237,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -6584,7 +7258,15 @@ settlement castle
 	}
 	building
 	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
 		type missiles bowyer
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6608,34 +7290,94 @@ settlement castle
 	}
 }
 
-settlement castle
+settlement
 {
-	level town
+	level city
 	region Antwerp_Province; Ghent Province
 
 	year_founded 0
-	population 1800
+	population 5800
 	plan_set default_set
 	faction_creator hre
 	building
 	{
-		type core_castle_building wooden_castle
+		type core_building stone_wall
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type barracks town_guard
+	}
+	building
+	{
+		type market market
+	}
+	building
+	{
+		type temple_catholic small_church
+	}
+	building
+	{
+		type smith blacksmith
+	}
+	building
+	{
+		type taverns inn
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
 settlement
 {
-	level village
+	level large_town
 	region Wroclaw_Province
 
 	year_founded 0
-	population 1000
+	population 2000
 	plan_set default_set
 	faction_creator poland
+	building
+	{
+		type core_building wooden_wall
+	}
+	building
+	{
+		type barracks town_watch
+	}
+	building
+	{
+		type temple_catholic small_church
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -6657,7 +7399,19 @@ settlement
 	}
 	building
 	{
+		type temple_catholic small_church
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
 		type port port
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6667,7 +7421,7 @@ settlement castle
 	region Metz_Province
 
 	year_founded 0
-	population 2000
+	population 3400
 	plan_set default_set
 	faction_creator hre
 	building
@@ -6676,11 +7430,27 @@ settlement castle
 	}
 	building
 	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
 		type equestrian stables
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
+		type temple_catholic_castle small_chapel
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6705,6 +7475,10 @@ settlement
 	{
 		type city_hall town_hall
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -6713,7 +7487,7 @@ settlement
 	region Rennes_Province
 
 	year_founded 0
-	population 2200
+	population 2400
 	plan_set default_set
 	faction_creator france
 	building
@@ -6723,6 +7497,26 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type smith leather_tanner
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type temple_catholic small_church
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6742,6 +7536,22 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type temple_catholic small_church
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6766,6 +7576,14 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -6783,15 +7601,11 @@ settlement
 	}
 	building
 	{
+		type barracks town_guard
+	}
+	building
+	{
 		type temple_catholic small_church
-	}
-	building
-	{
-		type hinterland_roads roads
-	}
-	building
-	{
-		type hinterland_farms farms
 	}
 	building
 	{
@@ -6801,6 +7615,14 @@ settlement
 	{
 		type city_hall town_hall
 	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
+	}
 }
 
 settlement
@@ -6809,7 +7631,7 @@ settlement
 	region Pisa_Province
 
 	year_founded 0
-	population 2800
+	population 3100
 	plan_set default_set
 	faction_creator papal_states
 	building
@@ -6836,6 +7658,10 @@ settlement
 	{
 		type port port
 	}
+	building
+	{
+		type hinterland_farms farms+1
+	}
 }
 
 settlement castle
@@ -6844,7 +7670,7 @@ settlement castle
 	region Toulouse_Province
 
 	year_founded 0
-	population 2500
+	population 3500
 	plan_set default_set
 	faction_creator france
 	building
@@ -6937,20 +7763,44 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
-settlement
+settlement castle
 {
-	level town
+	level large_town
 	region Zagreb_Province; Knin
 
 	year_founded 0
-	population 1300
+	population 3100
 	plan_set default_set
 	faction_creator venice
 	building
 	{
-		type core_building wooden_pallisade
+		type core_castle_building castle
+	}
+	building
+	{
+		type castle_barracks garrison_quarters
+	}
+	building
+	{
+		type missiles practice_range
+	}
+	building
+	{
+		type temple_catholic_castle small_chapel
+	}
+	building
+	{
+		type castle_taverns c_brothel
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -6970,6 +7820,10 @@ settlement castle
 	building
 	{
 		type equestrian stables
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7004,22 +7858,30 @@ settlement
 	}
 	building
 	{
+		type smith leather_tanner
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
 settlement
 {
-	level town
+	level large_town
 	region Barcelona_Province
 
 	year_founded 0
-	population 2300
+	population 3500
 	plan_set default_set
 	faction_creator aragon
 	building
 	{
-		type core_building wooden_pallisade
+		type core_building wooden_wall
 	}
 	building
 	{
@@ -7027,7 +7889,23 @@ settlement
 	}
 	building
 	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type temple_catholic small_church
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7037,7 +7915,7 @@ settlement
 	region Marseille_Province; Arles Province
 
 	year_founded 0
-	population 2200
+	population 3200
 	plan_set default_set
 	faction_creator france
 	building
@@ -7048,20 +7926,60 @@ settlement
 	{
 		type barracks town_watch
 	}
+	building
+	{
+		type missiles bowyer
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type taverns brothel
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
 }
 
 settlement castle
 {
-	level village
+	level town
 	region Ajaccio_Province; Nice Province
 
 	year_founded 0
-	population 1000
+	population 2500
 	plan_set default_set
 	faction_creator milan
 	building
 	{
-		type core_castle_building motte_and_bailey
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type missiles bowyer
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7099,6 +8017,10 @@ settlement
 	{
 		type port port
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -7117,6 +8039,14 @@ settlement castle
 	building
 	{
 		type equestrian stables
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7141,20 +8071,40 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
 {
-	level village
+	level town
 	region Adana_Province; Sis Province
 
 	year_founded 0
-	population 1500
+	population 1900
 	plan_set default_set
 	faction_creator turks
 	building
 	{
-		type core_castle_building motte_and_bailey
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type temple_orthodox_castle small_chapel_o
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7183,6 +8133,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -7202,40 +8156,92 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
 {
-	level village
+	level town
 	region Aleppo_Province
 
 	year_founded 0
-	population 1500
+	population 2900
 	plan_set default_set
 	faction_creator turks
 	building
 	{
-		type core_castle_building motte_and_bailey
+		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type missiles bowyer
+	}
+	building
+	{
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
+		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
 settlement
 {
-	level large_town
+	level city
 	region Damascus_Province
 
 	year_founded 0
-	population 3000
+	population 4000
 	plan_set default_set
 	;faction_creator egypt
 	faction_creator timurids
 	building
 	{
-		type core_building wooden_wall
+		type core_building stone_wall
 	}
 	building
 	{
-		type barracks town_watch
+		type barracks city_watch
+	}
+	building
+	{
+		type equestrian knights_stables
+	}
+	building
+	{
+		type missiles practice_range
+	}
+	building
+	{
+		type market fairground
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type taverns inn
+	}
+	building
+	{
+		type siege catapult_range
 	}
 	building
 	{
@@ -7243,7 +8249,7 @@ settlement
 	}
 	building
 	{
-		type hinterland_farms farms
+		type hinterland_farms farms+1
 	}
 }
 
@@ -7262,7 +8268,7 @@ settlement
 	}
 	building
 	{
-		type barracks town_guard
+		type barracks city_watch
 	}
 	building
 	{
@@ -7274,7 +8280,19 @@ settlement
 	}
 	building
 	{
+		type temple_muslim small_masjid
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -7296,6 +8314,10 @@ settlement
 	{
 		type barracks town_watch
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -7315,24 +8337,32 @@ settlement castle
 
 settlement castle
 {
-	level town
+	level large_town
 	region Lyon_Province
 
 	year_founded 0
-	population 1100
+	population 1900
 	plan_set default_set
 	faction_creator france
 	building
 	{
-		type core_castle_building wooden_castle
+		type core_castle_building castle
 	}
 	building
 	{
-		type equestrian stables
+		type equestrian knights_stables
 	}
 	building
 	{
 		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type castle_smith c_leather_tanner
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7365,7 +8395,7 @@ settlement
 
 settlement
 {
-	level town
+	level large_town
 	region Palma_Province
 
 	year_founded 0
@@ -7374,11 +8404,19 @@ settlement
 	faction_creator moors
 	building
 	{
-		type core_building wooden_pallisade
+		type core_building wooden_wall
 	}
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7388,12 +8426,28 @@ settlement castle
 	region Bari_Province
 
 	year_founded 0
-	population 2000
+	population 2300
 	plan_set default_set
 	faction_creator sicily
 	building
 	{
 		type core_castle_building wooden_castle
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type missiles bowyer
+	}
+	building
+	{
+		type equestrian stables
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7427,20 +8481,24 @@ settlement
 	{
 		type wonders5 wonder_kaaba
 	}
+	building
+	{
+		type hinterland_farms farms+1
+	}
 }
 
 settlement
 {
-	level town
+	level large_town
 	region Tortosa_Province; Tripoli Levant Province
 
 	year_founded 0
-	population 2800
+	population 3800
 	plan_set default_set
-	faction_creator jerusalem
+	faction_creator egypt
 	building
 	{
-		type core_building wooden_pallisade
+		type core_building wooden_wall
 	}
 	building
 	{
@@ -7450,12 +8508,20 @@ settlement
 	{
 		type temple_muslim small_masjid
 	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
 {
 	level town
-	region Astrakhan_Province
+	region Astrakhan_Province; Saksin
 
 	year_founded 0
 	population 2500
@@ -7473,24 +8539,52 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
 {
-	level town
+	level large_town
 	region Groningen_Province; Utrecht Province
 
 	year_founded 0
-	population 2000
+	population 2800
 	plan_set default_set
 	faction_creator denmark
 	building
 	{
-		type core_building wooden_pallisade
+		type core_building wooden_wall
 	}
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type temple_catholic church
+	}
+	building
+	{
+		type smith leather_tanner
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7509,11 +8603,19 @@ settlement castle
 	}
 	building
 	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
 		type missiles bowyer
 	}
 	building
 	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7534,6 +8636,14 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type missiles bowyer
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -7553,24 +8663,48 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
-settlement castle
+settlement
 {
-	level town
+	level large_town
 	region Baku_Province; Shamakhi
 
 	year_founded 0
-	population 1100
+	population 1700
 	plan_set default_set
 	faction_creator turks
 	building
 	{
-		type core_castle_building wooden_castle
+		type core_building wooden_wall
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type barracks town_watch
+	}
+	building
+	{
+		type market corn_exchange
+	}
+	building
+	{
+		type taverns brothel
+	}
+	building
+	{
+		type city_hall town_hall
+	}
+	building
+	{
+		type smith leather_tanner
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7591,6 +8725,10 @@ settlement
 	{
 		type barracks town_watch
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -7609,6 +8747,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7648,21 +8790,37 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type temple_dievas_castle c_dievas_altar
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
 {
-	level village
+	level large_town
 	region Stettin_Province
 
 	year_founded 0
-	population 1000
+	population 1200
 	plan_set default_set
 	faction_creator hre
 	building
 	{
-		type core_castle_building motte_and_bailey
+		type core_castle_building castle
 		plugin c_hansa c_hansa
+	}
+	building
+	{
+		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type castle_port c_port
 	}
 }
 
@@ -7683,6 +8841,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7707,20 +8869,24 @@ settlement castle
 	{
 		type missiles bowyer
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
 {
-	level town
+	level large_town
 	region Sharjah_Province; Leuven Province
 
 	year_founded 0
-	population 1800
+	population 2800
 	plan_set default_set
 	faction_creator hre
 	building
 	{
-		type core_building wooden_pallisade
+		type core_building wooden_wall
 	}
 	building
 	{
@@ -7729,6 +8895,22 @@ settlement
 	building
 	{
 		type market corn_exchange
+	}
+	building
+	{
+		type taverns brothel
+	}
+	building
+	{
+		type smith leather_tanner
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7749,6 +8931,10 @@ settlement
 	{
 		type barracks town_watch
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -7767,6 +8953,10 @@ settlement
 	building
 	{
 		type barracks town_watch
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7795,6 +8985,10 @@ settlement
 	{
 		type market corn_exchange
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -7817,6 +9011,10 @@ settlement
 	building
 	{
 		type market corn_exchange
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7866,6 +9064,10 @@ settlement castle
 	{
 		type missiles bowyer
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -7888,6 +9090,10 @@ settlement castle
 	building
 	{
 		type castle_barracks garrison_quarters
+	}
+	building
+	{
+		type hinterland_farms farms+1
 	}
 }
 
@@ -7916,32 +9122,56 @@ settlement
 	{
 		type market corn_exchange
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
 {
-	level town
+	level large_town
 	region Tbilisi_Province
 
 	year_founded 0
-	population 2500
+	population 3500
 	plan_set default_set
 	faction_creator georgia
 	building
 	{
-		type core_castle_building wooden_castle
+		type core_castle_building castle
 	}
 	building
 	{
-		type equestrian stables
+		type equestrian knights_stables
 	}
 	building
 	{
-		type castle_barracks mustering_hall
+		type castle_barracks garrison_quarters
+	}
+	building
+	{
+		type missiles practice_range
+	}
+	building
+	{
+		type temple_orthodox_castle small_chapel_o
+	}
+	building
+	{
+		type castle_smith c_blacksmith
+	}
+	building
+	{
+		type castle_siege c_catapult_range
 	}
 	building
 	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7965,6 +9195,10 @@ settlement
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -7993,6 +9227,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -8012,17 +9250,10 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
-}
-
-settlement
-{
-	level village
-	region Kazan_Province; Un-Inhabited Region
-
-	year_founded 0
-	population 1200
-	plan_set default_set
-	faction_creator timurids
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -8048,7 +9279,15 @@ settlement castle
 	}
 	building
 	{
+		type temple_dievas_castle c_dievas_altar
+	}
+	building
+	{
 		type hinterland_castle_roads c_roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -8077,6 +9316,10 @@ settlement
 	{
 		type city_hall town_hall
 	}
+	building
+	{
+		type port port
+	}
 }
 
 settlement
@@ -8098,15 +9341,23 @@ settlement
 	}
 	building
 	{
-		type port port
-	}
-	building
-	{
 		type barracks town_watch
 	}
 	building
 	{
 		type city_hall town_hall
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -8135,6 +9386,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -8156,15 +9411,19 @@ settlement
 	}
 	building
 	{
-		type port port
-	}
-	building
-	{
 		type barracks town_watch
 	}
 	building
 	{
 		type city_hall town_hall
+	}
+	building
+	{
+		type port port
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -8212,6 +9471,10 @@ settlement castle
 	{
 		type castle_barracks mustering_hall
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -8239,6 +9502,10 @@ settlement
 	{
 		type market corn_exchange
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -8247,7 +9514,7 @@ settlement
 	region Moscow_Province; Shkoder, Duklja Province
 
 	year_founded 0
-	population 2000
+	population 2200
 	plan_set default_set
 	faction_creator byzantium
 	building
@@ -8265,6 +9532,10 @@ settlement
 	building
 	{
 		type market corn_exchange
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -8297,7 +9568,7 @@ settlement castle
 	region Bulgar_Province
 
 	year_founded 0
-	population 1700
+	population 4700
 	plan_set default_set
 	faction_creator cumans
 	building
@@ -8312,15 +9583,27 @@ settlement castle
 	{
 		type equestrian stables
 	}
+	building
+	{
+		type castle_taverns c_brothel
+	}
+	building
+	{
+		type temple_muslim_castle c_small_masjid
+	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
 {
 	level large_town
-	region Athens_Province; Zara Province
+	region Ragusa_Province
 
 	year_founded 0
-	population 2000
+	population 1500
 	plan_set default_set
 	faction_creator venice
 	building
@@ -8329,7 +9612,11 @@ settlement
 	}
 	building
 	{
-		type barracks town_guard
+		type equestrian stables
+	}
+	building
+	{
+		type barracks town_watch
 	}
 	building
 	{
@@ -8338,6 +9625,10 @@ settlement
 	building
 	{
 		type hinterland_roads roads
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -8357,6 +9648,10 @@ settlement castle
 	building
 	{
 		type castle_barracks mustering_hall
+	}
+	building
+	{
+		type hinterland_farms farms
 	}
 }
 
@@ -8389,6 +9684,10 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement castle
@@ -8416,6 +9715,10 @@ settlement castle
 	{
 		type hinterland_castle_roads c_roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
 }
 
 settlement
@@ -8439,6 +9742,21 @@ settlement
 	{
 		type hinterland_roads roads
 	}
+	building
+	{
+		type hinterland_farms farms
+	}
+}
+
+settlement
+{
+	level village
+	region Kazan_Province; Un-Inhabited Region
+
+	year_founded 0
+	population 1200
+	plan_set default_set
+	faction_creator timurids
 }
 
 ;*WESTERN EUROPE*
@@ -9209,8 +10527,8 @@ unit		Bulgarian Brigands			exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 
-;Zara 
-character	sub_faction hungary, Andras Maradi, named character, male, age 45, x 187, y 164 
+;Ragusa
+character	sub_faction hungary, Andras Maradi, named character, male, age 45, x 207, y 154 
 traits LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
 army
 unit		NE Bodyguard				exp 3 armour 0 weapon_lvl 0
@@ -9223,17 +10541,6 @@ unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
-unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
-
-;Zara Province Fort (Spalato)
-character	sub_faction hungary, Zsigmond Zarai, named character, male, age 34, x 197, y 160
-traits LoyaltyStarter 1 , GovernorInclination 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 2 , ReligionStarter 1 
-army
-unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
-unit		Mailed Knights				exp 0 armour 0 weapon_lvl 0
-unit		Peasants				exp 0 armour 0 weapon_lvl 0
-unit		EE Peasant Archers			exp 0 armour 0 weapon_lvl 0
-unit		Slav Levies				exp 1 armour 0 weapon_lvl 0
 unit		Croat Axemen				exp 1 armour 0 weapon_lvl 0
 
 ;Nysos
@@ -9543,10 +10850,10 @@ unit		Contaratoi				exp 1 armour 0 weapon_lvl 0
 
 ;*CILICIA ARMENIA*
 ;Sis
-character	sub_faction byzantium, Ruven, named character, male, age 50, x 335, y 116 
+character	sub_faction byzantium, Konstantinos, named character, male, age 50, x 335, y 116 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 1 , ReligionStarter 1 
 army
-unit		NE Bodyguard				exp 1 armour 0 weapon_lvl 0
+unit		Armenian Cavalry			exp 6 armour 0 weapon_lvl 0
 unit		Armenian Cavalry			exp 1 armour 0 weapon_lvl 0
 unit		Armenian Cavalry			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
@@ -9560,8 +10867,10 @@ unit		Armenian Archers			exp 1 armour 0 weapon_lvl 0
 unit		Armenian Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Sis Province Fort (Tarsus)
-character	sub_faction byzantium, Anthemios, general, male, age 21, x 328, y 113 
+character	sub_faction byzantium, T#oros, named character, male, age 29, x 328, y 113 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 1 , ReligionStarter 1 
 army
+unit		Armenian Cavalry			exp 4 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Armenian Infantry			exp 0 armour 0 weapon_lvl 0
@@ -9570,8 +10879,10 @@ unit		Armenian Archers			exp 1 armour 0 weapon_lvl 0
 unit		Armenian Archers			exp 0 armour 0 weapon_lvl 0
 
 ;Sis Province Fort (Adana)
-character	sub_faction byzantium, Armatos, general, male, age 21, x 332, y 112 
+character	sub_faction byzantium, Leon, named character, male, age 20, x 332, y 112 
+traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , GoodCommander 1 , PublicFaith 1 , Intelligent 1 , ReligionStarter 1 
 army
+unit		Armenian Cavalry			exp 4 armour 0 weapon_lvl 0
 unit		Armenian Cavalry			exp 0 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 unit		Armenians of Celicia			exp 0 armour 0 weapon_lvl 0
@@ -9955,7 +11266,7 @@ unit		ME Spear Militia			exp 1 armour 0 weapon_lvl 0
 unit		ME Spear Militia			exp 0 armour 0 weapon_lvl 0
 
 ;Nizaris in Alamut
-character	sub_faction egypt, Al_Hadi Ibn_Nizar, named character, male, age 25, x 441, y 107 
+character	sub_faction egypt, Al_Hadi ibn_Nizar, named character, male, age 25, x 441, y 107 
 traits LoyaltyStarter 1 , MilitaryInclination 1 , NaturalMilitarySkill 1 , PublicFaith 3 , Intelligent 1 , GoodCommander 3 , ReligionStarter 1 , Royal_Blood_Egyptian 1 
 army
 unit		ME Bodyguard				exp 2 armour 0 weapon_lvl 0
@@ -10256,7 +11567,7 @@ unit		EE Archer Militia			exp 1 armour 0 weapon_lvl 0
 unit		Junior Militia				exp 1 armour 0 weapon_lvl 0
 
 ;*STEPPE TRIBES*
-;Astrakhan
+;Saksin
 character	sub_faction russia, Volostislav, general, male, age 23, x 423, y 178 
 army
 unit		Pechenegs				exp 1 armour 0 weapon_lvl 0
@@ -10538,8 +11849,9 @@ faction_standings	jerusalem,		0.40	milan, papal_states, venice, sicily
 faction_standings	jerusalem,		-0.50	timurids
 faction_standings	jerusalem,		-0.70	turks
 faction_standings	jerusalem,		-0.90	egypt
-faction_standings	kwarezm,		0.40	turks, timurids
-faction_standings	kwarezm,		0.10	egypt
+faction_standings	kwarezm,		0.40	timurids
+faction_standings	kwarezm,		0.20	turks
+faction_standings	kwarezm,		-0.20	egypt
 faction_standings	kwarezm,		-0.40	cumans
 faction_standings	kwarezm,		-1.00	mongols, slave
 faction_standings	georgia,		-0.20	byzantium
@@ -10609,43 +11921,43 @@ faction_relationships 	slave, at_war_with 	hungary, spain, aragon, byzantium, li
 
 ; BRITAIN
 region Inverness_Province
-fort 53 266 stone_fort_b culture european
+fort 53 266 stone_fort_b culture roman
 
 region Eikundarsund_Province; Scottish Isles Province, Kirkjuvagr
-fort 45 236 stone_fort_b culture european
+fort 45 236 stone_fort_b culture roman
 
 region Edinburgh_Province
-fort 47 247 stone_fort_b culture european
-fort 42 241 stone_fort_b culture european
-fort 62 257 stone_fort_b culture european
+fort 47 247 stone_fort_b culture roman
+fort 42 241 stone_fort_b culture roman
+fort 62 257 stone_fort_b culture roman
 
 region York_Province
-fort 64 246 stone_fort_b culture european
+fort 64 246 stone_fort_b culture roman
 
 ;region Nottingham_Province
 
 ;region London_Province
 
 region Winchester_Province
-fort 68 213 stone_fort_b culture european
-fort 52 211 stone_fort_b culture european
+fort 68 213 stone_fort_b culture roman
+fort 52 211 stone_fort_b culture roman
 
 region Caernarvon_Province
-fort 56 218 stone_fort_b culture european
+fort 56 218 stone_fort_b culture roman
 
 region Dublin_Province
-fort 31 233 stone_fort_b culture european
-fort 13 230 stone_fort_b culture european
-fort 17 220 stone_fort_b culture european
+fort 31 233 stone_fort_b culture roman
+fort 13 230 stone_fort_b culture roman
+fort 17 220 stone_fort_b culture roman
 
 ; SCANDINAVIA
 ;region Oslo_Province
 
 region Arhus_Province
-fort 141 244 stone_fort_b culture european
+fort 141 244 stone_fort_b culture roman
 
 region Bergen_Province
-fort 121 267 stone_fort_b culture european
+fort 121 267 stone_fort_b culture roman
 
 ;region Visby_Province
 
@@ -10654,19 +11966,19 @@ fort 121 267 stone_fort_b culture european
 ;region Lund_Province
 
 region Kalmar_Province
-fort 201 269 stone_fort_b culture european
-fort 206 276 stone_fort_b culture european
-fort 175 265 stone_fort_b culture european
+fort 201 269 stone_fort_b culture roman
+fort 206 276 stone_fort_b culture roman
+fort 175 265 stone_fort_b culture roman
 
 ; RUSLAND-STEPPES
 region Novgorod_Province
-fort 338 256 stone_fort_c culture european
-fort 326 264 stone_fort_c culture european
+fort 338 256 stone_fort_c culture roman
+fort 326 264 stone_fort_c culture roman
 
 ;region Pskov_Province
 
 region Polotsk_Province
-fort 275 234 stone_fort_c culture european
+fort 275 234 stone_fort_c culture roman
 
 ;region Hrodna_Province
 
@@ -10675,75 +11987,75 @@ fort 275 234 stone_fort_c culture european
 ;region Zhytomyr_Province; Volhynia Province, Volodymyr
 
 region Halych_Province
-fort 257 196 stone_fort_c culture european
+fort 257 196 stone_fort_c culture roman
 
 region Kiev_Province
-fort 283 208 stone_fort_c culture european
+fort 283 208 stone_fort_c culture roman
 
 region Bryansk_Province; Chernihivskyi Province, Chernigov
-fort 325 231 stone_fort_c culture european
-fort 317 221 stone_fort_c culture european
+fort 325 231 stone_fort_c culture roman
+fort 317 221 stone_fort_c culture roman
 
 region Pereyaslav_Province
-fort 326 204 stone_fort_c culture european
+fort 326 204 stone_fort_c culture roman
 
 ;region Smolensk_Province
 
 region Yaroslavl_Province; Sarskoye Province, Rostov
-fort 348 248 stone_fort_c culture european
-fort 365 261 stone_fort_c culture european
-fort 368 253 stone_fort_c culture european
+fort 348 248 stone_fort_c culture roman
+fort 365 261 stone_fort_c culture roman
+fort 368 253 stone_fort_c culture roman
 
 region Murom_Province
-fort 363 240 stone_fort_c culture european
-fort 377 239 stone_fort_c culture european
+fort 363 240 stone_fort_c culture roman
+fort 377 239 stone_fort_c culture roman
 
 ;region Oleshe_Province
 
 region Caffa_Province; Taurica Province, Chersonesos
-fort 330 170 bz_fort_m culture european
+fort 330 170 bz_fort_m culture roman
 
 ;region Azaq_Province
 
-;region Astrakhan_Province
+;region Astrakhan_Province; Saksin
 
 region Serdobinskaya_Province; Burtaslaria Province, Voronezh
-fort 350 202 stone_fort_c culture european
+fort 350 202 stone_fort_c culture roman
 
 region Bulgar_Province
-fort 435 267 stone_fort_c culture european
-fort 431 247 stone_fort_c culture european
-fort 440 241 stone_fort_c culture european
-fort 452 247 stone_fort_c culture european
+fort 435 267 stone_fort_c culture roman
+fort 431 247 stone_fort_c culture roman
+fort 440 241 stone_fort_c culture roman
+fort 452 247 stone_fort_c culture roman
 
 region Jaiksk_Province; Aktobe Province
-fort 395 224 stone_fort_c culture european
-fort 418 221 stone_fort_c culture european
-fort 447 214 stone_fort_c culture european
-fort 495 195 stone_fort_c culture european
+fort 395 224 stone_fort_c culture roman
+fort 418 221 stone_fort_c culture roman
+fort 447 214 stone_fort_c culture roman
+fort 495 195 stone_fort_c culture roman
 
 ; EASTERN EUROPE
 region Krakow_Province
-fort 241 214 stone_fort_c culture european
+fort 241 214 stone_fort_c culture roman
 
 ;region Khiva_Province; Poznan Province
 
 ;region Wroclaw_Province
 
 region Plock_Province
-fort 210 228 stone_fort_c culture european
+fort 210 228 stone_fort_c culture roman
 
 ;region Thorn_Province; Kdanzk
 
 ;region Stettin_Province
 
 region Riga_Province
-fort 271 264 stone_fort_c culture european
+fort 271 264 stone_fort_c culture roman
 
 ;region Reval_Province
 
 region Vilnius_Province; Kaunas
-fort 257 240 stone_fort_c culture european
+fort 257 240 stone_fort_c culture roman
 
 ;region Palanga_Province; Twangste Province
 
@@ -10754,54 +12066,54 @@ fort 257 240 stone_fort_c culture european
 ;region Esztergom_Province
 
 region Kassa_Province
-fort 209 197 stone_fort_c culture european
+fort 209 197 stone_fort_c culture roman
 
 ;region Varad_Province
 
 region Brasov_Province; Gyulafehevar Province
-fort 261 176 stone_fort_c culture european
+fort 261 176 stone_fort_c culture roman
 
 region Targoviste_Province
-fort 243 166 stone_fort_c culture european
+fort 243 166 stone_fort_c culture roman
 
 region Baia_Province; Iasi
-fort 266 188 stone_fort_c culture european
+fort 266 188 stone_fort_c culture roman
 
 ; CENTRAL EUROPE
 ;region Magdeburg_Province; Brandenburg Province
 
 region Hamburg_Province; Saxony Province, Bremen
-fort 149 231 holyr_fort_b culture european
+fort 149 231 holyr_fort_b culture roman
 
 region Embi_Province; Thuringia Province, Erfurt
-fort 161 220 holyr_fort_b culture european
+fort 161 220 holyr_fort_b culture roman
 
 region Damghan_Province; Mecklenburg Province, Liubice/Lubeck
-fort 164 235 holyr_fort_b culture european
+fort 164 235 holyr_fort_b culture roman
 
 region Cologne_Province
-fort 121 210 holyr_fort_b culture european
+fort 121 210 holyr_fort_b culture roman
 
 region Frankfurt_Province
-fort 141 217 holyr_fort_b culture european
+fort 141 217 holyr_fort_b culture roman
 
 ;region Nuremburg_Province
 
 region Staufen_Province
-fort 138 200 holyr_fort_b culture european
+fort 138 200 holyr_fort_b culture roman
 
 ;region Groningen_Province; Holland Province, Utrecht
 
 region Skara_Province; Friesland Province, Groningen
-fort 119 229 holyr_fort_b culture european
+fort 119 229 holyr_fort_b culture roman
 
 region Vienna_Province
-fort 181 184 holyr_fort_b culture european
+fort 181 184 holyr_fort_b culture roman
 
 ;region Salzburg_Province
 
 region Bern_Province; Zurich Province
-fort 132 184 holyr_fort_b culture european
+fort 132 184 holyr_fort_b culture roman
 
 ;region Innsbruck_Province
 
@@ -10809,16 +12121,16 @@ fort 132 184 holyr_fort_b culture european
 ;region Bruges_Province; Artois Province, Arras
 
 region Antwerp_Province; Flanders Province, Ghent
-fort 101 214 stone_fort_b culture european
+fort 101 214 stone_fort_b culture roman
 
 region Sharjah_Province; Brabant Province, Leuven
-fort 110 214 stone_fort_b culture european
+fort 110 214 stone_fort_b culture roman
 
 region Metz_Province
-fort 126 202 stone_fort_b culture european
+fort 126 202 stone_fort_b culture roman
 
 region Rheims_Province
-fort 106 194 stone_fort_b culture european
+fort 106 194 stone_fort_b culture roman
 
 ;region Dijon_Province
 
@@ -10827,8 +12139,8 @@ fort 106 194 stone_fort_b culture european
 ;region Khlynov_Province; Orleanais Province, Orleans
 
 region Caen_Province
-fort 79 191 stone_fort_b culture european
-fort 85 202 stone_fort_b culture european
+fort 79 191 stone_fort_b culture roman
+fort 85 202 stone_fort_b culture roman
 
 ;region Angers_Province
 
@@ -10845,14 +12157,14 @@ fort 85 202 stone_fort_b culture european
 ;region Lyon_Province
 
 region Marseille_Province; Arles
-fort 117 158 stone_fort_b culture european
+fort 117 158 stone_fort_b culture roman
 
 ; BALKANS
 region Zagreb_Province; Knin
-fort 192 176 stone_fort_c culture european
+fort 192 176 stone_fort_c culture roman
 
 region Ryazan_Province; Raska Province, Ras
-fort 225 167 stone_fort_c culture european
+fort 225 167 stone_fort_c culture roman
 
 ;region Sofia_Province; Sredets
 
@@ -10861,20 +12173,20 @@ fort 225 167 stone_fort_c culture european
 ;region Adrianople_Province
 
 region Corinth_Province
-fort 249 119 bz_fort_m culture european
+fort 249 119 bz_fort_m culture roman
 
 region Thessalonica_Province
-fort 231 148 bz_fort_m culture european
+fort 231 148 bz_fort_m culture roman
 
 region Arta_Province
-fort 234 124 bz_fort_m culture european
+fort 234 124 bz_fort_m culture roman
 
 ;region Durazzo_Province
 
 ;region Ragusa_Province
 
 region Athens_Province; Dalmatia Province, Zara
-fort 197 160 stone_fort_c culture european
+fort 197 160 stone_fort_c culture roman
 
 ;region Belgrade_Province; Nysos
 
@@ -10883,8 +12195,8 @@ fort 197 160 stone_fort_c culture european
 ;region Moscow_Province; Duklja Province, Shkoder
 
 region Scopia_Province; Tarnovo
-fort 282 164 stone_fort_c culture european
-fort 268 154 stone_fort_b bz_fort_m culture european
+fort 282 164 stone_fort_c culture roman
+fort 268 154 stone_fort_b bz_fort_m culture roman
 
 ;region Iraklion_Province
 
@@ -10892,7 +12204,7 @@ fort 268 154 stone_fort_b bz_fort_m culture european
 ;region Rome_Province
 
 region Pisa_Province; Pisa-Ajaccio Province
-fort 141 148 stone_fort_d culture european
+fort 141 148 stone_fort_d culture roman
 
 ;region Bologna_Province
 
@@ -10901,7 +12213,7 @@ fort 141 148 stone_fort_d culture european
 ;region Nykoeping_Province; Tuscany Province, Florence
 
 region Milan_Province
-fort 133 170 stone_fort_d culture european
+fort 133 170 stone_fort_d culture roman
 
 ;region Ajaccio_Province; Cote-d'Azur Province, Nice
 
@@ -10910,26 +12222,26 @@ fort 133 170 stone_fort_d culture european
 ;region Venice_Province
 
 region Beleb_el_Anab_Province; Carniola Province, Laibach
-fort 177 174 stone_fort_d culture european
+fort 177 174 stone_fort_d culture roman
 
 ;region Naples_Province
 
 region Bari_Province
-fort 202 138 stone_fort_d culture european
+fort 202 138 stone_fort_d culture roman
 
 ;region Ancona_Province
 
 ;region Syracuse_Province; Calabria Province, Reggio
 
 region Palermo_Province
-fort 187 113 stone_fort_d culture european
+fort 187 113 stone_fort_d culture roman
 
 region Cagliari_Province
-fort 144 141 stone_fort_d culture european
+fort 144 141 stone_fort_d culture roman
 
 ; IBERIA
 region Leon_Province
-fort 37 142 stone_fort_d culture european
+fort 37 142 stone_fort_d culture roman
 
 ;region Salamanca_Province; Galicia Province, Santiago de Compostela
 
@@ -10938,7 +12250,7 @@ fort 37 142 stone_fort_d culture european
 ;region Toledo_Province
 
 region Pamplona_Province
-fort 75 150 stone_fort_d culture european
+fort 75 150 stone_fort_d culture roman
 
 ;region Zaragoza_Province
 
@@ -10951,7 +12263,7 @@ fort 75 150 stone_fort_d culture european
 ;region Oporto_Province
 
 region Lisbon_Province
-fort 18 136 stone_fort_d culture european
+fort 18 136 stone_fort_d culture roman
 
 ;region Silves_Province
 
@@ -11006,7 +12318,7 @@ fort 250 76 bz_fort_m culture african_asian
 
 ; CAUCASUS
 region Sarkel_Province
-fort 409 168 stone_fort_c culture european
+fort 409 168 stone_fort_c culture roman
 
 ;region Tmutarakan_Province
 
@@ -11018,7 +12330,7 @@ region Baku_Province; Shamakhi
 fort 436 137 bz_fort_m culture african_asian
 fort 430 133 bz_fort_m culture african_asian
 fort 412 138 bz_fort_m culture african_asian
-fort 425 147 stone_fort_c culture european
+fort 425 147 stone_fort_c culture roman
 
 region Yerevan_Province; Greater Armenia Province, Ani
 fort 398 135 bz_fort_m culture african_asian
@@ -11064,7 +12376,7 @@ fort 280 111 bz_fort_m culture african_asian
 
 region Tortosa_Province; Tripoli, Levant
 fort 336 98 bz_fort_m culture african_asian
-fort 339 97 bz_fort_m culture african_asian
+fort 339 97 me_fort_g culture middle_eastern
 
 region Aleppo_Province
 fort 356 101 bz_fort_m culture african_asian
@@ -11141,7 +12453,7 @@ fort 426 96 bz_fort_m culture african_asian
 
 ;EMPTY LAND
 region Kazan_Province; Un-Inhabited Region
-fort 239 280 stone_fort_c culture european
+fort 239 280 stone_fort_c culture roman
 
 script
 campaign_script.txt

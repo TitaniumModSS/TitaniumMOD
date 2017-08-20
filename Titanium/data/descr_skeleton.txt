@@ -8937,3 +8937,1237 @@ anim		stand_a_idle					data/animations/MTW2_Musket/weapon/w_MTW2_Musket_default.
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type		MTW2_Shortbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+;locomotion_table soldier
+anim		default									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_basepose.cas
+
+;;;Reaction
+
+anim		knockback_from_front					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_from_front.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_front.evt
+anim		knockback_from_back						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_from_back.cas									-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_back.evt
+anim		knockback_from_right					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_from_right.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_right.evt
+anim		knockback_from_left						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_from_left.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_left.evt
+
+anim		knockback_move_from_front				data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_move_from_front.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_front.evt
+anim		knockback_move_from_right				data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_move_from_right.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_right.evt
+anim		knockback_move_from_back				data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_move_from_back.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_back.evt
+anim		knockback_move_from_left				data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockback_move_from_left.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_left.evt
+
+anim		knockdown_forward_launch				data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockdown_forward_launch.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_forward_launch.evt
+anim		knockdown_forward_lying					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockdown_forward_lying.cas
+anim		knockdown_forward_recover				data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockdown_forward_recover.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_forward_recover.evt
+
+anim		knockdown_launch						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockdown_launch.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_launch.evt
+anim		knockdown_lying							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockdown_lying.cas
+anim		knockdown_recover						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_knockdown_recover.cas						-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_recover.evt
+
+;;;Death
+
+anim		die_forward_1							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_die_forward_1.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_forward_1.evt
+anim		die_forward_2							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_die_forward_2.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_forward_2.evt
+anim		die_backward_1							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_die_backward_1.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_backward_1.evt
+anim		die_backward_2							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_die_backward_2.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_backward_2.evt
+anim		die_falling_cycle						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_die_flailing_cycle.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_flailing_cycle.evt
+anim		die_falling_end							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_die_flailing_cycle_end.cas			-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_flailing_cycle_end.evt
+
+;;;Non-Combat
+
+anim		stand_a_idle							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_idle.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_idle.evt
+anim		stand_a_hf_idle_1						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_1.evt
+anim		stand_a_hf_idle_2						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_2.evt
+anim		stand_a_hf_idle_3						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_3.evt
+;;;anim		stand_a_lf_idle_1						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_lf_idle1_modified.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle1.evt
+anim		stand_a_lf_idle_2						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_lf_idle2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle2.evt
+anim		stand_a_lf_idle_3						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_lf_idle3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle3.evt
+anim		stand_a_to_stand_b						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_stand_B.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_stand_B.evt
+anim		stand_a_to_stand_c						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_stand_C.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_stand_C.evt
+anim		stand_a_to_walk							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_walk.evt
+anim		stand_a_to_run							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_run.evt
+anim		stand_a_to_ready						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_ready.evt
+anim		stand_a_to_hide							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_hide.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_hide.evt
+anim		stand_a_to_climb_up						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_climb_up.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_climb_up.evt
+anim		stand_a_to_climb_down					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_to_climb_down.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_climb_down.evt
+
+anim		step_forward							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_step_forward.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_forward.evt
+anim		step_backward							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_step_backward.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_backward.evt
+anim		step_left								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_step_left.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_left.evt
+anim		step_right								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_step_right.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_right.evt
+
+anim		stand_a_turn_45_cw_1					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_turn_45_cw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_45_cw.evt
+anim		stand_a_turn_45_ccw_1					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_turn_45_ccw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_45_ccw.evt
+anim		stand_a_turn_90_cw_1					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_turn_90_cw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_90_cw.evt
+anim		stand_a_turn_90_ccw_1					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_A_turn_90_ccw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_90_ccw.evt
+
+
+anim		stand_b_idle							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_idle.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_idle.evt
+anim		stand_b_hf_idle_1						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_1.evt
+anim		stand_b_hf_idle_2						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_2.evt
+anim		stand_b_hf_idle_3						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_3.evt
+anim		stand_b_lf_idle_1						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_lf_idle1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle1.evt
+anim		stand_b_lf_idle_2						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_lf_idle2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle2.evt
+anim		stand_b_lf_idle_3						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_lf_idle3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle3.evt
+anim		stand_b_to_stand_a						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_stand_A.evt
+anim		stand_b_to_stand_c						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_to_stand_C.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_stand_C.evt
+anim		stand_b_to_walk							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_walk.evt
+anim		stand_b_to_run							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_run.evt
+anim		stand_b_to_ready						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_B_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_ready.evt
+
+anim		stand_c_idle							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_idle.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_idle.evt
+anim		stand_c_hf_idle_1						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_1.evt
+anim		stand_c_hf_idle_2						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_2.evt
+anim		stand_c_hf_idle_3						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_3.evt
+anim		stand_c_lf_idle_1						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_lf_idle_1.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_1.evt
+anim		stand_c_lf_idle_2						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_lf_idle_2.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_2.evt
+anim		stand_c_lf_idle_3						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_lf_idle_3.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_3.evt
+anim		stand_c_to_stand_a						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_stand_A.evt
+anim		stand_c_to_stand_b						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_to_stand_B.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_stand_B.evt
+anim		stand_c_to_walk							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_walk.evt
+anim		stand_c_to_run							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_run.evt
+anim		stand_c_to_ready						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stand_C_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_ready.evt
+
+anim		taunt_1									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_taunt_1.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_1.evt
+anim		taunt_2									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_taunt_2.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_2.evt
+anim		taunt_3									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_taunt_3.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_3.evt
+anim		celebrate_1								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_celebrate_1.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_celebrate_1.evt
+anim		celebrate_2								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_celebrate_1.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_celebrate_1.evt
+
+anim		stealthy_walk							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stealthy_walk.cas				-fr
+anim		stealthy_walk_to_stand_a				data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stealthy_walk_to_stand_A.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stealthy_walk_to_stand_A.evt
+anim		stealthy_walk_to_hide					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stealthy_walk_to_hide.cas		-fr
+anim		stealthy_walk_to_walk					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_stealthy_walk_to_walk.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stealthy_walk_to_walk.evt
+anim		hide									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_hide.cas	-fr
+anim		hide_to_stand_a							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_hide_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_hide_to_stand_A.evt
+anim		hide_to_stealthy_walk					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_hide_to_stealthy_walk.cas		-fr
+
+anim		run										data/animations/MTW2_Shortbowman_String/MTW2_Bowman_run.cas							-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run.evt
+anim		run_to_stand_a							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_run_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run_to_stand_A.evt
+anim		run_to_walk								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_run_to_walk.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run_to_walk.evt
+anim		run_to_charge							data/animations/MTW2_Mace/MTW2_Mace_run_to_charge.cas					-fr		-evt:data/animations/MTW2_Mace/MTW2_Mace_run_to_charge.evt
+
+anim		walk									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_walk.cas							-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk.evt
+anim		walk_to_stand_a							data/animations/MTW2_Shortbowman_String/MTW2_Bowman_walk_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk_to_stand_A.evt
+anim		walk_to_run								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_walk_to_run.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk_to_run.evt
+
+anim		climb_up								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_climb_up.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_up.evt
+anim		climb_down								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_climb_down.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_down.evt
+anim		climb_up_to_stand_a						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_climb_up_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_up_to_stand_A.evt
+anim		climb_down_to_stand_a					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_climb_down_to_stand_A.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_down_to_stand_A.evt
+anim		climb_idle								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_climb_idle.cas					-fr
+
+;;;combat
+
+anim		ready												data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready.cas							-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready.evt
+anim		ready_hf_idle_1										data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_hf_idle_1.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_1.evt
+anim		ready_hf_idle_2										data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_hf_idle_2.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_2.evt
+anim		ready_hf_idle_3										data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_hf_idle_3.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_3.evt
+
+anim		ready_to_stand_a									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_to_stand_A.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_stand_A.evt
+anim		ready_to_advance									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_to_advance.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_advance.evt
+anim		ready_to_retreat									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_to_retreat.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_retreat.evt
+anim		ready_to_combat_jog									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_to_combat_jog.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_combat_jog.evt
+
+anim		ready_turn_cw_15									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_15_cw.cas		-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_15_cw.evt
+anim		ready_turn_ccw_15									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_15_ccw.cas	-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_15_ccw.evt
+anim		ready_turn_cw_45									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_45_cw.cas		-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_45_cw.evt
+anim		ready_turn_ccw_45									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_45_ccw.cas	-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_45_ccw.evt
+anim		ready_turn_cw_90									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_90_cw.cas		-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_90_cw.evt
+anim		ready_turn_ccw_90									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_ready_90_ccw.cas	-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_90_ccw.evt
+
+anim		shuffle_forward										data/animations/MTW2_Shortbowman_String/MTW2_Bowman_shuffle_forward.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_forward.evt
+anim		shuffle_backward									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_shuffle_backward.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_backward.evt
+anim		shuffle_left										data/animations/MTW2_Shortbowman_String/MTW2_Bowman_shuffle_left.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_left.evt
+anim		shuffle_right										data/animations/MTW2_Shortbowman_String/MTW2_Bowman_shuffle_right.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_right.evt
+
+anim		combat_jog											data/animations/MTW2_Shortbowman_String/MTW2_Bowman_Combat_Jog.cas							-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_Combat_Jog.evt
+anim		combat_jog_to_ready									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_combat_jog_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_combat_jog_to_ready.evt
+anim		combat_jog_to_advance								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_Combat_Jog_to_Advance.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_Combat_Jog_to_Advance.evt
+
+anim		advance												data/animations/MTW2_Shortbowman_String/MTW2_Bowman_advance.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance.evt
+anim		advance_to_ready									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_advance_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance_to_ready.evt
+anim		advance_to_combat_jog								data/animations/MTW2_Shortbowman_String/MTW2_Bowman_advance_to_combat_jog.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance_to_combat_jog.evt
+anim		retreat												data/animations/MTW2_Shortbowman_String/MTW2_Bowman_retreat.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_retreat.evt
+anim		retreat_to_ready									data/animations/MTW2_Shortbowman_String/MTW2_Bowman_retreat_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_retreat_to_ready.evt		
+
+
+;;;swim
+
+anim		swim												data/animations/mtw2_knifeman/MTW2_Knifeman_swim.cas								-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim.evt
+anim		idle_to_swim										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr	-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+anim		swim_to_idle										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas							-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_to_swim_idle									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_to_Swim_Idle.cas					-fr
+anim		swim_idle											data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_idle_to_swim									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle_to_swim.cas
+anim		swim_shuffle_forward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_backward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_left									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.evt
+anim		swim_shuffle_right									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.evt
+;anim		swim_attack_1										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_attack1.cas								-id 0.03, 0.0, 1.11	-if:15
+
+
+;;;crew requirements
+
+anim		stand_a_to_crew_stand					data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Knifeman_stand_A_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_stand_A_to_crew_stand.evt
+anim		crew_stand_to_stand_a					data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Knifeman_crew_stand_to_stand_A.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_crew_stand_to_stand_A.evt
+
+anim		crew_stand								data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_idle.cas										-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_idle.evt
+anim		crew_stand_to_carry_stand				data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_carry_stand.evt
+anim		crew_stand_to_push						data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_push.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_push.evt
+;anim		crew_stand_to_wide_push					data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_wide_push.cas								-fr		-evt:data/animations/carry_and_artillery/Art_17 Stand 2 Push heavy object.evt
+anim		crew_stand_to_pull						data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_pull.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_pull.evt
+
+anim		carry_stand								data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_idle.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_idle.evt
+anim		carry_stand_to_carry_walk				data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_to_carry_walk.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_carry_walk.evt
+anim		carry_stand_to_crew_stand				data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_crew_stand.evt
+anim		carry_walk								data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_walk.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk.evt
+anim		carry_walk_to_carry_stand				data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_walk_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk_to_carry_stand.evt
+
+anim		push									data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_push.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push.evt
+anim		push_to_crew_stand						data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_push_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push_to_crew_stand.evt
+;anim		wide_push								data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_wide_push.cas											-fr		-evt:data/animations/carry_and_artillery/Art_18 Push heavy object loop.evt
+;anim		wide_push_to_crew_stand					data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_wide_push_to_crew_stand.cas								-fr
+anim		pull									data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_pull.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull.evt
+anim		pull_to_crew_stand						data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_pull_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull_to_crew_stand.evt
+
+anim		crew_stand_to_raise_hand_1				data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_raise_hand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_raise_hand.evt
+anim		raise_hand_1							data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_raise_hand.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand.evt
+anim		raise_hand_1_to_crew_stand				data/animations/MTW2_Shortbowman_String/MTW2_Knifeman/MTW2_Crew_raise_hand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand_to_crew_stand.evt
+
+
+;;;Attack
+;;;anim		attack_missile_ready					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_attack_missile_ready_modified.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_ready.evt
+;;;anim		attack_missile_hold						data/animations/MTW2_Shortbowman_String/MTW2_Bowman_attack_missile_hold_modified.cas					-fr
+anim		attack_missile_release					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_attack_missile_release.cas					-fr		-id:0.0, 1.5, 1.0 -if:1	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_release.evt
+	
+;;;Attack
+anim		stand_a_lf_idle_1						data/animations/MTW2_Shortbowman_String/MTW2_Shortbowman_String_Extra/MTW2_Bowman_stand_A_lf_idle1_modified.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle1.evt
+anim		attack_missile_ready					data/animations/MTW2_Shortbowman_String/MTW2_Shortbowman_String_Extra/MTW2_Bowman_attack_missile_ready_cross2.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_ready.evt
+anim		attack_missile_hold						data/animations/MTW2_Shortbowman_String/MTW2_Shortbowman_String_Extra/MTW2_Bowman_attack_missile_hold_cross.cas					-fr
+;;;anim		attack_missile_release					data/animations/MTW2_Shortbowman_String/MTW2_Bowman_attack_missile_release.cas					-fr		-id:0.0, 1.5, 1.0	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_release.evt
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type		MTW2_Fast_Shortbowman_String
+parent		MTW2_Shortbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+anim		default									data/animations/MTW2_Shortbowman_String/MTW2_Shortbowman_String_Extra/MTW2_Bowman_basepose.cas
+		
+anim		run										data/animations/MTW2_Shortbowman_String/MTW2_Fast_Bowman_run.cas									-fr				-evt:data/animations/MTW2_Bowman/MTW2_Fast_Bowman_run.evt
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type      	MTW2_Slow_Shortbowman_String
+parent		MTW2_Shortbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+anim		default									data/animations/MTW2_Shortbowman_String/MTW2_Shortbowman_String_Extra/MTW2_Bowman_basepose.cas
+
+anim		run										data/animations/MTW2_Shortbowman_String/MTW2_Slow_Bowman_run.cas									-fr			
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type		MTW2_Veryshortbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+;locomotion_table soldier
+anim		default									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_basepose.cas
+
+;;;Reaction
+
+anim		knockback_from_front					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_from_front.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_front.evt
+anim		knockback_from_back						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_from_back.cas									-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_back.evt
+anim		knockback_from_right					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_from_right.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_right.evt
+anim		knockback_from_left						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_from_left.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_left.evt
+
+anim		knockback_move_from_front				data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_move_from_front.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_front.evt
+anim		knockback_move_from_right				data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_move_from_right.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_right.evt
+anim		knockback_move_from_back				data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_move_from_back.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_back.evt
+anim		knockback_move_from_left				data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockback_move_from_left.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_left.evt
+
+anim		knockdown_forward_launch				data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockdown_forward_launch.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_forward_launch.evt
+anim		knockdown_forward_lying					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockdown_forward_lying.cas
+anim		knockdown_forward_recover				data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockdown_forward_recover.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_forward_recover.evt
+
+anim		knockdown_launch						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockdown_launch.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_launch.evt
+anim		knockdown_lying							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockdown_lying.cas
+anim		knockdown_recover						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_knockdown_recover.cas						-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_recover.evt
+
+;;;Death
+
+anim		die_forward_1							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_die_forward_1.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_forward_1.evt
+anim		die_forward_2							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_die_forward_2.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_forward_2.evt
+anim		die_backward_1							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_die_backward_1.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_backward_1.evt
+anim		die_backward_2							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_die_backward_2.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_backward_2.evt
+anim		die_falling_cycle						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_die_flailing_cycle.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_flailing_cycle.evt
+anim		die_falling_end							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_die_flailing_cycle_end.cas			-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_flailing_cycle_end.evt
+
+;;;Non-Combat
+
+anim		stand_a_idle							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_idle.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_idle.evt
+anim		stand_a_hf_idle_1						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_1.evt
+anim		stand_a_hf_idle_2						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_2.evt
+anim		stand_a_hf_idle_3						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_3.evt
+anim		stand_a_lf_idle_2						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_lf_idle2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle2.evt
+anim		stand_a_lf_idle_3						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_lf_idle3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle3.evt
+anim		stand_a_to_stand_b						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_stand_B.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_stand_B.evt
+anim		stand_a_to_stand_c						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_stand_C.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_stand_C.evt
+anim		stand_a_to_walk							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_walk.evt
+anim		stand_a_to_run							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_run.evt
+anim		stand_a_to_ready						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_ready.evt
+anim		stand_a_to_hide							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_hide.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_hide.evt
+anim		stand_a_to_climb_up						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_climb_up.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_climb_up.evt
+anim		stand_a_to_climb_down					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_to_climb_down.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_climb_down.evt
+
+anim		step_forward							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_step_forward.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_forward.evt
+anim		step_backward							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_step_backward.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_backward.evt
+anim		step_left								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_step_left.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_left.evt
+anim		step_right								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_step_right.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_right.evt
+
+anim		stand_a_turn_45_cw_1					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_turn_45_cw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_45_cw.evt
+anim		stand_a_turn_45_ccw_1					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_turn_45_ccw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_45_ccw.evt
+anim		stand_a_turn_90_cw_1					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_turn_90_cw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_90_cw.evt
+anim		stand_a_turn_90_ccw_1					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_A_turn_90_ccw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_90_ccw.evt
+
+
+anim		stand_b_idle							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_idle.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_idle.evt
+anim		stand_b_hf_idle_1						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_1.evt
+anim		stand_b_hf_idle_2						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_2.evt
+anim		stand_b_hf_idle_3						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_3.evt
+anim		stand_b_lf_idle_1						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_lf_idle1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle1.evt
+anim		stand_b_lf_idle_2						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_lf_idle2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle2.evt
+anim		stand_b_lf_idle_3						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_lf_idle3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle3.evt
+anim		stand_b_to_stand_a						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_stand_A.evt
+anim		stand_b_to_stand_c						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_to_stand_C.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_stand_C.evt
+anim		stand_b_to_walk							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_walk.evt
+anim		stand_b_to_run							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_run.evt
+anim		stand_b_to_ready						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_B_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_ready.evt
+
+anim		stand_c_idle							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_idle.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_idle.evt
+anim		stand_c_hf_idle_1						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_1.evt
+anim		stand_c_hf_idle_2						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_2.evt
+anim		stand_c_hf_idle_3						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_3.evt
+anim		stand_c_lf_idle_1						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_lf_idle_1.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_1.evt
+anim		stand_c_lf_idle_2						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_lf_idle_2.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_2.evt
+anim		stand_c_lf_idle_3						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_lf_idle_3.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_3.evt
+anim		stand_c_to_stand_a						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_stand_A.evt
+anim		stand_c_to_stand_b						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_to_stand_B.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_stand_B.evt
+anim		stand_c_to_walk							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_walk.evt
+anim		stand_c_to_run							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_run.evt
+anim		stand_c_to_ready						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stand_C_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_ready.evt
+
+anim		taunt_1									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_taunt_1.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_1.evt
+anim		taunt_2									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_taunt_2.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_2.evt
+anim		taunt_3									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_taunt_3.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_3.evt
+anim		celebrate_1								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_celebrate_1.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_celebrate_1.evt
+anim		celebrate_2								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_celebrate_1.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_celebrate_1.evt
+
+anim		stealthy_walk							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stealthy_walk.cas				-fr
+anim		stealthy_walk_to_stand_a				data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stealthy_walk_to_stand_A.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stealthy_walk_to_stand_A.evt
+anim		stealthy_walk_to_hide					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stealthy_walk_to_hide.cas		-fr
+anim		stealthy_walk_to_walk					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_stealthy_walk_to_walk.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stealthy_walk_to_walk.evt
+anim		hide									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_hide.cas	-fr
+anim		hide_to_stand_a							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_hide_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_hide_to_stand_A.evt
+anim		hide_to_stealthy_walk					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_hide_to_stealthy_walk.cas		-fr
+
+anim		run										data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_run.cas							-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run.evt
+anim		run_to_stand_a							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_run_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run_to_stand_A.evt
+anim		run_to_walk								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_run_to_walk.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run_to_walk.evt
+anim		run_to_charge							data/animations/MTW2_Mace/MTW2_Mace_run_to_charge.cas					-fr		-evt:data/animations/MTW2_Mace/MTW2_Mace_run_to_charge.evt
+
+anim		walk									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_walk.cas							-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk.evt
+anim		walk_to_stand_a							data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_walk_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk_to_stand_A.evt
+anim		walk_to_run								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_walk_to_run.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk_to_run.evt
+
+anim		climb_up								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_climb_up.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_up.evt
+anim		climb_down								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_climb_down.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_down.evt
+anim		climb_up_to_stand_a						data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_climb_up_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_up_to_stand_A.evt
+anim		climb_down_to_stand_a					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_climb_down_to_stand_A.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_down_to_stand_A.evt
+anim		climb_idle								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_climb_idle.cas					-fr
+
+;;;combat
+
+anim		ready												data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready.cas							-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready.evt
+anim		ready_hf_idle_1										data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_hf_idle_1.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_1.evt
+anim		ready_hf_idle_2										data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_hf_idle_2.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_2.evt
+anim		ready_hf_idle_3										data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_hf_idle_3.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_3.evt
+
+anim		ready_to_stand_a									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_to_stand_A.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_stand_A.evt
+anim		ready_to_advance									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_to_advance.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_advance.evt
+anim		ready_to_retreat									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_to_retreat.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_retreat.evt
+anim		ready_to_combat_jog									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_to_combat_jog.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_combat_jog.evt
+
+anim		ready_turn_cw_15									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_15_cw.cas		-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_15_cw.evt
+anim		ready_turn_ccw_15									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_15_ccw.cas	-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_15_ccw.evt
+anim		ready_turn_cw_45									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_45_cw.cas		-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_45_cw.evt
+anim		ready_turn_ccw_45									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_45_ccw.cas	-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_45_ccw.evt
+anim		ready_turn_cw_90									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_90_cw.cas		-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_90_cw.evt
+anim		ready_turn_ccw_90									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_ready_90_ccw.cas	-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_90_ccw.evt
+
+anim		shuffle_forward										data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_shuffle_forward.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_forward.evt
+anim		shuffle_backward									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_shuffle_backward.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_backward.evt
+anim		shuffle_left										data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_shuffle_left.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_left.evt
+anim		shuffle_right										data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_shuffle_right.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_right.evt
+
+anim		combat_jog											data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_Combat_Jog.cas							-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_Combat_Jog.evt
+anim		combat_jog_to_ready									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_combat_jog_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_combat_jog_to_ready.evt
+anim		combat_jog_to_advance								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_Combat_Jog_to_Advance.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_Combat_Jog_to_Advance.evt
+
+anim		advance												data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_advance.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance.evt
+anim		advance_to_ready									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_advance_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance_to_ready.evt
+anim		advance_to_combat_jog								data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_advance_to_combat_jog.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance_to_combat_jog.evt
+anim		retreat												data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_retreat.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_retreat.evt
+anim		retreat_to_ready									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_retreat_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_retreat_to_ready.evt		
+
+
+;;;swim
+
+anim		swim												data/animations/mtw2_knifeman/MTW2_Knifeman_swim.cas								-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim.evt
+anim		idle_to_swim										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr	-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+anim		swim_to_idle										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas							-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_to_swim_idle									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_to_Swim_Idle.cas					-fr
+anim		swim_idle											data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_idle_to_swim									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle_to_swim.cas
+anim		swim_shuffle_forward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_backward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_left									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.evt
+anim		swim_shuffle_right									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.evt
+;anim		swim_attack_1										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_attack1.cas								-id 0.03, 0.0, 1.11	-if:15
+
+
+;;;crew requirements
+
+anim		stand_a_to_crew_stand					data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Knifeman_stand_A_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_stand_A_to_crew_stand.evt
+anim		crew_stand_to_stand_a					data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Knifeman_crew_stand_to_stand_A.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_crew_stand_to_stand_A.evt
+
+anim		crew_stand								data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_idle.cas										-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_idle.evt
+anim		crew_stand_to_carry_stand				data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_carry_stand.evt
+anim		crew_stand_to_push						data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_push.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_push.evt
+;anim		crew_stand_to_wide_push					data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_wide_push.cas								-fr		-evt:data/animations/carry_and_artillery/Art_17 Stand 2 Push heavy object.evt
+anim		crew_stand_to_pull						data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_pull.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_pull.evt
+
+anim		carry_stand								data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_idle.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_idle.evt
+anim		carry_stand_to_carry_walk				data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_to_carry_walk.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_carry_walk.evt
+anim		carry_stand_to_crew_stand				data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_crew_stand.evt
+anim		carry_walk								data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_walk.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk.evt
+anim		carry_walk_to_carry_stand				data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_carry_walk_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk_to_carry_stand.evt
+
+anim		push									data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_push.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push.evt
+anim		push_to_crew_stand						data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_push_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push_to_crew_stand.evt
+;anim		wide_push								data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_wide_push.cas											-fr		-evt:data/animations/carry_and_artillery/Art_18 Push heavy object loop.evt
+;anim		wide_push_to_crew_stand					data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_wide_push_to_crew_stand.cas								-fr
+anim		pull									data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_pull.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull.evt
+anim		pull_to_crew_stand						data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_pull_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull_to_crew_stand.evt
+
+anim		crew_stand_to_raise_hand_1				data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_raise_hand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_raise_hand.evt
+anim		raise_hand_1							data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_raise_hand.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand.evt
+anim		raise_hand_1_to_crew_stand				data/animations/MTW2_Veryshortbowman_String/MTW2_Knifeman/MTW2_Crew_raise_hand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand_to_crew_stand.evt
+
+
+;;;Attack
+anim		stand_a_lf_idle_1						data/animations/MTW2_Veryshortbowman_String/MTW2_Veryshortbowman_String_Extra/MTW2_Bowman_stand_A_lf_idle1_modified.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle1.evt
+anim		attack_missile_ready					data/animations/MTW2_Veryshortbowman_String/MTW2_Veryshortbowman_String_Extra/MTW2_Bowman_attack_missile_ready_cross2_modified.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_ready.evt
+anim		attack_missile_hold						data/animations/MTW2_Veryshortbowman_String/MTW2_Veryshortbowman_String_Extra/MTW2_Bowman_attack_missile_hold_cross_modified.cas					-fr
+anim		attack_missile_release					data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_attack_missile_release.cas					-fr		-id:0.0, 1.5, 1.0 -if:1	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_release.evt
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type		MTW2_Fast_Veryshortbowman_String
+parent		MTW2_Veryshortbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+anim		default									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_basepose.cas
+		
+anim		run										data/animations/MTW2_Veryshortbowman_String/MTW2_Fast_Bowman_run.cas									-fr				-evt:data/animations/MTW2_Bowman/MTW2_Fast_Bowman_run.evt
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type      	MTW2_Slow_Veryshortbowman_String
+parent		MTW2_Veryshortbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+anim		default									data/animations/MTW2_Veryshortbowman_String/MTW2_Bowman_basepose.cas
+
+anim		run										data/animations/MTW2_Veryshortbowman_String/MTW2_Slow_Bowman_run.cas									-fr			
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type		MTW2_HR_Veryshortbowman_String
+no_deltas
+in_awareness	135.0
+in_zone			135.0
+in_centre		45.0
+
+anim							default					data/animations/HR_Veryshortbowman_String/HR_lance_basepose.cas
+
+;;;HR_Bow_Defend
+
+;;; --- HR_Bow does not defend - switches to HR_sword in melee combat ---
+
+;;;Hr_Bow_Reaction
+
+anim		knockback_from_front						data/animations/HR_Veryshortbowman_String/HR_bow_knockback_front.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_front.evt
+anim		knockback_from_right						data/animations/HR_Veryshortbowman_String/HR_bow_knockback_right.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_right.evt
+anim		knockback_from_back							data/animations/HR_Veryshortbowman_String/HR_bow_knockback_back.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_back.evt
+anim		knockback_from_left							data/animations/HR_Veryshortbowman_String/HR_bow_knockback_left.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_left.evt
+
+
+;;; basic locomotion for horse
+
+anim		stand_a_idle								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt
+anim		stand_a_to_walk								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_walk.cas				-fr
+anim		stand_a_to_run								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_run.cas				-fr
+anim		stand_a_to_charge							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_charge.cas			-fr
+
+anim		walk										data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk.cas						-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_walk.evt
+anim		walk_to_run									data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk_to_run.cas					-fr
+anim		walk_to_stand_a								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk_to_stand_a.cas				-fr
+
+anim		run											data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run.cas							-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_run.evt
+anim		run_to_walk									data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run_to_walk.cas					-fr
+anim		run_to_stand_a								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run_to_stand_a.cas				-fr
+anim		run_to_charge								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run_to_charge.cas				-fr
+
+anim		jump										data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_jump.cas						-fr
+anim		refuse										data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_refuse.cas						-fr
+
+anim		stand_a_turn_90_cw_1						data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_cw_1.cas		-mintd:10	-maxtd:115
+anim		stand_a_turn_90_cw_2						data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_cw_1.cas		-mintd:10	-maxtd:115
+anim		stand_a_turn_90_ccw_1						data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_ccw_1.cas		-mintd:10	-maxtd:115
+anim		stand_a_turn_90_ccw_2						data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_ccw_1.cas		-mintd:10	-maxtd:115
+
+anim		shuffle_forward								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_forward.cas				-fr
+anim		shuffle_backward							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_backward.cas			-fr
+anim		shuffle_left								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_left.cas				-fr
+anim		shuffle_right								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_right.cas				-fr
+
+anim		stand_a_hf_idle_1							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_1.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_1.evt
+anim		stand_a_hf_idle_2							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_2.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_2.evt
+anim		stand_a_hf_idle_3							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_3.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_3.evt
+anim		stand_a_lf_idle_1							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_lf_idle_1.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_lf_idle_1.evt
+
+anim		idle_to_swim								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_walk.cas				-fr
+anim		swim_to_idle								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk_to_stand_a.cas				-fr
+anim		swim_idle									data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr
+anim		swim										data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk.cas						-fr
+anim		swim_shuffle_forward						data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_forward.cas				-fr
+anim		swim_shuffle_backward						data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_backward.cas			-fr
+anim		swim_shuffle_left							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_left.cas				-fr
+anim		swim_shuffle_right							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_right.cas				-fr
+
+anim		die_forward_1								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_forward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_forward_1.evt
+anim		die_backward_1								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_forward_2								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_forward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_forward_2.evt
+anim		die_backward_2								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.evt
+anim		die_to_back_right_1							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_to_back_right_2							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.evt
+anim		die_to_back_left_1							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_to_back_left_2							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.evt
+anim		die_falling_cycle							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_falling_end								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_refusing								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_refusing.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_refusing.evt
+anim		die_galloping								data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_galloping.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_galloping.evt
+
+
+;;;; other
+
+anim		taunt_1										data/animations/HR_Veryshortbowman_String/HR_bow_taunt_1.cas												-fr	-evt:data/animations/HR_bow/HR_bow_taunt_1.evt
+anim		celebrate_1									data/animations/HR_Veryshortbowman_String/HR_bow_celebrate_1.cas												-fr	-evt:data/animations/HR_bow/HR_bow_celebrate_1.evt
+anim		celebrate_2									data/animations/HR_Veryshortbowman_String/HR_bow_celebrate_1.cas												-fr	-evt:data/animations/HR_bow/HR_bow_celebrate_1.evt
+anim		ready										data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt													-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt
+anim		stand_a_to_ready							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt										-fr
+anim		ready_to_stand_a							data/animations/HR_Veryshortbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt										-fr
+
+;;; HR_bow_attacks
+
+
+anim		attack_missile_ready						data/animations/MTW2_Veryshortbowman_String/MTW2_Veryshortbowman_String_Extra/HR_bow_attack_missile_ready_cross2_modified.cas								-fr		-evt:data/animations/HR_bow/HR_bow_attack_missile_ready.evt
+anim		attack_missile_hold							data/animations/MTW2_Veryshortbowman_String/MTW2_Veryshortbowman_String_Extra/HR_bow_attack_missile_hold_cross2_modified.cas								-fr	
+anim		attack_missile_release						data/animations/HR_Veryshortbowman_String/HR_bow_attack_missile_release.cas							-fr			-id:0.0, 1.5, 1.0 -if:1		-evt:data/animations/HR_bow/HR_bow_attack_missile_release.evt
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type		MTW2_Crossbow_String
+reference_points									siege_engines/UnitModelsRefPoints/Crossbow_Ref_Point.modelReferencePoints
+;locomotion_table soldier
+
+anim		default									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_basepose.cas
+
+
+;;;Reaction
+
+anim		knockback_from_front					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_from_front.cas								-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_from_front.evt
+anim		knockback_from_back						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_from_back.cas									-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_from_back.evt
+anim		knockback_from_right					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_from_right.cas										-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_from_right.evt
+anim		knockback_from_left						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_from_left.cas										-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_from_left.evt
+
+anim		knockback_move_from_front				data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_move_from_front.cas										-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_move_from_front.evt
+anim		knockback_move_from_right				data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_move_from_right.cas										-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_move_from_right.evt
+anim		knockback_move_from_back				data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_move_from_back.cas										-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_move_from_back.evt
+anim		knockback_move_from_left				data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockback_move_from_left.cas										-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockback_move_from_left.evt
+
+anim		knockdown_forward_launch				data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockdown_forward_launch.cas								-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockdown_forward_launch.evt
+anim		knockdown_forward_lying					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockdown_forward_lying.cas
+anim		knockdown_forward_recover				data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockdown_forward_recover.cas								-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockdown_forward_recover.evt
+
+anim		knockdown_launch						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockdown_launch.cas								-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockdown_launch.evt
+anim		knockdown_lying							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockdown_lying.cas	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockdown_lying.evt
+anim		knockdown_recover						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_knockdown_recover.cas						-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_knockdown_recover.evt
+
+
+;;;Death
+
+anim		die_backward_1							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_die_forward_1.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_die_forward_1.evt
+anim		die_backward_2							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_die_forward_2.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_die_forward_2.evt
+anim		die_forward_1							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_die_backward_1.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_die_backward_1.evt
+anim		die_forward_2							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_die_backward_2.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_die_backward_2.evt
+anim		die_to_back_right_1									data/animations/MTW2_Mace/MTW2_Mace_die_to_back_right_1.cas					-fr		-evt:data/animations/MTW2_Mace/MTW2_Mace_die_to_back_right_1.evt
+anim		die_to_back_left_1									data/animations/MTW2_Mace/MTW2_Mace_die_to_back_left_1.cas					-fr		-evt:data/animations/MTW2_Mace/MTW2_Mace_die_to_back_left_1.evt
+anim		die_falling_cycle						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_die_flailing_cycle.cas				-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_die_flailing_cycle.evt
+anim		die_falling_end							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_die_flailing_cycle_end.cas			-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_die_flailing_cycle_end.evt
+
+
+;;;Non-Combat
+
+anim		stand_a_idle							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_idle.cas						-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_idle.evt
+anim		stand_a_hf_idle_1						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_hf_idle_1.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_hf_idle_1.evt
+anim		stand_a_hf_idle_2						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_hf_idle_2.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_hf_idle_2.evt
+anim		stand_a_hf_idle_3						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_hf_idle_3.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_hf_idle_3.evt
+anim		stand_a_lf_idle_1						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_lf_idle_1.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_lf_idle_1.evt
+anim		stand_a_lf_idle_2						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_lf_idle_2.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_lf_idle_2.evt
+anim		stand_a_lf_idle_3						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_lf_idle_3.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_lf_idle_3.evt
+anim		stand_a_to_stand_b						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_stand_B.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_stand_B.evt
+anim		stand_a_to_stand_c						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_stand_C.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_stand_C.evt
+anim		stand_a_to_walk							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_walk.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_walk.evt
+anim		stand_a_to_run							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_run.cas					-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_run.evt
+anim		stand_a_to_ready						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_ready.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_ready.evt
+anim		stand_a_to_hide							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_hide.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_hide.evt
+anim		stand_a_to_climb_up						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_climb_up.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_climb_up.evt
+anim		stand_a_to_climb_down					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_to_climb_down.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_to_climb_down.evt
+
+anim		stand_a_turn_45_cw_1					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_turn_45_cw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_turn_45_cw.evt
+anim		stand_a_turn_45_ccw_1					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_turn_45_ccw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_turn_45_ccw.evt
+anim		stand_a_turn_90_cw_1					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_turn_90_cw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_turn_90_cw.evt
+anim		stand_a_turn_90_ccw_1					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_turn_90_ccw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_turn_90_ccw.evt
+
+anim		step_forward							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_step_forward.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_step_forward.evt
+anim		step_backward							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_step_backward.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_step_backward.evt
+anim		step_left								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_step_left.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_step_left.evt
+anim		step_right								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_A_step_right.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_A_step_right.evt
+
+anim		stand_b_idle							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_idle.cas						-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_idle.evt
+anim		stand_b_hf_idle_1						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_hf_idle_1.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_hf_idle_1.evt
+anim		stand_b_hf_idle_2						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_hf_idle_2.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_hf_idle_2.evt
+anim		stand_b_hf_idle_3						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_hf_idle_3.cas			-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_hf_idle_3.evt
+anim		stand_b_lf_idle_1						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_lf_idle_1.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_lf_idle_1.evt
+anim		stand_b_lf_idle_2						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_lf_idle_2.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_lf_idle_2.evt
+anim		stand_b_lf_idle_3						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_lf_idle_3.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_lf_idle_3.evt
+anim		stand_b_to_stand_a						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_to_stand_A.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_to_stand_A.evt
+anim		stand_b_to_stand_c						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_to_stand_C.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_to_stand_C.evt
+anim		stand_b_to_walk							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_to_walk.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_to_walk.evt
+anim		stand_b_to_run							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_to_run.cas					-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_to_run.evt
+anim		stand_b_to_ready						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_B_to_ready.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_B_to_ready.evt
+
+anim		stand_c_idle							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_idle.cas						-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_idle.evt
+anim		stand_c_hf_idle_1						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_hf_idle_1.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_hf_idle_1.evt
+anim		stand_c_hf_idle_2						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_hf_idle_2.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_hf_idle_2.evt
+anim		stand_c_hf_idle_3						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_hf_idle_3.cas				-fr				-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_hf_idle_3.evt
+anim		stand_c_lf_idle_1						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_lf_idle_1.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_lf_idle_1.evt
+anim		stand_c_lf_idle_2						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_lf_idle_2.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_lf_idle_2.evt
+anim		stand_c_lf_idle_3						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_lf_idle_3.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_lf_idle_3.evt
+anim		stand_c_to_stand_a						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_to_stand_A.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_to_stand_A.evt
+anim		stand_c_to_stand_b						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_to_stand_B.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_to_stand_B.evt
+anim		stand_c_to_walk							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_to_walk.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_to_walk.evt
+anim		stand_c_to_run							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_to_run.cas					-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_to_run.evt
+anim		stand_c_to_ready						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stand_C_to_ready.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stand_C_to_ready.evt
+
+anim		taunt_1									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_taunt_1.cas							-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_taunt_1.evt
+anim		taunt_2									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_taunt_2.cas							-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_taunt_2.evt
+anim		taunt_3									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_taunt_3.cas							-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_taunt_3.evt
+anim		celebrate_1								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_celebrate_1.cas						-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_celebrate_1.evt
+anim		celebrate_2								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_celebrate_1.cas						-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_celebrate_1.evt
+
+anim		stealthy_walk							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stealthy_walk.cas					-fr
+anim		stealthy_walk_to_stand_a				data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stealthy_walk_to_stand_A.cas		-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stealthy_walk_to_stand_A.evt
+anim		stealthy_walk_to_hide					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stealthy_walk_to_hide.cas			-fr
+anim		stealthy_walk_to_walk					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stealthy_walk_to_walk.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stealthy_walk_to_walk.evt
+anim		hide									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_hide.cas							-fr
+anim		hide_to_stand_a							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_Hide_to_Stand_A.cas				-fr	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_Hide_to_Stand_A.evt
+anim		hide_to_stealthy_walk					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_hide_to_stealthy_walk.cas			-fr
+anim		stealthy_walk_to_walk					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_stealthy_walk_to_walk.cas		-fr	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_stealthy_walk_to_walk.evt
+
+anim		run										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_run.cas							-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_run.evt
+anim		run_to_stand_a							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_run_to_stand_A.cas					-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_run_to_stand_A.evt
+anim		run_to_walk								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_run_to_walk.cas					-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_run_to_walk.evt
+
+anim		walk									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_walk.cas							-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_walk.evt
+anim		walk_to_stand_a							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_walk_to_stand_A.cas				-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_walk_to_stand_A.evt
+anim		walk_to_run								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_walk_to_run.cas					-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_walk_to_run.evt
+
+anim		climb_up								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_climb_up.cas						-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_climb_up.evt
+anim		climb_down								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_climb_down.cas						-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_climb_down.evt
+anim		climb_up_to_stand_a						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_climb_up_to_stand_A.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_climb_up_to_stand_A.evt
+anim		climb_down_to_stand_a					data/animations/MTW2_Crossbow_String/MTW2_Crossbow_climb_down_to_stand_A.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_climb_down_to_stand_A.evt
+anim		climb_idle								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_climb_idle.cas						-fr
+
+;;;combat
+
+anim		ready												data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready.cas							-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready.evt
+anim		ready_hf_idle_1										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_hf_idle_1.cas						-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_hf_idle_1.evt
+anim		ready_hf_idle_2										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_hf_idle_2.cas						-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_hf_idle_2.evt
+anim		ready_hf_idle_3										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_hf_idle_3.cas						-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_hf_idle_3.evt
+
+anim		ready_to_stand_a									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_to_stand_A.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_to_stand_A.evt
+anim		ready_to_advance									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_to_advance.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_to_advance.evt
+anim		ready_to_retreat									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_to_retreat.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_to_retreat.evt
+anim		ready_to_combat_jog									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_to_combat_jog.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_to_combat_jog.evt
+
+anim		ready_turn_cw_15									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_15_cw.cas		-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_15_cw.evt
+anim		ready_turn_ccw_15									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_15_ccw.cas	-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_15_ccw.evt
+anim		ready_turn_cw_45									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_45_cw.cas		-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_45_cw.evt
+anim		ready_turn_ccw_45									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_45_ccw.cas	-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_45_ccw.evt
+anim		ready_turn_cw_90									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_90_cw.cas		-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_90_cw.evt
+anim		ready_turn_ccw_90									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_ready_90_ccw.cas	-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_ready_90_ccw.evt
+
+anim		shuffle_forward										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_shuffle_forward.cas						-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_shuffle_forward.evt
+anim		shuffle_backward									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_shuffle_backward.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_shuffle_backward.evt
+anim		shuffle_left										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_shuffle_left.cas						-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_shuffle_left.evt
+anim		shuffle_right										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_shuffle_right.cas								-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_shuffle_right.evt
+
+anim		combat_jog											data/animations/MTW2_Crossbow_String/MTW2_Crossbow_Combat_Jog.cas							-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_Combat_Jog.evt
+anim		combat_jog_to_ready									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_combat_jog_to_ready.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_combat_jog_to_ready.evt
+anim		combat_jog_to_advance								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_Combat_Jog_to_Advance.cas				-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_Combat_Jog_to_Advance.evt
+
+anim		advance												data/animations/MTW2_Crossbow_String/MTW2_Crossbow_advance.cas								-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_advance.evt
+anim		advance_to_ready									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_advance_to_ready.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_advance_to_ready.evt
+anim		advance_to_combat_jog								data/animations/MTW2_Crossbow_String/MTW2_Crossbow_advance_to_combat_jog.cas				-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_advance_to_combat_jog.evt
+anim		retreat												data/animations/MTW2_Crossbow_String/MTW2_Crossbow_retreat.cas								-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_retreat.evt
+anim		retreat_to_ready									data/animations/MTW2_Crossbow_String/MTW2_Crossbow_retreat_to_ready.cas					-fr		-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_retreat_to_ready.evt
+
+
+;;;swim
+
+anim		swim												data/animations/mtw2_knifeman/MTW2_Knifeman_swim.cas								-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim.evt
+anim		idle_to_swim										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr	-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+anim		swim_to_idle										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas							-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_to_swim_idle									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_to_Swim_Idle.cas					-fr
+anim		swim_idle											data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_idle_to_swim									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle_to_swim.cas
+anim		swim_shuffle_forward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_backward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_left									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.evt
+anim		swim_shuffle_right									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.evt
+;anim		swim_attack_1										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_attack1.cas								-id 0.03, 0.0, 1.11	-if:15
+
+
+;;;crew requirements
+
+anim		stand_a_to_crew_stand						data/animations/MTW2_Crossbow_String/MTW2_Knifeman_stand_A_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_stand_A_to_crew_stand.evt
+anim		crew_stand_to_stand_a						data/animations/MTW2_Crossbow_String/MTW2_Knifeman_crew_stand_to_stand_A.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_crew_stand_to_stand_A.evt
+
+anim		crew_stand									data/animations/MTW2_Crossbow_String/MTW2_Crew_crew_stand_idle.cas										-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_idle.evt
+anim		crew_stand_to_carry_stand					data/animations/MTW2_Crossbow_String/MTW2_Crew_crew_stand_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_carry_stand.evt
+anim		crew_stand_to_push							data/animations/MTW2_Crossbow_String/MTW2_Crew_crew_stand_to_push.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_push.evt
+;anim		crew_stand_to_wide_push						data/animations/MTW2_Crossbow_String/MTW2_Crew_crew_stand_to_wide_push.cas								-fr		-evt:data/animations/carry_and_artillery/Art_17 Stand 2 Push heavy object.evt
+anim		crew_stand_to_pull							data/animations/MTW2_Crossbow_String/MTW2_Crew_crew_stand_to_pull.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_pull.evt
+
+anim		carry_stand									data/animations/MTW2_Crossbow_String/MTW2_Crew_carry_stand_idle.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_idle.evt
+anim		carry_stand_to_carry_walk					data/animations/MTW2_Crossbow_String/MTW2_Crew_carry_stand_to_carry_walk.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_carry_walk.evt
+anim		carry_stand_to_crew_stand					data/animations/MTW2_Crossbow_String/MTW2_Crew_carry_stand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_crew_stand.evt
+anim		carry_walk									data/animations/MTW2_Crossbow_String/MTW2_Crew_carry_walk.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk.evt
+anim		carry_walk_to_carry_stand					data/animations/MTW2_Crossbow_String/MTW2_Crew_carry_walk_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk_to_carry_stand.evt
+
+anim		push										data/animations/MTW2_Crossbow_String/MTW2_Crew_push.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push.evt
+anim		push_to_crew_stand							data/animations/MTW2_Crossbow_String/MTW2_Crew_push_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push_to_crew_stand.evt
+;anim		wide_push									data/animations/MTW2_Crossbow_String/MTW2_Crew_wide_push.cas											-fr		-evt:data/animations/carry_and_artillery/Art_18 Push heavy object loop.evt
+;anim		wide_push_to_crew_stand						data/animations/MTW2_Crossbow_String/MTW2_Crew_wide_push_to_crew_stand.cas								-fr
+anim		pull										data/animations/MTW2_Crossbow_String/MTW2_Crew_pull.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull.evt
+anim		pull_to_crew_stand							data/animations/MTW2_Crossbow_String/MTW2_Crew_pull_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull_to_crew_stand.evt
+
+anim		crew_stand_to_raise_hand_1					data/animations/MTW2_Crossbow_String/MTW2_Crew_crew_stand_to_raise_hand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_raise_hand.evt
+anim		raise_hand_1								data/animations/MTW2_Crossbow_String/MTW2_Crew_raise_hand.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand.evt
+anim		raise_hand_1_to_crew_stand					data/animations/MTW2_Crossbow_String/MTW2_Crew_raise_hand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand_to_crew_stand.evt
+
+
+;;;Attack
+
+anim		attack_missile_ready						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_attack_missile_ready_modified.cas						-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_attack_missile_ready.evt
+anim		attack_missile_hold							data/animations/MTW2_Crossbow_String/MTW2_Crossbow_attack_missile_hold_modified.cas						-fr
+anim		attack_missile_release						data/animations/MTW2_Crossbow_String/MTW2_Crossbow_attack_missile_release_modified.cas						-fr			-id:0.0, 1.5, 1.0	-evt:data/animations/MTW2_Crossbow/MTW2_Crossbow_attack_missile_release.evt
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type			MTW2_Fast_Crossbow_String
+reference_points										siege_engines/UnitModelsRefPoints/Crossbow_Ref_Point.modelReferencePoints
+parent		MTW2_Crossbow_String
+;locomotion_table soldier
+
+anim		default										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_basepose.cas
+
+anim			run										data/animations/MTW2_Crossbow_String/MTW2_Fast_Crossbow_run.cas							-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Fast_Crossbow_run.evt
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type		MTW2_Pavise_Crossbow_String
+reference_points										siege_engines/UnitModelsRefPoints/Crossbow_Ref_Point.modelReferencePoints
+parent		MTW2_Crossbow_String
+;locomotion_table soldier
+
+anim		default										data/animations/MTW2_Crossbow_String/MTW2_Crossbow_basepose.cas
+
+anim		attack_missile_ready						data/animations/MTW2_Crossbow_String/MTW2_Pavise_Crossbow_attack_missile_ready_modified.cas			-fr			-evt:data/animations/MTW2_Crossbow/MTW2_Pavise_Crossbow_attack_missile_ready.evt
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;
+
+type			MTW2_HR_Crossbow_String
+no_deltas
+in_awareness	135.0
+in_zone			135.0
+in_centre		45.0
+
+anim		default										data/animations/HR_Crossbow_String/HR_lance_basepose.cas
+
+
+;;; HR_Crossbow_attacks
+
+anim		attack_missile_ready						data/animations/HR_Crossbow_String/HR_Crossbow_attack_missile_ready_modified.cas								-fr		-evt:data/animations/HR_Crossbow/HR_Crossbow_attack_missile_ready.evt
+anim		attack_missile_hold							data/animations/HR_Crossbow_String/HR_Crossbow_attack_missile_hold_modified.cas									-fr
+anim		attack_missile_release						data/animations/HR_Crossbow_String/HR_Crossbow_attack_missile_release_modified.cas								-fr		-id:0.0, 1.5, 1.0		-evt:data/animations/HR_Crossbow/HR_Crossbow_attack_missile_release.evt
+
+
+;;;HR_Crossbow_Defend
+
+;;; --- HR_Crossbow does not defend - switches to HR_sword in melee combat ---
+
+
+;;;HR_Crossbow_Reaction
+
+anim		knockback_from_front						data/animations/HR_Crossbow_String/HR_Crossbow_knockback_front.cas										-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_knockback_front.evt
+anim		knockback_from_right						data/animations/HR_Crossbow_String/HR_Crossbow_knockback_right.cas										-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_knockback_right.evt
+anim		knockback_from_back							data/animations/HR_Crossbow_String/HR_Crossbow_knockback_back.cas										-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_knockback_back.evt
+anim		knockback_from_left							data/animations/HR_Crossbow_String/HR_Crossbow_knockback_left.cas										-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_knockback_left.evt
+
+
+;;; basic locomotion for horse
+
+anim		stand_a_idle								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt
+anim		stand_a_to_walk								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_to_walk.cas				-fr
+anim		stand_a_to_run								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_to_run.cas				-fr
+anim		stand_a_to_charge							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_to_charge.cas			-fr
+
+anim		walk										data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_walk.cas						-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_walk.evt
+anim		walk_to_run									data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_walk_to_run.cas					-fr
+anim		walk_to_stand_a								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_walk_to_stand_a.cas				-fr
+
+anim		run											data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_run.cas							-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_run.evt
+anim		run_to_walk									data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_run_to_walk.cas					-fr
+anim		run_to_stand_a								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_run_to_stand_a.cas				-fr
+anim		run_to_charge								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_run_to_charge.cas				-fr
+
+anim		jump										data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_jump.cas						-fr
+anim		refuse										data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_refuse.cas						-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_refuse.evt
+
+anim		stand_a_turn_90_cw_1						data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_turn_90_cw_1.cas			-mintd:10	-maxtd:115
+anim		stand_a_turn_90_cw_2						data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_turn_90_cw_1.cas			-mintd:10	-maxtd:115
+anim		stand_a_turn_90_ccw_1						data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_turn_90_ccw_1.cas		-mintd:10	-maxtd:115
+anim		stand_a_turn_90_ccw_2						data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_turn_90_ccw_1.cas		-mintd:10	-maxtd:115
+
+anim		shuffle_forward								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_forward.cas				-fr
+anim		shuffle_backward							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_backward.cas			-fr
+anim		shuffle_left								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_left.cas				-fr
+anim		shuffle_right								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_right.cas				-fr
+
+anim		stand_a_hf_idle_1							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_hf_idle_1.cas			-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_hf_idle_1.evt
+anim		stand_a_hf_idle_2							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_hf_idle_2.cas			-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_hf_idle_2.evt
+anim		stand_a_hf_idle_3							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_hf_idle_3.cas			-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_hf_idle_3.evt
+anim		stand_a_lf_idle_1							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_lf_idle_1.cas			-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_lf_idle_1.evt
+
+anim		idle_to_swim								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_to_walk.cas				-fr
+anim		swim_to_idle								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_walk_to_stand_a.cas				-fr
+anim		swim_idle									data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.cas				-fr
+anim		swim										data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_walk.cas						-fr
+anim		swim_shuffle_forward						data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_forward.cas				-fr
+anim		swim_shuffle_backward						data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_backward.cas			-fr
+anim		swim_shuffle_left							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_left.cas				-fr
+anim		swim_shuffle_right							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_shuffle_right.cas				-fr
+
+anim		die_forward_1								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_forward_1.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_forward_1.evt
+anim		die_backward_1								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.evt
+anim		die_forward_2								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_forward_2.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_forward_2.evt
+anim		die_backward_2								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_2.evt
+anim		die_to_back_right_1							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.evt
+anim		die_to_back_right_2							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_2.evt
+anim		die_to_back_left_1							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.evt
+anim		die_to_back_left_2							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_2.evt
+anim		die_falling_cycle							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.evt
+anim		die_falling_end								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_backward_1.evt
+anim		die_refusing								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_refusing.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_refusing.evt
+anim		die_galloping								data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_galloping.cas				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_die_galloping.evt
+
+
+;;;; other
+
+anim		taunt_1										data/animations/HR_Crossbow_String/HR_Crossbow_taunt_1.cas												-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_taunt_1.evt
+anim		celebrate_1									data/animations/HR_Crossbow_String/HR_Crossbow_celebrate_1.cas												-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_celebrate_1.evt
+anim		celebrate_2									data/animations/HR_Crossbow_String/HR_Crossbow_celebrate_1.cas												-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_celebrate_1.evt
+anim		ready										data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.cas			-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt													-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt
+anim		stand_a_to_ready							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.cas			-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt										-fr
+anim		ready_to_stand_a							data/animations/HR_Crossbow_String/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.cas			-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt				-fr	-evt:data/animations/HR_Crossbow/HR_Crossbow_horse_req/HR_Crossbow_fs_horse_stand_a_idle.evt										-fr
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type		MTW2_Longbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+;locomotion_table soldier
+anim		default									data/animations/MTW2_Longbowman_String/MTW2_Bowman_basepose.cas
+
+
+
+
+;;;Reaction
+
+anim		knockback_from_front					data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_from_front.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_front.evt
+anim		knockback_from_back						data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_from_back.cas									-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_back.evt
+anim		knockback_from_right					data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_from_right.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_right.evt
+anim		knockback_from_left						data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_from_left.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_from_left.evt
+
+anim		knockback_move_from_front				data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_move_from_front.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_front.evt
+anim		knockback_move_from_right				data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_move_from_right.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_right.evt
+anim		knockback_move_from_back				data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_move_from_back.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_back.evt
+anim		knockback_move_from_left				data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockback_move_from_left.cas										-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockback_move_from_left.evt
+
+anim		knockdown_forward_launch				data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockdown_forward_launch.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_forward_launch.evt
+anim		knockdown_forward_lying					data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockdown_forward_lying.cas
+anim		knockdown_forward_recover				data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockdown_forward_recover.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_forward_recover.evt
+
+anim		knockdown_launch						data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockdown_launch.cas								-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_launch.evt
+anim		knockdown_lying							data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockdown_lying.cas
+anim		knockdown_recover						data/animations/MTW2_Longbowman_String/MTW2_Bowman_knockdown_recover.cas						-evt:data/animations/MTW2_Bowman/MTW2_Bowman_knockdown_recover.evt
+
+;;;Death
+
+anim		die_backward_1							data/animations/MTW2_Longbowman_String/MTW2_Bowman_die_forward_1.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_forward_1.evt
+anim		die_backward_2							data/animations/MTW2_Longbowman_String/MTW2_Bowman_die_forward_2.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_forward_2.evt
+anim		die_forward_1							data/animations/MTW2_Longbowman_String/MTW2_Bowman_die_backward_1.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_backward_1.evt
+anim		die_forward_2							data/animations/MTW2_Longbowman_String/MTW2_Bowman_die_backward_2.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_backward_2.evt
+anim		die_to_back_right_1									data/animations/MTW2_Mace/MTW2_Mace_die_to_back_right_1.cas					-fr		-evt:data/animations/MTW2_Mace/MTW2_Mace_die_to_back_right_1.evt
+anim		die_to_back_left_1									data/animations/MTW2_Mace/MTW2_Mace_die_to_back_left_1.cas					-fr		-evt:data/animations/MTW2_Mace/MTW2_Mace_die_to_back_left_1.evt
+anim		die_falling_cycle						data/animations/MTW2_Longbowman_String/MTW2_Bowman_die_flailing_cycle.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_flailing_cycle.evt
+anim		die_falling_end							data/animations/MTW2_Longbowman_String/MTW2_Bowman_die_flailing_cycle_end.cas			-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_die_flailing_cycle_end.evt
+
+;;;Non-Combat
+
+anim		stand_a_idle							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_idle.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_idle.evt
+anim		stand_a_hf_idle_1						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_1.evt
+anim		stand_a_hf_idle_2						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_2.evt
+anim		stand_a_hf_idle_3						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_hf_idle_3.evt
+anim		stand_a_lf_idle_1						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_lf_idle1_modified.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle1.evt
+anim		stand_a_lf_idle_2						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_lf_idle2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle2.evt
+anim		stand_a_lf_idle_3						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_lf_idle3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_lf_idle3.evt
+anim		stand_a_to_stand_b						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_stand_B.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_stand_B.evt
+anim		stand_a_to_stand_c						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_stand_C.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_stand_C.evt
+anim		stand_a_to_walk							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_walk.evt
+anim		stand_a_to_run							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_run.evt
+anim		stand_a_to_ready						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_ready.evt
+anim		stand_a_to_hide							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_hide.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_hide.evt
+anim		stand_a_to_climb_up						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_climb_up.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_climb_up.evt
+anim		stand_a_to_climb_down					data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_to_climb_down.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_to_climb_down.evt
+
+anim		step_forward							data/animations/MTW2_Longbowman_String/MTW2_Bowman_step_forward.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_forward.evt
+anim		step_backward							data/animations/MTW2_Longbowman_String/MTW2_Bowman_step_backward.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_backward.evt
+anim		step_left								data/animations/MTW2_Longbowman_String/MTW2_Bowman_step_left.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_left.evt
+anim		step_right								data/animations/MTW2_Longbowman_String/MTW2_Bowman_step_right.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_step_right.evt
+
+anim		stand_a_turn_45_cw_1					data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_turn_45_cw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_45_cw.evt
+anim		stand_a_turn_45_ccw_1					data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_turn_45_ccw.cas		-mintd:10	-maxtd:68	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_45_ccw.evt
+anim		stand_a_turn_90_cw_1					data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_turn_90_cw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_90_cw.evt
+anim		stand_a_turn_90_ccw_1					data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_A_turn_90_ccw.cas		-mintd:67	-maxtd:115	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_A_turn_90_ccw.evt
+
+
+anim		stand_b_idle							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_idle.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_idle.evt
+anim		stand_b_hf_idle_1						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_1.evt
+anim		stand_b_hf_idle_2						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_2.evt
+anim		stand_b_hf_idle_3						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_hf_idle_3.evt
+anim		stand_b_lf_idle_1						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_lf_idle1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle1.evt
+anim		stand_b_lf_idle_2						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_lf_idle2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle2.evt
+anim		stand_b_lf_idle_3						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_lf_idle3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_lf_idle3.evt
+anim		stand_b_to_stand_a						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_stand_A.evt
+anim		stand_b_to_stand_c						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_to_stand_C.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_stand_C.evt
+anim		stand_b_to_walk							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_walk.evt
+anim		stand_b_to_run							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_run.evt
+anim		stand_b_to_ready						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_B_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_B_to_ready.evt
+
+anim		stand_c_idle							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_idle.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_idle.evt
+anim		stand_c_hf_idle_1						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_hf_idle_1.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_1.evt
+anim		stand_c_hf_idle_2						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_hf_idle_2.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_2.evt
+anim		stand_c_hf_idle_3						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_hf_idle_3.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_hf_idle_3.evt
+anim		stand_c_lf_idle_1						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_lf_idle_1.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_1.evt
+anim		stand_c_lf_idle_2						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_lf_idle_2.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_2.evt
+anim		stand_c_lf_idle_3						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_lf_idle_3.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_lf_idle_3.evt
+anim		stand_c_to_stand_a						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_stand_A.evt
+anim		stand_c_to_stand_b						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_to_stand_B.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_stand_B.evt
+anim		stand_c_to_walk							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_to_walk.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_walk.evt
+anim		stand_c_to_run							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_to_run.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_run.evt
+anim		stand_c_to_ready						data/animations/MTW2_Longbowman_String/MTW2_Bowman_stand_C_to_ready.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stand_C_to_ready.evt
+
+anim		taunt_1									data/animations/MTW2_Longbowman_String/MTW2_Bowman_taunt_1.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_1.evt
+anim		taunt_2									data/animations/MTW2_Longbowman_String/MTW2_Bowman_taunt_2.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_2.evt
+anim		taunt_3									data/animations/MTW2_Longbowman_String/MTW2_Bowman_taunt_3.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_taunt_3.evt
+anim		celebrate_1								data/animations/MTW2_Longbowman_String/MTW2_Bowman_celebrate_1.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_celebrate_1.evt
+anim		celebrate_2								data/animations/MTW2_Longbowman_String/MTW2_Bowman_celebrate_1.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_celebrate_1.evt
+
+anim		stealthy_walk							data/animations/MTW2_Longbowman_String/MTW2_Bowman_stealthy_walk.cas				-fr
+anim		stealthy_walk_to_stand_a				data/animations/MTW2_Longbowman_String/MTW2_Bowman_stealthy_walk_to_stand_A.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stealthy_walk_to_stand_A.evt
+anim		stealthy_walk_to_hide					data/animations/MTW2_Longbowman_String/MTW2_Bowman_stealthy_walk_to_hide.cas		-fr
+anim		stealthy_walk_to_walk					data/animations/MTW2_Longbowman_String/MTW2_Bowman_stealthy_walk_to_walk.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_stealthy_walk_to_walk.evt
+anim		hide									data/animations/MTW2_Longbowman_String/MTW2_Bowman_hide.cas	-fr
+anim		hide_to_stand_a							data/animations/MTW2_Longbowman_String/MTW2_Bowman_hide_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_hide_to_stand_A.evt
+anim		hide_to_stealthy_walk					data/animations/MTW2_Longbowman_String/MTW2_Bowman_hide_to_stealthy_walk.cas		-fr
+
+anim		run										data/animations/MTW2_Longbowman_String/MTW2_Bowman_run.cas							-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run.evt
+anim		run_to_stand_a							data/animations/MTW2_Longbowman_String/MTW2_Bowman_run_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run_to_stand_A.evt
+anim		run_to_walk								data/animations/MTW2_Longbowman_String/MTW2_Bowman_run_to_walk.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_run_to_walk.evt
+anim		run_to_charge							data/animations/MTW2_Mace/MTW2_Mace_run_to_charge.cas					-fr		-evt:data/animations/MTW2_Mace/MTW2_Mace_run_to_charge.evt
+
+anim		walk									data/animations/MTW2_Longbowman_String/MTW2_Bowman_walk.cas							-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk.evt
+anim		walk_to_stand_a							data/animations/MTW2_Longbowman_String/MTW2_Bowman_walk_to_stand_A.cas				-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk_to_stand_A.evt
+anim		walk_to_run								data/animations/MTW2_Longbowman_String/MTW2_Bowman_walk_to_run.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_walk_to_run.evt
+
+anim		climb_up								data/animations/MTW2_Longbowman_String/MTW2_Bowman_climb_up.cas						-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_up.evt
+anim		climb_down								data/animations/MTW2_Longbowman_String/MTW2_Bowman_climb_down.cas					-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_down.evt
+anim		climb_up_to_stand_a						data/animations/MTW2_Longbowman_String/MTW2_Bowman_climb_up_to_stand_A.cas			-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_up_to_stand_A.evt
+anim		climb_down_to_stand_a					data/animations/MTW2_Longbowman_String/MTW2_Bowman_climb_down_to_stand_A.cas		-fr	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_climb_down_to_stand_A.evt
+anim		climb_idle								data/animations/MTW2_Longbowman_String/MTW2_Bowman_climb_idle.cas					-fr
+
+;;;combat
+
+anim		ready												data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready.cas							-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready.evt
+anim		ready_hf_idle_1										data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_hf_idle_1.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_1.evt
+anim		ready_hf_idle_2										data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_hf_idle_2.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_2.evt
+anim		ready_hf_idle_3										data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_hf_idle_3.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_hf_idle_3.evt
+
+anim		ready_to_stand_a									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_to_stand_A.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_stand_A.evt
+anim		ready_to_advance									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_to_advance.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_advance.evt
+anim		ready_to_retreat									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_to_retreat.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_retreat.evt
+anim		ready_to_combat_jog									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_to_combat_jog.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_to_combat_jog.evt
+
+anim		ready_turn_cw_15									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_15_cw.cas		-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_15_cw.evt
+anim		ready_turn_ccw_15									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_15_ccw.cas	-mintd:5	-maxtd:30		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_15_ccw.evt
+anim		ready_turn_cw_45									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_45_cw.cas		-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_45_cw.evt
+anim		ready_turn_ccw_45									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_45_ccw.cas	-mintd:29	-maxtd:68		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_45_ccw.evt
+anim		ready_turn_cw_90									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_90_cw.cas		-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_90_cw.evt
+anim		ready_turn_ccw_90									data/animations/MTW2_Longbowman_String/MTW2_Bowman_ready_90_ccw.cas	-mintd:67	-maxtd:115		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_ready_90_ccw.evt
+
+anim		shuffle_forward										data/animations/MTW2_Longbowman_String/MTW2_Bowman_shuffle_forward.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_forward.evt
+anim		shuffle_backward									data/animations/MTW2_Longbowman_String/MTW2_Bowman_shuffle_backward.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_backward.evt
+anim		shuffle_left										data/animations/MTW2_Longbowman_String/MTW2_Bowman_shuffle_left.cas						-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_left.evt
+anim		shuffle_right										data/animations/MTW2_Longbowman_String/MTW2_Bowman_shuffle_right.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_shuffle_right.evt
+
+anim		combat_jog											data/animations/MTW2_Longbowman_String/MTW2_Bowman_Combat_Jog.cas							-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_Combat_Jog.evt
+anim		combat_jog_to_ready									data/animations/MTW2_Longbowman_String/MTW2_Bowman_combat_jog_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_combat_jog_to_ready.evt
+anim		combat_jog_to_advance								data/animations/MTW2_Longbowman_String/MTW2_Bowman_Combat_Jog_to_Advance.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_Combat_Jog_to_Advance.evt
+
+anim		advance												data/animations/MTW2_Longbowman_String/MTW2_Bowman_advance.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance.evt
+anim		advance_to_ready									data/animations/MTW2_Longbowman_String/MTW2_Bowman_advance_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance_to_ready.evt
+anim		advance_to_combat_jog								data/animations/MTW2_Longbowman_String/MTW2_Bowman_advance_to_combat_jog.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_advance_to_combat_jog.evt
+anim		retreat												data/animations/MTW2_Longbowman_String/MTW2_Bowman_retreat.cas								-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_retreat.evt
+anim		retreat_to_ready									data/animations/MTW2_Longbowman_String/MTW2_Bowman_retreat_to_ready.cas					-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_retreat_to_ready.evt
+
+
+;;;swim
+
+anim		swim												data/animations/mtw2_knifeman/MTW2_Knifeman_swim.cas								-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim.evt
+anim		idle_to_swim										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr	-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+anim		swim_to_idle										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas							-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_to_swim_idle									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_to_Swim_Idle.cas					-fr
+anim		swim_idle											data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.cas											-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle.evt
+;anim		swim_idle_to_swim									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_idle_to_swim.cas
+anim		swim_shuffle_forward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_backward								data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.cas				-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_forward.evt
+anim		swim_shuffle_left									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_left.evt
+anim		swim_shuffle_right									data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.cas					-fr		-evt:data/animations/mtw2_knifeman/MTW2_Knifeman_swim_shuffle_right.evt
+;anim		swim_attack_1										data/animations/mtw2_knifeman/MTW2_Knifeman_swim_attack1.cas								-id 0.03, 0.0, 1.11	-if:15
+
+
+;;;crew requirements
+
+anim		stand_a_to_crew_stand					data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Knifeman_stand_A_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_stand_A_to_crew_stand.evt
+anim		crew_stand_to_stand_a					data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Knifeman_crew_stand_to_stand_A.cas							-fr		-evt:data/animations/MTW2_Knifeman/MTW2_Knifeman_crew_stand_to_stand_A.evt
+
+anim		crew_stand								data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_idle.cas										-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_idle.evt
+anim		crew_stand_to_carry_stand				data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_carry_stand.evt
+anim		crew_stand_to_push						data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_push.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_push.evt
+;anim		crew_stand_to_wide_push					data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_wide_push.cas								-fr		-evt:data/animations/carry_and_artillery/Art_17 Stand 2 Push heavy object.evt
+anim		crew_stand_to_pull						data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_pull.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_pull.evt
+
+anim		carry_stand								data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_idle.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_idle.evt
+anim		carry_stand_to_carry_walk				data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_to_carry_walk.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_carry_walk.evt
+anim		carry_stand_to_crew_stand				data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_carry_stand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_stand_to_crew_stand.evt
+anim		carry_walk								data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_carry_walk.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk.evt
+anim		carry_walk_to_carry_stand				data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_carry_walk_to_carry_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_carry_walk_to_carry_stand.evt
+
+anim		push									data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_push.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push.evt
+anim		push_to_crew_stand						data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_push_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_push_to_crew_stand.evt
+;anim		wide_push								data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_wide_push.cas											-fr		-evt:data/animations/carry_and_artillery/Art_18 Push heavy object loop.evt
+;anim		wide_push_to_crew_stand					data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_wide_push_to_crew_stand.cas								-fr
+anim		pull									data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_pull.cas												-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull.evt
+anim		pull_to_crew_stand						data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_pull_to_crew_stand.cas									-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_pull_to_crew_stand.evt
+
+anim		crew_stand_to_raise_hand_1				data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_crew_stand_to_raise_hand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_crew_stand_to_raise_hand.evt
+anim		raise_hand_1							data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_raise_hand.cas											-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand.evt
+anim		raise_hand_1_to_crew_stand				data/animations/MTW2_Longbowman_String/MTW2_Knifeman/MTW2_Crew_raise_hand_to_crew_stand.cas							-fr		-evt:data/animations/MTW2_Crew/MTW2_Crew_raise_hand_to_crew_stand.evt
+
+
+;;;Attack
+
+anim		attack_missile_ready					data/animations/MTW2_Longbowman_String/MTW2_Bowman_attack_missile_ready_modified.cas				-fr		-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_ready.evt
+anim		attack_missile_hold						data/animations/MTW2_Longbowman_String/MTW2_Bowman_attack_missile_hold_modified.cas					-fr
+anim		attack_missile_release					data/animations/MTW2_Longbowman_String/MTW2_Bowman_attack_missile_release.cas					-fr		-id:0.0, 1.5, 1.0 -if:1	-evt:data/animations/MTW2_Bowman/MTW2_Bowman_attack_missile_release.evt
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+type		MTW2_Fast_Longbowman_String
+parent		MTW2_Longbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+anim		default									data/animations/MTW2_Longbowman_String/MTW2_Bowman_basepose.cas
+
+anim		run										data/animations/MTW2_Longbowman_String/MTW2_Fast_Bowman_run.cas									-fr				-evt:data/animations/MTW2_Bowman/MTW2_Fast_Bowman_run.evt
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+type      	MTW2_Slow_Longbowman_String
+parent		MTW2_Longbowman_String
+reference_points									siege_engines/UnitModelsRefPoints/Bow_Ref_Point.modelReferencePoints
+
+anim		default									data/animations/MTW2_Longbowman_String/MTW2_Bowman_basepose.cas
+
+anim		run										data/animations/MTW2_Longbowman_String/MTW2_Slow_Bowman_run.cas									-fr
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+type		MTW2_HR_Longbowman_String
+no_deltas
+in_awareness	135.0
+in_zone			135.0
+in_centre		45.0
+
+anim							default					data/animations/HR_Longbowman_String/HR_lance_basepose.cas
+
+
+;;; HR_bow_attacks
+
+anim		attack_missile_ready						data/animations/HR_Longbowman_String/HR_bow_attack_missile_ready_modified.cas								-fr		-evt:data/animations/HR_bow/HR_bow_attack_missile_ready.evt
+anim		attack_missile_hold							data/animations/HR_Longbowman_String/HR_bow_attack_missile_hold_modified.cas								-fr
+anim		attack_missile_release						data/animations/HR_Longbowman_String/HR_bow_attack_missile_release.cas							-fr			-id:0.0, 1.5, 1.0 -if:1		-evt:data/animations/HR_bow/HR_bow_attack_missile_release.evt
+
+
+;;;HR_Bow_Defend
+
+;;; --- HR_Bow does not defend - switches to HR_sword in melee combat ---
+
+;;;Hr_Bow_Reaction
+
+anim		knockback_from_front						data/animations/HR_Longbowman_String/HR_bow_knockback_front.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_front.evt
+anim		knockback_from_right						data/animations/HR_Longbowman_String/HR_bow_knockback_right.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_right.evt
+anim		knockback_from_back							data/animations/HR_Longbowman_String/HR_bow_knockback_back.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_back.evt
+anim		knockback_from_left							data/animations/HR_Longbowman_String/HR_bow_knockback_left.cas										-fr	-evt:data/animations/HR_bow/HR_bow_knockback_left.evt
+
+
+;;; basic locomotion for horse
+
+anim		stand_a_idle								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt
+anim		stand_a_to_walk								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_walk.cas				-fr
+anim		stand_a_to_run								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_run.cas				-fr
+anim		stand_a_to_charge							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_charge.cas			-fr
+
+anim		walk										data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk.cas						-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_walk.evt
+anim		walk_to_run									data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk_to_run.cas					-fr
+anim		walk_to_stand_a								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk_to_stand_a.cas				-fr
+
+anim		run											data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run.cas							-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_run.evt
+anim		run_to_walk									data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run_to_walk.cas					-fr
+anim		run_to_stand_a								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run_to_stand_a.cas				-fr
+anim		run_to_charge								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_run_to_charge.cas				-fr
+
+anim		jump										data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_jump.cas						-fr
+anim		refuse										data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_refuse.cas						-fr
+
+anim		stand_a_turn_90_cw_1						data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_cw_1.cas		-mintd:10	-maxtd:115
+anim		stand_a_turn_90_cw_2						data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_cw_1.cas		-mintd:10	-maxtd:115
+anim		stand_a_turn_90_ccw_1						data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_ccw_1.cas		-mintd:10	-maxtd:115
+anim		stand_a_turn_90_ccw_2						data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_turn_90_ccw_1.cas		-mintd:10	-maxtd:115
+
+anim		shuffle_forward								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_forward.cas				-fr
+anim		shuffle_backward							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_backward.cas			-fr
+anim		shuffle_left								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_left.cas				-fr
+anim		shuffle_right								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_right.cas				-fr
+
+anim		stand_a_hf_idle_1							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_1.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_1.evt
+anim		stand_a_hf_idle_2							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_2.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_2.evt
+anim		stand_a_hf_idle_3							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_3.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_hf_idle_3.evt
+anim		stand_a_lf_idle_1							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_lf_idle_1.cas			-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_lf_idle_1.evt
+
+anim		idle_to_swim								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_to_walk.cas				-fr
+anim		swim_to_idle								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk_to_stand_a.cas				-fr
+anim		swim_idle									data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr
+anim		swim										data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_walk.cas						-fr
+anim		swim_shuffle_forward						data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_forward.cas				-fr
+anim		swim_shuffle_backward						data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_backward.cas			-fr
+anim		swim_shuffle_left							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_left.cas				-fr
+anim		swim_shuffle_right							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_shuffle_right.cas				-fr
+
+anim		die_forward_1								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_forward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_forward_1.evt
+anim		die_backward_1								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_forward_2								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_forward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_forward_2.evt
+anim		die_backward_2								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.evt
+anim		die_to_back_right_1							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_to_back_right_2							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.evt
+anim		die_to_back_left_1							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_to_back_left_2							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_2.evt
+anim		die_falling_cycle							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_falling_end								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_backward_1.evt
+anim		die_refusing								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_refusing.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_refusing.evt
+anim		die_galloping								data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_die_galloping.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_die_galloping.evt
+
+
+;;;; other
+
+anim		taunt_1										data/animations/HR_Longbowman_String/HR_bow_taunt_1.cas												-fr	-evt:data/animations/HR_bow/HR_bow_taunt_1.evt
+anim		celebrate_1									data/animations/HR_Longbowman_String/HR_bow_celebrate_1.cas												-fr	-evt:data/animations/HR_bow/HR_bow_celebrate_1.evt
+anim		celebrate_2									data/animations/HR_Longbowman_String/HR_bow_celebrate_1.cas												-fr	-evt:data/animations/HR_bow/HR_bow_celebrate_1.evt
+anim		ready										data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt													-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt
+anim		stand_a_to_ready							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt										-fr
+anim		ready_to_stand_a							data/animations/HR_Longbowman_String/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.cas				-fr	-evt:data/animations/HR_bow/HR_bow_horse_req/HR_bow_fs_horse_stand_a_idle.evt										-fr
+
+;;;;;;;;;;;;;;;;;;;

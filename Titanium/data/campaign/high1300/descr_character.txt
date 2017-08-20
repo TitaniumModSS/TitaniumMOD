@@ -1,5 +1,5 @@
 ;SS6.4 descr_character edited by gracul: Jan-2011
-; High Era Campaign
+; High Era Campaign 1300
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 starting_action_points	140	; default value for all characters and pathfinding calculations
@@ -48,10 +48,10 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			sicily
 dictionary		15
-strat_model		islamic_general
-strat_model		islamic_general					; heir
-strat_model		middle_eastern_sultan				; leader
-battle_model	Eastern_General
+strat_model		early_southern_general
+strat_model		early_southern_general					; heir
+strat_model		early_northern_king					; leader
+battle_model	Northern_General
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			milan
@@ -242,7 +242,7 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			georgia
 dictionary		2
-strat_model		aztec_general
+strat_model		east_christ_general
 strat_model		aztec_general					; heir
 strat_model		aztec_general					; leader
 battle_model	andronicus
@@ -297,8 +297,8 @@ battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			sicily
 dictionary		15
-strat_model		islamic_captain
-battle_model	Eastern_Captain
+strat_model		crusader_captain
+battle_model	Teutonic_Captain
 battle_equip	gladius, chainmail shirt helmet and rectangular shield
 
 faction			milan
@@ -487,7 +487,7 @@ strat_model		southern_spy
 
 faction			sicily
 dictionary		15
-strat_model		islamic_spy
+strat_model		southern_spy
 
 faction			milan
 dictionary		15
@@ -620,7 +620,7 @@ strat_model		southern_assassin
 
 faction			sicily
 dictionary		15
-strat_model		islamic_assassin
+strat_model		southern_assassin
 
 faction			milan
 dictionary		15
@@ -753,7 +753,7 @@ strat_model		southern_ambassador
 
 faction			sicily
 dictionary		15
-strat_model		islamic_ambassador
+strat_model		southern_ambassador
 
 faction			milan
 dictionary		15
@@ -1024,7 +1024,8 @@ strat_model		royal_lady
 
 faction			sicily
 dictionary		15
-strat_model		islamic_princess
+strat_model		southern_princess
+strat_model		royal_lady
 
 faction			milan
 dictionary		15
@@ -1169,7 +1170,7 @@ strat_model		southern_merchant
 
 faction			sicily
 dictionary		15
-strat_model		islamic_merchant
+strat_model		southern_merchant
 
 faction			milan
 dictionary		15
@@ -1315,9 +1316,9 @@ strat_model		catholic_cardinal					; advanced priest
 
 faction			sicily
 dictionary		15
-strat_model		muslim_iman						; default model
-strat_model		muslim_iman						; medium level priest
-strat_model		muslim_iman					        ; advanced priest
+strat_model		catholic_priest						; default model
+strat_model		catholic_bishop						; medium level priest
+strat_model		catholic_cardinal					; advanced priest
 
 faction			milan
 dictionary		15

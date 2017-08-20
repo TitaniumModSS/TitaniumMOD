@@ -6,7 +6,7 @@ end_monitor
 
 monitor_event SettlementSelected SettlementName Inverness
 and GovernorInResidence
-and not I_EventCounter Inverness_filter = 1
+and not I_EventCounter Inverness_filter = 1; These event counters are needed for compatibility with LongerAssimilation submod
 
 	filter_settlement_commands on Inverness
 end_monitor

@@ -425,7 +425,7 @@ DEFAULT: priority 0 distancepriority -1
 BANK: stratmap_object
 
 	what settlement
-		culture	southern_european, northern_european, middle_eastern, greek, eastern_european
+		culture	southern_european, northern_european, middle_eastern, greek, eastern_european, african_asian, roman
 		level	village, town, large_town
 			event
 				folder data/sounds/SFX/Environment/Structures
@@ -433,7 +433,7 @@ BANK: stratmap_object
 			end
 
 	what settlement
-		culture	southern_european, northern_european, middle_eastern, greek, eastern_european
+		culture	southern_european, northern_european, middle_eastern, greek, eastern_european, african_asian, roman
 		level city, large_city, huge_city
 			event
 				folder data/sounds/SFX/Environment/Structures
@@ -441,7 +441,7 @@ BANK: stratmap_object
 			end
 
 	what port
-		culture	southern_european, northern_european, middle_eastern, greek, eastern_european
+		culture	southern_european, northern_european, middle_eastern, greek, eastern_european, african_asian, roman
 		level	fishing_village, sea_port, shipwright, dockyard
 			event
 				folder data/sounds/SFX/Environment/Structures

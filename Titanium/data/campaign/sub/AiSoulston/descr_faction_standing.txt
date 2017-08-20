@@ -3029,7 +3029,7 @@ Trigger VeniceNotHRE
 
     Condition FactionType venice
 	and not I_SettlementOwner Bologna = hre
-	and not I_SettlementOwner Florence = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
 	and not I_SettlementOwner Rome = hre
 	and not I_SettlementOwner Venice = hre
 	and not I_SettlementOwner Milan = hre
@@ -3082,7 +3082,7 @@ Trigger Sicily_Hre
 
     Condition FactionType sicily
 	and not I_SettlementOwner Bologna = hre
-	and not I_SettlementOwner Florence = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
 	and not I_SettlementOwner Rome = hre
 	and not I_SettlementOwner Venice = hre
 	and not I_SettlementOwner Milan = hre
@@ -3115,7 +3115,7 @@ Trigger MilanNotHRE
 
     Condition FactionType milan
 	and not I_SettlementOwner Bologna = hre
-	and not I_SettlementOwner Florence = hre
+	and not I_SettlementOwner Nykoeping = hre; Florence
 	and not I_SettlementOwner Rome = hre
 	and not I_SettlementOwner Venice = hre
 	and not I_SettlementOwner Milan = hre
@@ -3300,6 +3300,8 @@ Trigger Turks
     FactionStanding factions { russia, kievan_rus, georgia, cumans } normalise -1 90
     FactionStanding factions { england, france, hre } normalise -1 100
     FactionStanding factions { timurids } normalise 1 40
+    FactionStanding factions { kwarezm } normalise -1 10
+    FactionStanding factions { egypt } normalise -1 20
 ;------------------------------------------
 Trigger TurksAI
     WhenToTest FactionTurnStart
@@ -3307,8 +3309,8 @@ Trigger TurksAI
     Condition FactionType turks
 	and not FactionIsLocal
 
-    FactionStanding factions { moors, kwarezm } normalise 1 80
-    FactionStanding factions { egypt } normalise 1 40
+    FactionStanding factions { moors } normalise 1 80
+    FactionStanding factions { kwarezm, egypt } normalise 1 20
 ;------------------------------------------
 Trigger TurksBig
     WhenToTest FactionTurnStart
@@ -3331,6 +3333,7 @@ Trigger Egypt
     FactionStanding factions { milan, venice, sicily } normalise -1 70
     FactionStanding factions { byzantium, russia, kievan_rus, jerusalem } normalise -1 80
     FactionStanding factions { timurids } normalise -1 120
+    FactionStanding factions { turks } normalise -1 10
 ;------------------------------------------
 Trigger EgyptAI
     WhenToTest FactionTurnStart
@@ -3338,8 +3341,8 @@ Trigger EgyptAI
     Condition FactionType egypt
 	and not FactionIsLocal
 
-    FactionStanding factions { moors, kwarezm } normalise 1 80
-    FactionStanding factions { turks  } normalise 1 40
+    FactionStanding factions { moors, kwarezm } normalise 1 40
+    FactionStanding factions { turks } normalise 1 10
 ;------------------------------------------
 Trigger EgyptBig
     WhenToTest FactionTurnStart
@@ -3650,7 +3653,7 @@ Trigger NorwayBig
     FactionStanding factions { england, scotland } normalise -1 100
     FactionStanding factions { russia } normalise -1 100
 ;------------------------------------------
-Trigger KwarezmAlt
+Trigger Kwarezm
     WhenToTest FactionTurnStart
 
     Condition FactionType kwarezm
@@ -3703,6 +3706,8 @@ Trigger Abbasids
 
     FactionStanding factions { mongols } normalise -1 60
     FactionStanding factions { egypt } normalise -1 120
+    FactionStanding factions { kwarezm } normalise -1 10
+    FactionStanding factions { turks } normalise -1 10
 
 ;------------------------------------------
 Trigger AbbasidsAI
@@ -3711,8 +3716,8 @@ Trigger AbbasidsAI
     Condition FactionType timurids
 	and not FactionIsLocal
 
-    FactionStanding factions { kwarezm } normalise 1 80
-    FactionStanding factions { turks } normalise 1 100
+    FactionStanding factions { kwarezm } normalise 1 40
+    FactionStanding factions { turks } normalise 1 30
     FactionStanding factions { moors } normalise 1 150
 
 ;------------------------------------------
@@ -3726,7 +3731,7 @@ Trigger AbbasidsBig
     FactionStanding factions { turks } normalise -1 80
     FactionStanding factions { egypt } normalise -1 180
 
-;------------------------------------------
+;-----------------------------------------
 Trigger Teutonic_Order
     WhenToTest FactionTurnStart
 

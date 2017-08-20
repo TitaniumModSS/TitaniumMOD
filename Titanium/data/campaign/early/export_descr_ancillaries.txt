@@ -8025,7 +8025,8 @@ Ancillary oking_sinop
 Ancillary oking_skara 
  Type dearmad_her
  Transferable 1
- Image king_skara.tga
+ ;Image king_skara.tga
+ Image king_groningen.tga
  Description oking_skara_desc
  EffectsDescription oking_skara_effects_desc
  Effect TaxCollection 5
@@ -8062,7 +8063,8 @@ Ancillary oking_tortosa
 Ancillary oking_uppsala 
  Type dearmad_her
  Transferable 1
- Image king_uppsala.tga
+ ;Image king_uppsala.tga
+ Image govern_moravia.tga
  Description oking_uppsala_desc
  EffectsDescription oking_uppsala_effects_desc
  Effect TaxCollection 5
@@ -24159,7 +24161,7 @@ Trigger conquer_italy
  and I_SettlementOwner Genoa = france
  and I_SettlementOwner Bologna = france
  and I_SettlementOwner Pisa = france
- and I_SettlementOwner france = france
+ and I_SettlementOwner Venice = france
  and I_SettlementOwner Ancona = france
  and I_SettlementOwner Naples = france
  and I_SettlementOwner Bari = france
@@ -24182,7 +24184,7 @@ Trigger conquer_italy2
  and I_SettlementOwner Genoa = hre
  and I_SettlementOwner Bologna = hre
  and I_SettlementOwner Pisa = hre
- and I_SettlementOwner hre = hre
+ and I_SettlementOwner Venice = hre
  and I_SettlementOwner Ancona = hre
  and I_SettlementOwner Naples = hre
  and I_SettlementOwner Bari = hre
@@ -24204,7 +24206,7 @@ Trigger conquer_italy3
  and I_SettlementOwner Milan = spain
  and I_SettlementOwner Genoa = spain
  and I_SettlementOwner Bologna = spain
- and I_SettlementOwner Pisa = spain
+ and I_SettlementOwner Venice = spain
  and I_SettlementOwner spain = spain
  and I_SettlementOwner Ancona = spain
  and I_SettlementOwner Naples = spain
@@ -24228,7 +24230,7 @@ Trigger conquer_italy4
  and I_SettlementOwner Genoa = aragon
  and I_SettlementOwner Bologna = aragon
  and I_SettlementOwner Pisa = aragon
- and I_SettlementOwner aragon = aragon
+ and I_SettlementOwner Venice = aragon
  and I_SettlementOwner Ancona = aragon
  and I_SettlementOwner Naples = aragon
  and I_SettlementOwner Bari = aragon
@@ -24251,7 +24253,7 @@ Trigger conquer_italy5
  and I_SettlementOwner Genoa = byzantium
  and I_SettlementOwner Bologna = byzantium
  and I_SettlementOwner Pisa = byzantium
- and I_SettlementOwner byzantium = byzantium
+ and I_SettlementOwner Venice = byzantium
  and I_SettlementOwner Ancona = byzantium
  and I_SettlementOwner Naples = byzantium
  and I_SettlementOwner Bari = byzantium
@@ -24274,7 +24276,7 @@ Trigger conquer_italy6
  and I_SettlementOwner Genoa = hungary
  and I_SettlementOwner Bologna = hungary
  and I_SettlementOwner Pisa = hungary
- and I_SettlementOwner hungary = hungary
+ and I_SettlementOwner Venice = hungary
  and I_SettlementOwner Ancona = hungary
  and I_SettlementOwner Naples = hungary
  and I_SettlementOwner Bari = hungary
@@ -24297,7 +24299,7 @@ Trigger conquer_italy7
  and I_SettlementOwner Genoa = portugal
  and I_SettlementOwner Bologna = portugal
  and I_SettlementOwner Pisa = portugal
- and I_SettlementOwner portugal = portugal
+ and I_SettlementOwner Venice = portugal
  and I_SettlementOwner Ancona = portugal
  and I_SettlementOwner Naples = portugal
  and I_SettlementOwner Bari = portugal
@@ -24320,7 +24322,7 @@ Trigger conquer_italy8
  and I_SettlementOwner Genoa = england
  and I_SettlementOwner Bologna = england
  and I_SettlementOwner Pisa = england
- and I_SettlementOwner england = england
+ and I_SettlementOwner Venice = england
  and I_SettlementOwner Ancona = england
  and I_SettlementOwner Naples = england
  and I_SettlementOwner Bari = england
@@ -24343,7 +24345,7 @@ Trigger conquer_italy9
  and I_SettlementOwner Genoa = scotland
  and I_SettlementOwner Bologna = scotland
  and I_SettlementOwner Pisa = scotland
- and I_SettlementOwner scotland = scotland
+ and I_SettlementOwner Venice = scotland
  and I_SettlementOwner Ancona = scotland
  and I_SettlementOwner Naples = scotland
  and I_SettlementOwner Bari = scotland
@@ -24366,7 +24368,7 @@ Trigger conquer_italy10
  and I_SettlementOwner Genoa = poland
  and I_SettlementOwner Bologna = poland
  and I_SettlementOwner Pisa = poland
- and I_SettlementOwner poland = poland
+ and I_SettlementOwner Venice = poland
  and I_SettlementOwner Ancona = poland
  and I_SettlementOwner Naples = poland
  and I_SettlementOwner Bari = poland
@@ -24389,7 +24391,7 @@ Trigger conquer_italy11
  and I_SettlementOwner Genoa = denmark
  and I_SettlementOwner Bologna = denmark
  and I_SettlementOwner Pisa = denmark
- and I_SettlementOwner denmark = denmark
+ and I_SettlementOwner Venice = denmark
  and I_SettlementOwner Ancona = denmark
  and I_SettlementOwner Naples = denmark
  and I_SettlementOwner Bari = denmark
@@ -24412,7 +24414,7 @@ Trigger conquer_italy12
  and I_SettlementOwner Genoa = norway
  and I_SettlementOwner Bologna = norway
  and I_SettlementOwner Pisa = norway
- and I_SettlementOwner norway = norway
+ and I_SettlementOwner Venice = norway
  and I_SettlementOwner Ancona = norway
  and I_SettlementOwner Naples = norway
  and I_SettlementOwner Bari = norway
@@ -24435,7 +24437,7 @@ Trigger conquer_italy13
  and I_SettlementOwner Genoa = lithuania
  and I_SettlementOwner Bologna = lithuania
  and I_SettlementOwner Pisa = lithuania
- and I_SettlementOwner lithuania = lithuania
+ and I_SettlementOwner Venice = lithuania
  and I_SettlementOwner Ancona = lithuania
  and I_SettlementOwner Naples = lithuania
  and I_SettlementOwner Bari = lithuania
@@ -24458,7 +24460,7 @@ Trigger conquer_italy14
  and I_SettlementOwner Genoa = russia
  and I_SettlementOwner Bologna = russia
  and I_SettlementOwner Pisa = russia
- and I_SettlementOwner russia = russia
+ and I_SettlementOwner Venice = russia
  and I_SettlementOwner Ancona = russia
  and I_SettlementOwner Naples = russia
  and I_SettlementOwner Bari = russia
@@ -24481,7 +24483,7 @@ Trigger conquer_italy15
  and I_SettlementOwner Genoa = kievan_rus
  and I_SettlementOwner Bologna = kievan_rus
  and I_SettlementOwner Pisa = kievan_rus
- and I_SettlementOwner kievan_rus = kievan_rus
+ and I_SettlementOwner Venice = kievan_rus
  and I_SettlementOwner Ancona = kievan_rus
  and I_SettlementOwner Naples = kievan_rus
  and I_SettlementOwner Bari = kievan_rus
@@ -24504,7 +24506,7 @@ Trigger conquer_italy16
  and I_SettlementOwner Genoa = cumans
  and I_SettlementOwner Bologna = cumans
  and I_SettlementOwner Pisa = cumans
- and I_SettlementOwner cumans = cumans
+ and I_SettlementOwner Venice = cumans
  and I_SettlementOwner Ancona = cumans
  and I_SettlementOwner Naples = cumans
  and I_SettlementOwner Bari = cumans
@@ -24527,7 +24529,7 @@ Trigger conquer_italy17
  and I_SettlementOwner Genoa = kwarezm
  and I_SettlementOwner Bologna = kwarezm
  and I_SettlementOwner Pisa = kwarezm
- and I_SettlementOwner kwarezm = kwarezm
+ and I_SettlementOwner Venice = kwarezm
  and I_SettlementOwner Ancona = kwarezm
  and I_SettlementOwner Naples = kwarezm
  and I_SettlementOwner Bari = kwarezm
@@ -24550,7 +24552,7 @@ Trigger conquer_italy18
  and I_SettlementOwner Genoa = turks
  and I_SettlementOwner Bologna = turks
  and I_SettlementOwner Pisa = turks
- and I_SettlementOwner turks = turks
+ and I_SettlementOwner Venice = turks
  and I_SettlementOwner Ancona = turks
  and I_SettlementOwner Naples = turks
  and I_SettlementOwner Bari = turks
@@ -24573,7 +24575,7 @@ Trigger conquer_italy19
  and I_SettlementOwner Genoa = egypt
  and I_SettlementOwner Bologna = egypt
  and I_SettlementOwner Pisa = egypt
- and I_SettlementOwner egypt = egypt
+ and I_SettlementOwner Venice = egypt
  and I_SettlementOwner Ancona = egypt
  and I_SettlementOwner Naples = egypt
  and I_SettlementOwner Bari = egypt
@@ -24596,7 +24598,7 @@ Trigger conquer_italy20
  and I_SettlementOwner Genoa = moors
  and I_SettlementOwner Bologna = moors
  and I_SettlementOwner Pisa = moors
- and I_SettlementOwner moors = moors
+ and I_SettlementOwner Venice = moors
  and I_SettlementOwner Ancona = moors
  and I_SettlementOwner Naples = moors
  and I_SettlementOwner Bari = moors
@@ -24619,7 +24621,7 @@ Trigger conquer_italy21
  and I_SettlementOwner Genoa = mongols
  and I_SettlementOwner Bologna = mongols
  and I_SettlementOwner Pisa = mongols
- and I_SettlementOwner mongols = mongols
+ and I_SettlementOwner Venice = mongols
  and I_SettlementOwner Ancona = mongols
  and I_SettlementOwner Naples = mongols
  and I_SettlementOwner Bari = mongols
@@ -24642,7 +24644,7 @@ Trigger conquer_italy22
  and I_SettlementOwner Genoa = georgia
  and I_SettlementOwner Bologna = georgia
  and I_SettlementOwner Pisa = georgia
- and I_SettlementOwner georgia = georgia
+ and I_SettlementOwner Venice = georgia
  and I_SettlementOwner Ancona = georgia
  and I_SettlementOwner Naples = georgia
  and I_SettlementOwner Bari = georgia

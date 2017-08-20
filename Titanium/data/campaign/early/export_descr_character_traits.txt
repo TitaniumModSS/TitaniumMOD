@@ -1297,6 +1297,38 @@ Trait Princess_Royal_Blood_Georgia
    Effect PersonalSecurity 1
 
 ;------------------------------------------
+Trait Royal_Blood_Mongol
+ Characters family
+
+ Level Royal_Blood_Mongol 
+   Description Royal_Blood_Mongol_desc
+   EffectsDescription Royal_Blood_Mongol_effects_desc
+   Threshold 1
+
+   Effect Chivalry -1
+   Effect Command 1
+
+;------------------------------------------
+Trait Royal_Relation_Mongol
+ Characters family
+
+ Level Royal_Relation_Timurid 
+   Description Royal_Relation_Mongol_desc
+   EffectsDescription Royal_Relation_Mongol_effects_desc
+   Threshold 1
+
+;------------------------------------------
+Trait Princess_Royal_Blood_Mongol
+ Characters princess
+
+ Level Princess_Royal_Blood_Timurid 
+   Description Princess_Royal_Blood_Mongol_desc
+   EffectsDescription Princess_Royal_Blood_Mongol_effects_desc
+   Threshold 1
+
+   Effect Charm 1
+
+;------------------------------------------
 ;********* MARRIAGE *********
 ;------------------------------------------
 Trait MarriageCertificate
@@ -1594,6 +1626,17 @@ Trait WifeIsKwarezm
    Effect LocalPopularity 1
 
 ;------------------------------------------
+Trait WifeIsMongol
+ Characters family
+ 
+ Level WifeIsMongol
+   Description WifeIsMongol_desc
+   EffectsDescription WifeIsMongol_effects_desc
+   Threshold 1
+
+   Effect LocalPopularity 1
+
+;------------------------------------------
 Trait WifeIsGeorgian
  Characters family
  
@@ -1786,38 +1829,13 @@ Trait WifeIsWise
 Trait WifeIsNoble
  Characters family
 
- Level Wife_is_Admirable
-   Description Wife_is_Admirable_desc
-   EffectsDescription Wife_is_Admirable_effects_desc
+ Level Wife_is_Deplorable
+   Description Wife_is_Deplorable_desc
+   EffectsDescription Wife_is_Deplorable_effects_desc
    Threshold 1 
 
-   Effect LocalPopularity 1 
-
- Level Wife_is_Noble
-   Description Wife_is_Noble_desc
-   EffectsDescription Wife_is_Noble_effects_desc
-   Threshold 3 
-
-   Effect LocalPopularity 2 
-
- Level Wife_is_Revered
-   Description Wife_is_Revered_desc
-   EffectsDescription Wife_is_Revered_effects_desc
-   Threshold 5 
-
-   Effect PublicSecurity 1 
-   Effect LocalPopularity 3 
-
-;------------------------------------------
-Trait WifeIsBitch
- Characters family
-
- Level Wife_is_Unpleasant
-   Description Wife_is_Unpleasant_desc
-   EffectsDescription Wife_is_Unpleasant_effects_desc
-   Threshold 1 
-
-   Effect LocalPopularity -1 
+   Effect PublicSecurity -1 
+   Effect LocalPopularity -3 
 
  Level Wife_is_Nasty
    Description Wife_is_Nasty_desc
@@ -1826,14 +1844,38 @@ Trait WifeIsBitch
 
    Effect LocalPopularity -2 
 
- Level Wife_is_Deplorable
-   Description Wife_is_Deplorable_desc
-   EffectsDescription Wife_is_Deplorable_effects_desc
+ Level Wife_is_Unpleasant
+   Description Wife_is_Unpleasant_desc
+   EffectsDescription Wife_is_Unpleasant_effects_desc
    Threshold 5 
 
-   Effect PublicSecurity -1 
-   Effect LocalPopularity -3 
+   Effect LocalPopularity -1 
 
+ Level Wife_is_Admirable
+   Description Wife_is_Admirable_desc
+   EffectsDescription Wife_is_Admirable_effects_desc
+   Threshold 6 
+
+   Effect LocalPopularity 1 
+
+ Level Wife_is_Noble
+   Description Wife_is_Noble_desc
+   EffectsDescription Wife_is_Noble_effects_desc
+   Threshold 8 
+
+   Effect LocalPopularity 2 
+
+ Level Wife_is_Revered
+   Description Wife_is_Revered_desc
+   EffectsDescription Wife_is_Revered_effects_desc
+   Threshold 10 
+
+   Effect PublicSecurity 1 
+   Effect LocalPopularity 3 
+
+;------------------------------------------
+;Trait WifeIsBitch
+; Characters family
 
 ;********* PRINCESS TRAITS *********
 ;------------------------------------------
@@ -2248,7 +2290,7 @@ Trait EducatedWoman
 ;------------------------------------------
 Trait PassionateWoman
  Characters princess
- AntiTraits ColdWoman, UnchasteWoman
+ AntiTraits ColdWoman
 
  Level Warm
    Description Warm_desc
@@ -3174,14 +3216,14 @@ Trait OldMerchant
  Level Old_Merchant
    Description Old_Merchant_desc
    EffectsDescription Old_Merchant_2_effects_desc
-   Threshold 7
+   Threshold 14
 
    Effect MovementPoints -4
 
  Level Old_Merchant
    Description Old_MerchantM_desc
    EffectsDescription Old_Merchant_3_effects_desc
-   Threshold 13
+   Threshold 26
 
    Effect Finance -1
    Effect MovementPoints -6
@@ -3189,7 +3231,7 @@ Trait OldMerchant
  Level Old_Merchant
    Description Old_MerchantM_desc
    EffectsDescription Old_Merchant_4_effects_desc
-   Threshold 19
+   Threshold 38
 
    Effect Finance -2
    Effect MovementPoints -8
@@ -3197,7 +3239,7 @@ Trait OldMerchant
  Level Old_Merchant
    Description Old_MerchantM_desc
    EffectsDescription Old_Merchant_5_effects_desc
-   Threshold 25
+   Threshold 50
 
    Effect Finance -2
    Effect MovementPoints -12
@@ -3205,7 +3247,7 @@ Trait OldMerchant
  Level Old_Merchant
    Description Old_MerchantM_desc
    EffectsDescription Old_Merchant_6_effects_desc
-   Threshold 31
+   Threshold 62
 
    Effect Finance -3
    Effect MovementPoints -15
@@ -11206,6 +11248,54 @@ Trait ofBulgariaName
    Epithet of_Bulgaria_Name_epithet_desc
    Threshold 1
 
+;------------------------------------------
+
+Trait ofCiliciaName
+ Characters family
+ Hidden
+
+ Level of_Cilicia_Name_epithet_desc
+   Description of_Cilicia_Name_epithet_desc
+   EffectsDescription of_Cilicia_Name_epithet_desc
+   Epithet of_Cilicia_Name_epithet_desc
+   Threshold 1
+
+;------------------------------------------
+
+Trait ofLithuaniaName
+ Characters family
+ Hidden
+
+ Level of_Lithuania_Name_epithet_desc
+   Description of_Lithuania_Name_epithet_desc
+   EffectsDescription of_Lithuania_Name_epithet_desc
+   Epithet of_Lithuania_Name_epithet_desc
+   Threshold 1
+
+;------------------------------------------
+
+Trait ofLivoniaName
+ Characters family
+ Hidden
+
+ Level of_Livonia_Name_epithet_desc
+   Description of_Livonia_Name_epithet_desc
+   EffectsDescription of_Livonia_Name_epithet_desc
+   Epithet of_Livonia_Name_epithet_desc
+   Threshold 1
+
+;------------------------------------------
+
+Trait ofPrussiaName
+ Characters family
+ Hidden
+
+ Level of_Prussia_Name_epithet_desc
+   Description of_Prussia_Name_epithet_desc
+   EffectsDescription of_Prussia_Name_epithet_desc
+   Epithet of_Prussia_Name_epithet_desc
+   Threshold 1
+
 ;==========================================
 ;------------------------------------------
 Trait GoodDenouncer
@@ -15935,6 +16025,21 @@ Trait LoanDread
 
 ;------------------------------------------
 ;**************************************************
+;******* MISCELANEOUS MOVEMENT TRAITS *******
+;**************************************************
+Trait SteppesMovement
+ Characters family, princess, diplomat, merchant, spy, assassin, priest
+ Hidden
+
+ Level Hidden
+   Description Hidden_desc
+   EffectsDescription Hidden_desc
+   Threshold 1 
+
+   Effect MovementPoints 15
+
+;------------------------------------------
+;**************************************************
 ;=========================================;
 ;======== VNV TRIGGERS START HERE ========;
 ;=========================================;
@@ -16128,7 +16233,7 @@ Trigger HorridWifeNotMother3
 Trigger BitchWifeNotMother1
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBitch = 1
+ Condition FatherTrait WifeIsNoble = 3
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -16141,7 +16246,7 @@ Trigger BitchWifeNotMother1
 Trigger BitchWifeNotMother2
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBitch = 2
+ Condition FatherTrait WifeIsNoble = 2
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -16154,7 +16259,7 @@ Trigger BitchWifeNotMother2
 Trigger BitchWifeNotMother3
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBitch = 3
+ Condition FatherTrait WifeIsNoble = 1
        and not FactionType papal_states
        and not FactionType teutonic_order
        and not FactionType venice
@@ -16256,7 +16361,8 @@ Trigger HorridWifeNotMother6
 Trigger BitchWifeNotMother4
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBitch >= 1
+ Condition FatherTrait WifeIsNoble <= 3
+       and FatherTrait WifeIsNoble > 0
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 30
@@ -16265,16 +16371,17 @@ Trigger BitchWifeNotMother4
 Trigger BitchWifeNotMother5
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBitch >= 2
+ Condition FatherTrait WifeIsNoble <= 2
+       and FatherTrait WifeIsNoble > 0
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 45
 
-;------------------------------------------
+;-----------------------------------------
 Trigger BitchWifeNotMother6
  WhenToTest CharacterComesOfAge
 
- Condition FatherTrait WifeIsBitch >= 3
+ Condition FatherTrait WifeIsNoble = 1
        and AgentType = princess
 
  Affects BastardDaughter 1 Chance 60
@@ -16675,6 +16782,7 @@ Trigger princess_Royal_Blood_English_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsEnglish = 1
        and FatherTrait Royal_Blood_English = 0
+       and not Trait BastardDaughter > 0
        and FactionType england
        and AgentType = princess
 
@@ -16722,6 +16830,7 @@ Trigger princess_Royal_Blood_French_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsFrench = 1
        and FatherTrait Royal_Blood_French = 0
+       and not Trait BastardDaughter > 0
        and FactionType france
        and AgentType = princess
 
@@ -16769,6 +16878,7 @@ Trigger princess_Royal_Blood_HRE_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsHRE = 1
        and FatherTrait Royal_Blood_HRE = 0
+       and not Trait BastardDaughter > 0
        and FactionType hre
        and AgentType = princess
 
@@ -16816,6 +16926,7 @@ Trigger princess_Royal_Blood_Spanish_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsSpanish = 1
        and FatherTrait Royal_Blood_Spanish = 0
+       and not Trait BastardDaughter > 0
        and FactionType spain
        and AgentType = princess
 
@@ -16863,6 +16974,7 @@ Trigger princess_Royal_Blood_Sicilian_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsSicilian = 1
        and FatherTrait Royal_Blood_Sicilian = 0
+       and not Trait BastardDaughter > 0
        and FactionType sicily
        and AgentType = princess
 
@@ -16910,6 +17022,7 @@ Trigger princess_Royal_Blood_Venetian_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsVenetian = 1
        and FatherTrait Royal_Blood_Venetian = 0
+       and not Trait BastardDaughter > 0
        and FactionType venice
        and AgentType = princess
 
@@ -16957,6 +17070,7 @@ Trigger princess_Royal_Blood_Milanese_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsMilanese = 1
        and FatherTrait Royal_Blood_Milanese = 0
+       and not Trait BastardDaughter > 0
        and FactionType milan
        and AgentType = princess
 
@@ -17004,6 +17118,7 @@ Trigger princess_Royal_Blood_Scottish_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsScottish = 1
        and FatherTrait Royal_Blood_Scottish = 0
+       and not Trait BastardDaughter > 0
        and FactionType scotland
        and AgentType = princess
 
@@ -17051,6 +17166,7 @@ Trigger princess_Royal_Blood_Greek_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsGreek = 1
        and FatherTrait Royal_Blood_Greek = 0
+       and not Trait BastardDaughter > 0
        and FactionType byzantium
        and AgentType = princess
 
@@ -17098,6 +17214,7 @@ Trigger princess_Royal_Blood_Russian_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsRussian = 1
        and FatherTrait Royal_Blood_Russian = 0
+       and not Trait BastardDaughter > 0
        and FactionType russia
        and AgentType = princess
 
@@ -17253,6 +17370,7 @@ Trigger princess_Royal_Blood_Danish_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsDanish = 1
        and FatherTrait Royal_Blood_Danish = 0
+       and not Trait BastardDaughter > 0
        and FactionType denmark
        and AgentType = princess
 
@@ -17300,6 +17418,7 @@ Trigger princess_Royal_Blood_Portuguese_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsPortuguese = 1
        and FatherTrait Royal_Blood_Portuguese = 0
+       and not Trait BastardDaughter > 0
        and FactionType portugal
        and AgentType = princess
 
@@ -17347,6 +17466,7 @@ Trigger princess_Royal_Blood_Polish_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsPolish = 1
        and FatherTrait Royal_Blood_Polish = 0
+       and not Trait BastardDaughter > 0
        and FactionType poland
        and AgentType = princess
 
@@ -17394,6 +17514,7 @@ Trigger princess_Royal_Blood_Hungarian_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsHungarian = 1
        and FatherTrait Royal_Blood_Hungarian = 0
+       and not Trait BastardDaughter > 0
        and FactionType hungary
        and AgentType = princess
 
@@ -17441,6 +17562,7 @@ Trigger princess_Royal_Blood_Aragonese_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsAragonese = 1
        and FatherTrait Royal_Blood_Aragonese = 0
+       and not Trait BastardDaughter > 0
        and FactionType aragon
        and AgentType = princess
 
@@ -17535,6 +17657,7 @@ Trigger princess_Royal_Blood_Lithuanian_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsLithuanian = 1
        and FatherTrait Royal_Blood_Lithuanian = 0
+       and not Trait BastardDaughter > 0
        and FactionType lithuania
        and AgentType = princess
 
@@ -17582,6 +17705,7 @@ Trigger princess_Royal_Blood_Timurid_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsTimurid = 1
        and FatherTrait Royal_Blood_Timurid = 0
+       and not Trait BastardDaughter > 0
        and FactionType timurids
        and AgentType = princess
 
@@ -17629,6 +17753,7 @@ Trigger princess_Royal_Blood_Norwegian_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsNorwegian = 1
        and FatherTrait Royal_Blood_Norwegian = 0
+       and not Trait BastardDaughter > 0
        and FactionType norway
        and AgentType = princess
 
@@ -17676,6 +17801,7 @@ Trigger princess_Royal_Blood_Kievan_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsKievan = 1
        and FatherTrait Royal_Blood_Kievan = 0
+       and not Trait BastardDaughter > 0
        and FactionType kievan_rus
        and AgentType = princess
 
@@ -17709,10 +17835,22 @@ Trigger Royal_Relation_Cumans_CharacterComesOfAge_Father
  Affects Royal_Relation_Cumans 1 Chance 100
 
 ;------------------------------------------
-Trigger princess_Royal_Cumans_CharacterComesOfAge
+Trigger princess_Royal_Blood_Cumans_CharacterComesOfAge
  WhenToTest CharacterComesOfAge
 
  Condition FatherTrait Royal_Blood_Cumans > 0
+       and AgentType = princess
+
+ Affects Princess_Royal_Blood_Cumans 1 Chance 100
+
+;------------------------------------------
+Trigger princess_Royal_Blood_Cumans_CharacterComesOfAge2
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait WifeIsCumans = 1
+       and FatherTrait Royal_Blood_Cumans = 0
+       and not Trait BastardDaughter > 0
+       and FactionType cumans
        and AgentType = princess
 
  Affects Princess_Royal_Blood_Cumans 1 Chance 100
@@ -17745,13 +17883,38 @@ Trigger Royal_Relation_Kwarezm_CharacterComesOfAge_Father
  Affects Royal_Relation_Kwarezm 1 Chance 100
 
 ;------------------------------------------
-Trigger princess_Royal_Kwarezm_CharacterComesOfAge
+Trigger princess_Royal_Blood_Kwarezm_CharacterComesOfAge
  WhenToTest CharacterComesOfAge
 
  Condition FatherTrait Royal_Blood_Kwarezm > 0
        and AgentType = princess
 
  Affects Princess_Royal_Blood_Kwarezm 1 Chance 100
+
+;------------------------------------------
+Trigger Royal_Blood_Mongol_CharacterComesOfAge_Father
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Royal_Blood_Mongol > 0
+
+ Affects Royal_Blood_Mongol 1 Chance 100
+
+;------------------------------------------
+Trigger Royal_Relation_Mongol_CharacterComesOfAge_Father
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Royal_Relation_Mongol > 0
+
+ Affects Royal_Relation_Mongol 1 Chance 100
+
+;------------------------------------------
+Trigger princess_Royal_Blood_Mongol_CharacterComesOfAge
+ WhenToTest CharacterComesOfAge
+
+ Condition FatherTrait Royal_Blood_Mongol > 0
+       and AgentType = princess
+
+ Affects Princess_Royal_Blood_Mongol 1 Chance 100
 
 ;------------------------------------------
 Trigger Royal_Blood_Georgia_CharacterComesOfAge_Father
@@ -17795,6 +17958,7 @@ Trigger princess_Royal_Blood_Georgia_CharacterComesOfAge2
 
  Condition FatherTrait WifeIsGeorgian = 1
        and FatherTrait Royal_Blood_Georgia = 0
+       and not Trait BastardDaughter > 0
        and FactionType georgia
        and AgentType = princess
 
@@ -19009,6 +19173,14 @@ Trigger family_generalmarries_Kwarezm
  Condition SpouseTrait Princess_Royal_Blood_Kwarezm > 0
 
  Affects WifeIsKwarezm 1 Chance 100
+
+;------------------------------------------
+Trigger family_generalmarries_mongol
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseTrait Princess_Royal_Blood_Mongol > 0
+
+ Affects WifeIsMongol 1 Chance 100
 
 ;------------------------------------------
 Trigger family_generalmarries_georgian
@@ -21117,61 +21289,104 @@ Trigger family_generalmarries_fair_1
 
  Condition SpouseTrait FairWoman >= 1
 
- Affects WifeIsNoble 1 Chance 85 
+ Affects WifeIsNoble 6 Chance 89 
 
 ;------------------------------------------
 Trigger family_generalmarries_fair_2
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait FairWoman >= 2
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
 
 ;------------------------------------------
-Trigger family_generalmarries_fair_3
+Trigger family_generalmarries_fair_3a
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait FairWoman = 3
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
 
 ;------------------------------------------
-Trigger family_generalmarries_humble_1
+Trigger family_generalmarries_fair_3b
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseTrait FairWoman = 3
+       and Trait WifeIsNoble = 0
+
+ Affects WifeIsNoble 6 Chance 85 
+
+;------------------------------------------
+Trigger family_generalmarries_humble_1a
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait HumbleWoman >= 1
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
+
+;------------------------------------------
+Trigger family_generalmarries_humble_1b
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseTrait HumbleWoman >= 1
+       and Trait WifeIsNoble = 0
+
+ Affects WifeIsNoble 6 Chance 85 
 
 ;------------------------------------------
 Trigger family_generalmarries_humble_2
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait HumbleWoman >= 2
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
 
 ;------------------------------------------
-Trigger family_generalmarries_humble_3
+Trigger family_generalmarries_humble_3a
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait BraveWoman >= 5
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
 
 ;------------------------------------------
-Trigger family_generalmarries_spirited_1
+Trigger family_generalmarries_humble_3b
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseTrait BraveWoman >= 5
+       and Trait WifeIsNoble = 0
+
+ Affects WifeIsNoble 6 Chance 85 
+
+;------------------------------------------
+Trigger family_generalmarries_spirited_1a
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait SpiritedWoman >= 5
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
+
+;------------------------------------------
+Trigger family_generalmarries_spirited_1b
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseTrait SpiritedWoman >= 5
+       and Trait WifeIsNoble = 0
+
+ Affects WifeIsNoble 6 Chance 89 
 
 ;------------------------------------------
 Trigger family_generalmarries_spirited_2
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait SpiritedWoman >= 6
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
 
@@ -21180,6 +21395,7 @@ Trigger family_generalmarries_spirited_3
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait SpiritedWoman = 7
+       and Trait WifeIsNoble > 3
 
  Affects WifeIsNoble 1 Chance 85 
 
@@ -21189,24 +21405,38 @@ Trigger family_generalmarries_bitch_1
 
  Condition SpouseTrait HumbleWoman < 3
        and SpouseTrait HumbleWoman > 0
+       and Trait WifeIsNoble = 0
 
- Affects WifeIsBitch 1 Chance 75 
+ Affects WifeIsNoble 5 Chance 75 
 
 ;------------------------------------------
 Trigger family_generalmarries_bitch_2
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait HumbleWoman = 1
+       and Trait WifeIsNoble > 1
 
- Affects WifeIsBitch 1 Chance 75 
+ Affects WifeIsNoble -2 Chance 75 
 
 ;------------------------------------------
-Trigger family_generalmarries_bitch_3
+Trigger family_generalmarries_bitch_3a
  WhenToTest CharacterMarriesPrincess
 
  Condition SpouseTrait HarshWoman >= 1
+       and Trait WifeIsNoble < 4
+       and Trait WifeIsNoble > 1
 
- Affects WifeIsBitch 1 Chance 85 
+ Affects WifeIsNoble -2 Chance 85 
+
+;------------------------------------------
+Trigger family_generalmarries_bitch_3b
+ WhenToTest CharacterMarriesPrincess
+
+ Condition SpouseTrait HarshWoman >= 1
+       and Trait WifeIsNoble = 0
+
+ Affects WifeIsNoble 5 Chance 75 
+ Affects WifeIsNoble -2 Chance 10 
 
 
 ;*********** AUTHORITY/KING TRIGGERS ************
@@ -34371,7 +34601,7 @@ Affects EducatedWoman 1 Chance 10
 Trigger princess_mom_was_noble_1
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsNoble >= 1
+Condition FatherTrait WifeIsNoble >= 4
 and AgentType = princess
 
 Affects FairWoman 1 Chance 20
@@ -34382,7 +34612,7 @@ Affects SpiritedWoman 1 Chance 20
 Trigger princess_mom_was_noble_2
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsNoble >= 2
+Condition FatherTrait WifeIsNoble >= 5
 and AgentType = princess
 
 Affects FairWoman 1 Chance 20
@@ -34393,7 +34623,7 @@ Affects SpiritedWoman 1 Chance 20
 Trigger princess_mom_was_noble_3
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsNoble >= 3
+Condition FatherTrait WifeIsNoble >= 6
 and AgentType = princess
 
 Affects FairWoman 1 Chance 20
@@ -34403,7 +34633,8 @@ Affects SpiritedWoman 1 Chance 20
 Trigger princess_mom_was_bitch_1
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsBitch >= 1
+Condition FatherTrait WifeIsNoble <= 3
+and FatherTrait WifeIsNoble > 0
 and AgentType = princess
 
 Affects HarshWoman 1 Chance 20
@@ -34413,7 +34644,8 @@ Affects HumbleWoman -1 Chance 20
 Trigger princess_mom_was_bitch_2
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsBitch >= 2
+Condition FatherTrait WifeIsNoble <= 2
+and FatherTrait WifeIsNoble > 0
 and AgentType = princess
 
 Affects HarshWoman 1 Chance 20
@@ -34423,7 +34655,7 @@ Affects HumbleWoman -1 Chance 20
 Trigger princess_mom_was_bitch_3
 WhenToTest CharacterComesOfAge
 
-Condition FatherTrait WifeIsBitch >= 3
+Condition FatherTrait WifeIsNoble = 1
 and AgentType = princess
 
 Affects HarshWoman 1 Chance 20
@@ -37492,9 +37724,10 @@ Trigger ai_bad_traits_bitchwo
 
  Condition IsGeneral
        and not FactionIsLocal
-       and Trait WifeIsBitch > 0
+       and Trait WifeIsNoble > 0
+       and Trait WifeIsNoble <= 3
 
- Affects WifeIsBitch -1 Chance 70
+ Affects WifeIsNoble -6 Chance 70
 ;------------------------------------------
 ;--- spawn_character trait boost ----------
 Trigger spawn_char_trait_boost_priest_pagan
@@ -45339,6 +45572,7 @@ Condition Trait Next_Heir_Trait = 1
 and not HasAncType NextHeirCrown
 
 Affects Desinherited_Trait 2 Chance 100
+Affects Next_Heir_Trait -2 Chance 100
 
 ;------------------------------------------
 Trigger Next_Heir_Trait_Trigger
@@ -45351,6 +45585,7 @@ and HasAncType NextHeirCrown
 and Trait Next_Heir_Trait = 0
 
 Affects Next_Heir_Trait 2 Chance 100
+Affects Desinherited_Trait -2 Chance 100
 
 ;------------------------------------------
 Trigger Next_Heir_Trait_Remove_Faction
@@ -45445,6 +45680,8 @@ and Trait FactionFutureUsurper = 0
 and SettlementsTaken >= 2
 
 Affects Civil_Unrest 1 Chance 25
+Affects Civil_Unrest 1 Chance 10
+Affects Civil_Unrest 1 Chance 5
 
 ;----------------------------------------------------
 Trigger Civil_Unrest_trigger2
@@ -45457,6 +45694,7 @@ and Trait FactionFutureUsurper = 0
 and SettlementsTaken >= 4
 
 Affects Civil_Unrest 2 Chance 50
+Affects Civil_Unrest 1 Chance 10
 
 ;----------------------------------------------------
 Trigger Civil_Unrest_trigger3
@@ -46817,6 +47055,88 @@ Trigger Dreadful_King_doesnt_like_Bankers
  Affects LoanDread 1 Chance 100
 
 ;------------------------------------------
+;*********MISC MOVEMENT TRIGGERS***********
+;------------------------------------------
+Trigger Moving_Through_Steppes_1
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 31 Jaiksk_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_2
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 7 Bulgar_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_3
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 19 Serdobinskaya_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_4
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 55 Sarkel_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_5
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 68 Azaq_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_6
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 78 Astrakhan_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_7
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 64 Oleshe_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_8
+ WhenToTest CharacterTurnStart
+
+ Condition IsRegionOneOf 53 Pereyaslav_Province
+       and Trait SteppesMovement < 1
+
+ Affects SteppesMovement 1 Chance 100
+
+;------------------------------------------
+Trigger Moving_Through_Steppes_Remove
+ WhenToTest CharacterTurnEnd
+
+ Condition Trait SteppesMovement = 1
+
+ Affects SteppesMovement -1 Chance 100
+
+;------------------------------------------
 ;*********AUTHORITY FIX TRIGGERS***********
 ;------------------------------------------
 ;Must be always after any other trigger 
@@ -47226,7 +47546,7 @@ Condition Trait SpiritedWoman = 4
  Affects SpiritedWoman -5 Chance 100 
 
 ;------------------------------------------
-Trigger princess_neutral_traits_remove3
+Trigger princess_neutral_traits_remove2b
  WhenToTest CharacterTurnEnd
 
  Condition Trait SpiritedWoman = 4
@@ -47234,7 +47554,7 @@ Trigger princess_neutral_traits_remove3
  Affects SpiritedWoman -5 Chance 100
 
 ;------------------------------------------
-Trigger princess_neutral_traits_remove4
+Trigger princess_neutral_traits_remove3
  WhenToTest CharacterComesOfAge
 
  Condition Trait FaithfulWoman = 4
@@ -47242,7 +47562,7 @@ Trigger princess_neutral_traits_remove4
  Affects FaithfulWoman -5 Chance 100
 
 ;------------------------------------------
-Trigger princess_neutral_traits_remove5
+Trigger princess_neutral_traits_remove3b
  WhenToTest CharacterTurnEnd
 
  Condition Trait FaithfulWoman = 4
@@ -47251,6 +47571,14 @@ Trigger princess_neutral_traits_remove5
 
 ;------------------------------------------
 Trigger princess_neutral_traits_remove6
+ WhenToTest CharacterComesOfAge
+
+ Condition Trait BraveWoman = 4
+
+ Affects BraveWoman -5 Chance 100
+
+;------------------------------------------
+Trigger princess_neutral_traits_remove6b
  WhenToTest CharacterTurnEnd
 
  Condition Trait BraveWoman = 4
@@ -47258,7 +47586,7 @@ Trigger princess_neutral_traits_remove6
  Affects BraveWoman -5 Chance 100
 
 ;------------------------------------------
-Trigger princess_neutral_traits_remove7
+Trigger princess_neutral_traits_remove6c
  WhenToTest SufferAssassinationAttempt
 
  Condition AgentType = princess
@@ -47267,7 +47595,7 @@ Trigger princess_neutral_traits_remove7
  Affects BraveWoman -5 Chance 100 
 
 ;------------------------------------------
-Trigger princess_neutral_traits_remove8
+Trigger princess_neutral_traits_remove6d
  WhenToTest ExecutesAnAssassinOnAMission
 
  Condition AgentType = princess

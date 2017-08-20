@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Names Database Entries
-;; High Era Campaign
+;; High Era 1300 Campaign
 ;;
 ;; Holds non-localised Latin names for settlements and characters
 ;;
@@ -1559,6 +1559,7 @@ faction: france
 		le_Germanique
 		le_Roy
 	;france add more surnames
+		de_Saisset
 
 	women
 		Ade#laide
@@ -2059,6 +2060,8 @@ faction: denmark
 		af_Vordingborg
 		af_Vrejlev
 	;denmark add more surnames
+		af_Brandenburg
+		af_Danmark
 
 	women
 		Adela
@@ -2116,6 +2119,7 @@ faction: denmark
 		Le
 		Lis
 		Luitgard
+		Ma#rta
 		Magda
 		Maren
 		Margrethe
@@ -2217,7 +2221,7 @@ faction: hre
 		Friedrich
 		Friedrich
 		Friedrich
-		Friedrich
+		FriedrichI
 		Fritz
 		Frytz
 		Gabriel
@@ -2382,13 +2386,6 @@ faction: hre
 		Wolfgang
 		Zacharias
 	;hre add more names
-		Giacomo
-		Simone
-		Serlo
-		Pietro
-		Niccolo
-		Alberto
-		Rubbertu
 
 	surnames
 		Ahrens
@@ -2650,6 +2647,7 @@ faction: hre
 		von_Utrecht
 		von_Waiblingen
 		von_Weimar
+		von_Winzenburg
 		von_Wittelsbach
 		von_Wolfsburg
 		von_Worms
@@ -2659,12 +2657,6 @@ faction: hre
 		von_Zollern
 	;hre add more surnames
 		von_Schweiz
-		Lombardo
-		de_Brindisi
-		Vallano
-		di_Palermo
-		d_Ottaviano
-		Rocca
 
 	women
 		Adelhaid
@@ -2694,6 +2686,7 @@ faction: hre
 		Dorethin
 		Dorothea
 		Duretta
+		Eilika
 		Elisabeth
 		Ella
 		Els
@@ -2744,6 +2737,7 @@ faction: hre
 		Nopricht
 		Nopurg
 		Otilia
+		Sophie
 		Peternella
 		Reusin
 		Ursel
@@ -2807,7 +2801,7 @@ faction: hungary
 		Geza
 		Geza
 		Geza
-		Geza
+		GezaI
 		Gyorgy
 		Gyula
 		Henning
@@ -3312,6 +3306,8 @@ faction: papal_states
 		de_Vico
 		de_Volta
 	;papal_states add more surnames
+		Malatesta
+		Simonetti
 
 	women
 		Adriana
@@ -3997,606 +3993,658 @@ faction: scotland
 faction: sicily
 
 	characters
-	;hafsid names
-		A#hmad
-		A#li
-		A#mir
-		A#nas
-		A#sad
-		A#ta
-		Abbad
-		Abbas
-		Abdul_Aziz
-		Abdul_Hamid
-		Abdul_Haqq
-		Abdul_Hemid
-		Abdul_Jabbar
-		Abdul_Jalil
-		Abdul_Karim
-		Abdul_Latif
-		Abdul_Malik
-		Abdul_Mumin
-		Abdul_Qadir
-		Abdul_Rahim
-		Abdul_Rahman
-		Abdul_Salam
-		Abdul_Wahab
-		Abdul_Wahid
-		Abdul_Malik
-		Abdullah
-		Abu_Ahmad
-		Abu_Bakr
-		Abu_Shu_ayb
-		Abul_Hawari
-		Abul_Zinad
-		Adil
-		Affan
-		Afif
-		Al_Adil
-		Al_Hajjaj
-		Al_Hasan
-		Al_Husayn
-		Al_Mustali
-		Al_Mustansir
-		Al_Mutasim
-		Al_Mutawakkil
-		Al_Nasir
-		Al_Watiq
-		Al_Amir
-		Al_Kamir
-		Al_Musta_li
-		Al_Mustansir
-		Ala
-		Alaudin
-		Ali
-		Amgad
-		Amin
-		Amjad
-		Amr
-		Anwar
-		Arafah
-		Arwa
-		Ataullah
-		Atiyya
-		Atta
-		Ayman
-		Ayyub
-		Badis
-		Badr
-		Bakr
-		Baqi
-		Bashar
-		Basil
-		Basim
-		Bassam
-		Bilal
-		Dawud
-		Dinar
-		Fadl
-		Fahd
-		Farag
-		Faraj
-		Farid
-		Faris
-		Farraj
-		Faruq
-		Faysal
-		Fu#ad
-		Furat
-		Ha#mid
-		Hafs
-		Hajib
-		Hajjaj
-		Hakam
-		Hakim
-		Hamdun
-		Hamid
-		Hammad
-		Hamza
-		Handala
-		Hani
-		Harit
-		Harun
-		Hasan
-		Hatim
-		Haydar
-		Haytam
-		Hayyan
-		Hazim
-		Hisham
-		Husain
-		Husam
-		I#lyas
-		Ibrahim
-		Idris
-		Ikrima
-		Imad
-		Imad_al_din
-		Imran
-		Ishaq
-		Iskandar
-		Isma_il
-		Ismail
-		Jabala
-		Jabir
-		Jafar
-		Jala#l
-		Jamal
-		Jawhar
-		Karim
-		Kathir
-		Khaldun
-		Khali#l
-		Khalid
-		Krema
-		Latif
-		Ma#hmu#d
-		Mahdi
-		Mahir
-		Majid
-		Makki
-		Malik
-		Mansu#r
-		Marwan
-		Marzuq
-		Mas#ud
-		Maslama
-		Maymun
-		Midhat
-		Miswar
-		Mu#sa
-		Muawiya
-		Muaz
-		Mufarrij
-		Mufawwid
-		Muhammad
-		Muhannad
-		Muharib
-		Muhsin
-		Muiz
-		Mujahid
-		Mundir
-		Mura#d
-		Musab
-		Nabil
-		Nadim
-		Nadir
-		Nahar
-		Naji
-		Najib
-		Najih
-		Naser
-		Nasir
-		Nasr
-		Nizar
-		Qasim
-		Qays
-		Rashid
-		Razin
-		Ridwan
-		Riyad
-		Rushd
-		Sa#id
-		Sa#lih
-		Sa#lim
-		Sa#mi
-		Sabah
-		Sad
-		Sadan
-		Sadun
-		Safwan
-		Sahl
-		Saif
-		Saker
-		Sakhr
-		Salah
-		Salah_al_din
-		Salama
-		Samir
-		Sayyid
-		Shakir
-		Sharif
-		Shuayb
-		Siraj
-		Sufyan
-		Suhail
-		Sulaima#n
-		Tabit
-		Taher
-		Tahir
-		Talha
-		Tamim
-		Tammam
-		Tariq
-		Tasfin
-		Tashfin
-		Tasufin
-		Tawfiq
-		Tayyib
-		Ubaydallah
-		Ubaydullah
-		Ukrumah
-		Umar
-		Umaya
-		Umayya
-		Umayyah
-		Uqba
-		Urwa
-		Usama
-		Uthman
-		Uways
-		Wadhah
-		Wadih
-		Wael
-		Wahib
-		Wahid
-		Walid
-		Wasil
-		Wasim
-		Yahya
-		Yaqub
-		Yazid
-		Yunes
-		Yunis
-		Yunus
-		Yusef
-		Yusuf
-		Zakariyya
-		Zayd
-		Ziyad
-		Zuhayr
-	;hafsids add more names
+		Abbilardu
+		Abbontiu
+		Abbramu
+		Adolfu
+		Adrianu
+		Alberto
+		Albertu
+		Alessiu
+		Alfonzu
+		Alfredu
+		Alissandru
+		Ambroggiu
+		Ancilu
+		Antoniu
+		Antuninu
+		Anuratu
+		Anzermu
+		Arbinu
+		Ardu
+		Arricu
+		Austinu
+		Barnabba
+		Basileu
+		Battista
+		Beniaminu
+		Binidittu
+		Birnardu
+		Bonifazziu
+		Brasi
+		Brunu
+		Buimunnu
+		Caitanu
+		Callistu
+		Camillu
+		Cardinu
+		Carlu
+		Cesari
+		Ciprianu
+		Cirillu
+		Claudianu
+		Claudiu
+		Concetto
+		Corneliu
+		Cosimu
+		Cunzaga
+		Curiuni
+		Curradu
+		Custantinu
+		Damasu
+		Damianu
+		Danieli
+		Dariu
+		Davidi
+		Diegu
+		Disidderiu
+		Ditimu
+		Druguni
+		Duminicu
+		Dunatu
+		Edmunnu
+		Eduardu
+		Eggidiu
+		Eliciu
+		Eliggiu
+		Elpidiu
+		Enricu
+		Enricu
+		Enricu
+		Eramu
+		Ermannu
+		Ermiti
+		Ermoggini
+		Ernestu
+		Ettore
+		Euggeniu
+		Eusebbiu
+		Evaristu
+		Fabbianu
+		Faustu
+		Fidiricu
+		Filici
+		Filippu
+		Firdinannu
+		Firmu
+		Firrucciu
+		Fiurenziu
+		Franciscu
+		Fravianu
+		Fraviu
+		Furtunatu
+		Gesu
+		Giacintu
+		Giacumu
+		Gilbertu
+		Gilormi
+		Ginnaru
+		Giordanu
+		Giorgu
+		Giorgu
+		Giorgu
+		Girardu
+		Girmanu
+		Gironziu
+		Girvasiu
+		Giuacchinu
+		Giulianu
+		Giuliu
+		Giuseppi
+		Giustinu
+		Giuvanni
+		Gnazziu
+		Grazzianu
+		Grigoriu
+		Guaimario
+		Guaimariu
+		Guarinu
+		Guffredu
+		Gugghiermu
+		Gugghiermu
+		Gugghiermu
+		Guidu
+		Igginu
+		Ilariu
+		Isaccu
+		Isidoru
+		Ivu
+		Jacupu
+		Lambertu
+		Landolfo
+		Laudanu
+		Lazzaru
+		Leupoldu
+		Liantru
+		Libberiu
+		Linu
+		Liunardu
+		Liuni
+		Lorenzo
+		Luca
+		Luciu
+		Luduvicu
+		Luiggi
+		Lurenzu
+		Macariu
+		Manfredi
+		Marceddu
+		Marciddinu
+		Marianu
+		Mariu
+		Martinu
+		Marziali
+		Massimilianu
+		Massimu
+		Matteu
+		Mattia
+		Maurizziu
+		Mauru
+		Micheli
+		Midardu
+		Mitiddi
+		Natali
+		Nazzariu
+		Niccolo
+		Nicola
+		Nicudemu
+		Oresti
+		Orlando
+		Ottaviu
+		Pacificu
+		Pasquali
+		Patrizziu
+		Paulinu
+		Paulu
+		Petru
+		Pietro
+		Piu
+		Placidu
+		Politu
+		Protasiu
+		Quirinu
+		Raffaeli
+		Rainulfu
+		Ranieri
+		Renatu
+		Renzu
+		Riccardu
+		Ricu
+		Rinardu
+		Romulu
+		Rubbertu
+		Rubbertu
+		Rubbertu
+		Rudolfu
+		Rudrigu
+		Ruggero
+		Ruggeru
+		Ruggeru
+		Ruggeru
+		Ruggeru
+		Ruggeru
+		Rumanu
+		Rumeu
+		Rusariu
+		Samueli
+		Sarluni
+		Sarvaturi
+		Sarvinianu
+		Saveriu
+		Sergiu
+		Serlo
+		Simmacu
+		Simone
+		Simuni
+		Simuni
+		Simuni
+		Siriu
+		Sirvanu
+		Sirvestru
+		Sistu
+		Stefanu
+		Tancredi
+		Tancredi
+		Tancredi
+		Timuteu
+		Tiofilu
+		Tirenziu
+		Titu
+		Tumasi
+		Tuveu
+		Ubbardu
+		Ugu
+		Umbertu
+		Unfredu
+		Usvardu
+		Uttuni
+		Valeriu
+		Valintinu
+		Vartulumiu
+		Vasili
+		Vastianu
+		Vicenzu
+		Vinanziu
+		Vincislau
+		Virgiliu
+		Vittoriu
+		Vitturinu
+		Zaccaria
+		Zenu
+	;Franco-Napolitan names
+		Alain
+		Alphonse
+		Amaury
+		Andre
+		Antoine
+		Arnau
+		Arnolf
+		Arnoul
+		Arthur
+		Aubert
+		Aubri
+		Audebert
+		Baudouin
+		Benoit
+		Bernard
+		Bertrand
+		Bohemond
+		Bouchard
+		Charles
+		Charles
+		CharlesI
+		Claude
+		Clement
+		Colin
+		Deodat
+		Dreux
+		Ebrard
+		Edouard
+		Enguerrand
+		Etienne
+		Eudes
+		Eustache
+		Evrart
+		Ferrecot
+		Fleury
+		Foucauld
+		Foulque
+		Francois
+		Frederic
+		Fulkes
+		Galeran
+		Gaston
+		Gautier
+		Ge#rard
+		Geoffroy
+		Georges
+		Geraud
+		Germain
+		Gibaud
+		Gilbert
+		Gilles
+		Godefroy
+		Guichard
+		Guigues
+		Guillaume
+		Guion
+		Guy
+		Henri
+		Hubert
+		Hugues
+		Jacques
+		Jaume
+		Jean
+		Jehan
+		Jehanin
+		Josselin
+		Junien
+		Lanfranc
+		Laugier
+		Laurent
+		Louis
+		Malon
+		Marcel
+		Michel
+		Nicolas
+		Odo
+		Olivier
+		Pepin
+		Philip
+		Philippe
+		Pierre
+		Pons
+		Raoul
+		Raymond
+		Reinald
+		Renaud
+		Rene
+		Renier
+		Reynaud
+		Richard
+		Robert
+		Roger
+		Roland
+		Romain
+		Simon
+		Tancrede
+		Thibaut
+		Thierry
+		Thomas
+	;sicily add more names
 
 	surnames
-	;hafsid surnames
-		Al_Abbasi
-		Al_Aglabi
-		Al_Andalusi
-		Al_Ansari
-		Al_Antaki
-		Al_Arabi
-		Al_Asadi
-		Al_Ashari
-		Al_Attar
-		Al_Ayyubi
-		Al_Bagdadi
-		Al_Balansi
-		Al_Barbari
-		Al_Basri
-		Al_Baytar
-		Al_Bukhari
-		Al_Dabbag
-		Al_Dabbaj
-		Al_Dahiri
-		Al_Dimashqi
-		Al_Faqih
-		Al_Farabi
-		Al_Faradi
-		Al_Farisi
-		Al_Faruq
-		Al_Fatemeyyun
-		Al_Fatih
-		Al_Fatimi
-		Al_Fazari
-		Al_Fesi
-		Al_Fihri
-		Al_Gafiqi
-		Al_Garnati
-		Al_Gassani
-		Al_Gazali
-		Al_Habib
-		Al_Haddad
-		Al_Hadrami
-		Al_Hafid
-		Al_Hajj
-		Al_Hakam
-		Al_Hakim
-		Al_Hamdani
-		Al_Hamdi
-		Al_Hariti
-		Al_Harrani
-		Al_Hashimi
-		Al_Hawarezmi
-		Al_Hijazi
-		Al_Hilali
-		Al_Homsi
-		Al_Huwwari
-		Al_Idrisi
-		Al_Ifriqi
-		Al_Ilbiri
-		Al_Imam
-		Al_Isbahani
-		Al_Isfahani
-		Al_Ishbili
-		Al_Jahid
-		Al_Jasur
-		Al_Jayyani
-		Al_Jazairi
-		Al_Jilani
-		Al_Khatib
-		Al_Khattab
-		Al_Khawarizmi
-		Al_Khayyam
-		Al_Khayyat
-		Al_Khurasani
-		Al_Kinani
-		Al_Kindi
-		Al_Kutami
-		Al_Lamtuni
-		Al_Magribi
-		Al_Mahdi
-		Al_Majid
-		Al_Maliki
-		Al_Mansur
-		Al_Marrakushi
-		Al_Marrakusi
-		Al_Misri
-		Al_Mubarak
-		Al_Nahwandi
-		Al_Najjar
-		Al_Naqqash
-		Al_Nasir
-		Al_Nassaj
-		Al_Qasim
-		Al_Qayrawani
-		Al_Qaysi
-		Al_Qurashi
-		Al_Qurtubi
-		Al_Rashid
-		Al_Rasid
-		Al_Razi
-		Al_Sabbag
-		Al_Safi
-		Al_Sahrawi
-		Al_Saig
-		Al_Samarqandi
-		Al_Sanhaji
-		Al_Sayeg
-		Al_Sayyid
-		Al_Shafii
-		Al_Shami
-		Al_Sharif
-		Al_Shatib
-		Al_Shirazi
-		Al_Sufi
-		Al_Sulami
-		Al_Tabari
-		Al_Talamanki
-		Al_Tamimi
-		Al_Tamini
-		Al_Tarabulsi
-		Al_Tijani
-		Al_Tulaytuli
-		Al_Tunisi
-		Al_Tusi
-		Al_Wahrani
-		Al_Yaqubi
-		Al_Zahrawi
-		Al_Zuhri
-		Al_Abbasi
-		Al_Asamm
-		Al_Attar
-		Al_Balhki
-		Al_Diwanji
-		Al_Fatimiyyun
-		Al_Kattani
-		Al_Khashshab
-		Al_Khawalani
-		Al_Ra_is
-		Al_Sa_igh
+		Abbate
+		Aleramici
+		Antiochia
+		Anzalone
+		Arduino
+		Balsamo
+		Barba
+		Barresi
+		Biuso
+		Branciforte
+		Callari
+		Calvelli
+		Capece
+		Castellano
+		Catalano
+		Chiaromonte
+		Crisafi
+		Cristaldi
+		Cutelli
+		Drengotto
+		Falcone
+		Ferro
+		Filangieri
+		Graffeo
+		Grasso
+		Guiscardu
+		Guiskard
+		Lancia
+		Lentini
+		Lombardo
+		Maniscalco
+		Manna
+		Marino
+		Modica
+		Moncada
+		Montalbano
+		Mosca
+		Navarra
+		Offamilio
+		Pancaldo
+		Papaleo
+		Pappalardo
+		Peralta
+		Putti
+		Rocca
+		Saglinpepe
+		Sciacca
+		Siracusa
+		Stagno
+		Tagliavia
+		Tavelli
+		Trincanocte
+		Vallano
+		Vitale
 ;;;bynames
-		ibn_Abbad
-		ibn_Abbas
-		ibn_Abdillah
-		ibn_Abdul_Aziz
-		ibn_Abdul_Malik
-		ibn_Abdul_Mumin
-		ibn_Abdul_Rahman
-		ibn_Abi_Hafs
-		ibn_Abi_Sufyan
-		ibn_Abi_Talib
-		ibn_Affan
-		ibn_Al_Abbas
-		ibn_Al_Aglab
-		ibn_Al_Attar
-		ibn_Al_Baytar
-		ibn_Al_Hafid
-		ibn_Al_Hagg
-		ibn_Al_Hakam
-		ibn_Al_Hasan
-		ibn_Al_Haytam
-		ibn_Al_Husayn
-		ibn_Al_Jazzar
-		ibn_Al_Khatib
-		ibn_Al_Khattab
-		ibn_Al_Khayyat
-		ibn_Al_Mahdi
-		ibn_Al_Mansur
-		ibn_Al_Nafis
-		ibn_Al_Rumiyya
-		ibn_Al_Sabbag
-		ibn_Al_Shatir
-		ibn_Al_Walid
-		ibn_Al_Zahrawi
-		ibn_Al_Zubayr
-		ibn_Ali
-		ibn_Anas
-		ibn_Ata
-		ibn_Atiyya
-		ibn_Badis
-		ibn_Battuta
-		ibn_Dinar
-		ibn_Faraj
-		ibn_Farraj
-		ibn_Furat
-		ibn_Galib
-		ibn_Hajib
-		ibn_Hamza
-		ibn_Hanbal
-		ibn_Hani
-		ibn_Harun
-		ibn_Hayyan
-		ibn_Hisham
-		ibn_Hud
-		ibn_Ibrahim
-		ibn_Ishaq
-		ibn_Ismail
-		ibn_Jafar
-		ibn_Joma
-		ibn_Jubayr
-		ibn_Katir
-		ibn_Khaldun
-		ibn_Mahbub
-		ibn_Mandur
-		ibn_Mansur
-		ibn_Marwan
-		ibn_Masud
-		Ibn_Muaway
-		ibn_Muawiya
-		ibn_Mufawwiz
-		ibn_Muhammad
-		ibn_Muhannad
-		ibn_Murad
-		ibn_Musa
-		ibn_Nafa
-		ibn_Nasr
-		ibn_Nusayer
-		ibn_Qasim
-		ibn_Rushd
-		ibn_Sad
-		ibn_Safwan
-		ibn_Salim
-		ibn_Shaban
-		ibn_Sina
-		ibn_Sulaiman
-		ibn_Talakakin
-		ibn_Tashfin
-		ibn_Tifawt
-		ibn_Tufayl
-		ibn_Tumart
-		ibn_Umar
-		ibn_Utman
-		ibn_Yazid
-		ibn_Yunis
-		ibn_Yusuf
-		ibn_Zakariyya
-		ibn_Ziyad
-		ibn_Zuhr
-	;hafsids add more surnames
-		ibn_Al_Muizz
+		d_Altavilla
+		d_Ottaviano
+		de_Palermo
+		di_Acerenza
+		di_Acerra
+		di_Aci
+		di_Aidone
+		di_Ajello
+		di_Alago
+		di_Alagona
+		di_Alife
+		di_Ancona
+		di_Andria
+		di_Antiochia
+		di_Apulia
+		di_Argo
+		di_Ariano
+		di_Ascoli
+		di_Autavilla
+		di_Avellino
+		di_Aversa
+		di_Bagnara
+		di_Balvano
+		di_Bari
+		di_Bassunvilla
+		di_Battalaro
+		di_Biccari
+		di_Bisaccia
+		di_Bisceglie
+		di_Bisignano
+		di_Bitonto
+		di_Bova
+		di_Brindisi
+		di_Buonalbergo
+		di_Caccamo
+		di_Caiazzo
+		di_Calabria
+		di_Calatrasi
+		di_Caltagirone
+		di_Campolieto
+		di_Canne
+		di_Canosa
+		di_Capaccio
+		di_Capitanate
+		di_Capizzi
+		di_Capua
+		di_Casamari
+		di_Casauria
+		di_Catania
+		di_Catanzaro
+		di_Civitate
+		di_Comino
+		di_Conversano
+		di_Conza
+		di_Corato
+		di_Corleone
+		di_Corleto
+		di_Eboli
+		di_Enna
+		di_Epiro
+		di_Ferentino
+		di_Fiore
+		di_Flumeri
+		di_Gaeta
+		di_Galluccio
+		di_Gerace
+		di_Gesualdo
+		di_Giovinazzo
+		di_Gravina
+		di_Iato
+		di_Iesi
+		di_Irno
+		di_Isernia
+		di_Laino
+		di_Larino
+		di_Lecce
+		di_Lentini
+		di_Lesina
+		di_Licata
+		di_Loreto
+		di_Loritello
+		di_Malta
+		di_Mandra
+		di_Marsala
+		di_Massafra
+		di_Mazara
+		di_Melfi
+		di_Mesagne
+		di_Messina
+		di_Mignano
+		di_Mileto
+		di_Minervino
+		di_Minori
+		di_Misilmeri
+		di_Modugno
+		di_Mohac
+		di_Molfetta
+		di_Monopoli
+		di_Monreale
+		di_Monte_Gargano
+		di_Monte_Marano
+		di_Montefusco
+		di_Montepeloso
+		di_Montescaglioso
+		di_Morcone
+		di_Mottola
+		di_Muxaro
+		di_Napoli
+		di_Nicotera
+		di_Nocera
+		di_Normandia
+		di_Noto
+		di_Olevano
+		di_Ottaviano
+		di_Paduli
+		di_Palermo
+		di_Petralia
+		di_Policastro
+		di_Puliano
+		di_Ragusa
+		di_Rupecanina
+		di_Salerno
+		di_Sarno
+		di_Savona
+		di_Sessa
+		di_Sicignano
+		di_Sinagra
+		di_Siponto
+		di_Siracusa
+		di_Sorrento
+		di_Stridula
+		di_Svevia
+		di_Tagliacozzo
+		di_Taormina
+		di_Taranto+I
+		di_Taverna
+		di_Telese
+		di_Teramo
+		di_Toritto
+		di_Trani
+		di_Tricala
+		di_Troia
+		di_Troina
+		di_Valenzano
+		di_Venosa
+		di_Veroli
+		di_Vieste
+	;Franco-Napolitan surnames
+		Berenger
+;;;bynames
+		d_Anjou
+		de_Naples
+	;sicily add more surnames
 
 	women
-	;hafsid female names
-		A#ida
-		Abla
-		Afaf
-		Aisha
-		Alya
-		Amal
-		Amani
-		Amina
-		Amira
-		Arij
-		Arwa
-		Asiya
-		Asma
-		Azza
-		Bahija
-		Bahiyya
-		Baraka
-		Basma
-		Dalal
-		Dorra
-		Dorsaf
-		Dua
-		Duha
-		Eya
-		Fadia
-		Fadila
-		Farah
-		Fatima
-		Fatimah
-		Fatin
-		Fayruz
-		Gada
-		Ganiya
-		Hafsa
-		Hafza
-		Haifa
-		Hajar
-		Hala
-		Hamduna
-		Hana
-		Hanan
-		Hiba
-		Hind
-		Ibtisam
-		Inas
-		Ishraq
-		Jalila
-		Jamila
-		Khadija
-		Khawla
-		Khulud
-		Laila
-		Li#na
-		Lubna
-		Maha
-		Malak
-		Manal
-		Maram
-		Marwa
-		Maryam
-		Maymuna
-		Muhja
-		Muna
-		Munya
-		Nadia
-		Najwa
-		Nawal
-		Nisrin
-		Nu#r
-		Nuzha
-		Olfa
-		Rabi#a
-		Rahma
-		Raja
-		Ramla
-		Randa
-		Ranya
-		Rashida
-		Ri#ma
-		Rihab
-		Rim
-		Sabah
-		Safa
-		Safiya
-		Safiyya
-		Sahar
-		Sahr
-		Salma
-		Salwa
-		Samar
-		Samia
-		Sara
-		Sarra
-		Sayyida
-		Shadia
-		Shams
-		Shayma
-		Suad
-		Suha
-		Suhir
-		Sukayna
-		Sumayya
-		Wafa
-		Wissal
-		Yamina
-		Zarru
-		Zaynab
-		Zubayda
-		Zumurruda
-	;hafsids add more female names
+		A#gata
+		Adalina
+		Adelaisa
+		Adelisa
+		Agnesa
+		Amalia
+		Amata
+		Amelia
+		Ancila
+		Barbara
+		Biata
+		Biniditta
+		Bomminuta
+		Bonavintura
+		Bricita
+		Catarina
+		Cecilia
+		Cettina
+		Chiara
+		Clotirdi
+		Concetta
+		Cristina
+		Culetta
+		Delia
+		Derfina
+		Elina
+		Elvira
+		Emma
+		Euggenia
+		Eulalia
+		Faustina
+		Filicita
+		Flora
+		Francisca
+		Gemma
+		Ginueffa
+		Giuda
+		Giuditta
+		Ireni+I
+		Judith
+		Lanfranca
+		Lia
+		Libbirata
+		Lidia
+		Liliana
+		Lisa
+		Lisabbetta
+		Lisciannira
+		Litizzia
+		Livia
+		Lucia
+		Lucilla
+		Lucrezzia
+		Maddalena
+		Manuela
+		Margarita
+		Maria
+		Marianna
+		Martina
+		Matilda
+		Maura
+		Maximilla
+		Mirinziana
+		Mmaculata
+		Monica
+		Paula
+		Pulchera
+		Rita
+		Rosa
+		Rosanna
+		Rusulia
+		Serafina
+		Sirvia
+		Sufia
+		Tiresa
+		Urrica
+		Ursula
+		Valeria
+		Valintina
+		Vicenza
+		Vilariana
+		Virdiana
+		Virginia
+		Vittoria
+		Viviana
+	;sicily add more female names
+		Marie
+		Yolande
+		Thamar
+		Jeanne
+		Eleonore
 
 faction: spain
 
@@ -4613,6 +4661,7 @@ faction: spain
 		Alvaro
 		Alvaro
 		Anton
+		Anto#nio
 		Aparicio
 		Arias
 		Bartolo
@@ -4678,6 +4727,7 @@ faction: spain
 		Gregorio
 		Guillen
 		Guzman
+		Henrique
 		Hermenegildo
 		Hernan
 		Higinio
@@ -5898,400 +5948,183 @@ faction: russia
 faction: kievan_rus
 
 	characters
-		Aleksandr
-		Aleksei
-		Andrei
-		Andrei
-		Andrei
+	;serbia names
+		Aleksandar
+		Arsenije
+		Belo#s
+		Bogdan
+		Bogoje
+		Bogoljub
+		Borimir
 		Boris
 		Borislav
-		Borivoi
-		Bratoneg
-		Bryachislav
-		Budimir
-		Budislav
-		Daniil
-		Danislav
-		Davyd
-		Derzhislav
-		Dmitrii
-		Dob#romysl
-		Dobrogost
+		Branislav
+		Branko
+		Caslav
+		Damjan
+		Dimitrije
+		Dobrica
 		Dobroslav
-		Dobrozhir
-		Dolgoslav
-		Domaslav
-		Domazhir
-		Fedor
-		Gavriil
-		Georgii
-		Gorislav
-		Gorodislav
-		Gostislav
-		Gremislav
-		Grigorii
-		Gudimir
-		Iaroslav
-		Igor
-		Igor
-		Igor
+		Dragisa
+		Dragutin
+		Durad
+		Dusan
+		Gojko
 		Ivan
-		Izyaslav
-		Izyaslav
-		Izyaslav
-		Izyaslav
-		Izyaslav
-		Khotimir
-		Khotislav
-		Kirill
+		Ivica
+		Ivo
+		Jakov
+		Janko
+		Jovan
+		Jugoslav
 		Konstantin
-		Lyutobor
-		Lyutoslav
-		Mezhamir
-		Mikhail
-		Milogost
-		Miloslav
-		Mirognev
+		Lazar
+		Ljudevit
+		Makarije
+		Manojlo
+		Marinko
+		Marko
+		Matija
+		Mihailo
+		Milisav
+		Milivoje
+		Miloje
+		Milos
+		Milutin
+		Miodrag
+		Mirko
 		Miroslav
-		Moimir
-		Mstibor
-		Mstidrug
-		Mstislav
-		Mstislav
-		Mstislav
-		Mstislav
-		Mstislav
-		Mstivoi
-		Negoslav
-		Nikifor
-		Oleg
-		Ostromir
-		Pereneg
-		Petr
-		Pirogost
-		Predislav
-		Pribyslav
-		Putimir
-		Putislav
-		Radimir
-		Radognev
-		Radogost
-		Radoneg
+		Mitar
+		Mladen
+		Mutimir
+		Nebojsa
+		Nedeljko
+		Nemanja
+		Nikola
+		Obrad
+		Pavle
+		Pribislav
+		Radi#c
+		Radoje
+		Radoman
+		Rados
 		Radoslav
-		Ratibor
-		Ratimir
-		Ratislav
-		Rodoslav
-		Rogvolod
-		Roman
-		Rostislav
-		Rostislav
-		Rostislav
-		Rostislav
-		Rostislav
-		Ryurik
-		Sbyslav
-		Semen
-		Semislav
-		Stepan
-		Strezhislav
-		Stroislav
-		Sudimir
-		Sudislav
-		Sudivoi
-		Svyatopolk
-		Svyatopolk
-		Svyatopolk
-		Svyatopolk
-		Svyatopolk
-		Svyatoslav
-		Svyatoslav
-		Svyatoslav
-		Teshislav
-		Tikhomir
-		Tverdislav
-		Tvorimir
-		Vadislav
-		Vasilii
-		Verchoslav
-		Verislav
+		Sava
+		Sima
+		Sinisa
+		Slobodan
+		Spasoje
+		Srbomir
+		Srboslav
+		Stefan
+		Stevan
+		Svetislav
+		Svetolik
+		Svetozar
+		Teodor
+		Tihomir
+		Uro#s
+		Vasilije
+		Vasko
+		Veljko
+		Veselin
+		Vidoje
+		Viseslav
 		Vladimir
-		Vladimir
-		Vladimir
-		Vladimir
-		Vladimir
-		Voislav
-		Volodar
-		Volodislav
-		Volostislav
-		Vorotislav
-		Vseslav
-		Vsevolod
-		Vsevolod
-		Vsevolod
-		Vsevolod
-		Vsevolod
-		Vyacheneg
-		Vyacheslav
-		Vyacheslav
-		Vyacheslav
-		Vyshemir
-		Vysheslav
-		Yaropolk
-		Yaropolk
-		Yaropolk
-		Yaropolk
-		Yaropolk
-		Yaroslav
-		Yaroslav
-		Yaroslav
-		Yaroslav
-		Yaroslav
-		Yurii
-		Yurii
-		Yurii
-		Zhidislav
-		Zhironeg
-		Zhiroslav
-		Zhirovit
-		Zhiznomir
-	;kievan_rus add more names
+		Vladislav
+		Vlado
+		Vlastimir
+		Vlatko
+		Vojislav
+		Vratko
+		Vujadin
+		Vuk
+		Vukan
+		Vukasin
+		Zdeslav
+		Zivko
+	;serbia add more names
 
 	surnames
-		Basenok
-		Beda
-		Beleut
-		Bestuzhev
-		Bobr
-		Bobrok_Volynets
-		Brenok
-		Buturlin
-		Buy_Tur
-		Byakont
-		Chelyadnya
-		Chepenok
-		Cheshko
-		Dashkov
-		Davydovich
-		Dei
-		Dmitriev
-		Dobroi
-		Dolgorukii
-		Domozhirov
-		Dyudenev
-		Epanchin
-		Fedorov
-		Glebov
-		Gluchoi
-		Gorbatyi
-		Gorstkin
-		Grebenka
-		Istoma
-		Izyaslavich
-		Kalita
-		Khorobrit
-		Khvost
-		Kirdyapa
-		Kobylin
-		Kolychev
-		Konstantinov
-		Koshkin
-		Kotov
-		Kuchkov
-		Kvashnya
-		Likharev
-		Lugvitsa
-		Lykov
-		Mamon
-		Matveev
-		Miloslavov
-		Minin
-		Miroslavov
-		Monastyrev
-		Monomakh
-		Monomakhovich
-		More
-		Morozov
-		Nemoi
-		Netshin
-		Nikitin
-		Novosiltsev
-		Obrazets
-		Odinets
-		Odnook
-		Olgovich
-		Oshchera
-		Oslyabya
-		Ostey
-		Ovin
-		Patrikeev
-		Peresvet
-		Peshko
-		Pestroy
-		Posakhno
-		Redegin
-		Reut
-		Runo
-		Rurikovich
-		Saburov
-		Shein
-		Shemet
-		Shemyaka
-		Shonur
-		Smirnoi
-		Smolin
-		Sobakin
-		Sorokoum
-		Starkov
-		Striga
-		Sudok
-		Sviblo
-		Svyatoslavich
-		Tucha
-		Turena
-		Tushin
-		Valuev
-		Velyaminov
-		Veprev
-		Volk
-		Vorontsov
-		Yaroslavich
-		Zernov
-		Zherebtsov
-		Zver
-		Zverev
+	;serbia surnames
+		Aleksic
+		Brankovic
+		Dobric
+		Ilic
+		Jovanovic
+		Kovacevic
+		Ljubovic
+		Maric
+		Marinkovic
+		Markovic
+		Milic
+		Milosavljevic
+		Nemanjic
+		Nikolic
+		Obradovic
+		Peric
+		Perovic
+		Petakovic
+		Petrovic
+		Radic
+		Radisavljevic
+		Stamenkovic
+		Zarkovic
+		Zoric
 ;;;bynames
-		Belevskii
-		Belozerskii
-		Bogolyubskii
-		Boretskii
-		Bryanskii
-		Chernigovskii
-		Dmitrovskii
-		Dobrynskii
-		Dorogobuzhskii
-		Drutskii
-		Fominskii
-		Galitskii
-		Glukhovskii
-		Gorodetskii
-		Izborskii
-		Kaluzhskii
-		Kashinskii
-		Kievskii
-		Kozelskii
-		Kubenskii
-		Kurskiy
-		Lyubechskii
-		Menskii
-		Mikulinskii
-		Molozhskii
-		Moskovskii
-		Mozhayskii
-		Mstislavskii
-		Muromskii
-		Musorskii
-		Nizhegorodskii
-		Novgorod_Severskii
-		Novgorodskii
-		Novotorskii
-		Obolenskii
-		Odoevskii
-		Pereyaslavskii
-		Pinskii
-		Polotskii
-		Pronskii
-		Pskovskii
-		Putivlskii
-		Radonezhskii
-		Rimovskii
-		Rostovskii
-		Ryazanskii
-		Serpukhovskoi
-		Shakhovskoi
-		Smolenskii
-		Staritskii
-		Starodubskii
-		Suzdalskii
-		Tarusskii
-		Telyatevskii
-		Terebovlskii
-		Trubetskoi
-		Turovskii
-		Tverskoi
-		Uglitskii
-		Vereiskii
-		Vladimirskii
-		Volotskii
-		Volynskii
-		Vorotynskii
-		Vsevolozhskii
-		Vyazemskii
-		Vyshgorodskii
-		Yuryevskii
-		Zaozerskii
-		Zvenigorodskii
-	;kievan_rus add more surnames
+		of_Atanas
+		of_Beograd
+		of_Despotovac
+		of_Drina
+		of_Golubac
+		of_Hum
+		of_Jelec
+		of_Kladovo
+		of_Kraljevo
+		of_Krusevac
+		of_Petrovaradin
+		of_Pirot
+		of_Prizren
+		of_Raska
+		of_Ravanica
+		of_Sjenica
+		of_Smederevo
+		of_Soko_Grad
+		of_Stalac
+		of_Trstenik
+		of_Vidin_Grad
+		of_Venezia
+		of_Vranje
+		of_Vrsac
+		of_Zeta
+		of_Zrnov
+		of_Zvecan
+	;serbia add more surnames
 
 	women
-		Agafia
-		Agnia
-		Agrafena
-		Akulina
-		Anastasia
-		Anna
-		Daria
-		Dobrogneva
-		Dobroslava
-		Ekaterina
-		Elena
-		Elizaveta
-		Eupraxia
-		Evdokia
-		Evfimia
-		Evfrosinia
-		Evpraksia
-		Feodora
-		Feodosia
-		Feofania
-		Fevronia
-		Glikeria
-		Gordislava
-		Gorislava
-		Irina
-		Iuliania
-		Izyaslava
-		Kristina
-		Ksenia
-		Kupava
-		Lyubava
-		Lyudmila
-		Marfa
-		Maria
-		Matrona
-		Melania
-		Nadezhda
-		Natalia
+	;serbia female names
+		Aleksandra
+		Ana
+		Dragana
+		Dragica
+		Dusica
+		Gordana
+		Ivana
+		Jelena
+		Jovanka
+		Komnena
+		Ljubica
+		Mara
+		Marijana
+		Milica
+		Natalija
+		Natasa
 		Olga
-		Pelagia
-		Praskovia
-		Predeslava
-		Predslava
-		Radogneva
-		Radoslava
-		Rostislava
-		Sbyslava
-		Sofia
-		Svyatoslava
-		Tatiana
-		Varvara
-		Vasilisa
-		Verchoslava
-		Vseslava
-		Vysheslava
-		Zbyslava
-		Zoya
-	;kievan_rus add more female names
+		Radmila
+		Radojka
+		Snezana
+		Svetlana
+	;serbia add more female names
 
 faction: turks
 
@@ -6801,6 +6634,7 @@ faction: turks
 		Yemeni
 		Yinal
 	;turks add more surnames
+		Hatun
 
 	women
 		Adile
@@ -6909,6 +6743,7 @@ faction: turks
 		Gouhar
 		Amir_Siti
 		Mah_i
+		Malhun
 
 faction: venice
 
@@ -7062,8 +6897,10 @@ faction: venice
 		Alberenghi
 		Alberti
 		Arimondo
+		Arpo
 		Badoer
 		Baffo
+		Bajamonte
 		Balbi
 		Barbarigo
 		Barbaro
@@ -7414,6 +7251,7 @@ faction: milan
 		Vico
 		Vincenzo
 	;milan add more names
+		Lamba
 
 	surnames
 		Adorno
@@ -7551,6 +7389,7 @@ faction: milan
 		di_Tursi
 		di_Zoagli
 	;milan add more surnames
+		Zaccaria
 
 	women
 		Alessandra
@@ -7682,6 +7521,8 @@ faction: egypt
 		Al_Mu_azzam
 		Al_Musta_li
 		Al_Mustansir
+		Al_Zafir
+		Al_Qasim
 		Ala
 		Alaudin
 		Ali
@@ -7830,8 +7671,8 @@ faction: egypt
 		Saker
 		Sakhr
 		Salah
-		Salah_al_din
 		Salahaddin
+		Salah_al_din
 		Salama
 		Samir
 		Sayyid
@@ -7887,6 +7728,32 @@ faction: egypt
 		Ziyad
 		Zuhayr
 	;egypt add more names
+		Baibars
+		Barakah
+		Barquq
+		Barsbay
+		Aybak
+		Salamish
+		Qalawun
+		Khalil
+		Kitbugha
+		Lajin
+		Kujuk
+		Shaban
+		Hajji
+		Billah
+		Tatar
+		Khushqadam
+		Yalbay
+		Jaqmaq
+		Timurbugha
+		Qaitbay
+		Qansuh
+		Janbalat
+		Tumanbay
+		Qawsun
+		Bashtak
+		Abul_Fid
 
 	surnames
 		Al_Abbasi
@@ -8128,6 +7995,9 @@ faction: egypt
 		ibn_Ziyad
 		ibn_Zuhr
 	;egypt add more surnames
+		Al_Bahari
+		Al_Jashnakir
+		Al_Burji
 
 	women
 		A#ida
@@ -8241,6 +8111,7 @@ faction: egypt
 		Zubayda
 		Zumurruda
 	;egypt add more female names
+		Ardukin
 
 faction: cumans
 
@@ -10955,24 +10826,17 @@ faction: moors
 faction: norway
 
 	characters
-		Adam
-		Adrian
-		Age
+	;Sweden names
+		Albrekt
+		Albrekt
 		Aksel
-		Ale
-		Aleksander
-		Alf
 		Alv
 		Amund
-		Anders
-		Anders
 		Anders
 		Andre
 		Andreas
 		Are
 		Arild
-		Arne
-		Arne
 		Arne
 		Arnkjell
 		Arnmod
@@ -10985,16 +10849,14 @@ faction: norway
 		Bard
 		Benedikt
 		Bengt
-		Benjamin
 		Bernhard
+		Birger
+		Birger
+		Birger
 		Birger
 		Bjarne
 		Bjorn
-		Bjorn
-		Bjorn
 		Brage
-		Christian
-		Christoffer
 		Dag
 		Dagfinn
 		Daniel
@@ -11008,7 +10870,6 @@ faction: norway
 		Eigil
 		Eilif
 		Einar
-		Eirik
 		Eivind
 		Elias
 		Emil
@@ -11024,16 +10885,10 @@ faction: norway
 		Espen
 		Even
 		Eystein
-		Felix
-		Ferdinand
-		Filip
-		Finn
-		Frank
 		Fredrik
 		Fridlev
 		Fridtjof
 		Frode
-		Gabriel
 		Gaute
 		Geir
 		Georg
@@ -11045,25 +10900,20 @@ faction: norway
 		Gudmund
 		Gudrod
 		Gunnar
-		Gunnar
-		Gunnar
+		Gustav
+		Gustav
+		Gustav
+		Gustav
 		Guttorm
-		Haakon
-		HaakonI
-		HaakonII
-		Hakon
-		Hakon
-		Hakon
-		Hakon
-		Hakon
+		Haakan
+		Haakan
+		Haakan
+		Haakan
 		Haldor
 		Halkjell
 		Halvdan
 		Hans
-		Harald
-		Harald
-		Harald
-		Harald
+		Hans
 		Harald
 		Havard
 		Helge
@@ -11076,10 +10926,6 @@ faction: norway
 		Hjalte
 		Holger
 		Inge
-		Inge
-		Inge
-		Inge
-		Inge
 		Ingvar
 		Isak
 		Ivar
@@ -11088,15 +10934,13 @@ faction: norway
 		Jens
 		Jesper
 		Jo
-		Joakim
 		Johan
-		Johann
-		Johannes
 		Jon
-		Jonas
-		Jonatan
 		Jorgen
 		Kare
+		Karl
+		Karl
+		Karl
 		Karl
 		Kasper
 		Kevin
@@ -11104,12 +10948,15 @@ faction: norway
 		Kjetil
 		Knut
 		Knut
-		Knut
 		Kolbein
 		Kristian
+		Kristian
+		Kristian
+		Kristian
 		Kristoffer
-		Lars
-		Lars
+		Kristoffer
+		Kristoffer
+		Kristoffer
 		Lars
 		Lasse
 		Laurits
@@ -11119,44 +10966,27 @@ faction: norway
 		Leofric
 		Linus
 		Lodin
-		Lorents
-		Ludvig
 		Ludvik
 		Lukas
 		Mads
-		Magne
 		Magnus
 		Magnus
 		Magnus
 		Magnus
-		Magnus
-		Marcus
-		Marius
-		Markus
-		Martin
-		Martin
 		Martin
 		Mathias
 		Mats
-		Max
-		Mikkel
-		Mikkel
+		Mats
+		Sigismund
 		Mikkel
 		Morten
 		Nathaniel
 		Niklas
-		Nikolai
-		Nils
-		Nils
 		Nils
 		Noah
 		Odd
 		Oddmund
 		Olaf
-		Olav
-		Olav
-		Olav
-		Olav
 		Olav
 		Ole
 		Oliver
@@ -11164,21 +10994,11 @@ faction: norway
 		Oskar
 		Otto
 		Oystein
-		Oystein
-		Oystein
-		Oystein
-		Oystein
 		Oyvind
-		Pal
-		Pal
 		Pal
 		Peder
 		Per
 		Petter
-		Petter
-		Petter
-		Ragnar
-		Ragnar
 		Ragnar
 		Reidar
 		Roar
@@ -11191,10 +11011,6 @@ faction: norway
 		Sigfred
 		Sigmund
 		Sigtryg
-		Sigurd
-		Sigurd
-		Sigurd
-		Sigurd
 		Sigurd
 		Sigve
 		Simen
@@ -11209,19 +11025,15 @@ faction: norway
 		Stein
 		Steinar
 		Steinar
-		Steinar
 		Sten
 		Stian
 		Stig
 		Sune
 		Svein
-		Svein
-		Svein
-		Sven
-		Sven
 		Sven
 		Sverre
 		Sverrir
+		Sweyn
 		Teo
 		Teodor
 		Terje
@@ -11247,6 +11059,10 @@ faction: norway
 		Trygve
 		Trym
 		Ulv
+		Valdemar
+		Valdemar
+		Valdemar
+		Valdemar
 		Vebjorn
 		Vegard
 		Vetle
@@ -11255,528 +11071,224 @@ faction: norway
 		Viktor
 		Vilhelm
 		Yngwie
-	;norway add more names
+	;sweden add more names
 
 	surnames
-		Abrahamsen
-		Aby
-		Agard
-		Akeleje
-		Alstrup
-		Amundsen
-		Anderssen
-		Andreasen
-		Andresen
-		Antonsen
-		Arnesen
-		Arnkjellsen
-		Asbjornsen
-		Asdal
-		Aslaksen
-		Aune
-		Baeridsgard
-		Bakke
-		Bakken
-		Beltegjerg
-		Benkestok
-		Berg
-		Berge
-		Berntsen
-		Bertnes
-		Bildt
+		Adeler
+		Arneborg
+		Bard
 		Bille
-		Birgersen
-		Birkeland
-		Bjelke
-		Bjornsen
-		Boe
-		Bonde
-		Brekke
-		Brockenhus
-		Budde
-		Christensen
-		Christiansen
-		Christoffersen
-		Dahl
-		Danielsen
-		Dyre
-		Edmundsen
-		Edvardsen
-		Eide
-		Eigilsen
-		Eiriksson
-		Eliassen
-		Ellingsen
-		Engen
-		Erichsholm
-		Eriksen
+		Birk
+		Bjaelke
+		Bolt
+		Dannemand
+		Darre
+		Degn
+		Due
+		Falk
+		Fjord
+		Friis
+		Galle
+		Galt
+		Gammelgard
+		Gedde
+		Giedde
+		Gyldenstjerne
+		Holck
+		Holm
+		Holsten
+		Hvas
+		Jarl
+		Kamp
+		Kas
+		Kiil
+		Lam
+		Lundvid
+		Marsvin
+		Mule
+		Munk
+		Ostby
+		Oxe
+		Ravn
+		Romer
+		Skeel
+		Skovgard
+		Skytte
+		Solvager
+		Sparre
+		Stensen
+		Storgard
+		Tornekrans
+		Tuesen
+		Ulfstand
+		Urup
+;;;pratonymic
+		Andersson
+		Arnesson
+		Asbjornsson
+		Asgersson
+		Asmundsson
+		Benediktsson
+		Bernhardsson
+		Birgersson
+		Bjarksson
+		Bjornsson
+		Brodersson
+		Budlesson
+		Buesson
+		Ditlevsson
+		Ebbesson
+		Edmundsson
+		Egilsson
+		Eliasson
 		Eriksson
 		Erlandsson
 		Erlingsson
+		Esbensson
 		Eskildsson
-		Evensen
+		Estridsson
+		Finnsson
 		Folkesson
-		Fossergard
-		Fredriksen
-		Fridtjofsen
-		Friis
-		Frits
-		Galte
-		Giedde
-		Gotfredsen
-		Guddrodson
-		Gudmundsen
-		Gudrodsen
-		Gulbrandsen
-		Gundersen
-		Gustavsen
-		Guthormsen
-		Gyldenstiern
-		Haakonsen
+		Frederiksson
+		Fritjofsson
+		Gerhardtsson
+		Godfredsson
+		Gormsson
+		Gunnarsson
+		Gustafsson
+		Guthormsson
+		Haakansson
 		Haakonsson
-		Hagbardsen
-		Hagen
-		Hakonsen
-		Halvorsen
-		Hansen
-		Haraldsen
+		Hagbardsson
+		Halfdansson
+		Hansson
 		Haraldsson
-		Harfagre
-		Haug
-		Hauge
-		Haugen
-		Haugland
-		Helland
-		Henriksen
-		Herbertsen
-		Holm
-		Huitfeldt
-		Ingvarsen
-		Isaksen
-		Ivarsen
-		Iversen
-		Jacobsen
-		Jensen
-		Johannessen
-		Johannsen
-		Johansen
-		Johnsen
-		Jorgensen
-		Kane
-		Karlsen
-		Kas
-		Knudsen
-		Knutsen
-		Krabbe
-		Krenkerup
-		Kristensen
-		Kristiansen
-		Kristoffersen
-		Krogh
-		Lange
-		Larsen
-		Lie
-		Lien
+		Hariksson
+		Hemmingsson
+		Henriksson
+		Hjaltesson
+		Holgersson
+		Ingesson
+		Ingolfsson
+		Ingvarsson
+		Johannsson
+		Jorgensson
+		Knutsson
+		Konradsson
+		Kristiansson
+		Kristoffersson
 		Lorentsson
-		Lovenskjold
-		Lund
-		Lunde
-		Magnusen
-		Maneskiold
-		Markusen
-		Martinsen
-		Mathisen
-		Mikkelsen
-		Moe
-		Moen
-		Morlande
-		Motsfeldt
-		Munthe
-		Myhre
-		Myklebust
-		Naess
-		Nass
-		Nilsen
-		Nilsson
-		Nygard
-		Odegard
+		Magnusson
+		Mikkelsson
+		Mogensson
+		Mortensson
+		Nielsson
 		Olafsson
 		Olavsson
-		Olsen
-		Oysteinsen
-		Palsen
-		Paulsen
-		Pedersen
-		Pettersen
-		Rabeloff
-		Raeder
+		Olufsson
+		Palsson
+		Pedersson
 		Ragnarsson
-		Rasmussen
-		Roarsson
-		Ronning
-		Rosing
-		Ruud
-		Sandvik
-		Sather
-		Sibbern
-		Sigfredsen
-		Sigmundsen
-		Sigurdsen
+		Sigfredsson
+		Sigmundsson
+		Sigtrygsson
 		Sigurdsson
-		Simonsen
-		Sivertsen
-		Skakke
+		Sivardsson
 		Skavhoggsson
-		Skjonneboll
-		Skoftesen
 		Skulesson
-		Slembe
-		Smor
-		Snorresen
-		Solberg
-		Solheim
-		Sorensen
-		Staur
-		Stibolt
-		Strand
-		Strom
-		Sundsby
+		Stensson
 		Sunesson
-		Svendsen
-		Svensen
-		Sverresen
-		Tangen
-		Teiste
-		Thomassen
-		Thommerup
-		Thorsen
-		Torbjornsen
+		Svendsson
+		Thorkildsson
 		Torgilsson
-		Torsteinsen
-		Torvaldsen
-		Tostedlund
-		Tott
-		Tryggvesen
-		Tveit
-		Tygesen
-		Ubbesen
-		Ulfeld
-		Urup
-		Vese
-		Vik
-		Vilhelmsen
+		Tuesson
+		Tygesson
+		Ubbesson
+		Ulfsson
+		Valdemarsson
+		Vermundsson
+		Vilhelmsson
 ;;;bynames
-		av_Agder
-		av_Akershus
-		av_Alesund
-		av_Alstadhaug
-		av_Alstahaug
-		av_Arendal
-		av_Aurlandsvangen
-		av_Austisland
-		av_Avaldsnes
-		av_Bergen
-		av_Bergenshus
-		av_Bjorgvin
-		av_Bo
-		av_Bodo
-		av_Bohuslan
-		av_Bonsnes
-		av_Byneset
-		av_Dale
-		av_Drammen
-		av_Eidfjord
-		av_Eidsberg
-		av_Enebakk
-		av_Faeroyene
-		av_Fjaere
-		av_Fredrikstad
-		av_Fyrilelv
-		av_Gildeskal
-		av_Giske
-		av_Glemmen
-		av_Gran
-		av_Grimstad
-		av_Hadeland
-		av_Halden
-		av_Halogaland
-		av_Hamar
-		av_Hammerfest
-		av_Haug
-		av_Hedemark
-		av_Hedrum
-		av_Heggen
-		av_Herjedalen
-		av_Hobol
-		av_Hoff
-		av_Hole
-		av_Holmestrand
-		av_Honefoss
-		av_Hove
-		av_Hustad
-		av_Hvaler
-		av_Idd
-		av_Jamtland
-		av_Kinn
-		av_Kongsberg
-		av_Kragero
-		av_Krakstad
-		av_Kristiansand
-		av_Kristiansund
-		av_Kvinnherad
-		av_Kviteseid
-		av_Lade
-		av_Larvik
-		av_Lillehammer
-		av_Lunner
-		av_Maere
-		av_Molde
-		av_More
-		av_Moss
-		av_Nannestad
-		av_Naumadal
-		av_Nes
-		av_Nidarholm
-		av_Nidaros
-		av_Norderhov
-		av_Nordfjord
-		av_Notteroy
-		av_Oddernes
-		av_Oppland
-		av_Oslo
-		av_Ostfold
-		av_Ostlandet
-		av_Oyestad
-		av_Porsgrunn
-		av_Ringsaker
-		av_Risor
-		av_Rogaland
-		av_Roros
-		av_Rygge
-		av_Sandefjord
-		av_Sarpsborg
-		av_Skaun
-		av_Skien
-		av_Skiptvet
-		av_Sogn
-		av_Sorbo
-		av_Stange
-		av_Stavanger
-		av_Stiklestad
-		av_Sunnfjord
-		av_Talgje
-		av_Tanum
-		av_Telemark
-		av_Tingelstad
-		av_Tingoyene
-		av_Tingvoll
-		av_Tonsberg
-		av_Trogstad
-		av_Tromoy
-		av_Tromso
-		av_Trondelag
-		av_Trondenes
-		av_Trondheim
-		av_Urstein
-		av_Vadso
-		av_Vaernes
-		av_Valdisholm
-		av_Vardo
-		av_Vestfold
-		av_Vestisland
-		av_Viken
-		av_Voss
-	;norway add more surnames
+		av_Viborg
+		av_Vastergotland
+		av_Vastmanland
+		av_Uppland
+		av_Uppsala
+		av_Sodermanland
+		av_Ostergotland
+		av_Nykobing
+	;sweden add more surnames
 
 	women
-		Ada
 		Agnes
-		Agnete
-		Alfhild
-		Alma
-		Alva
-		Alvilda
-		Amalie
-		Andrea
-		Ane
-		Anita
-		Ann
 		Anna
-		Anne
-		Ase
-		Ashild
-		Asta
-		Astrid
-		Aurora
-		Bente
-		Berit
-		Birgit
-		Bjorg
-		Bodil
-		Borghild
-		Brigida
-		Brita
-		Caroline
+		Asa
+		Argun
+		Benedicta
+		Birgitta
+		Botildis
 		Cecilia
-		Celine
+		Cecilia
+		Cristina
 		Christina
-		Christine
-		Dagmar
-		Dina
-		Dorothea
-		Dorte
-		Edel
-		Eivar
-		Eldrid
-		Eleonora
-		Eline
 		Elisabet
-		Elise
-		Ella
-		Else
-		Emilie
-		Emma
-		Eva
-		Eyja
-		Freia
-		Frida
-		Froydis
-		Gerd
-		Gjertrud
-		Grete
-		Gry
-		Gudrid
-		Gudrun
-		Gunnhild
-		Gunnvar
-		Gunvor
-		Gyrid
-		Haldora
-		Hanna
-		Hanne
-		Hedda
-		Hege
-		Heidi
+		Elisif
+		Estridis
+		Gertrudis
+		Gydha
+		Gyridis
+		Hafridis
+		Hedvigis
 		Helena
-		Helene
 		Helga
-		Henriette
-		Hilde
-		Homlaug
-		Ida
-		Inga
-		Inge
+		Helena
+		Helivigis
+		Hialmborg
+		Holmfridis
 		Ingebjorg
 		Ingeborg
-		Inger
-		Ingjerd
+		Ingeborg
+		Ingeborg
+		Ingegerd
+		Ingegerd
 		Ingrid
-		Ingvild
-		Irene
-		Isabella
-		Iselin
-		Jenny
-		Johanne
-		Jorunn
-		Josefine
-		Julia
-		Julianne
-		Julie
-		Jutta
-		Kaja
-		Kamilla
-		Karen
-		Kari
-		Karin
-		Karoline
+		Ingrid
+		Ingfrid
+		Ingirun
+		Johanna
+		Juliana
 		Katarina
-		Katrine
-		Kirsten
-		Kjellfrid
-		Kjerstin
-		Klara
-		Kristin
+		Katarina
+		Katarina
+		Katarina
+		Kattilo
 		Kristina
-		Kristine
-		Laerke
-		Laila
-		Lene
-		Linda
-		Line
-		Linnea
-		Lis
-		Lisa
-		Liv
-		Live
-		Magda
-		Maja
-		Malin
-		Maren
+		Kristina
+		Kunigundis
+		Lucia
 		Margaret
+		Margareta
+		Margareta
 		Margareta
 		Margret
 		Margrete
-		Mari
-		Maria
-		Marianne
-		Marie
-		Marita
-		Marte
-		Martha
-		Martine
-		Matilde
-		May_Linn
-		Mette
-		Mia
-		Mona
-		Monica
-		Natalie
-		Nina
-		Nora
-		Oda
-		Olga
-		Olivia
-		Pernille
-		Ragna
+		Marda
+		Olaua
+		Radhburgis
+		Ragnhelf
 		Ragnhild
-		Randi
-		Rannveig
-		Rikissa
-		Ronja
-		Rosa
-		Ruth
-		Sandra
-		Sara
-		Selma
-		Sidsel
-		Signe
-		Sigrid
-		Silje
-		Sissel
-		Snofrid
-		Sofia
-		Sofie
-		Solveig
-		Stine
-		Sunniva
-		Svanhild
-		Synnove
-		Teresa
-		Terese
-		Thea
-		Thora
-		Thorborg
-		Thyra
-		Tina
-		Tone
-		Tove
-		Trine
-		Turid
-		Ulrika
-		Unni
-		Valdis
-		Yrsa
-	;norway add more female names
+		Ragnhild
+		Ragnfrid
+		Ragnfrid
+		Sestridis
+		Sigridis
+		Sophia
+		Susanna
+		Tonna
+		Walburgis
+		Oa
+	;sweden add more female names
+		Hedewig
 
 faction: teutonic_order
 
@@ -12168,6 +11680,7 @@ faction: teutonic_order
 		von_Ast
 		von_Babenberg
 		von_Balk
+		von_Ballenstedt
 		von_Bassenheim
 		von_Baysen
 		von_Beffart
@@ -13625,960 +13138,606 @@ faction: lithuania
 faction: kwarezm
 
 	characters
-		A#li#I
+	;hafsid names
+		A#hmad
+		A#li
+		A#mir
+		A#nas
+		A#sad
+		A#ta
+		Abbad
 		Abbas
+		Abdul_Aziz
+		Abdul_Hamid
+		Abdul_Haqq
+		Abdul_Hemid
+		Abdul_Jabbar
+		Abdul_Jalil
+		Abdul_Karim
+		Abdul_Latif
+		Abdul_Malik
+		Abdul_Mumin
 		Abdul_Qadir
-		Abdul_Qasim
-		Abdulaziz
-		Abdulhadhim
-		Abdulhamid
-		Abdulkadir
-		Abdulkerim
-		Abdulla#h
+		Abdul_Rahim
+		Abdul_Rahman
+		Abdul_Salam
+		Abdul_Wahab
+		Abdul_Wahid
+		Abdul_Malik
 		Abdullah
-		Abdullatif
-		Abdulmelik
-		Abdussamed
-		Abedin
-		Abidin
-		Abolfath
-		Abtin
-		Abu_Abdallah
-		Abu_Ali
-		Abu_Da_ud
-		Abu_Hafs
-		Abu_Jafar
-		Abu_Mansur
-		Abu_Najm
-		Abu_Nasr
-		Abu_Nazar
-		Abu_Nizam
-		Abu_Rayhan
-		Abu_Said
-		Abu_Talib
-		Abul_Ala
-		Abul_Fadl
-		Abul_Faraj
-		Abul_Fatah
-		Abul_Fath
-		Abul_Fazl
-		Abul_Mahali
-		Abul_Muzaffar
-		Abul_Qasim
-		Abuzar
-		Afrasyab
-		Afzaladdin
-		Ahmad
-		Ahmed
-		Akhsitan
-		Akin
-		Akinci
-		Aktimur
+		Abu_Ahmad
+		Abu_Bakr
+		Abu_Shu_ayb
+		Abul_Hawari
+		Abul_Zinad
+		Adil
+		Affan
+		Afif
+		Al_Adil
+		Al_Hajjaj
+		Al_Hasan
+		Al_Husayn
+		Al_Mustali
+		Al_Mustansir
+		Al_Mutasim
+		Al_Mutawakkil
+		Al_Nasir
+		Al_Watiq
+		Al_Amir
+		Al_Kamir
+		Al_Musta_li
+		Al_Mustansir
 		Ala
-		Ala_Addin
-		Alahaddin
 		Alaudin
-		Aleb_Arsalan
-		Alemsah
 		Ali
-		Ali_Baba
-		Ali_Quli
-		Ali_Zayn
-		Alqas
+		Amgad
 		Amin
-		Amir
+		Amjad
 		Amr
-		Anush_Tigin
-		Anvar
-		Aparwez
-		Arash
-		Ardalan
-		Ardeshir
-		Ardid
-		Ario
-		Arsalan
-		Arshak
-		Arsham
-		Arslan_Tigin
-		Asad
-		Asadi
-		Asahad
-		Ashrafuddin
-		Asim
-		Atsiz
-		Auhaduddin
-		Avardin
-		Awad
-		Awhad
-		Awhaduddin
+		Anwar
+		Arafah
+		Arwa
+		Ataullah
+		Atiyya
+		Atta
+		Ayman
 		Ayyub
-		Azad
-		Aziz
-		Ba#yram
-		Ba#yram
-		Babak
-		Badil
-		Baha
-		Bahadir
-		Bahadur
-		Bahman
-		Bahram
-		Bahram
-		Bakhtiyar
-		Baktash
-		Barman
-		Barzam
-		Bayazid
-		Bazan
-		Begi
-		Begum
-		Behnam
-		Behzad
-		Berke
-		Bijan
+		Badis
+		Badr
+		Bakr
+		Baqi
+		Bashar
+		Basil
+		Basim
+		Bassam
 		Bilal
-		Bishr
-		Burak
-		Burhanuddin
-		Burna
-		Burzin
-		Burzu
-		Buwayh
-		Cagri
-		Cahid
-		Cakmak
-		Cebrail
-		Celaleddin
-		Cem
-		Cemaluddin
-		Cemil
-		Cenab
-		Chaghri
-		Cihangir
-		Cihangirhan
-		Cuneyd
-		Da#vud
-		Darab
-		Darman
-		Derya
-		Dursun
-		Ebrahim
-		Ebuzer
-		Edhem
-		Ekinchi
-		Eliyas
-		Enes
-		Enver
-		Eraq
-		Eshad
-		Eskandar
-		Esmail
-		Esrafil
-		Eyup
-		Ezzat
-		Faik
-		Fakhreddin
-		Fakih
-		Farbud
-		Fardad
-		Farhad
-		Farhangazar
+		Dawud
+		Dinar
+		Fadl
+		Fahd
+		Farag
+		Faraj
 		Farid
-		Fariduddin
-		Faridun
-		Farrokh
-		Farrokhhormuzd
-		Farrukh
-		Farrukhi
-		Farshad
-		Faruk
-		Farzad
-		Farzam
-		Fatih
-		Fehmi
-		Ferhad
-		Feyzullah
-		Fikret
-		Firuz
-		Fua#d
-		Fuad
-		Ghaznavi
-		Ghiyas
-		Ghiyath
-		Gudarz
-		Gurzan
-		Ha#kan
-		Hafez
+		Faris
+		Farraj
+		Faruq
+		Faysal
+		Fu#ad
+		Furat
+		Ha#mid
+		Hafs
+		Hajib
+		Hajjaj
+		Hakam
 		Hakim
-		Hali#l
-		Halim
-		Hamed
-		Hami#d
-		Hamza#I
-		Hares
+		Hamdun
+		Hamid
+		Hammad
+		Hamza
+		Handala
+		Hani
+		Harit
+		Harun
 		Hasan
-		Hasanak
-		Hayati
+		Hatim
 		Haydar
-		Hayreddin
-		Hazhir
-		Hazrat
-		Heydar
-		Hirad
-		Hirbud
-		Hizir
-		Human
-		Humayun
-		Husayn
-		Huseyin
-		Hushang
-		Husseyn
-		Hutan
+		Haytam
+		Hayyan
+		Hazim
+		Hisham
+		Husain
+		Husam
+		I#lyas
 		Ibrahim
-		Il_Arsla#n
-		Ilyas
-		Inal_Tegin
-		Isa
-		Ishaaq
-		Ishak
+		Idris
+		Ikrima
+		Imad
+		Imad_al_din
+		Imran
+		Ishaq
+		Iskandar
+		Isma_il
 		Ismail
-		Israfil
-		Izzeddin
-		Jaghir
-		Jaha#ngir
-		Jahan
-		Jahangirkhan
-		Jalal
-		Jalal_al_Din
-		Jalaluddin
-		Jamshid
-		Jamshid
-		Jebrail
-		Julugh
-		Junayd
-		Kafiheddin
-		Kamal
-		Kamaluddin
-		Kambiz
-		Kamran
-		Kanan
+		Jabala
+		Jabir
+		Jafar
+		Jala#l
+		Jamal
+		Jawhar
 		Karim
-		Kaveh
-		Kazem
-		Keihavus
-		Keykhosro
-		Khalaf
-		Khalilullah
-		Khaqani
-		Khusraw
-		Khwadja_Ali
-		Khwaju
-		Kiumars
-		Kubadh
-		Kursad
-		Kutalmish
+		Kathir
+		Khaldun
+		Khali#l
+		Khalid
+		Krema
 		Latif
-		Lutf_Ali
-		Lutfi
-		Mahmu#d
-		Majd
-		Majdud
-		Maji#d
-		Majnun
-		Makan
-		Malek
-		Malekshah
+		Ma#hmu#d
+		Mahdi
+		Mahir
+		Majid
+		Makki
 		Malik
-		Malikdad
-		Mansur
-		Manuchehr
-		Manucihr
+		Mansu#r
+		Marwan
+		Marzuq
 		Mas#ud
-		Mazda
-		Mazdak
-		Megabiz
-		Mehmed
-		Mehrab
-		Mehrak
-		Mehran
-		Mehrdad
-		Melik
-		Meliksah
-		Menglih_Giray
-		Meshud
-		Mir_Nimatuhllah
-		Mirak
-		Mohammad
-		Moinuddin
-		Mostafa
-		Muammer
-		Mughatil
+		Maslama
+		Maymun
+		Midhat
+		Miswar
+		Mu#sa
+		Muawiya
+		Muaz
+		Mufarrij
+		Mufawwid
 		Muhammad
-		Muhammed
-		Muhiyudin
-		Muhmin
-		Muhsmmad
-		Muiz_ud_Din
-		Munir
+		Muhannad
+		Muharib
+		Muhsin
+		Muiz
+		Mujahid
+		Mundir
 		Mura#d
-		Musa
-		Musib
-		Musleheddin
-		Mustafa#I
-		Nader
-		Nail
-		Najm
-		Najmeddin
-		Nariman
+		Musab
+		Nabil
+		Nadim
+		Nadir
+		Nahar
+		Naji
+		Najib
+		Najih
 		Naser
-		Nasreddi#n
-		Nezam
-		Nezameddin
-		Niyazi
-		Nizam
-		Nizameddin
-		Nizamuddin
-		Nosart
-		Nuraddin
-		Omar
-		Ormuzd
-		Parsa
-		Pedram
-		Piruz
-		Pishdad
-		Qadir
-		Qasem
-		Qatran
-		Qizil_Arslan
-		Qoli
-		Qutb
-		Qutbeddin
-		Qutbuddin
-		Ra#uf
-		Radburzin
-		Ragib
-		Rahat
-		Rahman
-		Raman
-		Ramaza#n
-		Ramin
+		Nasir
+		Nasr
+		Nizar
+		Qasim
+		Qays
 		Rashid
-		Rauf
-		Recep
-		Resad
-		Reza
-		Ridvan
+		Razin
 		Ridwan
-		Rifat
-		Riza
-		Rostam
-		Ruham
-		Rusdi
-		Rustam
-		Ruzbeh
-		Sa_ed
-		Sa_id
-		Sa_id
-		Saam
-		Saban
-		Saber
-		Sabri
-		Sadiduddin
-		Sadr
-		Safi
-		Safi_ad_din
-		Safieddin
-		Sahdettin
-		Said
-		Saim
-		Salahaddin
-		Salar
-		Saleh
-		Sali#m
-		Salih
-		Salman
-		Sami
-		Sanjar
-		Sebahaddin
-		Sebuktigin
-		Selim
-		Semseddin
-		Sepehr
-		Sevket
-		Seyfeddin
-		Seyyed_Ahmad
-		Seyyed_Ismail
-		Seyyed_Jahafar
-		Seyyed_Muhammad
-		Seyyed_Qasim
-		Shaban
-		Shadman
-		Shahab
-		Shahabuddin
-		Shahbaz
-		Shahin
-		Shahruz
-		Shamhal
-		Shamseddin
-		Shapur
-		Shaykh
-		Sher
-		Shervin
-		Shihabuddin
-		Shiruye
-		Siamak
-		Siavash
-		Sina
-		Sirus
-		Sistani
-		Suat
-		Suhrab
-		Suleyman
-		Suleymanshah
-		Sunqur
-		Taceddin
-		Taham
-		Tahamtan
-		Tahmasp
-		Tahsin
-		Taj
-		Talhat
-		Tastan
-		Tastan
-		Tekish
-		Teymur
-		Teymurtas
-		Thabit
-		Tirdad
-		Tughril
-		Tughrul
-		Turaj
-		Turak
-		Ubayd
+		Riyad
+		Rushd
+		Sa#id
+		Sa#lih
+		Sa#lim
+		Sa#mi
+		Sabah
+		Sad
+		Sadan
+		Sadun
+		Safwan
+		Sahl
+		Saif
+		Saker
+		Sakhr
+		Salah
+		Salah_al_din
+		Salama
+		Samir
+		Sayyid
+		Shakir
+		Sharif
+		Shuayb
+		Siraj
+		Sufyan
+		Suhail
+		Sulaima#n
+		Tabit
+		Taher
+		Tahir
+		Talha
+		Tamim
+		Tammam
+		Tariq
+		Tasfin
+		Tashfin
+		Tasufin
+		Tawfiq
+		Tayyib
+		Ubaydallah
+		Ubaydullah
+		Ukrumah
 		Umar
-		Unsur
+		Umaya
+		Umayya
+		Umayyah
+		Uqba
+		Urwa
+		Usama
 		Uthman
-		Vahid
-		Vahideddin
-		Vatvat
-		Yahkub
-		Yahsi
+		Uways
+		Wadhah
+		Wadih
+		Wael
+		Wahib
+		Wahid
+		Walid
+		Wasil
+		Wasim
 		Yahya
-		Yahya#I
-		Yalbay
-		Yalbay
-		Yamin_ad_Dawlah
 		Yaqub
-		Yasha
-		Yasin
-		Yassar
-		Yavuz
-		Yazdi
+		Yazid
 		Yunes
-		Yusof
+		Yunis
+		Yunus
+		Yusef
 		Yusuf
-		Zafar
-		Zafer
-		Zahed
-		Zahir
-		Zakariya
-		Zarrin_Kolah
-		Zaynuddin
-		Zeinal
-		Ziauddin
-		Ziya
-		Zulfaqar
-		Zulfikhar
-	;kwarezm add more names
+		Zakariyya
+		Zayd
+		Ziyad
+		Zuhayr
+	;hafsids add more names
 
 	surnames
-		A#lp
-		Abdal_Razzaq
-		Abhari
-		Abu_Ali
-		Abu_Bakr
-		Abu_Uthman
-		Abubakr
-		Abusaid
-		Abushahri
-		Adib
-		Afsha#r
-		Ahmadili
-		Al_Azadi
-		Al_Baqir
-		Al_Biruni
-		Al_Burani
-		Al_Daylami
-		Al_Din
-		Al_Dunya
-		Al_Ghazanwi
-		Al_Hafez
-		Al_Hafiz
-		Al_Haramayn
-		Al_Harawi
+	;hafsid surnames
+		Al_Abbasi
+		Al_Aglabi
+		Al_Andalusi
+		Al_Ansari
+		Al_Antaki
+		Al_Arabi
+		Al_Asadi
+		Al_Ashari
+		Al_Attar
+		Al_Ayyubi
+		Al_Bagdadi
+		Al_Balansi
+		Al_Barbari
+		Al_Basri
+		Al_Baytar
+		Al_Bukhari
+		Al_Dabbag
+		Al_Dabbaj
+		Al_Dahiri
+		Al_Dimashqi
+		Al_Faqih
+		Al_Farabi
+		Al_Faradi
+		Al_Farisi
+		Al_Faruq
+		Al_Fatemeyyun
+		Al_Fatih
+		Al_Fatimi
+		Al_Fazari
+		Al_Fesi
+		Al_Fihri
+		Al_Gafiqi
+		Al_Garnati
+		Al_Gassani
+		Al_Gazali
+		Al_Habib
+		Al_Haddad
+		Al_Hadrami
+		Al_Hafid
+		Al_Hajj
+		Al_Hakam
+		Al_Hakim
+		Al_Hamdani
+		Al_Hamdi
+		Al_Hariti
 		Al_Harrani
-		Al_Hasani
-		Al_Hujwiri
-		Al_Husayni
-		Al_Husri
-		Al_Isfizari
-		Al_Jalil
-		Al_Jullabi
-		Al_Kadhim
-		Al_Kalaam
-		Al_Kazim
-		Al_Khashab
-		Al_Khayyami
-		Al_Khwarizmi
-		Al_Mulk
-		Al_Qushairi
+		Al_Hashimi
+		Al_Hawarezmi
+		Al_Hijazi
+		Al_Hilali
+		Al_Homsi
+		Al_Huwwari
+		Al_Idrisi
+		Al_Ifriqi
+		Al_Ilbiri
+		Al_Imam
+		Al_Isbahani
+		Al_Isfahani
+		Al_Ishbili
+		Al_Jahid
+		Al_Jasur
+		Al_Jayyani
+		Al_Jazairi
+		Al_Jilani
+		Al_Khatib
+		Al_Khattab
+		Al_Khawarizmi
+		Al_Khayyam
+		Al_Khayyat
+		Al_Khurasani
+		Al_Kinani
+		Al_Kindi
+		Al_Kutami
+		Al_Lamtuni
+		Al_Magribi
+		Al_Mahdi
+		Al_Majid
+		Al_Maliki
+		Al_Mansur
+		Al_Marrakushi
+		Al_Marrakusi
+		Al_Misri
+		Al_Mubarak
+		Al_Nahwandi
+		Al_Najjar
+		Al_Naqqash
+		Al_Nasir
+		Al_Nassaj
+		Al_Qasim
+		Al_Qayrawani
+		Al_Qaysi
+		Al_Qurashi
+		Al_Qurtubi
+		Al_Rashid
+		Al_Rasid
 		Al_Razi
-		Al_Saaleh
-		Al_Sabbah
-		Al_Sadiq
-		Al_Sanjani
-		Al_Sijistani
-		Al_Sijzi
-		Al_Taqi
-		Al_Ziyar
-		Alabbas
-		Alaziz
-		Alrashid
-		Altayli
-		Amhaq
-		Amini
-		an_Nishapuri
-		Aqa
-		Araki
-		Arbili
-		Ardabili
-		Ardabili
-		Arif
-		Arsalan
-		Arslan
-		Arudi
-		Aruzi
-		As_Sadiq
-		as_Saffar
-		Asjadi
-		Ata
-		Attar
-		Aufi
-		Awfi
-		Ayyar
-		Azraqi
-		Badlisi
-		Baghdadi
-		Baghdadi
-		Bahadir
-		Bahram
-		Bakri
-		Balkhi
-		Baltaci
-		Barani
-		Barkadi
-		Basrei
-		Bayburti
-		Bayhaqi
-		Beg
-		Begum
-		Behbahani
-		Behzad
-		Betlisi
-		Bey
-		Beyhaqi
-		Beyruti
-		Bihzad
-		Bin_Maruf
-		Bishr
-		Bori
-		Bukhari
-		Bukhari
-		Bulani
-		Bulent
-		Bunasr
-		Busti
-		Buwayh
-		Cavus
-		Cendi
-		Chaghani
-		Chishti
-		Ebuh_Bekir
-		Ebusuud
-		Efendi
-		Erbilli
-		Ersoy
-		Erzincani
-		Esfahani
-		Esfandiyari
-		Eshaq
-		Fakhr_ol_Malek
-		Fars
-		Farsi
-		Fazel
-		Ferdowsi
-		Gancali
-		Ganjavi
-		Ganjshakar
-		Gazali
-		Gazi
-		Gharchai
-		Ghazali
-		Ghazi
-		Ghaznavi
-		Ghobajeh
-		Gilani
-		Gilani
-		Gokturk
-		Gokyay
-		Gorgani
-		Gur
-		Gurani
-		Gurgani
-		Halabi
-		Halabi
-		Hamedani
-		Hamzah
-		Hamzeh
-		Han
-		Harashi
-		Harati
-		Hayyan
-		Hemedani
-		Hudayi
-		Inaloglu
-		Jami
-		Jastan
-		Junayd
-		Jurjani
-		Juvayni
-		Juwayni
-		Kabuli
-		Kagan
-		Kagan
-		Kamrani
-		Karamiseni
-		Karkuki
-		Kavus
-		Kazeruni
-		Kerkuki
-		Kermani
-		Keyqubad
-		Khan
-		Khan_Zade
-		Khanum
-		Khaqani
-		Kharaqani
-		Khavarani
-		Khayyam
-		Khazimi
-		Khucendi
-		Khunji
-		Khurasani
-		Khusrow
-		Khwaje
-		Khwarazmshah
-		Kubra
-		Kushani
-		Kutalmi#s
-		Lashkari
-		Leysi
-		Manguberdi
-		Mansur
-		Mansuri
-		Manuchehri
-		Maraghei
-		Mervi
-		Mesri
-		Mihaloglu
-		Mir_i_Miran
-		Mirza
-		Mohammed
-		Morali
-		Mosalla
-		Moshkan
-		Muallem_Zade
-		Muhammad
-		Muhri
-		Muhtasham
-		Mukhtari
-		Musa
-		Museli
-		Musullu
-		Muzaffar
-		Muzaffer
-		Nabati
-		Nadjar
-		Nahavandi
-		Naqqash
-		Narshakhi
-		Nasr
-		Navidi
-		Neyshaburi
-		Oryan
-		Pasa
-		Pasha
-		Pecevi
-		Qabavi
-		Qaffari
-		Qandehari
-		Qarib
-		Qubadiani
-		Quchani
-		Qumi
-		Quzvini
-		Ra#is
-		Radkani
-		Razi
-		Reyi
-		Reyi#I
-		Ru#mi
-		Runi
-		Rustam
-		Ruzbahan
-		Ruzbehan
-		Sa#mi
-		Saadi
-		Sabbah
-		Sabir
-		Safavi
-		Safavi
-		Saffari
-		Sajjad
-		Salman
-		Samani
-		Samarqandi
-		Sami
-		Sayyid
-		Sebuktegin
-		Sendi
-		Sha_baboqlu
-		Shabistari
-		Shahanshah
-		Sharafshah
-		Shervani
-		Sherwani
-		Shihab
-		Shirazi
-		Shirvani
-		Shirvanshah
-		Simjuri
-		Sivasi
-		Solak_zade
-		Sufi
-		Suhrawardi
-		Suri
-		Ta#her
-		Tabrizi
-		Tahir
-		Takahi
-		Tashkandi
-		Tatar
-		Tu#si
-		Turani
-		Tusi
-		Ughuzkhan
-		ul_Abedin
-		Umar
-		Unsuri
-		Ustajalu
-		Uygur
-		Uzbak
-		Vani
-		Walad
-		Yahaqqi
-		Yamani
-		Yinal
-		Zahidi
-		Zand
-		Zandi
-		Zangi#I
-		Zanjani
-		Zarrinkulah
-		Zuhdi
-		Zuhl_Nurain
-		Zulkadiroglu
-		Zuzani
+		Al_Sabbag
+		Al_Safi
+		Al_Sahrawi
+		Al_Saig
+		Al_Samarqandi
+		Al_Sanhaji
+		Al_Sayeg
+		Al_Sayyid
+		Al_Shafii
+		Al_Shami
+		Al_Sharif
+		Al_Shatib
+		Al_Shirazi
+		Al_Sufi
+		Al_Sulami
+		Al_Tabari
+		Al_Talamanki
+		Al_Tamimi
+		Al_Tamini
+		Al_Tarabulsi
+		Al_Tijani
+		Al_Tulaytuli
+		Al_Tunisi
+		Al_Tusi
+		Al_Wahrani
+		Al_Yaqubi
+		Al_Zahrawi
+		Al_Zuhri
+		Al_Abbasi
+		Al_Asamm
+		Al_Attar
+		Al_Balhki
+		Al_Diwanji
+		Al_Fatimiyyun
+		Al_Kattani
+		Al_Khashshab
+		Al_Khawalani
+		Al_Ra_is
+		Al_Sa_igh
 ;;;bynames
+		ibn_Abbad
+		ibn_Abbas
 		ibn_Abdillah
-		ibn_Abi_Taleb
-		ibn_Abolhasan
+		ibn_Abdul_Aziz
+		ibn_Abdul_Malik
+		ibn_Abdul_Mumin
+		ibn_Abdul_Rahman
+		ibn_Abi_Hafs
+		ibn_Abi_Sufyan
+		ibn_Abi_Talib
+		ibn_Affan
+		ibn_Al_Abbas
+		ibn_Al_Aglab
+		ibn_Al_Attar
+		ibn_Al_Baytar
+		ibn_Al_Hafid
+		ibn_Al_Hagg
+		ibn_Al_Hakam
+		ibn_Al_Hasan
+		ibn_Al_Haytam
+		ibn_Al_Husayn
+		ibn_Al_Jazzar
+		ibn_Al_Khatib
+		ibn_Al_Khattab
+		ibn_Al_Khayyat
+		ibn_Al_Mahdi
+		ibn_Al_Mansur
+		ibn_Al_Nafis
+		ibn_Al_Rumiyya
+		ibn_Al_Sabbag
+		ibn_Al_Shatir
+		ibn_Al_Walid
+		ibn_Al_Zahrawi
+		ibn_Al_Zubayr
 		ibn_Ali
-		ibn_Ali_Nadjar
-		ibn_Balkhi
-		ibn_Buyah
-		ibn_Husayn
-		ibn_Il_Arslan
-		ibn_Iskandar
+		ibn_Anas
+		ibn_Ata
+		ibn_Atiyya
+		ibn_Badis
+		ibn_Battuta
+		ibn_Dinar
+		ibn_Faraj
+		ibn_Farraj
+		ibn_Furat
+		ibn_Galib
+		ibn_Hajib
+		ibn_Hamza
+		ibn_Hanbal
+		ibn_Hani
+		ibn_Harun
+		ibn_Hayyan
+		ibn_Hisham
+		ibn_Hud
+		ibn_Ibrahim
+		ibn_Ishaq
+		ibn_Ismail
 		ibn_Jafar
-		ibn_Khusraw
-		ibn_Mahmud
-		ibn_Qabus
-		ibn_Qochar
-		ibn_Qudamah
-		ibn_Qurra
-		ibn_Rushan
-		ibn_Salih
-		ibn_Sebuktegin
-		ibn_Wushmgir
-		ibn_Zakki
-		of_Ardabil
-		of_Ghazni
-		of_Gurgan
-		of_Khiva
-		of_Lahijan
-		of_Maragha
-		of_Ravandi
-		of_Sanjan
-	;kwarezm add more surnames
+		ibn_Joma
+		ibn_Jubayr
+		ibn_Katir
+		ibn_Khaldun
+		ibn_Mahbub
+		ibn_Mandur
+		ibn_Mansur
+		ibn_Marwan
+		ibn_Masud
+		Ibn_Muaway
+		ibn_Muawiya
+		ibn_Mufawwiz
+		ibn_Muhammad
+		ibn_Muhannad
+		ibn_Murad
+		ibn_Musa
+		ibn_Nafa
+		ibn_Nasr
+		ibn_Nusayer
+		ibn_Qasim
+		ibn_Rushd
+		ibn_Sad
+		ibn_Safwan
+		ibn_Salim
+		ibn_Shaban
+		ibn_Sina
+		ibn_Sulaiman
+		ibn_Talakakin
+		ibn_Tashfin
+		ibn_Tifawt
+		ibn_Tufayl
+		ibn_Tumart
+		ibn_Umar
+		ibn_Utman
+		ibn_Yazid
+		ibn_Yunis
+		ibn_Yusuf
+		ibn_Zakariyya
+		ibn_Ziyad
+		ibn_Zuhr
+	;hafsids add more surnames
+		ibn_Al_Muizz
 
 	women
-		A#fife
-		Abrizah
-		Ahu
-		Aida
-		Aisa#I
+	;hafsid female names
+		A#ida
+		Abla
+		Afaf
 		Aisha
-		Alamiyan
-		Anahid
-		Anahita
-		Aram
-		Arezu
-		Asiyah
-		Atiye
-		Azar
-		Azardukht
-		Bahar
-		Baharbanu
-		Banu
-		Behnaz
-		Behnush
-		Bibi_Fatima
-		Bolbol
-		Dabira
-		Delaram
-		Di#na
-		Dinazad
-		Diroste
-		Esmat
-		Farahnaz
-		Farahzad
-		Farangis
-		Farnaz
-		Fateme
-		Fatemeh
+		Alya
+		Amal
+		Amani
+		Amina
+		Amira
+		Arij
+		Arwa
+		Asiya
+		Asma
+		Azza
+		Bahija
+		Bahiyya
+		Baraka
+		Basma
+		Dalal
+		Dorra
+		Dorsaf
+		Dua
+		Duha
+		Eya
+		Fadia
+		Fadila
+		Farah
 		Fatima
-		Feresteh
-		Firuze
-		Ghazala
-		Gowhar
-		Gulna#r
-		Gulnush
-		Gulrukh
-		Gulsa
-		Gulshifte
-		Halime
-		Hani#fe
-		Hannanae
-		Harire
-		Hasti
-		Huchehr
-		Huma
-		Huri
-		Jamile
-		Jauharah
-		Juraira
-		Kadamali
-		Kamand
+		Fatimah
+		Fatin
+		Fayruz
+		Gada
+		Ganiya
+		Hafsa
+		Hafza
+		Haifa
+		Hajar
+		Hala
+		Hamduna
+		Hana
+		Hanan
+		Hiba
+		Hind
+		Ibtisam
+		Inas
+		Ishraq
+		Jalila
+		Jamila
 		Khadija
-		Khorshid
-		Leyla#I
-		Mahd_e_Olia
-		Mahfiru#ze
-		Mahkhatun
-		Mahmalek
-		Mahru
-		Mahsa
-		Mahsati
-		Mahur
-		Manijeh
-		Mansu#re
-		Mariam
+		Khawla
+		Khulud
+		Laila
+		Li#na
+		Lubna
+		Maha
+		Malak
+		Manal
+		Maram
+		Marwa
 		Maryam
-		Maryam
-		Mehraban
-		Mehrangiz
-		Melek
-		Mihan
-		Minu
-		Miriam
-		Muhabbat
-		Mujgan
-		Muni#re
-		Nafise
-		Narges
-		Nasim
-		Nasrin
-		Nayyere
-		Nazi#fe
-		Nazparvar
-		Negar
-		Nilufar
-		Nu#rbanu
-		Nushin
-		Pari
-		Parichehr
-		Parinaz
-		Parivash
-		Pariya
-		Parvin
-		Ra#ziye
-		Rabia
-		Ramesh
-		Roshan
-		Roshanak
-		Ru#hsar
-		Rubab
-		Rudaba
-		Ruqiyye
-		Saba
-		Sadira
-		Saharnaz
-		Salafa
-		Salama
-		Salime
-		Samira
-		Sarv
-		Sayeh
-		Setareh
-		Shahandukht
-		Shaharazad
-		Shaharbanawayh
-		Shahbanu
-		Shahnaz
-		Shahrbanu
-		Shahzanan
-		Shekarpare
-		Shide
-		Shirin
-		Simin
-		Sulafa
-		Sultanzada
-		Sunbul
-		Surayya
-		Susan
-		Susanak
-		Tahmina
-		Tannaz
-		Turanbanu
-		Turandukht
-		Vali#de
-		Yaghma
-		Yasaman
-		Zahra
-		Zayn
-		Zeynab
-	;kwarezm add more female names
+		Maymuna
+		Muhja
+		Muna
+		Munya
+		Nadia
+		Najwa
+		Nawal
+		Nisrin
+		Nu#r
+		Nuzha
+		Olfa
+		Rabi#a
+		Rahma
+		Raja
+		Ramla
+		Randa
+		Ranya
+		Rashida
+		Ri#ma
+		Rihab
+		Rim
+		Sabah
+		Safa
+		Safiya
+		Safiyya
+		Sahar
+		Sahr
+		Salma
+		Salwa
+		Samar
+		Samia
+		Sara
+		Sarra
+		Sayyida
+		Shadia
+		Shams
+		Shayma
+		Suad
+		Suha
+		Suhir
+		Sukayna
+		Sumayya
+		Wafa
+		Wissal
+		Yamina
+		Zarru
+		Zaynab
+		Zubayda
+		Zumurruda
+	;hafsids add more female names
 
 faction: timurids
 
@@ -14704,194 +13863,208 @@ faction: timurids
 		Yaba
 		Yesukai
 	;timurids add more female names
+		Oljath
 
 faction: georgia
 
 	characters
-	;serbia names
-		Aleksandar
-		Arsenije
-		Belo#s
-		Bogdan
-		Bogoje
-		Bogoljub
-		Borimir
-		Boris
-		Borislav
-		Branislav
-		Branko
-		Caslav
-		Damjan
-		Dimitrije
-		Dobrica
-		Dobroslav
-		Dragisa
-		Dragutin
-		Durad
-		Dusan
-		Gojko
-		Ivan
-		Ivica
-		Ivo
-		Jakov
-		Janko
-		Jovan
-		Jugoslav
-		Konstantin
-		Lazar
-		Ljudevit
-		Makarije
-		Manojlo
-		Marinko
-		Marko
-		Matija
-		Mihailo
-		Milisav
-		Milivoje
-		Miloje
-		Milos
-		Milutin
-		Miodrag
-		Mirko
-		Miroslav
-		Mitar
-		Mladen
-		Mutimir
-		Nebojsa
-		Nedeljko
-		Nemanja
-		Nikola
-		Obrad
-		Pavle
-		Pribislav
-		Radi#c
-		Radoje
-		Radoman
-		Rados
-		Radoslav
-		Sava
-		Sima
-		Sinisa
-		Slobodan
-		Spasoje
-		Srbomir
-		Srboslav
-		Stefan
-		Stevan
-		Svetislav
-		Svetolik
-		Svetozar
-		Teodor
-		Tihomir
-		Uro#s
-		Vasilije
-		Vasko
-		Veljko
-		Veselin
-		Vidoje
-		Viseslav
-		Vladimir
-		Vladislav
-		Vlado
-		Vlastimir
-		Vlatko
-		Vojislav
-		Vratko
-		Vujadin
-		Vuk
-		Vukan
-		Vukasin
-		Zdeslav
-		Zivko
-	;serbia add more names
+		Adarnase
+		Akhsitan
+		Aleksandre
+		Amiran
+		Andria
+		Archil
+		Ashot
+		Baadur
+		Badri
+		Bagrat
+		Bagrat_I
+		Bakar
+		Basil
+		Beka
+		Dachi
+		Davit
+		Davit_I
+		Demetre
+		Demna
+		Eprem
+		Ekvtime
+		Erekle
+		Giorgi
+		Giorgi_I
+		Giorgi_II
+		Girshel
+		Grigol
+		Guaram
+		Gubaz
+		Gurgen
+		Iese
+		Ilia
+		Ivane
+		Jadaron
+		Kaixosro
+		Kaxaber
+		Koba
+		Kvirike
+		Lasha
+		Leon
+		Liparit
+		Mamia
+		Manuchehr
+		Mat_e
+		Melkisedek
+		Mirian
+		Onise
+		Otia
+		Paata
+		Papuna
+		Parsman
+		Rati
+		Saba
+		Shergil
+		Sota
+		Sula
+		Svimon
+		Tornike
+		Vaxtang
+		Varaz
+		Varken
+		Zaal
+		Zakaria
+		Zaza
+		Zurab
+		Zviad
+	;georgia add more names
 
 	surnames
-	;serbia surnames
-		Aleksic
-		Brankovic
-		Dobric
-		Ilic
-		Jovanovic
-		Kovacevic
-		Ljubovic
-		Maric
-		Marinkovic
-		Markovic
-		Milic
-		Milosavljevic
-		Nemanjic
-		Nikolic
-		Obradovic
-		Peric
-		Perovic
-		Petakovic
-		Petrovic
-		Radic
-		Radisavljevic
-		Stamenkovic
-		Zarkovic
-		Zoric
+		Abazadze
+		Abuletisdze
+		Abuserisdze
+		Arishiani
+		Aspanisdze
+		Bagrationi
+		Bagvashi
+		Bakurianisdze
+		Baramisdze
+		Bocosdze
+		Dadiani
+		Dadiskeliani
+		Donauri
+		Dukisdze
+		Gelovani
+		Grigolisdze
+		Inasaradze
+		Irubakidze
+		Japaridze
+		Kacibaidze
+		Kaxaberisdze
+		Kobulisdze
+		Kolonkelisdze
+		Marushisdze
+		Maxatlisdze
+		Mikeladze
+		Mxeidze
+		Nasidze
+		Ratishvili
+		Samdzivari
+		Shervashidze
+		Vardanisdze
 ;;;bynames
-		of_Atanas
-		of_Beograd
-		of_Despotovac
-		of_Drina
-		of_Golubac
-		of_Hum
-		of_Jelec
-		of_Kladovo
-		of_Kraljevo
-		of_Krusevac
-		of_Petrovaradin
-		of_Pirot
-		of_Prizren
-		of_Raska
-		of_Ravanica
-		of_Sjenica
-		of_Smederevo
-		of_Soko_Grad
-		of_Stalac
-		of_Trstenik
-		of_Vidin_Grad
-		of_Venezia
-		of_Vranje
-		of_Vrsac
-		of_Zeta
-		of_Zrnov
-		of_Zvecan
-	;serbia add more surnames
+		Apxazi
+		Axalcixeli
+		Bicvinteli
+		Cixisjvareli
+		Corcaneli
+		Cqondideli
+		Egriseli
+		Gageli
+		Gamrekeli
+		Garejeli
+		Gisheli
+		Gurieli
+		Gurkleli
+		Jaqeli
+		Kaxeli
+		Kldekareli
+		Korinteli
+		Kutaeli
+		Martqopeli
+		Mcxeteli
+		Mesxeli
+		Mxargrdzeli
+		Odisheli
+		Orbeli
+		Panaskerteli
+		Pxoveli
+		Rustaveli
+		Samcxeli
+		Samshvildeli
+		Setieli
+		Surameli
+		Svani
+		Takvereli
+		Taoeli
+		Tbeli
+		Telaveli
+		Tianeli
+		Tmogveli
+		Toreli
+		Tpileli
+		Tuxareli
+		Urbneli
+		Xornabujeli
+	;georgia add more surnames
 
 	women
-	;serbia female names
-		Aleksandra
 		Ana
-		Dragana
-		Dragica
-		Dusica
-		Gordana
-		Ivana
-		Jelena
-		Jovanka
-		Komnena
-		Ljubica
-		Mara
-		Marijana
-		Milica
-		Natalija
-		Natasa
-		Olga
-		Radmila
-		Radojka
-		Snezana
-		Svetlana
-	;serbia add more female names
+		Asmat
+		Babale
+		Borena
+		Burdukhan
+		Dali
+		Darejan
+		Eka
+		Elena_I
+		Eliso
+		Eter
+		Gvanca
+		Ia
+		Ketevan
+		Mariam
+		Natela
+		Natia
+		Nestan
+		Nino
+		Nuca
+		Pati
+		Rusudan
+		RusudanI
+		Salome
+		Sidonia
+		Sopio
+		Sorena
+		Tamar
+		Tamta
+		Tatia
+		Tekla
+		Teona
+		Tinantin
+		Vardo
+	;georgia add more female names
+		Theodora
 
 faction: dummies
 
 	characters
 		Ivan
-		Kalman
-		Peter
+		Kaloyan
+		Petar
+		Mindaugas
+		Daumantas
+		Ramvaldas
+		Boril
+		Vladislav
+		Dobromir
 		Temporary
 
 	women
@@ -14926,11 +14099,14 @@ faction: dummies
 		Novhorod_Siverskyi_Fort
 		Poltava_Fort
 		Moscow_Fort
+		Rostov_Fort
 		Yaroslavl_Fort
 		Suzdal_Fort
 		Ryazan_Fort
+		Murom_Fort
 		Kasimov_Fort
 		Caffa_Fort
+		Chersonesos_Fort
 		Sharukan_Fort
 		Khlynov_Fort
 		Kazan_Fort
@@ -14965,9 +14141,11 @@ faction: dummies
 		Trier_Fort
 		Troyes_Fort
 		Le_Mans_Fort
+		Rouen_Fort
 		Marseille_Fort
 	 ;BALKANS
 		Zagreb_Fort
+		Knin_Fort
 		Beograd_Fort
 		Athens_Fort
 		Scopia_Fort
@@ -14977,11 +14155,13 @@ faction: dummies
 		Yambol_Fort
 	 ;ITALY
 		Ajaccio_Fort
+		Pisa_Fort
 		Turin_Fort
 		Trieste_Fort
 		Tarento_Fort
 		Syracusa_Fort
 		Luogosanto_Fort
+		Messina_Fort
 	 ;IBERIA
 		Salamanca_Fort
 		Huesca_Fort
@@ -15007,12 +14187,14 @@ faction: dummies
 		Ganja_Fort
 		Derbent_Fort
 		Yerevan_Fort
+		Van_Fort
 	 ;ANATOLIA
 		Tarsus_Fort
 		Adana_Fort
 		Philadelphia_Fort
 		Rhodes_Fort
 		Marmaris_Fort
+		Sivas_Fort
 	 ;LEVANT
 		Tartus_Fort
 		Krak_de_Chevalier_Fort
@@ -15023,6 +14205,7 @@ faction: dummies
 		Arish_Fort
 	 ;MESOPOTAMIA
 		Al_Mayadin_Fort
+		Wasit_Fort
 	 ;ARABIA
 		Tayma_Fort
 		Medina_Fort
@@ -15033,6 +14216,8 @@ faction: dummies
 		Qaen_Fort
 		Rudkhan_Fort
 		Hamadan_Fort
+		Urgench_Fort
+		Konjikala_Fort
 	 ;EMPTY LAND
 		Turku_Fort
 

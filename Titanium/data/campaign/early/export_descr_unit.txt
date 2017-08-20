@@ -2,6 +2,7 @@
 ;Edited by Melooo182: Dec-2014, RC2.0
 ;K/T Polearm and Axes Rebalance
 ;Charge Bonus Reduction Oct-2015
+;Marius Rebalance Feb-2016
 ;Early Era
 ;
 ; Medieval 2 Total War Unit Details spreadsheet-generated unit descriptions
@@ -552,7 +553,7 @@ stat_pri         3, 11, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
-stat_pri_armour  5, 6, 5, metal ; 
+stat_pri_armour  6, 6, 5, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      -1, -2, -3, -1 
@@ -589,7 +590,7 @@ stat_pri         6, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         10, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  10, 5, 5, metal ; 
+stat_pri_armour  11, 5, 5, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      -1, -2, -3, -1 
@@ -735,7 +736,7 @@ stat_pri         6, 17, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         11, 5, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
-stat_pri_armour  15, 5, 3, metal
+stat_pri_armour  15, 7, 3, metal ; Marius +2 def
 stat_sec_armour  0, 0, flesh
 stat_heat        11
 stat_ground      -1, -2, -3, -1 
@@ -772,7 +773,7 @@ stat_pri         8, 17, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         13, 5, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  15, 5, 3, metal
+stat_pri_armour  16, 5, 3, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      -1, -2, -3, -1 
@@ -846,7 +847,7 @@ stat_pri         3, 13, no, 0, 0, melee, melee_blade, piercing, spear, 105, 1
 stat_pri_attr    no
 stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
 stat_sec_attr    ap
-stat_pri_armour  17, 4, 3, metal
+stat_pri_armour  17, 5, 3, metal ; Marius +1 def
 stat_sec_armour  0, 0, flesh
 stat_heat        16
 stat_ground      -2, -3, -4, -1 
@@ -941,7 +942,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Italian_Cavalry_Militia, 24, 0, 1
+soldier          Italian_Cavalry_Militia, 20, 0, 1 ; Marius -4 units
 officer          northern_captain_early_flag
 mount            medium horse lancer
 mount_effect     elephant -4, camel -4 
@@ -953,7 +954,7 @@ stat_pri         2, 15, no, 0, 0, melee, melee_blade, piercing, spear, 120, 1
 stat_pri_attr    no
 stat_sec         4, 6, no, 0, 0, melee, melee_blade, piercing, sword, 75, 1
 stat_sec_attr    no
-stat_pri_armour  6, 3, 3, metal ; 
+stat_pri_armour  9, 3, 3, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      -1, -2, -3, -1 
@@ -977,7 +978,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Druzhina, 24, 0, 1
+soldier          Druzhina, 20, 0, 1 ; Marius -4 units
 officer          russia_captain_early_flag
 mount            early heavy horse charger
 mount_effect     elephant -4, camel -4 
@@ -988,7 +989,7 @@ stat_pri         6, 5, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
 stat_sec         7, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_sec_attr    no ; ap ; 1H axe
-stat_pri_armour  4, 4, 3, metal ; 
+stat_pri_armour  9, 8, 3, metal ; Marius +5 arm +4 def
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      -1, -2, -3, 0 
@@ -1024,7 +1025,7 @@ stat_pri         1, 6, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  5, 1, 4, metal 
+stat_pri_armour  9, 1, 4, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      -1, -2, -3, 0 
@@ -1096,7 +1097,7 @@ stat_pri         5, 15, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         10, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  8, 4, 5, metal
+stat_pri_armour  9, 4, 5, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      -1, -2, -3, 0 
@@ -1169,7 +1170,7 @@ stat_pri         1, 17, no, 0, 0, melee, melee_blade, piercing, spear, 120, 1
 stat_pri_attr    no
 stat_sec         6, 5, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_sec_attr    no
-stat_pri_armour  6, 2, 5, metal
+stat_pri_armour  9, 2, 5, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        14
 stat_ground      -1, -2, -3, 0 
@@ -1237,7 +1238,7 @@ attributes       sea_faring, hide_forest, can_withdraw, can_formed_charge, frigh
 move_speed_mod	 0.85
 formation        2, 4.4, 3, 6, 2, square ;  ; , wedge
 stat_health      1, 3
-stat_pri         6, 3, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
+stat_pri         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1 ; Marius -1 att
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -1286,7 +1287,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 555, 0, 60, 50, 555, 1, 100
 armour_ug_levels 11, 17, 22, 37
-armour_ug_models NE_Bodyguard, NE_Bodyguard, NE_Bodyguard_ug1, NE_Bodyguard_ug1
+armour_ug_models Mercenary_Frankish_Knights, NE_Bodyguard, NE_Bodyguard_ug1, NE_Bodyguard_ug1
 ownership        england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem
 era 0            england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem
 era 1            england, scotland, france, hre, denmark, poland, hungary, slave , norway, jerusalem
@@ -1323,7 +1324,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 555, 0, 60, 50, 555, 1, 100
 armour_ug_levels 11, 17, 22, 37
-armour_ug_models SE_Bodyguard, SE_Bodyguard, SE_Bodyguard_ug1, SE_Bodyguard_ug1
+armour_ug_models Mercenary_Frankish_Knights, SE_Bodyguard, SE_Bodyguard_ug1, SE_Bodyguard_ug1
 ownership        spain, aragon, milan, venice, papal_states, sicily
 era 0            spain, aragon, milan, venice, papal_states, sicily
 era 1            spain, aragon, milan, venice, papal_states, sicily
@@ -1419,13 +1420,13 @@ mount            order mailed horse2 brawler lancer
 mount_effect     elephant -4, camel -4 
 attributes       sea_faring, hide_forest, hardy, can_withdraw, can_formed_charge, frighten_foot, knight, command
 move_speed_mod	 1.0
-formation        1.5, 4.4, 2.5, 6, 2, square ;  ; , wedge
+formation        1.5, 4.4, 2.5, 6, 2, square,
 stat_health      1, 3
 stat_pri         7, 17, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         12, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; 4+6+2+1-1
 stat_sec_attr    no
-stat_pri_armour  11, 4, 5, metal ; 5+2+1-1-3
+stat_pri_armour  12, 4, 5, metal ; 5+2+1-1-3 Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        11
 stat_ground      -2, -3, -4, -1 
@@ -1464,7 +1465,7 @@ stat_pri         5, 17, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         11, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1 ; 5+6+1-1
 stat_sec_attr    no
-stat_pri_armour  11, 7, 5, metal ; 5+2+1-1
+stat_pri_armour  10, 7, 5, metal ; 5+2+1-1 Marius -1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        12
 stat_ground      -2, -3, -4, -1 
@@ -1503,7 +1504,7 @@ stat_pri         6, 17, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         11, 5, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; 4+6+1-1+1
 stat_sec_attr    no
-stat_pri_armour  9, 6, 5, metal ; 
+stat_pri_armour  10, 6, 5, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      -2, -2, -5, -3 
@@ -1529,7 +1530,7 @@ class            light
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Merchant_Cavalry_Militia, 24, 0, 1
+soldier          Merchant_Cavalry_Militia, 20, 0, 1 ; Marius -4 units
 officer          northern_captain_early_flag
 mount            medium horse charger brawler
 mount_effect     elephant -4, camel -4 
@@ -1541,7 +1542,7 @@ stat_pri         6, 6, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  6, 3, 4, metal ; 
+stat_pri_armour  10, 3, 4, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        13
 stat_ground      -1, -2, -3, -1 
@@ -1716,7 +1717,7 @@ stat_pri         6, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         10, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  7, 5, 5, metal ; 
+stat_pri_armour  8, 5, 5, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      -1, -2, -3, -1 
@@ -1884,7 +1885,7 @@ voice_type       Light
 accent         East_European
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          alan_aldary, 32, 0, 1
+soldier          alan_aldary, 32, 0, 1 ; Marius -8 units
 mount            early heavy horse lancer charger
 mount_effect     elephant -4, camel -4 
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, can_formed_charge, frighten_foot, mercenary_unit
@@ -1894,7 +1895,7 @@ stat_pri         6, 7, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
 stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  5, 6, 3, metal
+stat_pri_armour  9, 6, 3, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      -1, -2, -4, -1
@@ -1960,7 +1961,7 @@ attributes       sea_faring, hide_forest, can_withdraw, cantabrian_circle, cross
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         7, 5, average_mounted_light_crossbow_bolt, 100, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         7, 5, average_mounted_light_crossbow_bolt, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         4, 5, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1 ; light
 stat_sec_attr    no
@@ -1995,7 +1996,7 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, can_withdraw, foot_javelinmen, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
-stat_pri         10, 1, militia_javelin, 50, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         10, 1, militia_javelin, 60, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area, thrown
 stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
@@ -2031,7 +2032,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 3
-stat_pri         5, 5, superior_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, superior_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +30 ammo
 stat_pri_attr    area
 stat_sec         6, 5, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
@@ -2065,7 +2066,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 3
-stat_pri         5, 5, superior_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, superior_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +30 ammo
 stat_pri_attr    no
 stat_sec         3, 5, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
 stat_sec_attr    ap
@@ -2101,7 +2102,7 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers, cantabria
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 3
-stat_pri         5, 5, superior_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, superior_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +30 ammo
 stat_pri_attr    area
 stat_sec         6, 5, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light
 stat_sec_attr    no
@@ -2136,7 +2137,7 @@ mount_effect     elephant -4, camel -4
 attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, can_formed_charge, frighten_foot, cantabrian_circle, free_upkeep_unit, command
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 5, superior_mounted_missile_composite_arrow, 180, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 5, superior_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att -60 ammo
 stat_pri_attr    area
 stat_sec         8, 5, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
@@ -2172,7 +2173,7 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers, cantabria
 move_speed_mod	 1.05
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         1, 6, average_mounted_missile_arrow, 120, 55, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 6, average_mounted_missile_arrow, 110, 55, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +1 att -10 ammo
 stat_pri_attr    area
 stat_sec         4, 6, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_sec_attr    no
@@ -2201,7 +2202,7 @@ class            skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Polish_Shooters, 24, 0, 1
+soldier          Polish_Shooters, 20, 0, 1 ; Marius -4 units
 officer          northern_captain_early_flag
 mount            medium horse HA
 mount_effect     elephant -4, camel -4 
@@ -2209,11 +2210,11 @@ attributes       sea_faring, hide_forest, can_withdraw, cantabrian_circle, cross
 move_speed_mod	 1.05
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         7, 5, average_mounted_light_crossbow_bolt, 100, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         7, 5, average_mounted_light_crossbow_bolt, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
-stat_pri_armour  3, 0, 0, leather ;slung shield +1 armour ;
+stat_pri_armour  3, 5, 0, leather ;slung shield +1 armour ; Marius +5 def
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      -1, -2, -3, 0 
@@ -2246,7 +2247,7 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers, cantabria
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 2
-stat_pri         2, 5, average_mounted_arrow, 80, 55, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, average_mounted_arrow, 110, 55, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    no
 stat_sec         4, 5, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -2280,7 +2281,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
-stat_pri         1, 1, peasant_arrow, 80, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         1, 1, peasant_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +40 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -2299,6 +2300,8 @@ ownership        england, norway, france, hre, denmark, spain, aragon, milan, ve
 era 0            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
 era 1            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
 era 2            england, norway, france, hre, denmark, spain, aragon, milan, venice, papal_states, scotland, teutonic_order, jerusalem, sicily
+info_pic_dir	 Peasants
+card_pic_dir	 Peasants
 recruit_priority_offset    -20 
 
 
@@ -2314,7 +2317,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
-stat_pri         1, 1, peasant_arrow, 80, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         1, 1, peasant_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +40 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
@@ -2348,7 +2351,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, stakes, stakes, mercenary_unit, free_upkeep_unit, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
-stat_pri         5, 1, superior_missile_longbow_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 1, superior_missile_longbow_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_sec_attr    ap
@@ -2413,7 +2416,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         2, 1, militia_arrow, 100, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 1, militia_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
@@ -2480,7 +2483,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, crossbow, free_upkeep_unit
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 1
-stat_pri         6, 1, peasant_light_crossbow_bolt, 85, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         6, 1, peasant_light_crossbow_bolt, 130, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +45 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -2514,7 +2517,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, crossbow
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         8, 2, average_crossbow_bolt, 120, 25, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         8, 2, average_crossbow_bolt, 140, 25, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
@@ -2548,7 +2551,7 @@ attributes       sea_faring, hide_forest, can_withdraw, crossbow
 move_speed_mod	 0.8
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         10, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0,1
+stat_pri         10, 2, average_heavy_crossbow_bolt, 190, 20, missile, missile_mechanical, piercing, none, 0,1 ; Marius 50 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
@@ -2582,7 +2585,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, crossb
 move_speed_mod	 0.8
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         10, 2, militia_heavy_crossbow_bolt, 135, 20, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         8, 2, militia_heavy_crossbow_bolt, 180, 20, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att + 45 ammo
 stat_pri_attr    area
 stat_sec         2, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
@@ -2616,7 +2619,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, crossbow, command
 move_speed_mod	 0.8
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         11, 4, elite_heavy_crossbow_bolt, 150, 20, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         11, 4, elite_heavy_crossbow_bolt, 200, 20, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +50 ammo
 stat_pri_attr    area
 stat_sec         5, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
@@ -2650,7 +2653,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, crossb
 move_speed_mod	 0.8
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         10, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         10, 2, average_heavy_crossbow_bolt, 190, 20, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +50 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
@@ -2712,7 +2715,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, crossbow
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 1
-stat_pri         7, 1, peasant_militia_light_crossbow_bolt, 100, 25, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         7, 1, peasant_militia_light_crossbow_bolt, 130, 25, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -2744,7 +2747,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         5, 2, superior_composite_arrow, 150, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         4, 2, superior_composite_arrow, 160, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att +10 ammo
 stat_pri_attr    area
 stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
@@ -2772,16 +2775,16 @@ class            missile
 voice_type       Heavy
 banner faction   main_missile
 banner holy      crusade
-soldier          Venetian_Archers, 60, 0, 1.05
+soldier          Venetian_Archers, 48, 0, 1.05 ; Marius -12 units
 officer          Venetian_Heavy_Infantry
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, stakes, stakes, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
-stat_pri         6, 2, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 2, superior_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att -10 ammo
 stat_pri_attr    area
 stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
-stat_pri_armour  7, 5, 0, metal
+stat_pri_armour  11, 5, 0, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      0, -2, 2, -1 
@@ -2811,7 +2814,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
-stat_pri         1, 1, peasant_arrow, 80, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         1, 1, peasant_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +40 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -2845,7 +2848,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
-stat_pri         1, 1, peasant_militia_arrow, 90, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         1, 1, peasant_militia_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -2876,7 +2879,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, crossbow
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 1
-stat_pri         7, 1, peasant_militia_light_crossbow_bolt, 100, 25, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         7, 1, peasant_militia_light_crossbow_bolt, 130, 25, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1 ; light sword
 stat_sec_attr    no
@@ -2908,7 +2911,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         3, 2, average_war_arrow, 120, 35, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 2, average_war_arrow, 130, 35, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
@@ -2943,7 +2946,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, stakes, stakes, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         3, 2, average_war_arrow, 120, 35, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 2, average_war_arrow, 130, 35, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
@@ -2977,11 +2980,11 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, stakes, stakes, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         3, 2, average_war_arrow, 120, 35, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 2, average_war_arrow, 130, 35, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
-stat_pri_armour  2, 6, 3, leather
+stat_pri_armour  3, 6, 3, leather ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      1, -1, 3, 2 
@@ -3012,7 +3015,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, stakes, stakes, foot_archers, mercenary_unit
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 1, superior_missile_longbow_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 1, superior_missile_longbow_arrow, 210, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 15, 1
 stat_sec_attr    no
@@ -3045,7 +3048,7 @@ attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, crossbow
 move_speed_mod	 0.8
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         10, 1, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         10, 1, average_heavy_crossbow_bolt, 190, 20, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +50 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
@@ -3077,7 +3080,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, mercenary_unit, foot_archers, stakes, stakes, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 2, superior_missile_longbow_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 2, superior_missile_longbow_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area
 stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
@@ -3141,7 +3144,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, crossbow
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         8, 1, average_crossbow_bolt, 120, 25, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         8, 1, average_crossbow_bolt, 160, 25, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +40 ammo
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
@@ -3173,7 +3176,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, mercenary_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         2, 1, militia_arrow, 100, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 1, militia_arrow, 130, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -3199,7 +3202,7 @@ class            light
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
-soldier          Town_Militia, 80, 0, 0.75, 0.5
+soldier          Town_Militia, 100, 0, 0.75, 0.5 ; Marius +20 units
 officer          northern_captain
 mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, peasant, free_upkeep_unit
@@ -3236,7 +3239,7 @@ class            light
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
-soldier          Southern_Peasants, 80, 0, 0.75, 0.5
+soldier          Southern_Peasants, 100, 0, 0.75, 0.5 ; Marius +20 units
 officer          northern_captain
 mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, peasant, free_upkeep_unit
@@ -3351,7 +3354,7 @@ stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 6, 4, flesh
+stat_pri_armour  0, 8, 4, flesh ; Marius +2 def
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      1, -1, 3, 2 
@@ -3380,7 +3383,7 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, foot_javelinmen, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
-stat_pri         11, 2, average_javelin, 55, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         11, 2, average_javelin, 60, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius +5 ammo
 stat_pri_attr    area, thrown
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
@@ -3414,7 +3417,7 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, foot_javelinmen, free_upkeep_unit
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
-stat_pri         12, 3, superior_javelin, 60, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         12, 3, superior_javelin, 65, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius +5 ammo
 stat_pri_attr    area, thrown
 stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
@@ -3448,7 +3451,7 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, foot_javelinmen, hide_anywhere, command
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
-stat_pri         14, 4, elite_javelin, 65, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         12, 4, elite_javelin, 65, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius -2 att
 stat_pri_attr    area, thrown
 stat_sec         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
@@ -3513,7 +3516,7 @@ voice_type       Light
 accent         East_European
 banner faction   main_infantry
 banner holy      crusade
-soldier          EE_Town_Militia, 80, 0, 0.75, 0.5 
+soldier          EE_Town_Militia, 100, 0, 0.75, 0.5 ; Marius +20 units
 officer          northern_captain
 mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, peasant, free_upkeep_unit
@@ -3593,7 +3596,7 @@ stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 2, 6, flesh ; shield -1
+stat_pri_armour  2, 2, 6, flesh ; shield -1 Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      1, -1, 3, 1 
@@ -3658,7 +3661,7 @@ mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 1
-stat_pri         5, 2, no, 0, 0, melee, melee_blade, slashing, axe, 150, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, slashing, axe, 150, 1 ; Marius +5 att
 stat_pri_attr    no ; ap ; Polearm Rebalance (crude poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -3694,7 +3697,7 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, foot_javelinmen
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
-stat_pri         10, 1, militia_javelin, 50, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         10, 1, militia_javelin, 60, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area, thrown
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -3727,7 +3730,7 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, foot_javelinmen, mercenary_unit
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 2
-stat_pri         14, 3, elite_javelin, 65, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         12, 3, elite_javelin, 65, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius -2 att
 stat_pri_attr    area, thrown
 stat_sec         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
 stat_sec_attr    light_spear
@@ -3790,7 +3793,7 @@ voice_type       Light
 accent         English
 banner faction   main_infantry
 banner holy      crusade
-soldier          Pilgrims, 60, 0, 0.7 
+soldier          Pilgrims, 100, 0, 0.7 ; Marius +40 units
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit, disband_1
 formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 0
@@ -3826,7 +3829,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, is_peasant, crusading_unit, disband_1
 formation        1.4, 1.4, 2.8, 2.8, 5, square
 stat_health      1, 1
-stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1 ; Marius -2 att
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4031,7 +4034,7 @@ class            spearmen
 voice_type       Light
 banner faction   main_spear
 banner holy      crusade
-soldier          Spear_Militia, 60, 0, 0.95, 0.30
+soldier          Spear_Militia, 80, 0, 0.95, 0.30 ; Marius +20 units
 officer          northern_captain
 mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
@@ -4042,7 +4045,7 @@ stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 1, 5, flesh ; shield -1
+stat_pri_armour  2, 1, 5, flesh ; shield -1 Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      1, -1, 3, 0 
@@ -4100,7 +4103,7 @@ class            spearmen
 voice_type       Heavy
 banner faction   main_spear
 banner holy      crusade
-soldier          Heavy_Pike_Militia, 100, 0, 1.75
+soldier          Heavy_Pike_Militia, 40, 0, 1.75 ; Marius -60 units
 officer          northern_captain
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -4109,11 +4112,11 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, pike, 
 move_speed_mod	 0.65
 formation        1.2, 1.5, 1.2, 1.5, 10, square, phalanx ; formation        1.3, 0, 2.0, 2.0, 8, square, phalanx
 stat_health      1, 1
-stat_pri         1, 2, no, 0, 0, melee, melee_blade, piercing, spear, 120, 1
+stat_pri         3, 2, no, 0, 0, melee, melee_blade, piercing, spear, 120, 1 ; Marius +2 att
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  11, 0, 0, metal
+stat_pri_armour  16, 2, 0, metal ; Marius +5 arm +2 def
 stat_sec_armour  0, 0, flesh
 stat_heat        15
 stat_ground      -2, -3, -1, 0 
@@ -4137,7 +4140,7 @@ voice_type       Light
 accent         East_European
 banner faction   main_spear
 banner holy      crusade
-soldier          EE_Spear_Militia, 60, 0, 0.9, 0.30
+soldier          EE_Spear_Militia, 80, 0, 0.9, 0.30 ; Marius +20 units
 officer          Northern_captain
 mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
@@ -4148,7 +4151,7 @@ stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 1, 5, flesh ; shield -1
+stat_pri_armour  2, 1, 5, flesh ; shield -1 Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      1, -1, 3, 0 
@@ -4250,7 +4253,7 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.8
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         1, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1 ; Marius +1 att
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4353,7 +4356,7 @@ voice_type       Heavy
 accent         German
 banner faction   main_spear
 banner holy      crusade
-soldier          Swiss_Pikemen, 100, 0, 1.425
+soldier          Swiss_Pikemen, 80, 0, 1.425 ; Marius -20 units
 officer          swiss_guard
 mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, pike, start_phalanxing, mercenary_unit, frighten_mounted, frighten_foot, command
@@ -4363,9 +4366,9 @@ stat_health      1, 1
 stat_pri         7, 3, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-;stat_sec	 6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1
+;stat_sec	 6, 4, no, 0, 0, melee, melee_blade, piercing, sword, 0, 1 ; Marius +2 cha
 stat_sec_attr    no
-stat_pri_armour  5, 2, 0, flesh ; 
+stat_pri_armour  5, 6, 0, flesh ; Marius +4 def
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      0, -1, 1, 1 
@@ -4422,7 +4425,7 @@ voice_type       Light
 accent         French
 banner faction   main_spear
 banner holy      crusade
-soldier          Crusader_Sergeants, 60, 0, 1, 0.30
+soldier          Crusader_Sergeants, 48, 0, 1, 0.30 ; Marius -12 units
 officer          northern_captain
 mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, crusading_unit, disband_2
@@ -4433,7 +4436,7 @@ stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  4, 3, 7, metal ; 
+stat_pri_armour  9, 3, 7, metal ; Marius +5 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      1, -1, 3, 0 
@@ -4455,7 +4458,7 @@ class            spearmen
 voice_type       Heavy
 banner faction   main_spear
 banner holy      crusade
-soldier          Noble_Pikemen, 60, 0, 1.8
+soldier          Noble_Pikemen, 40, 0, 1.8 ; Marius -20 units
 officer          northern_captain
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -4468,7 +4471,7 @@ stat_pri         5, 3, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    spear, long_pike
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  13, 1, 0, metal
+stat_pri_armour  18, 4, 0, metal ; Marius +5 arm +3 def
 stat_sec_armour  0, 0, flesh
 stat_heat        11
 stat_ground      -2, -3, -1, 0 
@@ -4560,7 +4563,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          heavy_billmen, 60, 0, 1.725, 0.5
+soldier          heavy_billmen, 48, 0, 1.725, 0.5 ; Marius -12 units
 officer          northern_captain
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -4572,7 +4575,7 @@ stat_pri         10, 3, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (billhook)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  8, 5, 0, metal
+stat_pri_armour  8, 8, 0, metal ; Marius +3 def
 stat_sec_armour  0, 0, flesh
 stat_heat        12
 stat_ground      -1, -3, 0, -1 
@@ -4637,11 +4640,11 @@ attributes       sea_faring, hide_forest, can_withdraw, start_phalanxing
 move_speed_mod	 0.70
 formation        1.2, 1.2, 2.4, 2.4, 5, phalanx, square
 stat_health      1, 1
-stat_pri         14, 3, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, piercing, axe, 120, 1 ; Marius -2 att
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  4, 7, 0, metal ; 
+stat_pri_armour  5, 7, 0, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      0, -2, 1, 0 
@@ -4664,7 +4667,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          Zweihander, 60, 0, 1.325, 0.5
+soldier          Zweihander, 48, 0, 1.325, 0.5 ; Marius -12 units
 officer          northern_captain
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -4676,7 +4679,7 @@ stat_pri         10, 3, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  8, 9, 0, metal 
+stat_pri_armour  11, 9, 0, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      0, -2, 2, 0 
@@ -4776,7 +4779,7 @@ stat_pri         11, 3, no, 0, 0, melee, melee_blade, slashing, axe, 120, 1
 stat_pri_attr    no ; ap ; Polearm Rebalance (poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  2, 4, 0, flesh
+stat_pri_armour  4, 4, 0, flesh ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      1, -1, 2, 1 
@@ -4842,7 +4845,7 @@ stat_pri         7, 3, no, 0, 0, melee, melee_blade, piercing, sword, 105, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  6, 7, 0, metal
+stat_pri_armour  9, 7, 0, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        12
 stat_ground      0, -2, 1, 1 
@@ -4945,7 +4948,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; warhammer
+stat_pri         3, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; warhammer ; Marius +1 att
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -4972,18 +4975,18 @@ class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          Berdiche_Axemen, 60, 0, 1.1875, 0.5
+soldier          Berdiche_Axemen, 48, 0, 1.1875, 0.5 ; Marius -12 units
 officer          northern_captain
 officer          russia_captain_early_flag
 mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         13, 3, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 ; Marius -1 att
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  7, 7, 0, metal ;, +1 slung shield
+stat_pri_armour  11, 7, 0, metal ;, +1 slung shield ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      0, -2, 1, 0 
@@ -5148,17 +5151,17 @@ class            spearmen
 voice_type       Light
 banner faction   main_spear
 banner holy      crusade
-soldier          Rus_Senior_Militia, 80, 0, 1, 0.30
+soldier          Rus_Senior_Militia, 60, 0, 1, 0.30 ; Marius -20 units
 mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1 ; Marius +2 att
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  2, 1, 6, metal  
+stat_pri_armour  5, 1, 6, metal  ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      1, -1, 2, 1  
@@ -5247,40 +5250,6 @@ era 2            france
 recruit_priority_offset    35
 
 
-type             Dismounted Noble Knights
-dictionary       Dismounted_Noble_Knights      ; Dismounted Noble Knights, f
-category         infantry
-class            heavy
-voice_type       Heavy
-banner faction   main_infantry
-banner holy      crusade
-soldier          Dismounted_Noble_Knights, 40, 0, 1.4375, 0.45
-officer          Dismounted_Noble_Knights_ug1
-officer          northern_captain_early_flag
-officer          northern_captain_early_flag
-mount_effect     horse +2, camel +2
-attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
-formation        1.2, 1.0, 2.4, 2.0, 3, square
-stat_health      1, 1
-stat_pri         11, 4, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
-stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-stat_sec_attr    no
-stat_pri_armour  13, 7, 0, metal
-stat_sec_armour  0, 0, flesh
-stat_heat        9
-stat_ground      -1, -3, 0, -1 
-stat_mental      15, impetuous, untrained
-stat_charge_dist 6
-stat_fire_delay  0
-stat_food        60, 300
-stat_cost        1, 890, 480, 100, 75, 890, 4, 130
-armour_ug_levels 22, 30, 37, 40
-armour_ug_models Dismounted_Noble_Knights, Dismounted_Noble_Knights_ug1, Dismounted_Noble_Knights_ug1, Dismounted_Noble_Knights_ug1
-ownership        france
-recruit_priority_offset    30
-
-
 type             Dismounted Imperial Knights
 dictionary       Dismounted_Imperial_Knights      ; Dismounted Imperial Knights, f
 category         infantry
@@ -5295,7 +5264,7 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, free_upkeep_unit, command
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; Marius -1 arm
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -5323,7 +5292,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          English_Huscarls, 48, 0, 1.15, 0.5
+soldier          English_Huscarls, 40, 0, 1.15, 0.5 ; Marius -8 units
 officer          northern_captain
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -5335,7 +5304,7 @@ stat_pri         15, 3, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  6, 9, 0, metal ;slung shield +1 armour ;
+stat_pri_armour  9, 9, 0, metal ;slung shield +1 armour ; Marius +3 att
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      0, -2, 1, 0 
@@ -5429,7 +5398,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          Dismounted_Italian_MAA, 48, 0, 1.2
+soldier          Dismounted_Italian_MAA, 40, 0, 1.2 ; Marius -8 units
 officer          northern_captain
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -5437,11 +5406,11 @@ officer          northern_captain_early_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
+stat_pri         7, 2, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1 ; Marius +1 att
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  12, 8, 3, metal
+stat_pri_armour  14, 8, 3, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      -1, -3, 1, -2 
@@ -5586,7 +5555,7 @@ stat_pri         10, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  6, 5, 5, metal ; 
+stat_pri_armour  8, 5, 5, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      0, -2, 2, 0 
@@ -5657,7 +5626,7 @@ stat_pri         9, 2, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  13, 8, 5, metal
+stat_pri_armour  10, 8, 5, metal ; Marius -3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      -1, -3, 1, -1 
@@ -5681,18 +5650,18 @@ class            skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          alan_druzhina_aldarov, 24, 0, 1
+soldier          alan_druzhina_aldarov, 20, 0, 1 ; Marius -4 units
 mount            eastern horse HA
 mount_effect     elephant -4, camel -4
 attributes       sea_faring, hide_forest, very_hardy, can_withdraw, horse_archers, cantabrian_circle, mercenary_unit, can_formed_charge, frighten_foot, command
 move_speed_mod	 1.1
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         7, 5, elite_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 5, elite_mounted_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -4 att +40 ammo
 stat_pri_attr    no
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_sec_attr    ap
-stat_pri_armour  5, 3, 3, metal
+stat_pri_armour  9, 4, 3, metal ; Marius +4 arm +1 def
 stat_sec_armour  0, 0, flesh
 stat_heat        3
 stat_ground      0, -1, -3, 0
@@ -5753,7 +5722,7 @@ voice_type       Heavy
 accent         English
 banner faction   main_infantry
 banner holy      crusade
-soldier          Free_Company_Men_at_Arms, 48, 0, 1.4375, 0.45
+soldier          Free_Company_Men_at_Arms, 40, 0, 1.4375, 0.45 ; Marius -8 units
 officer          northern_captain
 mount_effect     horse +2, camel +2
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
@@ -5763,7 +5732,7 @@ stat_pri         7, 3, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
 stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  11, 7, 0, metal
+stat_pri_armour  13, 7, 0, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        11
 stat_ground      -1, -3, 0, -2 
@@ -5786,17 +5755,17 @@ voice_type       Heavy
 accent         German
 banner faction   main_infantry
 banner holy      crusade
-soldier          Dismounted_Mercenary_German_Knights, 48, 0, 1.15
+soldier          Dismounted_Mercenary_German_Knights, 40, 0, 1.15 ; Marius -8 units
 officer          northern_captain
 
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; Marius -1 att
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  12, 7, 3, metal
+stat_pri_armour  15, 7, 3, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        11
 stat_ground      -1, -3, 1, -1 
@@ -5826,7 +5795,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 3
-stat_pri         4, 5, average_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, average_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att +30 ammo
 stat_pri_attr    area
 stat_sec         4, 5, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -5862,7 +5831,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 3
-stat_pri         5, 5, superior_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, superior_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +30 ammo
 stat_pri_attr    area
 stat_sec         5, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
@@ -5876,7 +5845,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 745, 370, 90, 70, 905, 4, 120
 armour_ug_levels 0, 1, 6
-armour_ug_models Turkomans, Turkomans_ug1, Turkomans_ug2
+armour_ug_models Turkmen_Atli_Okcusu, Turkmen_Atli_Okcusu_ug1, Turkmen_Atli_Okcusu_ug2
 ownership        all; turks, kwarezm, timurids, slave
 era 0            turks, kwarezm, timurids
 era 1            turks, kwarezm, timurids
@@ -5899,7 +5868,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 1.1
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         6, 6, elite_mounted_missile_composite_arrow, 190, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 6, elite_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att -70 ammo
 stat_pri_attr    area
 stat_sec         3, 5, no, 0, 0, melee, melee_blade, blunt, mace, 90, 1
 stat_sec_attr    ap
@@ -5928,7 +5897,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Sipahi_Lancers, 20, 0, 1
+soldier          Sipahi_Lancers, 32, 0, 1 ; Marius +12 units
 officer	 	 Sipahi_Lancers_ug1
 officer          eastern_captain_early_flag
 mount            eastern horse lancer
@@ -6046,7 +6015,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, horse_archer
 move_speed_mod	 1.1
 formation        3, 4, 5, 5, 3, horde
 stat_health      1, 3
-stat_pri         2, 4, average_mounted_arrow, 80, 55, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 4, average_mounted_arrow, 110, 55, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         4, 4, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -6075,7 +6044,7 @@ class            light
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Arab_Cavalry, 32, 0, 1
+soldier          Arab_Cavalry, 40, 0, 1 ; Marius +8 units
 officer          Arab_Cavalry_ug1
 officer          eastern_captain_early_flag
 mount            eastern horse lancer charger
@@ -6122,7 +6091,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 1.1
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 4, superior_mounted_missile_composite_arrow, 180, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 4, superior_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att -60 ammo
 stat_pri_attr    area
 stat_sec         4, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_sec_attr    ap
@@ -6162,7 +6131,7 @@ formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 3
 stat_pri         8, 7, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         5, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1 ; Marius -2 att
 stat_sec_attr    ap
 stat_pri_armour  7, 7, 2, metal ; 
 stat_sec_armour  0, 0, flesh
@@ -6188,7 +6157,7 @@ class            skirmish
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Granadine_Jinetes, 32, 0, 1
+soldier          Granadine_Jinetes, 24, 0, 1 ; Marius -8 units
 mount            fast pony
 mount_effect     elephant -4, camel -4 
 attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_javelinmen, cantabrian_circle, mercenary_unit, free_upkeep_unit
@@ -6199,7 +6168,7 @@ stat_pri         11, 5, average_mounted_javelin, 55, 6, thrown, missile_mechanic
 stat_pri_attr    area, thrown
 stat_sec         2, 5, no, 0, 0, melee, melee_blade, blunt, mace, 90, 1
 stat_sec_attr    ap
-stat_pri_armour  4, 1, 3, metal ; 
+stat_pri_armour  8, 1, 3, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      -1, 1, -4, -2 
@@ -6305,7 +6274,7 @@ attributes       sea_faring, hide_forest, can_withdraw, cantabrian_circle, cross
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         7, 5, average_mounted_light_crossbow_bolt, 100, 45, missile, missile_mechanical,piercing, none, 0, 1
+stat_pri         7, 5, average_mounted_light_crossbow_bolt, 120, 45, missile, missile_mechanical,piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         5, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light
 stat_sec_attr    no
@@ -6418,7 +6387,7 @@ stat_pri         7, 5, no, 0, 0, melee, melee_blade, piercing, spear, 30, 1
 stat_pri_attr    no
 stat_sec         10, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  13, 13, 2, metal ; 
+stat_pri_armour  13, 9, 2, metal ; Marius -4 def
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      -2, -1, -6, -3 
@@ -6455,9 +6424,9 @@ formation        1.5, 4.4, 2.5, 6, 2, square ;  ; , wedge
 stat_health      1, 3
 stat_pri         7, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
-stat_sec         6, 5, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_sec         5, 5, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; Marius +1 att
 stat_sec_attr    ap
-stat_pri_armour  7, 4, 3, metal ; 
+stat_pri_armour  9, 4, 3, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      0, 1, -4, -1 
@@ -6489,7 +6458,7 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers, mercenary
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 6, average_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 6, average_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att -30 ammo
 stat_pri_attr    area
 stat_sec         2, 7, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_sec_attr    no
@@ -6503,7 +6472,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 335, 335, 90, 70, 530, 4, 130
 armour_ug_levels 1
-armour_ug_models Turkopoles
+armour_ug_models Turkopole_Mercenary
 ownership        slave, jerusalem
 era 0            jerusalem
 era 1            jerusalem
@@ -6525,7 +6494,7 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers, mercenary
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 3
-stat_pri         4, 5, average_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, average_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att +30 ammo
 stat_pri_attr    area
 stat_sec         4, 5, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -6556,7 +6525,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
-stat_pri         1, 1, peasant_arrow, 80, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         1, 1, peasant_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -6591,7 +6560,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 1, average_composite_arrow, 150, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att +10 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -6624,7 +6593,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, hardy, extreme_range, can_withdraw, foot_archers, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
-stat_pri         4, 3, average_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         4, 3, average_missile_composite_arrow, 160, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -30 ammo
 stat_pri_attr    area
 stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
@@ -6726,7 +6695,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, foot_archers, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -6755,12 +6724,12 @@ class            missile
 voice_type       Light
 banner faction   main_missile
 banner holy      crusade
-soldier          Nubian_Archers, 48, 0, 0.75
+soldier          Nubian_Archers, 60, 0, 0.75 ; Marius +12 units
 officer          eastern_captain
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 2, superior_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 2, superior_missile_composite_arrow, 130, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att -60 ammo
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
@@ -6791,7 +6760,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 1
-stat_pri         1, 1, peasant_militia_arrow, 90, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         1, 1, peasant_militia_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -6857,7 +6826,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, crossbow, free_upkeep_unit
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 1
-stat_pri         6, 1, peasant_light_crossbow_bolt, 85, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         6, 1, peasant_light_crossbow_bolt, 130, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +45 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, sword, 90, 1 ; light sword
 stat_sec_attr    no
@@ -6889,7 +6858,7 @@ soldier          ME_Crossbow_Militia, 48, 0, 0.9
 attributes       sea_faring, hide_forest, can_withdraw, crossbow, free_upkeep_unit
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 1
-stat_pri         7, 1, peasant_militia_light_crossbow_bolt, 100, 25, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         7, 1, peasant_militia_light_crossbow_bolt, 130, 25, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1 ; light sword
 stat_sec_attr    no
@@ -6920,7 +6889,7 @@ soldier          Armenian_Archers, 48, 0, 0.7, 0.45
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, mercenary_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         4, 2, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 2, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
@@ -6947,7 +6916,7 @@ class            light
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
-soldier          me_levy_infantry, 80, 0, 0.75 
+soldier          me_levy_infantry, 100, 0, 0.75 ; Marius +20 units
 officer          eastern_captain
 
 attributes       sea_faring, hide_forest, can_withdraw, is_peasant, peasant, free_upkeep_unit
@@ -6982,7 +6951,7 @@ class            light
 voice_type       Light
 banner faction   main_infantry
 banner holy      crusade
-soldier          Azabs, 60, 0, 0.85, 0.30
+soldier          Azabs, 80, 0, 0.85, 0.30 ; Marius +20 units
 officer          Azabs_ug2
 
 attributes       sea_faring, hide_forest, can_withdraw
@@ -7050,7 +7019,7 @@ class            spearmen
 voice_type       Light
 banner faction   main_spear
 banner holy      crusade
-soldier          ME_Spear_Militia, 60, 0, 0.85, 0.30
+soldier          ME_Spear_Militia, 80, 0, 0.85, 0.30 ; Marius +20 units
 officer          eastern_captain
 mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
@@ -7060,7 +7029,7 @@ stat_pri         1, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 3, 4, flesh ; shield -1
+stat_pri_armour  2, 3, 4, flesh ; shield -1 ;  Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        3
 stat_ground      1, 1, 1, -1 
@@ -7096,7 +7065,7 @@ stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 4, 6, flesh
+stat_pri_armour  0, 2, 5, flesh ; Marius -2 def -1 shld
 stat_sec_armour  0, 0, flesh
 stat_heat        0
 stat_ground      0, 1, 1, -2 
@@ -7226,7 +7195,7 @@ voice_type       Light
 accent         Arabic
 banner faction   main_infantry
 banner holy      crusade
-soldier          Sudanese_Tribesmen, 60, 0, 0.75, 0.45
+soldier          Sudanese_Tribesmen, 80, 0, 0.75, 0.45 ; Marius +20 units
 officer		eastern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
@@ -7235,7 +7204,7 @@ stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 7, 2, flesh
+stat_pri_armour  0, 2, 2, flesh ; Marius -5 def
 stat_sec_armour  0, 0, flesh
 stat_heat        0
 stat_ground      0, 1, 1, -2 
@@ -7296,12 +7265,12 @@ voice_type       Light
 accent         Arabic
 banner faction   main_infantry
 banner holy      crusade
-soldier          Ghazis, 60, 0, 0.75, 0.45
+soldier          Ghazis, 80, 0, 0.75, 0.45 ; Marius +20 units
 officer		 eastern_captain
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit, disband_1
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 ; Marius -2 att
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -7328,13 +7297,13 @@ voice_type       Light
 accent         Arabic
 banner faction   main_infantry
 banner holy      crusade
-soldier          Mutatawwi'a, 48, 0, 0.875, 0.5
+soldier          Mutatawwi'a, 88, 0, 0.875, 0.5 ; Marius +40 units
 officer		eastern_captain
 mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, jihadi_unit, disband_2
 formation        1.4, 1.4, 2.8, 2.8, 4, square
 stat_health      1, 1
-stat_pri         7, 1, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 105, 1 ; Marius -5 att
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -7609,7 +7578,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, horse_archer
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 4, superior_mounted_missile_composite_arrow, 180, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 4, superior_mounted_missile_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att -70 ammo
 stat_pri_attr    area
 stat_sec         5, 4, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
@@ -7683,7 +7652,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, horse_archer
 move_speed_mod	 1.1
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         6, 4, elite_mounted_missile_composite_arrow, 190, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 4, elite_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att -70 ammo
 stat_pri_attr    area
 stat_sec         3, 4, no, 0, 0, melee, melee_blade, blunt, mace, 90, 1
 stat_sec_attr    ap
@@ -7755,7 +7724,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, horse_archer
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         6, 4, elite_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 4, elite_mounted_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +40 ammo
 stat_pri_attr    area
 stat_sec         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
@@ -7788,7 +7757,7 @@ soldier          mon_habutu_inf, 40, 0, 0.7
 attributes       sea_faring, hide_forest, hardy, can_withdraw, foot_archers, extreme_range, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 1, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 1, superior_missile_composite_arrow, 180, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -20 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_simple, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -7810,8 +7779,8 @@ era 2            mongols
 recruit_priority_offset    5
 
 
-type             Disamounted Turhagut
-dictionary       mon_torhaguti_inf      ; Disamounted Turhagut, ep
+type             Dismounted Turhagut
+dictionary       mon_torhaguti_inf      ; Dismounted Turhagut, ep
 category         infantry
 class            heavy
 voice_type       Heavy
@@ -7856,7 +7825,7 @@ soldier          sib_junior_militia, 48, 0, 0.75
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.8, 3, square
 stat_health      1, 2
-stat_pri         2, 2, average_arrow, 110, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 2, average_arrow, 130, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
@@ -7896,7 +7865,7 @@ formation        2, 4.4, 3, 6, 2, square
 stat_health      1, 3
 stat_pri         7, 3, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
-stat_sec         7, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1 ; Marius -2 att
 stat_sec_attr    ap
 stat_pri_armour  14, 7, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -7927,7 +7896,7 @@ soldier          mon_mergen, 40, 0, 0.95
 attributes       sea_faring, hide_forest, extreme_range, very_hardy, can_withdraw, foot_archers, command
 formation        1.4, 1.4, 2.8, 2.8, 3, square
 stat_health      1, 0
-stat_pri         7, 3, exceptional_composite_arrow, 170, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 3, exceptional_composite_arrow, 170, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att
 stat_pri_attr    area
 stat_sec         8, 1, no, 0, 0, melee, melee_simple, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
@@ -7997,7 +7966,7 @@ officer		 eastern_captain
 attributes       sea_faring, hide_forest, extreme_range, very_hardy, can_withdraw, foot_archers, start_not_skirmishing, command
 formation        1.2, 1.2, 2.4, 2.4, 3, square
 stat_health      1, 2
-stat_pri         7, 2, elite_missile_composite_arrow, 210, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 2, elite_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att -20 ammo
 stat_pri_attr    area
 stat_sec         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
 stat_sec_attr    ap
@@ -8027,11 +7996,11 @@ voice_type       Light
 accent         Mongolian
 banner faction   main_infantry
 banner holy      crusade
-soldier          cum_kosog_axe_ug0, 60, 0, 0.85, 0.45
+soldier          cum_kosog_axe_ug0, 80, 0, 0.85, 0.45 ; Marius +20 units
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 0
-stat_pri         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 ; Marius -1 att
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
@@ -8100,7 +8069,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit, crossbow
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         8, 1, militia_crossbow_bolt, 115, 25, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         8, 1, militia_crossbow_bolt, 130, 25, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +15ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_simple, piercing, knife, 45, 1
 stat_sec_attr    no
@@ -8313,7 +8282,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, start_phalan
 move_speed_mod	 0.80
 formation        1.2, 1.2, 2.4, 2.4, 4, phalanx, square
 stat_health      1, 1
-stat_pri         19, 4, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1
+stat_pri         16, 4, no, 0, 0, melee, melee_blade, piercing, axe, 90, 1 ; Marius -3 att
 stat_pri_attr    light_spear ; , ap ; Polearm Rebalance (halberd)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8377,7 +8346,7 @@ voice_type       Heavy
 accent         	 Arabic
 banner faction   main_spear
 banner holy      crusade
-soldier          ME_Heavy_Spearmen, 80, 0, 1.15, 0.30
+soldier          ME_Heavy_Spearmen, 60, 0, 1.15, 0.30 ; Marius -20 units
 officer          eastern_captain
 officer          eastern_captain_early_flag
 officer          eastern_captain_early_flag
@@ -8385,11 +8354,11 @@ mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1 ; Marius +1 att
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  6, 4, 5, metal
+stat_pri_armour  9, 4, 5, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      0, 0, 0, -2 
@@ -8452,18 +8421,18 @@ voice_type       Heavy
 accent         	 Arabic
 banner faction   main_missile
 banner holy      crusade
-soldier          Saracen_Archers, 60, 0, 1.05, 0.45
+soldier          Saracen_Archers, 48, 0, 1.05, 0.45 ; Marius -12 units
 officer          eastern_captain
 officer          eastern_captain_early_flag
 officer          eastern_captain_early_flag
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
-stat_pri         5, 2, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 2, superior_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -10 ammo
 stat_pri_attr    area
 stat_sec         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_sec_attr    no
-stat_pri_armour  7, 6, 3, flesh
+stat_pri_armour  9, 6, 3, flesh ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      0, 0, 0, -2 
@@ -8678,7 +8647,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, horde
 stat_health      1, 3
-stat_pri         5, 5, superior_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, superior_mounted_composite_arrow, 110, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +30 ammo
 stat_pri_attr    area
 stat_sec         5, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
@@ -8692,7 +8661,7 @@ stat_fire_delay  0
 stat_food        60, 300
 stat_cost        1, 385, 385, 90, 70, 620, 4, 120
 armour_ug_levels 0
-armour_ug_models Turkomans
+armour_ug_models Turkmen_Atli_Okcusu
 ownership        slave
 recruit_priority_offset    10
 
@@ -8784,11 +8753,11 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         12, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; 5+4+1+2
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; 5+4+1+2 ; Marius -2 att
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  7, 7, 5, metal ; 
+stat_pri_armour  10, 7, 5, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      0, -2, 2, -1 
@@ -8862,7 +8831,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         11, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1
+stat_pri         10, 2, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; Marius -1 att
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -8922,41 +8891,6 @@ era 2            denmark, norway
 recruit_priority_offset    20
 
 
-type             Templar Guard
-dictionary       Templar_Guard      ; Templar Guard, o
-category         infantry ; Poleaxe, Full Plate
-class            heavy
-voice_type       Heavy
-accent         French
-banner faction   main_infantry
-banner holy      crusade
-soldier          templar_guard, 40, 0, 1.5, 0.45
-officer          Dismounted_Knights_Templar_ug1
-officer          northern_captain_early_flag
-officer          northern_captain_early_flag
-mount_effect     horse +2, camel +2
-attributes       sea_faring, hide_forest, hardy, can_withdraw, command
-formation        1.2, 1.0, 2.4, 2.0, 3, square
-stat_health      1, 1
-stat_pri         9, 4, no, 0, 0, melee, melee_blade, piercing, axe, 75, 1
-stat_pri_attr    ap ; Polearm Rebalance (poleaxe with ap)
-stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
-stat_sec_attr    no
-stat_pri_armour  14, 9, 0, metal
-stat_sec_armour  0, 0, flesh
-stat_heat        9
-stat_ground      -1, -3, 1, -2
-stat_mental      16, disciplined, trained ; guard
-stat_charge_dist 6
-stat_fire_delay  0
-stat_food        60, 300
-stat_cost        1, 945, 160, 90, 70, 945, 4, 150
-armour_ug_levels 30, 37, 38, 40
-armour_ug_models templar_guard, templar_guard, templar_guard_ug1, templar_guard_ug1
-ownership        jerusalem
-recruit_priority_offset    40
-
-
 type             Drengjar
 dictionary       Drengjar      ; Drengjar, l
 category         infantry
@@ -8973,7 +8907,7 @@ stat_pri         5, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 6, 3, flesh
+stat_pri_armour  2, 6, 3, flesh ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      1, -1, 3, 2 
@@ -9032,7 +8966,7 @@ voice_type       Heavy
 accent         German
 banner faction   main_infantry
 banner holy      crusade
-soldier          Templar_Zweihander, 40, 0, 1.35, 0.55
+soldier          Templar_Zweihander, 35, 0, 1.35, 0.55 ; Marius -5 units
 officer          Dismounted_Knights_Templar_ug1
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -9044,7 +8978,7 @@ stat_pri         12, 3, no, 0, 0, melee, melee_blade, slashing, sword, 75, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  6, 8, 0, metal ; 5+2+1+1-1 
+stat_pri_armour  10, 8, 0, metal ; 5+2+1+1-1  ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      0, -2, 1, -1 
@@ -9114,7 +9048,7 @@ stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechan
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
-stat_pri_armour  4, 6, 0, metal ; 
+stat_pri_armour  6, 6, 0, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        4
 stat_ground      1, 0, 2, -1 
@@ -9210,9 +9144,9 @@ formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 2
 stat_pri         4, 1, average_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1
 stat_pri_attr    area
-stat_sec         1, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
+stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1 ; Marius +2 att
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
-stat_pri_armour  4, 2, 3, metal 
+stat_pri_armour  10, 2, 3, metal ; Marius +6 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      0, -2, 2, 0 
@@ -9234,18 +9168,18 @@ class            missile
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Mounted_Luchniki_ug1, 32, 0, 1
+soldier          Mounted_Luchniki_ug1, 20, 0, 1 ; Marius -12 units
 mount            medium horse HA
 mount_effect     elephant -4, camel -4 
 attributes       sea_faring, hide_forest, can_withdraw, horse_archers, cantabrian_circle
 move_speed_mod	 1.05
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         3, 5, average_mounted_missile_composite_arrow, 160, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 5, average_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -40 ammo
 stat_pri_attr    area
-stat_sec         1, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 ; -1 to attack 
+stat_sec         3, 5, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1 ; -1 to attack ; Marius +2 att
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
-stat_pri_armour  4, 0, 3, metal ; defense -1 so -1 to attack
+stat_pri_armour  7, 2, 3, metal ; defense -1 so -1 to attack ; Marius +3 arm +2 def
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      -1, -2, -3, 0 
@@ -9280,7 +9214,7 @@ stat_pri         15, 3, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  7, 9, 0, metal ;slung shield +1 armour ; GUARD
+stat_pri_armour  9, 9, 0, metal ;slung shield +1 armour ; GUARD ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      0, -2, 1, 1
@@ -9305,7 +9239,7 @@ voice_type       Light
 accent         East_European
 banner faction   main_infantry
 banner holy      crusade
-soldier          Berdiche_Militia, 60, 0, 1.0625, 0.5
+soldier          Berdiche_Militia, 48, 0, 1.0625, 0.5 ; Marius -12 units
 officer          northern_captain
 mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
@@ -9315,7 +9249,7 @@ stat_pri         11, 1, no, 0, 0, melee, melee_blade, slashing, axe, 105, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  3, 4, 0, leather ; +1 slung shield
+stat_pri_armour  7, 4, 0, leather ; +1 slung shield ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      1, -1, 2, 1 
@@ -9345,7 +9279,7 @@ stat_pri         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
-stat_pri_armour  0, 4, 2, flesh ; shield -1
+stat_pri_armour  2, 4, 2, flesh ; shield -1 ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      1, -1, 3, 1
@@ -9401,7 +9335,7 @@ voice_type       Heavy
 accent         East_European
 banner faction   main_spear
 banner holy      crusade
-soldier          Kievan_Palace_Guard, 60, 0, 1.2, 0.30
+soldier          Kievan_Palace_Guard, 48, 0, 1.2, 0.30 ; Marius -12 units
 officer          northern_captain
 officer          russia_captain_early_flag
 officer          russia_captain_early_flag
@@ -9410,11 +9344,11 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         5, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
+stat_pri         6, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1 ; Marius +1 att
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  8, 5, 6, metal ; GUARD 
+stat_pri_armour  13, 5, 6, metal ; GUARD ; Marius +5 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      0, -2, 2, 0 
@@ -9444,7 +9378,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, command
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 1
-stat_pri         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_pri         5, 1, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; Marius -1 att
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
@@ -9762,7 +9696,7 @@ soldier          Peasant_Archers, 48, 0, 0.65
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, mercenary_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         2, 2, militia_arrow, 100, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 2, militia_arrow, 120, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         1, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1 ; knife
 stat_sec_attr    no
@@ -9969,7 +9903,7 @@ stat_pri         12, 2, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  4, 6, 0, metal ; 
+stat_pri_armour  8, 6, 0, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      1, -1, 2, 1 
@@ -9992,7 +9926,7 @@ voice_type       Heavy
 accent         Mediterranean
 banner faction   main_spear
 banner holy      crusade
-soldier          Mercenary_Spearmen, 60, 0, 1, 0.30
+soldier          Mercenary_Spearmen, 48, 0, 1, 0.30 ; Marius -12 units
 officer		eastern_captain
 mount_effect     horse +4, camel +4
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit
@@ -10003,7 +9937,7 @@ stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  4, 3, 6, metal ; 
+stat_pri_armour  8, 3, 6, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      1, 0, 2, -1 
@@ -10035,7 +9969,7 @@ stat_pri         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  9, 8, 3, metal
+stat_pri_armour  9, 6, 3, metal ; Marius -2 def
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      -2, -1, -1, -4 
@@ -10067,7 +10001,7 @@ stat_pri         2, 1, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
 stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  6, 6, 3, metal
+stat_pri_armour  8, 6, 3, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      0, 0, 0, -2 
@@ -10097,7 +10031,7 @@ voice_type       Heavy
 accent         Arabic
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Turkish_Ghulams, 32, 0, 1
+soldier          Turkish_Ghulams, 24, 0, 1 ; Marius -8 units
 officer          Turkish_Ghulams
 officer          eastern_captain_early_flag
 mount            eastern armoured horse charger
@@ -10110,7 +10044,7 @@ stat_pri         7, 6, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    no
 stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
 stat_sec_attr    ap
-stat_pri_armour  13, 6, 0, metal ; slung shield
+stat_pri_armour  14, 6, 0, metal ; slung shield ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      -2, -1, -6, -3
@@ -10124,8 +10058,8 @@ armour_ug_models Turkish_Ghulams, Turkish_Ghulams, Turkish_Ghulams
 ownership        turks     
 era 0            turks
 recruit_priority_offset    30
- 
- 
+
+
 type             Norman Serjeants
 dictionary       Norman_Serjeants     ; Norman Serjeants, ep
 category         infantry
@@ -10133,7 +10067,7 @@ class            spearmen
 voice_type       Heavy
 banner faction   main_spear
 banner holy      crusade
-soldier          Norman_Serjeants, 60, 0, 1, 0.3
+soldier          Norman_Serjeants, 48, 0, 1, 0.3 ; Marius -12 units
 officer          Norman_Serjeants
 officer          northern_captain_early_flag
 mount_effect     horse +4, camel +4
@@ -10145,7 +10079,7 @@ stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  4, 3, 7, metal ; 
+stat_pri_armour  8, 3, 7, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      1, -1, 2, 1
@@ -10160,8 +10094,8 @@ ownership        england, slave
 era 0            england
 era 1            england
 recruit_priority_offset    5
- 
- 
+
+
 type             Norman Cavalry
 dictionary       Norman_Cavalry      ; Miles, f
 category         cavalry    
@@ -10182,7 +10116,7 @@ stat_pri         4, 13, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
-stat_pri_armour  7, 3, 5, metal ; 
+stat_pri_armour  8, 3, 5, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      -1, -2, -3, -1 
@@ -10197,7 +10131,7 @@ ownership        england, sicily, jerusalem, slave
 era 0            england, sicily, jerusalem
 recruit_priority_offset    30
 
- 
+
 type             Breton Light Cavalry
 dictionary       Breton_Light_Cavalry      ; Breton Light Cavalry, m
 category         cavalry
@@ -10270,7 +10204,7 @@ era 0		 england, sicily
 era 1		 england
 recruit_priority_offset    10
 
- 
+
 type             Nukeri Horse Archers
 dictionary       mon_nukeri      ; Nukeri Horse Archers, l
 category         cavalry
@@ -10285,7 +10219,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, horse_archer
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         6, 5, elite_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 5, elite_mounted_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +40 ammo
 stat_pri_attr    area
 stat_sec         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 15, 1 ; light sword
 stat_sec_attr    no
@@ -10305,8 +10239,8 @@ era 0            mongols;; , timurids
 era 1            mongols;; , timurids
 era 2            mongols;; , timurids
 recruit_priority_offset 0
- 
- 
+
+
 type             Gotland Footmen
 dictionary       Gotland_Footmen      ; Noble Hirdsmen, f
 category         infantry
@@ -10377,8 +10311,8 @@ ownership        norway
 era 0            norway
 era 1            norway
 recruit_priority_offset    0
- 
- 
+
+
 type             Sword Brethren
 dictionary       Sword_Brethren      ; Sword Brethren, o
 category         infantry
@@ -10400,7 +10334,7 @@ stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  4, 9, 4, metal ; ;;
+stat_pri_armour  6, 9, 4, metal ; Marius +2 arm
 ;stat_armour_ex   3, 5, 6, 0, 4, 8, 8, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        8
@@ -10417,15 +10351,15 @@ era 0            teutonic_order
 era 1            teutonic_order
 era 2            teutonic_order
 recruit_priority_offset    5
- 
- 
+
+
 type             Order Spearmen
 dictionary       Order_Spearmen      ; Order Spearmen, ep
 category         infantry
 class            spearmen
 voice_type       Heavy
 banner faction   main_infantry
-soldier          Order_Spearmen, 60, 0, 1.2, 0.30
+soldier          Order_Spearmen, 48, 0, 1.2, 0.30 ; Marius -12 units
 officer          Dismounted_Ritterbruder
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -10434,13 +10368,13 @@ attributes       sea_faring, hide_forest, can_withdraw
 move_speed_mod	 0.9
 formation        1, 0, 2.0, 2.0, 4, square, schiltrom
 stat_health      1, 1
-stat_pri         3, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         4, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1 ; Marius +1 att
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  6, 3, 7, metal ; mail
+stat_pri_armour  9, 4, 7, metal ; mail ; Marius +3 arm +1 def
 ;stat_armour_ex   6, 7, 0, 0, 6, 8, 8, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        9
@@ -10479,7 +10413,7 @@ stat_pri_attr    light_spear ; ap ; Polearm Rebalance (bladed poleaxe)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  13, 8, 5, metal ;-2 defense +2 phalanx
+stat_pri_armour  9, 8, 5, metal ;-2 defense +2 phalanx ; Marius -4 arm
 ;stat_armour_ex   6, 7, 0, 0, 6, 0, 0, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        11
@@ -10496,8 +10430,8 @@ era 0            teutonic_order
 era 1            teutonic_order
 era 2            teutonic_order
 recruit_priority_offset    25
- 
- 
+
+
 type             Dismounted Ritterbruder
 dictionary       Dismounted_Ritterbruder      ; Dismounted Ritterbrüder, f
 category         infantry
@@ -10538,8 +10472,8 @@ era 2            teutonic_order, hre
 info_pic_dir	 KnightOrders
 card_pic_dir	 KnightOrders
 recruit_priority_offset    25
- 
- 
+
+
 type             Prussian Archers
 dictionary       Prussian_Archers      ; Prussian Archers, ep
 category         infantry
@@ -10573,8 +10507,8 @@ ownership        teutonic_order, hre, england, scotland, france, denmark, spain,
 era 0            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
 era 1            teutonic_order, hre, england, scotland, france, denmark, spain, aragon, milan, venice, papal_states,  norway, jerusalem, poland, russia, kievan_rus
 recruit_priority_offset    5
- 
- 
+
+
 type             Livonian Auxiliaries
 dictionary       Livonian_Auxiliaries      ; Livonian Auxiliaries, ep
 category         infantry
@@ -10595,7 +10529,7 @@ stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
 stat_pri_armour  2, 3, 7, leather ; 
 ;stat_armour_ex   2, 3, 0, 0, 2, 8, 8, leather
-stat_sec_armour  0, 0, flesh
+stat_sec_armour  4, 0, flesh ; Marius +4 arm? (Melooo: not sure if this actually does anything)
 stat_heat        1
 stat_ground      1, -1, 3, 1 
 stat_mental      7, low, trained
@@ -10608,8 +10542,8 @@ armour_ug_models Livonian_Auxillaries, Livonian_Auxillaries_ug1
 ownership        teutonic_order
 era 1            teutonic_order
 recruit_priority_offset    10
- 
- 
+
+
 type             Christ Knights
 dictionary       Christ_Knights      ; Christ Knights, f
 category         cavalry
@@ -10628,10 +10562,10 @@ stat_health      1, 3
 stat_pri         5, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         6, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         5, 1, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1 ; Marius -1 att
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    ap
-stat_pri_armour  8, 4, 5, metal ; 
+stat_pri_armour  8, 6, 5, metal ; Marius +2 def
 ;stat_armour_ex   5, 6, 0, 0, 4, 8, 8, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        10
@@ -10648,8 +10582,8 @@ era 0            teutonic_order
 era 1            teutonic_order
 era 2            teutonic_order
 recruit_priority_offset    35
- 
- 
+
+
 type             Knechten
 dictionary       Knechten      ; Knechten, o
 category         cavalry
@@ -10669,7 +10603,7 @@ stat_pri_attr    no
 stat_sec         5, 6, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  4, 3, 5, metal ; 
+stat_pri_armour  6, 3, 5, metal ; Marius +2 arm
 ;stat_armour_ex   3, 5, 0, 0, 5, 5, 5, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        4
@@ -10686,8 +10620,8 @@ era 0            teutonic_order
 era 1            teutonic_order
 era 2            teutonic_order
 recruit_priority_offset    10
- 
- 
+
+
 type             Halbbruder
 dictionary       Halbbruder      ; Halbbrüder, f
 category         cavalry
@@ -10725,8 +10659,8 @@ ownership        teutonic_order
 era 1            teutonic_order
 era 2            teutonic_order
 recruit_priority_offset    50
- 
- 
+
+
 type             Ritterbruder
 dictionary       Ritterbruder      ; Ritterbrüder, f
 category         cavalry
@@ -10749,7 +10683,7 @@ stat_pri_attr    no
 stat_sec         13, 5, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  11, 5, 4, metal ; ;;
+stat_pri_armour  12, 5, 4, metal ; Marius +1 arm
 ;stat_armour_ex   7, 9, 0, 0, 5, 8, 8, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        10
@@ -10769,8 +10703,8 @@ era 2            teutonic_order, hre
 info_pic_dir	 KnightOrders
 card_pic_dir	 KnightOrders
 recruit_priority_offset    55
- 
- 
+
+
 type             TO Bodyguard
 dictionary       TO_Bodyguard      ; General's Bodyguard, ep
 category         cavalry
@@ -10834,7 +10768,7 @@ stat_pri_attr    no
 stat_sec         9, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no ; ap ; 1H axe
-stat_pri_armour  8, 4, 3, metal ; 
+stat_pri_armour  12, 4, 3, metal ; Marius +4 arm
 ;stat_armour_ex   5, 0, 0, 0, 4, 6, 4, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -10850,8 +10784,8 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    35
- 
- 
+
+
 type             Templar Confrere Knights
 dictionary       Templar_Confrere_Knights      ; Templar Confrere Knights, o
 category         cavalry
@@ -10871,10 +10805,10 @@ stat_health      1, 3
 stat_pri         7, 15, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         7, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         5, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1 ; Marius -2 att
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    ap
-stat_pri_armour  7, 4, 3, metal ; 
+stat_pri_armour  11, 4, 3, metal ; Marius +4 arm
 ;stat_armour_ex   5, 0, 0, 0, 4, 6, 4, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        8
@@ -10890,8 +10824,8 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    40
- 
- 
+
+
 type             Constable of Jerusalem
 dictionary       Constable_of_Jerusalem      ; Constable of Jerusalem, f
 category         cavalry
@@ -10911,7 +10845,7 @@ stat_health      1, 3
 stat_pri         5, 13, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         7, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1 ; Marius -2 att
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    ap
 stat_pri_armour  12, 6, 3, metal ; 
@@ -10930,8 +10864,8 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    50
- 
- 
+
+
 type             Dismounted Knights Of Jerusalem
 dictionary       Dismounted_Knights_Of_Jerusalem      ; Dismounted Knights of Jerusalem, f
 category         infantry
@@ -11007,7 +10941,7 @@ era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    20
  
- 
+
 type             Templar Sergeant
 dictionary       Templar_Sergeant      ; Templar Sergeants, o
 category         infantry
@@ -11030,7 +10964,7 @@ stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  4, 3, 7, metal ; 
+stat_pri_armour  6, 3, 7, metal ; Marius +2 arm
 ;stat_armour_ex   3, 5, 0, 0, 5, 8, 6, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -11046,8 +10980,8 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    5
- 
- 
+
+
 type             Pisan and Geonese sailors
 dictionary       Pisan_and_Geonese_sailors      ; Pisan and Geonese Sailors, m
 category         infantry
@@ -11085,7 +11019,7 @@ era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    -10 
  
- 
+
 type             Templar Crossbowmen
 dictionary       Templar_Crossbowmen      ; Templar Crossbowmen, ep
 category         infantry
@@ -11098,7 +11032,7 @@ officer          northern_captain
 attributes       sea_faring, hide_forest, can_withdraw, crossbow, command
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         9, 3, elite_crossbow_bolt, 130, 25, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         9, 3, elite_crossbow_bolt, 140, 25, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
 stat_sec         7, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
@@ -11120,8 +11054,8 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    5
- 
- 
+
+
 type             Knights of Antioch
 dictionary       Knights_of_Antioch      ; Knights of St Lazarus, o
 category         cavalry
@@ -11143,7 +11077,7 @@ stat_pri_attr    no
 stat_sec         10, 4, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no ; ap ; 1H axe
-stat_pri_armour  9, 3, 3, metal ; 
+stat_pri_armour  13, 4, 3, metal ; Marius +4 arm +1 def
 ;stat_armour_ex   5, 0, 0, 0, 4, 6, 4, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -11159,7 +11093,7 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    40
- 
+
 
 type             Edessan Guard
 dictionary       Edessan_Guard      ; Edessan Guard, lp
@@ -11169,7 +11103,7 @@ voice_type       Heavy
 banner faction   main_infantry
 banner unit      antioch
 banner holy      crusade
-soldier          Edessan_Guard, 60, 0, 1.25, 0.5
+soldier          Edessan_Guard, 50, 0, 1.25, 0.5 ; Marius -10 units
 officer          Dismounted_Knights_of_Jerusalem
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -11183,7 +11117,7 @@ stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  5, 9, 0, metal ; ; GUARD 
+stat_pri_armour  9, 9, 0, metal ; ; GUARD ; Marius +4 arm
 ;stat_armour_ex   5, 0, 0, 0, 8, 0, 0, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        6
@@ -11199,8 +11133,8 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    10
- 
- 
+
+
 type             Canons of the Holy Sepulcher
 dictionary       Canons_of_the_Holy_Sepulcher      ; Canons of the Holy Sepulcher, o
 category         infantry
@@ -11209,7 +11143,7 @@ voice_type       Heavy
 ;accent         German
 banner faction   main_hospitaller
 banner holy      crusade
-soldier          Canons_of_the_Holy_Sepulcher, 40, 0, 1.375, 0.55
+soldier          Canons_of_the_Holy_Sepulcher, 30, 0, 1.375, 0.55 ; Marius -10 units
 officer          Dismounted_Knights_of_Jerusalem
 officer          northern_captain_early_flag
 officer          northern_captain_early_flag
@@ -11223,7 +11157,7 @@ stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  8, 10, 0, metal ; + 1 slung shield
+stat_pri_armour  12, 12, 0, metal ; + 1 slung shield ; Marius +4 arm +2 def
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      0, -2, 1, -1 
@@ -11238,8 +11172,8 @@ ownership        jerusalem
 era 0            jerusalem
 era 1            jerusalem
 recruit_priority_offset    20
- 
- 
+
+
 type             iqta'dar
 dictionary       iqta'dar      ; iqta'dar, f
 category         cavalry
@@ -11256,7 +11190,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod   0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         6, 5, elite_mounted_missile_composite_arrow, 190, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 5, elite_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att -70 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, blunt, mace, 90, 1
 stat_sec_attr    ap
@@ -11284,7 +11218,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          Hashishim, 60, 0, 1.1, 0.45
+soldier          Hashishim, 48, 0, 1.1, 0.45 ; Marius -12 units
 officer          dismounted_hasham_ug1
 officer          eastern_captain_early_flag
 officer          eastern_captain_early_flag
@@ -11310,8 +11244,8 @@ ownership        turks
 era 0            turks
 era 1            turks
 recruit_priority_offset    15
- 
- 
+
+
 type             Turkish Crossbowmen
 dictionary       Turkish_Crossbowmen      ; Turkish Crossbowmen, lp
 category         infantry
@@ -11324,7 +11258,7 @@ officer          dismounted_hasham_ug1
 attributes       sea_faring, hide_forest, can_withdraw, crossbow
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         10, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         8, 2, average_heavy_crossbow_bolt, 140, 20, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; light sword
 stat_sec_attr    no
@@ -11403,7 +11337,7 @@ stat_health      1, 3
 stat_pri         6, 11, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no
-stat_sec         7, 3, no, 0, 0, melee, melee_blade, blunt, mace, 30, 1
+stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 30, 1 ; Marius -2 att
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    ap
 stat_pri_armour  12, 8, 3, metal ; ; GUARD 
@@ -11422,8 +11356,8 @@ ownership        egypt, timurids, portugal
 era 0            egypt, timurids, portugal
 era 1            egypt, timurids, portugal
 recruit_priority_offset    55
- 
- 
+
+
 type             Dismounted Ghulams
 dictionary       Dismounted_Ghulams      ; Dismounted Ghulams, lp/up
 category         infantry
@@ -11431,7 +11365,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_infantry
 banner holy      crusade
-soldier          Dismounted_ghulam, 60, 0, 1
+soldier          Dismounted_ghulam, 48, 0, 1 ; Marius -12 units
 officer          Dismounted_ghulam
 officer          eastern_captain_early_flag
 officer          eastern_captain_early_flag
@@ -11445,7 +11379,7 @@ stat_pri_attr    ap
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  6, 7, 3, metal 
+stat_pri_armour  9, 7, 3, metal ; Marius +3 arm
 ;stat_armour_ex   4, 0, 0, 0, 3, 5, 3, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        5
@@ -11550,7 +11484,7 @@ soldier          Armenians_Of_Cilicia, 48, 0, 0.9, 0.45
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, mercenary_unit, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 1, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 1, superior_missile_composite_arrow, 180, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -20 ammo
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
 stat_sec         5, 2, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
@@ -11620,7 +11554,7 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw, frighten_foot
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 1
-stat_pri         13, 3, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         11, 3, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 ; Marius -2 att
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    no ; ap ; Polearm Rebalance (voulge)
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
@@ -11694,11 +11628,11 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, cannot_skirmish, 
 move_speed_mod	 0.9
 formation        1.2, 1.0, 2.4, 2.0, 3, square
 stat_health      1, 3
-stat_pri         12, 3, superior_javelin, 60, 2, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         12, 3, superior_javelin, 65, 2, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius +5 ammo
 stat_pri_attr    area, thrown, prec
 stat_sec         7, 1, no, 0, 0, melee, melee_blade, slashing, axe, 60, 1
 stat_sec_attr    no ; ap ; 1H axe
-stat_pri_armour  6, 3, 4, metal ;;
+stat_pri_armour  11, 3, 4, metal ; Marius +5 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      0, -2, 2, 0 
@@ -11730,11 +11664,11 @@ mount_effect     horse +1, camel +1
 attributes       sea_faring, hide_forest, hardy, can_withdraw
 formation        1.2, 1.0, 2.4, 2.0, 4, square
 stat_health      1, 1
-stat_pri         14, 2, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
+stat_pri         12, 2, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1 ; Marius -2 att
 stat_pri_attr    no ; ap ; 2H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  5, 6, 0, metal
+stat_pri_armour  7, 6, 0, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      0, -2, 1, 0 
@@ -11794,7 +11728,7 @@ attributes       sea_faring, hide_forest, can_withdraw, crossbow, mercenary_unit
 move_speed_mod	 0.8
 formation        1.4, 1.4, 1.4, 1.4, 3, square
 stat_health      1, 2
-stat_pri         8, 2, average_crossbow_bolt, 120, 20, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         8, 2, average_crossbow_bolt, 130, 20, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
@@ -11816,7 +11750,7 @@ ownership        all; lithuania
 era 1            lithuania
 era 2            lithuania
 recruit_priority_offset    0
- 
+
 
 type             Noble Sons Cavalry
 dictionary       Noble_Sons_Cavalry      ; Noble Sons Cavalry, f
@@ -11836,7 +11770,7 @@ stat_pri         12, 4, superior_mounted_javelin, 60, 3, thrown, missile_mechani
 stat_pri_attr    area, thrown
 stat_sec         8, 4, no, 0, 0, melee, melee_blade, slashing, axe, 90, 1
 stat_sec_attr    no ; ap ; 1H axe
-stat_pri_armour  6, 2, 3, metal 
+stat_pri_armour  9, 2, 3, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      -1, -2, -3, 0 
@@ -11891,8 +11825,8 @@ ownership        lithuania
 era 0            lithuania
 era 1            lithuania
 recruit_priority_offset    40
- 
- 
+
+
 type             Noble Cavalry
 dictionary       Noble_Cavalry      ; Noble Cavalry, f
 category         cavalry
@@ -12143,7 +12077,6 @@ era 1            lithuania
 era 2            lithuania
 recruit_priority_offset    -5 
 
-
 ;************************ Kwarezm & Cumans **********************
 
 type             ME Cavalry Militia
@@ -12199,7 +12132,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, co
 move_speed_mod	 1.1
 formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 3
-stat_pri         6, 6, elite_mounted_missile_composite_arrow, 190, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 6, elite_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att -70 ammo
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
 stat_sec         6, 6, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
@@ -12220,7 +12153,7 @@ armour_ug_models Sibyan_al_khass, Sibyan_al_khass_ug1, Sibyan_al_khass_ug1
 ownership        kwarezm
 recruit_priority_offset    40
 
- 
+
 type             Saracen Archers
 dictionary       Saracen_Archers      ; Saracen Archers, l
 category         infantry
@@ -12229,16 +12162,16 @@ voice_type       Light
 accent         Arabic
 banner faction   main_missile
 banner holy      crusade
-soldier          Abid_Al_Shira, 60, 0, 0.9
+soldier          Abid_Al_Shira, 40, 0, 0.9 ; Marius -20 units
 officer          eastern_captain
 attributes       sea_faring, hide_forest, hardy, can_withdraw, foot_archers, mercenary_unit, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         4, 1, average_composite_arrow, 150, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area
 stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1 ; light sword
 stat_sec_attr    no
-stat_pri_armour  4, 4, 2, metal ; 
+stat_pri_armour  10, 4, 2, metal ; Marius +6 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        3
 stat_ground      0, 0, 0, -2 
@@ -12268,7 +12201,7 @@ officer          eastern_captain
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 1, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 1, superior_missile_composite_arrow, 180, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -20 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sword
 stat_sec_attr    no
@@ -12297,7 +12230,7 @@ voice_type       Heavy
 accent         Arabic
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Sibyan_al_khass, 32, 0, 1
+soldier          Sibyan_al_khass, 24, 0, 1 ; Marius -8 units
 officer          me_bodyguard
 officer          eastern_captain_early_flag
 mount            eastern armoured horse HA
@@ -12306,13 +12239,13 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers, cantabria
 move_speed_mod   0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         3, 4, average_mounted_missile_composite_arrow, 170, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 4, average_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -50 ammo
 ;stat_pri_ex      0, 0, 0
 stat_pri_attr    area
 stat_sec         6, 4, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  10, 4, 3, metal
+stat_pri_armour  10, 6, 3, metal ; Marius +2 def
 ;stat_armour_ex   5, 6, 0, 0, 5, 0, 0, metal
 stat_sec_armour  0, 0, flesh
 stat_heat        7
@@ -12464,7 +12397,7 @@ formation        2, 4.4, 3, 6, 2, square ;  ; , wedge
 stat_health      1, 3
 stat_pri         5, 11, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
-stat_sec         6, 3, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1
+stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 45, 1 ; Marius -1 att
 stat_sec_attr    ap
 stat_pri_armour  14, 8, 3, metal ; GUARD
 stat_sec_armour  0, 0, flesh
@@ -12575,7 +12508,7 @@ attributes       sea_faring, hide_forest, very_hardy, can_withdraw, horse_archer
 move_speed_mod	 1.1
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         6, 5, exceptional_mounted_missile_composite_arrow, 200, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 5, exceptional_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att -80 ammo
 stat_pri_attr    area
 stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1 ; sword
 stat_sec_attr    no
@@ -12675,7 +12608,7 @@ class            spearmen
 voice_type       Light
 accent         	 Mongolian
 banner faction   main_infantry
-soldier          kosog_senior_militia_ug0, 80, 0, 0.95, 0.3
+soldier          kosog_senior_militia_ug0, 60, 0, 0.95, 0.3 ; Marius -20 units
 officer 	 mon_torhaguti_inf
 officer          eastern_captain_early_flag
 mount_effect     horse +4, camel +4
@@ -12686,7 +12619,7 @@ stat_pri         2, 1, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  5, 2, 4, leather ;;
+stat_pri_armour  8, 2, 4, leather ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      0, -1, 1, -1 
@@ -12715,7 +12648,7 @@ soldier          cum_alan_axe, 48, 0, 0.75, 0.45
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit, mercenary_unit
 formation        1.4, 1.4, 2.8, 2.8, 3, square
 stat_health      1, 0
-stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 1, average_composite_arrow, 120, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att -20 ammo
 stat_pri_attr    no
 stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
@@ -12794,7 +12727,7 @@ formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 3
 stat_pri         8, 7, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
-stat_sec 	 7, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec 	 5, 4, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1 ; Marius -2 att
 stat_sec_attr    ap
 stat_pri_armour  8, 5, 3, metal
 stat_sec_armour  0, 0, flesh
@@ -12824,7 +12757,7 @@ soldier          Mongol_Foot_Archers, 48, 0, 0.75
 attributes       sea_faring, hide_forest, hardy, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         3, 1, average_composite_arrow, 120, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +20 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sw
 stat_sec_attr    no
@@ -12893,7 +12826,7 @@ soldier          cum_druz_bek_a_sw_ug0, 40, 0, 0.85
 attributes       sea_faring, hide_forest, extreme_range, very_hardy, can_withdraw, foot_archers, free_upkeep_unit, stakes, stakes, command, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 3, square
 stat_health      1, 2
-stat_pri         7, 4, exceptional_missile_composite_arrow, 220, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 4, exceptional_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att -30 ammo
 stat_pri_attr    area
 stat_sec         6, 2, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
@@ -12928,7 +12861,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 5, average_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 5, average_mounted_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att +40 ammo
 stat_pri_attr    no
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1 ; light sw
 stat_sec_attr    no
@@ -13098,7 +13031,7 @@ category         infantry
 class            light
 voice_type       Light
 banner faction   main_infantry
-soldier          Viking_Raiders, 60, 0, 0.9, 0.45
+soldier          Viking_Raiders, 48, 0, 0.9, 0.45 ; Marius -12 units
 officer          russia_captain_early_flag
 attributes       sea_faring, hide_forest, can_withdraw, mercenary_unit, free_upkeep_unit
 formation        1.2, 1.2, 2.4, 2.4, 5, square
@@ -13107,7 +13040,7 @@ stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
-stat_pri_armour  2, 3, 3, metal
+stat_pri_armour  5, 3, 3, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      1, -1, 3, 1 
@@ -13142,7 +13075,7 @@ stat_pri         8, 7, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
 stat_sec         11, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  9, 5, 4, metal ;;
+stat_pri_armour  11, 5, 4, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        12
 stat_ground      -1, -2, -3, 0 
@@ -13175,9 +13108,9 @@ formation        2, 4.4, 3, 6, 2, square ;  ; , wedge
 stat_health      1, 3
 stat_pri         7, 6, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
-stat_sec         7, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1
+stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 60, 1 ; Marius -2 att
 stat_sec_attr    ap
-stat_pri_armour  13, 4, 4, metal ;;
+stat_pri_armour  15, 4, 4, metal ; Marius +2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        16
 stat_ground      -2, -3, -4, -1 
@@ -13236,7 +13169,7 @@ class            spearmen
 voice_type       Heavy
 banner faction   main_spear
 banner holy      crusade
-soldier          novgorod_home_guard, 80, 0, 1.15, 0.30
+soldier          novgorod_home_guard, 48, 0, 1.15, 0.30 ; Marius -32 units
 officer          northern_captain
 officer	  	 russia_captain_early_flag
 mount_effect     horse +4, camel +4
@@ -13244,11 +13177,11 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.0, 1.0, 2.0, 2.0, 5, square, schiltrom
 stat_health      1, 1
-stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
+stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1 ; Marius +2 att
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  7, 3, 6, metal ; GUARD ;;
+stat_pri_armour  11, 3, 6, metal ; GUARD ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        10
 stat_ground      0, -2, 2, 0 
@@ -13313,11 +13246,11 @@ officer	  	 russia_captain_early_flag
 attributes       sea_faring, hide_forest, extreme_range, can_withdraw, foot_archers, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 2, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 2, superior_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -10 ammo
 stat_pri_attr    area 
 stat_sec         4, 2, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
-stat_pri_armour  4, 6, 3, metal
+stat_pri_armour  7, 6, 3, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      0, -2, 2, 0 
@@ -13342,7 +13275,7 @@ voice_type       Heavy
 accent           East_European
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Junior_Druzhina, 24, 0, 1
+soldier          Junior_Druzhina, 20, 0, 1 ; Marius -4 units
 officer	  	 russia_captain_early_flag
 mount            medium horse HA
 mount_effect     elephant -4, camel -4 
@@ -13350,11 +13283,11 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers
 move_speed_mod	 1.05
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 6, superior_mounted_missile_composite_arrow, 170, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 6, superior_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att -50 ammo
 stat_pri_attr    area 
 stat_sec         5, 6, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
-stat_pri_armour  4, 3, 3, metal
+stat_pri_armour  8, 3, 3, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      -1, -2, -3, 0 
@@ -13389,7 +13322,7 @@ stat_pri         4, 1, no, 0, 0, melee, melee_blade, slashing, axe, 75, 1
 stat_pri_attr    no ; ap ; 1H axe
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  5, 2, 4, metal ;;
+stat_pri_armour  10, 2, 4, metal ; Marius +5arm
 stat_sec_armour  0, 0, flesh
 stat_heat        8
 stat_ground      0, -2, 2, 0 
@@ -13500,7 +13433,7 @@ stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 ;stat_sec_ex      0, 0, 0
 stat_sec_attr    no
-stat_pri_armour  0, 6, 2, flesh
+stat_pri_armour  2, 6, 2, flesh ; Marius +2 arm
 ;stat_armour_ex   0, 2, 0, 0, 3, 5, 5, flesh
 stat_sec_armour  0, 0, flesh
 stat_heat        5
@@ -13533,7 +13466,7 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, can_withdraw, foot_javelinmen
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 1
-stat_pri         9, 1, peasant_militia_javelin, 45, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         10, 1, peasant_militia_javelin, 55, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius +1 att +10 ammo
 stat_pri_attr    area, thrown
 stat_sec         3, 1,  no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe
@@ -13569,11 +13502,11 @@ mount_effect     elephant -10
 attributes       sea_faring, hide_forest, can_withdraw, foot_javelinmen
 formation        1.4, 1.2, 2.8, 1.4, 3, square
 stat_health      1, 3
-stat_pri         11, 2, average_javelin, 55, 4, thrown, missile_mechanical, piercing, spear, 0, 1
+stat_pri         11, 2, average_javelin, 60, 4, thrown, missile_mechanical, piercing, spear, 0, 1 ; Marius +5 ammo
 stat_pri_attr    area, thrown
 stat_sec         4, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1
 stat_sec_attr    no
-stat_pri_armour  2, 6, 3, leather
+stat_pri_armour  5, 6, 3, leather ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        4
 stat_ground      1, 0, 2, -1 
@@ -13672,7 +13605,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Archontopoulai, 24, 0, 1
+soldier          Archontopoulai, 20, 0, 1 ; Marius -4 units
 officer		 byzantine_unit_officer
 officer		 byzantium_cavalry_flag
 mount            barded horse brawler
@@ -13685,7 +13618,7 @@ stat_pri         6, 5, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         9, 5, no, 0, 0, melee, melee_blade, slashing, sword, 90, 1
 stat_sec_attr    no
-stat_pri_armour  14, 2, 3, metal ; heavy mail + light lamellar
+stat_pri_armour  15, 2, 3, metal ; heavy mail + light lamellar ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        18
 stat_ground      -1, -1, -4, -2 
@@ -13723,7 +13656,7 @@ stat_pri         3, 11, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         8, 4, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  22, 8, 5, metal ; heavy mail + lamellar + cataphract armored horse
+stat_pri_armour  21, 4, 5, metal ; heavy mail + lamellar + cataphract armored horse ; Marius -1 arm -4 def
 stat_sec_armour  0, 0, flesh
 stat_heat        18
 stat_ground      -2, -2, -5, -3 
@@ -13794,7 +13727,7 @@ attributes       sea_faring, hide_forest, can_withdraw, horse_archers
 move_speed_mod	 1.1
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 6, superior_mounted_missile_composite_arrow, 170, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 6, superior_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -2 att -50 ammo
 stat_pri_attr    area 
 stat_sec         5, 6, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
@@ -13830,11 +13763,11 @@ attributes       sea_faring, hide_forest, can_withdraw, free_upkeep_unit
 move_speed_mod	 0.9
 formation        1.2, 1.2, 2.4, 2.4, 5, square
 stat_health      1, 0
-stat_pri         1, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
+stat_pri         2, 2, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1 ; Marius +1 att
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 1, 6, flesh ; shield -1
+stat_pri_armour  3, 1, 6, flesh ; shield -1 ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      1, 0, 2, -1 
@@ -13894,7 +13827,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Latinkon, 24, 0, 1
+soldier          Latinkon, 20, 0, 1 ; Marius -4 units
 officer		 byzantine_unit_officer 
 officer		 byzantium_cavalry_flag
 mount            mailed horse brawler lancer
@@ -13907,7 +13840,7 @@ stat_pri         4, 15, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         7, 2, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_sec_attr    no
-stat_pri_armour  10, 3, 5, metal ; mail
+stat_pri_armour  13, 3, 5, metal ; mail ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        11
 stat_ground      -2, -3, -4, -2 
@@ -13937,11 +13870,11 @@ officer		 byzantium_missile_flag
 attributes       sea_faring, hide_forest, extreme_range, hardy, can_withdraw, foot_archers, mercenary_unit, free_upkeep_unit, start_not_skirmishing
 formation        1.2, 1.2, 2.4, 2.4, 4, square
 stat_health      1, 2
-stat_pri         5, 2, superior_missile_composite_arrow, 200, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         5, 2, superior_missile_composite_arrow, 190, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -10 ammo
 stat_pri_attr    no
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
-stat_pri_armour  2, 6, 3, leather
+stat_pri_armour  5, 6, 3, leather ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        3
 stat_ground      1, 1, 1, -1 
@@ -14001,7 +13934,7 @@ class            heavy
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Scholarii, 32, 0, 1
+soldier          Scholarii, 20, 0, 1 ; Marius -12 units
 officer		 byzantine_unit_officer 
 officer		 byzantium_cavalry_flag
 mount            cataphract armoured horse brawler
@@ -14012,9 +13945,9 @@ formation        2, 4.4, 3, 6, 3, square ;  ; , wedge
 stat_health      1, 3
 stat_pri         5, 9, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
-stat_sec         7, 3, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1
+stat_sec         5, 3, no, 0, 0, melee, melee_blade, blunt, mace, 75, 1 ; Marius -2 att
 stat_sec_attr    ap
-stat_pri_armour  22, 5, 2, metal ; heavy mail 7 (+1 def) + lamellar 6 + extra padding 2 + cataphract armored horse 7
+stat_pri_armour  20, 5, 2, metal ; heavy mail 7 (+1 def) + lamellar 6 + extra padding 2 + cataphract armored horse 7 ; Marius -2 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        23
 stat_ground      -2, -2, -5, -3 
@@ -14038,7 +13971,7 @@ class            spearmen
 voice_type       Light
 banner faction   main_spear
 banner holy      crusade
-soldier          Scoutatoi, 80, 0, 1.15, 0.3
+soldier          Scoutatoi, 60, 0, 1.15, 0.3 ; Marius -20 units
 officer		 byzantine_unit_officer 
 officer		 byzantium_infantry_flag
 mount_effect     horse +4, camel +4
@@ -14050,7 +13983,7 @@ stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 60, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  5, 2, 9, metal ; mail
+stat_pri_armour  8, 2, 9, metal ; mail ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      0, -1, 1, -2 
@@ -14154,7 +14087,7 @@ attributes       sea_faring, hide_forest, hardy, can_withdraw, horse_archers, ca
 move_speed_mod	 0.95
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         5, 3, superior_mounted_composite_arrow, 80, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 3, superior_mounted_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -3 att +40 ammo
 stat_pri_attr    no
 stat_sec         5, 5, no, 0, 0, melee, melee_blade, piercing, sword, 30, 1 ; light sword
 stat_sec_attr    no
@@ -14217,7 +14150,7 @@ class            spearmen;
 voice_type       Light
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Stratiotae, 32, 0, 1
+soldier          Stratiotae, 24, 0, 1 ; Marius -8 units
 officer		 byzantine_unit_officer
 officer		 byzantium_cavalry_flag
 mount            eastern horse lancer
@@ -14230,7 +14163,7 @@ stat_pri         4, 12, no, 0, 0, melee, melee_blade, piercing, spear, 75, 1
 stat_pri_attr    no
 stat_sec         5, 6, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
-stat_pri_armour  4, 3, 4, metal ; mail ;;
+stat_pri_armour  7, 3, 4, metal ; mail ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        6
 stat_ground      0, 0, -3, -1 
@@ -14261,7 +14194,7 @@ officer		 byzantium_missile_flag
 attributes       sea_faring, hide_forest, can_withdraw, foot_archers, free_upkeep_unit
 formation        1.4, 1.4, 2.8, 2.0, 3, square
 stat_health      1, 2
-stat_pri         2, 1, militia_arrow, 100, 40, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         2, 1, militia_arrow, 130, 40, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +30 ammo
 stat_pri_attr    area
 stat_sec         3, 1, no, 0, 0, melee, melee_blade, slashing, axe, 45, 1
 stat_sec_attr    no ; ap ; 1H axe (hatchet)
@@ -14393,7 +14326,7 @@ voice_type       Light
 accent           Arabic
 banner faction   main_infantry
 banner holy      crusade
-soldier          Tribal_Warrior, 60, 0, 0.8, 0.45
+soldier          Tribal_Warrior, 80, 0, 0.8, 0.45 ; Marius +20 units
 attributes       sea_faring, hide_forest, hardy, can_withdraw, mercenary_unit
 move_speed_mod	 0.9
 formation        1.2, 1.2, 2.4, 2.4, 5, square
@@ -14402,7 +14335,7 @@ stat_pri         6, 1, no, 0, 0, melee, melee_blade, slashing, sword, 45, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  0, 6, 5, flesh
+stat_pri_armour  0, 1, 4, flesh ; Marius -5 def -1 shl
 stat_sec_armour  0, 0, flesh
 stat_heat        0
 stat_ground      0, 2, 1, -2 
@@ -14470,7 +14403,7 @@ stat_pri         7, 2, no, 0, 0, melee, melee_blade, piercing, sword, 15, 1
 stat_pri_attr    no
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 25, 1
 stat_sec_attr    no
-stat_pri_armour  5, 5, 4, metal ;
+stat_pri_armour  9, 5, 4, metal ; Marius +4 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      0, -2, 2, 0
@@ -14586,7 +14519,7 @@ stat_pri         4, 2, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    light_spear
 stat_sec         0, 0, no, 0, 0, no, melee_simple, blunt, none, 0, 1
 stat_sec_attr    no
-stat_pri_armour  4, 4, 7, metal ; 
+stat_pri_armour  7, 4, 7, metal ; Marius +3 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        7
 stat_ground      1, -2, 2, 2
@@ -14616,7 +14549,7 @@ officer          georgian_captain_flag
 attributes       sea_faring, hide_forest, hardy, can_withdraw, foot_archers, start_skirmishing, free_upkeep_unit, mercenary_unit
 formation        1.4, 1.4, 1.8, 1.8, 3, square
 stat_health      1, 2
-stat_pri         4, 1, average_composite_arrow, 140, 30, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         4, 1, average_composite_arrow, 150, 30, missile, missile_mechanical, piercing, none, 0, 1 ; Marius +10 ammo
 stat_pri_attr    area
 stat_sec         2, 1, no, 0, 0, melee, melee_blade, slashing, sword, 60, 1 ; light sword
 stat_sec_attr    no
@@ -14694,7 +14627,7 @@ stat_pri         6, 7, no, 0, 0, melee, melee_blade, piercing, spear, 45, 1
 stat_pri_attr    no
 stat_sec         7, 5, no, 0, 0, melee, melee_blade, slashing, sword, 30, 1
 stat_sec_attr    no
-stat_pri_armour  5, 5, 4, metal ;
+stat_pri_armour  6, 5, 4, metal ; Marius +1 arm
 stat_sec_armour  0, 0, flesh
 stat_heat        5
 stat_ground      0, -1, -3, 1
@@ -14733,7 +14666,7 @@ stat_pri         4, 17, no, 0, 0, melee, melee_blade, piercing, spear, 90, 1
 stat_pri_attr    no
 stat_sec         10, 5, no, 0, 0, melee, melee_blade, piercing, sword, 45, 1
 stat_sec_attr    no
-stat_pri_armour  8, 6, 5, metal
+stat_pri_armour  8, 8, 5, metal ; Marius +2 def
 stat_sec_armour  0, 0, flesh
 stat_heat        9
 stat_ground      -1, -2, -3, -1
@@ -14758,7 +14691,7 @@ class            skirmish
 voice_type       Heavy
 banner faction   main_cavalry
 banner holy      crusade_cavalry
-soldier          Monaspa_Cavalry, 32, 0, 1
+soldier          Monaspa_Cavalry, 24, 0, 1 ; Marius -8 units
 officer          Royal_Monaspa_ug1
 officer          georgian_captain_flag
 mount            eastern horse HA
@@ -14766,7 +14699,7 @@ mount_effect     elephant -4, camel -4
 attributes       sea_faring, hide_forest, can_withdraw, horse_archers, knight, can_formed_charge, cantabrian_circle, hardy, frighten_foot
 formation        2, 4.4, 3, 6, 3, square
 stat_health      1, 3
-stat_pri         4, 5, superior_mounted_missile_composite_arrow, 180, 45, missile, missile_mechanical, piercing, none, 0, 1
+stat_pri         3, 5, superior_mounted_missile_composite_arrow, 120, 45, missile, missile_mechanical, piercing, none, 0, 1 ; Marius -1 att -60 ammo
 stat_pri_attr    area
 stat_sec         8, 5, no, 0, 0, melee, melee_blade, piercing, sword, 60, 1
 stat_sec_attr    no
