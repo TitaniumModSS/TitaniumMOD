@@ -1349,6 +1349,7 @@ end_monitor
 ;- Startup Reinforcements
 ;- Merchant&Priest&Ship Support Spawn with Turn10 Reinforcement
 ;- No Heir Reinforcement
+;- Remove Anachronistic Rebel Troops
 
 ;========= Constantinople JIHAD garrison script =========
 declare_counter conple_jgs
@@ -3372,8 +3373,7 @@ monitor_event FactionTurnStart FactionType slave
 			destroy_units slave Pavise Crossbow Militia
 			destroy_units slave Free Company Longbowmen
 			destroy_units slave Free Company Men at Arms
-			destroy_units slave Dismounted Feudal Knights
-			destroy_units slave Dismounted Chivalric Knights
+			destroy_units slave Dismounted Italian MAA
 			destroy_units slave Polish Nobles
 		end_if
 		if I_EventCounter HEAVY_MAIL_ARMOR = 1; 1200-1300
@@ -3388,6 +3388,7 @@ monitor_event FactionTurnStart FactionType slave
 			destroy_units slave Pavise Crossbow Militia
 			destroy_units slave Free Company Longbowmen
 			destroy_units slave Free Company Men at Arms
+			destroy_units slave Dismounted Italian MAA
 		end_if
 		;if I_EventCounter new_era_begins = 1; 1300-?
 		;end_if
