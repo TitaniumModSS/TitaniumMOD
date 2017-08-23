@@ -37302,9 +37302,10 @@ Trigger ai_bad_traits_desperatewo
 
  Condition AgentType = princess
        and not FactionIsLocal
-       and Trait DesperateWoman > 0
+       and Trait SpiritedWoman < 5
+       and Trait SpiritedWoman > 1
 
- Affects DesperateWoman -1 Chance 70
+ Affects SpiritedWoman 1 Chance 70 ;inverse logic to reach neutral level 4 and get removed with another trigger bellow
 
 ;------------------------------------------
 Trigger ai_bad_traits_discontentgen

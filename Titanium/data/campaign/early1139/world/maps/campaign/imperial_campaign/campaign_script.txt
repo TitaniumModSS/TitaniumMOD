@@ -7,6 +7,7 @@
 ;---- Setup AI
 ;---- Setup Events
 ;------ Pirate Cleanup Script
+;------ Remove Anachronistic Rebel Troops
 ;* 2) PREPARE FOR NEW FACTION'S TURN
 ;---- Reset counters
 ;------ REPUBLICS DEATH SCRIPT WORKAROUND
@@ -682,6 +683,45 @@ monitor_event FactionTurnEnd FactionType slave
 	;---- Named Forts Script ----used for
 		set_event_counter spawn_minor_settlement_labels 1
 end_monitor
+monitor_event PreFactionTurnStart not IsFactionAIControlled
+	and I_CompareCounter turn_fid = 0 ; This ensures it triggers only between Rebels and Player1's turn
+	;---- Remove Anachronistic Rebel Troops ----
+		if I_EventCounter HEAVY_MAIL_ARMOR = 0; 1100-1200
+			destroy_units slave Feudal Knights
+			destroy_units slave Chivalric Knights
+			destroy_units slave Serbian Knights
+			destroy_units slave Scots Pike Militia
+			destroy_units slave Swiss Pikemen
+			destroy_units slave Swiss Halberdiers
+			destroy_units slave Halberd Militia
+			destroy_units slave Mamluks
+			destroy_units slave Mamluk Archers
+			destroy_units slave Flemish Pikemen
+			destroy_units slave Pavise Spear Militia
+			destroy_units slave Pavise Crossbow Militia
+			destroy_units slave Free Company Longbowmen
+			destroy_units slave Free Company Men at Arms
+			destroy_units slave Dismounted Italian MAA
+			destroy_units slave Polish Nobles
+		end_if
+		if I_EventCounter HEAVY_MAIL_ARMOR = 1; 1200-1300
+		and I_EventCounter new_era_begins = 0
+			destroy_units slave Chivalric Knights
+			destroy_units slave Serbian Knights
+			destroy_units slave Scots Pike Militia
+			destroy_units slave Swiss Pikemen
+			destroy_units slave Swiss Halberdiers
+			destroy_units slave Halberd Militia
+			destroy_units slave Flemish Pikemen
+			destroy_units slave Pavise Crossbow Militia
+			destroy_units slave Free Company Longbowmen
+			destroy_units slave Free Company Men at Arms
+			destroy_units slave Dismounted Italian MAA
+		end_if
+		if I_EventCounter new_era_begins = 1; 1300-?
+			terminate_monitor
+		end_if
+end_monitor
 
 ;========================================================
 ;********************************************************
@@ -1349,7 +1389,6 @@ end_monitor
 ;- Startup Reinforcements
 ;- Merchant&Priest&Ship Support Spawn with Turn10 Reinforcement
 ;- No Heir Reinforcement
-;- Remove Anachronistic Rebel Troops
 
 ;========= Constantinople JIHAD garrison script =========
 declare_counter conple_jgs
@@ -3356,42 +3395,6 @@ monitor_event FactionTurnStart FactionType slave
 		inc_counter heir_timurids 1
 		inc_counter no_other_heir_spawn 1
 	end_if
-	
-	;---- Remove Anachronistic Rebel Troops ----
-		if I_EventCounter HEAVY_MAIL_ARMOR = 0; 1100-1200
-			destroy_units slave Feudal Knights
-			destroy_units slave Chivalric Knights
-			destroy_units slave Serbian Knights
-			destroy_units slave Scots Pike Militia
-			destroy_units slave Swiss Pikemen
-			destroy_units slave Swiss Halberdiers
-			destroy_units slave Halberd Militia
-			destroy_units slave Mamluks
-			destroy_units slave Mamluk Archers
-			destroy_units slave Flemish Pikemen
-			destroy_units slave Pavise Spear Militia
-			destroy_units slave Pavise Crossbow Militia
-			destroy_units slave Free Company Longbowmen
-			destroy_units slave Free Company Men at Arms
-			destroy_units slave Dismounted Italian MAA
-			destroy_units slave Polish Nobles
-		end_if
-		if I_EventCounter HEAVY_MAIL_ARMOR = 1; 1200-1300
-		and I_EventCounter new_era_begins = 0
-			destroy_units slave Chivalric Knights
-			destroy_units slave Serbian Knights
-			destroy_units slave Scots Pike Militia
-			destroy_units slave Swiss Pikemen
-			destroy_units slave Swiss Halberdiers
-			destroy_units slave Halberd Militia
-			destroy_units slave Flemish Pikemen
-			destroy_units slave Pavise Crossbow Militia
-			destroy_units slave Free Company Longbowmen
-			destroy_units slave Free Company Men at Arms
-			destroy_units slave Dismounted Italian MAA
-		end_if
-		;if I_EventCounter new_era_begins = 1; 1300-?
-		;end_if
 	
 	;if I_CompareCounter no_other_heir_spawn = 84; [3 times x 28 factions]
 	;	terminate_monitor
