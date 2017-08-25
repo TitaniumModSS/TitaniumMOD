@@ -642,6 +642,7 @@ set_counter status_mongols -1; Faction does not exist at campaign start
 declare_counter status_timurids
 set_counter status_timurids -1; Faction does not exist at campaign start
 declare_counter status_cumans
+set_counter status_cumans 1; Faction exist at campaign start
 monitor_event CeasedFactionLeader FactionType teutonic_order
 	set_event_counter status_teutonic_order 0
 end_monitor
